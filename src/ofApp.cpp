@@ -7,6 +7,8 @@ void ofApp::fixScreenSize(){
     float width = ofGetWidth();
     float height = width / 2.0;
     ofSetWindowShape(width, height);
+    
+    ofSetWindowPosition(20,20);
 }
 
 
@@ -40,6 +42,12 @@ void ofApp::keyPressed(int key){
 
     if (key == ' '){
         SM.advanceScene();
+    }
+    
+    if (key == '0'){
+        SM.mode = DRAW_SIDE_BY_SIDE;
+    } else if (key == '1'){
+        SM.mode = DRAW_SINGLE;
     }
 }
 
