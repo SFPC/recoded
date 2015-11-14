@@ -44,10 +44,15 @@ void veraAnimatedScene::setup(){
                 
             for(int l = 0; l < numShapes; l++) {
                 ShapePosition sp;
-                sp.topLeft.set(150 + i*110 - ofRandom(100,0), 150 + j*110 - ofRandom(100,0));
-                sp.topRight.set( 150 + i*110 + ofRandom(100,0), 150 + j*110 - ofRandom(100,0));
-                sp.bottomRight.set(150 + i*110 + ofRandom(100,0), 150 + j*110 + ofRandom(100,0));
-                sp.bottomLeft.set(150 + i*110 - ofRandom(100,0), 150 + j*110 + ofRandom(100,0));
+                
+                sp.topLeft.set(dimensions.width/8 + i*dimensions.width/8 - ofRandom(100,0),
+                               dimensions.height/8 + j*dimensions.height/8 - ofRandom(100,0));
+                sp.topRight.set(dimensions.width/8 + i*dimensions.width/8 + ofRandom(100,0),
+                                dimensions.height/8 + j*dimensions.height/8 - ofRandom(100,0));
+                sp.bottomRight.set(dimensions.width/8 + i*dimensions.width/8 + ofRandom(100,0),
+                                   dimensions.height/8 + j*dimensions.height/8 + ofRandom(100,0));
+                sp.bottomLeft.set(dimensions.width/8 + i*dimensions.width/8 - ofRandom(100,0),
+                                  dimensions.height/8 + j*dimensions.height/8 + ofRandom(100,0));
                 col.push_back(sp);
             }
             row.push_back(col);
@@ -100,8 +105,8 @@ void veraAnimatedScene::draw(){
             for(int k = 0; k < numShapes; k++) {
                 ofBeginShape();
                 
-                int centerX = 150 + i*110;
-                int centerY = 150 + j*110;
+                int centerX = (i+1.5)*dimensions.width/8;
+                int centerY = (j+1.5)*dimensions.height/8;
                 
                 pos[i][j][k].topLeft.x = (pos[i][j][k].topLeft.x + ofRandom(-5,5));
                 pos[i][j][k].topLeft.y = (pos[i][j][k].topLeft.y + ofRandom(-5,5));
@@ -134,12 +139,4 @@ void veraAnimatedScene::draw(){
             }
         }
     }
-    
-    drawCode();
 }
-
-void veraAnimatedScene::drawCode(){
-    string codeReplaced = getCodeWithParamsReplaced();
-    ofDrawBitmapString(codeReplaced, 40,40);
-}
-
