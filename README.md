@@ -39,7 +39,7 @@ It will copy the following files and create new files for your new scene:
 `src/scenes/emptyScene/ => `src/scenes/sceneName/`
 
 
-### Submitting Changes
+### 3. Submitting Changes
 
 #### If you're adding a new scene and not changing the architecture
 
