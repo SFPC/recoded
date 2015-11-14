@@ -20,7 +20,8 @@ void triangleScene::update(){
 }
 void triangleScene::draw(){
     
-    
+    ofSetColor(255,255,255,5);
+
     for (int i = 0; i < numTriangles; i++){
         
         ofDrawTriangle( ofRandom(0, ofGetWidth()),
@@ -29,7 +30,6 @@ void triangleScene::draw(){
                    ofRandom(0, ofGetHeight()),
                    ofRandom(0, ofGetWidth()),
                    ofRandom(0, ofGetHeight()));
-        
         
     }
     

@@ -34,17 +34,18 @@ void sceneManager::setup(){
     panel = new ofxPanel();
     panel->setup();
     panel->add(scenes[currentScene]->parameters);
-    
     panel->setPosition(ofGetWidth()-300, 20);
-    
-    
-    
+
 }
+
 void sceneManager::update(){
     scenes[currentScene]->update();
 }
+
 void sceneManager::draw(){
+    ofPushStyle();
     scenes[currentScene]->draw();
+    ofPopStyle();
     panel->draw();
 }
 
