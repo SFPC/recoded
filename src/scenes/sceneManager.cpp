@@ -52,7 +52,7 @@ void sceneManager::draw(){
     ofPushStyle();
     scenes[currentScene]->draw();
     ofPopStyle();
-    ofClearAlpha(); 
+    ofClearAlpha();
     sceneFbo.end();
     
     ofSetColor(255,255,255);
