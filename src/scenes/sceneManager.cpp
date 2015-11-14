@@ -17,11 +17,14 @@ void sceneManager::setup(){
     scenes.push_back(new exampleScene() );
     scenes.push_back(new triangleScene() );
     
+    sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT);
+    codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT);
+    
     // disney
     for (auto scene : scenes){
+        scene->dimensions.set(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         scene->setup();
     }
-    
     
     
     
@@ -43,10 +46,28 @@ void sceneManager::update(){
 }
 
 void sceneManager::draw(){
+    
+    sceneFbo.begin();
+    ofClear(0,0,0,255);
     ofPushStyle();
     scenes[currentScene]->draw();
     ofPopStyle();
+    ofClearAlpha(); 
+    sceneFbo.end();
+    
+    ofSetColor(255,255,255);
+    sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
+    
+    codeFbo.begin();
+    ofClear(50,50,50, 255);
+    string codeReplaced = scenes[currentScene]->getCodeWithParamsReplaced();
+    ofDrawBitmapString(codeReplaced, 40,40);
+    codeFbo.end();
+    
+    codeFbo.draw(ofGetHeight(), 0,ofGetHeight(), ofGetHeight());
+    
     panel->draw();
+    
 }
 
 void sceneManager::advanceScene(){

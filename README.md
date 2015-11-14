@@ -6,7 +6,7 @@ Hackpad: https://fallsfpc2015.hackpad.com/Day-4-Night-e6Zo9q7mBAs
 
 This project requires **openFrameworks 0.9.0**. You can [download it from the oF website](http://openframeworks.cc/download/) if you don't already have it installed.
 
-The following guidelines are helpful for development.
+You'll also need to have your username added to the GitHub project, so have Zach add you if he hasn't already.
 
 ### 1. Checkout the project from GitHub
 
@@ -40,6 +40,9 @@ It will copy the following files and create new files for your new scene:
  * `bin/data/emptyScene/` => `bin/data/sceneName/`
  * `src/scenes/emptyScene/` => `src/scenes/sceneName/`
 
+Now you you can drag the new folder in the `scenes` folder into XCode. Make sure to use these settings if you drag the folder in:
+
+![XCode Settings](https://dl.dropboxusercontent.com/u/2100102/sfpc/xcode-drag-files.png)
 
 ### 4. Submitting Changes
 

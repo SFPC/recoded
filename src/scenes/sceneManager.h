@@ -5,6 +5,7 @@
 #include "ofMain.h"
 #include "baseScene.h"
 #include "ofxGui.h"
+#include "appConstants.h"
 
 
 // I take care of scenes.
@@ -13,6 +14,7 @@ class sceneManager {
     
 public:
     
+
     vector < baseScene * > scenes;
     int currentScene;
     
@@ -21,8 +23,9 @@ public:
     void draw();
     
     void advanceScene();
-
     
+    ofFbo sceneFbo;
+    ofFbo codeFbo;
     ofxPanel * panel;
     
 };
