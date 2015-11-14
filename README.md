@@ -6,24 +6,26 @@ Hackpad: https://fallsfpc2015.hackpad.com/Day-4-Night-e6Zo9q7mBAs
 
 This project requires **openFrameworks 0.9.0**. You can [download it from the oF website](http://openframeworks.cc/download/) if you don't already have it installed.
 
+The following guidelines are helpful for development.
 
+### 1. Checkout the project from GitHub
 
+In you openFrameworks `apps` folder, create a new folder for the "Day for Night" project. Then `cd` into that folder using the terminal and checkout the project from GitHub:
 
+```bash
+git clone https://github.com/ofZach/dayForNightSFPC.git
+```
 
-
-### Development Setup
-
-The following guidelines are helpful for development
-
-### 1. Make a branch
+### 2. Make a branch
 
 It's probably a good idea to work in your own branch. Create a new branch:
 
 ```bash
+cd dayForNightSFPC
 git checkout -b branchName
 ```
 
-### 2. Generate a new scene
+### 3. Generate a new scene
 
 Now you can use the project generator script to generate a new scene. This will copy the `emptyScene` files and rename based on your new scene name.
 
@@ -35,11 +37,13 @@ Use the terminal to `cd` into your project folder and run the following, substit
 
 It will copy the following files and create new files for your new scene:
 
-`bin/data/emptyScene/` => `bin/data/sceneName/`
-`src/scenes/emptyScene/ => `src/scenes/sceneName/`
+ * `bin/data/emptyScene/` => `bin/data/sceneName/`
+ * `src/scenes/emptyScene/` => `src/scenes/sceneName/`
 
 
-### 3. Submitting Changes
+### 4. Submitting Changes
+
+There are two different workflows for submitting changes:
 
 #### If you're adding a new scene and not changing the architecture
 
@@ -84,4 +88,4 @@ Now push your branch to GitHub:
 git push origin branchName
 ```
 
-Now [go to GitHub repo](https://github.com/ofZach/dayForNightSFPC) and submit a pull request via the GH interface.
+Now [go to the GitHub repo](https://github.com/ofZach/dayForNightSFPC) and submit a pull request via the GH interface.
