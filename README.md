@@ -13,11 +13,17 @@ This project requires **openFrameworks 0.9.0**. You can [download it from the oF
 
 ### Development Setup
 
+The following guidelines are helpful for development
+
+### 1. Make a branch
+
 It's probably a good idea to work in your own branch. Create a new branch:
 
 ```bash
 git checkout -b branchName
 ```
+
+### 2. Generate a new scene
 
 Now you can use the project generator script to generate a new scene. This will copy the `emptyScene` files and rename based on your new scene name.
 
