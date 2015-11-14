@@ -6,7 +6,10 @@
 class veraAnimatedScene : public baseScene {
     
 public:
+
     
+    
+    veraAnimatedScene(){};
     void setup();
     void update();
     void draw();
