@@ -22,21 +22,41 @@ void sceneManager::setup(){
         scene->setup();
     }
     
+    
+    
+    
 //    for (int i = 0; i< scenes.size(); i++){
 //        scenes[i]->setup();
 //    }
     
     currentScene = 0;
+    
+    panel = new ofxPanel();
+    panel->setup();
+    panel->add(scenes[currentScene]->parameters);
+    
+    panel->setPosition(ofGetWidth()-300, 20);
+    
+    
+    
 }
 void sceneManager::update(){
     scenes[currentScene]->update();
 }
 void sceneManager::draw(){
     scenes[currentScene]->draw();
+    panel->draw();
 }
 
 void sceneManager::advanceScene(){
     currentScene ++;
     currentScene %= scenes.size();
+    
+    delete panel;
+    panel = new ofxPanel();
+    panel->setup();
+    panel->add(scenes[currentScene]->parameters);
+    
+    panel->setPosition(ofGetWidth()-300, 20);
     
 };

@@ -4,6 +4,8 @@
 
 #include "ofMain.h"
 #include "baseScene.h"
+#include "ofxGui.h"
+
 
 // I take care of scenes.
 
@@ -20,4 +22,7 @@ public:
     
     void advanceScene();
 
+    
+    ofxPanel * panel;
+    
 };
