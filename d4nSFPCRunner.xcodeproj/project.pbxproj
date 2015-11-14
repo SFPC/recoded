@@ -17,6 +17,7 @@
 		923871A41BF7993A00171456 /* baseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9238719E1BF7993A00171456 /* baseScene.cpp */; };
 		923871A51BF7993A00171456 /* exampleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871A01BF7993A00171456 /* exampleScene.cpp */; };
 		923871A61BF7993A00171456 /* sceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871A21BF7993A00171456 /* sceneManager.cpp */; };
+		923871AA1BF7ADDC00171456 /* triangleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871A81BF7ADDC00171456 /* triangleScene.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
@@ -78,6 +79,8 @@
 		923871A11BF7993A00171456 /* exampleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exampleScene.h; sourceTree = "<group>"; };
 		923871A21BF7993A00171456 /* sceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sceneManager.cpp; sourceTree = "<group>"; };
 		923871A31BF7993A00171456 /* sceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sceneManager.h; sourceTree = "<group>"; };
+		923871A81BF7ADDC00171456 /* triangleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangleScene.cpp; sourceTree = "<group>"; };
+		923871A91BF7ADDC00171456 /* triangleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangleScene.h; sourceTree = "<group>"; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		B87C60311EC1FE841C1ECD89 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
@@ -159,6 +162,8 @@
 				9238719F1BF7993A00171456 /* baseScene.h */,
 				923871A01BF7993A00171456 /* exampleScene.cpp */,
 				923871A11BF7993A00171456 /* exampleScene.h */,
+				923871A81BF7ADDC00171456 /* triangleScene.cpp */,
+				923871A91BF7ADDC00171456 /* triangleScene.h */,
 				923871A21BF7993A00171456 /* sceneManager.cpp */,
 				923871A31BF7993A00171456 /* sceneManager.h */,
 			);
@@ -336,6 +341,7 @@
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
+				923871AA1BF7ADDC00171456 /* triangleScene.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				923871A51BF7993A00171456 /* exampleScene.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,

@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "baseScene.h"
-#include "exampleScene.h"
+#include "sceneManager.h"
 
 
 class ofApp : public ofBaseApp{
@@ -23,8 +23,10 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-
-        baseScene * scene;
+    
+        sceneManager SM;
+    
+    
     
     
 };
