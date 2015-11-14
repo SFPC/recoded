@@ -13,7 +13,7 @@ void emptyScene::update(){
 }
 
 void emptyScene::draw(){
-    
+    drawCode();
 }
 
 void emptyScene::drawCode(){
