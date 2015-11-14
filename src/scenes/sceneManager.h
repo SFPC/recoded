@@ -8,6 +8,10 @@
 #include "appConstants.h"
 
 
+enum drawMode {
+    DRAW_SIDE_BY_SIDE, DRAW_SINGLE
+};
+
 // I take care of scenes.
 
 class sceneManager {
@@ -27,5 +31,7 @@ public:
     ofFbo sceneFbo;
     ofFbo codeFbo;
     ofxPanel * panel;
+    
+    drawMode mode;
     
 };
