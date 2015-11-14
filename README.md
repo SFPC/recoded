@@ -6,13 +6,31 @@ Hackpad: https://fallsfpc2015.hackpad.com/Day-4-Night-e6Zo9q7mBAs
 
 This project requires **openFrameworks 0.9.0**. You can [download it from the oF website](http://openframeworks.cc/download/) if you don't already have it installed.
 
-### Development
+
+
+
+
+
+### Development Setup
 
 It's probably a good idea to work in your own branch. Create a new branch:
 
 ```bash
 git checkout -b branchName
 ```
+
+Now you can use the project generator script to generate a new scene. This will copy the `emptyScene` files and rename based on your new scene name.
+
+Use the terminal to `cd` into your project folder and run the following, substituting `sceneName` with the name of your scene:
+
+```bash
+./generate_scene.sh sceneName
+```
+
+It will copy the following files and create new files for your new scene:
+
+`bin/data/emptyScene/` => `bin/data/sceneName/`
+`src/scenes/emptyScene/ => `src/scenes/sceneName/`
 
 
 ### Submitting Changes
