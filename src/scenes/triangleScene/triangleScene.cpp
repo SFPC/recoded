@@ -33,6 +33,7 @@ void triangleScene::draw(){
         
     }
     
+    ofSetColor(255,255,255);
     
     string codeReplaced = getCodeWithParamsReplaced();
     ofDrawBitmapString(codeReplaced, 40,40);
