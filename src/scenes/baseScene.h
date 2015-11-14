@@ -5,8 +5,6 @@
 
 #include "ofMain.h"
 
-
-
 class baseScene {
     
 public:
@@ -21,8 +19,12 @@ public:
     void loadCode( string fileName );
     string getCodeWithParamsReplaced();
     
-    ofParameterGroup parameters;
-    string code;
+    ofParameterGroup parameters;    // this is the parameters of your sketch...
+
+    string code;                // this is the code we show
+    
+    ofRectangle dimensions;     // this is the dimensions of
+                                // the surface you are drawing into.
     
     
 };

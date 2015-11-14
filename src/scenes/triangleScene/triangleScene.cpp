@@ -20,23 +20,21 @@ void triangleScene::update(){
 }
 void triangleScene::draw(){
     
-    ofSetColor(255,255,255,5);
+    ofSetColor(255,255,255,80);
 
     for (int i = 0; i < numTriangles; i++){
         
-        ofDrawTriangle( ofRandom(0, ofGetWidth()),
-                   ofRandom(0, ofGetHeight()),
-                   ofRandom(0, ofGetWidth()),
-                   ofRandom(0, ofGetHeight()),
-                   ofRandom(0, ofGetWidth()),
-                   ofRandom(0, ofGetHeight()));
+        ofDrawTriangle( ofRandom(0, dimensions.width),
+                   ofRandom(0, dimensions.height),
+                   ofRandom(0, dimensions.width),
+                   ofRandom(0, dimensions.height),
+                   ofRandom(0, dimensions.width),
+                   ofRandom(0, dimensions.height));
         
     }
     
     ofSetColor(255,255,255);
     
-    string codeReplaced = getCodeWithParamsReplaced();
-    ofDrawBitmapString(codeReplaced, 40,40);
-
+  
 }
 

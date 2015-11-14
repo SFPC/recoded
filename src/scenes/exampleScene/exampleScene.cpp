@@ -36,18 +36,17 @@ void exampleScene::draw(){
     ofSetRectMode(OF_RECTMODE_CENTER);
     ofPushMatrix();
     
-    ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
+    ofTranslate(dimensions.width/2, dimensions.height/2);
     ofRotate(angle);
     ofDrawRectangle(0, 0, width, 40);
     
     ofPopMatrix();
     ofSetRectMode(OF_RECTMODE_CORNER);
     
+    ofLine(0, 0, dimensions.width, dimensions.height);
+    ofLine(0,  dimensions.height, dimensions.width, 0);
     
-    string codeReplaced = getCodeWithParamsReplaced();
     
     
-    
-    ofDrawBitmapString(codeReplaced, 40,40);
     
 }

@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "baseScene.h"
 #include "sceneManager.h"
+#include "appConstants.h"
 
 
 class ofApp : public ofBaseApp{
@@ -25,6 +26,8 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
         sceneManager SM;
+    
+        void fixScreenSize();
     
     
     
