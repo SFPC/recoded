@@ -83,7 +83,6 @@ void robbyMolnarScene::setup(){
     loadCode("robbyMolnarScene/code.txt");
     float centerX = dimensions.width*.5;
     float centerY = dimensions.height*.5;
-    printf("%f, %f", dimensions.width, dimensions.height);
     vRect.setup(50, dimensions.height);
     vRect.centerX = centerX;
     vRect.centerY = centerY;
