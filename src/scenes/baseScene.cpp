@@ -20,10 +20,7 @@ void baseScene::loadCode( string fileName ){
         code += line;
         code += "\n";
     }
-    
-   
-    
-    
+ 
 }
 
 

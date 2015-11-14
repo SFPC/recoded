@@ -35,6 +35,9 @@ void sceneManager::setup(){
 //    }
     
     currentScene = 0;
+    scenes[currentScene]->reset();
+    
+    
     
     panel = new ofxPanel();
     panel->setup();
@@ -85,6 +88,9 @@ void sceneManager::draw(){
 void sceneManager::advanceScene(){
     currentScene ++;
     currentScene %= scenes.size();
+    scenes[currentScene]->reset();
+    
+    
     
     delete panel;
     panel = new ofxPanel();
