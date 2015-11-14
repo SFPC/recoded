@@ -14,6 +14,7 @@ void robbyRileyScene::update(){
 }
 
 void robbyRileyScene::draw(){
+    ofFill();
     
     float space = dimensions.height / R_RIL_CNT;
     float colPos = 0;

@@ -75,6 +75,7 @@ void veraAnimatedScene::update(){
 }
 
 void veraAnimatedScene::draw(){
+    ofNoFill();
     
     ofSetColor(255,255,255, opacity);
     
