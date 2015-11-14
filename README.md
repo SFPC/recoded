@@ -4,6 +4,7 @@ Hackpad: https://fallsfpc2015.hackpad.com/Day-4-Night-e6Zo9q7mBAs
 
 ## Contributing
 
+This project requires **openFrameworks 0.9.0**. You can [download it from the oF website](http://openframeworks.cc/download/) if you don't already have it installed.
 
 ### Development
 
