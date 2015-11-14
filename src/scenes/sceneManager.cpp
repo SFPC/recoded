@@ -9,11 +9,13 @@
 #include "sceneManager.h"
 #include "exampleScene.h"
 #include "triangleScene.h"
+#include "veraAnimatedScene.h"
 
     
 void sceneManager::setup(){
     
     
+    scenes.push_back(new veraAnimatedScene() );
     scenes.push_back(new exampleScene() );
     scenes.push_back(new triangleScene() );
     
