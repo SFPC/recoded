@@ -1,10 +1,10 @@
 
-#include "exampleScene.h"
+#include "yeseulScene.h"
 
 
 
 
-void exampleScene::setup(){
+void yeseulScene::setup(){
     
     
     angle.set("angle", 0, -180, 180);
@@ -17,7 +17,7 @@ void exampleScene::setup(){
     
 }
 
-void exampleScene::update(){
+void yeseulScene::update(){
     
     // arbitrarily wiggle things up....  so we can see if this works.
     // later
@@ -28,17 +28,26 @@ void exampleScene::update(){
     
 }
 
-void exampleScene::draw(){
+void yeseulScene::draw(){
     
     
     
+    float counter;
+    counter+=0.1;
     
-    ofSetRectMode(OF_RECTMODE_CENTER);
     ofPushMatrix();
     
     ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
     ofRotate(angle);
-    ofDrawRectangle(0, 0, width, 40);
+    ofFill();
+
+
+    for (int i=0; i<100; i++){
+        for (int j=0; j<100; j++){
+            ofRotate(counter*width);
+            ofDrawCircle(j*3, j*3, 1);
+        }
+    }
     
     ofPopMatrix();
     ofSetRectMode(OF_RECTMODE_CORNER);

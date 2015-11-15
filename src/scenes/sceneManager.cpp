@@ -9,6 +9,7 @@
 #include "sceneManager.h"
 #include "exampleScene.h"
 #include "triangleScene.h"
+#include "yeseulScene.h"
 
     
 void sceneManager::setup(){
@@ -16,6 +17,7 @@ void sceneManager::setup(){
     
     scenes.push_back(new exampleScene() );
     scenes.push_back(new triangleScene() );
+    scenes.push_back(new yeseulScene() );
     
     // disney
     for (auto scene : scenes){

@@ -4,7 +4,7 @@
 #include "ofMain.h"
 #include "baseScene.h"
 
-class exampleScene : public baseScene {
+class yeseulScene : public baseScene {
     
 public:
     
