@@ -1,0 +1,20 @@
+void veraRect::drawPerturbedRect(float x, float y, float width, float height,
+                                 float X_PERTURB_TL, float Y_PERTURB_TL,
+                                 float X_PERTURB_TR, float Y_PERTURB_TR,
+                                 float X_PERTURB_BR, float Y_PERTURB_BR,
+                                 float X_PERTURB_BL, float Y_PERTURB_BL){
+    
+    float topLeftX = (x + (width*X_PERTURB_TL) - (width*X_PERTURB_TL*.5));
+    float topLeftY = (y + (height*Y_PERTURB_TL) - (height*Y_PERTURB_TL*.5));
+    float topRightX = (x + width + (width*X_PERTURB_TR) - (width*X_PERTURB_TR*.5));
+    float topRightY = (y + (height*Y_PERTURB_TR) - (height*Y_PERTURB_TR*.5));
+    float bottomRightX = (x + width + (width*X_PERTURB_BR) - (width*X_PERTURB_BR*.5));
+    float bottomRightY = (y + height + (height*Y_PERTURB_BR) - (height*Y_PERTURB_BR*.5));
+    float bottomLeftX = (x + (width*X_PERTURB_BL) - (width*X_PERTURB_BL*.5));
+    float bottomLeftY = (y + height + (height*Y_PERTURB_BL) - (height*Y_PERTURB_BL*.5));
+    
+    ofDrawLine(topLeftX, topLeftY, topRightX, topRightY);
+    ofDrawLine(topRightX, topRightY, bottomRightX, bottomRightY);
+    ofDrawLine(bottomRightX, bottomRightY, bottomLeftX, bottomLeftY);
+    ofDrawLine(bottomLeftX, bottomLeftY, topLeftX, topLeftY);
+}

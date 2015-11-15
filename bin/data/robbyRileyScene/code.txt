@@ -1,0 +1,1 @@
+columnWidth = (.3+powf(atan((i - [[dent]])*.25),2)) * width*.5;
