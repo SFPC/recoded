@@ -206,18 +206,18 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				923871AC1BF7CCC900171456 /* emptyScene */,
+				923871AF1BF7CCC900171456 /* exampleScene */,
 				7118B75B1C0519830092084A /* johnWhitneyShader01 */,
+				D5F490E81BF7E69B00F92C20 /* robbyRileyScene */,
+				D5F490E31BF7DE2D00F92C20 /* robbyMolnarScene */,
+				923871B21BF7CCC900171456 /* triangleScene */,
+				26B2483C1BF7D53700C11D04 /* veraAnimatedScene */,
 				85BCD9071BF7E398004188EE /* yeseulScene */,
 				9238719E1BF7993A00171456 /* baseScene.cpp */,
-				26B2483C1BF7D53700C11D04 /* veraAnimatedScene */,
 				9238719F1BF7993A00171456 /* baseScene.h */,
 				923871A21BF7993A00171456 /* sceneManager.cpp */,
 				923871A31BF7993A00171456 /* sceneManager.h */,
-				D5F490E81BF7E69B00F92C20 /* robbyRileyScene */,
-				D5F490E31BF7DE2D00F92C20 /* robbyMolnarScene */,
-				923871AC1BF7CCC900171456 /* emptyScene */,
-				923871AF1BF7CCC900171456 /* exampleScene */,
-				923871B21BF7CCC900171456 /* triangleScene */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
