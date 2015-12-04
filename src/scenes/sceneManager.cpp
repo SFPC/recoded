@@ -14,7 +14,7 @@
 #include "robbyRileyScene.h"
 #include "yeseulScene.h"
 #include "johnWhitneyShader01.h"
-
+#include "anastasisRileyScene.h"
     
 void sceneManager::setup(){
 
@@ -25,6 +25,7 @@ void sceneManager::setup(){
     scenes.push_back(new robbyRileyScene() );
     scenes.push_back(new yeseulScene() );
     scenes.push_back(new johnWhitneyShader01());
+    scenes.push_back(new anastasisRileyScene());
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
