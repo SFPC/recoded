@@ -14,10 +14,11 @@
 #include "robbyRileyScene.h"
 #include "yeseulScene.h"
 #include "johnWhitneyShader01.h"
-
+#include "RoyWhitney1.h"
     
 void sceneManager::setup(){
 
+    scenes.push_back(new RoyWhitney1());
     scenes.push_back(new robbyMolnarScene() );
     scenes.push_back(new veraAnimatedScene() );
     scenes.push_back(new exampleScene() );
