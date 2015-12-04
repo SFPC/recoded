@@ -24,6 +24,7 @@
 		923871B71BF7CCC900171456 /* triangleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871B31BF7CCC900171456 /* triangleScene.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
+		B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
 		B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */; };
 		D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E41BF7DE2D00F92C20 /* robbyMolnarScene.cpp */; };
@@ -97,6 +98,8 @@
 		923871B41BF7CCC900171456 /* triangleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangleScene.h; sourceTree = "<group>"; };
 		923871B81BF7D2C400171456 /* appConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = appConstants.h; path = scenes/appConstants.h; sourceTree = "<group>"; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
+		B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoyWhitney1.cpp; sourceTree = "<group>"; };
+		B018C1A91C10F22100F70DA8 /* RoyWhitney1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoyWhitney1.h; sourceTree = "<group>"; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		B87C60311EC1FE841C1ECD89 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		C1F057861BF7B0A5002155BE /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
@@ -206,6 +209,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B018C1A71C10F22100F70DA8 /* RoyWhitney1 */,
 				923871AC1BF7CCC900171456 /* emptyScene */,
 				923871AF1BF7CCC900171456 /* exampleScene */,
 				7118B75B1C0519830092084A /* johnWhitneyShader01 */,
@@ -271,6 +275,15 @@
 				0A1DAC09F322AE313A40706D /* ofxToggle.h */,
 			);
 			name = src;
+			sourceTree = "<group>";
+		};
+		B018C1A71C10F22100F70DA8 /* RoyWhitney1 */ = {
+			isa = PBXGroup;
+			children = (
+				B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */,
+				B018C1A91C10F22100F70DA8 /* RoyWhitney1.h */,
+			);
+			path = RoyWhitney1;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
@@ -455,6 +468,7 @@
 				D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */,
 				923871A61BF7993A00171456 /* sceneManager.cpp in Sources */,
 				7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */,
+				B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
