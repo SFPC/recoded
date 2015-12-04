@@ -16,12 +16,12 @@
 #include "johnWhitneyShader01.h"
 #include "RoyWhitney1.h"
 #include "veraFscene.h"
-    
+#include "anastasisRileyScene.h"
+
 void sceneManager::setup(){
 
     scenes.push_back(new RoyWhitney1());
     scenes.push_back(new veraFscene());
-    
     scenes.push_back(new robbyMolnarScene() );
     scenes.push_back(new veraAnimatedScene() );
     scenes.push_back(new exampleScene() );
@@ -29,6 +29,7 @@ void sceneManager::setup(){
     scenes.push_back(new robbyRileyScene() );
     scenes.push_back(new yeseulScene() );
     scenes.push_back(new johnWhitneyShader01());
+    scenes.push_back(new anastasisRileyScene());
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);

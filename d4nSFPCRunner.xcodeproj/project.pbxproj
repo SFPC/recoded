@@ -10,6 +10,7 @@
 		1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907C5B5E104864A2D3A25745 /* ofxToggle.cpp */; };
 		26B248401BF7DA1100C11D04 /* veraAnimatedScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B2483F1BF7DA1100C11D04 /* veraAnimatedScene.cpp */; };
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
+		4FEF16411C1146E0000B3B4F /* anastasisRileyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF163F1C114519000B3B4F /* anastasisRileyScene.cpp */; };
 		5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */; };
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
 		63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */; };
@@ -75,6 +76,8 @@
 		26B2483F1BF7DA1100C11D04 /* veraAnimatedScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = veraAnimatedScene.cpp; sourceTree = "<group>"; };
 		2834D88A62CD23F3DE2C47D1 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxButton.h; path = ../../../addons/ofxGui/src/ofxButton.h; sourceTree = SOURCE_ROOT; };
 		2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxml.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
+		4FEF163F1C114519000B3B4F /* anastasisRileyScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = anastasisRileyScene.cpp; sourceTree = "<group>"; };
+		4FEF16401C114519000B3B4F /* anastasisRileyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = anastasisRileyScene.h; sourceTree = "<group>"; };
 		50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
 		7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = johnWhitneyShader01.cpp; sourceTree = "<group>"; };
@@ -164,6 +167,15 @@
 			name = ofxGui;
 			sourceTree = "<group>";
 		};
+		4FEF163E1C114519000B3B4F /* anastasisRileyScene */ = {
+			isa = PBXGroup;
+			children = (
+				4FEF163F1C114519000B3B4F /* anastasisRileyScene.cpp */,
+				4FEF16401C114519000B3B4F /* anastasisRileyScene.h */,
+			);
+			path = anastasisRileyScene;
+			sourceTree = "<group>";
+		};
 		6948EE371B920CB800B5AC1A /* local_addons */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +235,7 @@
 			children = (
 				9237CB9A1C11E9BD0007A916 /* veraFscene */,
 				B018C1A71C10F22100F70DA8 /* RoyWhitney1 */,
+				4FEF163E1C114519000B3B4F /* anastasisRileyScene */,
 				923871AC1BF7CCC900171456 /* emptyScene */,
 				923871AF1BF7CCC900171456 /* exampleScene */,
 				7118B75B1C0519830092084A /* johnWhitneyShader01 */,
@@ -483,6 +496,7 @@
 				923871A61BF7993A00171456 /* sceneManager.cpp in Sources */,
 				7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */,
 				B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */,
+				4FEF16411C1146E0000B3B4F /* anastasisRileyScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
