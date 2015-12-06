@@ -14,9 +14,11 @@ In you openFrameworks `apps` folder, create a new folder for the "Day for Night"
 git clone https://github.com/ofZach/dayForNightSFPC.git
 ```
 
-### 2. Make a branch
+### <del>2. Make a branch</del>
 
-It's probably a good idea to work in your own branch. Create a new branch:
+<del>It's probably a good idea to work in your own branch.</del> Actually, probably not totally necessary if you're making a sketch but feel free to do it if you want :).
+
+Create a new branch:
 
 ```bash
 cd dayForNightSFPC
