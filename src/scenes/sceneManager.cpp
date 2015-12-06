@@ -17,6 +17,8 @@
 #include "RoyWhitney1.h"
 #include "veraFscene.h"
 #include "anastasisRileyScene.h"
+#include "menkmanJPG1.h"
+
 
 void sceneManager::setup(){
 
@@ -30,6 +32,8 @@ void sceneManager::setup(){
     scenes.push_back(new yeseulScene() );
     scenes.push_back(new johnWhitneyShader01());
     scenes.push_back(new anastasisRileyScene());
+    scenes.push_back(new menkmanJPG1());
+    
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
