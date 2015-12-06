@@ -3,7 +3,7 @@
 
 void menkmanJPG1::setup(){
 
-    ofSetLogLevel(OF_LOG_VERBOSE);
+//    ofSetLogLevel(OF_LOG_VERBOSE);
 
     srcPath = "menkmanJPG1/images/menkman.jpg";
     dstPath = "menkmanJPG1/images/menkmanGlitch.jpg";
@@ -80,7 +80,7 @@ void menkmanJPG1::glitchImage(int start, int max) {
     fout.close();
     fin.close();
     
-    ofLogVerbose("open in glitch");
+//    ofLogVerbose("open in glitch");
     dst.load(dstPath);
 }
 
