@@ -33,6 +33,7 @@
 		D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E91BF7E69B00F92C20 /* robbyRileyScene.cpp */; };
 		E18350561C14CCA300EAFB96 /* loloWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E18350541C14CCA300EAFB96 /* loloWhitney.cpp */; };
 		E183505A1C14F3AC00EAFB96 /* loloVera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E18350581C14F3AC00EAFB96 /* loloVera.cpp */; };
+		E1E9D2B01C151BE500B01B4A /* menkmanJPG1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1E9D2AE1C151BE500B01B4A /* menkmanJPG1.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
@@ -123,6 +124,8 @@
 		E18350551C14CCA300EAFB96 /* loloWhitney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loloWhitney.h; sourceTree = "<group>"; };
 		E18350581C14F3AC00EAFB96 /* loloVera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = loloVera.cpp; sourceTree = "<group>"; };
 		E18350591C14F3AC00EAFB96 /* loloVera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loloVera.h; sourceTree = "<group>"; };
+		E1E9D2AE1C151BE500B01B4A /* menkmanJPG1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menkmanJPG1.cpp; sourceTree = "<group>"; };
+		E1E9D2AF1C151BE500B01B4A /* menkmanJPG1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menkmanJPG1.h; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* d4nSFPCRunnerDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = d4nSFPCRunnerDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -239,6 +242,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E1E9D2AD1C151BE500B01B4A /* menkmanJPG1 */,
 				E18350571C14F3AC00EAFB96 /* loloVera */,
 				E18350531C14CCA300EAFB96 /* loloWhitney */,
 				9237CB9A1C11E9BD0007A916 /* veraFscene */,
@@ -363,6 +367,15 @@
 				E18350591C14F3AC00EAFB96 /* loloVera.h */,
 			);
 			path = loloVera;
+			sourceTree = "<group>";
+		};
+		E1E9D2AD1C151BE500B01B4A /* menkmanJPG1 */ = {
+			isa = PBXGroup;
+			children = (
+				E1E9D2AE1C151BE500B01B4A /* menkmanJPG1.cpp */,
+				E1E9D2AF1C151BE500B01B4A /* menkmanJPG1.h */,
+			);
+			path = menkmanJPG1;
 			sourceTree = "<group>";
 		};
 		E4328144138ABC890047C5CB /* Products */ = {
@@ -517,6 +530,7 @@
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
+				E1E9D2B01C151BE500B01B4A /* menkmanJPG1.cpp in Sources */,
 				923871B51BF7CCC900171456 /* emptyScene.cpp in Sources */,
 				923871A41BF7993A00171456 /* baseScene.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,

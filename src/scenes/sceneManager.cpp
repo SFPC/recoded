@@ -19,6 +19,8 @@
 #include "anastasisRileyScene.h"
 #include "loloWhitney.h"
 #include "loloVera.h"
+#include "menkmanJPG1.h"
+
 
 void sceneManager::setup(){
 
@@ -35,7 +37,8 @@ void sceneManager::setup(){
     scenes.push_back(new anastasisRileyScene());
     scenes.push_back(new loloWhitney());
     scenes.push_back(new loloVera());
-  
+    scenes.push_back(new menkmanJPG1());
+    
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
