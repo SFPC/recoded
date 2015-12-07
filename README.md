@@ -6,7 +6,12 @@ This project requires **openFrameworks 0.9.0**. You can [download it from the oF
 
 You'll also need to have your username added to the GitHub project, so have Zach add you if he hasn't already.
 
-### 1. Checkout the project from GitHub
+### 1. Find an artist to work with
+
+Take a look at the [project wiki](https://github.com/ofZach/dayForNightSFPC/wiki) and find an artist you'd like to work with.
+
+
+### 2. Checkout the project from GitHub
 
 In you openFrameworks `apps` folder, create a new folder for the "Day for Night" project. Then `cd` into that folder using the terminal and checkout the project from GitHub:
 
@@ -14,7 +19,7 @@ In you openFrameworks `apps` folder, create a new folder for the "Day for Night"
 git clone https://github.com/ofZach/dayForNightSFPC.git
 ```
 
-### <del>2. Make a branch</del>
+### <del>3. Make a branch</del>
 
 <del>It's probably a good idea to work in your own branch.</del> Actually, probably not totally necessary if you're making a sketch but feel free to do it if you want :).
 
@@ -25,7 +30,7 @@ cd dayForNightSFPC
 git checkout -b branchName
 ```
 
-### 3. Generate a new scene
+### 4. Generate a new scene
 
 Now you can use the scene generator script to generate a new scene. This will copy the `emptyScene` files and rename based on your new scene name.
 
@@ -44,7 +49,7 @@ Now you you can drag the new folder in the `scenes` folder into XCode. Make sure
 
 ![XCode Settings](https://dl.dropboxusercontent.com/u/2100102/sfpc/xcode-drag-files.png)
 
-### 4. Submitting Changes
+### 5. Submitting Changes
 
 There are two different workflows for submitting changes:
 

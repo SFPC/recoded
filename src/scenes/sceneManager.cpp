@@ -24,10 +24,14 @@
 #include "memoAktenScene.h"
 #include "submotionOrchestraScene.h"
 #include "manfredMohrP196A.h"
+#include "chrisMurielCooper.h"
+#include "chrisRileyCascando.h"
 #include "veraMolnarTrapezium.h"
 
 void sceneManager::setup(){
 	
+    scenes.push_back(new chrisRileyCascando());
+    scenes.push_back(new chrisMurielCooper());
 	scenes.push_back(new memoAktenScene());
     scenes.push_back(new submotionOrchestraScene());
 	scenes.push_back(new CooperBauhaus());
