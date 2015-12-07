@@ -17,6 +17,7 @@
 		7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */; };
 		71C091411C16197900C76EB9 /* manfredMohrP196A.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C0913F1C16197900C76EB9 /* manfredMohrP196A.cpp */; };
 		71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091441C1619FD00C76EB9 /* chrisMurielCooper.cpp */; };
+		71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091481C162E2E00C76EB9 /* chrisRileyCascando.cpp */; };
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
 		856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9604B925D32EE39065747725 /* ofxBaseGui.cpp */; };
 		85BCD90A1BF7E398004188EE /* yeseulScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BCD9081BF7E398004188EE /* yeseulScene.cpp */; };
@@ -94,6 +95,8 @@
 		71C091401C16197900C76EB9 /* manfredMohrP196A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manfredMohrP196A.h; sourceTree = "<group>"; };
 		71C091441C1619FD00C76EB9 /* chrisMurielCooper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chrisMurielCooper.cpp; sourceTree = "<group>"; };
 		71C091451C1619FD00C76EB9 /* chrisMurielCooper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chrisMurielCooper.h; sourceTree = "<group>"; };
+		71C091481C162E2E00C76EB9 /* chrisRileyCascando.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chrisRileyCascando.cpp; sourceTree = "<group>"; };
+		71C091491C162E2E00C76EB9 /* chrisRileyCascando.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chrisRileyCascando.h; sourceTree = "<group>"; };
 		78D67A00EB899FAC09430597 /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxLabel.cpp; path = ../../../addons/ofxGui/src/ofxLabel.cpp; sourceTree = SOURCE_ROOT; };
 		802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSliderGroup.cpp; path = ../../../addons/ofxGui/src/ofxSliderGroup.cpp; sourceTree = SOURCE_ROOT; };
 		832BDC407620CDBA568B713D /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlerror.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
@@ -254,6 +257,15 @@
 			path = chrisMurielCooper;
 			sourceTree = "<group>";
 		};
+		71C091471C162E2E00C76EB9 /* chrisRileyCascando */ = {
+			isa = PBXGroup;
+			children = (
+				71C091481C162E2E00C76EB9 /* chrisRileyCascando.cpp */,
+				71C091491C162E2E00C76EB9 /* chrisRileyCascando.h */,
+			);
+			path = chrisRileyCascando;
+			sourceTree = "<group>";
+		};
 		85BCD9071BF7E398004188EE /* yeseulScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +287,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				71C091471C162E2E00C76EB9 /* chrisRileyCascando */,
 				71C091431C1619FD00C76EB9 /* chrisMurielCooper */,
 				71C0913E1C16197900C76EB9 /* manfredMohrP196A */,
 				9A6B71BD1C157473000D7878 /* memoAktenScene */,
@@ -591,6 +604,7 @@
 				9237CB9D1C11E9BD0007A916 /* veraFscene.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				923871B71BF7CCC900171456 /* triangleScene.cpp in Sources */,
+				71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
