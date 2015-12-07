@@ -34,5 +34,4 @@ public:
 	ofParameter<bool> whiteBackground;
 	ofParameter<float> rearLineOpacity;
 	ofParameter<float> spacing;
-	ofParameter<float> compositionRotation;
 };
