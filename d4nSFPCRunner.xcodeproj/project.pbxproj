@@ -25,6 +25,8 @@
 		923871B61BF7CCC900171456 /* exampleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871B01BF7CCC900171456 /* exampleScene.cpp */; };
 		923871B71BF7CCC900171456 /* triangleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871B31BF7CCC900171456 /* triangleScene.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
+		9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B71BE1C157473000D7878 /* memoAktenScene.cpp */; };
+		9A6B71C41C157473000D7878 /* submotionOrchestraScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B71C11C157473000D7878 /* submotionOrchestraScene.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
 		B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */; };
 		B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */; };
@@ -108,6 +110,10 @@
 		923871B41BF7CCC900171456 /* triangleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangleScene.h; sourceTree = "<group>"; };
 		923871B81BF7D2C400171456 /* appConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = appConstants.h; path = scenes/appConstants.h; sourceTree = "<group>"; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
+		9A6B71BE1C157473000D7878 /* memoAktenScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memoAktenScene.cpp; sourceTree = "<group>"; };
+		9A6B71BF1C157473000D7878 /* memoAktenScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memoAktenScene.h; sourceTree = "<group>"; };
+		9A6B71C11C157473000D7878 /* submotionOrchestraScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = submotionOrchestraScene.cpp; sourceTree = "<group>"; };
+		9A6B71C21C157473000D7878 /* submotionOrchestraScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = submotionOrchestraScene.h; sourceTree = "<group>"; };
 		B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoyWhitney1.cpp; sourceTree = "<group>"; };
 		B018C1A91C10F22100F70DA8 /* RoyWhitney1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoyWhitney1.h; sourceTree = "<group>"; };
 		B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CooperBauhaus.cpp; sourceTree = "<group>"; };
@@ -245,6 +251,8 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9A6B71BD1C157473000D7878 /* memoAktenScene */,
+				9A6B71C01C157473000D7878 /* submotionOrchestraScene */,
 				B01DF6FE1C14F02D00B2EAB0 /* CooperBauhaus */,
 				E1E9D2AD1C151BE500B01B4A /* menkmanJPG1 */,
 				E18350571C14F3AC00EAFB96 /* loloVera */,
@@ -293,6 +301,24 @@
 				923871B41BF7CCC900171456 /* triangleScene.h */,
 			);
 			path = triangleScene;
+			sourceTree = "<group>";
+		};
+		9A6B71BD1C157473000D7878 /* memoAktenScene */ = {
+			isa = PBXGroup;
+			children = (
+				9A6B71BE1C157473000D7878 /* memoAktenScene.cpp */,
+				9A6B71BF1C157473000D7878 /* memoAktenScene.h */,
+			);
+			path = memoAktenScene;
+			sourceTree = "<group>";
+		};
+		9A6B71C01C157473000D7878 /* submotionOrchestraScene */ = {
+			isa = PBXGroup;
+			children = (
+				9A6B71C11C157473000D7878 /* submotionOrchestraScene.cpp */,
+				9A6B71C21C157473000D7878 /* submotionOrchestraScene.h */,
+			);
+			path = submotionOrchestraScene;
 			sourceTree = "<group>";
 		};
 		A763ED608B35AE3310251DEE /* src */ = {
@@ -540,6 +566,7 @@
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				923871B71BF7CCC900171456 /* triangleScene.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
+				9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
@@ -553,6 +580,7 @@
 				7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */,
 				B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */,
 				4FEF16411C1146E0000B3B4F /* anastasisRileyScene.cpp in Sources */,
+				9A6B71C41C157473000D7878 /* submotionOrchestraScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
