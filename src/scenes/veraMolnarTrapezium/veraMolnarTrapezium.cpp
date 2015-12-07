@@ -92,7 +92,7 @@ void veraMolnarTrapezium::drawTrapezium(int row, int column){
 	float centerSpanX = (rightmostCenter - leftmostCenter);
 	float centerSpanY = (bottommostCenter - topmostCenter);
 	float targetCenterX = centerSpanX * placements[index][iCenterX] + leftmostCenter;
-	float targetCenterY = centerSpanY * placements[index][iCenterY] + leftmostCenter;
+	float targetCenterY = centerSpanY * placements[index][iCenterY] + topmostCenter;
 
 	float centerX = 
 		startCenterX * (1. - centerNoise) + 
