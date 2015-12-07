@@ -10,6 +10,8 @@ void RoyWhitney1::setup(){
     parameters.add(iterations.set("Iterations", 2, 1, 10));
     parameters.add(opacity.set("Opacity", 20, 0, 255));
     parameters.add(lineWidth.set("Line Width", 1,0, 10));
+    parameters.add(currentTime.set("Current Time", 0,0, 5000));
+    parameters.add(currentSize.set("Current Size", 50,0,400));
     loadCode("RoyWhitney1/exampleCode.cpp");
 }
 
@@ -23,8 +25,9 @@ void RoyWhitney1::draw(){
     ofBackground(0);
     ofSetColor(255,opacity);
     ofSetLineWidth(lineWidth);
-    float t = TWO_PI*ofGetElapsedTimef()*speed;
-    drawCircles(center, radius0, t, size0*(1+sin(t)*growFactor), circles, 0);
+    currentTime.set(TWO_PI*ofGetElapsedTimef()*speed);
+    currentSize.set(size0*(1+sin(currentTime)*growFactor));
+    drawCircles(center, radius0, currentTime, currentSize, circles, 0);
 }
 //--------------------------------------------------------------
 void RoyWhitney1::drawCircles(ofVec3f center, float radius, float time, float size, int numCircles, int currentIteration){

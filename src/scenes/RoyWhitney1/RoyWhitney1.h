@@ -12,6 +12,6 @@ public:
     void draw();
     
     void drawCircles(ofVec3f center, float radius, float time, float size, int numCircles, int currentIteration = 0);
-    ofParameter<float> radius0, size0, growFactor, speed, lineWidth;
+    ofParameter<float> radius0, size0, growFactor, speed, lineWidth, currentTime, currentSize;
     ofParameter<int> circles, iterations, opacity;
 };
