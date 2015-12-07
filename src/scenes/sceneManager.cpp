@@ -24,9 +24,11 @@
 #include "memoAktenScene.h"
 #include "submotionOrchestraScene.h"
 #include "manfredMohrP196A.h"
+#include "chrisMurielCooper.h"
 
 void sceneManager::setup(){
 	
+    scenes.push_back(new chrisMurielCooper());
 	scenes.push_back(new memoAktenScene());
     scenes.push_back(new submotionOrchestraScene());
 	scenes.push_back(new CooperBauhaus());
