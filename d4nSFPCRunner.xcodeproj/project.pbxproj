@@ -27,6 +27,7 @@
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
 		B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */; };
+		B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
 		B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */; };
 		C1EF411A1C14EBAF00426430 /* menkmanJPG1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1EF41181C14EBAF00426430 /* menkmanJPG1.cpp */; };
@@ -107,6 +108,8 @@
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoyWhitney1.cpp; sourceTree = "<group>"; };
 		B018C1A91C10F22100F70DA8 /* RoyWhitney1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoyWhitney1.h; sourceTree = "<group>"; };
+		B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CooperBauhaus.cpp; sourceTree = "<group>"; };
+		B01DF7001C14F02D00B2EAB0 /* CooperBauhaus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CooperBauhaus.h; sourceTree = "<group>"; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		B87C60311EC1FE841C1ECD89 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		C1EF41181C14EBAF00426430 /* menkmanJPG1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menkmanJPG1.cpp; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B01DF6FE1C14F02D00B2EAB0 /* CooperBauhaus */,
 				C1EF41171C14EBAF00426430 /* menkmanJPG1 */,
 				9237CB9A1C11E9BD0007A916 /* veraFscene */,
 				B018C1A71C10F22100F70DA8 /* RoyWhitney1 */,
@@ -314,6 +318,15 @@
 				B018C1A91C10F22100F70DA8 /* RoyWhitney1.h */,
 			);
 			path = RoyWhitney1;
+			sourceTree = "<group>";
+		};
+		B01DF6FE1C14F02D00B2EAB0 /* CooperBauhaus */ = {
+			isa = PBXGroup;
+			children = (
+				B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */,
+				B01DF7001C14F02D00B2EAB0 /* CooperBauhaus.h */,
+			);
+			path = CooperBauhaus;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
@@ -485,6 +498,7 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */,
