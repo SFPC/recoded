@@ -21,11 +21,14 @@
 #include "loloVera.h"
 #include "menkmanJPG1.h"
 #include "CooperBauhaus.h"
-
+#include "memoAktenScene.h"
+#include "submotionOrchestraScene.h"
 
 void sceneManager::setup(){
-
-    scenes.push_back(new CooperBauhaus());   
+	
+	scenes.push_back(new memoAktenScene());
+    scenes.push_back(new submotionOrchestraScene());
+	scenes.push_back(new CooperBauhaus());
     scenes.push_back(new RoyWhitney1());
     scenes.push_back(new veraFscene());
     scenes.push_back(new robbyMolnarScene() );
