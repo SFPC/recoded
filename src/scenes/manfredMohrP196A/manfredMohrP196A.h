@@ -16,11 +16,14 @@ class manfredMohrP196A : public baseScene {
 
 private:
 
-	ofBoxPrimitive cube;
 	ofCamera orthoCam;
-	void drawCube(float rotX, float rotY, float rotZ);
+	int numWide, numHigh;
+	ofVec4f zeroVector;
+	void drawCube(ofVec4f rotation);
+	int getIndexA(int rowNum, int columnNum);
 	void drawComposition(int rowNum, int columnNum);
 	int foregroundColor, backgroundColor, backgroundHighlightColor, highlightLineWidth;
+	vector<ofVec4f> rotations;
 
 public:
     
@@ -28,8 +31,9 @@ public:
     void update();
     void draw();
 	
-	ofParameter<float> cubeARotationX, cubeARotationY, cubeARotationZ;
-	ofParameter<float> cubeBRotationX, cubeBRotationY, cubeBRotationZ;
+	ofParameter<float> cubeARotationPercent;
+	ofParameter<float> cubeBRotationDiffPercent;
+	ofParameter<float> cubeOthersRotationDiffPercent;
 	ofParameter<float> scale;
 	ofParameter<bool> whiteBackground;
 	ofParameter<float> rearLineOpacity;

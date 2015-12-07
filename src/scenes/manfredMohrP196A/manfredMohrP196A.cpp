@@ -3,9 +3,8 @@
 
 void manfredMohrP196A::setup(){
 
-	cube = ofBoxPrimitive(1, 1, 1, 1, 1, 1);
-	cube.setMode(ofPrimitiveMode::OF_PRIMITIVE_LINES);
-	
+	zeroVector = ofVec4f(0., 0., 0., 0.);
+
 	orthoCam = ofCamera();
 	//Manfred Mohr commonly used an orthographic perspective
 	orthoCam.enableOrtho();
@@ -16,22 +15,17 @@ void manfredMohrP196A::setup(){
 // setup pramaters
 //    param.set("param", 5, 0, 100);
 //    parameters.add(param);
-	cubeARotationX.set("cubeARotationX", 10, 0, 360);
-	cubeARotationY.set("cubeARotationY", 20, 0, 360);
-	cubeARotationZ.set("cubeARotationZ", 30, 0, 360);
-	cubeBRotationX.set("cubeBRotationX", 40, 0, 360);
-	cubeBRotationY.set("cubeBRotationY", 50, 0, 360);
-	cubeBRotationZ.set("cubeBRotationZ", 60, 0, 360);
-	scale.set("scale", 200, 10, 1000);
+	cubeARotationPercent.set("cubeARotationPercent", 0., 0., 1.);
+	cubeBRotationDiffPercent.set("cubeBRotationDiffPercent", 0., 0., 1.);
+	cubeOthersRotationDiffPercent.set("cubeOthersRotationDiffPercent", 0., 0., 1.);
+	scale.set("scale", min(dimensions.width, dimensions.height)/2., 10, 1001);
 	whiteBackground.set("whiteBackground", true);
 	rearLineOpacity.set("rearLineOpacity", 0, 0, 255);
-	spacing.set("spacing", 2, 1, 10);
-	parameters.add(cubeARotationX);
-	parameters.add(cubeARotationY);
-	parameters.add(cubeARotationZ);
-	parameters.add(cubeBRotationX);
-	parameters.add(cubeBRotationY);
-	parameters.add(cubeBRotationZ);
+	//~1.75 spacing is the smallest before overlap starts occuring
+	spacing.set("spacing", 2, 1.75, 10);
+	parameters.add(cubeARotationPercent);
+	parameters.add(cubeBRotationDiffPercent);
+	parameters.add(cubeOthersRotationDiffPercent);
 	parameters.add(scale);
 	parameters.add(whiteBackground);
 	parameters.add(rearLineOpacity);
@@ -41,13 +35,77 @@ void manfredMohrP196A::setup(){
 }
 
 void manfredMohrP196A::update(){
-    
+	numWide = ceil((float)dimensions.width / scale / spacing);
+	if (numWide % 2 == 0){
+		numWide++;
+	}
+	numHigh = ceil((float)dimensions.height / scale / spacing);
+	if (numHigh % 2 == 0){
+		numHigh++;
+	}
+
+	//I want the first 'A' rotation to be significant
+	// this will allow the animation to be apparent
+	int minRotation = 0;
+	if (rotations.size() == 0){
+		minRotation = 180;
+	}
+	while(rotations.size() < (numWide * numHigh * 2)){
+		rotations.push_back(ofVec4f(ofRandom(minRotation, 360), ofRandom(180), ofRandom(180), ofRandom(180)));
+		minRotation = 0;
+	}
+}
+
+int manfredMohrP196A::getIndexA(int rowNum, int columnNum){
+	int ringNum = max(abs(rowNum), abs(columnNum));
+	int startIndex = max(((ringNum-1)*8+1) * 2, 0);
+	int ringDiameter = ringNum*2+1;
+	int indexAOffset = 0;
+	if (rowNum == -ringNum){
+		indexAOffset += columnNum + ringDiameter/2;
+	} else {
+		indexAOffset += ringDiameter - 1;
+		if (columnNum == ringNum){
+			indexAOffset += rowNum + ringDiameter/2;
+		} else {
+			indexAOffset += ringDiameter - 1;
+			if (rowNum == ringNum){
+				indexAOffset += -columnNum + ringDiameter/2;
+			} else {
+				indexAOffset += ringDiameter - 1;
+				indexAOffset += -rowNum + ringDiameter/2;
+			}
+		}
+	}
+	indexAOffset *= 2;
+	return startIndex + indexAOffset;
 }
 
 void manfredMohrP196A::drawComposition(int rowNum, int columnNum){
 	float screenSpaceWidth = scale * spacing;
 	int screenSpaceBottom = -(int)(rowNum * screenSpaceWidth + screenSpaceWidth/2 - dimensions.height/2.);
 	int screenSpaceRight = (int)(columnNum * screenSpaceWidth - screenSpaceWidth/2 + dimensions.width/2.);
+	int indexA = getIndexA(rowNum, columnNum);
+	int indexB = indexA + 1;
+	ofVec4f rotationA, rotationB;
+	
+	ofVec4f rotationCenterA =
+		zeroVector * (1. - cubeARotationPercent) +
+		rotations[0] * cubeARotationPercent;
+	ofVec4f rotationCenterB =
+		rotationCenterA * (1. - cubeBRotationDiffPercent) +
+		rotations[1] * cubeBRotationDiffPercent;
+	if (rowNum == 0 && columnNum == 0){
+		rotationA = rotationCenterA;
+		rotationB = rotationCenterB;
+	} else {
+		rotationA =
+			rotationCenterA * (1. - cubeOthersRotationDiffPercent) +
+			rotations[indexA] * cubeOthersRotationDiffPercent;
+		rotationB =
+			rotationCenterB * (1. - cubeOthersRotationDiffPercent) +
+			rotations[indexB] * cubeOthersRotationDiffPercent;
+	}
 
 	ofPushMatrix();
 	{
@@ -64,10 +122,10 @@ void manfredMohrP196A::drawComposition(int rowNum, int columnNum){
 				screenSpaceWidth/2);
 			ofSetColor(backgroundColor);
 			ofFill();
-			drawCube(cubeARotationX, cubeARotationY, cubeARotationZ);
+			drawCube(rotationA);
 			ofSetColor(foregroundColor);
 			ofNoFill();
-			drawCube(cubeARotationX, cubeARotationY, cubeARotationZ);
+			drawCube(rotationA);
 	
 			//draw cube B
 			glScissor(
@@ -77,10 +135,10 @@ void manfredMohrP196A::drawComposition(int rowNum, int columnNum){
 				screenSpaceWidth/2);
 			ofSetColor(backgroundColor);
 			ofFill();
-			drawCube(cubeBRotationX, cubeBRotationY, cubeBRotationZ);
+			drawCube(rotationB);
 			ofSetColor(foregroundColor);
 			ofNoFill();
-			drawCube(cubeBRotationX, cubeBRotationY, cubeBRotationZ);
+			drawCube(rotationB);
 
 			
 			//draw inner bg
@@ -91,7 +149,7 @@ void manfredMohrP196A::drawComposition(int rowNum, int columnNum){
 				scale);
 			ofSetColor(backgroundHighlightColor);
 			ofFill();
-			drawCube(0, 0, 0);
+			drawCube(zeroVector);
 			
 			ofSetColor(foregroundColor);
 			ofSetLineWidth(highlightLineWidth);
@@ -102,7 +160,7 @@ void manfredMohrP196A::drawComposition(int rowNum, int columnNum){
 				screenSpaceBottom + (int)((screenSpaceWidth - scale)/2),
 				scale,
 				scale/2);
-			drawCube(cubeARotationX, cubeARotationY, cubeARotationZ);
+			drawCube(rotationA);
 	
 			//draw inner cube B
 			glScissor(
@@ -110,7 +168,7 @@ void manfredMohrP196A::drawComposition(int rowNum, int columnNum){
 				screenSpaceBottom + (int)(screenSpaceWidth/2),
 				scale,
 				scale/2);
-			drawCube(cubeBRotationX, cubeBRotationY, cubeBRotationZ);
+			drawCube(rotationB);
 
 		}
 		glDisable(GL_SCISSOR_TEST);  
@@ -122,12 +180,10 @@ void manfredMohrP196A::drawComposition(int rowNum, int columnNum){
 	ofPopMatrix();
 }
 
-void manfredMohrP196A::drawCube(float rotX, float rotY, float rotZ){
+void manfredMohrP196A::drawCube(ofVec4f rotation){
 	ofPushMatrix();
 	{
-		ofRotateX(rotX);
-		ofRotateY(rotY);
-		ofRotateZ(rotZ);
+		ofRotate(rotation[0], rotation[1], rotation[2], rotation[3]);
 		//use ofDrawBox instead of an ofBoxPrimitive
 		// because the primitive wireframe shows triangles
 		// and we don't want lines bisecting the faces
@@ -153,14 +209,6 @@ void manfredMohrP196A::draw(){
 		ofPushMatrix();
 		{
 			ofScale(scale, scale, scale);
-			int numWide = ceil((float)dimensions.width / scale / spacing);
-			if (numWide % 2 == 0){
-				numWide++;
-			}
-			int numHigh = ceil((float)dimensions.height / scale / spacing);
-			if (numHigh % 2 == 0){
-				numHigh++;
-			}
 			for(int row = -floor(numHigh/2.); row < ceil(numHigh/2.); row++){
 				for(int col = -floor(numWide/2.); col < ceil(numWide/2.); col++){
 					drawComposition(row, col);
