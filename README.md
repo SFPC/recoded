@@ -14,9 +14,11 @@ In you openFrameworks `apps` folder, create a new folder for the "Day for Night"
 git clone https://github.com/ofZach/dayForNightSFPC.git
 ```
 
-### 2. Make a branch
+### <del>2. Make a branch</del>
 
-It's probably a good idea to work in your own branch. Create a new branch:
+<del>It's probably a good idea to work in your own branch.</del> Actually, probably not totally necessary if you're making a sketch but feel free to do it if you want :).
+
+Create a new branch:
 
 ```bash
 cd dayForNightSFPC
@@ -25,7 +27,7 @@ git checkout -b branchName
 
 ### 3. Generate a new scene
 
-Now you can use the project generator script to generate a new scene. This will copy the `emptyScene` files and rename based on your new scene name.
+Now you can use the scene generator script to generate a new scene. This will copy the `emptyScene` files and rename based on your new scene name.
 
 Use the terminal to `cd` into your project folder and run the following, substituting `sceneName` with the name of your scene:
 

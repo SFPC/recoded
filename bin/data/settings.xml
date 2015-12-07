@@ -2,4 +2,12 @@
 	<group/>
 	<angle>91.4777</angle>
 	<width>72.3469</width>
+<Ellipse_Size>500</Ellipse_Size>
+<Main_Speed>0.01</Main_Speed>
+<Queue_Insert_Speed>1</Queue_Insert_Speed>
+<Wave_Size>9.58673</Wave_Size>
+<Rotation>2.03571</Rotation>
+<Fog_min>1159.84</Fog_min>
+	<Fog_max>898.612</Fog_max>
+<Extrude>10</Extrude>
 </group>
