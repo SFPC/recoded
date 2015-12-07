@@ -111,9 +111,17 @@ void sceneManager::draw(){
     
 }
 
-void sceneManager::advanceScene(){
-    currentScene ++;
-    currentScene %= scenes.size();
+void sceneManager::nextScene(bool forward){
+	if (forward){
+    	currentScene ++;
+    	currentScene %= scenes.size();
+	} else {
+	    currentScene --;
+		if (currentScene < 0){
+			currentScene = scenes.size() - 1;
+		}
+	}
+
     scenes[currentScene]->reset();
     
     
@@ -124,5 +132,12 @@ void sceneManager::advanceScene(){
     panel->add(scenes[currentScene]->parameters);
     
     panel->setPosition(ofGetWidth()-300, 20);
-    
+}; 
+
+void sceneManager::advanceScene(){
+	nextScene(true);
+};
+
+void sceneManager::regressScene(){
+	nextScene(false);
 };

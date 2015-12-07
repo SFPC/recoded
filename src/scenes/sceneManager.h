@@ -15,6 +15,10 @@ enum drawMode {
 // I take care of scenes.
 
 class sceneManager {
+
+private:
+
+	void nextScene(bool forward);
     
 public:
     
@@ -27,6 +31,7 @@ public:
     void draw();
     
     void advanceScene();
+	void regressScene();
     
     ofFbo sceneFbo;
     ofFbo codeFbo;

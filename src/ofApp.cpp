@@ -42,7 +42,9 @@ void ofApp::keyPressed(int key){
 
     if (key == ' '){
         SM.advanceScene();
-    }
+    } else if (key == '.'){
+		SM.regressScene();
+	}
     
     if (key == '0'){
         SM.mode = DRAW_SIDE_BY_SIDE;
