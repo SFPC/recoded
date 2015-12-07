@@ -19,6 +19,8 @@ private:
 	ofBoxPrimitive cube;
 	ofCamera orthoCam;
 	void drawCube(float rotX, float rotY, float rotZ);
+	void drawComposition(int rowNum, int columnNum);
+	int foregroundColor, backgroundColor, backgroundHighlightColor, highlightLineWidth;
 
 public:
     
@@ -30,7 +32,7 @@ public:
 	ofParameter<float> cubeBRotationX, cubeBRotationY, cubeBRotationZ;
 	ofParameter<float> scale;
 	ofParameter<bool> whiteBackground;
-	
-    
-//    ofParameter<float> param;
+	ofParameter<float> rearLineOpacity;
+	ofParameter<float> spacing;
+	ofParameter<float> compositionRotation;
 };
