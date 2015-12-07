@@ -31,6 +31,8 @@
 		B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */; };
 		D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E41BF7DE2D00F92C20 /* robbyMolnarScene.cpp */; };
 		D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E91BF7E69B00F92C20 /* robbyRileyScene.cpp */; };
+		E18350561C14CCA300EAFB96 /* loloWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E18350541C14CCA300EAFB96 /* loloWhitney.cpp */; };
+		E183505A1C14F3AC00EAFB96 /* loloVera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E18350581C14F3AC00EAFB96 /* loloVera.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
@@ -117,6 +119,10 @@
 		D5F490E91BF7E69B00F92C20 /* robbyRileyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = robbyRileyScene.cpp; sourceTree = "<group>"; };
 		D5F490EA1BF7E69B00F92C20 /* robbyRileyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = robbyRileyScene.h; sourceTree = "<group>"; };
 		E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPanel.cpp; path = ../../../addons/ofxGui/src/ofxPanel.cpp; sourceTree = SOURCE_ROOT; };
+		E18350541C14CCA300EAFB96 /* loloWhitney.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = loloWhitney.cpp; sourceTree = "<group>"; };
+		E18350551C14CCA300EAFB96 /* loloWhitney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loloWhitney.h; sourceTree = "<group>"; };
+		E18350581C14F3AC00EAFB96 /* loloVera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = loloVera.cpp; sourceTree = "<group>"; };
+		E18350591C14F3AC00EAFB96 /* loloVera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loloVera.h; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* d4nSFPCRunnerDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = d4nSFPCRunnerDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -233,6 +239,8 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E18350571C14F3AC00EAFB96 /* loloVera */,
+				E18350531C14CCA300EAFB96 /* loloWhitney */,
 				9237CB9A1C11E9BD0007A916 /* veraFscene */,
 				B018C1A71C10F22100F70DA8 /* RoyWhitney1 */,
 				4FEF163E1C114519000B3B4F /* anastasisRileyScene */,
@@ -337,6 +345,24 @@
 				D5F490EA1BF7E69B00F92C20 /* robbyRileyScene.h */,
 			);
 			path = robbyRileyScene;
+			sourceTree = "<group>";
+		};
+		E18350531C14CCA300EAFB96 /* loloWhitney */ = {
+			isa = PBXGroup;
+			children = (
+				E18350541C14CCA300EAFB96 /* loloWhitney.cpp */,
+				E18350551C14CCA300EAFB96 /* loloWhitney.h */,
+			);
+			path = loloWhitney;
+			sourceTree = "<group>";
+		};
+		E18350571C14F3AC00EAFB96 /* loloVera */ = {
+			isa = PBXGroup;
+			children = (
+				E18350581C14F3AC00EAFB96 /* loloVera.cpp */,
+				E18350591C14F3AC00EAFB96 /* loloVera.h */,
+			);
+			path = loloVera;
 			sourceTree = "<group>";
 		};
 		E4328144138ABC890047C5CB /* Products */ = {
@@ -478,8 +504,10 @@
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				26B248401BF7DA1100C11D04 /* veraAnimatedScene.cpp in Sources */,
 				85BCD90A1BF7E398004188EE /* yeseulScene.cpp in Sources */,
+				E183505A1C14F3AC00EAFB96 /* loloVera.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
+				E18350561C14CCA300EAFB96 /* loloWhitney.cpp in Sources */,
 				923871B61BF7CCC900171456 /* exampleScene.cpp in Sources */,
 				9237CB9D1C11E9BD0007A916 /* veraFscene.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,

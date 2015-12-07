@@ -17,9 +17,12 @@
 #include "RoyWhitney1.h"
 #include "veraFscene.h"
 #include "anastasisRileyScene.h"
+#include "loloWhitney.h"
+#include "loloVera.h"
 
 void sceneManager::setup(){
 
+   
     scenes.push_back(new RoyWhitney1());
     scenes.push_back(new veraFscene());
     scenes.push_back(new robbyMolnarScene() );
@@ -30,6 +33,9 @@ void sceneManager::setup(){
     scenes.push_back(new yeseulScene() );
     scenes.push_back(new johnWhitneyShader01());
     scenes.push_back(new anastasisRileyScene());
+    scenes.push_back(new loloWhitney());
+    scenes.push_back(new loloVera());
+  
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);

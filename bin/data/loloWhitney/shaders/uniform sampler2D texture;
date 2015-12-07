@@ -1,0 +1,97 @@
+uniform sampler2D texture;
+uniform sampler2D vhsTex;
+uniform float divisor;
+uniform float yscan;
+uniform float xscan;
+uniform float distortionAmount;
+uniform float additivePlus;
+uniform float bevelAmmountX;
+uniform float bevelAmmountY;
+uniform float moreNoiseLessNumber;
+
+uniform float resolution;
+uniform float radius;
+uniform vec2 dir;
+
+uniform float distWeight;
+
+float rand(vec3 co){
+	return fract(sin( dot(co.xyz ,vec3(12.9898,78.233,45.5432) )) * 43758.5453);
+}
+
+void main()
+{
+
+	//Multiply color by texture
+	
+	vec4 sum = vec4(0.0);
+
+    //our original texcoord for this fragment
+    vec2 tc = gl_TexCoord[0].xy;
+
+    //the amount to blur, i.e. how far off center to sample from 
+    //1.0 -> blur by one pixel
+    //2.0 -> blur by two pixels, etc.
+    float blur = radius/resolution; 
+
+    //the direction of our blur
+    //(1.0, 0.0) -> x-axis blur
+    //(0.0, 1.0) -> y-axis blur
+    float hstep = dir.x;
+    float vstep = dir.y;
+    
+    sum += texture2D(texture, vec2(tc.x - 4.0*blur*hstep, tc.y - 4.0*blur*vstep)) * 0.0162162162;
+    sum += texture2D(texture, vec2(tc.x - 3.0*blur*hstep, tc.y - 3.0*blur*vstep)) * 0.0540540541;
+    sum += texture2D(texture, vec2(tc.x - 2.0*blur*hstep, tc.y - 2.0*blur*vstep)) * 0.1216216216;
+    sum += texture2D(texture, vec2(tc.x - 1.0*blur*hstep, tc.y - 1.0*blur*vstep)) * 0.1945945946;
+
+    sum += texture2D(texture, vec2(tc.x, tc.y)) * 0.2270270270;
+
+    sum += texture2D(texture, vec2(tc.x + 1.0*blur*hstep, tc.y + 1.0*blur*vstep)) * 0.1945945946;
+    sum += texture2D(texture, vec2(tc.x + 2.0*blur*hstep, tc.y + 2.0*blur*vstep)) * 0.1216216216;
+    sum += texture2D(texture, vec2(tc.x + 3.0*blur*hstep, tc.y + 3.0*blur*vstep)) * 0.0540540541;
+    sum += texture2D(texture, vec2(tc.x + 4.0*blur*hstep, tc.y + 4.0*blur*vstep)) * 0.0162162162;
+
+	vec4 blurTexture = gl_Color * vec4(sum.rgb, 1.0);
+	
+	vec4	vhs = texture2D(vhsTex,gl_TexCoord[0].xy);
+	float dx = 1.0-abs(distance(gl_TexCoord[0].y,yscan));
+	float dy = 1.0-abs(distance(gl_TexCoord[0].y,yscan));
+	dy=(dy*2.0)/15.0;
+	dy = dy;
+	vec2 uv = gl_TexCoord[0].xy;
+	uv.x+=dy*distortionAmount+fract(vec3(dy,dy,dy).r)/500.0;
+	float white = (vhs.r+vhs.g+vhs.b)*.0;
+	if(dx > distWeight){
+		uv.y = yscan;
+	}
+	uv.x = mod(uv.x,1.0);
+	uv.y = mod(uv.y,1.0);
+	vec4 c = texture2D(texture,uv);
+	
+
+	c+=texture2D(texture,vec2(uv.x+(bevelAmmountX),uv.y+(bevelAmmountY)));
+	c-=texture2D(texture,vec2(uv.x-(bevelAmmountX),uv.y-(bevelAmmountY)));	//c+=(c*(additivePlus < 1.0 ? 1.0 : additivePlus));
+		
+	
+	//Multiply color by texture
+	float bleed = texture2D(texture, gl_TexCoord[0].xy+vec2(0.01,0.0)).r;
+	bleed+=texture2D(texture, gl_TexCoord[0].xy+vec2(0.02,0.0)).r;
+	bleed+=texture2D(texture, gl_TexCoord[0].xy+vec2(0.01,0.01)).r;
+	bleed+=texture2D(texture, gl_TexCoord[0].xy+vec2(0.02,0.02)).r;
+	bleed/=6.0;
+	
+		
+	if(bleed > 0.8){
+		vhs+=vec4(bleed*xscan,bleed*xscan,bleed*xscan,1.0);	
+	}
+	
+	
+		
+	float x = (uv.x*320.0)/240.0;
+	float y = (uv.y*240.0)/240.0;
+	c-= vec4(rand(vec3(x,y,xscan))*xscan/moreNoiseLessNumber);
+	
+	
+	gl_FragColor = c+vhs+(blurTexture*additivePlus);
+}
