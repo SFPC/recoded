@@ -33,7 +33,10 @@ public:
     
 //    ofParameter<float> param;
 	ofParameter<float> baseSize;
-	ofParameter<float> spacing;
+	ofParameter<float> spacingPercent;
+	ofParameter<float> spacingPercentX, spacingPercentY;
+	ofParameter<bool> unifiedSpacing;
+	ofParameter<bool> whiteBackground;
 	ofParameter<int> numWide;
 	ofParameter<float> cornerNoise;
 	ofParameter<float> centerNoise;
