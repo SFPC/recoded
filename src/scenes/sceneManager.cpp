@@ -20,11 +20,12 @@
 #include "loloWhitney.h"
 #include "loloVera.h"
 #include "menkmanJPG1.h"
+#include "CooperBauhaus.h"
 
 
 void sceneManager::setup(){
 
-   
+    scenes.push_back(new CooperBauhaus());   
     scenes.push_back(new RoyWhitney1());
     scenes.push_back(new veraFscene());
     scenes.push_back(new robbyMolnarScene() );
