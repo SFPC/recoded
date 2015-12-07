@@ -27,7 +27,7 @@ git checkout -b branchName
 
 ### 3. Generate a new scene
 
-Now you can use the project generator script to generate a new scene. This will copy the `emptyScene` files and rename based on your new scene name.
+Now you can use the scene generator script to generate a new scene. This will copy the `emptyScene` files and rename based on your new scene name.
 
 Use the terminal to `cd` into your project folder and run the following, substituting `sceneName` with the name of your scene:
 
