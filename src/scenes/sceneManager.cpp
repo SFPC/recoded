@@ -26,6 +26,7 @@
 #include "manfredMohrP196A.h"
 #include "chrisMurielCooper.h"
 #include "chrisRileyCascando.h"
+#include "veraMolnarTrapezium.h"
 
 void sceneManager::setup(){
 	
@@ -48,6 +49,7 @@ void sceneManager::setup(){
     scenes.push_back(new loloVera());
     scenes.push_back(new menkmanJPG1());
 	scenes.push_back(new manfredMohrP196A());
+	scenes.push_back(new veraMolnarTrapezium());
     
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
