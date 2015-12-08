@@ -12,7 +12,7 @@
 #include "veraAnimatedScene.h"
 #include "robbyMolnarScene.h"
 #include "robbyRileyScene.h"
-#include "yeseulScene.h"
+#include "yeseulWhitneyScene.h"
 #include "johnWhitneyShader01.h"
 #include "RoyWhitney1.h"
 #include "veraFscene.h"
@@ -42,7 +42,7 @@ void sceneManager::setup(){
     scenes.push_back(new exampleScene() );
     scenes.push_back(new triangleScene() );
     scenes.push_back(new robbyRileyScene() );
-    scenes.push_back(new yeseulScene() );
+    scenes.push_back(new yeseulWhitneyScene() );
     scenes.push_back(new johnWhitneyShader01());
     scenes.push_back(new anastasisRileyScene());
     scenes.push_back(new loloWhitney());
