@@ -27,9 +27,10 @@
 #include "chrisMurielCooper.h"
 #include "chrisRileyCascando.h"
 #include "veraMolnarTrapezium.h"
+#include "loloVera2.h"
 
 void sceneManager::setup(){
-	
+
     scenes.push_back(new chrisRileyCascando());
     scenes.push_back(new chrisMurielCooper());
 	scenes.push_back(new memoAktenScene());
@@ -50,6 +51,7 @@ void sceneManager::setup(){
     scenes.push_back(new menkmanJPG1());
 	scenes.push_back(new manfredMohrP196A());
 	scenes.push_back(new veraMolnarTrapezium());
+    scenes.push_back(new loloVera2());
     
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
