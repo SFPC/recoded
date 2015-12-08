@@ -38,6 +38,8 @@
 		B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
 		B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */; };
+		C13A36731C17906200F13242 /* aaronMarcusHieroglyphB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */; };
+		C13A36771C17906E00F13242 /* menkmanPNG1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13A36751C17906E00F13242 /* menkmanPNG1.cpp */; };
 		D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E41BF7DE2D00F92C20 /* robbyMolnarScene.cpp */; };
 		D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E91BF7E69B00F92C20 /* robbyRileyScene.cpp */; };
 		E12029031C1655E60093B1A4 /* veraMolnarTrapezium.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12029011C1655E60093B1A4 /* veraMolnarTrapezium.cpp */; };
@@ -140,6 +142,10 @@
 		B01DF7001C14F02D00B2EAB0 /* CooperBauhaus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CooperBauhaus.h; sourceTree = "<group>"; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		B87C60311EC1FE841C1ECD89 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
+		C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aaronMarcusHieroglyphB.cpp; sourceTree = "<group>"; };
+		C13A36721C17906200F13242 /* aaronMarcusHieroglyphB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aaronMarcusHieroglyphB.h; sourceTree = "<group>"; };
+		C13A36751C17906E00F13242 /* menkmanPNG1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menkmanPNG1.cpp; sourceTree = "<group>"; };
+		C13A36761C17906E00F13242 /* menkmanPNG1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menkmanPNG1.h; sourceTree = "<group>"; };
 		C1F057861BF7B0A5002155BE /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
 		C1F057871BF7B11F002155BE /* generate_scene.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_scene.sh; sourceTree = "<group>"; };
 		C70D8946940288799E82131E /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSliderGroup.h; path = ../../../addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
@@ -329,6 +335,8 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C13A36741C17906E00F13242 /* menkmanPNG1 */,
+				C13A36701C17906200F13242 /* aaronMarcusHieroglyphB */,
 				71C301C81C1783A500C0AC31 /* yeseulWhitneyScene */,
 				7158FF7F1C174F8B00A6025B /* chrisVeraInterruptions */,
 				E12029001C1655E60093B1A4 /* veraMolnarTrapezium */,
@@ -456,6 +464,24 @@
 				1F4FB5C423662B96ADFDCC0B /* ofxXmlSettings */,
 			);
 			name = addons;
+			sourceTree = "<group>";
+		};
+		C13A36701C17906200F13242 /* aaronMarcusHieroglyphB */ = {
+			isa = PBXGroup;
+			children = (
+				C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */,
+				C13A36721C17906200F13242 /* aaronMarcusHieroglyphB.h */,
+			);
+			path = aaronMarcusHieroglyphB;
+			sourceTree = "<group>";
+		};
+		C13A36741C17906E00F13242 /* menkmanPNG1 */ = {
+			isa = PBXGroup;
+			children = (
+				C13A36751C17906E00F13242 /* menkmanPNG1.cpp */,
+				C13A36761C17906E00F13242 /* menkmanPNG1.h */,
+			);
+			path = menkmanPNG1;
 			sourceTree = "<group>";
 		};
 		D5F490E31BF7DE2D00F92C20 /* robbyMolnarScene */ = {
@@ -653,6 +679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13A36731C17906200F13242 /* aaronMarcusHieroglyphB.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */,
@@ -665,6 +692,7 @@
 				E183505A1C14F3AC00EAFB96 /* loloVera.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
+				C13A36771C17906E00F13242 /* menkmanPNG1.cpp in Sources */,
 				E18350561C14CCA300EAFB96 /* loloWhitney.cpp in Sources */,
 				7158FF7A1C164C0C00A6025B /* johnWhitneyShader02.cpp in Sources */,
 				923871B61BF7CCC900171456 /* exampleScene.cpp in Sources */,
