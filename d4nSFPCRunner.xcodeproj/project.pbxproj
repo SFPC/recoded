@@ -17,6 +17,7 @@
 		63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */; };
 		7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */; };
 		7158FF7A1C164C0C00A6025B /* johnWhitneyShader02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7158FF781C164C0C00A6025B /* johnWhitneyShader02.cpp */; };
+		7158FF821C174F8B00A6025B /* chrisVeraInterruptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7158FF801C174F8B00A6025B /* chrisVeraInterruptions.cpp */; };
 		71C091411C16197900C76EB9 /* manfredMohrP196A.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C0913F1C16197900C76EB9 /* manfredMohrP196A.cpp */; };
 		71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091441C1619FD00C76EB9 /* chrisMurielCooper.cpp */; };
 		71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091481C162E2E00C76EB9 /* chrisRileyCascando.cpp */; };
@@ -99,6 +100,8 @@
 		7118B75D1C0519830092084A /* johnWhitneyShader01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = johnWhitneyShader01.h; sourceTree = "<group>"; };
 		7158FF781C164C0C00A6025B /* johnWhitneyShader02.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = johnWhitneyShader02.cpp; sourceTree = "<group>"; };
 		7158FF791C164C0C00A6025B /* johnWhitneyShader02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = johnWhitneyShader02.h; sourceTree = "<group>"; };
+		7158FF801C174F8B00A6025B /* chrisVeraInterruptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chrisVeraInterruptions.cpp; sourceTree = "<group>"; };
+		7158FF811C174F8B00A6025B /* chrisVeraInterruptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chrisVeraInterruptions.h; sourceTree = "<group>"; };
 		71C0913F1C16197900C76EB9 /* manfredMohrP196A.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = manfredMohrP196A.cpp; sourceTree = "<group>"; };
 		71C091401C16197900C76EB9 /* manfredMohrP196A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manfredMohrP196A.h; sourceTree = "<group>"; };
 		71C091441C1619FD00C76EB9 /* chrisMurielCooper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chrisMurielCooper.cpp; sourceTree = "<group>"; };
@@ -269,6 +272,15 @@
 			path = johnWhitneyShader02;
 			sourceTree = "<group>";
 		};
+		7158FF7F1C174F8B00A6025B /* chrisVeraInterruptions */ = {
+			isa = PBXGroup;
+			children = (
+				7158FF801C174F8B00A6025B /* chrisVeraInterruptions.cpp */,
+				7158FF811C174F8B00A6025B /* chrisVeraInterruptions.h */,
+			);
+			path = chrisVeraInterruptions;
+			sourceTree = "<group>";
+		};
 		71C0913E1C16197900C76EB9 /* manfredMohrP196A */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +329,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7158FF7F1C174F8B00A6025B /* chrisVeraInterruptions */,
 				E12029001C1655E60093B1A4 /* veraMolnarTrapezium */,
 				4776F87B1C17089000975A6B /* cantusFirmusRiley */,
 				71C091471C162E2E00C76EB9 /* chrisRileyCascando */,
@@ -679,6 +692,7 @@
 				7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */,
 				B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */,
 				4FEF16411C1146E0000B3B4F /* anastasisRileyScene.cpp in Sources */,
+				7158FF821C174F8B00A6025B /* chrisVeraInterruptions.cpp in Sources */,
 				9A6B71C41C157473000D7878 /* submotionOrchestraScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

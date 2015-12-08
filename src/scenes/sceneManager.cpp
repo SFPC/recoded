@@ -30,9 +30,11 @@
 #include "veraMolnarTrapezium.h"
 #include "loloVera2.h"
 #include "cantusFirmusRiley.h"
+#include "chrisVeraInterruptions.h"
 
 void sceneManager::setup(){
 
+    scenes.push_back(new chrisVeraInterruptions());
     scenes.push_back(new johnWhitneyShader02());
     scenes.push_back(new chrisRileyCascando());
     scenes.push_back(new chrisMurielCooper());
