@@ -62,3 +62,6 @@ Desktop.ini
 
 # Miscellaneous
 .mailmap
+
+# Project-specific
+bin/data/menkmanJPG1/images/menkmanGlitch.jpg

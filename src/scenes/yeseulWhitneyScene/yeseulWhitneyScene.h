@@ -4,16 +4,19 @@
 #include "ofMain.h"
 #include "baseScene.h"
 
-class yeseulScene : public baseScene {
+class yeseulWhitneyScene : public baseScene {
     
 public:
     
     void setup();
     void update();
     void draw();
+    void drawPattern(int x, int y);
+    
+    int columnCount, rowCount;
     
     ofParameter<float> angle;
-    ofParameter<float> width;
+    ofParameter<int> numberOfPattern, color;
     
     
 };
