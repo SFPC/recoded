@@ -16,6 +16,7 @@
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
 		63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */; };
 		7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */; };
+		7158FF7A1C164C0C00A6025B /* johnWhitneyShader02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7158FF781C164C0C00A6025B /* johnWhitneyShader02.cpp */; };
 		71C091411C16197900C76EB9 /* manfredMohrP196A.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C0913F1C16197900C76EB9 /* manfredMohrP196A.cpp */; };
 		71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091441C1619FD00C76EB9 /* chrisMurielCooper.cpp */; };
 		71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091481C162E2E00C76EB9 /* chrisRileyCascando.cpp */; };
@@ -96,6 +97,8 @@
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
 		7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = johnWhitneyShader01.cpp; sourceTree = "<group>"; };
 		7118B75D1C0519830092084A /* johnWhitneyShader01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = johnWhitneyShader01.h; sourceTree = "<group>"; };
+		7158FF781C164C0C00A6025B /* johnWhitneyShader02.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = johnWhitneyShader02.cpp; sourceTree = "<group>"; };
+		7158FF791C164C0C00A6025B /* johnWhitneyShader02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = johnWhitneyShader02.h; sourceTree = "<group>"; };
 		71C0913F1C16197900C76EB9 /* manfredMohrP196A.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = manfredMohrP196A.cpp; sourceTree = "<group>"; };
 		71C091401C16197900C76EB9 /* manfredMohrP196A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manfredMohrP196A.h; sourceTree = "<group>"; };
 		71C091441C1619FD00C76EB9 /* chrisMurielCooper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chrisMurielCooper.cpp; sourceTree = "<group>"; };
@@ -257,6 +260,15 @@
 			path = johnWhitneyShader01;
 			sourceTree = "<group>";
 		};
+		7158FF771C164C0C00A6025B /* johnWhitneyShader02 */ = {
+			isa = PBXGroup;
+			children = (
+				7158FF781C164C0C00A6025B /* johnWhitneyShader02.cpp */,
+				7158FF791C164C0C00A6025B /* johnWhitneyShader02.h */,
+			);
+			path = johnWhitneyShader02;
+			sourceTree = "<group>";
+		};
 		71C0913E1C16197900C76EB9 /* manfredMohrP196A */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +335,7 @@
 				923871AC1BF7CCC900171456 /* emptyScene */,
 				923871AF1BF7CCC900171456 /* exampleScene */,
 				7118B75B1C0519830092084A /* johnWhitneyShader01 */,
+				7158FF771C164C0C00A6025B /* johnWhitneyShader02 */,
 				D5F490E81BF7E69B00F92C20 /* robbyRileyScene */,
 				D5F490E31BF7DE2D00F92C20 /* robbyMolnarScene */,
 				923871B21BF7CCC900171456 /* triangleScene */,
@@ -640,6 +653,7 @@
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				E18350561C14CCA300EAFB96 /* loloWhitney.cpp in Sources */,
+				7158FF7A1C164C0C00A6025B /* johnWhitneyShader02.cpp in Sources */,
 				923871B61BF7CCC900171456 /* exampleScene.cpp in Sources */,
 				9237CB9D1C11E9BD0007A916 /* veraFscene.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
