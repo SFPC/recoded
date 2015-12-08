@@ -12,7 +12,7 @@
 #include "veraAnimatedScene.h"
 #include "robbyMolnarScene.h"
 #include "robbyRileyScene.h"
-#include "yeseulWhitneyScene.h"
+#include "yeseulScene.h"
 #include "johnWhitneyShader01.h"
 #include "RoyWhitney1.h"
 #include "veraFscene.h"
@@ -28,9 +28,11 @@
 #include "chrisRileyCascando.h"
 #include "veraMolnarTrapezium.h"
 #include "loloVera2.h"
+#include "cantusFirmusRiley.h"
 
 void sceneManager::setup(){
 
+    
     scenes.push_back(new chrisRileyCascando());
     scenes.push_back(new chrisMurielCooper());
 	scenes.push_back(new memoAktenScene());
@@ -43,7 +45,7 @@ void sceneManager::setup(){
     scenes.push_back(new exampleScene() );
     scenes.push_back(new triangleScene() );
     scenes.push_back(new robbyRileyScene() );
-    scenes.push_back(new yeseulWhitneyScene() );
+    scenes.push_back(new yeseulScene() );
     scenes.push_back(new johnWhitneyShader01());
     scenes.push_back(new anastasisRileyScene());
     scenes.push_back(new loloWhitney());
@@ -52,6 +54,7 @@ void sceneManager::setup(){
 	scenes.push_back(new manfredMohrP196A());
 	scenes.push_back(new veraMolnarTrapezium());
     scenes.push_back(new loloVera2());
+    scenes.push_back(new cantusFirmusRiley());
     
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
