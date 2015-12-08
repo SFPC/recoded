@@ -27,6 +27,7 @@
 #include "chrisMurielCooper.h"
 #include "chrisRileyCascando.h"
 #include "veraMolnarTrapezium.h"
+#include "aaronMarcusHieroglyphB.h"
 
 void sceneManager::setup(){
 	
@@ -50,6 +51,7 @@ void sceneManager::setup(){
     scenes.push_back(new menkmanJPG1());
 	scenes.push_back(new manfredMohrP196A());
 	scenes.push_back(new veraMolnarTrapezium());
+	scenes.push_back(new aaronMarcusHieroglyphB());
     
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
