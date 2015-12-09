@@ -38,7 +38,7 @@ void aaronMarcusHieroglyphB::setup(){
 	parameters.add(verticalLines);
 
     loadCode("aaronMarcusHieroglyphB/exampleCode.cpp");
-	ofResetElapsedTimeCounter();
+	lastFrameMicros = ofGetSystemTimeMicros();
 }
 
 void aaronMarcusHieroglyphB::update(){
@@ -67,8 +67,8 @@ void aaronMarcusHieroglyphB::update(){
 
 	//move all the lines based on their speeds
 	//using time-based animation
-	uint64_t frameMillis = ofGetElapsedTimeMillis();
-	ofResetElapsedTimeCounter();
+	uint64_t frameMicros = ofGetSystemTimeMicros() - lastFrameMicros;
+	lastFrameMicros = ofGetSystemTimeMicros();
 	for(int i = 0; i < lines.size(); i++){
 		Line& line = lines[i];
 		//update speed if it is outside the current range
@@ -81,7 +81,7 @@ void aaronMarcusHieroglyphB::update(){
 			line.currSpeed = line.targetSpeed;
 		}
 		//update the glyph offset for movement
-		line.currOffset += (float)(line.currSpeed * frameMillis) / 1000.;
+		line.currOffset += (float)(line.currSpeed * frameMicros) / 1000000.;
 		int nextGlyphIndex = line.startIndex - 1;
 		if (nextGlyphIndex < 0){
 			nextGlyphIndex = line.glyphs.size() - 1;
