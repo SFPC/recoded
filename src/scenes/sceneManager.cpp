@@ -33,6 +33,7 @@
 #include "cantusFirmusRiley.h"
 #include "chrisVeraInterruptions.h"
 #include "aaronMarcusHieroglyphB.h"
+#include "veraMolnarLines68.h"
 #include "Cooper3dText.h"
 
 void sceneManager::setup(){
@@ -64,7 +65,7 @@ void sceneManager::setup(){
     scenes.push_back(new loloVera2());
     scenes.push_back(new cantusFirmusRiley());
 	scenes.push_back(new aaronMarcusHieroglyphB());
-    
+    scenes.push_back(new veraMolnarLines68());
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
