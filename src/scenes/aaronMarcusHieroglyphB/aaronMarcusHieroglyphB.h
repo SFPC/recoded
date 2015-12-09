@@ -47,6 +47,7 @@ private:
 	float getGlyphWidth(Glyph glyph);
 	void drawSymbol(Glyph id);
 	void drawSymbol(int glyphId);
+	uint64_t lastFrameMicros;
     
 public:
     
