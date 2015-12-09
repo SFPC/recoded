@@ -34,9 +34,11 @@
 #include "chrisVeraInterruptions.h"
 #include "aaronMarcusHieroglyphB.h"
 #include "veraMolnarLines68.h"
+#include "Cooper3dText.h"
 
 void sceneManager::setup(){
 
+    scenes.push_back(new Cooper3dText());
     scenes.push_back(new chrisVeraInterruptions());
     scenes.push_back(new johnWhitneyShader02());
     scenes.push_back(new chrisRileyCascando());
