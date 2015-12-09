@@ -36,6 +36,7 @@
 #include "veraMolnarLines68.h"
 #include "Cooper3dText.h"
 #include "alexLissamojiWhitney.h"
+#include "janVantommeScene.h"
 
 
 void sceneManager::setup(){
@@ -45,6 +46,8 @@ void sceneManager::setup(){
     scenes.push_back(new johnWhitneyShader02());
     scenes.push_back(new chrisRileyCascando());
     scenes.push_back(new chrisMurielCooper());
+	
+    scenes.push_back(new janVantommeScene());
 	scenes.push_back(new memoAktenScene());
     scenes.push_back(new submotionOrchestraScene());
 	scenes.push_back(new CooperBauhaus());
