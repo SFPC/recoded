@@ -22,6 +22,8 @@
 		71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091441C1619FD00C76EB9 /* chrisMurielCooper.cpp */; };
 		71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091481C162E2E00C76EB9 /* chrisRileyCascando.cpp */; };
 		71C301CB1C1783A500C0AC31 /* yeseulWhitneyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C301C91C1783A500C0AC31 /* yeseulWhitneyScene.cpp */; };
+		71C301F01C18A3D700C0AC31 /* rodrigoBelfort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C301EE1C18A3D700C0AC31 /* rodrigoBelfort.cpp */; };
+		71C301F41C18A53600C0AC31 /* rachelScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C301F21C18A53600C0AC31 /* rachelScene.cpp */; };
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
 		856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9604B925D32EE39065747725 /* ofxBaseGui.cpp */; };
 		9237CB9D1C11E9BD0007A916 /* veraFscene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9237CB9B1C11E9BD0007A916 /* veraFscene.cpp */; };
@@ -65,9 +67,9 @@
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
 		F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */; };
-		FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F431C18862D00F197F3 /* veraMolnarLines68.cpp */; settings = {ASSET_TAGS = (); }; };
-		FA361F491C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */; settings = {ASSET_TAGS = (); }; };
-		FAF7DF1F1C1833C70058EFE0 /* alexLissamojiWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAF7DF1D1C1833C70058EFE0 /* alexLissamojiWhitney.cpp */; settings = {ASSET_TAGS = (); }; };
+		FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F431C18862D00F197F3 /* veraMolnarLines68.cpp */; };
+		FA361F491C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */; };
+		FAF7DF1F1C1833C70058EFE0 /* alexLissamojiWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAF7DF1D1C1833C70058EFE0 /* alexLissamojiWhitney.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,10 @@
 		71C091491C162E2E00C76EB9 /* chrisRileyCascando.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chrisRileyCascando.h; sourceTree = "<group>"; };
 		71C301C91C1783A500C0AC31 /* yeseulWhitneyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yeseulWhitneyScene.cpp; sourceTree = "<group>"; };
 		71C301CA1C1783A500C0AC31 /* yeseulWhitneyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yeseulWhitneyScene.h; sourceTree = "<group>"; };
+		71C301EE1C18A3D700C0AC31 /* rodrigoBelfort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rodrigoBelfort.cpp; sourceTree = "<group>"; };
+		71C301EF1C18A3D700C0AC31 /* rodrigoBelfort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rodrigoBelfort.h; sourceTree = "<group>"; };
+		71C301F21C18A53600C0AC31 /* rachelScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rachelScene.cpp; sourceTree = "<group>"; };
+		71C301F31C18A53600C0AC31 /* rachelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rachelScene.h; sourceTree = "<group>"; };
 		78D67A00EB899FAC09430597 /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxLabel.cpp; path = ../../../addons/ofxGui/src/ofxLabel.cpp; sourceTree = SOURCE_ROOT; };
 		802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSliderGroup.cpp; path = ../../../addons/ofxGui/src/ofxSliderGroup.cpp; sourceTree = SOURCE_ROOT; };
 		832BDC407620CDBA568B713D /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlerror.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
@@ -376,6 +382,25 @@
 			path = yeseulWhitneyScene;
 			sourceTree = "<group>";
 		};
+		71C301ED1C18A3D700C0AC31 /* rodrigoBelfort */ = {
+			isa = PBXGroup;
+			children = (
+				71C301EE1C18A3D700C0AC31 /* rodrigoBelfort.cpp */,
+				71C301EF1C18A3D700C0AC31 /* rodrigoBelfort.h */,
+			);
+			path = rodrigoBelfort;
+			sourceTree = "<group>";
+		};
+		71C301F11C18A53600C0AC31 /* rachelScene */ = {
+			isa = PBXGroup;
+			children = (
+				71C301F21C18A53600C0AC31 /* rachelScene.cpp */,
+				71C301F31C18A53600C0AC31 /* rachelScene.h */,
+			);
+			name = rachelScene;
+			path = ../../../../../../../Downloads/rachelScene;
+			sourceTree = "<group>";
+		};
 		9237CB9A1C11E9BD0007A916 /* veraFscene */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +413,8 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				71C301F11C18A53600C0AC31 /* rachelScene */,
+				71C301ED1C18A3D700C0AC31 /* rodrigoBelfort */,
 				FA361F461C1887A400F197F3 /* alexGifPaletteDitherMenkman */,
 				FAF7DF1C1C1833C70058EFE0 /* alexLissamojiWhitney */,
 				B01DF7B51C179A7F00B2EAB0 /* Cooper3dText */,
@@ -839,6 +866,7 @@
 				26B248401BF7DA1100C11D04 /* veraAnimatedScene.cpp in Sources */,
 				E183505A1C14F3AC00EAFB96 /* loloVera.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
+				71C301F41C18A53600C0AC31 /* rachelScene.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				C13A36771C17906E00F13242 /* menkmanPNG1.cpp in Sources */,
 				E18350561C14CCA300EAFB96 /* loloWhitney.cpp in Sources */,
@@ -862,6 +890,7 @@
 				E1802C931C16905000780A6F /* loloVera2.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
+				71C301F01C18A3D700C0AC31 /* rodrigoBelfort.cpp in Sources */,
 				E1E9D2B01C151BE500B01B4A /* menkmanJPG1.cpp in Sources */,
 				B01DF8021C179B9800B2EAB0 /* ofxEasingQuint.cpp in Sources */,
 				923871B51BF7CCC900171456 /* emptyScene.cpp in Sources */,

@@ -36,9 +36,12 @@
 #include "veraMolnarLines68.h"
 #include "Cooper3dText.h"
 #include "alexLissamojiWhitney.h"
+<<<<<<< HEAD
 #include "janVantommeScene.h"
+=======
 #include "rodrigoBelfort.h"
 #include "rachelScene.h"
+>>>>>>> 0a303f1933dec685987b88e905bee74d4c20c2e2
 
 
 void sceneManager::setup(){
