@@ -37,10 +37,12 @@
 #include "Cooper3dText.h"
 #include "alexLissamojiWhitney.h"
 #include "rodrigoBelfort.h"
+#include "rachelScene.h"
 
 
 void sceneManager::setup(){
 
+    scenes.push_back(new rachelScene());
     scenes.push_back(new rodrigoBelfort());
     scenes.push_back(new Cooper3dText());
     scenes.push_back(new chrisVeraInterruptions());
