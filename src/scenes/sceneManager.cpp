@@ -36,10 +36,12 @@
 #include "veraMolnarLines68.h"
 #include "Cooper3dText.h"
 #include "alexLissamojiWhitney.h"
+#include "rodrigoBelfort.h"
 
 
 void sceneManager::setup(){
 
+    scenes.push_back(new rodrigoBelfort());
     scenes.push_back(new Cooper3dText());
     scenes.push_back(new chrisVeraInterruptions());
     scenes.push_back(new johnWhitneyShader02());
