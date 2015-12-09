@@ -3,6 +3,8 @@
 #include "ofMain.h"
 #include "baseScene.h"
 
+// based off http://sfpc.streiten.org/post/131178427582/hello-john-whitney-hello-of
+
 class alexLissamojiWhitney : public baseScene {
     
 public:

@@ -66,6 +66,7 @@
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
 		F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */; };
 		FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F431C18862D00F197F3 /* veraMolnarLines68.cpp */; settings = {ASSET_TAGS = (); }; };
+		FA361F491C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */; settings = {ASSET_TAGS = (); }; };
 		FAF7DF1F1C1833C70058EFE0 /* alexLissamojiWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAF7DF1D1C1833C70058EFE0 /* alexLissamojiWhitney.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -221,6 +222,8 @@
 		ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxGuiGroup.cpp; path = ../../../addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
 		FA361F431C18862D00F197F3 /* veraMolnarLines68.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = veraMolnarLines68.cpp; sourceTree = "<group>"; };
 		FA361F441C18862D00F197F3 /* veraMolnarLines68.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = veraMolnarLines68.h; sourceTree = "<group>"; };
+		FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alexGifPaletteDitherMenkman.cpp; sourceTree = "<group>"; };
+		FA361F481C1887A400F197F3 /* alexGifPaletteDitherMenkman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alexGifPaletteDitherMenkman.h; sourceTree = "<group>"; };
 		FAF7DF1D1C1833C70058EFE0 /* alexLissamojiWhitney.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alexLissamojiWhitney.cpp; sourceTree = "<group>"; };
 		FAF7DF1E1C1833C70058EFE0 /* alexLissamojiWhitney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alexLissamojiWhitney.h; sourceTree = "<group>"; };
 		FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlparser.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp; sourceTree = SOURCE_ROOT; };
@@ -385,6 +388,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FA361F461C1887A400F197F3 /* alexGifPaletteDitherMenkman */,
 				FAF7DF1C1C1833C70058EFE0 /* alexLissamojiWhitney */,
 				B01DF7B51C179A7F00B2EAB0 /* Cooper3dText */,
 				C13A36741C17906E00F13242 /* menkmanPNG1 */,
@@ -715,6 +719,15 @@
 			path = src/scenes/veraMolnarLines68;
 			sourceTree = SOURCE_ROOT;
 		};
+		FA361F461C1887A400F197F3 /* alexGifPaletteDitherMenkman */ = {
+			isa = PBXGroup;
+			children = (
+				FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */,
+				FA361F481C1887A400F197F3 /* alexGifPaletteDitherMenkman.h */,
+			);
+			path = alexGifPaletteDitherMenkman;
+			sourceTree = "<group>";
+		};
 		FAF7DF1C1C1833C70058EFE0 /* alexLissamojiWhitney */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,6 +846,7 @@
 				B01DF7F81C179B9800B2EAB0 /* ofxEasing.cpp in Sources */,
 				B01DF7FF1C179B9800B2EAB0 /* ofxEasingLinear.cpp in Sources */,
 				923871B61BF7CCC900171456 /* exampleScene.cpp in Sources */,
+				FA361F491C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp in Sources */,
 				9237CB9D1C11E9BD0007A916 /* veraFscene.cpp in Sources */,
 				B01DF7FD1C179B9800B2EAB0 /* ofxEasingElastic.cpp in Sources */,
 				B01DF8011C179B9800B2EAB0 /* ofxEasingQuart.cpp in Sources */,
