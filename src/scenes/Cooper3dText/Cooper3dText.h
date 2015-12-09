@@ -80,4 +80,9 @@ public:
     void distWordsChange(float & f);
     
     ofBlendMode blend;
+    
+    ofParameter<float>tweenVal;
+    ofParameter<ofVec3f>camPos;
+    ofParameter<ofVec4f>camOrientation, camStartOrientationParam, camEndOrientationParam;
+    
 };
