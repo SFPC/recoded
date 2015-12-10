@@ -42,6 +42,7 @@
 #include "RileyArcsRoy.h"
 
 void sceneManager::setup(){
+    scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());
     scenes.push_back(new rachelScene());
     scenes.push_back(new rodrigoBelfort());
@@ -54,7 +55,6 @@ void sceneManager::setup(){
     scenes.push_back(new janVantommeScene());
 	scenes.push_back(new memoAktenScene());
     scenes.push_back(new submotionOrchestraScene());
-	scenes.push_back(new CooperBauhaus());
     scenes.push_back(new RoyWhitney1());
     scenes.push_back(new veraFscene());
     scenes.push_back(new robbyMolnarScene() );
