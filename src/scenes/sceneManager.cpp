@@ -39,10 +39,10 @@
 #include "janVantommeScene.h"
 #include "rodrigoBelfort.h"
 #include "rachelScene.h"
-
+#include "RileyArcsRoy.h"
 
 void sceneManager::setup(){
-
+    scenes.push_back(new RileyArcsRoy());
     scenes.push_back(new rachelScene());
     scenes.push_back(new rodrigoBelfort());
     scenes.push_back(new Cooper3dText());
