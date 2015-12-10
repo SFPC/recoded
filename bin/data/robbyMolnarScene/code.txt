@@ -1,20 +1,24 @@
-void veraRect::drawPerturbedRect(float x, float y, float width, float height,
-                                 float X_PERTURB_TL, float Y_PERTURB_TL,
-                                 float X_PERTURB_TR, float Y_PERTURB_TR,
-                                 float X_PERTURB_BR, float Y_PERTURB_BR,
-                                 float X_PERTURB_BL, float Y_PERTURB_BL){
-    
-    float topLeftX = (x + (width*X_PERTURB_TL) - (width*X_PERTURB_TL*.5));
-    float topLeftY = (y + (height*Y_PERTURB_TL) - (height*Y_PERTURB_TL*.5));
-    float topRightX = (x + width + (width*X_PERTURB_TR) - (width*X_PERTURB_TR*.5));
-    float topRightY = (y + (height*Y_PERTURB_TR) - (height*Y_PERTURB_TR*.5));
-    float bottomRightX = (x + width + (width*X_PERTURB_BR) - (width*X_PERTURB_BR*.5));
-    float bottomRightY = (y + height + (height*Y_PERTURB_BR) - (height*Y_PERTURB_BR*.5));
-    float bottomLeftX = (x + (width*X_PERTURB_BL) - (width*X_PERTURB_BL*.5));
-    float bottomLeftY = (y + height + (height*Y_PERTURB_BL) - (height*Y_PERTURB_BL*.5));
-    
-    ofDrawLine(topLeftX, topLeftY, topRightX, topRightY);
-    ofDrawLine(topRightX, topRightY, bottomRightX, bottomRightY);
-    ofDrawLine(bottomRightX, bottomRightY, bottomLeftX, bottomLeftY);
-    ofDrawLine(bottomLeftX, bottomLeftY, topLeftX, topLeftY);
+draw([[numRectangles]], [[disarray]]){
+// wobble and magnitude used in trig functions to slightly affect the position of the corners (disarray)
+    for(i = 0; i < [[numRectangles]]; i++){
+        drawPerturbedRect(centerX - radius[i]*.5, centerY - radius[i]*.5, 
+                          radius[i], radius[i],
+                          [[disarray]] * ( wobble[i*8] + magnitude[i*8] * sin(magnitude[i*8] * time() ) ) );
+
+    }
+}
+
+// "perturb" contains values to offset each corner of the square,
+// making it irregular, but consistent between each frame
+
+drawPerturbedRect(x, y, width, height, perturb){
+
+    line(topLeftX     + perturb.TopLeft,     topLeftY     + perturb.TopLeft, 
+         topRightX    + perturb.TopRight,    topRightY    + perturb.TopRight);
+    line(topRightX    + perturb.TopRight,    topRightY    + perturb.TopRight, 
+         bottomRightX + perturb.BottomRight, bottomRightY + perturb.BottomRight);
+    line(bottomRightX + perturb.BottomRight, bottomRightY + perturb.BottomRight, 
+         bottomLeftX  + perturb.BottomLeft,  bottomLeftY  + perturb.BottomLeft);
+    line(bottomLeftX  + perturb.BottomLeft,  bottomLeftY  + perturb.BottomLeft, 
+         topLeftX     + perturb.TopLeft,     topLeftY     + perturb.TopLeft);
 }
