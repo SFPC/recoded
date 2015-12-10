@@ -58,6 +58,7 @@
 		B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */; };
 		C13A36731C17906200F13242 /* aaronMarcusHieroglyphB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */; };
 		C13A36771C17906E00F13242 /* menkmanPNG1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13A36751C17906E00F13242 /* menkmanPNG1.cpp */; };
+		D541137B1C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D54113791C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp */; };
 		D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E41BF7DE2D00F92C20 /* robbyMolnarScene.cpp */; };
 		D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E91BF7E69B00F92C20 /* robbyRileyScene.cpp */; };
 		E12029031C1655E60093B1A4 /* veraMolnarTrapezium.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12029011C1655E60093B1A4 /* veraMolnarTrapezium.cpp */; };
@@ -208,6 +209,8 @@
 		C1F057871BF7B11F002155BE /* generate_scene.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_scene.sh; sourceTree = "<group>"; };
 		C70D8946940288799E82131E /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSliderGroup.h; path = ../../../addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
 		C88333E71C9457E441C33474 /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../../../addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
+		D54113791C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = robbyMenkmanScene.cpp; sourceTree = "<group>"; };
+		D541137A1C1A3F3B00AD4ED9 /* robbyMenkmanScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = robbyMenkmanScene.h; sourceTree = "<group>"; };
 		D5F490E41BF7DE2D00F92C20 /* robbyMolnarScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = robbyMolnarScene.cpp; sourceTree = "<group>"; };
 		D5F490E51BF7DE2D00F92C20 /* robbyMolnarScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = robbyMolnarScene.h; sourceTree = "<group>"; };
 		D5F490E91BF7E69B00F92C20 /* robbyRileyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = robbyRileyScene.cpp; sourceTree = "<group>"; };
@@ -449,6 +452,7 @@
 				923871AF1BF7CCC900171456 /* exampleScene */,
 				7118B75B1C0519830092084A /* johnWhitneyShader01 */,
 				7158FF771C164C0C00A6025B /* johnWhitneyShader02 */,
+				D54113781C1A3F3B00AD4ED9 /* robbyMenkmanScene */,
 				D5F490E81BF7E69B00F92C20 /* robbyRileyScene */,
 				D5F490E31BF7DE2D00F92C20 /* robbyMolnarScene */,
 				923871B21BF7CCC900171456 /* triangleScene */,
@@ -653,6 +657,16 @@
 			);
 			path = menkmanPNG1;
 			sourceTree = "<group>";
+		};
+		D54113781C1A3F3B00AD4ED9 /* robbyMenkmanScene */ = {
+			isa = PBXGroup;
+			children = (
+				D54113791C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp */,
+				D541137A1C1A3F3B00AD4ED9 /* robbyMenkmanScene.h */,
+			);
+			name = robbyMenkmanScene;
+			path = src/scenes/robbyMenkmanScene;
+			sourceTree = SOURCE_ROOT;
 		};
 		D5F490E31BF7DE2D00F92C20 /* robbyMolnarScene */ = {
 			isa = PBXGroup;
@@ -925,6 +939,7 @@
 				923871A41BF7993A00171456 /* baseScene.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */,
+				D541137B1C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp in Sources */,
 				923871A61BF7993A00171456 /* sceneManager.cpp in Sources */,
 				71C091411C16197900C76EB9 /* manfredMohrP196A.cpp in Sources */,
 				71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */,
