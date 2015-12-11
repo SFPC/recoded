@@ -56,8 +56,13 @@
 		B04420991C1901D90049071E /* RileyArcsRoy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B04420971C1901D90049071E /* RileyArcsRoy.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
 		B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */; };
+		C1338BEF1C1B5FA500F9DDD1 /* menkmanTIFF1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1338BED1C1B5FA500F9DDD1 /* menkmanTIFF1.cpp */; };
 		C13A36731C17906200F13242 /* aaronMarcusHieroglyphB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */; };
 		C13A36771C17906E00F13242 /* menkmanPNG1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13A36751C17906E00F13242 /* menkmanPNG1.cpp */; };
+		C19334531C1B6D7E00A19961 /* andyMenkmanDataBendsJpg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19334511C1B6D7E00A19961 /* andyMenkmanDataBendsJpg.cpp */; };
+		C19334561C1B716B00A19961 /* ofxDataBender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19334541C1B716B00A19961 /* ofxDataBender.cpp */; };
+		C19334591C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19334571C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp */; };
+		C193345C1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C193345A1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp */; };
 		D541137B1C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D54113791C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp */; };
 		D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E41BF7DE2D00F92C20 /* robbyMolnarScene.cpp */; };
 		D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E91BF7E69B00F92C20 /* robbyRileyScene.cpp */; };
@@ -201,10 +206,20 @@
 		B04420981C1901D90049071E /* RileyArcsRoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyArcsRoy.h; sourceTree = "<group>"; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		B87C60311EC1FE841C1ECD89 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
+		C1338BED1C1B5FA500F9DDD1 /* menkmanTIFF1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menkmanTIFF1.cpp; sourceTree = "<group>"; };
+		C1338BEE1C1B5FA500F9DDD1 /* menkmanTIFF1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menkmanTIFF1.h; sourceTree = "<group>"; };
 		C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aaronMarcusHieroglyphB.cpp; sourceTree = "<group>"; };
 		C13A36721C17906200F13242 /* aaronMarcusHieroglyphB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aaronMarcusHieroglyphB.h; sourceTree = "<group>"; };
 		C13A36751C17906E00F13242 /* menkmanPNG1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menkmanPNG1.cpp; sourceTree = "<group>"; };
 		C13A36761C17906E00F13242 /* menkmanPNG1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menkmanPNG1.h; sourceTree = "<group>"; };
+		C19334511C1B6D7E00A19961 /* andyMenkmanDataBendsJpg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = andyMenkmanDataBendsJpg.cpp; sourceTree = "<group>"; };
+		C19334521C1B6D7E00A19961 /* andyMenkmanDataBendsJpg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andyMenkmanDataBendsJpg.h; sourceTree = "<group>"; };
+		C19334541C1B716B00A19961 /* ofxDataBender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxDataBender.cpp; sourceTree = "<group>"; };
+		C19334551C1B716B00A19961 /* ofxDataBender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxDataBender.h; sourceTree = "<group>"; };
+		C19334571C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = andyMenkmanDataBendsPng.cpp; sourceTree = "<group>"; };
+		C19334581C1B7BB300A19961 /* andyMenkmanDataBendsPng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andyMenkmanDataBendsPng.h; sourceTree = "<group>"; };
+		C193345A1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = andyMenkmanDataBendsTif.cpp; sourceTree = "<group>"; };
+		C193345B1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andyMenkmanDataBendsTif.h; sourceTree = "<group>"; };
 		C1F057861BF7B0A5002155BE /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
 		C1F057871BF7B11F002155BE /* generate_scene.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_scene.sh; sourceTree = "<group>"; };
 		C70D8946940288799E82131E /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSliderGroup.h; path = ../../../addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
@@ -422,6 +437,8 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C19334501C1B6D7E00A19961 /* andyMenkmanDataBends */,
+				C1338BEC1C1B5FA500F9DDD1 /* menkmanTIFF1 */,
 				B04420961C1901D90049071E /* RileyArcsRoy */,
 				B04420921C18B04D0049071E /* janVantommeScene */,
 				71C301F11C18A53600C0AC31 /* rachelScene */,
@@ -640,6 +657,15 @@
 			name = addons;
 			sourceTree = "<group>";
 		};
+		C1338BEC1C1B5FA500F9DDD1 /* menkmanTIFF1 */ = {
+			isa = PBXGroup;
+			children = (
+				C1338BED1C1B5FA500F9DDD1 /* menkmanTIFF1.cpp */,
+				C1338BEE1C1B5FA500F9DDD1 /* menkmanTIFF1.h */,
+			);
+			path = menkmanTIFF1;
+			sourceTree = "<group>";
+		};
 		C13A36701C17906200F13242 /* aaronMarcusHieroglyphB */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +682,21 @@
 				C13A36761C17906E00F13242 /* menkmanPNG1.h */,
 			);
 			path = menkmanPNG1;
+			sourceTree = "<group>";
+		};
+		C19334501C1B6D7E00A19961 /* andyMenkmanDataBends */ = {
+			isa = PBXGroup;
+			children = (
+				C193345A1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp */,
+				C193345B1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.h */,
+				C19334571C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp */,
+				C19334581C1B7BB300A19961 /* andyMenkmanDataBendsPng.h */,
+				C19334511C1B6D7E00A19961 /* andyMenkmanDataBendsJpg.cpp */,
+				C19334521C1B6D7E00A19961 /* andyMenkmanDataBendsJpg.h */,
+				C19334541C1B716B00A19961 /* ofxDataBender.cpp */,
+				C19334551C1B716B00A19961 /* ofxDataBender.h */,
+			);
+			path = andyMenkmanDataBends;
 			sourceTree = "<group>";
 		};
 		D54113781C1A3F3B00AD4ED9 /* robbyMenkmanScene */ = {
@@ -923,14 +964,17 @@
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				923871B71BF7CCC900171456 /* triangleScene.cpp in Sources */,
 				71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */,
+				C1338BEF1C1B5FA500F9DDD1 /* menkmanTIFF1.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				4776F87E1C17089000975A6B /* cantusFirmusRiley.cpp in Sources */,
 				9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */,
+				C193345C1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				B01DF7F91C179B9800B2EAB0 /* ofxEasingBack.cpp in Sources */,
 				E1802C931C16905000780A6F /* loloVera2.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
+				C19334561C1B716B00A19961 /* ofxDataBender.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
 				71C301F01C18A3D700C0AC31 /* rodrigoBelfort.cpp in Sources */,
 				E1E9D2B01C151BE500B01B4A /* menkmanJPG1.cpp in Sources */,
@@ -940,6 +984,7 @@
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */,
 				D541137B1C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp in Sources */,
+				C19334531C1B6D7E00A19961 /* andyMenkmanDataBendsJpg.cpp in Sources */,
 				923871A61BF7993A00171456 /* sceneManager.cpp in Sources */,
 				71C091411C16197900C76EB9 /* manfredMohrP196A.cpp in Sources */,
 				71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */,
@@ -954,6 +999,7 @@
 				B01DF8031C179B9800B2EAB0 /* ofxEasingSine.cpp in Sources */,
 				B01DF8001C179B9800B2EAB0 /* ofxEasingQuad.cpp in Sources */,
 				FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */,
+				C19334591C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp in Sources */,
 				B01DF8041C179B9800B2EAB0 /* ofxTween.cpp in Sources */,
 				9A6B71C41C157473000D7878 /* submotionOrchestraScene.cpp in Sources */,
 			);
