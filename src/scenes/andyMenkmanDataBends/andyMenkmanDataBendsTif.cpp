@@ -18,7 +18,7 @@ void andyMenkmanDataBendsTif::setup(){
 }
 
 void andyMenkmanDataBendsTif::update(){
-    bender.update(startLine, numberOfLines, true);
+    bender.update(startLine, numberOfLines);
 }
 
 void andyMenkmanDataBendsTif::draw(){
