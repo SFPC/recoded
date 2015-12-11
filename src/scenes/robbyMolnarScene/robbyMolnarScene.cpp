@@ -86,12 +86,12 @@ void robbyMolnarScene::setup(){
     vRect.setup(50, dimensions.height);
     vRect.centerX = centerX;
     vRect.centerY = centerY;
-    float space = centerY / 4.0;
-    for(int i = 0; i < 36; i++){
+    float space = centerY / 2.0;
+    for(int i = 0; i < 9; i++){
         veraRect v;
-        v.setup(50, dimensions.height*.25);
-        v.centerX = space*.5 + centerX - space*3 + space*(i%6);
-        v.centerY = space*.5 + centerY - space*3 + space*((int)(i/6));
+        v.setup(50, dimensions.height*.5);
+        v.centerX = space*.5 + centerX - space*1.5 + space*(i%3);
+        v.centerY = space*.5 + centerY - space*1.5 + space*((int)(i/3));
         veraRects.push_back(v);
     }
 }
@@ -103,7 +103,7 @@ void robbyMolnarScene::draw(){
 
 //    vRect.draw(numRectangles, disarray);
 
-    for(int i = 0; i < 36; i++){
+    for(int i = 0; i < 9; i++){
         veraRects[i].draw(numRectangles, disarray);
     }
 
