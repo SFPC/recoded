@@ -20,8 +20,9 @@
 #include "anastasisRileyScene.h"
 #include "loloWhitney.h"
 #include "loloVera.h"
-#include "menkmanJPG1.h"
-#include "menkmanPNG1.h"
+#include "andyMenkmanDataBendsJpg.h"
+#include "andyMenkmanDataBendsPng.h"
+#include "andyMenkmanDataBendsTif.h"
 #include "CooperBauhaus.h"
 #include "memoAktenScene.h"
 #include "submotionOrchestraScene.h"
@@ -72,8 +73,9 @@ void sceneManager::setup(){
     scenes.push_back(new anastasisRileyScene());
     scenes.push_back(new loloWhitney());
     scenes.push_back(new loloVera());
-    scenes.push_back(new menkmanJPG1());
-    scenes.push_back(new menkmanPNG1());
+    scenes.push_back(new andyMenkmanDataBendsJpg());
+    scenes.push_back(new andyMenkmanDataBendsPng());
+    scenes.push_back(new andyMenkmanDataBendsTif());
 	scenes.push_back(new manfredMohrP196A());
 	scenes.push_back(new veraMolnarTrapezium());
     scenes.push_back(new loloVera2());
