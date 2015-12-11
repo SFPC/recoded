@@ -44,7 +44,7 @@ void cantusFirmusRiley::setup(){
         else if(abs(i-size/2)%12 == 4) {
             int rand = ofRandom(120,180);
             g.c.set(rand);
-            cout << rand << endl;
+        //    cout << rand << endl;
             stripes.push_back(g);
         }
         
