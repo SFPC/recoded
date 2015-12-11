@@ -58,6 +58,10 @@ void ofApp::keyPressed(int key){
     if (key == '7'){
         ofSetWindowShape(ofGetScreenWidth(), ofGetScreenWidth()/2);
     }
+    
+    if (key == 's') {
+        SM.screenGrab();
+    }
 }
 
 //--------------------------------------------------------------
