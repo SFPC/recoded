@@ -51,6 +51,13 @@ void ofApp::keyPressed(int key){
     } else if (key == '1'){
         SM.mode = DRAW_SINGLE;
     }
+    
+    if (key == '6'){
+        ofSetWindowShape(504*2, 504);
+    }
+    if (key == '7'){
+        ofSetWindowShape(ofGetScreenWidth(), ofGetScreenWidth()/2);
+    }
 }
 
 //--------------------------------------------------------------
