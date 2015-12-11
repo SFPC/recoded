@@ -1,18 +1,16 @@
 void veraInterruptions::draw() {
-    ofBackground(0);
-    ofSetLineWidth([[lineWidth]]);
+    clearBackground();
+    setLineWidth([[lineWidth]]);
     
-    for (int i = 0; i < N_XY; ++i) {
-        for (int j = 0; j < N_XY; ++j) {
-            if (!lineGrid[i][j]) continue;
+    for (int x = 0; x < N_XY; x++) {
+        for (int y = 0; y < N_XY; y++) {
+            int angle = lineGrid[x][y];
             
-            ofPushMatrix();
+            if (!angle) continue;
             
-            ofTranslate(i * gridMarginX + gridStartX, j * gridMarginY + gridStartY);
-            ofRotate(lineGrid[i][j] + ofGetElapsedTimef() * [[rotationSpeed]]);
-            ofDrawLine(-[[lineLength]] / 2.0, 0, [[lineLength]] / 2.0, 0);
-            
-            ofPopMatrix();
+            translate(x * X_SIZE, y * Y_SIZE);
+            rotate(angle + time * [[rotationSpeed]]);
+            drawLine(-[[lineLength]] / 2.0, 0, [[lineLength]] / 2.0, 0);
         }
     }
 }
