@@ -176,3 +176,16 @@ void sceneManager::advanceScene(){
 void sceneManager::regressScene(){
 	nextScene(false);
 };
+
+void sceneManager::screenGrab() {
+    string path = "screengrabs/";
+    ofImage sceneImg;
+    ofImage codeImg;
+    
+    sceneFbo.readToPixels(sceneImg.getPixels());
+    codeFbo.readToPixels(codeImg.getPixels());
+    
+    sceneImg.save(path+ofGetTimestampString()+"_scene.png");
+    codeImg.save(path+ofGetTimestampString()+"_code.png");
+
+}
