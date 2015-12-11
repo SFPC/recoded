@@ -43,6 +43,9 @@
 #include "robbyMenkmanScene.h"
 
 void sceneManager::setup(){
+    
+font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
+    
     scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());
     scenes.push_back(new rachelScene());
@@ -80,7 +83,7 @@ void sceneManager::setup(){
     scenes.push_back(new alexLissamojiWhitney());
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
-    codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
+    codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
 
 
     
@@ -132,11 +135,39 @@ void sceneManager::draw(){
         sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
         
         codeFbo.begin();
-        ofClear(50,50,50, 255);
+        ofClear(0,0,0, 255);
         string codeReplaced = scenes[currentScene]->getCodeWithParamsReplaced();
-        ofDrawBitmapString(codeReplaced, 40,40);
+        
+        
+        vector < codeLetter > letters = scenes[currentScene]->getCodeWithParamsReplaced2();
+        
+        ofSetColor(255);
+        //font.drawString(codeReplaced, 40, 40);
+        //ofDrawBitmapString(codeReplaced, 40,40);
+        
+        int x = 10;
+        int y = 10 + 13;
+        for (int i = 0; i < letters.size(); i++){
+            
+            
+            if (letters[i].idOfChar == -1) ofSetColor(127);
+            if (letters[i].idOfChar != -1) ofSetColor(127 + ofClamp(scenes[currentScene]->paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
+            
+            string s = "";
+            s += (char)(letters[i].character);
+            font.drawString(s , (int)x, (int)y);
+
+            x += 7;
+            if (letters[i].character == '\n'){
+                y += 13;
+                x = 10;
+            }
+        }
+        
+ 
         codeFbo.end();
         
+        ofSetColor(255);
         codeFbo.draw(ofGetHeight(), 0,ofGetHeight(), ofGetHeight());
     } else if (mode == DRAW_SINGLE){
         sceneFbo.draw(0,0);
