@@ -13,15 +13,29 @@ precision mediump float;
 #define BLUE_SCALE     3.
 #define GREEN_SCALE    9.
 
-#define STEP_MIN       0.021
-#define STEP_MAX       0.03
+#define STEP_MIN       0.003
+#define STEP_MAX       0.007
 
 uniform float time;
 uniform vec2 resolution;
 
-float drawLine(vec2 uv, float y) {
-    float dist = abs(uv.y - y);
-    return smoothstep(STEP_MAX, STEP_MIN, dist);
+uniform float redOffset, blueOffset, greenOffset;
+uniform float redScale, blueScale, greenScale;
+
+float f(float x, float xOffset, float yScale) {
+    return sin(time * (x * HORIZ_SCALE + xOffset)) * yScale;
+}
+
+float fprime(float x, float xOffset, float yScale) {
+    return -HORIZ_SCALE * time * yScale * cos(time * (xOffset + HORIZ_SCALE * x));
+}
+
+// adapted from http://www.iquilezles.org/www/articles/distance/distance.htm
+
+float c(vec2 uv, float xOffset, float yScale) {
+    float fp = fprime(uv.x, xOffset, yScale);
+    float de = abs(f(uv.x, xOffset, yScale) - uv.y) / sqrt(1 + fp*fp);
+    return smoothstep(STEP_MAX, STEP_MIN, de);
 }
 
 void main()
@@ -29,17 +43,13 @@ void main()
     vec2 uv = gl_FragCoord.xy / resolution.xy - vec2(0.5, 0.5);
     vec3 color = vec3(0.);
     
-    float redVal   = time * (uv.x * HORIZ_SCALE + RED_SCALE);
-    float redY     = sin(redVal) * VERT_SCALE;
-    color.r        = drawLine(uv, redY);
+    vec3 color1 = vec3(0.792, 0.352, 0.513); // #CA5A83
+    vec3 color2 = vec3(1.000, 0.767, 0.388); // #FFC463
+    vec3 color3 = vec3(0.779, 0.114, 0.249); // #C71D3F
     
-    float greenVal = time * (uv.x * HORIZ_SCALE + GREEN_SCALE);
-    float greenY   = sin(greenVal) * VERT_SCALE;
-    color.g        = drawLine(uv, greenY);
-    
-    float blueVal  = time * (uv.x * HORIZ_SCALE + BLUE_SCALE);
-    float blueY    = sin(blueVal) * VERT_SCALE;
-    color.b        = drawLine(uv, blueY);
+    color += c(uv, redOffset,   redScale)   * color1;
+    color += c(uv, blueOffset,  blueScale)  * color2;
+    color += c(uv, greenOffset, greenScale) * color3;
     
     gl_FragColor = vec4(color, 1.0);
 }
