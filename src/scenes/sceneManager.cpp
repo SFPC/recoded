@@ -44,7 +44,7 @@
 
 void sceneManager::setup(){
     
-font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
+    font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
     
     scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());

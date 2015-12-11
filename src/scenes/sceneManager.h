@@ -40,4 +40,6 @@ public:
     
     drawMode mode;
     
+    ofTrueTypeFont font;
+    
 };
