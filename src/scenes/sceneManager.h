@@ -32,6 +32,7 @@ public:
     
     void advanceScene();
 	void regressScene();
+    void screenGrab();
     
     ofFbo sceneFbo;
     ofFbo codeFbo;
