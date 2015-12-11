@@ -1,19 +1,12 @@
-void main()
-{
-    vec2 uv = gl_FragCoord.xy / resolution.xy - vec2(0.5, 0.5);
-    vec3 color = vec3(0.);
+void drawPixel(int x, int y) {
+    float pinkYVal = sin([[time]] * (x + [[pinkOffset]])) * [[pinkScale]];
+    color += PINK * abs(y - pinkYVal);
     
-    float redVal   = [[time]] * (uv.x * HORIZ_SCALE + RED_SCALE);
-    float redY     = sin(redVal) * VERT_SCALE;
-    color.r        = drawLine(uv, redY);
+    float redYVal = sin([[time]] * (x + [[redOffset]])) * [[redScale]];
+    color += RED * abs(y - redYVal);
     
-    float greenVal = [[time]] * (uv.x * HORIZ_SCALE + GREEN_SCALE);
-    float greenY   = sin(greenVal) * VERT_SCALE;
-    color.g        = drawLine(uv, greenY);
+    float yellowYVal = sin([[time]] * (x + [[yellowOffset]])) * [[yellowScale]];
+    color += YELLOW * abs(y - yellowYVal);
     
-    float blueVal  = [[time]] * (uv.x * HORIZ_SCALE + BLUE_SCALE);
-    float blueY    = sin(blueVal) * VERT_SCALE;
-    color.b        = drawLine(uv, blueY);
-    
-    gl_FragColor = vec4(color, 1.0);
+    setPixelColor(color);
 }

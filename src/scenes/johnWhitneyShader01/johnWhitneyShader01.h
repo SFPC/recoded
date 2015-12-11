@@ -15,4 +15,7 @@ public:
     ofFbo fbo;
     
     ofParameter<float> time;
+    
+    ofParameter<float> redScale, greenScale, blueScale;
+    ofParameter<float> redOffset, greenOffset, blueOffset;
 };

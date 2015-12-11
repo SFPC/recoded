@@ -14,7 +14,7 @@ public:
     ofParameter<float> lineWidth, lineLength, rotationSpeed, deletionChance,
         timeBtwnHoles, timeBtwnWalk, timeBtwnReset, timeBtwnRemove;
     
-    int gridStartX, gridStartY, gridMarginX, gridMarginY;
+    float gridStartX, gridStartY, gridMarginX, gridMarginY;
     float lastHoleTime, lastWalkTime, lastResetTime, lastRemoveTime;
     
     vector<vector<int>> lineGridGoal, lineGrid;

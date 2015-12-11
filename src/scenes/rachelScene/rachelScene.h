@@ -13,6 +13,5 @@ public:
     
     ofShader shader;
     
-//    ofParameter<float> param;
-    ofParameter<float> scale;
+    ofParameter<float> posX, posY, time;
 };

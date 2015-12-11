@@ -3,20 +3,20 @@
 #include "appConstants.h"
 
 #define N_XY            60
-#define GRID_PADDING    20
+#define GRID_PADDING    10
 
 #define N_GAPS          10
 
 void chrisVeraInterruptions::setup(){
   
     // setup pramaters
-    lineWidth.set("lineWidth", 4, 0, 10);
+    lineWidth.set("lineWidth", 2, 0, 10);
     parameters.add(lineWidth);
     
-    lineLength.set("lineLength", 20, 0, 100);
+    lineLength.set("lineLength", 10, 0, 100);
     parameters.add(lineLength);
     
-    rotationSpeed.set("rotationSpeed", 200, 0, 1000);
+    rotationSpeed.set("rotationSpeed", 100, 0, 1000);
     parameters.add(rotationSpeed);
     
     deletionChance.set("deletionChance", 0.2, 0, 1);
@@ -38,9 +38,9 @@ void chrisVeraInterruptions::setup(){
     
     gridStartX = GRID_PADDING;
     gridStartY = GRID_PADDING;
-    gridMarginX = (VISUALS_WIDTH  - 2 * GRID_PADDING) / N_XY;
-    gridMarginY = (VISUALS_HEIGHT - 2 * GRID_PADDING) / N_XY;
-    
+    gridMarginX = (float)(VISUALS_WIDTH  - 2 * GRID_PADDING) / (N_XY - 1);
+    gridMarginY = (float)(VISUALS_HEIGHT - 2 * GRID_PADDING) / (N_XY - 1);
+
     resetGrid();
     resetRecent();
     redrawGrid();
