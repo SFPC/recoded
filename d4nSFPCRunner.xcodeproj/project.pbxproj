@@ -75,6 +75,13 @@
 		F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */; };
 		FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F431C18862D00F197F3 /* veraMolnarLines68.cpp */; };
 		FA361F491C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */; };
+		FAD0D4271C1C891400C2DA1B /* dgif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D41D1C1C891400C2DA1B /* dgif_lib.c */; settings = {ASSET_TAGS = (); }; };
+		FAD0D4281C1C891400C2DA1B /* egif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D41E1C1C891400C2DA1B /* egif_lib.c */; settings = {ASSET_TAGS = (); }; };
+		FAD0D4291C1C891400C2DA1B /* gif_err.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D41F1C1C891400C2DA1B /* gif_err.c */; settings = {ASSET_TAGS = (); }; };
+		FAD0D42A1C1C891400C2DA1B /* gif_font.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D4201C1C891400C2DA1B /* gif_font.c */; settings = {ASSET_TAGS = (); }; };
+		FAD0D42B1C1C891400C2DA1B /* gif_hash.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D4211C1C891400C2DA1B /* gif_hash.c */; settings = {ASSET_TAGS = (); }; };
+		FAD0D42C1C1C891400C2DA1B /* gifalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D4251C1C891400C2DA1B /* gifalloc.c */; settings = {ASSET_TAGS = (); }; };
+		FAD0D42D1C1C891400C2DA1B /* quantize.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D4261C1C891400C2DA1B /* quantize.c */; settings = {ASSET_TAGS = (); }; };
 		FAF7DF1F1C1833C70058EFE0 /* alexLissamojiWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAF7DF1D1C1833C70058EFE0 /* alexLissamojiWhitney.cpp */; };
 /* End PBXBuildFile section */
 
@@ -248,6 +255,16 @@
 		FA361F441C18862D00F197F3 /* veraMolnarLines68.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = veraMolnarLines68.h; sourceTree = "<group>"; };
 		FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alexGifPaletteDitherMenkman.cpp; sourceTree = "<group>"; };
 		FA361F481C1887A400F197F3 /* alexGifPaletteDitherMenkman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alexGifPaletteDitherMenkman.h; sourceTree = "<group>"; };
+		FAD0D41D1C1C891400C2DA1B /* dgif_lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dgif_lib.c; sourceTree = "<group>"; };
+		FAD0D41E1C1C891400C2DA1B /* egif_lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = egif_lib.c; sourceTree = "<group>"; };
+		FAD0D41F1C1C891400C2DA1B /* gif_err.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gif_err.c; sourceTree = "<group>"; };
+		FAD0D4201C1C891400C2DA1B /* gif_font.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gif_font.c; sourceTree = "<group>"; };
+		FAD0D4211C1C891400C2DA1B /* gif_hash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gif_hash.c; sourceTree = "<group>"; };
+		FAD0D4221C1C891400C2DA1B /* gif_hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gif_hash.h; sourceTree = "<group>"; };
+		FAD0D4231C1C891400C2DA1B /* gif_lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gif_lib.h; sourceTree = "<group>"; };
+		FAD0D4241C1C891400C2DA1B /* gif_lib_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gif_lib_private.h; sourceTree = "<group>"; };
+		FAD0D4251C1C891400C2DA1B /* gifalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gifalloc.c; sourceTree = "<group>"; };
+		FAD0D4261C1C891400C2DA1B /* quantize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = quantize.c; sourceTree = "<group>"; };
 		FAF7DF1D1C1833C70058EFE0 /* alexLissamojiWhitney.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alexLissamojiWhitney.cpp; sourceTree = "<group>"; };
 		FAF7DF1E1C1833C70058EFE0 /* alexLissamojiWhitney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alexLissamojiWhitney.h; sourceTree = "<group>"; };
 		FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlparser.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp; sourceTree = SOURCE_ROOT; };
@@ -653,7 +670,6 @@
 				B018C1A71C10F22100F70DA8 /* RoyWhitney1 */,
 				B01DF6FE1C14F02D00B2EAB0 /* CooperBauhaus */,
 				B01DF7B51C179A7F00B2EAB0 /* Cooper3dText */,
-				B04420961C1901D90049071E /* RileyArcsRoy */,
 			);
 			name = Roy;
 			sourceTree = "<group>";
@@ -813,10 +829,28 @@
 		FA361F461C1887A400F197F3 /* alexGifPaletteDitherMenkman */ = {
 			isa = PBXGroup;
 			children = (
+				FAD0D41C1C1C891400C2DA1B /* giflib */,
 				FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */,
 				FA361F481C1887A400F197F3 /* alexGifPaletteDitherMenkman.h */,
 			);
 			path = alexGifPaletteDitherMenkman;
+			sourceTree = "<group>";
+		};
+		FAD0D41C1C1C891400C2DA1B /* giflib */ = {
+			isa = PBXGroup;
+			children = (
+				FAD0D41D1C1C891400C2DA1B /* dgif_lib.c */,
+				FAD0D41E1C1C891400C2DA1B /* egif_lib.c */,
+				FAD0D41F1C1C891400C2DA1B /* gif_err.c */,
+				FAD0D4201C1C891400C2DA1B /* gif_font.c */,
+				FAD0D4211C1C891400C2DA1B /* gif_hash.c */,
+				FAD0D4221C1C891400C2DA1B /* gif_hash.h */,
+				FAD0D4231C1C891400C2DA1B /* gif_lib.h */,
+				FAD0D4241C1C891400C2DA1B /* gif_lib_private.h */,
+				FAD0D4251C1C891400C2DA1B /* gifalloc.c */,
+				FAD0D4261C1C891400C2DA1B /* quantize.c */,
+			);
+			path = giflib;
 			sourceTree = "<group>";
 		};
 		FAF7DF1C1C1833C70058EFE0 /* alexLissamojiWhitney */ = {
@@ -918,6 +952,7 @@
 				C13A36731C17906200F13242 /* aaronMarcusHieroglyphB.cpp in Sources */,
 				B04420911C18B0190049071E /* rachelScene.cpp in Sources */,
 				B01DF7B81C179A7F00B2EAB0 /* Cooper3dText.cpp in Sources */,
+				FAD0D4271C1C891400C2DA1B /* dgif_lib.c in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				B01DF7FB1C179B9800B2EAB0 /* ofxEasingCirc.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
@@ -937,6 +972,7 @@
 				7158FF7A1C164C0C00A6025B /* johnWhitneyShader02.cpp in Sources */,
 				B04420951C18B04D0049071E /* janVantommeScene.cpp in Sources */,
 				B01DF7F81C179B9800B2EAB0 /* ofxEasing.cpp in Sources */,
+				FAD0D42D1C1C891400C2DA1B /* quantize.c in Sources */,
 				B01DF7FF1C179B9800B2EAB0 /* ofxEasingLinear.cpp in Sources */,
 				923871B61BF7CCC900171456 /* exampleScene.cpp in Sources */,
 				FA361F491C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp in Sources */,
@@ -960,6 +996,8 @@
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
 				71C301F01C18A3D700C0AC31 /* rodrigoBelfort.cpp in Sources */,
 				B01DF8021C179B9800B2EAB0 /* ofxEasingQuint.cpp in Sources */,
+				FAD0D4291C1C891400C2DA1B /* gif_err.c in Sources */,
+				FAD0D42B1C1C891400C2DA1B /* gif_hash.c in Sources */,
 				923871B51BF7CCC900171456 /* emptyScene.cpp in Sources */,
 				923871A41BF7993A00171456 /* baseScene.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
@@ -974,7 +1012,10 @@
 				B01DF7FE1C179B9800B2EAB0 /* ofxEasingExpo.cpp in Sources */,
 				B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */,
 				4FEF16411C1146E0000B3B4F /* anastasisRileyScene.cpp in Sources */,
+				FAD0D4281C1C891400C2DA1B /* egif_lib.c in Sources */,
 				B01DF7FC1C179B9800B2EAB0 /* ofxEasingCubic.cpp in Sources */,
+				FAD0D42C1C1C891400C2DA1B /* gifalloc.c in Sources */,
+				FAD0D42A1C1C891400C2DA1B /* gif_font.c in Sources */,
 				7158FF821C174F8B00A6025B /* chrisVeraInterruptions.cpp in Sources */,
 				B01DF7FA1C179B9800B2EAB0 /* ofxEasingBounce.cpp in Sources */,
 				B01DF8031C179B9800B2EAB0 /* ofxEasingSine.cpp in Sources */,
