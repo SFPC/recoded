@@ -12,8 +12,8 @@ void RileyArcsRoy::setup(){
     minWidth = 1;
     minSpacing = 4;
     parameters.add(thinWideRatio.set("thinWideRatio", 0.2, 0,1));
-    parameters.add(oscMax.set("oscMax", 0.98, 0,1));
-    parameters.add(speed.set("speed", 0.2, 0,1));
+//    parameters.add(oscMax.set("oscMax", 0.98, 0,1));
+  //  parameters.add(speed.set("speed", 0.2, 0,1));
     
     initTime = TWO_PI*0.8;
     
@@ -22,7 +22,7 @@ void RileyArcsRoy::setup(){
 
 void RileyArcsRoy::update(){
     
-    thinWideRatio.set((1+sin(initTime+ofGetElapsedTimef()*speed)*oscMax)/2 );
+//    thinWideRatio.set((1+sin(initTime+ofGetElapsedTimef()*speed)*oscMax)/2 );
     
 }
 

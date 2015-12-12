@@ -428,14 +428,13 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B0B03CF11C1BD19900FF0761 /* Roy */,
 				C19334501C1B6D7E00A19961 /* andyMenkmanDataBends */,
-				B04420961C1901D90049071E /* RileyArcsRoy */,
 				B04420921C18B04D0049071E /* janVantommeScene */,
 				71C301F11C18A53600C0AC31 /* rachelScene */,
 				71C301ED1C18A3D700C0AC31 /* rodrigoBelfort */,
 				FA361F461C1887A400F197F3 /* alexGifPaletteDitherMenkman */,
 				FAF7DF1C1C1833C70058EFE0 /* alexLissamojiWhitney */,
-				B01DF7B51C179A7F00B2EAB0 /* Cooper3dText */,
 				C13A36701C17906200F13242 /* aaronMarcusHieroglyphB */,
 				71C301C81C1783A500C0AC31 /* yeseulWhitneyScene */,
 				7158FF7F1C174F8B00A6025B /* chrisVeraInterruptions */,
@@ -446,12 +445,10 @@
 				71C0913E1C16197900C76EB9 /* manfredMohrP196A */,
 				9A6B71BD1C157473000D7878 /* memoAktenScene */,
 				9A6B71C01C157473000D7878 /* submotionOrchestraScene */,
-				B01DF6FE1C14F02D00B2EAB0 /* CooperBauhaus */,
 				E1802C901C16905000780A6F /* loloVera2 */,
 				E18350571C14F3AC00EAFB96 /* loloVera */,
 				E18350531C14CCA300EAFB96 /* loloWhitney */,
 				9237CB9A1C11E9BD0007A916 /* veraFscene */,
-				B018C1A71C10F22100F70DA8 /* RoyWhitney1 */,
 				4FEF163E1C114519000B3B4F /* anastasisRileyScene */,
 				923871AC1BF7CCC900171456 /* emptyScene */,
 				923871AF1BF7CCC900171456 /* exampleScene */,
@@ -634,6 +631,17 @@
 				B04420981C1901D90049071E /* RileyArcsRoy.h */,
 			);
 			path = RileyArcsRoy;
+			sourceTree = "<group>";
+		};
+		B0B03CF11C1BD19900FF0761 /* Roy */ = {
+			isa = PBXGroup;
+			children = (
+				B018C1A71C10F22100F70DA8 /* RoyWhitney1 */,
+				B01DF6FE1C14F02D00B2EAB0 /* CooperBauhaus */,
+				B01DF7B51C179A7F00B2EAB0 /* Cooper3dText */,
+				B04420961C1901D90049071E /* RileyArcsRoy */,
+			);
+			name = Roy;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {

@@ -21,16 +21,17 @@ void Cooper3dText::setup(){
     
     ofEnableAlphaBlending();
     
+    distWords = 50;
 
-    parameters.add(distWords.set("Distance Blocks",50,  0, 400));
+//    parameters.add(distWords.set("Distance Blocks",50,  0, 400));
     parameters.add(tweenDuration.set("Tween Duration", 4000,0,10000));
     parameters.add(pauseDuration.set("Pause Duration", 1000,0,5000));
-    parameters.add(tweenVal.set("tweenVal", 0,0,1));
-    parameters.add(camPos.set("camPos", ofVec3f(0), ofVec3f(-10000), ofVec3f(10000)));
-    parameters.add(camOrientation.set("camOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
-    parameters.add(camStartOrientationParam.set("camStartOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
-    parameters.add(camEndOrientationParam.set("camEndOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
-    distWords.addListener(this, &Cooper3dText::distWordsChange);
+//    parameters.add(tweenVal.set("tweenVal", 0,0,1));
+//    parameters.add(camPos.set("camPos", ofVec3f(0), ofVec3f(-10000), ofVec3f(10000)));
+//    parameters.add(camOrientation.set("camOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
+//    parameters.add(camStartOrientationParam.set("camStartOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
+//    parameters.add(camEndOrientationParam.set("camEndOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
+//    distWords.addListener(this, &Cooper3dText::distWordsChange);
     
     ofRectangle v =ofGetCurrentViewport();
     
@@ -75,10 +76,10 @@ void Cooper3dText::setupSurfaces(){
     }
     currentSurface = surfaces.size()-1;
 }
-//--------------------------------------------------------------
-void Cooper3dText::distWordsChange(float & f){
-    setupSurfaces();
-}
+////--------------------------------------------------------------
+//void Cooper3dText::distWordsChange(float & f){
+//    setupSurfaces();
+//}
 //--------------------------------------------------------------
 void Cooper3dText::update(){
 
@@ -117,9 +118,9 @@ void Cooper3dText::nextSurface(bool bTween){
     camStartOrientation = cam.getGlobalOrientation();
     
     camEndOrientation =  surfaces[currentSurface].getGlobalOrientation();
-    camEndOrientationParam.set(ofVec4f(camEndOrientation.x(), camEndOrientation.y(), camEndOrientation.z(), camEndOrientation.w()));
-    camStartOrientationParam.set(ofVec4f(camStartOrientation.x(), camStartOrientation.y(), camStartOrientation.z(), camStartOrientation.w()));
-    
+//    camEndOrientationParam.set(ofVec4f(camEndOrientation.x(), camEndOrientation.y(), camEndOrientation.z(), camEndOrientation.w()));
+//    camStartOrientationParam.set(ofVec4f(camStartOrientation.x(), camStartOrientation.y(), camStartOrientation.z(), camStartOrientation.w()));
+//    
     ofRectangle rc = font.getStringBoundingBox(surfaces[currentSurface].text, 0, 0);
     ofVec3f offset (rc.width/2,-rc.height/2,0 );
     
@@ -129,18 +130,17 @@ void Cooper3dText::nextSurface(bool bTween){
         cam.setPosition(camEndPos);
         cam.setOrientation(camEndOrientation);
     }
-    
 }
 //--------------------------------------------------------------
 void Cooper3dText::updateCameraTween(){
     float f = tween.update();
-    tweenVal.set(f);
+//    tweenVal.set(f);
     if (tween.isTweening()) {
         ofQuaternion q;
         q.slerp(f, camStartOrientation, camEndOrientation);
         cam.setPosition(camStartPos.getInterpolated(camEndPos, f));
         cam.setOrientation(q);
-        camOrientation.set(ofVec4f(q.x(), q.y(), q.z(), q.w()));
-        camPos.set(cam.getPosition());
+//        camOrientation.set(ofVec4f(q.x(), q.y(), q.z(), q.w()));
+//        camPos.set(cam.getPosition());
     }
 }

@@ -14,6 +14,6 @@ public:
 
 
     
-    ofParameter<float> thinWideRatio, speed, oscMax;
+    ofParameter<float> thinWideRatio;//, speed, oscMax;
     float minWidth, minSpacing, initTime;
 };

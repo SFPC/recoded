@@ -72,17 +72,18 @@ public:
     
     ofVec3f camStartPos, camEndPos;
     ofQuaternion camStartOrientation, camEndOrientation;
-    
-    ofParameter<float> distWords;
+  
+    float distWords;
+//    ofParameter<float> distWords;
     ofParameter<int>tweenDuration, pauseDuration;
     
     void tweenEnded(int &i);
-    void distWordsChange(float & f);
+//    void distWordsChange(float & f);
     
     ofBlendMode blend;
     
-    ofParameter<float>tweenVal;
-    ofParameter<ofVec3f>camPos;
-    ofParameter<ofVec4f>camOrientation, camStartOrientationParam, camEndOrientationParam;
-    
+//    ofParameter<float>tweenVal;
+//    ofParameter<ofVec3f>camPos;
+//    ofParameter<ofVec4f>camOrientation, camStartOrientationParam, camEndOrientationParam;
+//    
 };
