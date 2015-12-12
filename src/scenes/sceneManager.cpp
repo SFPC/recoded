@@ -42,6 +42,7 @@
 #include "rachelScene.h"
 #include "RileyArcsRoy.h"
 #include "robbyMenkmanScene.h"
+#include "yosukeVeraSansTitre.h"
 
 void sceneManager::setup(){
     
@@ -83,6 +84,7 @@ void sceneManager::setup(){
 	scenes.push_back(new aaronMarcusHieroglyphB());
     scenes.push_back(new veraMolnarLines68());
     scenes.push_back(new alexLissamojiWhitney());
+    scenes.push_back(new yosukeVeraSansTitre());
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
