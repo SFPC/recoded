@@ -17,6 +17,17 @@ class robbyMenkmanScene : public baseScene {
     void update();
     void draw();
     
-    ofParameter<int> numRectangles;
-    ofParameter<float> disarray;
+    ofImage image;
+    ofBuffer buffer;
+    ofBuffer originalBuffer;
+    
+    unsigned long nextGlitchMoment;
+    unsigned long lastBufferLoad;
+    
+    ofParameter<int> speedParameter;
+    ofParameter<int> chunkParameter;
+    
+    void loadImageBuffer();
+    void glitchImage();
+
 };

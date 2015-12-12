@@ -67,7 +67,7 @@ void sceneManager::setup(){
     scenes.push_back(new exampleScene() );
     scenes.push_back(new triangleScene() );
     scenes.push_back(new robbyRileyScene() );
-//    scenes.push_back(new robbyMenkmanScene());//in progress
+    scenes.push_back(new robbyMenkmanScene());
     scenes.push_back(new yeseulWhitneyScene() );
     scenes.push_back(new johnWhitneyShader01());
     scenes.push_back(new anastasisRileyScene());
