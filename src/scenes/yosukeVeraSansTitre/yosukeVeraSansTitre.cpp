@@ -9,8 +9,8 @@ void yosukeVeraSansTitre::setup(){
     margin.set("margin", 3, -50, 50);
     parameters.add(margin);
 
-    transx.set("transx", 75, 0, 100);
-    transy.set("transy", 170, 0, 500);
+    transx.set("transx", 15, 0, 100);
+    transy.set("transy", 85, 0, 500);
 
 //    parameters.add(transx);
 //    parameters.add(transy);
@@ -27,7 +27,7 @@ void yosukeVeraSansTitre::update(){
 
 void yosukeVeraSansTitre::draw(){
     ofPushMatrix();
-    ofTranslate(75, 170);
+    ofTranslate(15, 85);
     //ofTranslate(transx, transy);
     ofSetColor(255);
     ofNoFill();
