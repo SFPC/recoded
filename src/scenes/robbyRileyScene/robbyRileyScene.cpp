@@ -4,7 +4,7 @@
 #define R_RIL_CNT 20
 
 void robbyRileyScene::setup(){
-    param.set("dent", 15, -10, 30);
+    param.set("dent", 15, 7, 20);
     parameters.add(param);
     loadCode("robbyRileyScene/code.txt");
 }
@@ -18,10 +18,10 @@ void robbyRileyScene::draw(){
     
     float space = dimensions.height / R_RIL_CNT;
     float colPos = 0;
-    float time1 = (cosf(ofGetElapsedTimeMillis() / 5453.0) * 5) + 15;
-    float time2 = cosf(ofGetElapsedTimeMillis() / 5592.0) * .5 + 1.5;
+//    float time1 = (cosf(ofGetElapsedTimeMillis() / 5453.0) * 5) + 15;
+    float time2 = cosf(ofGetElapsedTimeMillis() / 5000.0) * .5 + 1.75;
     
-    param.set(time1);
+//    param.set(time1);
 
     int i = 0;
     while (colPos < dimensions.width){
