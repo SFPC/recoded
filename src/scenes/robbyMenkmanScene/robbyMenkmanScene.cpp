@@ -7,6 +7,7 @@
 //
 
 #include "robbyMenkmanScene.h"
+#include "appConstants.h"
 
 #define RK_MNK_DEL_REFRESH 7000
 
@@ -55,5 +56,5 @@ void robbyMenkmanScene::update(){
 void robbyMenkmanScene::draw(){
     ofClear(0, 0, 0);
     if(image.isAllocated())
-        image.draw(0, 0, 504, 504);
+        image.draw(0, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
 }

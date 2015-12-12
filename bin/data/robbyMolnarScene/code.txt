@@ -7,18 +7,3 @@ draw([[numRectangles]], [[disarray]]){
 
     }
 }
-
-// "perturb" contains values to offset each corner of the square,
-// making it irregular, but consistent between each frame
-
-drawPerturbedRect(x, y, width, height, perturb){
-
-    line(topLeftX     + perturb.TopLeft,     topLeftY     + perturb.TopLeft, 
-         topRightX    + perturb.TopRight,    topRightY    + perturb.TopRight);
-    line(topRightX    + perturb.TopRight,    topRightY    + perturb.TopRight, 
-         bottomRightX + perturb.BottomRight, bottomRightY + perturb.BottomRight);
-    line(bottomRightX + perturb.BottomRight, bottomRightY + perturb.BottomRight, 
-         bottomLeftX  + perturb.BottomLeft,  bottomLeftY  + perturb.BottomLeft);
-    line(bottomLeftX  + perturb.BottomLeft,  bottomLeftY  + perturb.BottomLeft, 
-         topLeftX     + perturb.TopLeft,     topLeftY     + perturb.TopLeft);
-}
