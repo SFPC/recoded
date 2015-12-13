@@ -28,11 +28,12 @@ void alexGifPaletteDitherMenkman::setup(){
     parameters.add(pInterlacedJumps[2].set("Interleave Jumps 3", 4,0,8));
     parameters.add(pInterlacedJumps[3].set("Interleave Jumps 4", 2,0,8));
     
-    // breaks build, dunno why... duh!
-    //    for(int i=0;i<4;i++){
-    //        pInterlacedJumps[i].addListener(this,&alexGifPaletteDitherMenkman::GGReloadImage);
-    //    }
-    // pInterleave.addListener(this,&alexGifPaletteDitherMenkman::GGReloadImage);
+    for(int i=0;i<4;i++){
+        pInterlacedJumps[i].addListener(this, &alexGifPaletteDitherMenkman::pInterlacedChanged);
+        pInterlacedOffset[i].addListener(this, &alexGifPaletteDitherMenkman::pInterlacedChanged);
+    }
+    
+    pInterleave.addListener(this, &alexGifPaletteDitherMenkman::pInterleaveChanged);
 
     pInterleaveLast = pInterleave;
   
@@ -42,11 +43,6 @@ void alexGifPaletteDitherMenkman::setup(){
 void alexGifPaletteDitherMenkman::update(){
     
     ofSetBackgroundColor(0);
-    
-    if(pInterleaveLast != pInterleave) {
-        ImageReload = true;
-        pInterleaveLast = pInterleave;
-    }
     
     int InterlacedOffset[4];
     int InterlacedJumps[4];
@@ -138,10 +134,13 @@ void alexGifPaletteDitherMenkman::draw(){
     
 }
 
-void alexGifPaletteDitherMenkman::GGReloadImage() {
-
+void alexGifPaletteDitherMenkman::pInterlacedChanged(int &value) {
     ImageReload = true ;
+}
 
+
+void alexGifPaletteDitherMenkman::pInterleaveChanged(bool &value){
+    ImageReload = true;
 }
 
 

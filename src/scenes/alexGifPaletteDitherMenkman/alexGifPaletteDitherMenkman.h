@@ -29,16 +29,16 @@ public:
     
     ofParameter<int> pImageIndex;
     int ImageIndexLast;
-    void GGReloadImage();
-
     
     ofParameter<bool> pInterleave;
     // eventlistener  not working, using flag as workround
-    void pInterleaveChanged(int &pInterleave);
+    void pInterleaveChanged(bool &value);
     bool pInterleaveLast;
     
     ofParameter<int> pInterlacedOffset[4];
     ofParameter<int> pInterlacedJumps[4];
+    void pInterlacedChanged(int &value);
+
     
     ofPixels framePixels;
     ofImage frame;
