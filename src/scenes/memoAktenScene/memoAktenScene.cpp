@@ -39,7 +39,7 @@ void memoAktenScene::update(){
 		refreshParticles();
 	}
 
-	const float progress = ofGetElapsedTimef() * speed;
+	const float progress = getElapsedTimef() * speed;
 	const float baseline_y = dimensions.height * 0.5;
 
 	for (int i=0; i<particles.size(); i++) {
