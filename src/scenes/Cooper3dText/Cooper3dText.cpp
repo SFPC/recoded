@@ -1,14 +1,15 @@
 
 #include "Cooper3dText.h"
+#include "appConstants.h"
 float distToCameraToFit(const ofRectangle &r, const ofCamera& cam){
     
     
-    ofRectangle v =ofGetCurrentViewport();
+    ofRectangle v(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
     
     ofRectangle rr(r);
     rr.scaleTo(v, OF_ASPECT_RATIO_KEEP_BY_EXPANDING);
     //return cam.getImagePlaneDistance(rr);
-    return (rr.height)/tan(cam.getFov()*0.5 * DEG_TO_RAD);
+    return (rr.height /2 )/tan(cam.getFov()*0.5* DEG_TO_RAD);
 }
 
 //--------------------------------------------------------------
@@ -124,7 +125,7 @@ void Cooper3dText::nextSurface(bool bTween){
     ofRectangle rc = font.getStringBoundingBox(surfaces[currentSurface].text, 0, 0);
     ofVec3f offset (rc.width/2,-rc.height/2,0 );
     
-    camEndPos = surfaces[currentSurface].getGlobalPosition() + ofVec3f(0,0, distToCameraToFit(rc, cam))*camEndOrientation + offset*camEndOrientation;
+    camEndPos = surfaces[currentSurface].getGlobalPosition() + ofVec3f(0,0, distToCameraToFit(rc, cam)*4)*camEndOrientation + offset*camEndOrientation;
     
     if (!bTween) {
         cam.setPosition(camEndPos);
