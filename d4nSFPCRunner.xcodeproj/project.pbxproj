@@ -472,7 +472,6 @@
 				B0B03CF11C1BD19900FF0761 /* Roy */,
 				C19334501C1B6D7E00A19961 /* andyMenkmanDataBends */,
 				4F8F344B1C1BD89C000CF07C /* yosukeVeraSansTitre */,
-				B04420961C1901D90049071E /* RileyArcsRoy */,
 				B04420921C18B04D0049071E /* janVantommeScene */,
 				71C301F11C18A53600C0AC31 /* rachelScene */,
 				71C301ED1C18A3D700C0AC31 /* rodrigoBelfort */,
@@ -680,6 +679,7 @@
 		B0B03CF11C1BD19900FF0761 /* Roy */ = {
 			isa = PBXGroup;
 			children = (
+				B04420961C1901D90049071E /* RileyArcsRoy */,
 				B018C1A71C10F22100F70DA8 /* RoyWhitney1 */,
 				B01DF6FE1C14F02D00B2EAB0 /* CooperBauhaus */,
 				B01DF7B51C179A7F00B2EAB0 /* Cooper3dText */,

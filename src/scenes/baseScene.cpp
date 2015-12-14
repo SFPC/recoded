@@ -259,3 +259,14 @@ string baseScene::getCodeWithParamsReplaced(){
 //    return codeWithParams;
 
 }
+float baseScene::getElapsedTimef(){
+    return (ofGetElapsedTimeMicros() - startTime)/1000000.;
+}
+uint64_t baseScene::getFrameNum(){
+    return ofGetFrameNum() - startFrame;
+}
+
+void baseScene::resetTiming(){
+    startTime = ofGetElapsedTimeMicros();
+    startFrame = ofGetFrameNum();
+}
