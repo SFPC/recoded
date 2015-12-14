@@ -42,14 +42,14 @@ void chrisRileyCascando::setup(){
     
     diamondArcBlack.arc(0, 0, TRI_SIDE_LENGTH, TRI_SIDE_LENGTH, 0, 60);
     diamondArcBlack.close();
-    diamondArcBlack.setCircleResolution(36);
+    diamondArcBlack.setCircleResolution(100);
     diamondArcBlack.setFilled(true);
     diamondArcBlack.setStrokeWidth(0);
     diamondArcBlack.setFillColor(ofColor(0));
     
     diamondArcWhite.arc(3 * TRI_SIDE_LENGTH / 2, TRI_HEIGHT, TRI_SIDE_LENGTH, TRI_SIDE_LENGTH, 180, 240);
     diamondArcWhite.close();
-    diamondArcWhite.setCircleResolution(36);
+    diamondArcWhite.setCircleResolution(100);
     diamondArcWhite.setFilled(true);
     diamondArcWhite.setStrokeWidth(0);
     diamondArcWhite.setFillColor(ofColor(255));
@@ -62,6 +62,9 @@ void chrisRileyCascando::update(){
 void chrisRileyCascando::draw(){
     ofEnableAntiAliasing();
 
+    ofPushMatrix();
+    ofTranslate(VISUALS_WIDTH / 2.0, VISUALS_HEIGHT / 2.0);
+    
     ofPushMatrix();
     ofScale(triScale, triScale);
     
@@ -77,6 +80,7 @@ void chrisRileyCascando::draw(){
         for (int x = startX; x < endX; x += TRI_SIDE_LENGTH) {
             ofPushMatrix();
             
+            ofTranslate(-VISUALS_WIDTH / 2.0, -VISUALS_HEIGHT / 2.0);
             ofTranslate(x, y);
             
             // Bump us over half a triangle on odd rows
@@ -103,6 +107,8 @@ void chrisRileyCascando::draw(){
         }
     }
 
+    ofPopMatrix();
+    
     ofPopMatrix();
     ofDisableAntiAliasing();
 }
