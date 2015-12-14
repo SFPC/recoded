@@ -12,14 +12,20 @@ class textSurface: public ofNode{
 public:
     string text;
     ofColor color;
+    ofColor offColor;
 
     ofTrueTypeFont* font;
     ofRectangle r;
-
-    ofTexture tex;
-        
+    
+    float transition;
+    
+    ofTexture tex;//, texOff;
+    ofVec3f axis;
+    int sign;
     textSurface(){
         font = NULL;
+        offColor.set(130, 200);
+        transition = 0;
     }
     
     void setTextAndFont(string text,  ofTrueTypeFont& font, ofColor color){
@@ -36,12 +42,25 @@ public:
         font.drawStringAsShapes(text, 0, -r.y);
         fbo.end();
         tex = fbo.getTexture();
+
+//        ofFbo fbo2;
+//        fbo2.allocate(r.width, r.height);
+//        
+//        fbo2.begin();
+//        ofClear(255,0);
+//        ofSetColor(offColor);
+//        font.drawStringAsShapes(text, 0, -r.y);
+//        fbo2.end();
+//        texOff = fbo2.getTexture();
+//        
         
     }
     
     void customDraw(){
         ofPushStyle();
-        ofSetColor(255);
+        //ofSetColor(255, 255 - transition*255);
+        //texOff.draw(0,-r.height);
+        ofSetColor(255, ofMap(transition, 0, 1, 0.5, 1)*255);
         tex.draw(0,-r.height);
         ofPopStyle();
     }
@@ -78,7 +97,7 @@ public:
     ofParameter<int>tweenDuration, pauseDuration;
     
     void tweenEnded(int &i);
-//    void distWordsChange(float & f);
+  //  void distWordsChange(float & f);
     
     ofBlendMode blend;
     

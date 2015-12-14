@@ -1,14 +1,17 @@
 
 #include "Cooper3dText.h"
+#include "appConstants.h"
 float distToCameraToFit(const ofRectangle &r, const ofCamera& cam){
     
     
-    ofRectangle v =ofGetCurrentViewport();
+  //  ofRectangle v(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
     
     ofRectangle rr(r);
-    rr.scaleTo(v, OF_ASPECT_RATIO_KEEP_BY_EXPANDING);
-    //return cam.getImagePlaneDistance(rr);
-    return (rr.height)/tan(cam.getFov()*0.5 * DEG_TO_RAD);
+    rr.scaleFromCenter(1.1);
+    float h = ((rr.width/rr.height)>=1)?rr.width:rr.height;
+    float d = h / (2.0f * tanf(PI * cam.getFov()/ 360.0f)) ;
+//    cout << d << endl;
+    return d;
 }
 
 //--------------------------------------------------------------
@@ -17,13 +20,10 @@ void Cooper3dText::setup(){
     
     font.load("Helvetica Neue", 50, true, true, true);
     
-    setupSurfaces();
     
-    ofEnableAlphaBlending();
-    
-    distWords = 50;
+    distWords = 60;
 
-//    parameters.add(distWords.set("Distance Blocks",50,  0, 400));
+//    parameters.add(distWords.set("Distance Blocks",40,  0, 4000));
     parameters.add(tweenDuration.set("Tween Duration", 4000,0,10000));
     parameters.add(pauseDuration.set("Pause Duration", 1000,0,5000));
 //    parameters.add(tweenVal.set("tweenVal", 0,0,1));
@@ -32,6 +32,10 @@ void Cooper3dText::setup(){
 //    parameters.add(camStartOrientationParam.set("camStartOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
 //    parameters.add(camEndOrientationParam.set("camEndOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
 //    distWords.addListener(this, &Cooper3dText::distWordsChange);
+
+    setupSurfaces();
+    
+    ofEnableAlphaBlending();
     
     ofRectangle v =ofGetCurrentViewport();
     
@@ -48,7 +52,7 @@ void Cooper3dText::setup(){
 void Cooper3dText::setupSurfaces(){
     
     string text;// = "SCHOOL FOR POETIC COMPUTATION";
-    text = ofBufferFromFile("Cooper3dText/sonnets.txt").getText();
+    text = ofBufferFromFile("Cooper3dText/cooperLetter.txt").getText();
     ofStringReplace(text, "\r", "\n");
     vector<string> txts = ofSplitString(text, "\n\n");
   //  cout << "txts.size(): " <<txts.size() << endl;
@@ -60,14 +64,21 @@ void Cooper3dText::setupSurfaces(){
         c.setHsb(ofRandom(255), ofRandom(230, 255), ofRandom(180, 255));
         surfaces.push_back(textSurface());
         surfaces.back().setTextAndFont(txts[i], font,c);
+        surfaces.back().axis = ofVec3f::zero();
+        surfaces.back().axis[(int)round(ofRandom(0, 2))] = ((ofRandom(1) > 0.5)? 1:-1);
+        
+        surfaces.back().sign = ((ofRandom(1) > 0.5)? 1:-1);
         
         if (i > 0) {
+            if (surfaces.back().axis.y != 0 && surfaces[i-1].axis.y != 0) {
+                surfaces.back().axis = ofVec3f::zero();
+                surfaces.back().axis[(int)round(ofRandom(1))?0:2] = ((ofRandom(1) > 0.5)? 1:-1);
+            }
             ofRectangle prevRect =font.getStringBoundingBox(txts[i-1],0,0);
-            ofVec3f axis;
-            axis[(int)round(ofRandom(0, 2))] = ((ofRandom(1) > 0.5)? 1:-1);
-            int sign = ((ofRandom(1) > 0.5)? 1:-1);
-            surfaces.back().rotate(90*sign , axis);
-            surfaces.back().move(prevRect.width + distWords + prevRect.height*((axis.z*sign == -1)?1:0), 0,0);
+            surfaces.back().rotate(90*surfaces.back().sign , surfaces.back().axis);
+            ofVec3f m(prevRect.width + distWords + prevRect.height*((surfaces.back().axis.z*surfaces.back().sign == -1)?1:0), 0,0);
+            surfaces.back().move(m);
+            cout << m << endl;
         }
     }
     
@@ -90,15 +101,15 @@ void Cooper3dText::draw(){
   //      cout << __PRETTY_FUNCTION__ << endl;
     updateCameraTween();
     ofBackground(ofColor::black);
-    
+    ofEnableDepthTest();
 //    ofEnableBlendMode(blend);
         cam.begin();
         for (auto s: surfaces) {
             s.draw();
         }
         cam.end();
-    ofDisableBlendMode();
-    
+//    ofDisableBlendMode();
+    ofDisableDepthTest();
 }
 //--------------------------------------------------------------
 void Cooper3dText::tweenEnded(int &i){
@@ -140,6 +151,11 @@ void Cooper3dText::updateCameraTween(){
         q.slerp(f, camStartOrientation, camEndOrientation);
         cam.setPosition(camStartPos.getInterpolated(camEndPos, f));
         cam.setOrientation(q);
+        surfaces[currentSurface].transition = f;
+        if (currentSurface >0) {
+        surfaces[currentSurface-1].transition = 1 - f;
+        }
+
 //        camOrientation.set(ofVec4f(q.x(), q.y(), q.z(), q.w()));
 //        camPos.set(cam.getPosition());
     }

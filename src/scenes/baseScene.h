@@ -29,4 +29,15 @@ public:
     ofRectangle dimensions;     // this is the dimensions of
                                 // the surface you are drawing into.
     
+    //----------------------------------------
+    // scene timing and frames.
+    uint64_t startTime;
+    uint64_t startFrame;
+    float getElapsedTimef();
+    uint64_t getFrameNum();
+    void resetTiming();
+    //----------------------------------------
+
+    
+    
 };

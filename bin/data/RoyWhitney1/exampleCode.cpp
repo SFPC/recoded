@@ -1,18 +1,22 @@
-draw_circles(centerX, centerY, radius, time = [[Current Time]], size = [[Current Size]], currentIteration){
-    for (int i =0; i < numCircles; i++) {
-        float angle = TWO_PI*(i/[[Number Of Circles]]) + time;
-        if (currentIteration < [[Iterations]]) {
-            drawCircles(centerX+ radius*sin(angle),
-                        centerY+ radius*cos(angle),
-                        [[Current Size]]*2,
-                        [[Current Time]]/2,
-                        radius/2*(1+sin([[Current Time]]) * [[Grow Factor]] * 2),
-                        [[Number Of Circles]]*2,
+setColor(255, [[Opacity]]);
+setLineWidth([[Line Width]]);
+draw_circles(centerX, centerY, radius, size, currentIteration){
+    i = 0;
+    numCircles = [[Number Of Circles]] * pow(2, currentIteration);
+    angleOffset = ellapsedTime * pow(2, currentIteration) * [[Speed]];
+    while( i < numCircles ) {
+        float angle = 360 * (i/numCircles) + angleOffset;
+        if (currentIteration < 2) {
+            drawCircles(centerX+ [[Radius]]*sin(angle),
+                        centerY+ [[Radius]]*cos(angle),
+                        [[Size]]*[[multiplier]],
+                        [[Radius]]/[[multiplier]]),
                         currentIteration+1);
         }else{
             ofDrawCircle(centerX+ radius*sin(angle),
                          centerY+ radius*cos(angle),
                          size);
         }
+        i = i + 1
     }
 }

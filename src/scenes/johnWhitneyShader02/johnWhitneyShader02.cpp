@@ -4,17 +4,18 @@
 void johnWhitneyShader02::setup(){
     
     // setup pramaters
-    time.set("time", 0, 0, 1);
+    time.set("time", 0.18, 0, 1);
     parameters.add(time);
     
-    loadCode("johnWhitneyShader02/exampleCode.cpp");
+    thickness.set("thickness", 0.26, 0.0001, 0.4);
+    parameters.add(thickness);
     
     shader.load("johnWhitneyShader02/shader");
+    
+    loadCode("johnWhitneyShader02/exampleCode.cpp");
 }
 
 void johnWhitneyShader02::update() {
-    float t = ofGetElapsedTimef() / 3.0;
-    time.set(ofMap(sin(t), -1, 1, 0, 1));
 }
 
 void johnWhitneyShader02::draw() {
@@ -22,8 +23,9 @@ void johnWhitneyShader02::draw() {
     
     ofFill();
     shader.begin();
-    shader.setUniform1f("time", time.get());
+    shader.setUniform1f("time", time);
     shader.setUniform2fv("resolution", resolution);
-    ofRect(0, 0, dimensions.width, dimensions.height);
+    shader.setUniform1f("thickness", thickness);
+    ofDrawRectangle(0, 0, dimensions.width, dimensions.height);
     shader.end();
 }
