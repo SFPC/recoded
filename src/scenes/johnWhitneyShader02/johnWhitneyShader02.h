@@ -15,4 +15,5 @@ public:
     ofFbo fbo;
     
     ofParameter<float> time;
+    ofParameter<float> thickness;
 };

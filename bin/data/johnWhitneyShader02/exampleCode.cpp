@@ -1,18 +1,10 @@
-void main()
-{
-    vec2 pos = gl_FragCoord.xy;
-    vec2 center = resolution * 0.5;
+void drawPixel(int x, int y) {
+    float centerDistance = distanceFromCenter(x, y);
     
-    float centerDistance = length(pos - center);
+    float color1 = cos((centerDistance - 0.3) * [[time]]);
+    float color2 = cos((centerDistance - 0.4) * [[time]]);
+    float color3 = cos((centerDistance - 0.5) * [[time]]);
     
-    float r = cos((centerDistance / DISTANCE_SCALE - 0.3) * [[time]] * TIME_SCALE);
-    float g = cos((centerDistance / DISTANCE_SCALE - 0.4) * [[time]] * TIME_SCALE);
-    float b = cos((centerDistance / DISTANCE_SCALE - 0.5) * [[time]] * TIME_SCALE);
-    
-    vec3 color = vec3(0.);
-    color.r = nearZero(r);
-    color.g = nearZero(g);
-    color.b = nearZero(b);
-    
-    gl_FragColor = vec4(color, 1.0);
+    setThickness([[thickness]]);
+    drawPixelColor(r, g, b);
 }
