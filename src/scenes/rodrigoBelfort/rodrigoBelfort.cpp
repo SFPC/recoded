@@ -16,8 +16,6 @@ void rodrigoBelfort::setup(){
     
     pNewLine.set("pNewLine", 0.1, 0, 1);
     parameters.add(pNewLine);
-
-    loadCode("rodrigoBelfort/exampleCode.cpp");
     
     // Calculate rectangle size and padding from width
     float availableSpaceX = (VISUALS_WIDTH - WINDOW_PADDING * 2);
@@ -47,6 +45,8 @@ void rodrigoBelfort::setup(){
             dots[i][j]=(*shape)[j];
         }
     }
+
+    loadCode("rodrigoBelfort/exampleCode.cpp");
 }
 
 void rodrigoBelfort::update(){

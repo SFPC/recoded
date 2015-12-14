@@ -11,8 +11,6 @@ void veraAnimatedScene::setup(){
     parameters.add(smoothing);
     parameters.add(opacity);
     
-    loadCode("veraAnimatedScene/exampleCode.cpp");
-    
     for (int i = 0; i < 6; i++) {
         vector<vector<ShapePosition>> row;
         
@@ -65,6 +63,7 @@ void veraAnimatedScene::setup(){
     vols = {0.5,0.6,0.7,0.8,0.9};
     
     ofNoFill();
+    loadCode("veraAnimatedScene/exampleCode.cpp");
 }
 
 void veraAnimatedScene::update(){

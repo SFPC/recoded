@@ -23,8 +23,6 @@ void chrisMurielCooper::setup(){
     parameters.add(text1PlaneOpacity);
     text2PlaneOpacity.set("text2PlaneOpacity", 100, 0, 255);
     parameters.add(text2PlaneOpacity);
-
-    loadCode("chrisMurielCooper/exampleCode.cpp");
     
     text1.text.push_back("I guess I'm never sure that print is truly linear.");
     text1.text.push_back("It’s more a simultaneous medium.");
@@ -54,6 +52,8 @@ void chrisMurielCooper::setup(){
     text2.planeOpacity = &text2PlaneOpacity;
     
     ttf.load("chrisMurielCooper/OpenSans-Regular.ttf", 32);
+
+    loadCode("chrisMurielCooper/exampleCode.cpp");
 }
 
 void chrisMurielCooper::update(){

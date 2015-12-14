@@ -10,8 +10,8 @@ void rachelScene::setup(){
     time.set("time", 0.1, 0, 2*PI);
     parameters.add(time);
 
-    loadCode("rachelScene/exampleCode.cpp");
     shader.load("rachelScene/shader");
+    loadCode("rachelScene/exampleCode.cpp");
 }
 
 void rachelScene::update(){

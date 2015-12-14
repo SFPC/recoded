@@ -15,9 +15,10 @@ void yosukeVeraSansTitre::setup(){
 //    parameters.add(transx);
 //    parameters.add(transy);
 
-    loadCode("yosukeVeraSansTitre/exampleCode.cpp");
     ofBackground(0);
     ofSetBackgroundAuto(false);
+
+    loadCode("yosukeVeraSansTitre/exampleCode.cpp");
 }
 
 void yosukeVeraSansTitre::update(){

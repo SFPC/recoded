@@ -16,13 +16,13 @@ void robbyMenkmanScene::setup(){
     chunkParameter.set("chunk size", 9000, 2000, 20000);
     parameters.add(speedParameter);
     parameters.add(chunkParameter);
-    loadCode("robbyMenkmanScene/code.txt");
 
       // MUST BE A JPEG!  no PNG
     // from Rosa Menkman's flickr https://www.flickr.com/photos/r00s/14470920443/
     originalBuffer = ofBufferFromFile("robbyMenkmanScene/100.jpg");
     nextGlitchMoment = 0;
     loadImageBuffer();
+    loadCode("robbyMenkmanScene/code.txt");
 }
 void robbyMenkmanScene::loadImageBuffer(){
     buffer = originalBuffer;

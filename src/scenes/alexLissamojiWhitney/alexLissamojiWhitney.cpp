@@ -25,11 +25,10 @@ void alexLissamojiWhitney::setup(){
     parameters.add(plissajouRatioX.set("Lissajous Ratio X", 2, 1, 8));
     parameters.add(plissajouRatioY.set("Lissajous Ratio Y", 3, 1, 8));
     parameters.add(pImgScale.set("Image scale", 0.15, 0.1, 1));
-
-    loadCode("alexLissamojiWhitney/exampleCode.cpp");
     
     timerLastTime = ofGetElapsedTimeMillis();
 
+    loadCode("alexLissamojiWhitney/exampleCode.cpp");
 }
 
 void alexLissamojiWhitney::update(){
