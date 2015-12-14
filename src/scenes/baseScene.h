@@ -20,11 +20,13 @@ public:
     ~baseScene(){}
     
     void loadCode( string fileName );
-    
+    void setAuthor(string author);
+    void setOriginalArtist(string originalArtist);
     
     ofParameterGroup parameters;    // this is the parameters of your sketch...
 
     string code;                // this is the code we show
+    string author, originalArtist; // for scene transitions
     
     ofRectangle dimensions;     // this is the dimensions of
                                 // the surface you are drawing into.

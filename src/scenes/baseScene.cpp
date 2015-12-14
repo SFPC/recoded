@@ -21,6 +21,14 @@ void baseScene::loadCode( string fileName ){
 
 }
 
+void baseScene::setAuthor(string newAuthor) {
+    author = newAuthor;
+}
+
+void baseScene::setOriginalArtist(string newOriginalArtist) {
+    originalArtist = newOriginalArtist;
+}
+
 float baseScene::getElapsedTimef(){
     return (ofGetElapsedTimeMicros() - startTime)/1000000.;
 }
