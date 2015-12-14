@@ -19,9 +19,9 @@ void yeseulWhitneyScene::setup(){
 
 void yeseulWhitneyScene::update(){
     
-    angle.set(ofMap(sin(ofGetElapsedTimef()), -1, 1, 90, 0));
-    numberOfPattern.set(ofMap(sin(ofGetElapsedTimef()), -1, 1, 1, 6));
-    color.set(ofMap(sin(ofGetElapsedTimef()), -1, 1, 145, 255));
+    angle.set(ofMap(sin(getElapsedTimef()), -1, 1, 90, 0));
+    numberOfPattern.set(ofMap(sin(getElapsedTimef()), -1, 1, 1, 6));
+    color.set(ofMap(sin(getElapsedTimef()), -1, 1, 145, 255));
 
 }
 

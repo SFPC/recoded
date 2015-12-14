@@ -26,7 +26,7 @@ void submotionOrchestraScene::setup(){
 
 void submotionOrchestraScene::update(){
 	
-	k = ofGetElapsedTimef() * speed;
+	k = getElapsedTimef() * speed;
 	
 	points_dest.clear();
 	

@@ -49,7 +49,7 @@ void chrisVeraInterruptions::setup(){
 }
 
 void chrisVeraInterruptions::update() {
-    float time = ofGetElapsedTimef();
+    float time = getElapsedTimef();
     
     if (lastResetTime + timeBtwnReset < time) {
         lastResetTime = time;
@@ -199,7 +199,7 @@ void chrisVeraInterruptions::draw() {
             ofPushMatrix();
 
             ofTranslate(i * gridMarginX + gridStartX, j * gridMarginY + gridStartY);
-            ofRotate(lineGrid[i][j] + ofGetElapsedTimef() * rotationSpeed);
+            ofRotate(lineGrid[i][j] + getElapsedTimef() * rotationSpeed);
             ofDrawLine(-lineLength / 2.0, 0, lineLength / 2.0, 0);
             
             ofPopMatrix();

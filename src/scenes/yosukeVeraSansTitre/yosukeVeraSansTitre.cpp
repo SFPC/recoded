@@ -24,7 +24,7 @@ void yosukeVeraSansTitre::setup(){
 }
 
 void yosukeVeraSansTitre::update(){
-    displacementCoef.set(100*abs(sin(ofGetElapsedTimef()/5.0)));
+    displacementCoef.set(100*abs(sin(getElapsedTimef()/5.0)));
 
 }
 
@@ -36,7 +36,7 @@ void yosukeVeraSansTitre::draw(){
     ofNoFill();
     for (int i=0; i<row; i++) {
         for(int j=0; j<col; j++ ){
-            ofDrawRectangle(j*rectWidth+margin*j , i*rectHeight+margin*i + displacementCoef*ofNoise(j*rectWidth+margin*j, i*rectHeight+margin*i, ofGetElapsedTimef()/2.0), rectWidth, rectHeight);
+            ofDrawRectangle(j*rectWidth+margin*j , i*rectHeight+margin*i + displacementCoef*ofNoise(j*rectWidth+margin*j, i*rectHeight+margin*i, getElapsedTimef()/2.0), rectWidth, rectHeight);
         }
     }
     ofPopMatrix();

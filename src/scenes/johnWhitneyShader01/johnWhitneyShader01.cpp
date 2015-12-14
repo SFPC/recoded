@@ -30,7 +30,7 @@ void johnWhitneyShader01::setup(){
 }
 
 void johnWhitneyShader01::update() {
-    time.set(ofMap(sin(ofGetElapsedTimef()), -1, 1, 0, PI));
+    time.set(ofMap(sin(getElapsedTimef()), -1, 1, 0, PI));
 }
 
 void johnWhitneyShader01::draw() {

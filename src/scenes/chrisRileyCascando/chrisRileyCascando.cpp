@@ -90,7 +90,7 @@ void chrisRileyCascando::draw(){
                 ofTranslate(TRI_SIDE_LENGTH / 2.0, 0);
 
             // Add horizontal animation and loop it.
-            float time = ofGetElapsedTimef() * animSpeed;
+            float time = getElapsedTimef() * animSpeed;
             float xDelta = fmod(time, TRI_SIDE_LENGTH);
             float r = ofNoise((x + time) * (1.0/noiseScale), y * (1.0/noiseScale));
 

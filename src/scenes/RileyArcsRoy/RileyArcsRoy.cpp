@@ -24,7 +24,7 @@ void RileyArcsRoy::setup(){
 
 void RileyArcsRoy::update(){
     
-//    thinWideRatio.set((1+sin(initTime+ofGetElapsedTimef()*speed)*oscMax)/2 );
+//    thinWideRatio.set((1+sin(initTime+getElapsedTimef()*speed)*oscMax)/2 );
     
 }
 
