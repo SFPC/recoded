@@ -11,6 +11,8 @@ void anastasisRileyScene::setup(){
     parameters.add(param);
     ofEnableAlphaBlending();
 
+    setAuthor("Anastasis Germanidis");
+    setOriginalArtist("Bridget Riley");
     loadCode("anastasisRileyScene/exampleCode.cpp");
 }
 

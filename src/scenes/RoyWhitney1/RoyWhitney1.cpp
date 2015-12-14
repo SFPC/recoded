@@ -12,6 +12,9 @@ void RoyWhitney1::setup(){
     parameters.add(lineWidth.set("Line Width", 1,0, 10));
 //    parameters.add(currentTime.set("Current Time", 0,0, 5000));
 //    parameters.add(currentSize.set("Current Size", 50,0,400));
+
+    setAuthor("Roy MacDonald");
+    setOriginalArtist("John Whitney");
     loadCode("RoyWhitney1/exampleCode.cpp");
     
     iterations = 2;

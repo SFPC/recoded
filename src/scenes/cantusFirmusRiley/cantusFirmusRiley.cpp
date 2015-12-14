@@ -55,6 +55,8 @@ void cantusFirmusRiley::setup(){
     parameters.add(zoomNoiseSpeed.set("zoom speed", 0.2, 0.01, 0.4));
     parameters.add(range.set("scale", 0.3, 0.02, 1.0));
 
+    setAuthor("Reed Tothong");
+    setOriginalArtist("Bridget Riley");
     loadCode("cantusFirmusRiley/cantusFirmusRiley.cpp");
 }
 

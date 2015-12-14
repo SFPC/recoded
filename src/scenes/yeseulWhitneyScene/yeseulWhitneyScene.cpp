@@ -11,6 +11,8 @@ void yeseulWhitneyScene::setup(){
     parameters.add(numberOfPattern);
     parameters.add(color);
     
+    setAuthor("Yeseul Song");
+    setOriginalArtist("John Whitney");
     loadCode("yeseulWhitneyScene/exampleCode.cpp");
 
 }

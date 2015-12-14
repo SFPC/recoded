@@ -61,8 +61,9 @@ void veraAnimatedScene::setup(){
     }
     
     vols = {0.5,0.6,0.7,0.8,0.9};
-    
-    ofNoFill();
+
+    setAuthor("Sara Howorka");
+    setOriginalArtist("Vera Molnar");
     loadCode("veraAnimatedScene/exampleCode.cpp");
 }
 

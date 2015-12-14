@@ -24,6 +24,8 @@ void johnWhitneyShader01::setup(){
     
     shader.load("johnWhitneyShader01/shader");
 
+    setAuthor("Chris Anderson");
+    setOriginalArtist("John Whitney");
     loadCode("johnWhitneyShader01/exampleCode.cpp");
 }
 

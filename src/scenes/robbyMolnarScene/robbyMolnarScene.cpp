@@ -93,6 +93,9 @@ void robbyMolnarScene::setup(){
         v.centerY = space*.5 + centerY - space*1.5 + space*((int)(i/3));
         veraRects.push_back(v);
     }
+
+    setAuthor("Robby Kraft");
+    setOriginalArtist("Vera Molnar");
     loadCode("robbyMolnarScene/code.txt");
 }
 void robbyMolnarScene::update(){

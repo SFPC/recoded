@@ -43,6 +43,8 @@ void chrisVeraInterruptions::setup(){
     resetRecent();
     redrawGrid();
 
+    setAuthor("Chris Anderson");
+    setOriginalArtist("Vera Molnar");
     loadCode("chrisVeraInterruptions/exampleCode.cpp");
 }
 

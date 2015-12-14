@@ -53,6 +53,8 @@ void chrisMurielCooper::setup(){
     
     ttf.load("chrisMurielCooper/OpenSans-Regular.ttf", 32);
 
+    setAuthor("Chris Anderson");
+    setOriginalArtist("Muriel Cooper");
     loadCode("chrisMurielCooper/exampleCode.cpp");
 }
 

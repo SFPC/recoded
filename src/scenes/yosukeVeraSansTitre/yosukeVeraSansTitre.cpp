@@ -18,6 +18,8 @@ void yosukeVeraSansTitre::setup(){
     ofBackground(0);
     ofSetBackgroundAuto(false);
 
+    setAuthor("Yosuke Sakai");
+    setOriginalArtist("Vera Molnar");
     loadCode("yosukeVeraSansTitre/exampleCode.cpp");
 }
 

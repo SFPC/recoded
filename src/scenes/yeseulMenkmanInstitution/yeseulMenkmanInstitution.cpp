@@ -21,6 +21,8 @@ void yeseulMenkmanInstitution::setup(){
     parameters.add(amountOfSquares.set("amountOfSquares", 2, 0, 5));
     parameters.add(numberOfBricks.set("numberOfBricks", 118, 0, 475));
     
+    setAuthor("Yeseul Song");
+    setOriginalArtist("Rosa Menkman");
     loadCode("yeseulMenkmanInstitution/exampleCode.cpp");
     
     

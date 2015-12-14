@@ -52,6 +52,8 @@ void chrisRileyCascando::setup(){
     diamondArcWhite.setStrokeWidth(0);
     diamondArcWhite.setFillColor(ofColor(255));
 
+    setAuthor("Chris Anderson");
+    setOriginalArtist("Bridget Riley");
     loadCode("chrisRileyCascando/exampleCode.cpp");
 }
 

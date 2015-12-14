@@ -6,6 +6,9 @@
 void robbyRileyScene::setup(){
     param.set("dent", 15, 7, 20);
     parameters.add(param);
+
+    setAuthor("Robby Kraft");
+    setOriginalArtist("Bridget Riley");
     loadCode("robbyRileyScene/code.txt");
 }
 

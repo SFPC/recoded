@@ -31,6 +31,8 @@ void manfredMohrP196A::setup(){
 	parameters.add(rearLineOpacity);
 	parameters.add(spacing);
 
+    setAuthor("Quin Kennedy");
+    setOriginalArtist("Manfred Mohr");
     loadCode("manfredMohrP196A/exampleCode.cpp");
 }
 

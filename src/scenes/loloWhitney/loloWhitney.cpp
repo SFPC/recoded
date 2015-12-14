@@ -37,6 +37,8 @@ void loloWhitney::setup(){
     ofClear(0,0);
     small_fbo.end();
     
+    setAuthor("Marcelo Armendáriz");
+    setOriginalArtist("John Whitney");
     loadCode("loloWhitney/exampleCode.cpp");
 }
 

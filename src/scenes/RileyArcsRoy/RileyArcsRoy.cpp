@@ -7,6 +7,8 @@ void RileyArcsRoy::setup(){
 //    param.set("param", 5, 0, 100);
 //    parameters.add(param);
 
+    setAuthor("Roy MacDonald");
+    setOriginalArtist("Bridget Riley");
     loadCode("RileyArcsRoy/exampleCode.cpp");
     
     minWidth = 1;
