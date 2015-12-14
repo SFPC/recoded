@@ -9,3 +9,7 @@
 
 #define CODE_WIDTH VISUALS_WIDTH
 #define CODE_HEIGHT VISUALS_HEIGHT
+
+
+//if this is defined, we will wait for type animation
+//#define TYPE_ANIMATION

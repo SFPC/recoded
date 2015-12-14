@@ -103,7 +103,7 @@ void sceneManager::setup(){
 //    }
     
     currentScene = 0;
-    scenes[currentScene]->reset();
+    startScene(currentScene);
     
     
     
@@ -116,6 +116,12 @@ void sceneManager::setup(){
     mode = DRAW_SIDE_BY_SIDE;
     
 }
+
+void sceneManager::startScene(int whichScene){
+    scenes[currentScene]->reset();
+    TM.setup( (scenes[currentScene]), 7.5);
+}
+
 
 void sceneManager::update(){
     scenes[currentScene]->update();
@@ -136,14 +142,29 @@ void sceneManager::draw(){
     
     if (mode == DRAW_SIDE_BY_SIDE){
         ofSetColor(255,255,255);
-        sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
         
         codeFbo.begin();
-        ofClear(0,0,0, 255);
-        string codeReplaced = scenes[currentScene]->getCodeWithParamsReplaced();
         
+        float pct = (ofGetElapsedTimef() - TM.setupTime) / TM.animTime;
+        if (pct > 1) pct = 1;
+        if (pct < 0) pct = 0;
         
-        vector < codeLetter > letters = scenes[currentScene]->getCodeWithParamsReplaced2();
+        if (pct < 0.5){
+            pct *= 2;
+            pct  = powf(pct, 2.0);
+            pct *= 0.5;
+        } else {
+            
+            pct -= 0.5;
+            pct *= 2.0;
+            pct  = powf(pct, 1.0/2.0);
+            pct *= 0.5;
+            pct += 0.5;
+
+        }
+        
+        ofClear(0,0,0,255);
+        vector < codeLetter > letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
         
         ofSetColor(255);
         //font.drawString(codeReplaced, 40, 40);
@@ -151,11 +172,11 @@ void sceneManager::draw(){
         
         int x = 10;
         int y = 10 + 13;
-        for (int i = 0; i < letters.size(); i++){
+        for (int i = 0; i < letters.size() * pct; i++){
             
             
             if (letters[i].idOfChar == -1) ofSetColor(127);
-            if (letters[i].idOfChar != -1) ofSetColor(127 + ofClamp(scenes[currentScene]->paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
+            if (letters[i].idOfChar != -1) ofSetColor(127 + ofClamp(TM.paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
             
             string s = "";
             s += (char)(letters[i].character);
@@ -173,6 +194,17 @@ void sceneManager::draw(){
         
         ofSetColor(255);
         codeFbo.draw(ofGetHeight(), 0,ofGetHeight(), ofGetHeight());
+        
+#ifdef TYPE_ANIMATION
+        float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
+        if (pctDelay > 0.99){
+            sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
+        }
+#else
+        sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
+#endif
+        
+        
     } else if (mode == DRAW_SINGLE){
         sceneFbo.draw(0,0);
     }
@@ -191,8 +223,9 @@ void sceneManager::nextScene(bool forward){
 			currentScene = scenes.size() - 1;
 		}
 	}
-
-    scenes[currentScene]->reset();
+    
+    startScene(currentScene);
+    
     
     
     

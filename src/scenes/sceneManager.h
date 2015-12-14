@@ -6,6 +6,7 @@
 #include "baseScene.h"
 #include "ofxGui.h"
 #include "appConstants.h"
+#include "typographyManager.hpp"
 
 
 enum drawMode {
@@ -34,6 +35,8 @@ public:
 	void regressScene();
     void screenGrab();
     
+    void startScene(int whichScene);
+    
     ofFbo sceneFbo;
     ofFbo codeFbo;
     ofxPanel * panel;
@@ -41,5 +44,8 @@ public:
     drawMode mode;
     
     ofTrueTypeFont font;
+    
+    typographyManager TM;
+    
     
 };
