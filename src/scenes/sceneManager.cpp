@@ -60,7 +60,6 @@ void sceneManager::setup(){
    scenes.push_back(new johnWhitneyShader02());
    scenes.push_back(new chrisRileyCascando());
    scenes.push_back(new chrisMurielCooper());
-	
    scenes.push_back(new janVantommeScene());
    scenes.push_back(new memoAktenScene());
    scenes.push_back(new submotionOrchestraScene());
@@ -68,8 +67,6 @@ void sceneManager::setup(){
    scenes.push_back(new veraFscene());
    scenes.push_back(new robbyMolnarScene() );
    scenes.push_back(new veraAnimatedScene() );
-   scenes.push_back(new exampleScene() );
-   scenes.push_back(new triangleScene() );
    scenes.push_back(new robbyRileyScene() );
    scenes.push_back(new robbyMenkmanScene());
    scenes.push_back(new yeseulWhitneyScene() );
