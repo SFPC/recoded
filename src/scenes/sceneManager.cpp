@@ -60,7 +60,6 @@ void sceneManager::setup(){
    scenes.push_back(new johnWhitneyShader02());
    scenes.push_back(new chrisRileyCascando());
    scenes.push_back(new chrisMurielCooper());
-   scenes.push_back(new janVantommeScene());
    scenes.push_back(new memoAktenScene());
    scenes.push_back(new submotionOrchestraScene());
    scenes.push_back(new RoyWhitney1());
@@ -87,6 +86,9 @@ void sceneManager::setup(){
    scenes.push_back(new yosukeVeraSansTitre());
    scenes.push_back(new alexGifPaletteDitherMenkman());
    scenes.push_back(new yeseulMenkmanInstitution());
+
+    // Duplicate with rodrigoBelfort
+    // scenes.push_back(new janVantommeScene());
 
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
