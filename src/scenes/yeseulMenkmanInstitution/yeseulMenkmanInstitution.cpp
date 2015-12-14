@@ -18,8 +18,8 @@ void yeseulMenkmanInstitution::setup(){
         squareRandomArray[i] = int(ofRandom(0, 10));
     }
     
-    parameters.add(amountOfSquares.set("amountOfSquares", 0, 0, 5));
-    parameters.add(numberOfBricks.set("numberOfBricks", 0, 0, 475));
+    parameters.add(amountOfSquares.set("amountOfSquares", 2, 0, 5));
+    parameters.add(numberOfBricks.set("numberOfBricks", 118, 0, 475));
     
     loadCode("yeseulMenkmanInstitution/exampleCode.cpp");
     
