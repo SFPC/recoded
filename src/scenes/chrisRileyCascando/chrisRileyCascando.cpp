@@ -20,8 +20,6 @@ void chrisRileyCascando::setup(){
     
     animSpeed.set("animSpeed", 100, -1000, 1000);
     parameters.add(animSpeed);
-
-    loadCode("chrisRileyCascando/exampleCode.cpp");
     
     diamondStraightBlack.lineTo(TRI_SIDE_LENGTH,   0);
     diamondStraightBlack.lineTo(TRI_SIDE_LENGTH/2, TRI_HEIGHT);
@@ -53,6 +51,8 @@ void chrisRileyCascando::setup(){
     diamondArcWhite.setFilled(true);
     diamondArcWhite.setStrokeWidth(0);
     diamondArcWhite.setFillColor(ofColor(255));
+
+    loadCode("chrisRileyCascando/exampleCode.cpp");
 }
 
 void chrisRileyCascando::update(){

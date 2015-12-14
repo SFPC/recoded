@@ -10,11 +10,11 @@ void andyMenkmanDataBendsPng::setup(){
     startLine.set("startLine", 50, 0, bender.lineCount);
     parameters.add(numberOfLines);
     parameters.add(startLine);
-    
-    loadCode("andyMenkmanDataBends/code/png.txt");
  
     ofBackground(0);
     ofSetColor(255);
+
+    loadCode("andyMenkmanDataBends/code/png.txt");
 }
 
 void andyMenkmanDataBendsPng::update(){

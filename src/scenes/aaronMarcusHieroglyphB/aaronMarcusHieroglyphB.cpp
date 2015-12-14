@@ -37,8 +37,8 @@ void aaronMarcusHieroglyphB::setup(){
 	parameters.add(horizontalLines);
 	parameters.add(verticalLines);
 
-    loadCode("aaronMarcusHieroglyphB/exampleCode.cpp");
 	lastFrameMicros = ofGetSystemTimeMicros();
+    loadCode("aaronMarcusHieroglyphB/exampleCode.cpp");
 }
 
 void aaronMarcusHieroglyphB::update(){

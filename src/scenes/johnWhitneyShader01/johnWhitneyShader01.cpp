@@ -21,10 +21,10 @@ void johnWhitneyShader01::setup(){
     parameters.add(greenScale);
     blueScale.set("yellowScale", 0.15, 0, 0.5);
     parameters.add(blueScale);
-
-    loadCode("johnWhitneyShader01/exampleCode.cpp");
     
     shader.load("johnWhitneyShader01/shader");
+
+    loadCode("johnWhitneyShader01/exampleCode.cpp");
 }
 
 void johnWhitneyShader01::update() {

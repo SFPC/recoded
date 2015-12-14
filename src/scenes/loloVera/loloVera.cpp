@@ -15,8 +15,6 @@ void loloVera::setup(){
     parameters.add(z_cam);
   //  parameters.add(fog_max);
     parameters.add(extrude);
-
-    loadCode("loloVera/exampleCode.cpp");
     
      float z = ofRandom(-500,500);
     
@@ -44,7 +42,8 @@ void loloVera::setup(){
     show_original_limit = ofRandom(1,3);
     show_original = true;
     show_original_val = 0.0;
-    
+
+    loadCode("loloVera/exampleCode.cpp");
 }
 
 void loloVera::update(){

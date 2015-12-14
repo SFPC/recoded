@@ -14,8 +14,6 @@ void loloVera2::setup(){
     parameters.add(u_bang);
     parameters.add(line_width);
     
-    loadCode("loloVera2/exampleCode.cpp");
-    
     texture.load("loloVera2/tex.jpg");
     
     int vera_path_size = 5;
@@ -31,8 +29,9 @@ void loloVera2::setup(){
         v_line.setup(i+ofRandom(0,10000),(i*size_bloq)+size_bloq/2, (int)ofRandom(3, 10), ofRandom(.1,.3),sizeh);
         vera_paths.push_back(v_line);
     }
+
+    loadCode("loloVera2/exampleCode.cpp");
     
-       
 }
 
 void loloVera2::update(){

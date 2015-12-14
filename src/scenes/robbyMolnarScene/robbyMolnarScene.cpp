@@ -80,7 +80,6 @@ void robbyMolnarScene::setup(){
     disarray.set("disarray", .5, 0.0, 1.0);
     parameters.add(numRectangles);
     parameters.add(disarray);
-    loadCode("robbyMolnarScene/code.txt");
     float centerX = dimensions.width*.5;
     float centerY = dimensions.height*.5;
     vRect.setup(50, dimensions.height);
@@ -94,6 +93,7 @@ void robbyMolnarScene::setup(){
         v.centerY = space*.5 + centerY - space*1.5 + space*((int)(i/3));
         veraRects.push_back(v);
     }
+    loadCode("robbyMolnarScene/code.txt");
 }
 void robbyMolnarScene::update(){
     

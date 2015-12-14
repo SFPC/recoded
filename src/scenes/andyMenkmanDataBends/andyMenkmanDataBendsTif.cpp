@@ -10,11 +10,11 @@ void andyMenkmanDataBendsTif::setup(){
     startLine.set("startLine", 50, 0, bender.lineCount);
     parameters.add(numberOfLines);
     parameters.add(startLine);
-    
-    loadCode("andyMenkmanDataBends/code/tif.txt");
  
     ofBackground(0);
     ofSetColor(255);
+
+    loadCode("andyMenkmanDataBends/code/tif.txt");
 }
 
 void andyMenkmanDataBendsTif::update(){

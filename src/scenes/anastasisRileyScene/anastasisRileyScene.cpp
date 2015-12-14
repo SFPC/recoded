@@ -9,9 +9,9 @@
 void anastasisRileyScene::setup(){  
     param.set("frequency", 0.025, 0.0125, 0.1);
     parameters.add(param);
-    loadCode("anastasisRileyScene/exampleCode.cpp");
     ofEnableAlphaBlending();
 
+    loadCode("anastasisRileyScene/exampleCode.cpp");
 }
 
 void anastasisRileyScene::update(){

@@ -34,8 +34,6 @@ void chrisVeraInterruptions::setup(){
     timeBtwnRemove.set("timeBtwnRemove", 0.01, 0, 0.2);
     parameters.add(timeBtwnRemove);
     
-    loadCode("chrisVeraInterruptions/exampleCode.cpp");
-    
     gridStartX = GRID_PADDING;
     gridStartY = GRID_PADDING;
     gridMarginX = (float)(VISUALS_WIDTH  - 2 * GRID_PADDING) / (N_XY - 1);
@@ -44,6 +42,8 @@ void chrisVeraInterruptions::setup(){
     resetGrid();
     resetRecent();
     redrawGrid();
+
+    loadCode("chrisVeraInterruptions/exampleCode.cpp");
 }
 
 void chrisVeraInterruptions::update() {
