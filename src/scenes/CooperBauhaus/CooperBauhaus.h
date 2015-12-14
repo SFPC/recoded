@@ -11,8 +11,7 @@ public:
     void update();
     void draw();
 
-    ofParameter<float> displacement;//, fontSize;//, speed;
-    //ofParameter<float> currentDisplacement [6];
+    ofParameter<float> displacement;
     
     void fontSizeChanged(float &f);
     vector<ofColor> colors;
