@@ -222,7 +222,7 @@ void sceneManager::draw(){
             sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
         } else {
             int diff = (countLetters - (int)lettersLastFrame);
-            if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > 50)){
+            if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > ofRandom(50,87))){
                 // cout << diff << enld;
                 lastPlayTime = ofGetElapsedTimeMillis();
                 
