@@ -10,15 +10,20 @@ public:
     void setup();
     void update();
     void draw();
+
+    float rectWidth = 10;
+    float rectHeight = 30;
+    float spacingX;
+    float spacingY;
+    float gridLeft;
+    float gridTop;
     
-    const int row = 9;
-    const int col = 37;
-    const float rectWidth = 10;
-    const float rectHeight = 30;
-//    float margin = 5;
+    ofPoint centerOfmostTopLeftRect;
+    ofPoint topLeftOfmostTopLeftRect;
 
     ofParameter<float> displacementCoef;
-    ofParameter<float> margin;
-    ofParameter<float> transx;
-    ofParameter<float> transy;
+    ofParameter<int> row;
+    ofParameter<int> colmn;
+    ofParameter<float> spacingPercentX;
+    ofParameter<float> spacingPercentY;
 };
