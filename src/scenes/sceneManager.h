@@ -47,5 +47,8 @@ public:
     
     typographyManager TM;
     
+    int lettersLastFrame;
+    long long lastPlayTime;
+    
     
 };

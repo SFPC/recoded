@@ -14,7 +14,15 @@ vector < int > positionsOfSubstring(string str, string sub){
 }
 
 
-
+void typographyManager::loadSounds(){
+    
+    clicka.load("sounds/clicka.aiff");
+    clicka.setMultiPlay(true);
+    
+    clickb.load("sounds/clickb.aiff");
+    clickb.setMultiPlay(true);
+    
+}
 
 //-------------------------------------------------------------------------------------
 void typographyManager::setup(baseScene * bs, float animationTime){

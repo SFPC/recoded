@@ -120,11 +120,15 @@ void sceneManager::setup(){
     
     mode = DRAW_SIDE_BY_SIDE;
     
+    TM.loadSounds();
+    
 }
 
 void sceneManager::startScene(int whichScene){
     scenes[currentScene]->reset();
     TM.setup( (scenes[currentScene]), 7.5);
+    lettersLastFrame= 0;
+    lastPlayTime = 0;
 }
 
 
@@ -156,13 +160,13 @@ void sceneManager::draw(){
         
         if (pct < 0.5){
             pct *= 2;
-            pct  = powf(pct, 2.0);
+            pct  = powf(pct, 3.0);
             pct *= 0.5;
         } else {
             
             pct -= 0.5;
             pct *= 2.0;
-            pct  = powf(pct, 1.0/2.0);
+            pct  = powf(pct, 1.0/3.0);
             pct *= 0.5;
             pct += 0.5;
 
@@ -175,6 +179,7 @@ void sceneManager::draw(){
         //font.drawString(codeReplaced, 40, 40);
         //ofDrawBitmapString(codeReplaced, 40,40);
         
+        int countLetters = 0;
         int x = 10;
         int y = 10 + 13;
         for (int i = 0; i < letters.size() * pct; i++){
@@ -186,13 +191,19 @@ void sceneManager::draw(){
             string s = "";
             s += (char)(letters[i].character);
             font.drawString(s , (int)x, (int)y);
-
+            
+            
+            if (letters[i].character != ' ' &&
+                letters[i].character != '\n' &&
+                letters[i].character != '\t') countLetters++;
+            
             x += 7;
             if (letters[i].character == '\n'){
                 y += 13;
                 x = 10;
             }
         }
+        
         
  
         codeFbo.end();
@@ -204,6 +215,25 @@ void sceneManager::draw(){
         float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
         if (pctDelay > 0.99){
             sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
+        } else {
+            int diff = (countLetters - (int)lettersLastFrame);
+            if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > 50)){
+                // cout << diff << enld;
+                lastPlayTime = ofGetElapsedTimeMillis();
+                
+                if (ofNoise(pct*10, ofGetElapsedTimef()/10.0) > 0.5){
+                    TM.clickb.play();
+                    TM.clickb.setSpeed(ofRandom(0.9, 1.1));
+                    
+                } else {
+                    TM.clicka.play();
+                    TM.clicka.setSpeed(ofRandom(0.9, 1.1));
+                    
+                }
+                
+            }
+            lettersLastFrame = countLetters;
+            
         }
 #else
         sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());

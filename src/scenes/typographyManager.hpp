@@ -30,6 +30,10 @@ public:
     void update( baseScene * scene );
     void draw();
     
+    ofSoundPlayer clicka;
+    ofSoundPlayer clickb;
+    
+    void loadSounds();
     
     
     float setupTime;

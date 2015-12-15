@@ -12,4 +12,4 @@
 
 
 //if this is defined, we will wait for type animation
-//#define TYPE_ANIMATION
+#define TYPE_ANIMATION
