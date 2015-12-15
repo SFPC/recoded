@@ -34,7 +34,7 @@ void veraFscene::draw(){
         for (int j = 0; j< sizecell; j++) {
             ofPushMatrix();
             ofTranslate(i*(scale + 10), j*(scale+10));
-            if (ofNoise(i,j, ofGetElapsedTimef())< 0.5) {
+            if (ofNoise(i,j, getElapsedTimef())< 0.5) {
                 drawf();
             } else {
                 drawf2();

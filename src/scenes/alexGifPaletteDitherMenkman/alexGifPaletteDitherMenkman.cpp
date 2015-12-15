@@ -36,7 +36,9 @@ void alexGifPaletteDitherMenkman::setup(){
     pInterleave.addListener(this, &alexGifPaletteDitherMenkman::pInterleaveChanged);
 
     pInterleaveLast = pInterleave;
-  
+
+    setAuthor("Alex Tolar");
+    setOriginalArtist("Rosa Menkman");
     loadCode("alexGifPaletteDitherMenkman/exampleCode.cpp");
 }
 

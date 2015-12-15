@@ -12,6 +12,9 @@ void RoyWhitney1::setup(){
     parameters.add(lineWidth.set("Line Width", 1,0, 10));
 //    parameters.add(currentTime.set("Current Time", 0,0, 5000));
 //    parameters.add(currentSize.set("Current Size", 50,0,400));
+
+    setAuthor("Roy MacDonald");
+    setOriginalArtist("John Whitney");
     loadCode("RoyWhitney1/exampleCode.cpp");
     
     iterations = 2;
@@ -28,7 +31,7 @@ void RoyWhitney1::draw(){
     ofBackground(0);
     ofSetColor(255,opacity);
     ofSetLineWidth(lineWidth);
-    drawCircles(center, radius0, TWO_PI*ofGetElapsedTimef()*speed, size0, circles, 0);
+    drawCircles(center, radius0, TWO_PI*getElapsedTimef()*speed, size0, circles, 0);
 }
 //--------------------------------------------------------------
 void RoyWhitney1::drawCircles(ofVec3f center, float radius, float time, float size, int numCircles, int currentIteration){

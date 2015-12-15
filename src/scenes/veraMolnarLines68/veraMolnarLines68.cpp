@@ -29,6 +29,8 @@ void veraMolnarLines68::setup(){
 	parameters.add(spacing);
 	parameters.add(tweenTimeSec);
 
+    setAuthor("Quin Kennedy");
+    setOriginalArtist("Vera Molnar");
     loadCode("veraMolnarLines68/exampleCode.cpp");
 }
 

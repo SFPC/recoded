@@ -12,6 +12,7 @@
 		4776F87E1C17089000975A6B /* cantusFirmusRiley.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4776F87C1C17089000975A6B /* cantusFirmusRiley.cpp */; };
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
 		4F8F344E1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F344C1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp */; };
+		4FD081C81C2089F0006A7604 /* yosukeJhonWhitneyMtrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD081C61C2089F0006A7604 /* yosukeJhonWhitneyMtrix.cpp */; };
 		4FEF16411C1146E0000B3B4F /* anastasisRileyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF163F1C114519000B3B4F /* anastasisRileyScene.cpp */; };
 		5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */; };
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
@@ -27,6 +28,7 @@
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
 		856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9604B925D32EE39065747725 /* ofxBaseGui.cpp */; };
 		85B3DCA81C1E47060054975A /* yeseulMenkmanInstitution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCA61C1E47060054975A /* yeseulMenkmanInstitution.cpp */; };
+		85B3DCB11C1FE6170054975A /* yeseulCooperMessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */; };
 		9237CB9D1C11E9BD0007A916 /* veraFscene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9237CB9B1C11E9BD0007A916 /* veraFscene.cpp */; };
 		923871A41BF7993A00171456 /* baseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9238719E1BF7993A00171456 /* baseScene.cpp */; };
 		923871A61BF7993A00171456 /* sceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871A21BF7993A00171456 /* sceneManager.cpp */; };
@@ -130,6 +132,8 @@
 		4776F87D1C17089000975A6B /* cantusFirmusRiley.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cantusFirmusRiley.h; sourceTree = "<group>"; };
 		4F8F344C1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yosukeVeraSansTitre.cpp; sourceTree = "<group>"; };
 		4F8F344D1C1BD89C000CF07C /* yosukeVeraSansTitre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yosukeVeraSansTitre.h; sourceTree = "<group>"; };
+		4FD081C61C2089F0006A7604 /* yosukeJhonWhitneyMtrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yosukeJhonWhitneyMtrix.cpp; sourceTree = "<group>"; };
+		4FD081C71C2089F0006A7604 /* yosukeJhonWhitneyMtrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yosukeJhonWhitneyMtrix.h; sourceTree = "<group>"; };
 		4FEF163F1C114519000B3B4F /* anastasisRileyScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = anastasisRileyScene.cpp; sourceTree = "<group>"; };
 		4FEF16401C114519000B3B4F /* anastasisRileyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = anastasisRileyScene.h; sourceTree = "<group>"; };
 		50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
@@ -155,6 +159,8 @@
 		832BDC407620CDBA568B713D /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlerror.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
 		85B3DCA61C1E47060054975A /* yeseulMenkmanInstitution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yeseulMenkmanInstitution.cpp; sourceTree = "<group>"; };
 		85B3DCA71C1E47060054975A /* yeseulMenkmanInstitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yeseulMenkmanInstitution.h; sourceTree = "<group>"; };
+		85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yeseulCooperMessages.cpp; sourceTree = "<group>"; };
+		85B3DCB01C1FE6170054975A /* yeseulCooperMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yeseulCooperMessages.h; sourceTree = "<group>"; };
 		87F26B4B24CBD428AD9EEBAA /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		89449E3044D456F7DE7BEA14 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		907C5B5E104864A2D3A25745 /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxToggle.cpp; path = ../../../addons/ofxGui/src/ofxToggle.cpp; sourceTree = SOURCE_ROOT; };
@@ -332,6 +338,15 @@
 			path = yosukeVeraSansTitre;
 			sourceTree = "<group>";
 		};
+		4FD081C51C2089F0006A7604 /* yosukeJhonWhitneyMtrix */ = {
+			isa = PBXGroup;
+			children = (
+				4FD081C61C2089F0006A7604 /* yosukeJhonWhitneyMtrix.cpp */,
+				4FD081C71C2089F0006A7604 /* yosukeJhonWhitneyMtrix.h */,
+			);
+			path = yosukeJhonWhitneyMtrix;
+			sourceTree = "<group>";
+		};
 		4FEF163E1C114519000B3B4F /* anastasisRileyScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +475,15 @@
 			path = yeseulMenkmanInstitution;
 			sourceTree = "<group>";
 		};
+		85B3DCAE1C1FE6170054975A /* yeseulCooperMessages */ = {
+			isa = PBXGroup;
+			children = (
+				85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */,
+				85B3DCB01C1FE6170054975A /* yeseulCooperMessages.h */,
+			);
+			path = yeseulCooperMessages;
+			sourceTree = "<group>";
+		};
 		9237CB9A1C11E9BD0007A916 /* veraFscene */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +496,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4FD081C51C2089F0006A7604 /* yosukeJhonWhitneyMtrix */,
 				B0B03CF11C1BD19900FF0761 /* Roy */,
 				C19334501C1B6D7E00A19961 /* andyMenkmanDataBends */,
 				4F8F344B1C1BD89C000CF07C /* yosukeVeraSansTitre */,
@@ -483,6 +508,7 @@
 				C13A36701C17906200F13242 /* aaronMarcusHieroglyphB */,
 				71C301C81C1783A500C0AC31 /* yeseulWhitneyScene */,
 				85B3DCA51C1E47060054975A /* yeseulMenkmanInstitution */,
+				85B3DCAE1C1FE6170054975A /* yeseulCooperMessages */,
 				7158FF7F1C174F8B00A6025B /* chrisVeraInterruptions */,
 				E12029001C1655E60093B1A4 /* veraMolnarTrapezium */,
 				4776F87B1C17089000975A6B /* cantusFirmusRiley */,
@@ -1004,6 +1030,7 @@
 				71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				4776F87E1C17089000975A6B /* cantusFirmusRiley.cpp in Sources */,
+				4FD081C81C2089F0006A7604 /* yosukeJhonWhitneyMtrix.cpp in Sources */,
 				9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */,
 				C193345C1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
@@ -1029,6 +1056,7 @@
 				71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */,
 				E12029031C1655E60093B1A4 /* veraMolnarTrapezium.cpp in Sources */,
 				7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */,
+				85B3DCB11C1FE6170054975A /* yeseulCooperMessages.cpp in Sources */,
 				B01DF7FE1C179B9800B2EAB0 /* ofxEasingExpo.cpp in Sources */,
 				B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */,
 				4FEF16411C1146E0000B3B4F /* anastasisRileyScene.cpp in Sources */,

@@ -53,13 +53,15 @@ void chrisMurielCooper::setup(){
     
     ttf.load("chrisMurielCooper/OpenSans-Regular.ttf", 32);
 
+    setAuthor("Chris Anderson");
+    setOriginalArtist("Muriel Cooper");
     loadCode("chrisMurielCooper/exampleCode.cpp");
 }
 
 void chrisMurielCooper::update(){
     // Horrible, horrible constant hell. To be replaced when we have good animations.
 
-    float t = ofGetElapsedTimef() / 4.0;
+    float t = getElapsedTimef() / 4.0;
     cameraRotationX.set(((sin(t) * 0.5) + 0.5) * 360);
     cameraRotationY.set(((cos(t) * 0.5) + 0.5) * 360);
     cameraRotationZ.set(((cos(t + PI / 4.0) * 0.5) + 0.5) * 360);

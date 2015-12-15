@@ -55,6 +55,8 @@ void cantusFirmusRiley::setup(){
     parameters.add(zoomNoiseSpeed.set("zoom speed", 0.2, 0.01, 0.4));
     parameters.add(range.set("scale", 0.3, 0.02, 1.0));
 
+    setAuthor("Reed Tothong");
+    setOriginalArtist("Bridget Riley");
     loadCode("cantusFirmusRiley/cantusFirmusRiley.cpp");
 }
 
@@ -65,16 +67,16 @@ void cantusFirmusRiley::update(){
 void cantusFirmusRiley::draw(){
     ofFill();
     ofSetRectMode(OF_RECTMODE_CORNER);
-    posNoise = ofNoise(ofGetElapsedTimef()*posNoiseSpeed);
+    posNoise = ofNoise(getElapsedTimef()*posNoiseSpeed);
     
     float posX = ofMap(posNoise, 0, 1.0, 0, ofGetWidth()/2);
     ofTranslate(posX, 0);
     
     
-    zoomNoise = ofNoise(ofGetElapsedTimef()*zoomNoiseSpeed);
+    zoomNoise = ofNoise(getElapsedTimef()*zoomNoiseSpeed);
     // cinematic = 0.1 // motion sickness = 10
     
-//    float rangeNoise = ofNoise(ofGetElapsedTimef()*rangeNoiseSpeed);
+//    float rangeNoise = ofNoise(getElapsedTimef()*rangeNoiseSpeed);
     float microScale = ofMap(range, 0, 0.5, 0.015, 1.0, true);
     float macroScale = ofMap(range, 0.5, 1.0, 1.0, 2.5,true);
     

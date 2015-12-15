@@ -24,11 +24,13 @@ void johnWhitneyShader01::setup(){
     
     shader.load("johnWhitneyShader01/shader");
 
+    setAuthor("Chris Anderson");
+    setOriginalArtist("John Whitney");
     loadCode("johnWhitneyShader01/exampleCode.cpp");
 }
 
 void johnWhitneyShader01::update() {
-    time.set(ofMap(sin(ofGetElapsedTimef()), -1, 1, 0, PI));
+    time.set(ofMap(sin(getElapsedTimef()), -1, 1, 0, PI));
 }
 
 void johnWhitneyShader01::draw() {

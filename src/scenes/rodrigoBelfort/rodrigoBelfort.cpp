@@ -46,11 +46,13 @@ void rodrigoBelfort::setup(){
         }
     }
 
+    setAuthor("Rodrigo Carvalho");
+    setOriginalArtist("Belfort Group");
     loadCode("rodrigoBelfort/exampleCode.cpp");
 }
 
 void rodrigoBelfort::update(){
-    float time = ofGetElapsedTimef();
+    float time = getElapsedTimef();
     
     if (lastLineTime + timeBtwnLines < time) {
         lastLineTime = time;

@@ -6,6 +6,9 @@
 void robbyRileyScene::setup(){
     param.set("dent", 15, 7, 20);
     parameters.add(param);
+
+    setAuthor("Robby Kraft");
+    setOriginalArtist("Bridget Riley");
     loadCode("robbyRileyScene/code.txt");
 }
 
@@ -19,7 +22,7 @@ void robbyRileyScene::draw(){
     float space = dimensions.height / R_RIL_CNT;
     float colPos = 0;
 //    float time1 = (cosf(ofGetElapsedTimeMillis() / 5453.0) * 5) + 15;
-    float time2 = cosf(ofGetElapsedTimeMillis() / 5000.0) * .5 + 1.75;
+    float time2 = cosf(getElapsedTimef() / 5.0) * .5 + 1.75;
     
 //    param.set(time1);
 

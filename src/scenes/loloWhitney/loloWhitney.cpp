@@ -37,6 +37,8 @@ void loloWhitney::setup(){
     ofClear(0,0);
     small_fbo.end();
     
+    setAuthor("Marcelo Armendáriz");
+    setOriginalArtist("John Whitney");
     loadCode("loloWhitney/exampleCode.cpp");
 }
 
@@ -109,7 +111,7 @@ void loloWhitney::draw(){
     ofEnableBlendMode(OF_BLENDMODE_ADD);
     shader_rip.begin();
     shader_rip.setUniformTexture("tex0", small_fbo, 0);
-    shader_rip.setUniform1f("t", ofGetElapsedTimef());
+    shader_rip.setUniform1f("t", getElapsedTimef());
     shader_rip.setUniform1f("t_width", small_fbo.getWidth());
     shader_rip.setUniform1f("t_height", small_fbo.getHeight());
     shader_rip.setUniform1f("wave_am", wave_size);

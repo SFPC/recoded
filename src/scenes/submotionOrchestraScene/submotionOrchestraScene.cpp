@@ -19,12 +19,14 @@ void submotionOrchestraScene::setup(){
 	std::random_shuffle(begin(points_src), end(points_src));
 	points_dest.clear();
 	
+    setAuthor("Motoi Shimizu");
+    setOriginalArtist("Submotion Orchestra");
     loadCode("submotionOrchestraScene/exampleCode.cpp");
 }
 
 void submotionOrchestraScene::update(){
 	
-	k = ofGetElapsedTimef() * speed;
+	k = getElapsedTimef() * speed;
 	
 	points_dest.clear();
 	

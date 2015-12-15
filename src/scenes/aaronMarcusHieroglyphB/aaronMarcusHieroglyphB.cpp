@@ -38,6 +38,8 @@ void aaronMarcusHieroglyphB::setup(){
 	parameters.add(verticalLines);
 
 	lastFrameMicros = ofGetSystemTimeMicros();
+    setAuthor("Quin Kennedy");
+    setOriginalArtist("Aaron Marcus");
     loadCode("aaronMarcusHieroglyphB/exampleCode.cpp");
 }
 

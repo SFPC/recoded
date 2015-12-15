@@ -44,6 +44,9 @@ void Cooper3dText::setup(){
     blend = ofBlendMode(3);
     ofAddListener(tween.end_E, this, &Cooper3dText::tweenEnded);
     nextSurface();
+
+    setAuthor("Roy MacDonald");
+    setOriginalArtist("Muriel Cooper");
     loadCode("Cooper3dText/exampleCode.cpp");
     
 

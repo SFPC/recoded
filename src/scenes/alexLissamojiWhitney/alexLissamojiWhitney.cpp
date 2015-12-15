@@ -28,6 +28,8 @@ void alexLissamojiWhitney::setup(){
     
     timerLastTime = ofGetElapsedTimeMillis();
 
+    setAuthor("Alex Tolar");
+    setOriginalArtist("John Whitney");
     loadCode("alexLissamojiWhitney/exampleCode.cpp");
 }
 

@@ -22,6 +22,9 @@ void robbyMenkmanScene::setup(){
     originalBuffer = ofBufferFromFile("robbyMenkmanScene/100.jpg");
     nextGlitchMoment = 0;
     loadImageBuffer();
+
+    setAuthor("Robby Kraft");
+    setOriginalArtist("Rosa Menkman");
     loadCode("robbyMenkmanScene/code.txt");
 }
 void robbyMenkmanScene::loadImageBuffer(){

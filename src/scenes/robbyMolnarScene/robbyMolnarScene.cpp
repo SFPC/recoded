@@ -40,10 +40,10 @@ void veraRect::setup(int numberOfRectangles, float r){
 void veraRect::draw(int numRects, float d){
     for(int i = 0; i < numRects; i++){
         drawPerturbedRect(centerX - radius[i]*.5, centerY - radius[i]*.5, radius[i], radius[i],
-                          d*(perturb[i*8+0] + an[i*8+0]*sinf(an[i*8+1]*ofGetElapsedTimef())), d*(perturb[i*8+1] + an[i*8+0]*cosf(an[i*8+1]*ofGetElapsedTimef())),
-                          d*(perturb[i*8+2] + an[i*8+2]*sinf(an[i*8+3]*ofGetElapsedTimef())), d*(perturb[i*8+3] + an[i*8+2]*cosf(an[i*8+3]*ofGetElapsedTimef())),
-                          d*(perturb[i*8+4] + an[i*8+4]*sinf(an[i*8+5]*ofGetElapsedTimef())), d*(perturb[i*8+5] + an[i*8+4]*cosf(an[i*8+5]*ofGetElapsedTimef())),
-                          d*(perturb[i*8+6] + an[i*8+6]*sinf(an[i*8+7]*ofGetElapsedTimef())), d*(perturb[i*8+7] + an[i*8+6]*cosf(an[i*8+7]*ofGetElapsedTimef())));
+                          d*(perturb[i*8+0] + an[i*8+0]*sinf(an[i*8+1]*getElapsedTimef())), d*(perturb[i*8+1] + an[i*8+0]*cosf(an[i*8+1]*getElapsedTimef())),
+                          d*(perturb[i*8+2] + an[i*8+2]*sinf(an[i*8+3]*getElapsedTimef())), d*(perturb[i*8+3] + an[i*8+2]*cosf(an[i*8+3]*getElapsedTimef())),
+                          d*(perturb[i*8+4] + an[i*8+4]*sinf(an[i*8+5]*getElapsedTimef())), d*(perturb[i*8+5] + an[i*8+4]*cosf(an[i*8+5]*getElapsedTimef())),
+                          d*(perturb[i*8+6] + an[i*8+6]*sinf(an[i*8+7]*getElapsedTimef())), d*(perturb[i*8+7] + an[i*8+6]*cosf(an[i*8+7]*getElapsedTimef())));
     }
 }
 
@@ -93,6 +93,9 @@ void robbyMolnarScene::setup(){
         v.centerY = space*.5 + centerY - space*1.5 + space*((int)(i/3));
         veraRects.push_back(v);
     }
+
+    setAuthor("Robby Kraft");
+    setOriginalArtist("Vera Molnar");
     loadCode("robbyMolnarScene/code.txt");
 }
 void robbyMolnarScene::update(){

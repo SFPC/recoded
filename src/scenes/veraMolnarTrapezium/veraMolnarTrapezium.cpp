@@ -33,6 +33,8 @@ void veraMolnarTrapezium::setup(){
 	parameters.add(centerNoise);
 	parameters.add(whiteBackground);
 
+    setAuthor("Quin Kennedy");
+    setOriginalArtist("Vera Molnar");
     loadCode("veraMolnarTrapezium/exampleCode.cpp");
 }
 

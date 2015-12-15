@@ -30,6 +30,8 @@ void loloVera2::setup(){
         vera_paths.push_back(v_line);
     }
 
+    setAuthor("Marcelo Armendáriz");
+    setOriginalArtist("Vera Molnar");
     loadCode("loloVera2/exampleCode.cpp");
     
 }

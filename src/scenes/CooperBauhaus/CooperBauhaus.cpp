@@ -16,6 +16,8 @@ void CooperBauhaus::setup(){
    // text = "SCHOOL\nFOR\nPOETIC\nCOMPUTATION";
     text = "BAUHAUS";
 
+    setAuthor("Roy MacDonald");
+    setOriginalArtist("Muriel Cooper");
     loadCode("CooperBauhaus/exampleCode.cpp");
 }
 //--------------------------------------------------------------

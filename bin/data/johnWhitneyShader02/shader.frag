@@ -6,7 +6,10 @@ precision mediump float;
 
 #define STEP_MIN        0.021
 #define STEP_MAX        0.03
-#define STEP_FADE       1.4
+#define STEP_FADE       1.3
+
+#define TIME_SADDLE     0.1
+#define MAX_TIME        0.55
 
 #define DISTANCE_SCALE  500.0
 #define TIME_SCALE      130.0
@@ -18,7 +21,8 @@ uniform float rOffset, gOffset, bOffset;
 uniform float thickness;
 
 float nearZero(float val) {
-    return smoothstep(thickness * STEP_FADE, thickness, abs(val));
+    float timeScale = (time - TIME_SADDLE) / MAX_TIME;
+    return smoothstep(thickness * (STEP_FADE + timeScale), thickness, abs(val));
 }
 
 void main()

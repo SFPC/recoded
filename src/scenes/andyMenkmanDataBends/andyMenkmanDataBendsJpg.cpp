@@ -14,6 +14,8 @@ void andyMenkmanDataBendsJpg::setup(){
     ofBackground(0);
     ofSetColor(255);
 
+    setAuthor("Andy Dayton");
+    setOriginalArtist("Rosa Menkman");
     loadCode("andyMenkmanDataBends/code/jpg.txt");
 }
 
