@@ -27,6 +27,7 @@
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
 		856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9604B925D32EE39065747725 /* ofxBaseGui.cpp */; };
 		85B3DCA81C1E47060054975A /* yeseulMenkmanInstitution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCA61C1E47060054975A /* yeseulMenkmanInstitution.cpp */; };
+		85B3DCB11C1FE6170054975A /* yeseulCooperMessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */; };
 		9237CB9D1C11E9BD0007A916 /* veraFscene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9237CB9B1C11E9BD0007A916 /* veraFscene.cpp */; };
 		923871A41BF7993A00171456 /* baseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9238719E1BF7993A00171456 /* baseScene.cpp */; };
 		923871A61BF7993A00171456 /* sceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871A21BF7993A00171456 /* sceneManager.cpp */; };
@@ -155,6 +156,8 @@
 		832BDC407620CDBA568B713D /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlerror.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
 		85B3DCA61C1E47060054975A /* yeseulMenkmanInstitution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yeseulMenkmanInstitution.cpp; sourceTree = "<group>"; };
 		85B3DCA71C1E47060054975A /* yeseulMenkmanInstitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yeseulMenkmanInstitution.h; sourceTree = "<group>"; };
+		85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yeseulCooperMessages.cpp; sourceTree = "<group>"; };
+		85B3DCB01C1FE6170054975A /* yeseulCooperMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yeseulCooperMessages.h; sourceTree = "<group>"; };
 		87F26B4B24CBD428AD9EEBAA /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		89449E3044D456F7DE7BEA14 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		907C5B5E104864A2D3A25745 /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxToggle.cpp; path = ../../../addons/ofxGui/src/ofxToggle.cpp; sourceTree = SOURCE_ROOT; };
@@ -460,6 +463,15 @@
 			path = yeseulMenkmanInstitution;
 			sourceTree = "<group>";
 		};
+		85B3DCAE1C1FE6170054975A /* yeseulCooperMessages */ = {
+			isa = PBXGroup;
+			children = (
+				85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */,
+				85B3DCB01C1FE6170054975A /* yeseulCooperMessages.h */,
+			);
+			path = yeseulCooperMessages;
+			sourceTree = "<group>";
+		};
 		9237CB9A1C11E9BD0007A916 /* veraFscene */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +495,7 @@
 				C13A36701C17906200F13242 /* aaronMarcusHieroglyphB */,
 				71C301C81C1783A500C0AC31 /* yeseulWhitneyScene */,
 				85B3DCA51C1E47060054975A /* yeseulMenkmanInstitution */,
+				85B3DCAE1C1FE6170054975A /* yeseulCooperMessages */,
 				7158FF7F1C174F8B00A6025B /* chrisVeraInterruptions */,
 				E12029001C1655E60093B1A4 /* veraMolnarTrapezium */,
 				4776F87B1C17089000975A6B /* cantusFirmusRiley */,
@@ -1029,6 +1042,7 @@
 				71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */,
 				E12029031C1655E60093B1A4 /* veraMolnarTrapezium.cpp in Sources */,
 				7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */,
+				85B3DCB11C1FE6170054975A /* yeseulCooperMessages.cpp in Sources */,
 				B01DF7FE1C179B9800B2EAB0 /* ofxEasingExpo.cpp in Sources */,
 				B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */,
 				4FEF16411C1146E0000B3B4F /* anastasisRileyScene.cpp in Sources */,

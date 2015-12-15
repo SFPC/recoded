@@ -45,6 +45,7 @@
 #include "yosukeVeraSansTitre.h"
 #include "alexGifPaletteDitherMenkman.h"
 #include "yeseulMenkmanInstitution.h"
+#include "yeseulCooperMessages.h"
 
 void sceneManager::setup(){
     
@@ -86,6 +87,7 @@ void sceneManager::setup(){
    scenes.push_back(new yosukeVeraSansTitre());
    scenes.push_back(new alexGifPaletteDitherMenkman());
    scenes.push_back(new yeseulMenkmanInstitution());
+   scenes.push_back(new yeseulCooperMessages());
 
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
