@@ -42,6 +42,8 @@ public:
     ofxPanel * panel;
     
 
+    ofSoundPlayer loop;
+    
     
     ofTrueTypeFont font;
     
