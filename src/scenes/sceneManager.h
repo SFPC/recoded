@@ -12,9 +12,6 @@
 #include "ofxParameterMidiSync.h"
 #endif
 
-enum drawMode {
-    DRAW_SIDE_BY_SIDE, DRAW_SINGLE
-};
 
 // I take care of scenes.
 
@@ -44,7 +41,7 @@ public:
     ofFbo codeFbo;
     ofxPanel * panel;
     
-    drawMode mode;
+
     
     ofTrueTypeFont font;
     
@@ -52,6 +49,9 @@ public:
     
     int lettersLastFrame;
     long long lastPlayTime;
+    
+    float lastLetterHeight;
+    
     
 #ifdef USE_MIDI_PARAM_SYNC
     ofxParameterMidiSync sync;
