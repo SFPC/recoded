@@ -44,6 +44,17 @@
 		9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B71BE1C157473000D7878 /* memoAktenScene.cpp */; };
 		9A6B71C41C157473000D7878 /* submotionOrchestraScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B71C11C157473000D7878 /* submotionOrchestraScene.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
+		B00CD0611C210D5200C529FA /* ofxParameterMidiSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD05B1C210D5200C529FA /* ofxParameterMidiSync.cpp */; };
+		B00CD0951C210DD300C529FA /* ofxRtMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD0681C210DD300C529FA /* ofxRtMidiIn.cpp */; };
+		B00CD0961C210DD300C529FA /* ofxRtMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD06A1C210DD300C529FA /* ofxRtMidiOut.cpp */; };
+		B00CD0971C210DD300C529FA /* ofxBaseMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD0771C210DD300C529FA /* ofxBaseMidi.cpp */; };
+		B00CD0981C210DD300C529FA /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD0791C210DD300C529FA /* ofxMidi.cpp */; };
+		B00CD0991C210DD300C529FA /* ofxMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD07C1C210DD300C529FA /* ofxMidiIn.cpp */; };
+		B00CD09A1C210DD300C529FA /* ofxMidiMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD07E1C210DD300C529FA /* ofxMidiMessage.cpp */; };
+		B00CD09B1C210DD300C529FA /* ofxMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD0801C210DD300C529FA /* ofxMidiOut.cpp */; };
+		B00CD09C1C210DD300C529FA /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD0901C210DD300C529FA /* RtMidi.cpp */; };
+		B00CD09D1C210DD300C529FA /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00CD0921C210DD300C529FA /* CoreMIDI.framework */; };
+		B00CD09E1C210DD300C529FA /* CoreMIDI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B00CD0921C210DD300C529FA /* CoreMIDI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */; };
 		B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */; };
 		B01DF7B81C179A7F00B2EAB0 /* Cooper3dText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DF7B61C179A7F00B2EAB0 /* Cooper3dText.cpp */; };
@@ -117,6 +128,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B00CD09E1C210DD300C529FA /* CoreMIDI.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +208,28 @@
 		9A6B71BF1C157473000D7878 /* memoAktenScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memoAktenScene.h; sourceTree = "<group>"; };
 		9A6B71C11C157473000D7878 /* submotionOrchestraScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = submotionOrchestraScene.cpp; sourceTree = "<group>"; };
 		9A6B71C21C157473000D7878 /* submotionOrchestraScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = submotionOrchestraScene.h; sourceTree = "<group>"; };
+		B00CD05B1C210D5200C529FA /* ofxParameterMidiSync.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxParameterMidiSync.cpp; sourceTree = "<group>"; };
+		B00CD05C1C210D5200C529FA /* ofxParameterMidiSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxParameterMidiSync.h; sourceTree = "<group>"; };
+		B00CD0681C210DD300C529FA /* ofxRtMidiIn.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxRtMidiIn.cpp; sourceTree = "<group>"; };
+		B00CD0691C210DD300C529FA /* ofxRtMidiIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxRtMidiIn.h; sourceTree = "<group>"; };
+		B00CD06A1C210DD300C529FA /* ofxRtMidiOut.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxRtMidiOut.cpp; sourceTree = "<group>"; };
+		B00CD06B1C210DD300C529FA /* ofxRtMidiOut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxRtMidiOut.h; sourceTree = "<group>"; };
+		B00CD0771C210DD300C529FA /* ofxBaseMidi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseMidi.cpp; sourceTree = "<group>"; };
+		B00CD0781C210DD300C529FA /* ofxBaseMidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxBaseMidi.h; sourceTree = "<group>"; };
+		B00CD0791C210DD300C529FA /* ofxMidi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMidi.cpp; sourceTree = "<group>"; };
+		B00CD07A1C210DD300C529FA /* ofxMidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMidi.h; sourceTree = "<group>"; };
+		B00CD07B1C210DD300C529FA /* ofxMidiConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMidiConstants.h; sourceTree = "<group>"; };
+		B00CD07C1C210DD300C529FA /* ofxMidiIn.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMidiIn.cpp; sourceTree = "<group>"; };
+		B00CD07D1C210DD300C529FA /* ofxMidiIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMidiIn.h; sourceTree = "<group>"; };
+		B00CD07E1C210DD300C529FA /* ofxMidiMessage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMidiMessage.cpp; sourceTree = "<group>"; };
+		B00CD07F1C210DD300C529FA /* ofxMidiMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMidiMessage.h; sourceTree = "<group>"; };
+		B00CD0801C210DD300C529FA /* ofxMidiOut.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMidiOut.cpp; sourceTree = "<group>"; };
+		B00CD0811C210DD300C529FA /* ofxMidiOut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMidiOut.h; sourceTree = "<group>"; };
+		B00CD0821C210DD300C529FA /* ofxMidiTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMidiTypes.h; sourceTree = "<group>"; };
+		B00CD08F1C210DD300C529FA /* readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
+		B00CD0901C210DD300C529FA /* RtMidi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RtMidi.cpp; sourceTree = "<group>"; };
+		B00CD0911C210DD300C529FA /* RtMidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtMidi.h; sourceTree = "<group>"; };
+		B00CD0921C210DD300C529FA /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = ../../../../../../System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<group>"; };
 		B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoyWhitney1.cpp; sourceTree = "<group>"; };
 		B018C1A91C10F22100F70DA8 /* RoyWhitney1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoyWhitney1.h; sourceTree = "<group>"; };
 		B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CooperBauhaus.cpp; sourceTree = "<group>"; };
@@ -299,6 +333,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B00CD09D1C210DD300C529FA /* CoreMIDI.framework in Frameworks */,
 				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +406,7 @@
 		6948EE371B920CB800B5AC1A /* local_addons */ = {
 			isa = PBXGroup;
 			children = (
+				B00CD0461C210D5200C529FA /* ofxParameterMidiSync */,
 				B01DF7B91C179B9700B2EAB0 /* ofxTween */,
 			);
 			name = local_addons;
@@ -667,6 +703,85 @@
 			name = src;
 			sourceTree = "<group>";
 		};
+		B00CD0461C210D5200C529FA /* ofxParameterMidiSync */ = {
+			isa = PBXGroup;
+			children = (
+				B00CD05A1C210D5200C529FA /* src */,
+			);
+			name = ofxParameterMidiSync;
+			path = addons/ofxParameterMidiSync;
+			sourceTree = "<group>";
+		};
+		B00CD05A1C210D5200C529FA /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B00CD05B1C210D5200C529FA /* ofxParameterMidiSync.cpp */,
+				B00CD05C1C210D5200C529FA /* ofxParameterMidiSync.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		B00CD0651C210DD300C529FA /* ofxMidi */ = {
+			isa = PBXGroup;
+			children = (
+				B00CD0661C210DD300C529FA /* src */,
+				B00CD0831C210DD300C529FA /* libs */,
+				B00CD0921C210DD300C529FA /* CoreMIDI.framework */,
+			);
+			name = ofxMidi;
+			sourceTree = "<group>";
+		};
+		B00CD0661C210DD300C529FA /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B00CD0671C210DD300C529FA /* desktop */,
+				B00CD0771C210DD300C529FA /* ofxBaseMidi.cpp */,
+				B00CD0781C210DD300C529FA /* ofxBaseMidi.h */,
+				B00CD0791C210DD300C529FA /* ofxMidi.cpp */,
+				B00CD07A1C210DD300C529FA /* ofxMidi.h */,
+				B00CD07B1C210DD300C529FA /* ofxMidiConstants.h */,
+				B00CD07C1C210DD300C529FA /* ofxMidiIn.cpp */,
+				B00CD07D1C210DD300C529FA /* ofxMidiIn.h */,
+				B00CD07E1C210DD300C529FA /* ofxMidiMessage.cpp */,
+				B00CD07F1C210DD300C529FA /* ofxMidiMessage.h */,
+				B00CD0801C210DD300C529FA /* ofxMidiOut.cpp */,
+				B00CD0811C210DD300C529FA /* ofxMidiOut.h */,
+				B00CD0821C210DD300C529FA /* ofxMidiTypes.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxMidi/src;
+			sourceTree = "<group>";
+		};
+		B00CD0671C210DD300C529FA /* desktop */ = {
+			isa = PBXGroup;
+			children = (
+				B00CD0681C210DD300C529FA /* ofxRtMidiIn.cpp */,
+				B00CD0691C210DD300C529FA /* ofxRtMidiIn.h */,
+				B00CD06A1C210DD300C529FA /* ofxRtMidiOut.cpp */,
+				B00CD06B1C210DD300C529FA /* ofxRtMidiOut.h */,
+			);
+			path = desktop;
+			sourceTree = "<group>";
+		};
+		B00CD0831C210DD300C529FA /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				B00CD08E1C210DD300C529FA /* rtmidi */,
+			);
+			name = libs;
+			path = ../../../addons/ofxMidi/libs;
+			sourceTree = "<group>";
+		};
+		B00CD08E1C210DD300C529FA /* rtmidi */ = {
+			isa = PBXGroup;
+			children = (
+				B00CD08F1C210DD300C529FA /* readme */,
+				B00CD0901C210DD300C529FA /* RtMidi.cpp */,
+				B00CD0911C210DD300C529FA /* RtMidi.h */,
+			);
+			path = rtmidi;
+			sourceTree = "<group>";
+		};
 		B018C1A71C10F22100F70DA8 /* RoyWhitney1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,6 +894,7 @@
 			children = (
 				480A780D8D0308AE4A368801 /* ofxGui */,
 				1F4FB5C423662B96ADFDCC0B /* ofxXmlSettings */,
+				B00CD0651C210DD300C529FA /* ofxMidi */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -1050,6 +1166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13A36731C17906200F13242 /* aaronMarcusHieroglyphB.cpp in Sources */,
+				B00CD0951C210DD300C529FA /* ofxRtMidiIn.cpp in Sources */,
 				B04420911C18B0190049071E /* rachelScene.cpp in Sources */,
 				B01DF7B81C179A7F00B2EAB0 /* Cooper3dText.cpp in Sources */,
 				FAD0D4271C1C891400C2DA1B /* dgif_lib.c in Sources */,
@@ -1060,9 +1177,11 @@
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				B04420991C1901D90049071E /* RileyArcsRoy.cpp in Sources */,
+				B00CD0981C210DD300C529FA /* ofxMidi.cpp in Sources */,
 				9224BC9F1C20F233003668CF /* mgsRileyEllipsesAndSquares.cpp in Sources */,
 				D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */,
 				71C301CB1C1783A500C0AC31 /* yeseulWhitneyScene.cpp in Sources */,
+				B00CD0611C210D5200C529FA /* ofxParameterMidiSync.cpp in Sources */,
 				9224BC9D1C20F233003668CF /* mgsCooperSymbols.cpp in Sources */,
 				FAF7DF1F1C1833C70058EFE0 /* alexLissamojiWhitney.cpp in Sources */,
 				9224BCA01C20F233003668CF /* mgsVeraMolnarLineStudy.cpp in Sources */,
@@ -1090,10 +1209,12 @@
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				4776F87E1C17089000975A6B /* cantusFirmusRiley.cpp in Sources */,
 				4FD081C81C2089F0006A7604 /* yosukeJhonWhitneyMtrix.cpp in Sources */,
+				B00CD09A1C210DD300C529FA /* ofxMidiMessage.cpp in Sources */,
 				9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */,
 				C193345C1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
+				B00CD0961C210DD300C529FA /* ofxRtMidiOut.cpp in Sources */,
 				4F8F344E1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp in Sources */,
 				9224BC9E1C20F233003668CF /* mgsRileyDiamonds.cpp in Sources */,
 				B01DF7F91C179B9800B2EAB0 /* ofxEasingBack.cpp in Sources */,
@@ -1102,11 +1223,13 @@
 				C19334561C1B716B00A19961 /* ofxDataBender.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
 				71C301F01C18A3D700C0AC31 /* rodrigoBelfort.cpp in Sources */,
+				B00CD0991C210DD300C529FA /* ofxMidiIn.cpp in Sources */,
 				B01DF8021C179B9800B2EAB0 /* ofxEasingQuint.cpp in Sources */,
 				FAD0D4291C1C891400C2DA1B /* gif_err.c in Sources */,
 				FAD0D42B1C1C891400C2DA1B /* gif_hash.c in Sources */,
 				923871B51BF7CCC900171456 /* emptyScene.cpp in Sources */,
 				923871A41BF7993A00171456 /* baseScene.cpp in Sources */,
+				B00CD0971C210DD300C529FA /* ofxBaseMidi.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */,
 				D541137B1C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp in Sources */,
@@ -1130,7 +1253,9 @@
 				B01DF8001C179B9800B2EAB0 /* ofxEasingQuad.cpp in Sources */,
 				FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */,
 				C19334591C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp in Sources */,
+				B00CD09C1C210DD300C529FA /* RtMidi.cpp in Sources */,
 				B01DF8041C179B9800B2EAB0 /* ofxTween.cpp in Sources */,
+				B00CD09B1C210DD300C529FA /* ofxMidiOut.cpp in Sources */,
 				9A6B71C41C157473000D7878 /* submotionOrchestraScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1242,6 +1367,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1271,6 +1397,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
 			};

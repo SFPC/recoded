@@ -8,6 +8,9 @@
 #include "appConstants.h"
 #include "typographyManager.hpp"
 
+#ifdef USE_MIDI_PARAM_SYNC
+#include "ofxParameterMidiSync.h"
+#endif
 
 enum drawMode {
     DRAW_SIDE_BY_SIDE, DRAW_SINGLE
@@ -50,5 +53,8 @@ public:
     int lettersLastFrame;
     long long lastPlayTime;
     
-    
+#ifdef USE_MIDI_PARAM_SYNC
+    ofxParameterMidiSync sync;
+#endif
+
 };

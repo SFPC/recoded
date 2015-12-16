@@ -107,6 +107,9 @@ void sceneManager::setup(){
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
 
+#ifdef USE_MIDI_PARAM_SYNC
+    sync.setup(0);
+#endif
 
     
     // disney
@@ -121,14 +124,16 @@ void sceneManager::setup(){
 //    }
     
     currentScene = 0;
-    startScene(currentScene);
-    
-    
-    
+
     panel = new ofxPanel();
     panel->setup();
     panel->add(scenes[currentScene]->parameters);
     panel->setPosition(ofGetWidth()-300, 20);
+
+    startScene(currentScene);
+    
+    
+    
 
     
     mode = DRAW_SIDE_BY_SIDE;
@@ -142,6 +147,10 @@ void sceneManager::startScene(int whichScene){
     TM.setup( (scenes[currentScene]), 7.5);
     lettersLastFrame= 0;
     lastPlayTime = 0;
+#ifdef USE_MIDI_PARAM_SYNC
+    sync.setSyncGroup(scenes[currentScene]->parameters, true);
+    sync.enableMidi();
+#endif
 }
 
 
