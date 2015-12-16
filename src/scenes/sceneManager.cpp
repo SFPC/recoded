@@ -290,6 +290,14 @@ void sceneManager::draw(){
     
     panel->draw();
     
+    
+    // let's draw some info!
+    
+    ofSetColor(255);
+    
+    ofDrawBitmapString("drawing scene " + ofToString(currentScene) + "\t\t(" + scenes[currentScene]->author  + ", " + scenes[currentScene]->originalArtist + ")", 20, VISUALS_HEIGHT + 50);
+    
+    
 }
 
 void sceneManager::nextScene(bool forward){
