@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "baseScene.h"
 #include "gif_lib.h"
+#include "ofxGui.h"
 
 // Hacked gif interleave decoding function based off gif_libs DGifSlurp
 int DGifGlitchSlurp(GifFileType * GifFile, bool pInterleave, int InterlacedOffsets[], int InterlacedJumps[]);
@@ -30,15 +31,15 @@ public:
     ofParameter<int> pImageIndex;
     int ImageIndexLast;
     
-    ofParameter<bool> pInterleave;
-    // eventlistener  not working, using flag as workround
-    void pInterleaveChanged(bool &value);
-    bool pInterleaveLast;
+    ofParameter<bool> pGlitchInterleave;
+    void pGlitchInterleaveChanged(bool &value);
     
     ofParameter<int> pInterlacedOffset[4];
     ofParameter<int> pInterlacedJumps[4];
     void pInterlacedChanged(int &value);
-
+    
+    ofxButton pReset;
+    void pResetPressed();
     
     ofPixels framePixels;
     ofImage frame;
