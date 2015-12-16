@@ -5,9 +5,10 @@ void alexLissamojiWhitney::setup(){
   
     ofBackground(0);
     // ofEnableSmoothing();
-    center.set(ofGetWidth()*0.25f, ofGetHeight()*0.5f, 0);
+    center.set(dimensions.width*0.5, dimensions.height*0.5, 0);
     
-    bckgImg.loadImage("alexLissamojiWhitney/back.png");
+    // Removing for black-on-white aesthetic
+    // bckgImg.loadImage("alexLissamojiWhitney/back.png");
     
     // To Do: flip through all emojis in the folder ?
     eyesImg.loadImage("alexLissamojiWhitney/emojis/1f440.png");
@@ -22,9 +23,9 @@ void alexLissamojiWhitney::setup(){
     parameters.add(pPhase.set("Phase", 0,0,TWO_PI));
     parameters.add(pDensity.set("Density", 140, 0, 200));
     parameters.add(pAnimSpeed.set("Animation Speed", 10, 1, 60));
-    parameters.add(plissajouRatioX.set("Lissajous Ratio X", 2, 1, 8));
-    parameters.add(plissajouRatioY.set("Lissajous Ratio Y", 3, 1, 8));
-    parameters.add(pImgScale.set("Image scale", 0.15, 0.1, 1));
+    parameters.add(plissajouRatioX.set("Lissajous Ratio X", 2, 1, 3));
+    parameters.add(plissajouRatioY.set("Lissajous Ratio Y", 3, 1, 3));
+    parameters.add(pImgScale.set("Image scale", 0.15, 0.0, 1));
     
     timerLastTime = ofGetElapsedTimeMillis();
 
@@ -41,11 +42,11 @@ void alexLissamojiWhitney::update(){
     animSpeed[1] = 60 * pAnimSpeed;
     pPhase.set(( ofGetFrameNum() % animSpeed[1] ) * TWO_PI / animSpeed[1]);
     
-    if( ( ofGetElapsedTimeMillis() - timerLastTime ) > 3000 ){
-        plissajouRatioX.set(ofRandom(1,plissajouRatioX.getMax()));
-        plissajouRatioY.set(ofRandom(1,plissajouRatioY.getMax()));
-        timerLastTime = ofGetElapsedTimeMillis();
-    }
+//    if( ( ofGetElapsedTimeMillis() - timerLastTime ) > 3000 ){
+//        plissajouRatioX.set(ofRandom(1,plissajouRatioX.getMax()));
+//        plissajouRatioY.set(ofRandom(1,plissajouRatioY.getMax()));
+//        timerLastTime = ofGetElapsedTimeMillis();
+//    }
     
 }
 
@@ -67,15 +68,21 @@ void alexLissamojiWhitney::drawLissaous() {
     double y,x;
     float v,iconHeight,iconWidth;
     v = TWO_PI / pDensity;
+    ofFill();
     
-    for (int i = 0; i < this->pDensity ; i++) {
-        x = pAmp * cos( this->plissajouRatioX * v * i + pPhase);
-        y = pAmp * sin( this->plissajouRatioY * v * i + pPhase);
+    for (int i = 0; i < pDensity ; i++) {
+        x = pAmp * cos( plissajouRatioX * v * i + pPhase);
+        y = pAmp * sin( plissajouRatioY * v * i + pPhase);
         
         iconWidth = eyesImg.getWidth() * pImgScale;
         iconHeight = eyesImg.getHeight() * pImgScale;
         
-        eyesImg.draw(x-iconWidth/2, y-iconHeight/2, iconWidth, iconHeight);
+        // TBD: use emoji or circles?
+        //eyesImg.draw(x-iconWidth/2, y-iconHeight/2, iconWidth, iconHeight);
+
+        // Alternative 2: use circles
+        ofSetColor(i/pDensity * 255);
+        ofDrawCircle(x, y, iconWidth / 4.0);
     }
 }
 
