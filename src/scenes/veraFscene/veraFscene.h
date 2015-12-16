@@ -11,7 +11,9 @@ public:
     void update();
     void draw();
     
-    ofParameter<float> scale;
+    ofParameter<float> frequency, margin, lineWidth, zoom;
+    float sizeOfF, lastValue, offset;
+    float numberOfF;
     
     void drawf();
     void drawf2();
