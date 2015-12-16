@@ -55,6 +55,7 @@
 		B00CD09C1C210DD300C529FA /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD0901C210DD300C529FA /* RtMidi.cpp */; };
 		B00CD09D1C210DD300C529FA /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00CD0921C210DD300C529FA /* CoreMIDI.framework */; };
 		B00CD09E1C210DD300C529FA /* CoreMIDI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B00CD0921C210DD300C529FA /* CoreMIDI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B00CD0A21C2156AA00C529FA /* midiRecorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD0A01C2156AA00C529FA /* midiRecorder.cpp */; };
 		B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */; };
 		B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */; };
 		B01DF7B81C179A7F00B2EAB0 /* Cooper3dText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DF7B61C179A7F00B2EAB0 /* Cooper3dText.cpp */; };
@@ -230,6 +231,8 @@
 		B00CD0901C210DD300C529FA /* RtMidi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RtMidi.cpp; sourceTree = "<group>"; };
 		B00CD0911C210DD300C529FA /* RtMidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtMidi.h; sourceTree = "<group>"; };
 		B00CD0921C210DD300C529FA /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = ../../../../../../System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<group>"; };
+		B00CD0A01C2156AA00C529FA /* midiRecorder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midiRecorder.cpp; sourceTree = "<group>"; };
+		B00CD0A11C2156AA00C529FA /* midiRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midiRecorder.h; sourceTree = "<group>"; };
 		B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoyWhitney1.cpp; sourceTree = "<group>"; };
 		B018C1A91C10F22100F70DA8 /* RoyWhitney1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoyWhitney1.h; sourceTree = "<group>"; };
 		B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CooperBauhaus.cpp; sourceTree = "<group>"; };
@@ -630,6 +633,8 @@
 				923871A31BF7993A00171456 /* sceneManager.h */,
 				92F512041C1EE813000AD19C /* typographyManager.cpp */,
 				92F512051C1EE813000AD19C /* typographyManager.hpp */,
+				B00CD0A01C2156AA00C529FA /* midiRecorder.cpp */,
+				B00CD0A11C2156AA00C529FA /* midiRecorder.h */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -1193,6 +1198,7 @@
 				E18350561C14CCA300EAFB96 /* loloWhitney.cpp in Sources */,
 				7158FF7A1C164C0C00A6025B /* johnWhitneyShader02.cpp in Sources */,
 				92F512061C1EE813000AD19C /* typographyManager.cpp in Sources */,
+				B00CD0A21C2156AA00C529FA /* midiRecorder.cpp in Sources */,
 				B04420951C18B04D0049071E /* janVantommeScene.cpp in Sources */,
 				B01DF7F81C179B9800B2EAB0 /* ofxEasing.cpp in Sources */,
 				FAD0D42D1C1C891400C2DA1B /* quantize.c in Sources */,
