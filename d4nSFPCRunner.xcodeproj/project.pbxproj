@@ -29,6 +29,10 @@
 		856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9604B925D32EE39065747725 /* ofxBaseGui.cpp */; };
 		85B3DCA81C1E47060054975A /* yeseulMenkmanInstitution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCA61C1E47060054975A /* yeseulMenkmanInstitution.cpp */; };
 		85B3DCB11C1FE6170054975A /* yeseulCooperMessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */; };
+		9224BC9D1C20F233003668CF /* mgsCooperSymbols.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9224BC921C20F233003668CF /* mgsCooperSymbols.cpp */; };
+		9224BC9E1C20F233003668CF /* mgsRileyDiamonds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9224BC951C20F233003668CF /* mgsRileyDiamonds.cpp */; };
+		9224BC9F1C20F233003668CF /* mgsRileyEllipsesAndSquares.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9224BC981C20F233003668CF /* mgsRileyEllipsesAndSquares.cpp */; };
+		9224BCA01C20F233003668CF /* mgsVeraMolnarLineStudy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9224BC9B1C20F233003668CF /* mgsVeraMolnarLineStudy.cpp */; };
 		9237CB9D1C11E9BD0007A916 /* veraFscene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9237CB9B1C11E9BD0007A916 /* veraFscene.cpp */; };
 		923871A41BF7993A00171456 /* baseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9238719E1BF7993A00171456 /* baseScene.cpp */; };
 		923871A61BF7993A00171456 /* sceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871A21BF7993A00171456 /* sceneManager.cpp */; };
@@ -164,6 +168,14 @@
 		87F26B4B24CBD428AD9EEBAA /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		89449E3044D456F7DE7BEA14 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		907C5B5E104864A2D3A25745 /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxToggle.cpp; path = ../../../addons/ofxGui/src/ofxToggle.cpp; sourceTree = SOURCE_ROOT; };
+		9224BC921C20F233003668CF /* mgsCooperSymbols.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgsCooperSymbols.cpp; sourceTree = "<group>"; };
+		9224BC931C20F233003668CF /* mgsCooperSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgsCooperSymbols.h; sourceTree = "<group>"; };
+		9224BC951C20F233003668CF /* mgsRileyDiamonds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgsRileyDiamonds.cpp; sourceTree = "<group>"; };
+		9224BC961C20F233003668CF /* mgsRileyDiamonds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgsRileyDiamonds.h; sourceTree = "<group>"; };
+		9224BC981C20F233003668CF /* mgsRileyEllipsesAndSquares.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgsRileyEllipsesAndSquares.cpp; sourceTree = "<group>"; };
+		9224BC991C20F233003668CF /* mgsRileyEllipsesAndSquares.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgsRileyEllipsesAndSquares.h; sourceTree = "<group>"; };
+		9224BC9B1C20F233003668CF /* mgsVeraMolnarLineStudy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgsVeraMolnarLineStudy.cpp; sourceTree = "<group>"; };
+		9224BC9C1C20F233003668CF /* mgsVeraMolnarLineStudy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgsVeraMolnarLineStudy.h; sourceTree = "<group>"; };
 		9237CB9B1C11E9BD0007A916 /* veraFscene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = veraFscene.cpp; sourceTree = "<group>"; };
 		9237CB9C1C11E9BD0007A916 /* veraFscene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = veraFscene.h; sourceTree = "<group>"; };
 		9238719E1BF7993A00171456 /* baseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = baseScene.cpp; sourceTree = "<group>"; };
@@ -484,6 +496,46 @@
 			path = yeseulCooperMessages;
 			sourceTree = "<group>";
 		};
+		9224BC911C20F233003668CF /* mgsCooperSymbols */ = {
+			isa = PBXGroup;
+			children = (
+				9224BC921C20F233003668CF /* mgsCooperSymbols.cpp */,
+				9224BC931C20F233003668CF /* mgsCooperSymbols.h */,
+			);
+			name = mgsCooperSymbols;
+			path = src/scenes/mgsCooperSymbols;
+			sourceTree = SOURCE_ROOT;
+		};
+		9224BC941C20F233003668CF /* mgsRileyDiamonds */ = {
+			isa = PBXGroup;
+			children = (
+				9224BC951C20F233003668CF /* mgsRileyDiamonds.cpp */,
+				9224BC961C20F233003668CF /* mgsRileyDiamonds.h */,
+			);
+			name = mgsRileyDiamonds;
+			path = src/scenes/mgsRileyDiamonds;
+			sourceTree = SOURCE_ROOT;
+		};
+		9224BC971C20F233003668CF /* mgsRileyEllipsesAndSquares */ = {
+			isa = PBXGroup;
+			children = (
+				9224BC981C20F233003668CF /* mgsRileyEllipsesAndSquares.cpp */,
+				9224BC991C20F233003668CF /* mgsRileyEllipsesAndSquares.h */,
+			);
+			name = mgsRileyEllipsesAndSquares;
+			path = src/scenes/mgsRileyEllipsesAndSquares;
+			sourceTree = SOURCE_ROOT;
+		};
+		9224BC9A1C20F233003668CF /* mgsVeraMolnarLineStudy */ = {
+			isa = PBXGroup;
+			children = (
+				9224BC9B1C20F233003668CF /* mgsVeraMolnarLineStudy.cpp */,
+				9224BC9C1C20F233003668CF /* mgsVeraMolnarLineStudy.h */,
+			);
+			name = mgsVeraMolnarLineStudy;
+			path = src/scenes/mgsVeraMolnarLineStudy;
+			sourceTree = SOURCE_ROOT;
+		};
 		9237CB9A1C11E9BD0007A916 /* veraFscene */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +584,10 @@
 				923871B21BF7CCC900171456 /* triangleScene */,
 				26B2483C1BF7D53700C11D04 /* veraAnimatedScene */,
 				FA361F421C18862D00F197F3 /* veraMolnarLines68 */,
+				9224BC911C20F233003668CF /* mgsCooperSymbols */,
+				9224BC941C20F233003668CF /* mgsRileyDiamonds */,
+				9224BC971C20F233003668CF /* mgsRileyEllipsesAndSquares */,
+				9224BC9A1C20F233003668CF /* mgsVeraMolnarLineStudy */,
 				9238719E1BF7993A00171456 /* baseScene.cpp */,
 				9238719F1BF7993A00171456 /* baseScene.h */,
 				923871A21BF7993A00171456 /* sceneManager.cpp */,
@@ -1004,9 +1060,12 @@
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				B04420991C1901D90049071E /* RileyArcsRoy.cpp in Sources */,
+				9224BC9F1C20F233003668CF /* mgsRileyEllipsesAndSquares.cpp in Sources */,
 				D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */,
 				71C301CB1C1783A500C0AC31 /* yeseulWhitneyScene.cpp in Sources */,
+				9224BC9D1C20F233003668CF /* mgsCooperSymbols.cpp in Sources */,
 				FAF7DF1F1C1833C70058EFE0 /* alexLissamojiWhitney.cpp in Sources */,
+				9224BCA01C20F233003668CF /* mgsVeraMolnarLineStudy.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				26B248401BF7DA1100C11D04 /* veraAnimatedScene.cpp in Sources */,
 				E183505A1C14F3AC00EAFB96 /* loloVera.cpp in Sources */,
@@ -1036,6 +1095,7 @@
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				4F8F344E1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp in Sources */,
+				9224BC9E1C20F233003668CF /* mgsRileyDiamonds.cpp in Sources */,
 				B01DF7F91C179B9800B2EAB0 /* ofxEasingBack.cpp in Sources */,
 				E1802C931C16905000780A6F /* loloVera2.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
