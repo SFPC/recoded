@@ -51,9 +51,9 @@ void cantusFirmusRiley::setup(){
         else stripes.push_back(r);
     }
 
-    parameters.add(posNoiseSpeed.set("walk speed", 0.1, 0.005, 0.3));
-    parameters.add(zoomNoiseSpeed.set("zoom speed", 0.2, 0.01, 0.4));
-    parameters.add(range.set("scale", 0.3, 0.02, 1.0));
+    parameters.add(posNoiseSpeed.set("offsetX", 0, -300, 300));
+    parameters.add(zoomNoiseSpeed.set("zoom", 0.2, 0.05, 1));
+    //parameters.add(range.set("scale", 0.3, 0.02, 1.0));
 
     setAuthor("Reed Tothong");
     setOriginalArtist("Bridget Riley");
@@ -67,43 +67,43 @@ void cantusFirmusRiley::update(){
 void cantusFirmusRiley::draw(){
     ofFill();
     ofSetRectMode(OF_RECTMODE_CORNER);
-    posNoise = ofNoise(getElapsedTimef()*posNoiseSpeed);
-    
-    float posX = ofMap(posNoise, 0, 1.0, 0, ofGetWidth()/2);
-    ofTranslate(posX, 0);
-    
-    
-    zoomNoise = ofNoise(getElapsedTimef()*zoomNoiseSpeed);
-    // cinematic = 0.1 // motion sickness = 10
-    
-//    float rangeNoise = ofNoise(getElapsedTimef()*rangeNoiseSpeed);
-    float microScale = ofMap(range, 0, 0.5, 0.015, 1.0, true);
-    float macroScale = ofMap(range, 0.5, 1.0, 1.0, 2.5,true);
-    
-    float maxZoomOut = range < 0.5 ? microScale : macroScale;
-    //     zoom range control
-    float zoom = ofMap(zoomNoise, 0.0, 1.0, .0001, maxZoomOut, true);
+//    posNoise = ofNoise(getElapsedTimef()*posNoiseSpeed);
+//    
+//    float posX = ofMap(posNoise, 0, 1.0, 0, ofGetWidth()/2);
+    ofTranslate(posNoiseSpeed, 0);
     
     
-    ofScale(zoom, 1);
+//    zoomNoise = ofNoise(getElapsedTimef()*zoomNoiseSpeed);
+//    // cinematic = 0.1 // motion sickness = 10
+//    
+////    float rangeNoise = ofNoise(getElapsedTimef()*rangeNoiseSpeed);
+//    float microScale = ofMap(range, 0, 0.5, 0.015, 1.0, true);
+//    float macroScale = ofMap(range, 0.5, 1.0, 1.0, 2.5,true);
+//    
+//    float maxZoomOut = range < 0.5 ? microScale : macroScale;
+//    //     zoom range control
+//    float zoom = ofMap(zoomNoise, 0.0, 1.0, .0001, maxZoomOut, true);
+    
+    
+    ofScale(zoomNoiseSpeed, 1);
     
     //midline
     stripes[size/2].x = -stripes[size/2].width/2;
     ofSetColor(stripes[size/2].c);
-    ofDrawRectangle(stripes[size/2].x, 0, stripes[size/2].width, ofGetWidth()*2);
+    ofDrawRectangle(stripes[size/2].x, 0, stripes[size/2].width, dimensions.width*2);
     
     //loop to the left
     for (int i = (size/2)-1; i> 0; i--){
         ofSetColor(stripes[i].c);
         stripes[i].x = stripes[i+1].x - stripes[i].width;
-        ofDrawRectangle(stripes[i].x, 0, stripes[i].width, ofGetHeight()*2);
+        ofDrawRectangle(stripes[i].x, 0, stripes[i].width, dimensions.height*2);
     }
     
     //loop to the right
     for (int i = (size/2)+1; i< stripes.size();i++) {
         ofSetColor(stripes[i].c);
         stripes[i].x = stripes[i-1].x + stripes[i-1].width;
-        ofDrawRectangle(stripes[i].x, 0, stripes[i].width, ofGetHeight()*2);
+        ofDrawRectangle(stripes[i].x, 0, stripes[i].width, dimensions.height*2);
     }
     
 }
