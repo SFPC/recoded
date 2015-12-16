@@ -131,6 +131,10 @@ void sceneManager::setup(){
     panel->setPosition(520+504+20, 20);
 
     
+    loop.load("sounds/drawbar_c4_a.aif");
+    loop.setLoop(true);
+    loop.play();
+    loop.setVolume(0);
     
     TM.loadSounds();
     
@@ -159,6 +163,32 @@ void sceneManager::update(){
 #endif
     
     
+    ofParameter < float > floatParam;
+    
+    if (TM.paramChangedEnergy.size() > 0){
+        if (TM.paramChangedEnergy[0] > 0){
+            loop.setVolume(TM.paramChangedEnergy[0]);
+            
+            
+            ofParameter<float> t = scenes[currentScene]->parameters[0].cast<float>();
+            
+            float minVal = t.getMin();
+            float maxVal = t.getMax();
+            float val = t;
+            
+            float pct  = (t - minVal) / (float)(maxVal - minVal);
+            
+            if (pct > 1) pct = 1;
+            if (pct < 0) pct = 0;
+            
+            loop.setSpeed( ofMap(pct, 0, 1, 0.3, 1.0) );
+            
+        }
+    } else {
+        loop.setVolume(0);
+    }
+    
+
 }
 
 void sceneManager::draw(){
