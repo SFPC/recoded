@@ -11,7 +11,7 @@ void veraFscene::setup(){
     scale.set("scale", 10, 10,400);
     parameters.add(scale);
 
-    loadCode("veraFscene/exampleCode.cpp");
+    loadCode("scenes/veraFscene/exampleCode.cpp");
 }
 
 void veraFscene::update(){

@@ -23,7 +23,7 @@ void yeseulMenkmanInstitution::setup(){
     
     setAuthor("Yeseul Song");
     setOriginalArtist("Rosa Menkman");
-    loadCode("yeseulMenkmanInstitution/exampleCode.cpp");
+    loadCode("scenes/yeseulMenkmanInstitution/exampleCode.cpp");
     
     
 }

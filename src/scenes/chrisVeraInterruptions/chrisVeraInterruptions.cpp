@@ -45,7 +45,7 @@ void chrisVeraInterruptions::setup(){
 
     setAuthor("Chris Anderson");
     setOriginalArtist("Vera Molnar");
-    loadCode("chrisVeraInterruptions/exampleCode.cpp");
+    loadCode("scenes/chrisVeraInterruptions/exampleCode.cpp");
 }
 
 void chrisVeraInterruptions::update() {

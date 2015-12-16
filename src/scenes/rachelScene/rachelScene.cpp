@@ -10,10 +10,10 @@ void rachelScene::setup(){
     time.set("time", 0.1, 0, 2*PI);
     parameters.add(time);
 
-    shader.load("rachelScene/shader");
+    shader.load("scenes/rachelScene/shader");
     setAuthor("Rachel Ulgado");
     setOriginalArtist("John Whitney");
-    loadCode("rachelScene/exampleCode.cpp");
+    loadCode("scenes/rachelScene/exampleCode.cpp");
 }
 
 void rachelScene::update(){

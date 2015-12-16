@@ -3,7 +3,7 @@
 
 void andyMenkmanDataBendsTif::setup(){
   
-    bender.setup("andyMenkmanDataBends/images/", "tif");
+    bender.setup("scenes/andyMenkmanDataBends/images/", "tif");
     
     // setup pramaters
     numberOfLines.set("numberOfLines", 1, 0, bender.lineCount);
@@ -16,7 +16,7 @@ void andyMenkmanDataBendsTif::setup(){
 
     setAuthor("Andy Dayton");
     setOriginalArtist("Rosa Menkman");
-    loadCode("andyMenkmanDataBends/code/tif.txt");
+    loadCode("scenes/andyMenkmanDataBends/code/tif.txt");
 }
 
 void andyMenkmanDataBendsTif::update(){

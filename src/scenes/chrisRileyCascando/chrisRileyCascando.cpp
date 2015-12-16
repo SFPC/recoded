@@ -54,7 +54,7 @@ void chrisRileyCascando::setup(){
 
     setAuthor("Chris Anderson");
     setOriginalArtist("Bridget Riley");
-    loadCode("chrisRileyCascando/exampleCode.cpp");
+    loadCode("scenes/chrisRileyCascando/exampleCode.cpp");
 }
 
 void chrisRileyCascando::update(){

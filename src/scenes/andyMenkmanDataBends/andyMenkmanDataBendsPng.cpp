@@ -3,7 +3,7 @@
 
 void andyMenkmanDataBendsPng::setup(){
   
-    bender.setup("andyMenkmanDataBends/images/", "png");
+    bender.setup("scenes/andyMenkmanDataBends/images/", "png");
     
     // setup pramaters
     numberOfLines.set("numberOfLines", 1, 0, bender.lineCount);
@@ -16,7 +16,7 @@ void andyMenkmanDataBendsPng::setup(){
 
     setAuthor("Andy Dayton");
     setOriginalArtist("Rosa Menkman");
-    loadCode("andyMenkmanDataBends/code/png.txt");
+    loadCode("scenes/andyMenkmanDataBends/code/png.txt");
 }
 
 void andyMenkmanDataBendsPng::update(){

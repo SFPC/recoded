@@ -22,11 +22,11 @@ void johnWhitneyShader01::setup(){
     blueScale.set("yellowScale", 0.15, 0, 0.5);
     parameters.add(blueScale);
     
-    shader.load("johnWhitneyShader01/shader");
+    shader.load("scenes/johnWhitneyShader01/shader");
 
     setAuthor("Chris Anderson");
     setOriginalArtist("John Whitney");
-    loadCode("johnWhitneyShader01/exampleCode.cpp");
+    loadCode("scenes/johnWhitneyShader01/exampleCode.cpp");
 }
 
 void johnWhitneyShader01::update() {

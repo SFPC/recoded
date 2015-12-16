@@ -10,11 +10,11 @@ void johnWhitneyShader02::setup(){
     thickness.set("thickness", 0.26, 0.0001, 0.4);
     parameters.add(thickness);
     
-    shader.load("johnWhitneyShader02/shader");
+    shader.load("scenes/johnWhitneyShader02/shader");
     
     setAuthor("Chris Anderson");
     setOriginalArtist("John Whitney");
-    loadCode("johnWhitneyShader02/exampleCode.cpp");
+    loadCode("scenes/johnWhitneyShader02/exampleCode.cpp");
 }
 
 void johnWhitneyShader02::update() {

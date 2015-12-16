@@ -35,7 +35,7 @@ void veraMolnarTrapezium::setup(){
 
     setAuthor("Quin Kennedy");
     setOriginalArtist("Vera Molnar");
-    loadCode("veraMolnarTrapezium/exampleCode.cpp");
+    loadCode("scenes/veraMolnarTrapezium/exampleCode.cpp");
 }
 
 void veraMolnarTrapezium::update(){

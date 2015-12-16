@@ -42,7 +42,7 @@ Use the terminal to `cd` into your project folder and run the following, substit
 
 It will copy the following files and create new files for your new scene:
 
- * `bin/data/emptyScene/` => `bin/data/sceneName/`
+ * `bin/data/scenes/emptyScene/` => `bin/data/scenes/sceneName/`
  * `src/scenes/emptyScene/` => `src/scenes/sceneName/`
 
 Now you you can drag the new folder in the `scenes` folder into XCode. Make sure to use these settings if you drag the folder in:

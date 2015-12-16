@@ -32,7 +32,7 @@ void memoAktenScene::setup(){
 
     setAuthor("Motoi Shimizu");
     setOriginalArtist("Memo Akten");
-	loadCode("memoAktenScene/exampleCode.cpp");
+	loadCode("scenes/memoAktenScene/exampleCode.cpp");
 }
 
 void memoAktenScene::update(){

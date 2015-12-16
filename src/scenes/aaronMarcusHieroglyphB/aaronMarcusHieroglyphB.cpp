@@ -40,7 +40,7 @@ void aaronMarcusHieroglyphB::setup(){
 	lastFrameMicros = ofGetSystemTimeMicros();
     setAuthor("Quin Kennedy");
     setOriginalArtist("Aaron Marcus");
-    loadCode("aaronMarcusHieroglyphB/exampleCode.cpp");
+    loadCode("scenes/aaronMarcusHieroglyphB/exampleCode.cpp");
 }
 
 void aaronMarcusHieroglyphB::update(){

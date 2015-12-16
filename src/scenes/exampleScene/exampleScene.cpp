@@ -12,7 +12,7 @@ void exampleScene::setup(){
     parameters.add(angle);
     parameters.add(width);
     
-    loadCode("exampleScene/exampleCode.cpp");
+    loadCode("scenes/exampleScene/exampleCode.cpp");
     
     
 }

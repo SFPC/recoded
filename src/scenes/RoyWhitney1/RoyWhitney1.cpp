@@ -15,7 +15,7 @@ void RoyWhitney1::setup(){
 
     setAuthor("Roy MacDonald");
     setOriginalArtist("John Whitney");
-    loadCode("RoyWhitney1/exampleCode.cpp");
+    loadCode("scenes/RoyWhitney1/exampleCode.cpp");
     
     iterations = 2;
 }

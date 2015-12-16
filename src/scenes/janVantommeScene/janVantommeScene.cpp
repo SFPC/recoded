@@ -37,7 +37,7 @@ void janVantommeScene::setup()
     triggerTime.set("triggerTime", 1000, 500, 2000 );
     parameters.add( triggerTime );
     
-    loadCode("janVantommeScene/examplecode.txt");
+    loadCode("scenes/janVantommeScene/examplecode.txt");
 }
 
 void janVantommeScene::update()

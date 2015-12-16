@@ -96,7 +96,7 @@ void robbyMolnarScene::setup(){
 
     setAuthor("Robby Kraft");
     setOriginalArtist("Vera Molnar");
-    loadCode("robbyMolnarScene/code.txt");
+    loadCode("scenes/robbyMolnarScene/code.txt");
 }
 void robbyMolnarScene::update(){
     

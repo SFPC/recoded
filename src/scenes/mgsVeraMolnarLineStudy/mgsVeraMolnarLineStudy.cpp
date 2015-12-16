@@ -46,7 +46,7 @@ void mgsVeraMolnarLineStudy::setup(){
   painter.angle = 60;
   //painter.stroke = ofColor(abs(painter.backgroundCounter-255));
 
-  loadCode("mgsVeraMolnarLineStudy/exampleCode.cpp");
+  loadCode("scenes/mgsVeraMolnarLineStudy/exampleCode.cpp");
   //painter[i+2] = new myTimePainter(0.0, 0.0, 120.0, 0.80, 500, color(random(255),random(255),random(255)), 4);
   freshPaint();
   frame.allocate(dimensions.width, dimensions.height);

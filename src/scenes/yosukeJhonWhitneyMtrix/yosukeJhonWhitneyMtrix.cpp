@@ -16,7 +16,7 @@ void yosukeJhonWhitneyMtrix::setup(){
     parameters.add(ballRadius);
 
 
-    loadCode("yosukeJhonWhitneyMtrix/exampleCode.cpp");
+    loadCode("scenes/yosukeJhonWhitneyMtrix/exampleCode.cpp");
     
     
     

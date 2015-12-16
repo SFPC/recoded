@@ -24,7 +24,7 @@ void mgsMaedaTimePainter::setup(){
   parameters.add(clearScreenP.set("clearScreen", false));
   clearScreenP.addListener(this, &mgsMaedaTimePainter::clearScreen);
 
-  loadCode("mgsMaedaTimePainter/exampleCode.cpp");
+  loadCode("scenes/mgsMaedaTimePainter/exampleCode.cpp");
   
   painters.clear();
   for (int i = 0; i < numberOfPainters; i++) {
