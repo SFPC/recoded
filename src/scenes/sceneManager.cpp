@@ -107,6 +107,9 @@ void sceneManager::setup(){
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
 
+#ifdef USE_MIDI_PARAM_SYNC
+    sync.setup(0);
+#endif
 
     
     // disney
@@ -121,17 +124,18 @@ void sceneManager::setup(){
 //    }
     
     currentScene = 0;
+
+    panel = new ofxPanel();
+    panel->setup("scene settings");
+    panel->add(scenes[currentScene]->parameters);
+    panel->setPosition(520+504+20, 20);
+
     startScene(currentScene);
     
-    
-    
-    panel = new ofxPanel();
-    panel->setup();
-    panel->add(scenes[currentScene]->parameters);
-    panel->setPosition(ofGetWidth()-300, 20);
-
-    
-    mode = DRAW_SIDE_BY_SIDE;
+    loop.load("sounds/drawbar_c4_a.aif");
+    loop.setLoop(true);
+    loop.play();
+    loop.setVolume(0);
     
     TM.loadSounds();
     
@@ -142,11 +146,54 @@ void sceneManager::startScene(int whichScene){
     TM.setup( (scenes[currentScene]), 7.5);
     lettersLastFrame= 0;
     lastPlayTime = 0;
+    lastLetterHeight = 0;
+#ifdef USE_MIDI_PARAM_SYNC
+    sync.setSyncGroup(scenes[currentScene]->parameters, true);
+    sync.enableMidi();
+#endif
 }
 
 
 void sceneManager::update(){
+    
+    
+    #ifdef TYPE_ANIMATION
+    // this is copied from below...  should be abstracted out.
+    float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
+    if (pctDelay > 0.99){
+        scenes[currentScene]->update();
+    }
+#else 
     scenes[currentScene]->update();
+#endif
+    
+    
+    ofParameter < float > floatParam;
+    
+    if (TM.paramChangedEnergy.size() > 0){
+        if (TM.paramChangedEnergy[0] > 0){
+            loop.setVolume(TM.paramChangedEnergy[0]);
+            
+            
+            ofParameter<float> t = scenes[currentScene]->parameters[0].cast<float>();
+            
+            float minVal = t.getMin();
+            float maxVal = t.getMax();
+            float val = t;
+            
+            float pct  = (t - minVal) / (float)(maxVal - minVal);
+            
+            if (pct > 1) pct = 1;
+            if (pct < 0) pct = 0;
+            
+            loop.setSpeed( ofMap(pct, 0, 1, 0.3, 1.0) );
+            
+        }
+    } else {
+        loop.setVolume(0);
+    }
+    
+
 }
 
 void sceneManager::draw(){
@@ -162,7 +209,6 @@ void sceneManager::draw(){
     sceneFbo.end();
     
     
-    if (mode == DRAW_SIDE_BY_SIDE){
         ofSetColor(255,255,255);
         
         codeFbo.begin();
@@ -191,7 +237,21 @@ void sceneManager::draw(){
         ofSetColor(255);
         //font.drawString(codeReplaced, 40, 40);
         //ofDrawBitmapString(codeReplaced, 40,40);
+    
+    bool bShiftUp = false;
+    
+    if (lastLetterHeight > (504-20)){
+        bShiftUp = true;
         
+    }
+    
+    if (bShiftUp){
+        float dx = lastLetterHeight - (504-20);
+        ofPushMatrix();
+        ofTranslate(0,-dx);
+    }
+    
+    
         int countLetters = 0;
         int x = 10;
         int y = 10 + 13;
@@ -215,20 +275,29 @@ void sceneManager::draw(){
                 y += 13;
                 x = 10;
             }
+            
+            lastLetterHeight = y;
         }
-        
-        
+    
+    if (bShiftUp){
+        ofPopMatrix();
+    }
+    
  
         codeFbo.end();
         
         ofSetColor(255);
-        codeFbo.draw(ofGetHeight(), 0,ofGetHeight(), ofGetHeight());
+        codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
         
 #ifdef TYPE_ANIMATION
         float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
         if (pctDelay > 0.99){
-            sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
+            sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         } else {
+            
+            ofSetColor(0);
+            ofFill();
+            ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
             int diff = (countLetters - (int)lettersLastFrame);
             if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > ofRandom(50,87))){
                 // cout << diff << enld;
@@ -249,15 +318,20 @@ void sceneManager::draw(){
             
         }
 #else
-        sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
+        sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
 #endif
         
-        
-    } else if (mode == DRAW_SINGLE){
-        sceneFbo.draw(0,0);
-    }
+  
     
     panel->draw();
+    
+    
+    // let's draw some info!
+    
+    ofSetColor(255);
+    
+    ofDrawBitmapString("drawing scene " + ofToString(currentScene) + "\t\t(" + scenes[currentScene]->author  + ", " + scenes[currentScene]->originalArtist + ")", 20, VISUALS_HEIGHT + 50);
+    
     
 }
 
@@ -279,10 +353,10 @@ void sceneManager::nextScene(bool forward){
     
     delete panel;
     panel = new ofxPanel();
-    panel->setup();
+    panel->setup("scene settings");
     panel->add(scenes[currentScene]->parameters);
     
-    panel->setPosition(ofGetWidth()-300, 20);
+    panel->setPosition(520+504+20, 20);
 }; 
 
 void sceneManager::advanceScene(){

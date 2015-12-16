@@ -186,7 +186,7 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
     
     
     for (int i = 0; i < nParams; i++){
-        paramChangedEnergy[i] *= 0.95;                          // too fast?
+        paramChangedEnergy[i] *= 0.96;                          // too fast?
     }
     
     return codeLetters;

@@ -1,25 +1,9 @@
 #include "ofApp.h"
 
 
-//--------------------------------------------------------------
-void ofApp::fixScreenSize(){
-    // I am assuming a 2x1 window size for now...
-    float width = ofGetWidth();
-    float height = width / 2.0;
-    ofSetWindowShape(width, height);
-    
-    ofSetWindowPosition(20,20);
-}
-
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    
-    
-    //LET'S GET BIG...
-    ofSetWindowShape(ofGetScreenWidth(), ofGetScreenWidth()/2.0);
-    fixScreenSize();
-    
     SM.setup();
     
 }
@@ -31,9 +15,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
-    ofBackground(0);
-    
+    ofBackground(40);
     SM.draw();
 }
 
@@ -46,18 +28,11 @@ void ofApp::keyPressed(int key){
 		SM.regressScene();
 	}
     
-    if (key == '0'){
-        SM.mode = DRAW_SIDE_BY_SIDE;
-    } else if (key == '1'){
-        SM.mode = DRAW_SINGLE;
+    
+    if (key == 'f'){
+        ofToggleFullscreen();
     }
     
-    if (key == '6'){
-        ofSetWindowShape(504*2, 504);
-    }
-    if (key == '7'){
-        ofSetWindowShape(ofGetScreenWidth(), ofGetScreenWidth()/2);
-    }
     
     if (key == 's') {
         SM.screenGrab();
@@ -102,12 +77,6 @@ void ofApp::mouseExited(int x, int y){
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
 
-    
-    //float width = w;
-    //float height = width / 2.0;
-    //ofSetWindowShape(width, height);
-    fixScreenSize();
-    
     
 }
 
