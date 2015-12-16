@@ -9,9 +9,6 @@
 #include "typographyManager.hpp"
 
 
-enum drawMode {
-    DRAW_SIDE_BY_SIDE, DRAW_SINGLE
-};
 
 // I take care of scenes.
 
@@ -41,7 +38,7 @@ public:
     ofFbo codeFbo;
     ofxPanel * panel;
     
-    drawMode mode;
+
     
     ofTrueTypeFont font;
     

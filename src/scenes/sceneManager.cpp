@@ -128,10 +128,9 @@ void sceneManager::setup(){
     panel = new ofxPanel();
     panel->setup();
     panel->add(scenes[currentScene]->parameters);
-    panel->setPosition(ofGetWidth()-300, 20);
+    panel->setPosition(520+504+50, 20);
 
     
-    mode = DRAW_SIDE_BY_SIDE;
     
     TM.loadSounds();
     
@@ -174,7 +173,6 @@ void sceneManager::draw(){
     sceneFbo.end();
     
     
-    if (mode == DRAW_SIDE_BY_SIDE){
         ofSetColor(255,255,255);
         
         codeFbo.begin();
@@ -234,13 +232,17 @@ void sceneManager::draw(){
         codeFbo.end();
         
         ofSetColor(255);
-        codeFbo.draw(ofGetHeight(), 0,ofGetHeight(), ofGetHeight());
+        codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
         
 #ifdef TYPE_ANIMATION
         float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
         if (pctDelay > 0.99){
-            sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
+            sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         } else {
+            
+            ofSetColor(0);
+            ofFill();
+            ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
             int diff = (countLetters - (int)lettersLastFrame);
             if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > ofRandom(50,87))){
                 // cout << diff << enld;
@@ -261,13 +263,10 @@ void sceneManager::draw(){
             
         }
 #else
-        sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
+        sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
 #endif
         
-        
-    } else if (mode == DRAW_SINGLE){
-        sceneFbo.draw(0,0);
-    }
+  
     
     panel->draw();
     
@@ -294,7 +293,7 @@ void sceneManager::nextScene(bool forward){
     panel->setup();
     panel->add(scenes[currentScene]->parameters);
     
-    panel->setPosition(ofGetWidth()-300, 20);
+    panel->setPosition(520+504+50, 20);
 }; 
 
 void sceneManager::advanceScene(){
