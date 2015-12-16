@@ -7,11 +7,17 @@
 //
 
 #include "midiRecorder.h"
-
 // -----------------------------------------------------------------------------
-void midiRecorder::record(){
-    
+void midiRecorder::newMidiMessage(ofxMidiMessage& msg){
+    if (bRecording) {
         
+        }
+}
+// -----------------------------------------------------------------------------
+void midiRecorder::record(uint64_t time){
+    bRecording = true;
+    bPlaying = false;
+    recordingStartTime = ofGetElapsedTimeMillis();
 }
 // -----------------------------------------------------------------------------
 void midiRecorder::play(){

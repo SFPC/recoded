@@ -34,19 +34,22 @@ public:
     ofxMidiMessage message;
 };
 
-class midiRecorder{
+class midiRecorder: public ofxMidiListener{
 public:
     
-    
+    void newMidiMessage(ofxMidiMessage& msg);
+
     bool bRecording, bPlaying;
     uint64_t recordingStartTime;
     
     vector<recordingEvent> data;
+    
+    void setup();
 
-    void record();
+    void record(uint64_t time);
     void play();
     void stop();
-    
+    void clear();
     
     
 };
