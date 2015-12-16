@@ -10,17 +10,17 @@ void loloWhitney::setup(){
     ofSetCircleResolution(64);
     
     ellipse_size.set("Ellipse Size",500,2.0,500.0);
-    main_speed.set("Main Speed",.01,.001,.1);
+    main_speed.set("Main Speed",.03,.001,.1);
     q_insert_vel.set("Queue Insert Speed",1.0,1.0,10.0);
-    wave_size.set("Wave Size", 8.0, 1.0, 100.0);
+    wave_size.set("Wave Size", 0, 0, 100.0);
     rotation_speed.set("Rotation Val",1.2,1.0,8.0);
-    disor_am.set("Disort",2.0,1.0,100.0);
+    disor_am.set("Disort",0.0,0,6.0);
     
     parameters.add(ellipse_size);
    // parameters.add(main_speed);
    // parameters.add(q_insert_vel);
     parameters.add(wave_size);
-    parameters.add(rotation_speed);
+    //parameters.add(rotation_speed);
     parameters.add(disor_am);
     
     q_limit = 25;
@@ -32,10 +32,12 @@ void loloWhitney::setup(){
     ofClear(0,0);
     main_fbo.end();
     
-    small_fbo.allocate(main_fbo.getWidth()/4.0, main_fbo.getHeight()/4.0);
+    small_fbo.allocate(main_fbo.getWidth()/1, main_fbo.getHeight()/1);
     small_fbo.begin();
     ofClear(0,0);
     small_fbo.end();
+    
+    shader_rip.load("loloWhitney/shaders/vhs_rip.vert", "loloWhitney/shaders/vhs_rip.frag");
     
     setAuthor("Marcelo Armendáriz");
     setOriginalArtist("John Whitney");
@@ -45,7 +47,7 @@ void loloWhitney::setup(){
 void loloWhitney::update(){
     
     
-    ofSetWindowTitle(ofToString(ofGetFrameRate(),2));
+//    ofSetWindowTitle(ofToString(ofGetFrameRate(),2));
     if(ofGetFrameNum() % q_insert_vel == 0)
     {
         
@@ -76,13 +78,15 @@ void loloWhitney::update(){
         //   ofSetColor(255);
         ofFloatColor _color = ofFloatColor(255);
         _color.setHsb(ofMap(i, 0, q_main_val.size(), 0.0, 1.0), 1.0, 1.0);
-        float   _size = sin(q_main_val.at(i));
+        float   _size = sin((float)i/q_main_val.size()*PI);
         ofRotateZ(q_main_val.at(i)*rotation_speed);
      //   ofRotateX(q_main_val.at(i)*.095);
         ofSetColor(_color);
         
-        float   _noi = ofNoise(q_main_val.at(i)*.1,ofGetFrameNum()*.01);
-        _noi*=100.0;
+//        float   _noi = ofNoise(q_main_val.at(i)*.1,ofGetFrameNum()*.01);
+//        _noi*=100.0;
+        
+        float _noi = 0;
         
         ofDrawEllipse(-_noi+cos(q_main_val.at(i)*.2)*100.0, _noi+sin(q_main_val.at(i)*.2)*100.0, _size*ellipse_size/2.0, _size*ellipse_size);
     }

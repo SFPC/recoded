@@ -36,12 +36,13 @@ void main()
 
 	float l = fract(random(s_cor+vec2(0.0,t/20.0)));
 
- 	vec4 xxx = texture2DRect(tex0, gl_TexCoord[0].xy+vec2((bar_con ? cos(t*.1+s_cor.y*2.0)*disor : 0.0),0.0));
+    vec2 distort = vec2((bar_con ? cos(t*.1+s_cor.y*2.0)*disor : 0.0),0.0);
+ 	vec4 xxx = texture2DRect(tex0, gl_TexCoord[0].xy+distort*disor);
 
  	vec4 input_texture = texture2DRect(tex0,s_cor);
 
- 	input_texture+=xxx;
+ 	//input_texture+=xxx;
 
 
-	gl_FragColor = noise_sample+input_texture;
+    gl_FragColor = noise_sample+input_texture+xxx;
 }
