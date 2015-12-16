@@ -1,9 +1,11 @@
-draw([[numRectangles]], [[disarray]]){
-// wobble and magnitude used in trig functions to slightly affect the position of the corners (disarray)
-    for(i = 0; i < [[numRectangles]]; i++){
-        drawPerturbedRect(centerX - radius[i]*.5, centerY - radius[i]*.5, 
-                          radius[i], radius[i],
-                          [[disarray]] * ( wobble[i*8] + magnitude[i*8] * sin(magnitude[i*8] * time() ) ) );
+// Loops on loops on loops!
 
+void draw() {
+    for (int x = 0; x < 3; x++) {
+        for (int y = 0; y < 3; y++) {
+            for(i = 0; i < [[numRectangles]]; i++){
+                drawPerturbedRect(x, y, rectangles[i], [[disarray]]);
+            }
+        }
     }
 }
