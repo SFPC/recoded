@@ -146,7 +146,19 @@ void sceneManager::startScene(int whichScene){
 
 
 void sceneManager::update(){
+    
+    
+    #ifdef TYPE_ANIMATION
+    // this is copied from below...  should be abstracted out.
+    float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
+    if (pctDelay > 0.99){
+        scenes[currentScene]->update();
+    }
+#else 
     scenes[currentScene]->update();
+#endif
+    
+    
 }
 
 void sceneManager::draw(){
