@@ -13,7 +13,7 @@ void anastasisRileyScene::setup(){
 
     setAuthor("Anastasis Germanidis");
     setOriginalArtist("Bridget Riley");
-    loadCode("anastasisRileyScene/exampleCode.cpp");
+    loadCode("scenes/anastasisRileyScene/exampleCode.cpp");
 }
 
 void anastasisRileyScene::update(){

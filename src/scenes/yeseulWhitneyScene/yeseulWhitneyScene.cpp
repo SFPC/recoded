@@ -13,7 +13,7 @@ void yeseulWhitneyScene::setup(){
     
     setAuthor("Yeseul Song");
     setOriginalArtist("John Whitney");
-    loadCode("yeseulWhitneyScene/exampleCode.cpp");
+    loadCode("scenes/yeseulWhitneyScene/exampleCode.cpp");
 
 }
 

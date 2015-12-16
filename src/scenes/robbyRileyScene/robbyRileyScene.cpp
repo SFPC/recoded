@@ -9,7 +9,7 @@ void robbyRileyScene::setup(){
 
     setAuthor("Robby Kraft");
     setOriginalArtist("Bridget Riley");
-    loadCode("robbyRileyScene/code.txt");
+    loadCode("scenes/robbyRileyScene/code.txt");
 }
 
 void robbyRileyScene::update(){

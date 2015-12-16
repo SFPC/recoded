@@ -33,7 +33,7 @@ void manfredMohrP196A::setup(){
 
     setAuthor("Quin Kennedy");
     setOriginalArtist("Manfred Mohr");
-    loadCode("manfredMohrP196A/exampleCode.cpp");
+    loadCode("scenes/manfredMohrP196A/exampleCode.cpp");
 }
 
 void manfredMohrP196A::update(){

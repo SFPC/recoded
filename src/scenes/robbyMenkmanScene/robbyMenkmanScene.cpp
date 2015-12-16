@@ -19,13 +19,13 @@ void robbyMenkmanScene::setup(){
 
       // MUST BE A JPEG!  no PNG
     // from Rosa Menkman's flickr https://www.flickr.com/photos/r00s/14470920443/
-    originalBuffer = ofBufferFromFile("robbyMenkmanScene/100.jpg");
+    originalBuffer = ofBufferFromFile("scenes/robbyMenkmanScene/100.jpg");
     nextGlitchMoment = 0;
     loadImageBuffer();
 
     setAuthor("Robby Kraft");
     setOriginalArtist("Rosa Menkman");
-    loadCode("robbyMenkmanScene/code.txt");
+    loadCode("scenes/robbyMenkmanScene/code.txt");
 }
 void robbyMenkmanScene::loadImageBuffer(){
     buffer = originalBuffer;

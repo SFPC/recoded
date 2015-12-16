@@ -21,7 +21,7 @@ void submotionOrchestraScene::setup(){
 	
     setAuthor("Motoi Shimizu");
     setOriginalArtist("Submotion Orchestra");
-    loadCode("submotionOrchestraScene/exampleCode.cpp");
+    loadCode("scenes/submotionOrchestraScene/exampleCode.cpp");
 }
 
 void submotionOrchestraScene::update(){

@@ -48,7 +48,7 @@ void rodrigoBelfort::setup(){
 
     setAuthor("Rodrigo Carvalho");
     setOriginalArtist("Belfort Group");
-    loadCode("rodrigoBelfort/exampleCode.cpp");
+    loadCode("scenes/rodrigoBelfort/exampleCode.cpp");
 }
 
 void rodrigoBelfort::update(){

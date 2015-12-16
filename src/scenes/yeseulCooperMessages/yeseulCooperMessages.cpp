@@ -3,7 +3,7 @@
 
 void yeseulCooperMessages::setup(){
     
-    texture.load("yeseulCooperMessages/texture.png");
+    texture.load("scenes/yeseulCooperMessages/texture.png");
     
     font.load("Helvetica Neue", 50, true,true,true);
     font.setLineHeight(60);
@@ -15,7 +15,7 @@ void yeseulCooperMessages::setup(){
     parameters.add(redTextSpeed.set("redTextSpeed", 7, 3, 10));
     parameters.add(purpleTextSpeed.set("purpleTextSpeed", 7, 3, 10));
     
-    loadCode("yeseulCooperMessages/exampleCode.cpp");
+    loadCode("scenes/yeseulCooperMessages/exampleCode.cpp");
     
 }
 

@@ -9,7 +9,7 @@ void RileyArcsRoy::setup(){
 
     setAuthor("Roy MacDonald");
     setOriginalArtist("Bridget Riley");
-    loadCode("RileyArcsRoy/exampleCode.cpp");
+    loadCode("scenes/RileyArcsRoy/exampleCode.cpp");
     
     minWidth = 1;
     minSpacing = 4;

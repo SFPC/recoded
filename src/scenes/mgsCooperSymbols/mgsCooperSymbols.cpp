@@ -32,7 +32,7 @@ void mgsCooperSymbols::setup() {
   debug.addListener(this, &mgsCooperSymbols::redrawBool);
 
   ofSetCircleResolution(100);
-  loadCode("mgsCooperSymbols/exampleCode.cpp");
+  loadCode("scenes/mgsCooperSymbols/exampleCode.cpp");
 
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;

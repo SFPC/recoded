@@ -14,7 +14,7 @@ void loloVera2::setup(){
     parameters.add(u_bang);
     parameters.add(line_width);
     
-    texture.load("loloVera2/tex.jpg");
+    texture.load("scenes/loloVera2/tex.jpg");
     
     int vera_path_size = 5;
     int off_y = 100;
@@ -32,7 +32,7 @@ void loloVera2::setup(){
 
     setAuthor("Marcelo Armendáriz");
     setOriginalArtist("Vera Molnar");
-    loadCode("loloVera2/exampleCode.cpp");
+    loadCode("scenes/loloVera2/exampleCode.cpp");
     
 }
 

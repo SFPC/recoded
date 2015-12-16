@@ -5,7 +5,7 @@ void alexGifPaletteDitherMenkman::setup(){
     
     center.set(ofGetWidth()*0.5f, ofGetHeight()*0.5f, 0);
     
-    dir.listDir("alexGifPaletteDitherMenkman/gifs/");
+    dir.listDir("scenes/alexGifPaletteDitherMenkman/gifs/");
     dir.sort(); // in linux the file system doesn't return file lists ordered in alphabetical order
     
     // timer stuff
@@ -39,7 +39,7 @@ void alexGifPaletteDitherMenkman::setup(){
 
     setAuthor("Alex Tolar");
     setOriginalArtist("Rosa Menkman");
-    loadCode("alexGifPaletteDitherMenkman/exampleCode.cpp");
+    loadCode("scenes/alexGifPaletteDitherMenkman/exampleCode.cpp");
 }
 
 void alexGifPaletteDitherMenkman::update(){

@@ -47,7 +47,7 @@ void Cooper3dText::setup(){
 
     setAuthor("Roy MacDonald");
     setOriginalArtist("Muriel Cooper");
-    loadCode("Cooper3dText/exampleCode.cpp");
+    loadCode("scenes/Cooper3dText/exampleCode.cpp");
     
 
 }
@@ -55,7 +55,7 @@ void Cooper3dText::setup(){
 void Cooper3dText::setupSurfaces(){
     
     string text;// = "SCHOOL FOR POETIC COMPUTATION";
-    text = ofBufferFromFile("Cooper3dText/cooperLetter.txt").getText();
+    text = ofBufferFromFile("scenes/Cooper3dText/cooperLetter.txt").getText();
     ofStringReplace(text, "\r", "\n");
     vector<string> txts = ofSplitString(text, "\n\n");
   //  cout << "txts.size(): " <<txts.size() << endl;

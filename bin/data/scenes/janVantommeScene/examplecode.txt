@@ -1,0 +1,54 @@
+// Part of the ReCode Project (http://recodeproject.com)
+// Based on "Untitled 7" by Belfort Group
+// Originally published in "Computer Graphics and Art" v1n3, 1976
+// Copyright (c) 2013 Jan Vantomme - OSI/MIT license (http://recodeproject/license).
+
+// http://recodeproject.com/translation/jan-vantomme-v1n3untitled-7-direct-untitled-7-belfort-group
+
+for ( float x = 0; x < dimensions.width; x += blockSize ) {
+  if ( ofRandom( 100 ) < probability ) {
+    for ( int i = 0; i < h1; i+= 2 ) {
+      ofPushMatrix();
+      ofTranslate( x, i * blockSize );
+      ofSetColor( 255 );
+      ofFill();
+      ofDrawRectangle( 0, 0, blockSize, blockSize );
+      ofSetColor( 0 );
+      ofNoFill();
+      ofDrawRectangle( 0, 0, blockSize, blockSize );
+      ofPopMatrix();
+    }
+  }
+}
+
+for ( float x = 0; x < dimensions.width; x += blockSize ) {
+  if ( ofRandom( 100 ) < probability ) {
+    for ( int i = 0; i < h2; i+= 2 ) {
+      ofPushMatrix();
+      ofTranslate( x, i * blockSize + h1 * blockSize );
+      ofSetColor( 255 );
+      ofFill();
+      ofDrawRectangle( 0, 0, blockSize, blockSize );
+      ofSetColor( 0 );
+      ofNoFill();
+      ofDrawRectangle( 0, 0, blockSize, blockSize );
+      ofPopMatrix();
+    }
+  }
+}
+
+for ( float x = 0; x < dimensions.width; x += blockSize ) {
+  if ( ofRandom( 100 ) < probability ) {
+    for ( int i = 0; i < h3; i+= 2 ) {
+      ofPushMatrix();
+      ofTranslate( x, i * blockSize + ( h1 + h2 ) * blockSize );
+      ofSetColor( 255 );
+      ofFill();
+      ofDrawRectangle( 0, 0, blockSize, blockSize );
+      ofSetColor( 0 );
+      ofNoFill();
+      ofDrawRectangle( 0, 0, blockSize, blockSize );
+      ofPopMatrix();
+    }
+  }
+}

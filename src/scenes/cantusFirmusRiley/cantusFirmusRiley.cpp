@@ -57,7 +57,7 @@ void cantusFirmusRiley::setup(){
 
     setAuthor("Reed Tothong");
     setOriginalArtist("Bridget Riley");
-    loadCode("cantusFirmusRiley/cantusFirmusRiley.cpp");
+    loadCode("scenes/cantusFirmusRiley/cantusFirmusRiley.cpp");
 }
 
 void cantusFirmusRiley::update(){

@@ -23,7 +23,7 @@ void mgsRileyEllipsesAndSquares::setup(){
   
   parameters.add(unitSize.set("Unit Size", 6, 3, 50));
   unitSize.addListener(this, &mgsRileyEllipsesAndSquares::redraw);
-  loadCode("mgsRileyEllipsesAndSquares/exampleCode.cpp");
+  loadCode("scenes/mgsRileyEllipsesAndSquares/exampleCode.cpp");
 
   ofBackground(255);
   ofSetCircleResolution(100);

@@ -51,11 +51,11 @@ void chrisMurielCooper::setup(){
     text2.textOpacity = &text2Opacity;
     text2.planeOpacity = &text2PlaneOpacity;
     
-    ttf.load("chrisMurielCooper/OpenSans-Regular.ttf", 32);
+    ttf.load("scenes/chrisMurielCooper/OpenSans-Regular.ttf", 32);
 
     setAuthor("Chris Anderson");
     setOriginalArtist("Muriel Cooper");
-    loadCode("chrisMurielCooper/exampleCode.cpp");
+    loadCode("scenes/chrisMurielCooper/exampleCode.cpp");
 }
 
 void chrisMurielCooper::update(){

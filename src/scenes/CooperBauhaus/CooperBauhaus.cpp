@@ -18,7 +18,7 @@ void CooperBauhaus::setup(){
 
     setAuthor("Roy MacDonald");
     setOriginalArtist("Muriel Cooper");
-    loadCode("CooperBauhaus/exampleCode.cpp");
+    loadCode("scenes/CooperBauhaus/exampleCode.cpp");
 }
 //--------------------------------------------------------------
 void CooperBauhaus::update(){}

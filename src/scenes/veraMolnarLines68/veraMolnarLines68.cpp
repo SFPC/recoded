@@ -31,7 +31,7 @@ void veraMolnarLines68::setup(){
 
     setAuthor("Quin Kennedy");
     setOriginalArtist("Vera Molnar");
-    loadCode("veraMolnarLines68/exampleCode.cpp");
+    loadCode("scenes/veraMolnarLines68/exampleCode.cpp");
 }
 
 void veraMolnarLines68::update(){

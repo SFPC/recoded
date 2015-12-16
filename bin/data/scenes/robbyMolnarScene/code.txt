@@ -1,0 +1,11 @@
+// Loops on loops on loops!
+
+void draw() {
+  for (int x = 0; x < 3; x++) {
+    for (int y = 0; y < 3; y++) {
+      for(i = 0; i < [[numRectangles]]; i++){
+        drawPerturbedRect(x, y, rectangles[i], [[disarray]]);
+      }
+    }
+  }
+}

@@ -26,7 +26,7 @@ void loloWhitney::setup(){
     q_limit = 25;
     main_val = 0.0;
     
-    shader_rip.load("loloWhitney/shaders/vhs_rip.vert", "loloWhitney/shaders/vhs_rip.frag");
+    shader_rip.load("scenes/loloWhitney/shaders/vhs_rip.vert", "scenes/loloWhitney/shaders/vhs_rip.frag");
     main_fbo.allocate(VISUALS_WIDTH,VISUALS_HEIGHT);
     main_fbo.begin();
     ofClear(0,0);
@@ -37,11 +37,11 @@ void loloWhitney::setup(){
     ofClear(0,0);
     small_fbo.end();
     
-    shader_rip.load("loloWhitney/shaders/vhs_rip.vert", "loloWhitney/shaders/vhs_rip.frag");
+    shader_rip.load("scenes/loloWhitney/shaders/vhs_rip.vert", "scenes/loloWhitney/shaders/vhs_rip.frag");
     
     setAuthor("Marcelo Armendáriz");
     setOriginalArtist("John Whitney");
-    loadCode("loloWhitney/exampleCode.cpp");
+    loadCode("scenes/loloWhitney/exampleCode.cpp");
 }
 
 void loloWhitney::update(){
@@ -51,7 +51,7 @@ void loloWhitney::update(){
     if(ofGetFrameNum() % q_insert_vel == 0)
     {
         
-        shader_rip.load("loloWhitney/shaders/vhs_rip.vert", "loloWhitney/shaders/vhs_rip.frag");
+        shader_rip.load("scenes/loloWhitney/shaders/vhs_rip.vert", "scenes/loloWhitney/shaders/vhs_rip.frag");
         
     }
     

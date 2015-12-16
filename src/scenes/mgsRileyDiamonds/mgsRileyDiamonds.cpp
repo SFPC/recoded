@@ -24,7 +24,7 @@ void mgsRileyDiamonds::setup(){
   discoMode.addListener(this, &mgsRileyDiamonds::redrawBool);
   //sequentialShading.addListener(this, &mgsRileyDiamonds::redrawBool);
   
-  loadCode("mgsRileyDiamonds/exampleCode.cpp");
+  loadCode("scenes/mgsRileyDiamonds/exampleCode.cpp");
 
   gh = dimensions.height/height;
   gw = dimensions.width/width;

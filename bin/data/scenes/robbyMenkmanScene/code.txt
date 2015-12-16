@@ -1,0 +1,9 @@
+int index = random(data.size() - [[chunk size]]);
+
+for(int i = index; i < data.size() - [[chunk size]]; i++){
+  data[i] = data[i + [[chunk size]]];
+}
+
+image.load(data);
+
+delay([[delay]]);

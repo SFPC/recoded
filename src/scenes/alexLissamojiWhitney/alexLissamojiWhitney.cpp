@@ -8,10 +8,10 @@ void alexLissamojiWhitney::setup(){
     center.set(dimensions.width*0.5, dimensions.height*0.5, 0);
     
     // Removing for black-on-white aesthetic
-    // bckgImg.loadImage("alexLissamojiWhitney/back.png");
+    // bckgImg.loadImage("scenes/alexLissamojiWhitney/back.png");
     
     // To Do: flip through all emojis in the folder ?
-    eyesImg.loadImage("alexLissamojiWhitney/emojis/1f440.png");
+    eyesImg.loadImage("scenes/alexLissamojiWhitney/emojis/1f440.png");
     
     anim[0] = 0;
     anim[1] = 0;
@@ -31,7 +31,7 @@ void alexLissamojiWhitney::setup(){
 
     setAuthor("Alex Tolar");
     setOriginalArtist("John Whitney");
-    loadCode("alexLissamojiWhitney/exampleCode.cpp");
+    loadCode("scenes/alexLissamojiWhitney/exampleCode.cpp");
 }
 
 void alexLissamojiWhitney::update(){

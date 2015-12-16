@@ -20,7 +20,7 @@ void yosukeVeraSansTitre::setup(){
 
     setAuthor("Yosuke Sakai");
     setOriginalArtist("Vera Molnar");
-    loadCode("yosukeVeraSansTitre/exampleCode.cpp");
+    loadCode("scenes/yosukeVeraSansTitre/exampleCode.cpp");
 }
 
 void yosukeVeraSansTitre::update(){
