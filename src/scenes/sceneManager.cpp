@@ -51,6 +51,7 @@
 #include "mgsRileyDiamonds.h"
 #include "mgsRileyEllipsesAndSquares.h"
 #include "mgsVeraMolnarLineStudy.h"
+#include "mgsMaedaTimePainter.h"
 
 
 void sceneManager::setup(){
@@ -99,6 +100,7 @@ void sceneManager::setup(){
    scenes.push_back(new mgsRileyDiamonds());
    scenes.push_back(new mgsRileyEllipsesAndSquares());
    scenes.push_back(new mgsVeraMolnarLineStudy());
+   scenes.push_back(new mgsMaedaTimePainter());
 
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
