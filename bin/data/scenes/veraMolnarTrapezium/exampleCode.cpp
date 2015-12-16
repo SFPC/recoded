@@ -1,4 +1,4 @@
-draw(){
+draw() {
 	for (int row = 0; row < [[numWide]]; row++){
 		for (int column = 0; column < [[numWide]]; column++){
 			drawTrapezium(row, column);
@@ -9,7 +9,7 @@ draw(){
 drawTrapezium(int row, int column){
 	point startCenter = gridCenter(row, column);
 	targets myTargets = getTargets[row][column];
-	float center = 
+	float center =
 		startCenter * (1. - [[centerNoise]]) +
 		myTargets.center * [[centerNoise]];
 
@@ -23,7 +23,7 @@ drawTrapezium(int row, int column){
 	topRight.x += myTargets.topRight * cornerMagnitude;
 	bottomRight.x += myTargets.bottomRight * cornerMagnitude;
 	bottomLeft.x += myTargets.bottomLeft * cornerMagnitude;
-	
+
 	drawLine(topLeft, topRight);
 	drawLine(topRight, bottomRight);
 	drawLine(bottomRight, bottomLeft);

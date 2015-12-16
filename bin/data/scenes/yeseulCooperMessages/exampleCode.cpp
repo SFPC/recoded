@@ -13,4 +13,3 @@ tensionEffect(messageXPos, meanXPos) {
     purpleTextSpeed+=[[purpleTextSpeed]];
   }
 }
-        

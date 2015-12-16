@@ -2,7 +2,7 @@ update(){
 	if ([[squareSizedSpacing]]){
 		[[spacing]] = [[squareSize]];
 	}
-	
+
 	weightTotal = [[weight0]] + [[weight45]] + [[weight90]] + [[weight135]] + [[weightNone]];
 	angleWeights = {[[weightNone]], [[weight0]], [[weight45]], [[weight90]], [[weight135]]};
 	for(column in columns){
@@ -22,7 +22,7 @@ updateSquare(square){
 		//ease in/out the tween
 		easedProgress = (cos(linearProgress * PI) + 1) / 2;
 		square.angle =
-			square.targetAngle * (1. - easedProgress) + 
+			square.targetAngle * (1. - easedProgress) +
 			square.startAngle * easedProgress;
 		square.alpha =
 			square.targetAlpha * (1. - easedProgress) +
