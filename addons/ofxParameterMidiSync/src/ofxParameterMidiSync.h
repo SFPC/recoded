@@ -11,7 +11,7 @@
 
 #include "ofMain.h"
 #include "ofxMidi.h"
-
+#include "ofxMidiRecorder.h"
 
 
 struct ofParameterMidiInfo {
@@ -53,6 +53,7 @@ struct ofParameterMidiInfo {
     }
 };
 
+
 class ofxParameterMidiSync:  public ofxMidiListener {
 public:
     ofxParameterMidiSync();
@@ -81,6 +82,8 @@ public:
     bool isLearning(){return bLearning;}
     bool isUnlearning(){return bUnlearning;}
     
+
+    
 protected:
     void newMidiMessage(ofxMidiMessage& eventArgs);
 
@@ -99,5 +102,8 @@ protected:
     bool bIsSetup;
     bool bParameterGroupSetup;
     ofAbstractParameter * learningParameter;
+    ofxMidiRecorder recorder;
+    
+    
     
 };

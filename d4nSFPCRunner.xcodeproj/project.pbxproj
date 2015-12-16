@@ -69,6 +69,7 @@
 		B00CD13A1C21E89B00C529FA /* ofxMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD1291C21E89B00C529FA /* ofxMidiOut.cpp */; };
 		B00CD13B1C21E89B00C529FA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B00CD12E1C21E89B00C529FA /* README.md */; };
 		B00CD13C1C21E89B00C529FA /* ofxParameterMidiSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD1301C21E89B00C529FA /* ofxParameterMidiSync.cpp */; };
+		B00CD17D1C22214E00C529FA /* ofxMidiRecorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00CD17B1C22214E00C529FA /* ofxMidiRecorder.cpp */; };
 		B018C1AA1C10F22100F70DA8 /* RoyWhitney1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */; };
 		B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */; };
 		B01DF7B81C179A7F00B2EAB0 /* Cooper3dText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DF7B61C179A7F00B2EAB0 /* Cooper3dText.cpp */; };
@@ -270,6 +271,9 @@
 		B00CD12E1C21E89B00C529FA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B00CD1301C21E89B00C529FA /* ofxParameterMidiSync.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxParameterMidiSync.cpp; sourceTree = "<group>"; };
 		B00CD1311C21E89B00C529FA /* ofxParameterMidiSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxParameterMidiSync.h; sourceTree = "<group>"; };
+		B00CD1411C22086100C529FA /* nanoKontrolConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nanoKontrolConstants.h; sourceTree = "<group>"; };
+		B00CD17B1C22214E00C529FA /* ofxMidiRecorder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMidiRecorder.cpp; sourceTree = "<group>"; };
+		B00CD17C1C22214E00C529FA /* ofxMidiRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMidiRecorder.h; sourceTree = "<group>"; };
 		B018C1A81C10F22100F70DA8 /* RoyWhitney1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoyWhitney1.cpp; sourceTree = "<group>"; };
 		B018C1A91C10F22100F70DA8 /* RoyWhitney1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoyWhitney1.h; sourceTree = "<group>"; };
 		B01DF6FF1C14F02D00B2EAB0 /* CooperBauhaus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CooperBauhaus.cpp; sourceTree = "<group>"; };
@@ -862,6 +866,9 @@
 			children = (
 				B00CD1301C21E89B00C529FA /* ofxParameterMidiSync.cpp */,
 				B00CD1311C21E89B00C529FA /* ofxParameterMidiSync.h */,
+				B00CD1411C22086100C529FA /* nanoKontrolConstants.h */,
+				B00CD17B1C22214E00C529FA /* ofxMidiRecorder.cpp */,
+				B00CD17C1C22214E00C529FA /* ofxMidiRecorder.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1239,6 +1246,7 @@
 				85B3DCA81C1E47060054975A /* yeseulMenkmanInstitution.cpp in Sources */,
 				B00CD1041C21E81400C529FA /* ofxEasingBounce.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
+				B00CD17D1C22214E00C529FA /* ofxMidiRecorder.cpp in Sources */,
 				923871B71BF7CCC900171456 /* triangleScene.cpp in Sources */,
 				71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,

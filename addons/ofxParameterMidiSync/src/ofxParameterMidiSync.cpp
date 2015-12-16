@@ -139,6 +139,7 @@ void ofxParameterMidiSync::setup(int portNum){
     bIsSetup = true;
     this->portNum = portNum;
     enableMidi(true);
+    recorder.setup(this);
 }
 //-----------------------------------------------------
 void ofxParameterMidiSync::setSyncGroup( ofAbstractParameter & parameters, bool bAutoLink){
@@ -165,7 +166,6 @@ void ofxParameterMidiSync::reset(){
     bLearning = false;
     bUnlearning = false;
     learningParameter = NULL;
-    
 }
 //-----------------------------------------------------
 void ofxParameterMidiSync::enableMidi(bool b){
@@ -177,9 +177,11 @@ void ofxParameterMidiSync::enableMidi(bool b){
                 midiIn.ignoreTypes(true, true, false);
                 midiIn.addListener(this);
                 ofAddListener(syncGroup.parameterChangedE(),this,&ofxParameterMidiSync::parameterChanged);
+                midiIn.addListener(&recorder);
             }else{
                 midiIn.closePort();
                 midiIn.removeListener(this);
+                midiIn.removeListener(&recorder);
                 ofRemoveListener(syncGroup.parameterChangedE(),this,&ofxParameterMidiSync::parameterChanged);
             }
             bMidiEnabled = b;
@@ -356,6 +358,7 @@ void ofxParameterMidiSync::save(string path){
 void ofxParameterMidiSync::newMidiMessage(ofxMidiMessage& msg) {
     if (bIsSetup) {
         if (msg.status == MIDI_CONTROL_CHANGE) {
+            
             if (learningParameter!= NULL && bLearning) {
                 if (bParameterGroupSetup) {
                     if (linkMidiToOfParameter( msg, learningParameter)){
@@ -377,7 +380,6 @@ void ofxParameterMidiSync::newMidiMessage(ofxMidiMessage& msg) {
                     bUnlearning  = false;
                     cout << "unlearned  " << endl;
                 }
-                
             }else{
                 if (synced.count(msg.control)) {
                     mapMidiInfoToParameter(*synced[msg.control].get(), msg);
