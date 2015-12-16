@@ -21,11 +21,11 @@ public:
     ofParameter<float> pAmp;
     ofParameter<float> pFreq;
     ofParameter<float> pPhase;
-    ofParameter<int> pDensity;
+    ofParameter<float> pDensity;
     ofParameter<float> pImgScale;
-    ofParameter<int> pAnimSpeed;
-    ofParameter<int> plissajouRatioX;
-    ofParameter<int> plissajouRatioY;
+    ofParameter<float> pAnimSpeed;
+    ofParameter<float> plissajouRatioX;
+    ofParameter<float> plissajouRatioY;
 
     
     float anim[2];
