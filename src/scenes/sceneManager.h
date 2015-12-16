@@ -47,5 +47,7 @@ public:
     int lettersLastFrame;
     long long lastPlayTime;
     
+    float lastLetterHeight;
+    
     
 };

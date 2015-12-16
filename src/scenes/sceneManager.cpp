@@ -126,9 +126,9 @@ void sceneManager::setup(){
     
     
     panel = new ofxPanel();
-    panel->setup();
+    panel->setup("scene settings");
     panel->add(scenes[currentScene]->parameters);
-    panel->setPosition(520+504+50, 20);
+    panel->setPosition(520+504+20, 20);
 
     
     
@@ -141,6 +141,7 @@ void sceneManager::startScene(int whichScene){
     TM.setup( (scenes[currentScene]), 7.5);
     lettersLastFrame= 0;
     lastPlayTime = 0;
+    lastLetterHeight = 0;
 }
 
 
@@ -201,7 +202,21 @@ void sceneManager::draw(){
         ofSetColor(255);
         //font.drawString(codeReplaced, 40, 40);
         //ofDrawBitmapString(codeReplaced, 40,40);
+    
+    bool bShiftUp = false;
+    
+    if (lastLetterHeight > (504-20)){
+        bShiftUp = true;
         
+    }
+    
+    if (bShiftUp){
+        float dx = lastLetterHeight - (504-20);
+        ofPushMatrix();
+        ofTranslate(0,-dx);
+    }
+    
+    
         int countLetters = 0;
         int x = 10;
         int y = 10 + 13;
@@ -225,9 +240,14 @@ void sceneManager::draw(){
                 y += 13;
                 x = 10;
             }
+            
+            lastLetterHeight = y;
         }
-        
-        
+    
+    if (bShiftUp){
+        ofPopMatrix();
+    }
+    
  
         codeFbo.end();
         
@@ -290,10 +310,10 @@ void sceneManager::nextScene(bool forward){
     
     delete panel;
     panel = new ofxPanel();
-    panel->setup();
+    panel->setup("scene settings");
     panel->add(scenes[currentScene]->parameters);
     
-    panel->setPosition(520+504+50, 20);
+    panel->setPosition(520+504+20, 20);
 }; 
 
 void sceneManager::advanceScene(){
