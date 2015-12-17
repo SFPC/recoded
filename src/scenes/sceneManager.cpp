@@ -53,11 +53,11 @@
 #include "mgsVeraMolnarLineStudy.h"
 #include "mgsMaedaTimePainter.h"
 #include "olegVeraV.h"
+#include "sarahgpRileyCircle.h"
 
 void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
-    
     
     scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());
@@ -102,6 +102,7 @@ void sceneManager::setup(){
     scenes.push_back(new mgsVeraMolnarLineStudy());
     scenes.push_back(new mgsMaedaTimePainter());
     scenes.push_back(new olegVeraV());
+    scenes.push_back(new sarahgpRileyCircle());
     
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
