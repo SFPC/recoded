@@ -56,63 +56,67 @@
 
 void sceneManager::setup(){
     
-   font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
+    font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
     
-
-   scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
-   scenes.push_back(new RileyArcsRoy());
-   scenes.push_back(new rachelScene());
-   scenes.push_back(new rodrigoBelfort());
-   scenes.push_back(new Cooper3dText());
-   scenes.push_back(new chrisVeraInterruptions());
-   scenes.push_back(new johnWhitneyShader02());
-   scenes.push_back(new chrisRileyCascando());
-   scenes.push_back(new chrisMurielCooper());
-   scenes.push_back(new memoAktenScene());
-   scenes.push_back(new submotionOrchestraScene());
-   scenes.push_back(new RoyWhitney1());
-   scenes.push_back(new veraFscene());
-   scenes.push_back(new robbyMolnarScene() );
-   scenes.push_back(new veraAnimatedScene() );
-   scenes.push_back(new robbyRileyScene() );
-   scenes.push_back(new robbyMenkmanScene());
-   scenes.push_back(new yeseulWhitneyScene() );
-   scenes.push_back(new johnWhitneyShader01());
-   scenes.push_back(new anastasisRileyScene());
-   scenes.push_back(new loloWhitney());
-   scenes.push_back(new loloVera());
-   scenes.push_back(new andyMenkmanDataBendsJpg());
-   scenes.push_back(new andyMenkmanDataBendsPng());
-   scenes.push_back(new andyMenkmanDataBendsTif());
-   scenes.push_back(new manfredMohrP196A());
-   scenes.push_back(new veraMolnarTrapezium());
-   scenes.push_back(new loloVera2());
-   scenes.push_back(new cantusFirmusRiley());
-   scenes.push_back(new aaronMarcusHieroglyphB());
-   scenes.push_back(new veraMolnarLines68());
-   scenes.push_back(new alexLissamojiWhitney());
-   scenes.push_back(new yosukeVeraSansTitre());
-   scenes.push_back(new alexGifPaletteDitherMenkman());
-   scenes.push_back(new yeseulMenkmanInstitution());
-   scenes.push_back(new yeseulCooperMessages());
-   scenes.push_back(new yosukeJhonWhitneyMtrix());
-   scenes.push_back(new mgsCooperSymbols());
-   scenes.push_back(new mgsRileyDiamonds());
-   scenes.push_back(new mgsRileyEllipsesAndSquares());
-   scenes.push_back(new mgsVeraMolnarLineStudy());
-   scenes.push_back(new mgsMaedaTimePainter());
-
+    
+    scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
+    scenes.push_back(new RileyArcsRoy());
+    scenes.push_back(new rachelScene());
+    scenes.push_back(new rodrigoBelfort());
+    scenes.push_back(new Cooper3dText());
+    scenes.push_back(new chrisVeraInterruptions());
+    scenes.push_back(new johnWhitneyShader02());
+    scenes.push_back(new chrisRileyCascando());
+    scenes.push_back(new chrisMurielCooper());
+    scenes.push_back(new memoAktenScene());
+    scenes.push_back(new submotionOrchestraScene());
+    scenes.push_back(new RoyWhitney1());
+    scenes.push_back(new veraFscene());
+    scenes.push_back(new robbyMolnarScene() );
+    scenes.push_back(new veraAnimatedScene() );
+    scenes.push_back(new robbyRileyScene() );
+    scenes.push_back(new robbyMenkmanScene());
+    scenes.push_back(new yeseulWhitneyScene() );
+    scenes.push_back(new johnWhitneyShader01());
+    scenes.push_back(new anastasisRileyScene());
+    scenes.push_back(new loloWhitney());
+    scenes.push_back(new loloVera());
+    scenes.push_back(new andyMenkmanDataBendsJpg());
+    scenes.push_back(new andyMenkmanDataBendsPng());
+    scenes.push_back(new andyMenkmanDataBendsTif());
+    scenes.push_back(new manfredMohrP196A());
+    scenes.push_back(new veraMolnarTrapezium());
+    scenes.push_back(new loloVera2());
+    scenes.push_back(new cantusFirmusRiley());
+    scenes.push_back(new aaronMarcusHieroglyphB());
+    scenes.push_back(new veraMolnarLines68());
+    scenes.push_back(new alexLissamojiWhitney());
+    scenes.push_back(new yosukeVeraSansTitre());
+    scenes.push_back(new alexGifPaletteDitherMenkman());
+    scenes.push_back(new yeseulMenkmanInstitution());
+    scenes.push_back(new yeseulCooperMessages());
+    scenes.push_back(new yosukeJhonWhitneyMtrix());
+    scenes.push_back(new mgsCooperSymbols());
+    scenes.push_back(new mgsRileyDiamonds());
+    scenes.push_back(new mgsRileyEllipsesAndSquares());
+    scenes.push_back(new mgsVeraMolnarLineStudy());
+    scenes.push_back(new mgsMaedaTimePainter());
+    
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
-
+    
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
-
+    
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setup(0);
 #endif
-
+    
+#ifdef USE_EXTERNAL_SOUNDS
+    // open an outgoing connection to HOST:PORT
+    oscSender.setup(HOST, PORT);
+#endif
     
     // disney
     for (auto scene : scenes){
@@ -121,17 +125,17 @@ void sceneManager::setup(){
     }
     
     
-//    for (int i = 0; i< scenes.size(); i++){
-//        scenes[i]->setup();
-//    }
+    //    for (int i = 0; i< scenes.size(); i++){
+    //        scenes[i]->setup();
+    //    }
     
     currentScene = 0;
-
+    
     panel = new ofxPanel();
     panel->setup("scene settings");
     panel->add(scenes[currentScene]->parameters);
     panel->setPosition(520+504+20, 20);
-
+    
     startScene(currentScene);
     
     loop.load("sounds/drawbar_c4_a.aif");
@@ -159,13 +163,13 @@ void sceneManager::startScene(int whichScene){
 void sceneManager::update(){
     
     
-    #ifdef TYPE_ANIMATION
+#ifdef TYPE_ANIMATION
     // this is copied from below...  should be abstracted out.
     float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
     if (pctDelay > 0.99){
         scenes[currentScene]->update();
     }
-#else 
+#else
     scenes[currentScene]->update();
 #endif
     
@@ -174,8 +178,8 @@ void sceneManager::update(){
     
     if (TM.paramChangedEnergy.size() > 0){
         if (TM.paramChangedEnergy[0] > 0){
-            loop.setVolume(TM.paramChangedEnergy[0]);
             
+            loop.setVolume(TM.paramChangedEnergy[0]);
             
             ofParameter<float> t = scenes[currentScene]->parameters[0].cast<float>();
             
@@ -190,12 +194,24 @@ void sceneManager::update(){
             
             loop.setSpeed( ofMap(pct, 0, 1, 0.3, 1.0) );
             
+#ifdef USE_EXTERNAL_SOUNDS
+            ofxOscMessage m;
+            m.setAddress("/d4n/paramChangedEnergy");
+            m.addFloatArg(TM.paramChangedEnergy[0]);
+            oscSender.sendMessage(m, false);
+            
+            m.setAddress("/d4n/params");
+            m.addIntArg(0);
+            m.addFloatArg(pct);
+            oscSender.sendMessage(m, false);
+#endif
+            
         }
     } else {
         loop.setVolume(0);
     }
     
-
+    
 }
 
 void sceneManager::draw(){
@@ -211,34 +227,34 @@ void sceneManager::draw(){
     sceneFbo.end();
     
     
-        ofSetColor(255,255,255);
+    ofSetColor(255,255,255);
+    
+    codeFbo.begin();
+    
+    float pct = (ofGetElapsedTimef() - TM.setupTime) / TM.animTime;
+    if (pct > 1) pct = 1;
+    if (pct < 0) pct = 0;
+    
+    if (pct < 0.5){
+        pct *= 2;
+        pct  = powf(pct, 3.0);
+        pct *= 0.5;
+    } else {
         
-        codeFbo.begin();
+        pct -= 0.5;
+        pct *= 2.0;
+        pct  = powf(pct, 1.0/3.0);
+        pct *= 0.5;
+        pct += 0.5;
         
-        float pct = (ofGetElapsedTimef() - TM.setupTime) / TM.animTime;
-        if (pct > 1) pct = 1;
-        if (pct < 0) pct = 0;
-        
-        if (pct < 0.5){
-            pct *= 2;
-            pct  = powf(pct, 3.0);
-            pct *= 0.5;
-        } else {
-            
-            pct -= 0.5;
-            pct *= 2.0;
-            pct  = powf(pct, 1.0/3.0);
-            pct *= 0.5;
-            pct += 0.5;
-
-        }
-        
-        ofClear(0,0,0,255);
-        vector < codeLetter > letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
-        
-        ofSetColor(255);
-        //font.drawString(codeReplaced, 40, 40);
-        //ofDrawBitmapString(codeReplaced, 40,40);
+    }
+    
+    ofClear(0,0,0,255);
+    vector < codeLetter > letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
+    
+    ofSetColor(255);
+    //font.drawString(codeReplaced, 40, 40);
+    //ofDrawBitmapString(codeReplaced, 40,40);
     
     bool bShiftUp = false;
     
@@ -254,76 +270,76 @@ void sceneManager::draw(){
     }
     
     
-        int countLetters = 0;
-        int x = 10;
-        int y = 10 + 13;
-        for (int i = 0; i < letters.size() * pct; i++){
-            
-            
-            if (letters[i].idOfChar == -1) ofSetColor(127);
-            if (letters[i].idOfChar != -1) ofSetColor(127 + ofClamp(TM.paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
-            
-            string s = "";
-            s += (char)(letters[i].character);
-            font.drawString(s , (int)x, (int)y);
-            
-            
-            if (letters[i].character != ' ' &&
-                letters[i].character != '\n' &&
-                letters[i].character != '\t') countLetters++;
-            
-            x += 7;
-            if (letters[i].character == '\n'){
-                y += 13;
-                x = 10;
-            }
-            
-            lastLetterHeight = y;
+    int countLetters = 0;
+    int x = 10;
+    int y = 10 + 13;
+    for (int i = 0; i < letters.size() * pct; i++){
+        
+        
+        if (letters[i].idOfChar == -1) ofSetColor(127);
+        if (letters[i].idOfChar != -1) ofSetColor(127 + ofClamp(TM.paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
+        
+        string s = "";
+        s += (char)(letters[i].character);
+        font.drawString(s , (int)x, (int)y);
+        
+        
+        if (letters[i].character != ' ' &&
+            letters[i].character != '\n' &&
+            letters[i].character != '\t') countLetters++;
+        
+        x += 7;
+        if (letters[i].character == '\n'){
+            y += 13;
+            x = 10;
         }
+        
+        lastLetterHeight = y;
+    }
     
     if (bShiftUp){
         ofPopMatrix();
     }
     
- 
-        codeFbo.end();
-        
-        ofSetColor(255);
-        codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
-        
+    
+    codeFbo.end();
+    
+    ofSetColor(255);
+    codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
+    
 #ifdef TYPE_ANIMATION
-        float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
-        if (pctDelay > 0.99){
-            sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-        } else {
+    float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
+    if (pctDelay > 0.99){
+        sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+    } else {
+        
+        ofSetColor(0);
+        ofFill();
+        ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+        int diff = (countLetters - (int)lettersLastFrame);
+        if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > ofRandom(50,87))){
+            // cout << diff << enld;
+            lastPlayTime = ofGetElapsedTimeMillis();
             
-            ofSetColor(0);
-            ofFill();
-            ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-            int diff = (countLetters - (int)lettersLastFrame);
-            if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > ofRandom(50,87))){
-                // cout << diff << enld;
-                lastPlayTime = ofGetElapsedTimeMillis();
+            if (ofNoise(pct*10, ofGetElapsedTimef()/10.0) > 0.5){
+                TM.clickb.play();
+                TM.clickb.setSpeed(ofRandom(0.9, 1.1));
                 
-                if (ofNoise(pct*10, ofGetElapsedTimef()/10.0) > 0.5){
-                    TM.clickb.play();
-                    TM.clickb.setSpeed(ofRandom(0.9, 1.1));
-                    
-                } else {
-                    TM.clicka.play();
-                    TM.clicka.setSpeed(ofRandom(0.9, 1.1));
-                    
-                }
+            } else {
+                TM.clicka.play();
+                TM.clicka.setSpeed(ofRandom(0.9, 1.1));
                 
             }
-            lettersLastFrame = countLetters;
             
         }
-#else
-        sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-#endif
+        lettersLastFrame = countLetters;
         
-  
+    }
+#else
+    sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+#endif
+    
+    
     
     panel->draw();
     
@@ -338,15 +354,15 @@ void sceneManager::draw(){
 }
 
 void sceneManager::nextScene(bool forward){
-	if (forward){
-    	currentScene ++;
-    	currentScene %= scenes.size();
-	} else {
-	    currentScene --;
-		if (currentScene < 0){
-			currentScene = scenes.size() - 1;
-		}
-	}
+    if (forward){
+        currentScene ++;
+        currentScene %= scenes.size();
+    } else {
+        currentScene --;
+        if (currentScene < 0){
+            currentScene = scenes.size() - 1;
+        }
+    }
     
     startScene(currentScene);
     
@@ -359,14 +375,14 @@ void sceneManager::nextScene(bool forward){
     panel->add(scenes[currentScene]->parameters);
     
     panel->setPosition(520+504+20, 20);
-}; 
+};
 
 void sceneManager::advanceScene(){
-	nextScene(true);
+    nextScene(true);
 };
 
 void sceneManager::regressScene(){
-	nextScene(false);
+    nextScene(false);
 };
 
 void sceneManager::screenGrab() {
@@ -379,5 +395,5 @@ void sceneManager::screenGrab() {
     
     sceneImg.save(path+ofGetTimestampString()+"_scene.png");
     codeImg.save(path+ofGetTimestampString()+"_code.png");
-
+    
 }
