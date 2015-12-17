@@ -12,5 +12,5 @@ public:
     void draw();
     void drawCode();
     
-    ofParameter<float> param;
+    ofParameter<float> dent, time, scale;
 };
