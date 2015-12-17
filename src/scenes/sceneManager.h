@@ -67,6 +67,7 @@ public:
     
 #ifdef USE_EXTERNAL_SOUNDS
     ofxOscSender oscSender;
+    ofxOscMessage oscMessage;
 #endif
     
 
