@@ -10,7 +10,7 @@ void veraMolnarTrapezium::setup(){
 	iBottomLeftOffsetX = 4;
 	iBottomRightOffsetX = 5;
   
-    fboScale = 4;
+    fboScale = 2;
     bigScreen.allocate(dimensions.width*fboScale, dimensions.height*fboScale);
     
 // setup pramaters
@@ -69,7 +69,7 @@ void veraMolnarTrapezium::draw(){
 		ofBackground(0);
 		ofSetColor(255);
 	}
-    ofSetLineWidth(fboScale * 1.3);
+    ofSetLineWidth(3);
 	for(int row = 0; row < numWide; row++){
 		for(int column = 0; column < numWide; column++){
 			drawTrapezium(row, column);
