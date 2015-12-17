@@ -13,7 +13,7 @@
 #define CODE_X_POS 520      // via the tech staff
 
 //if this is defined, we will wait for type animation
-#define TYPE_ANIMATION
+//#define TYPE_ANIMATION
 
 #define USE_MIDI_PARAM_SYNC
 
