@@ -22,6 +22,7 @@
 		7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */; };
 		7158FF7A1C164C0C00A6025B /* johnWhitneyShader02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7158FF781C164C0C00A6025B /* johnWhitneyShader02.cpp */; };
 		7158FF821C174F8B00A6025B /* chrisVeraInterruptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7158FF801C174F8B00A6025B /* chrisVeraInterruptions.cpp */; };
+		71914F8A1C231DED00B42CC0 /* mwalczykVeraSquares.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71914F881C231DED00B42CC0 /* mwalczykVeraSquares.cpp */; };
 		71C091411C16197900C76EB9 /* manfredMohrP196A.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C0913F1C16197900C76EB9 /* manfredMohrP196A.cpp */; };
 		71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091441C1619FD00C76EB9 /* chrisMurielCooper.cpp */; };
 		71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C091481C162E2E00C76EB9 /* chrisRileyCascando.cpp */; };
@@ -179,6 +180,8 @@
 		7158FF791C164C0C00A6025B /* johnWhitneyShader02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = johnWhitneyShader02.h; sourceTree = "<group>"; };
 		7158FF801C174F8B00A6025B /* chrisVeraInterruptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chrisVeraInterruptions.cpp; sourceTree = "<group>"; };
 		7158FF811C174F8B00A6025B /* chrisVeraInterruptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chrisVeraInterruptions.h; sourceTree = "<group>"; };
+		71914F881C231DED00B42CC0 /* mwalczykVeraSquares.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mwalczykVeraSquares.cpp; sourceTree = "<group>"; };
+		71914F891C231DED00B42CC0 /* mwalczykVeraSquares.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mwalczykVeraSquares.h; sourceTree = "<group>"; };
 		71C0913F1C16197900C76EB9 /* manfredMohrP196A.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = manfredMohrP196A.cpp; sourceTree = "<group>"; };
 		71C091401C16197900C76EB9 /* manfredMohrP196A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manfredMohrP196A.h; sourceTree = "<group>"; };
 		71C091441C1619FD00C76EB9 /* chrisMurielCooper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chrisMurielCooper.cpp; sourceTree = "<group>"; };
@@ -457,7 +460,6 @@
 				4FD081C61C2089F0006A7604 /* yosukeJohnWhitneyMatrix.cpp */,
 				4FD081C71C2089F0006A7604 /* yosukeJohnWhitneyMatrix.h */,
 			);
-			name = yosukeJohnWhitneyMatrix;
 			path = yosukeJohnWhitneyMatrix;
 			sourceTree = "<group>";
 		};
@@ -543,6 +545,15 @@
 				7158FF811C174F8B00A6025B /* chrisVeraInterruptions.h */,
 			);
 			path = chrisVeraInterruptions;
+			sourceTree = "<group>";
+		};
+		71914F871C231DED00B42CC0 /* mwalczykVeraSquares */ = {
+			isa = PBXGroup;
+			children = (
+				71914F881C231DED00B42CC0 /* mwalczykVeraSquares.cpp */,
+				71914F891C231DED00B42CC0 /* mwalczykVeraSquares.h */,
+			);
+			path = mwalczykVeraSquares;
 			sourceTree = "<group>";
 		};
 		71C0913E1C16197900C76EB9 /* manfredMohrP196A */ = {
@@ -703,6 +714,7 @@
 				9224BC941C20F233003668CF /* mgsRileyDiamonds */,
 				9224BC971C20F233003668CF /* mgsRileyEllipsesAndSquares */,
 				9224BC9A1C20F233003668CF /* mgsVeraMolnarLineStudy */,
+				71914F871C231DED00B42CC0 /* mwalczykVeraSquares */,
 				710B1D061C2285A300CD3C24 /* olegVeraV */,
 				71C301F11C18A53600C0AC31 /* rachelScene */,
 				D54113781C1A3F3B00AD4ED9 /* robbyMenkmanScene */,
@@ -1483,6 +1495,7 @@
 				C19334591C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp in Sources */,
 				B00CD1071C21E81400C529FA /* ofxEasingElastic.cpp in Sources */,
 				9A6B71C41C157473000D7878 /* submotionOrchestraScene.cpp in Sources */,
+				71914F8A1C231DED00B42CC0 /* mwalczykVeraSquares.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
