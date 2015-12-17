@@ -29,6 +29,11 @@ public:
     ofParameter<float>  z_cam;
 
     ofParameter<int>    extrude;
+    
+    ofParameter<float>  lineZVariance;
+    ofParameter<float>  rotation;
+    
+    
     int l_index;
     vector<LineS>   lines;
     float   d_zcam,cam_vel;
