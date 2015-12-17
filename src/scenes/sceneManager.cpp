@@ -68,7 +68,6 @@ void sceneManager::setup(){
     scenes.push_back(new chrisVeraInterruptions());
     scenes.push_back(new johnWhitneyShader02());
     scenes.push_back(new chrisRileyCascando());
-    scenes.push_back(new chrisMurielCooper());
     scenes.push_back(new memoAktenScene());
     scenes.push_back(new submotionOrchestraScene());
     scenes.push_back(new RoyWhitney1());
@@ -109,6 +108,8 @@ void sceneManager::setup(){
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
     
+    // Not using
+    // scenes.push_back(new chrisMurielCooper());
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
