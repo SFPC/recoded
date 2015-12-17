@@ -15,8 +15,8 @@ void alexGifPaletteDitherMenkman::setup(){
     parameters.add(pImageIndex.set("Image", 0, 0, dir.size()-1));
     ImageIndexLast = 1;
     
-    parameters.add(pPaletteShift.set("Color Palette Shift", 0, 0, 0));
-    parameters.add(pInterleave.set("Invert Interleave Flag", true));
+    parameters.add(pPaletteShift.set("Glitch Color Palette", 0, 0, 0));
+    parameters.add(pGlitchInterleave.set("Glitch Interleave", true));
     
     parameters.add(pInterlacedOffset[0].set("Interleave Offset 1", 0,0,4));
     parameters.add(pInterlacedOffset[1].set("Interleave Offset 2", 4,0,4));
@@ -28,14 +28,16 @@ void alexGifPaletteDitherMenkman::setup(){
     parameters.add(pInterlacedJumps[2].set("Interleave Jumps 3", 4,0,8));
     parameters.add(pInterlacedJumps[3].set("Interleave Jumps 4", 2,0,8));
     
+    parameters.add(pReset.set("Reset", false));
+    pReset.addListener(this, &alexGifPaletteDitherMenkman::pResetChanged);
+
+    
     for(int i=0;i<4;i++){
         pInterlacedJumps[i].addListener(this, &alexGifPaletteDitherMenkman::pInterlacedChanged);
         pInterlacedOffset[i].addListener(this, &alexGifPaletteDitherMenkman::pInterlacedChanged);
     }
     
-    pInterleave.addListener(this, &alexGifPaletteDitherMenkman::pInterleaveChanged);
-
-    pInterleaveLast = pInterleave;
+    pGlitchInterleave.addListener(this, &alexGifPaletteDitherMenkman::pGlitchInterleaveChanged);
 
     setAuthor("Alex Tolar");
     setOriginalArtist("Rosa Menkman");
@@ -62,7 +64,7 @@ void alexGifPaletteDitherMenkman::update(){
         
         // DGifCloseFile(&gif,&gifOpenError);
         gif = *DGifOpenFileName( ofToDataPath(dir.getPath(pImageIndex)).c_str() , &gifOpenError);
-        gifSlurpStatus = DGifGlitchSlurp(&gif,pInterleave,InterlacedOffset,InterlacedJumps);
+        gifSlurpStatus = DGifGlitchSlurp(&gif,pGlitchInterleave,InterlacedOffset,InterlacedJumps);
         
         colorMap = *GifMakeMapObject(gif.SColorMap->ColorCount, gif.SColorMap->Colors);
         
@@ -126,23 +128,43 @@ void alexGifPaletteDitherMenkman::update(){
 
 void alexGifPaletteDitherMenkman::draw(){
     
-    // ofPushMatrix();
-    // ofTranslate(center);
-    // frame.draw(-frame.getWidth()/2, -frame.getHeight()/2);
-    
-    frame.draw(0,0);
-
-    //ofPopMatrix();
+    frame.draw(dimensions.width/2-frame.getWidth()/2, dimensions.height/2-frame.getHeight()/2);
     
 }
 
 void alexGifPaletteDitherMenkman::pInterlacedChanged(int &value) {
-    ImageReload = true ;
+    if(!pGlitchInterleave) {
+        pGlitchInterleave.set(true);
+    } else {
+        ImageReload = true ;
+    }
 }
 
-
-void alexGifPaletteDitherMenkman::pInterleaveChanged(bool &value){
+void alexGifPaletteDitherMenkman::pGlitchInterleaveChanged(bool &value){
     ImageReload = true;
+}
+
+void alexGifPaletteDitherMenkman::pResetChanged(bool &value) {
+    
+    if(pReset) {
+        
+    pImageIndex.set(0);
+    pGlitchInterleave.set(true);
+    pPaletteShift.set(0);
+        
+    pInterlacedOffset[0].set(0);
+    pInterlacedOffset[1].set(4);
+    pInterlacedOffset[2].set(2);
+    pInterlacedOffset[3].set(1);
+    pInterlacedJumps[0].set(8);
+    pInterlacedJumps[1].set(8);
+    pInterlacedJumps[2].set(4);
+    pInterlacedJumps[3].set(2);
+        
+    pReset.set(false);
+    
+    }
+    
 }
 
 

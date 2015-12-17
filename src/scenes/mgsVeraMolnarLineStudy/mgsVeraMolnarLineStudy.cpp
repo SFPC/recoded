@@ -7,11 +7,9 @@ void mgsVeraMolnarLineStudy::setup(){
   // setup pramaters
   //    param.set("param", 5, 0, 100);
   //    parameters.add(param);
-  parameters.add(squareSize.set("Square Size", 62, 1, 100));
+  parameters.add(squareSize.set("Square Size", 62.0, 1, 100));
   parameters.add(numOfLines.set("Number of Lines", 15, 1, 50));
-  parameters.add(gridHigh.set("Grid Height", 6, 1, 50));
-  parameters.add(gridWide.set("Grid Width", 6, 1, 50));
-  parameters.add(gridSpace.set("Grid Spacing", 10, 1, 50));
+  parameters.add(gridSpace.set("Grid Spacing", 10.0, 1, 50));
   parameters.add(lineWidth.set("Line Width", 1.0, 0.1, 10.0));
   parameters.add(connectedLinesP.set("Connect Lines?", false));
   //  parameters.add(invertedColor.set("Invert Color", false));
@@ -21,11 +19,9 @@ void mgsVeraMolnarLineStudy::setup(){
   parameters.add(animated.set("Animated", true));
   animated.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
 
-  squareSize.addListener(this, &mgsVeraMolnarLineStudy::redraw);
+  squareSize.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
   numOfLines.addListener(this, &mgsVeraMolnarLineStudy::redraw);
-  gridHigh.addListener(this, &mgsVeraMolnarLineStudy::redraw);
-  gridWide.addListener(this, &mgsVeraMolnarLineStudy::redraw);
-  gridSpace.addListener(this, &mgsVeraMolnarLineStudy::redraw);
+  gridSpace.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
   connectedLinesP.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
   lineWidth.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
   //invertedColor.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
@@ -37,14 +33,17 @@ void mgsVeraMolnarLineStudy::setup(){
   painter.starty = 5;
   painter.x = 5;
   painter.y = 5;
-  painter.gridHeight = gridHigh;
-  painter.gridWidth = gridWide;
+  painter.gridWidth = dimensions.width/squareSize - 1;
+  painter.gridHeight = dimensions.height/squareSize - 1;
   painter.size = squareSize;
   painter.lineMax = numOfLines;
   painter.shiftCounter = 0;
   painter.rowCounter = 0;
   painter.angle = 60;
   //painter.stroke = ofColor(abs(painter.backgroundCounter-255));
+
+  setAuthor("Michael Simpson");
+  setOriginalArtist("Vera Molnar");
 
   loadCode("scenes/mgsVeraMolnarLineStudy/exampleCode.cpp");
   //painter[i+2] = new myTimePainter(0.0, 0.0, 120.0, 0.80, 500, color(random(255),random(255),random(255)), 4);
@@ -57,12 +56,13 @@ void mgsVeraMolnarLineStudy::setup(){
 }
 
 void mgsVeraMolnarLineStudy::update(){
-  if(animated){
-    drawScene();
-  }
+  
 }
 
 void mgsVeraMolnarLineStudy::draw(){
+  if(animated){
+    drawScene();
+  }
   frame.draw(0,0);
 }
 
@@ -103,8 +103,8 @@ void mgsVeraMolnarLineStudy::freshPaint(){
   painter.lasty = painter.starty;
   painter.size = squareSize;
   painter.lineMax = numOfLines;
-  painter.gridWidth = gridWide;
-  painter.gridHeight = gridHigh;
+  painter.gridWidth = dimensions.width/(squareSize+gridSpace) - 1;
+  painter.gridHeight = dimensions.height/(squareSize+gridSpace) - 1;
   painter.space = gridSpace;
 }
 
@@ -116,6 +116,8 @@ void mgsVeraMolnarLineStudy::drawScene(){
   }
   glLineWidth(painter.backgroundCounter*lineWidth/100);
   frame.begin();
-  painter.update();
+  for(int i = numOfLines; i < numOfLines+1; i++){
+    painter.update();
+  }
   frame.end();
 }

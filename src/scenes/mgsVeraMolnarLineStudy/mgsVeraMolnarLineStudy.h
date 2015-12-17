@@ -14,8 +14,8 @@ class MolnarPainter {
   void update() {
     glLineWidth(thickness);
     if(lineCounter < lineMax){
-      int newx = ofRandom(startx+shiftCounter*(size+space), startx+shiftCounter*(size+space)+size);
-      int newy = ofRandom(starty+rowCounter*(size+space), starty+rowCounter*(size+space)+size);
+      int newx = space+ofRandom(startx+shiftCounter*(size+space), startx+shiftCounter*(size+space)+size);
+      int newy = space+ofRandom(starty+rowCounter*(size+space), starty+rowCounter*(size+space)+size);
       if(!useColor){
         if(connectedLines){
           ofSetColor(255);
@@ -101,7 +101,7 @@ public:
     void freshPaint();
     
     ofFbo frame;
-    ofParameter<int> squareSize,numOfLines,gridHigh,gridWide,gridSpace;
-    ofParameter<float> lineWidth;
+    ofParameter<int> numOfLines;
+    ofParameter<float> squareSize, gridSpace, lineWidth;
     ofParameter<bool> connectedLinesP, invertedColor, useColorP, animated;
 };

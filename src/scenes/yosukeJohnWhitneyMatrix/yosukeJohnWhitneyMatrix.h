@@ -6,7 +6,7 @@
 #define MAXNUMOFGROPU 4
 #define MAXNUMOFBALL 40
 
-class yosukeJhonWhitneyMtrix : public baseScene {
+class yosukeJohnWhitneyMatrix : public baseScene {
     
 public:
     
