@@ -14,7 +14,7 @@ public:
     virtual void update(){}
     virtual void draw(){}
     
-    virtual void reset(){}          // this is for scenes that change over time....
+    virtual void reset(){resetTiming();}          // this is for scenes that change over time....
     
     baseScene(){};
     ~baseScene(){}
