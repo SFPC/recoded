@@ -14,6 +14,7 @@ void setup(){
         axis[randomInt(0, 2)] = (sign == 0)?-1:1;
         t.rotate(random([[min angle]], [[max angle]], axis);
         t.move(prevText.width, 0,0);
+        t.setParent(3dTexts.back());
         3dTexts.add(t);
     }
 }
