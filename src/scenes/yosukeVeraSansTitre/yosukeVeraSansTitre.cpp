@@ -4,16 +4,20 @@
 void yosukeVeraSansTitre::setup(){
   
 // setup pramaters
-    displacementCoef.set("displacement-coef", 25.0, 0.0, 100.0);
+    displacementCoef.set("displacement-coef", 0, 0.0, 20.0);
     parameters.add(displacementCoef);
     row.set("number-of-row", 9, 1, 50);
     parameters.add(row);
-    colmn.set("number-of-colmn", 37, 1, 100);
+    colmn.set("number-of-colmn", 20, 1, 100);
     parameters.add(colmn);
-    spacingPercentX.set("space-x", 1.2, 0.0, 10.0);
+    spacingPercentX.set("space-x", 3.16, 0.0, 5.0);
     parameters.add(spacingPercentX);
-    spacingPercentY.set("space-y", 1.2, 0.0, 10.0          );
+    spacingPercentY.set("space-y", 2.55, 0.0, 5.0);
     parameters.add(spacingPercentY);
+    displacementZ.set("displacementZ", 0, 0, 5);
+    parameters.add(displacementZ);
+    lineWidth.set("lineWidth", 1.5, 0, 4);
+    parameters.add(lineWidth);
 
     ofBackground(0);
     ofSetBackgroundAuto(false);
@@ -40,10 +44,16 @@ void yosukeVeraSansTitre::draw(){
 
     ofSetColor(255);
     ofNoFill();
+    ofSetLineWidth(lineWidth);
     
     for (int i=0; i<row; i++) {
         for(int j=0; j<colmn; j++ ){
-            ofDrawRectangle(topLeftOfmostTopLeftRect.x + j*spacingX , topLeftOfmostTopLeftRect.y + i*spacingY + displacementCoef*ofNoise(topLeftOfmostTopLeftRect.x + j*spacingX, topLeftOfmostTopLeftRect.y + i*spacingY, getElapsedTimef()/2.0), rectWidth, rectHeight);
+            float displacementY = displacementCoef * ofNoise(j,i,displacementZ);
+            
+            ofDrawRectangle(topLeftOfmostTopLeftRect.x + j*spacingX,
+                            topLeftOfmostTopLeftRect.y + i*spacingY + displacementY,
+                            rectWidth,
+                            rectHeight);
         }
     }
 

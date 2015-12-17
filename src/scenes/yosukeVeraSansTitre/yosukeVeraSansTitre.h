@@ -21,9 +21,10 @@ public:
     ofPoint centerOfmostTopLeftRect;
     ofPoint topLeftOfmostTopLeftRect;
 
-    ofParameter<float> displacementCoef;
+    ofParameter<float> displacementCoef, displacementZ;
     ofParameter<int> row;
     ofParameter<int> colmn;
     ofParameter<float> spacingPercentX;
     ofParameter<float> spacingPercentY;
+    ofParameter<float> lineWidth;
 };
