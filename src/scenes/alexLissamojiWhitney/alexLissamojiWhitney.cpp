@@ -11,7 +11,9 @@ void alexLissamojiWhitney::setup(){
     // bckgImg.loadImage("scenes/alexLissamojiWhitney/back.png");
     
     // To Do: flip through all emojis in the folder ?
-    eyesImg.loadImage("scenes/alexLissamojiWhitney/emojis/1f440.png");
+//    eyesImg.load("scenes/alexLissamojiWhitney/emojis/1f440.png");
+    
+    emojiSheet.load("scenes/alexLissamojiWhitney/sheet_32.png");
     
     anim[0] = 0;
     anim[1] = 0;
@@ -20,12 +22,12 @@ void alexLissamojiWhitney::setup(){
     // setup pramameters
     parameters.add(pAmp.set( "Amplitude", 200, 10, 400 ));
     // parameters.add(pFreq[1].set( "Frequency ", 1, 1, 10 ));
-    parameters.add(pPhase.set("Phase", 0,0,TWO_PI));
+    pPhase.set("Phase", PI / 2 ,0,TWO_PI);
     parameters.add(pDensity.set("Density", 140, 0, 200));
-    parameters.add(pAnimSpeed.set("Animation Speed", 10, 1, 60));
     parameters.add(plissajouRatioX.set("Lissajous Ratio X", 2, 1, 3));
     parameters.add(plissajouRatioY.set("Lissajous Ratio Y", 3, 1, 3));
-    parameters.add(pImgScale.set("Image scale", 0.15, 0.0, 1));
+    pAnimSpeed.set("Animation Speed", 10, 1, 60);
+    pImgScale.set("Image scale", 0.15, 0.0, 1);
     
     timerLastTime = ofGetElapsedTimeMillis();
 
@@ -40,7 +42,7 @@ void alexLissamojiWhitney::update(){
         anim[1] = 0;
     }
     animSpeed[1] = 60 * pAnimSpeed;
-    pPhase.set(( ofGetFrameNum() % animSpeed[1] ) * TWO_PI / animSpeed[1]);
+    //pPhase.set(( ofGetFrameNum() % animSpeed[1] ) * TWO_PI / animSpeed[1]);
     
 //    if( ( ofGetElapsedTimeMillis() - timerLastTime ) > 3000 ){
 //        plissajouRatioX.set(ofRandom(1,plissajouRatioX.getMax()));
@@ -70,19 +72,24 @@ void alexLissamojiWhitney::drawLissaous() {
     v = TWO_PI / pDensity;
     ofFill();
     
+    float emojiDiff = (float)getFrameNum() / 10;
+    float frac = fmod((float)emojiDiff, 1);
+//    int frameMod = getFrameNum() % 40;
     for (int i = 0; i < pDensity ; i++) {
-        x = pAmp * cos( plissajouRatioX * v * i + pPhase);
-        y = pAmp * sin( plissajouRatioY * v * i + pPhase);
+        x = pAmp * cos( plissajouRatioX * v * ((float)i - frac) + pPhase);
+        y = pAmp * sin( plissajouRatioY * v * ((float)i - frac) + pPhase);
         
         iconWidth = eyesImg.getWidth() * pImgScale;
         iconHeight = eyesImg.getHeight() * pImgScale;
         
+        int emoji = (i + (int)emojiDiff) % 870;
         // TBD: use emoji or circles?
+        emojiSheet.drawSubsection(x-16, y-16, 32, 32, 32*(emoji/29), 32*(emoji%29));
         //eyesImg.draw(x-iconWidth/2, y-iconHeight/2, iconWidth, iconHeight);
 
         // Alternative 2: use circles
-        ofSetColor(i/pDensity * 255);
-        ofDrawCircle(x, y, iconWidth / 4.0);
+        //ofSetColor(i/pDensity * 255);
+        //ofDrawCircle(x, y, iconWidth / 4.0);
     }
 }
 

@@ -52,7 +52,7 @@
 #include "mgsRileyEllipsesAndSquares.h"
 #include "mgsVeraMolnarLineStudy.h"
 #include "mgsMaedaTimePainter.h"
-
+#include "olegVeraV.h"
 
 void sceneManager::setup(){
     
@@ -101,6 +101,7 @@ void sceneManager::setup(){
     scenes.push_back(new mgsRileyEllipsesAndSquares());
     scenes.push_back(new mgsVeraMolnarLineStudy());
     scenes.push_back(new mgsMaedaTimePainter());
+    scenes.push_back(new olegVeraV());
     
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());

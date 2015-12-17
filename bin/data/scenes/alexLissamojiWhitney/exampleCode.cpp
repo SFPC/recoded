@@ -3,6 +3,6 @@ void draw() {
     float x = [[Amplitude]] * cos([[Lissajous Ratio X]] * i);
     float y = [[Amplitude]] * sin([[Lissajous Ratio Y]] * i);
 
-    drawCircleAnimated(x, y, [[Image scale]]);
+    drawEmojiAnimated(x, y, [[Image scale]]);
   }
 }

@@ -15,7 +15,7 @@ public:
     
     void drawLissaous();
     
-    ofImage bckgImg,eyesImg;
+    ofImage bckgImg,eyesImg,emojiSheet;
 
     ofParameterGroup paramsGroup;
     ofParameter<float> pAmp;
@@ -27,6 +27,7 @@ public:
     ofParameter<float> plissajouRatioX;
     ofParameter<float> plissajouRatioY;
 
+    vector<int> images;
     
     float anim[2];
     int animSpeed[2];

@@ -17,6 +17,7 @@
 		5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */; };
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
 		63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */; };
+		710B1D091C2285A300CD3C24 /* olegVeraV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 710B1D071C2285A300CD3C24 /* olegVeraV.cpp */; };
 		7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */; };
 		7158FF7A1C164C0C00A6025B /* johnWhitneyShader02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7158FF781C164C0C00A6025B /* johnWhitneyShader02.cpp */; };
 		7158FF821C174F8B00A6025B /* chrisVeraInterruptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7158FF801C174F8B00A6025B /* chrisVeraInterruptions.cpp */; };
@@ -167,6 +168,8 @@
 		4FEF16401C114519000B3B4F /* anastasisRileyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = anastasisRileyScene.h; sourceTree = "<group>"; };
 		50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
+		710B1D071C2285A300CD3C24 /* olegVeraV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = olegVeraV.cpp; sourceTree = "<group>"; };
+		710B1D081C2285A300CD3C24 /* olegVeraV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = olegVeraV.h; sourceTree = "<group>"; };
 		7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = johnWhitneyShader01.cpp; sourceTree = "<group>"; };
 		7118B75D1C0519830092084A /* johnWhitneyShader01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = johnWhitneyShader01.h; sourceTree = "<group>"; };
 		7158FF781C164C0C00A6025B /* johnWhitneyShader02.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = johnWhitneyShader02.cpp; sourceTree = "<group>"; };
@@ -493,6 +496,15 @@
 			name = src;
 			sourceTree = "<group>";
 		};
+		710B1D061C2285A300CD3C24 /* olegVeraV */ = {
+			isa = PBXGroup;
+			children = (
+				710B1D071C2285A300CD3C24 /* olegVeraV.cpp */,
+				710B1D081C2285A300CD3C24 /* olegVeraV.h */,
+			);
+			path = olegVeraV;
+			sourceTree = "<group>";
+		};
 		7118B75B1C0519830092084A /* johnWhitneyShader01 */ = {
 			isa = PBXGroup;
 			children = (
@@ -678,6 +690,7 @@
 				9224BC941C20F233003668CF /* mgsRileyDiamonds */,
 				9224BC971C20F233003668CF /* mgsRileyEllipsesAndSquares */,
 				9224BC9A1C20F233003668CF /* mgsVeraMolnarLineStudy */,
+				710B1D061C2285A300CD3C24 /* olegVeraV */,
 				71C301F11C18A53600C0AC31 /* rachelScene */,
 				D54113781C1A3F3B00AD4ED9 /* robbyMenkmanScene */,
 				D5F490E31BF7DE2D00F92C20 /* robbyMolnarScene */,
@@ -1393,6 +1406,7 @@
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				B00CD17D1C22214E00C529FA /* ofxMidiRecorder.cpp in Sources */,
 				923871B71BF7CCC900171456 /* triangleScene.cpp in Sources */,
+				710B1D091C2285A300CD3C24 /* olegVeraV.cpp in Sources */,
 				71C0914A1C162E2E00C76EB9 /* chrisRileyCascando.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				D39F0DEF1C222065004DEAAB /* ofxOscBundle.cpp in Sources */,
