@@ -28,9 +28,9 @@ void alexGifPaletteDitherMenkman::setup(){
     parameters.add(pInterlacedJumps[2].set("Interleave Jumps 3", 4,0,8));
     parameters.add(pInterlacedJumps[3].set("Interleave Jumps 4", 2,0,8));
     
-    // :-( no ofxButton reset button for gui... reset on scene change ?
-    // parameters.add(pReset.setup("Reset"));
-    
+    parameters.add(pReset.set("Reset", false));
+    pReset.addListener(this, &alexGifPaletteDitherMenkman::pResetChanged);
+
     
     for(int i=0;i<4;i++){
         pInterlacedJumps[i].addListener(this, &alexGifPaletteDitherMenkman::pInterlacedChanged);
@@ -144,8 +144,14 @@ void alexGifPaletteDitherMenkman::pGlitchInterleaveChanged(bool &value){
     ImageReload = true;
 }
 
-void alexGifPaletteDitherMenkman::pResetPressed() {
+void alexGifPaletteDitherMenkman::pResetChanged(bool &value) {
     
+    if(pReset) {
+        
+    pImageIndex.set(0);
+    pGlitchInterleave.set(true);
+    pPaletteShift.set(0);
+        
     pInterlacedOffset[0].set(0);
     pInterlacedOffset[1].set(4);
     pInterlacedOffset[2].set(2);
@@ -154,6 +160,10 @@ void alexGifPaletteDitherMenkman::pResetPressed() {
     pInterlacedJumps[1].set(8);
     pInterlacedJumps[2].set(4);
     pInterlacedJumps[3].set(2);
+        
+    pReset.set(false);
+    
+    }
     
 }
 

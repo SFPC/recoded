@@ -38,8 +38,8 @@ public:
     ofParameter<int> pInterlacedJumps[4];
     void pInterlacedChanged(int &value);
     
-    ofxButton pReset;
-    void pResetPressed();
+    ofParameter<bool>  pReset;
+    void pResetChanged(bool &value);
     
     ofPixels framePixels;
     ofImage frame;
