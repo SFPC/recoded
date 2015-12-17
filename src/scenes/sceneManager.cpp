@@ -46,7 +46,7 @@
 #include "alexGifPaletteDitherMenkman.h"
 #include "yeseulMenkmanInstitution.h"
 #include "yeseulCooperMessages.h"
-#include "yosukeJhonWhitneyMtrix.h"
+#include "yosukeJohnWhitneyMatrix.h"
 #include "mgsCooperSymbols.h"
 #include "mgsRileyDiamonds.h"
 #include "mgsRileyEllipsesAndSquares.h"
@@ -95,7 +95,7 @@ void sceneManager::setup(){
     scenes.push_back(new alexGifPaletteDitherMenkman());
     scenes.push_back(new yeseulMenkmanInstitution());
     scenes.push_back(new yeseulCooperMessages());
-    scenes.push_back(new yosukeJhonWhitneyMtrix());
+    scenes.push_back(new yosukeJohnWhitneyMatrix());
     scenes.push_back(new mgsCooperSymbols());
     scenes.push_back(new mgsRileyDiamonds());
     scenes.push_back(new mgsRileyEllipsesAndSquares());

@@ -448,12 +448,13 @@
 			path = yosukeVeraSansTitre;
 			sourceTree = "<group>";
 		};
-		4FD081C51C2089F0006A7604 /* yosukeJhonWhitneyMtrix */ = {
+		4FD081C51C2089F0006A7604 /* yosukeJohnWhitneyMtrix */ = {
 			isa = PBXGroup;
 			children = (
 				4FD081C61C2089F0006A7604 /* yosukeJhonWhitneyMtrix.cpp */,
 				4FD081C71C2089F0006A7604 /* yosukeJhonWhitneyMtrix.h */,
 			);
+			name = yosukeJohnWhitneyMtrix;
 			path = yosukeJhonWhitneyMtrix;
 			sourceTree = "<group>";
 		};
@@ -706,7 +707,7 @@
 				85B3DCAE1C1FE6170054975A /* yeseulCooperMessages */,
 				85B3DCA51C1E47060054975A /* yeseulMenkmanInstitution */,
 				71C301C81C1783A500C0AC31 /* yeseulWhitneyScene */,
-				4FD081C51C2089F0006A7604 /* yosukeJhonWhitneyMtrix */,
+				4FD081C51C2089F0006A7604 /* yosukeJohnWhitneyMtrix */,
 				4F8F344B1C1BD89C000CF07C /* yosukeVeraSansTitre */,
 				9238719E1BF7993A00171456 /* baseScene.cpp */,
 				9238719F1BF7993A00171456 /* baseScene.h */,

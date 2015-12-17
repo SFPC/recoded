@@ -1,4 +1,4 @@
-void yosukeJhonWhitneyMtrix::update(){
+void update() {
   for (int j=0; j<[[number-of-group]]; j++) {
     for (int i = 0; i < [[number-of-ball]]; i++) {
       angleofangle[j][i] = - (i-1)*PI/20;
@@ -8,14 +8,13 @@ void yosukeJhonWhitneyMtrix::update(){
 
 }
 
-void yosukeJhonWhitneyMtrix::draw(){
+void draw() {
   for (int j=0; j<[[number-of-group]]; j++) {
     for (int i = 0; i < [[number-of-ball]]; i++) {
       x[j][i] = xorigin + [[rotation-radius]] * -sin(1.0 * (angle[j][i] - PI/2.0));
       y[j][i] = yorigin + [[rotation-radius]] * sin(1.5 * (angle[j][i] - PI/2.0));
     }
   }
-
 
   for (int j=0; j<[[number-of-group]]; j++) {
     for (int i = 0; i < [[number-of-ball]]; i++) {
