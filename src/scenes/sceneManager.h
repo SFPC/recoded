@@ -12,6 +12,12 @@
 #include "ofxParameterMidiSync.h"
 #endif
 
+#ifdef USE_EXTERNAL_SOUNDS
+#include "ofxOsc.h"
+#define HOST "localhost"
+#define PORT 12345 // listen on port 12345
+#endif
+
 
 // I take care of scenes.
 
@@ -58,5 +64,10 @@ public:
 #ifdef USE_MIDI_PARAM_SYNC
     ofxParameterMidiSync sync;
 #endif
+    
+#ifdef USE_EXTERNAL_SOUNDS
+    ofxOscSender oscSender;
+#endif
+    
 
 };
