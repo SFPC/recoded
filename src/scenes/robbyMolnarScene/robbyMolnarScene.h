@@ -44,4 +44,7 @@ class robbyMolnarScene : public baseScene {
     ofParameter<float> disarray;
     vector <veraRect> veraRects;
     veraRect vRect;
+    
+    int bigScreenScale;
+    ofFbo bigScreen;
 };

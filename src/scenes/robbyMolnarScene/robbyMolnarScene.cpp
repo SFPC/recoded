@@ -74,21 +74,24 @@ void veraRect::drawPerturbedRect(float x, float y, float width, float height,
 
 
 void robbyMolnarScene::setup(){
-    ofSetLineWidth(1);
+    bigScreenScale = 2;
+    bigScreen.allocate(dimensions.width*bigScreenScale, dimensions.height*bigScreenScale);
+    
+
     ofSetColor(255, 255, 255, 255);
     numRectangles.set("numRectangles", 30, 0, 50);
     disarray.set("disarray", .5, 0.0, 1.0);
     parameters.add(numRectangles);
     parameters.add(disarray);
-    float centerX = dimensions.width*.5;
-    float centerY = dimensions.height*.5;
-    vRect.setup(50, dimensions.height);
+    float centerX = bigScreen.getWidth()*.5;
+    float centerY = bigScreen.getHeight()*.5;
+    vRect.setup(50, bigScreen.getHeight());
     vRect.centerX = centerX;
     vRect.centerY = centerY;
     float space = centerY / 2.0;
     for(int i = 0; i < 9; i++){
         veraRect v;
-        v.setup(50, dimensions.height*.5);
+        v.setup(50, bigScreen.getHeight()*.5);
         v.centerX = space*.5 + centerX - space*1.5 + space*(i%3);
         v.centerY = space*.5 + centerY - space*1.5 + space*((int)(i/3));
         veraRects.push_back(v);
@@ -103,12 +106,17 @@ void robbyMolnarScene::update(){
 }
 
 void robbyMolnarScene::draw(){
+    ofSetLineWidth(3);
 
 //    vRect.draw(numRectangles, disarray);
 
+    bigScreen.begin();
+    ofBackground(0);
     for(int i = 0; i < 9; i++){
         veraRects[i].draw(numRectangles, disarray);
     }
+    bigScreen.end();
+    bigScreen.draw(0, 0, dimensions.width, dimensions.height);
 
 //    string codeReplaced = getCodeWithParamsReplaced();
 //    ofDrawBitmapString(codeReplaced, 40,40);
