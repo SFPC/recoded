@@ -31,6 +31,9 @@ public:
     void update();
     void draw();
     
+    int fboScale;
+    ofFbo bigScreen;
+    
 //    ofParameter<float> param;
 	ofParameter<float> baseSize;
 	ofParameter<float> spacingPercent;
