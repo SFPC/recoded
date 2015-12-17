@@ -13,7 +13,7 @@ public:
     string text;
     ofColor color;
     ofColor offColor;
-
+    
     ofTrueTypeFont* font;
     ofRectangle r;
     
@@ -22,6 +22,8 @@ public:
     ofTexture tex;//, texOff;
     ofVec3f axis;
     int sign;
+    ofVec3f moveVector;
+    float rotationFactor;
     textSurface(){
         font = NULL;
         offColor.set(130, 200);
@@ -86,7 +88,7 @@ public:
     void updateCameraTween();
     
     void setupSurfaces();
-    
+    void rotateSurfaces();
     void nextSurface(bool bTween = true);
     
     ofVec3f camStartPos, camEndPos;
@@ -95,10 +97,10 @@ public:
     float distWords;
 //    ofParameter<float> distWords;
     ofParameter<int>tweenDuration, pauseDuration;
-    
+    ofParameter<float>minAngle, maxAngle;
     void tweenEnded(int &i);
   //  void distWordsChange(float & f);
-    
+    void angleChanged(float& f);
     ofBlendMode blend;
     
 //    ofParameter<float>tweenVal;

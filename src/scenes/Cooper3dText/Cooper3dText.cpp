@@ -24,15 +24,14 @@ void Cooper3dText::setup(){
     distWords = 60;
 
 //    parameters.add(distWords.set("Distance Blocks",40,  0, 4000));
-    parameters.add(tweenDuration.set("Tween Duration", 4000,0,10000));
-    parameters.add(pauseDuration.set("Pause Duration", 1000,0,5000));
-//    parameters.add(tweenVal.set("tweenVal", 0,0,1));
-//    parameters.add(camPos.set("camPos", ofVec3f(0), ofVec3f(-10000), ofVec3f(10000)));
-//    parameters.add(camOrientation.set("camOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
-//    parameters.add(camStartOrientationParam.set("camStartOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
-//    parameters.add(camEndOrientationParam.set("camEndOrientation", ofVec4f(0), ofVec4f(-1),ofVec4f(1)));
-//    distWords.addListener(this, &Cooper3dText::distWordsChange);
+    parameters.add(tweenDuration.set("Tween Duration", 3000,0,10000));
+    parameters.add(pauseDuration.set("Pause Duration", 200,0,5000));
+    parameters.add(minAngle.set("min angle", 90,0, 360));
+    parameters.add(maxAngle.set("max angle", 350, 0,360));
 
+    maxAngle.addListener(this, &Cooper3dText::angleChanged);
+    minAngle.addListener(this, &Cooper3dText::angleChanged);
+    
     setupSurfaces();
     
     ofEnableAlphaBlending();
@@ -60,7 +59,6 @@ void Cooper3dText::setupSurfaces(){
     vector<string> txts = ofSplitString(text, "\n\n");
   //  cout << "txts.size(): " <<txts.size() << endl;
     surfaces.clear();
-    
     for (int i = 0 ; i < txts.size(); i++) {
         
         ofColor c;
@@ -68,8 +66,11 @@ void Cooper3dText::setupSurfaces(){
         surfaces.push_back(textSurface());
         surfaces.back().setTextAndFont(txts[i], font,c);
         surfaces.back().axis = ofVec3f::zero();
+        if (i == 1) {
+        surfaces.back().axis[2] = 1;
+        }else{
         surfaces.back().axis[(int)round(ofRandom(0, 2))] = ((ofRandom(1) > 0.5)? 1:-1);
-        
+        }
         surfaces.back().sign = ((ofRandom(1) > 0.5)? 1:-1);
         
         if (i > 0) {
@@ -78,22 +79,33 @@ void Cooper3dText::setupSurfaces(){
                 surfaces.back().axis[(int)round(ofRandom(1))?0:2] = ((ofRandom(1) > 0.5)? 1:-1);
             }
             ofRectangle prevRect =font.getStringBoundingBox(txts[i-1],0,0);
-            surfaces.back().rotate(90*surfaces.back().sign , surfaces.back().axis);
-            ofVec3f m(prevRect.width + distWords + prevRect.height*((surfaces.back().axis.z*surfaces.back().sign == -1)?1:0), 0,0);
-            surfaces.back().move(m);
-            cout << m << endl;
+            ofRectangle r = font.getStringBoundingBox(txts[i],0,0);
+            surfaces.back().moveVector.set(prevRect.width + distWords + r.height*((surfaces.back().axis.z != 0)?1:0), 0,0);
+            surfaces.back().rotationFactor = ofRandom(0, 1);
+//            surfaces.back().rotate(ofRandom(minAngle, maxAngle)*surfaces.back().sign , surfaces.back().axis);
+//            surfaces.back().move(surfaces.back().moveVector);
+         //   cout << m << endl;
         }
     }
-    
+    rotateSurfaces();
+
     for (int i = 1 ; i < surfaces.size(); i++) {
         surfaces[i].setParent(surfaces[i-1]);
     }
     currentSurface = surfaces.size()-1;
 }
-////--------------------------------------------------------------
-//void Cooper3dText::distWordsChange(float & f){
-//    setupSurfaces();
-//}
+//--------------------------------------------------------------
+void Cooper3dText::angleChanged(float& f){
+    rotateSurfaces();
+}
+//--------------------------------------------------------------
+void Cooper3dText::rotateSurfaces(){
+    for (int i = 1; i < surfaces.size(); i++) {
+        surfaces[i].resetTransform();
+        surfaces[i].rotate(ofMap(surfaces[i].rotationFactor, 0,1, minAngle, maxAngle)*surfaces[i].sign , surfaces[i].axis);
+        surfaces[i].move(surfaces[i].moveVector);
+    }
+}
 //--------------------------------------------------------------
 void Cooper3dText::update(){
 
@@ -121,7 +133,8 @@ void Cooper3dText::tweenEnded(int &i){
 //--------------------------------------------------------------
 void Cooper3dText::nextSurface(bool bTween){
     if (bTween) {
-        tween.setParameters(easing, ofxTween::easeInOut, 0, 1, tweenDuration, pauseDuration);
+        int numSpaces = ofStringTimesInString(surfaces[currentSurface].text, " ");
+        tween.setParameters(easing, ofxTween::easeInOut, 0, 1, tweenDuration, 1000+pauseDuration*numSpaces);
         tween.start();
     }
     prevSurface = currentSurface;
