@@ -60,6 +60,8 @@ public:
     
     float lastLetterHeight;
     
+    bool didTriggerCodeFinishedAnimatingEvent;
+    
     
 #ifdef USE_MIDI_PARAM_SYNC
     ofxParameterMidiSync sync;

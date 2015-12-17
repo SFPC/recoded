@@ -159,9 +159,10 @@ void sceneManager::setup(){
 void sceneManager::startScene(int whichScene){
     scenes[currentScene]->reset();
     TM.setup( (scenes[currentScene]), 7.5);
-    lettersLastFrame= 0;
+    lettersLastFrame = 0;
     lastPlayTime = 0;
     lastLetterHeight = 0;
+    didTriggerCodeFinishedAnimatingEvent = false;
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setSyncGroup(scenes[currentScene]->parameters, true);
     sync.enableMidi();
@@ -247,6 +248,7 @@ void sceneManager::draw(){
     codeFbo.begin();
     
     float pct = (ofGetElapsedTimef() - TM.setupTime) / TM.animTime;
+    
     if (pct > 1) pct = 1;
     if (pct < 0) pct = 0;
     
@@ -264,12 +266,24 @@ void sceneManager::draw(){
         
     }
     
+#ifdef USE_EXTERNAL_SOUNDS
+    if (pct == 1 && !didTriggerCodeFinishedAnimatingEvent) {
+        oscMessage.clear();
+        oscMessage.setAddress("/d4n/codeFinishedAnimating");
+        oscMessage.addTriggerArg();
+        oscSender.sendMessage(oscMessage, false);
+        didTriggerCodeFinishedAnimatingEvent = true;
+    }
+#endif
+
+
     ofClear(0,0,0,255);
     vector < codeLetter > letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
     
     ofSetColor(255);
     //font.drawString(codeReplaced, 40, 40);
     //ofDrawBitmapString(codeReplaced, 40,40);
+    
     
     bool bShiftUp = false;
     
@@ -376,7 +390,7 @@ void sceneManager::draw(){
     ofSetColor(255);
     
     ofDrawBitmapString("drawing scene " + ofToString(currentScene) + "\t\t(" + scenes[currentScene]->author  + ", " + scenes[currentScene]->originalArtist + ")", 20, VISUALS_HEIGHT + 50);
-    
+
     
 }
 
