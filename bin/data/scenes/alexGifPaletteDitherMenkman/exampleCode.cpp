@@ -2,7 +2,7 @@
 // in Rosa Menkmans "A Vernacular of File Formats"
 
 // Inverting the Interleave flag
-if([[Invert Interleave Flag]]) {
+if([[Glitch Interleave]]) {
     sp->ImageDesc.Interlace = !sp->ImageDesc.Interlace;
 }
 
@@ -28,7 +28,7 @@ else {
 
 // Manipulate the color palette by shifting colors
 memcpy((char *)colorMap.Colors, (char *)gif.SColorMap->Colors, gif.SColorMap->ColorCount * sizeof(GifColorType));
-for(int j = 0; j < [[Color Palette Shift]]; j++){
+for(int j = 0; j < [[Glitch Color Palette]]; j++){
 
     GifColorType first = colorMap.Colors[0];
     for (int i=0; i < colorMap.ColorCount-1; i++) {

@@ -1,9 +1,11 @@
 void drawPixel(int x, int y) {
-  // Make it weird
+  // Make it go nuts
   float factor_one = [[time]] * y * sin(y) * [[posY]] / y;
   float factor_two = [[posX]] / x + [[posY]] / y;
-  float weirdness = tan(factor_one / factor_two);
+
+  // Tangent looks cool
+  float tangent = tan(factor_one / factor_two);
 
   // Output color
-  setPixelBrightness(weirdness);
+  setPixelBrightness(tangent);
 }

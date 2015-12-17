@@ -1,7 +1,7 @@
 
-#include "yosukeJhonWhitneyMtrix.h"
+#include "yosukeJohnWhitneyMatrix.h"
 
-void yosukeJhonWhitneyMtrix::setup(){
+void yosukeJohnWhitneyMatrix::setup(){
   
 // setup pramaters
     numOfGroup.set("number-of-group", 4, 1, MAXNUMOFGROPU);
@@ -16,7 +16,7 @@ void yosukeJhonWhitneyMtrix::setup(){
     parameters.add(ballRadius);
 
 
-    loadCode("scenes/yosukeJhonWhitneyMtrix/exampleCode.cpp");
+    loadCode("scenes/yosukeJohnWhitneyMatrix/exampleCode.cpp");
     
     
     
@@ -54,7 +54,7 @@ void yosukeJhonWhitneyMtrix::setup(){
     
 }
 
-void yosukeJhonWhitneyMtrix::update(){
+void yosukeJohnWhitneyMatrix::update(){
     t = ofGetElapsedTimef()  / 10.0;
     for (int j=0; j<numOfGroup; j++) {
         for (int i = 0; i < numOfBall; i++) {
@@ -69,7 +69,7 @@ void yosukeJhonWhitneyMtrix::update(){
    
 }
 
-void yosukeJhonWhitneyMtrix::draw(){
+void yosukeJohnWhitneyMatrix::draw(){
     for (int j=0; j<numOfGroup; j++) {
         for (int i = 0; i < numOfBall; i++) {
             if(j==0){

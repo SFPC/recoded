@@ -10,6 +10,9 @@ void veraMolnarTrapezium::setup(){
 	iBottomLeftOffsetX = 4;
 	iBottomRightOffsetX = 5;
   
+    fboScale = 2;
+    bigScreen.allocate(dimensions.width*fboScale, dimensions.height*fboScale);
+    
 // setup pramaters
 //    param.set("param", 5, 0, 100);
 //    parameters.add(param);
@@ -18,8 +21,8 @@ void veraMolnarTrapezium::setup(){
 	spacingPercentY.set("spacingPercentY", 1.2, 0, 10);
 	unifiedSpacing.set("unifiedSpacing", true);
 	whiteBackground.set("whiteBackground", false);
-	numWide.set("numWide", 9, 1, 100);
-	baseSize.set("baseSize", dimensions.width/spacingPercent/(numWide+2), 10, dimensions.width);
+	numWide.set("numWide", 40, 1, 100);
+	baseSize.set("baseSize", 140, 40, bigScreen.getWidth());
 	cornerNoise.set("cornerNoise", 0., 0., 1.);
 	centerNoise.set("centerNoise", 0., 0., 1.);
 	
@@ -58,6 +61,7 @@ void veraMolnarTrapezium::update(){
 }
 
 void veraMolnarTrapezium::draw(){
+    bigScreen.begin();
 	if (whiteBackground){
 		ofBackground(255);
 		ofSetColor(0);
@@ -65,11 +69,15 @@ void veraMolnarTrapezium::draw(){
 		ofBackground(0);
 		ofSetColor(255);
 	}
+    ofSetLineWidth(3);
 	for(int row = 0; row < numWide; row++){
 		for(int column = 0; column < numWide; column++){
 			drawTrapezium(row, column);
 		}
 	}
+    bigScreen.end();
+    
+    bigScreen.draw(0, 0, dimensions.width, dimensions.height);
 }
 
 void veraMolnarTrapezium::drawTrapezium(int row, int column){
@@ -81,8 +89,8 @@ void veraMolnarTrapezium::drawTrapezium(int row, int column){
 		spacingY = baseSize * spacingPercentY;
 	}
 	int index = row * numWide + column;
-	float gridLeft = (dimensions.width - numWide * spacingX) / 2;
-	float gridTop = (dimensions.height - numWide * spacingY) / 2;
+	float gridLeft = (bigScreen.getWidth() - numWide * spacingX) / 2;
+	float gridTop = (bigScreen.getHeight() - numWide * spacingY) / 2;
 
 	float leftmostCenter = gridLeft + spacingX / 2;
 	float rightmostCenter = leftmostCenter + (numWide - 1) * spacingX;

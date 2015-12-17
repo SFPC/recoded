@@ -46,19 +46,20 @@
 #include "alexGifPaletteDitherMenkman.h"
 #include "yeseulMenkmanInstitution.h"
 #include "yeseulCooperMessages.h"
-#include "yosukeJhonWhitneyMtrix.h"
+#include "yosukeJohnWhitneyMatrix.h"
 #include "mgsCooperSymbols.h"
 #include "mgsRileyDiamonds.h"
 #include "mgsRileyEllipsesAndSquares.h"
 #include "mgsVeraMolnarLineStudy.h"
 #include "mgsMaedaTimePainter.h"
-
+#include "olegVeraV.h"
+#include "sarahgpRileyCircle.h"
+#include "mwalczykVeraSquares.h"
 
 void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
-    
-    
+
     scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());
     scenes.push_back(new rachelScene());
@@ -67,7 +68,6 @@ void sceneManager::setup(){
     scenes.push_back(new chrisVeraInterruptions());
     scenes.push_back(new johnWhitneyShader02());
     scenes.push_back(new chrisRileyCascando());
-    scenes.push_back(new chrisMurielCooper());
     scenes.push_back(new memoAktenScene());
     scenes.push_back(new submotionOrchestraScene());
     scenes.push_back(new RoyWhitney1());
@@ -95,16 +95,21 @@ void sceneManager::setup(){
     scenes.push_back(new alexGifPaletteDitherMenkman());
     scenes.push_back(new yeseulMenkmanInstitution());
     scenes.push_back(new yeseulCooperMessages());
-    scenes.push_back(new yosukeJhonWhitneyMtrix());
+    scenes.push_back(new yosukeJohnWhitneyMatrix());
     scenes.push_back(new mgsCooperSymbols());
     scenes.push_back(new mgsRileyDiamonds());
     scenes.push_back(new mgsRileyEllipsesAndSquares());
     scenes.push_back(new mgsVeraMolnarLineStudy());
     scenes.push_back(new mgsMaedaTimePainter());
+    scenes.push_back(new olegVeraV());
+    scenes.push_back(new sarahgpRileyCircle());
+    scenes.push_back(new mwalczykVeraSquares());
     
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
     
+    // Not using
+    // scenes.push_back(new chrisMurielCooper());
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
@@ -137,22 +142,31 @@ void sceneManager::setup(){
     panel->setPosition(520+504+20, 20);
     
     startScene(currentScene);
-    
+
+#ifdef USE_EXTERNAL_SOUNDS
+    ofxOscMessage m;
+    m.setAddress("/d4n/sceneStart");
+    m.addStringArg(ofToString(currentScene) + ": "
+                   + scenes[currentScene]->originalArtist
+                   + " (recoded by " + scenes[currentScene]->author + ")");
+    oscSender.sendMessage(m, false);
+#else
     loop.load("sounds/drawbar_c4_a.aif");
     loop.setLoop(true);
     loop.play();
     loop.setVolume(0);
     
     TM.loadSounds();
-    
+#endif
 }
 
 void sceneManager::startScene(int whichScene){
     scenes[currentScene]->reset();
     TM.setup( (scenes[currentScene]), 7.5);
-    lettersLastFrame= 0;
+    lettersLastFrame = 0;
     lastPlayTime = 0;
     lastLetterHeight = 0;
+    didTriggerCodeFinishedAnimatingEvent = false;
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setSyncGroup(scenes[currentScene]->parameters, true);
     sync.enableMidi();
@@ -175,40 +189,46 @@ void sceneManager::update(){
     
     
     ofParameter < float > floatParam;
+
+    if (TM.paramChangedEnergy.size() > 0) {
+        
+        for (int i = 0; i < TM.paramChangedEnergy.size(); i++) {
     
-    if (TM.paramChangedEnergy.size() > 0){
-        if (TM.paramChangedEnergy[0] > 0){
+            if (TM.paramChangedEnergy[i] > 0) {
             
-            loop.setVolume(TM.paramChangedEnergy[0]);
-            
-            ofParameter<float> t = scenes[currentScene]->parameters[0].cast<float>();
-            
-            float minVal = t.getMin();
-            float maxVal = t.getMax();
-            float val = t;
-            
-            float pct  = (t - minVal) / (float)(maxVal - minVal);
-            
-            if (pct > 1) pct = 1;
-            if (pct < 0) pct = 0;
-            
-            loop.setSpeed( ofMap(pct, 0, 1, 0.3, 1.0) );
-            
+                ofParameter<float> t = scenes[currentScene]->parameters[i].cast<float>();
+
+                float minVal = t.getMin();
+                float maxVal = t.getMax();
+                float val = t;
+        
+                float pct  = (t - minVal) / (float)(maxVal - minVal);
+        
+                if (pct > 1) pct = 1;
+                if (pct < 0) pct = 0;
+
 #ifdef USE_EXTERNAL_SOUNDS
-            ofxOscMessage m;
-            m.setAddress("/d4n/paramChangedEnergy");
-            m.addFloatArg(TM.paramChangedEnergy[0]);
-            oscSender.sendMessage(m, false);
-            
-            m.setAddress("/d4n/params");
-            m.addIntArg(0);
-            m.addFloatArg(pct);
-            oscSender.sendMessage(m, false);
+                oscMessage.clear();
+                oscMessage.setAddress("/d4n/param/" + ofToString(i) + "/energy");
+                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+                oscMessage.addFloatArg(TM.paramChangedEnergy[i]);
+                oscSender.sendMessage(oscMessage, false);
+
+                oscMessage.clear();
+                oscMessage.setAddress("/d4n/param/" + ofToString(i) + "/value");
+                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+                oscMessage.addFloatArg(pct);
+                oscSender.sendMessage(oscMessage, false);
+#else
+                loop.setVolume(TM.paramChangedEnergy[i]);
+                loop.setSpeed( ofMap(pct, 0, 1, 0.3, 1.0) );
 #endif
-            
+            }
         }
     } else {
+#ifndef USE_EXTERNAL_SOUNDS
         loop.setVolume(0);
+#endif
     }
     
     
@@ -232,6 +252,7 @@ void sceneManager::draw(){
     codeFbo.begin();
     
     float pct = (ofGetElapsedTimef() - TM.setupTime) / TM.animTime;
+    
     if (pct > 1) pct = 1;
     if (pct < 0) pct = 0;
     
@@ -249,12 +270,24 @@ void sceneManager::draw(){
         
     }
     
+#ifdef USE_EXTERNAL_SOUNDS
+    if (pct == 1 && !didTriggerCodeFinishedAnimatingEvent) {
+        oscMessage.clear();
+        oscMessage.setAddress("/d4n/codeFinishedAnimating");
+        oscMessage.addTriggerArg();
+        oscSender.sendMessage(oscMessage, false);
+        didTriggerCodeFinishedAnimatingEvent = true;
+    }
+#endif
+
+
     ofClear(0,0,0,255);
     vector < codeLetter > letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
     
     ofSetColor(255);
     //font.drawString(codeReplaced, 40, 40);
     //ofDrawBitmapString(codeReplaced, 40,40);
+    
     
     bool bShiftUp = false;
     
@@ -317,18 +350,30 @@ void sceneManager::draw(){
         ofFill();
         ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         int diff = (countLetters - (int)lettersLastFrame);
-        if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > ofRandom(50,87))){
+        if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > ofRandom(50,87))) {
             // cout << diff << enld;
             lastPlayTime = ofGetElapsedTimeMillis();
             
-            if (ofNoise(pct*10, ofGetElapsedTimef()/10.0) > 0.5){
+            if (ofNoise(pct*10, ofGetElapsedTimef()/10.0) > 0.5) {
+#ifdef USE_EXTERNAL_SOUNDS
+                oscMessage.clear();
+                oscMessage.setAddress("/d4n/keyPressed");
+                oscMessage.addStringArg("a");
+                oscSender.sendMessage(oscMessage, false);
+#else
                 TM.clickb.play();
                 TM.clickb.setSpeed(ofRandom(0.9, 1.1));
-                
+#endif
             } else {
+#ifdef USE_EXTERNAL_SOUNDS
+                oscMessage.clear();
+                oscMessage.setAddress("/d4n/keyPressed");
+                oscMessage.addStringArg("b");
+                oscSender.sendMessage(oscMessage, false);
+#else
                 TM.clicka.play();
                 TM.clicka.setSpeed(ofRandom(0.9, 1.1));
-                
+#endif
             }
             
         }
@@ -349,7 +394,7 @@ void sceneManager::draw(){
     ofSetColor(255);
     
     ofDrawBitmapString("drawing scene " + ofToString(currentScene) + "\t\t(" + scenes[currentScene]->author  + ", " + scenes[currentScene]->originalArtist + ")", 20, VISUALS_HEIGHT + 50);
-    
+
     
 }
 
@@ -366,8 +411,14 @@ void sceneManager::nextScene(bool forward){
     
     startScene(currentScene);
     
-    
-    
+#ifdef USE_EXTERNAL_SOUNDS
+    oscMessage.clear();
+    oscMessage.setAddress("/d4n/sceneStart");
+    oscMessage.addStringArg(ofToString(currentScene) + ": "
+                   + scenes[currentScene]->originalArtist
+                   + " (recoded by " + scenes[currentScene]->author + ")");
+    oscSender.sendMessage(oscMessage, false);
+#endif
     
     delete panel;
     panel = new ofxPanel();
