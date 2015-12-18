@@ -36,8 +36,8 @@ void typographyManager::setup(baseScene * bs, float animationTime){
     paramsInOrder.clear();
     paramsToReplace.clear();
     paramChangedEnergy.clear();
-    
-    
+    paramEnergy.clear();
+    paramEnergyTarget.clear();
     
     setupTime = ofGetElapsedTimef();
     animTime = animationTime;
@@ -49,6 +49,8 @@ void typographyManager::setup(baseScene * bs, float animationTime){
     
     paramsToReplace.resize(nParams);
     paramChangedEnergy.resize(nParams);
+    paramEnergy.resize(nParams);
+    paramEnergyTarget.resize(nParams);
     
     for (int i = 0; i < nParams; i++){
         
@@ -66,6 +68,8 @@ void typographyManager::setup(baseScene * bs, float animationTime){
         }
         
         paramChangedEnergy[i] = 0;
+        paramEnergy[i] = 0;
+        paramEnergyTarget[i] = 0;
         
         for (int j = 0; j < paramLocations.size(); j++){
             templatePos pos;
@@ -109,6 +113,7 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
     
     ofParameter < bool > boolParam;
     ofParameter < float > floatParam;
+    ofParameter < int > intParam;
     
     bool insideComment = false;
     for (int i = 0; i < bs->code.length(); i++){
@@ -191,21 +196,43 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
         //paramsToReplace[i]
         //prevStrings[i];
         if (prevStrings[i] != paramsToReplace[i]){
-            if (bs->parameters[i].type() == boolParam.type()) {
+            // If we've decayed, don't go way back up.
+            float mappedEnergy = ofMap(paramEnergy[i], 0, paramEnergyTarget[i], 0, 0.9999f);
+            if (mappedEnergy < 0.8)
+                paramEnergyTarget[i] = paramEnergy[i];
+
+            if (bs->parameters[i].type() == boolParam.type()
+                || bs->parameters[i].type() == intParam.type()) {
                 paramChangedEnergy[i] = 2;
+                
+                paramEnergyTarget[i] = 1;
             } else {
                 paramChangedEnergy[i] += 0.1;
+                if (paramChangedEnergy[i] > 2){
+                    paramChangedEnergy[i] = 2;
+                }
+
+                paramEnergyTarget[i] += energyChangePerFrame;
+                paramEnergyTarget[i] = min(paramEnergyTarget[i], 1.0f);
             }
-            if (paramChangedEnergy[i] > 2){
-                paramChangedEnergy[i] = 2;
-            }
+            paramEnergy[i] = paramEnergyTarget[i];
         }
     }
     // vector < string > prevStrings = paramsToReplace;
     
-    
     for (int i = 0; i < nParams; i++){
         paramChangedEnergy[i] *= 0.96;                          // too fast?
+        
+        float mappedEnergy = ofMap(paramEnergy[i], 0, paramEnergyTarget[i], 0, 0.99999f);
+        if (mappedEnergy > 0.5)
+            mappedEnergy *= powf(mappedEnergy, energyDecayRate);
+        else
+            mappedEnergy *= (1.0 - energyDecayRate);
+        paramEnergy[i] = ofMap(mappedEnergy, 0, 1, 0, paramEnergyTarget[i]);
+        
+        if (paramEnergyTarget[i] > 0.001 && paramEnergy[i] < 0.0001) {
+            paramEnergy[i] = 0.0001;
+        }
     }
     
     return codeLetters;

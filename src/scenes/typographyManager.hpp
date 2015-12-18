@@ -57,7 +57,15 @@ public:
     vector < templatePos > paramsInOrder;
     void calcPositionsOfParams();
     vector < string > paramsToReplace;
+    
+    // For MIDI
     vector < float > paramChangedEnergy;
+    
+    // For animation
+    vector < float > paramEnergyTarget;
+    vector < float > paramEnergy;
+    
+    float energyDecayRate, energyChangePerFrame;
     
     
 };

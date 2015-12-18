@@ -152,6 +152,14 @@ void sceneManager::setup(){
     panel->setup("scene settings");
     panel->add(scenes[currentScene]->parameters);
     panel->setPosition(520+504+20, 20);
+
+    codeEnergyDecayRate.set("codeDecay", 0.1, 0, 0.3);
+    codeEnergyPerFrame.set("codeEnergyPerFrame", 0.15, 0, 0.4);
+    codeControls.setup("code settings", "codeSettings.xml");
+    codeControls.add(codeEnergyDecayRate);
+    codeControls.add(codeEnergyPerFrame);
+    codeControls.loadFromFile("codeSettings.xml");
+    codeControls.setPosition(520+504+20, 500);
     
     startScene(currentScene);
 
@@ -188,6 +196,9 @@ void sceneManager::startScene(int whichScene){
 
 
 void sceneManager::update(){
+
+    TM.energyDecayRate = codeEnergyDecayRate;
+    TM.energyChangePerFrame = codeEnergyPerFrame;
 
 #ifdef TYPE_ANIMATION
     pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
@@ -319,12 +330,33 @@ void sceneManager::draw(){
     int x = xStart;
     
     // Quick cache of how many lines we're going to draw
-    int nLines = 0;
-    for (int i = 0; i < letters.size() * pct; i++){
-        if (letters[i].character == '\n')
-            nLines++;
-    }
+    int nLines = 0, currentLine = 0;
+    float maxActivationPerLine = 0, maxTotalActivation = 0;
     
+    // One entry per line, stores id of param that is getting animated the most
+    vector<int> lineHasAnimParam;
+
+    lineHasAnimParam.push_back(-1);
+    for (int i = 0; i < letters.size() * pct; i++) {
+        if (letters[i].type == CHARACTER_PARAM) {
+            float activation = TM.paramEnergy[letters[i].idOfChar];
+            if (activation > 0.000001 && activation > maxActivationPerLine) {
+                maxActivationPerLine = activation;
+                lineHasAnimParam[currentLine] = letters[i].idOfChar;
+            }
+            if (activation > 0.000001 && activation > maxTotalActivation) {
+                maxTotalActivation = activation;
+            }
+        }
+
+        if (letters[i].character == '\n') {
+            currentLine++;
+            nLines++;
+            maxActivationPerLine = 0;
+            lineHasAnimParam.push_back(-1);
+        }
+    }
+
     // Set line Y based on how many lines we're going to draw over the total height
     int maxLinesWithoutScroll = (VISUALS_HEIGHT - 60*2) / 13;
     int maxLinesWithScroll = (VISUALS_HEIGHT-10*2) / 13;
@@ -337,18 +369,32 @@ void sceneManager::draw(){
     } else {
         y = 10 + 13;
     }
-
+    
+    const int lineWithActiveParamDim = 60;
+    const int lineWithoutActiveParamDim = 100;
+    const int commentDim = 70;
+    currentLine = 0;
+    
     for (int i = 0; i < letters.size() * pct; i++){
         
+        int lineBrightness = 127;
+        if (lineHasAnimParam[currentLine] < 0) {
+            lineBrightness -= maxTotalActivation * lineWithoutActiveParamDim;
+        } else {
+            float currActivation = TM.paramEnergy[lineHasAnimParam[currentLine]];
+            lineBrightness -= (maxTotalActivation - currActivation) * lineWithActiveParamDim;
+        }
         
         ofSetColor(127);
-        if (letters[i].type == CHARACTER_CODE)
-            ofSetColor(127);
-        else if (letters[i].type == CHARACTER_PARAM)
-            ofSetColor(127 + ofClamp(TM.paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
-        else if (letters[i].type == CHARACTER_COMMENT)
-            ofSetColor(93, 112, 131);
-        
+        if (letters[i].type == CHARACTER_CODE) {
+            ofSetColor(lineBrightness);
+        } else if (letters[i].type == CHARACTER_PARAM) {
+            int charBrightness = TM.paramEnergy[letters[i].idOfChar]*(255-lineWithActiveParamDim);
+            ofSetColor(min(lineBrightness + charBrightness, 255));
+        } else if (letters[i].type == CHARACTER_COMMENT) {
+            ofSetColor(max(lineBrightness - commentDim * (1.0-maxTotalActivation), 0.0));
+        }
+    
         string s = "";
         s += (char)(letters[i].character);
         font.drawString(s , (int)x, (int)y);
@@ -362,6 +408,7 @@ void sceneManager::draw(){
         if (letters[i].character == '\n'){
             y += 13;
             x = xStart;
+            currentLine++;
         }
         
         maxLetterX = max((int)maxLetterX, x);
@@ -449,6 +496,7 @@ void sceneManager::draw(){
 #endif
 
     panel->draw();
+    codeControls.draw();
     
     
     // let's draw some info!

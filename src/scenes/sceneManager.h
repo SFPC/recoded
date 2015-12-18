@@ -48,6 +48,9 @@ public:
     ofFbo codeFbo;
     ofxPanel * panel;
     
+    ofParameter<float> codeEnergyDecayRate, codeEnergyPerFrame;
+    ofxPanel codeControls;
+    
 
     ofSoundPlayer loop;
     
