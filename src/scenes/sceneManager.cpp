@@ -76,7 +76,6 @@ void sceneManager::setup(){
     scenes.push_back(new veraAnimatedScene() );
     scenes.push_back(new robbyRileyScene() );
     scenes.push_back(new robbyMenkmanScene());
-    scenes.push_back(new yeseulWhitneyScene() );
     scenes.push_back(new johnWhitneyShader01());
     scenes.push_back(new anastasisRileyScene());
     scenes.push_back(new loloWhitney());
@@ -95,6 +94,7 @@ void sceneManager::setup(){
     scenes.push_back(new alexGifPaletteDitherMenkman());
     scenes.push_back(new yeseulMenkmanInstitution());
     scenes.push_back(new yeseulCooperMessages());
+    scenes.push_back(new yeseulWhitneyScene());
     scenes.push_back(new yosukeJohnWhitneyMatrix());
     scenes.push_back(new mgsCooperSymbols());
     scenes.push_back(new mgsRileyDiamonds());

@@ -26,5 +26,5 @@ public:
     float purpleMove = 0;
     int margin = 150;
     
-    ofParameter<float> redTextSpeed, greenTextSpeed, purpleTextSpeed;
+    ofParameter<float> redTextSpeed, greenTextSpeed, purpleTextSpeed, rotation;
 };
