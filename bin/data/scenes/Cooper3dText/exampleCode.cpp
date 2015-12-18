@@ -19,12 +19,13 @@ void setup(){
     }
 }
 void draw(){
-    if(3dTexts[currentText].getNumberOfWords() * [[Pause Duration]] < getElapsedTime - lastTextTime){
+    if(3dTexts[currentText].getNumberOfWords() * [[Pause Duration]]
+       < getElapsedTime - lastTextTime){
         camera.tweenToLookAt(3dTexts[currentText],
-                             [[Tween Duration]],//transition duration
+                             [[Tween Duration]],
                              easeInOut,
                              EXPONENTIAL_EASING);
-        currentText = wrap(currentText+1, 0, 3dTexts.size());//nextText
+        currentText = wrap(currentText+1, 0, 3dTexts.size());
         lastTextTime = getElapsedTime;
     }
     camera.begin();

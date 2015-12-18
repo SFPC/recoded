@@ -1,15 +1,17 @@
-ofPushMatrix();
+drawParticles() {
+  // draw particles for the background and make the particles spin
+  for (int r=0; r<width; r+=1) {
+    ofRotate([[spinSpeed]]*sin(r)*elapsedTime);
+    for (int a=0; a<20; a+=1) {
+      ofRotate(360/20);
+      ofDrawCircle(0, r*10, 1);
+    }
+  }
+}
 
-ofTranslate(x, y);
-ofRotate([[angle]]);
-
-ofColor c = ofColor::fromHsb([[color]], 255, 255);
-ofSetColor(c);
-ofFill();
-
-for (int i=0; i<21*(ceil(numberOfPattern/1.7)); i++){
-  for (int j=0; j<120/([[number of pattern]]; j+=[[number of pattern]]){
-    ofRotate(PI/[[number of pattern]]*2);
-    ofDrawCircle(j*5, j*5, 5/[[number of pattern]]);
+drawDiffusion() {
+  // draw an expanding circle particles every [[diffusionInterval]] seconds
+  if ([[diffusionInterval]] <= elapsedTime - lastDiffusionTime) {
+    diffusion.push_back(circlesDiffusion(elapsedTime, [[diffusionSize]]));
   }
 }

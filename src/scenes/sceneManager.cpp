@@ -55,7 +55,7 @@
 #include "olegVeraV.h"
 #include "sarahgpRileyCircle.h"
 #include "mwalczykVeraSquares.h"
-
+//-----------------------------------------------------------------------------------
 void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
@@ -111,6 +111,19 @@ void sceneManager::setup(){
     // Not using
     // scenes.push_back(new chrisMurielCooper());
     
+    gui.setup("SFPC_d4n", "SFPC_d4n_general_settings.xml");
+    gui.add(bAutoPlay.set("Auto Play on scene change", true));
+    
+#ifdef USE_SCENE_TRANSITIONS
+    gui.add(sceneTweenDuration.set("scene tween duration", 2000, 0, 5000));
+    gui.add(codeTweenDuration.set("code tween duration", 2000, 0, 5000));
+#endif
+    
+    gui.loadFromFile("SFPC_d4n_general_settings.xml");
+    gui.setPosition(ofGetWidth() - gui.getShape().width-20, ofGetHeight() - gui.getShape().height -20);
+    
+
+    
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
     //  transitionFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB32F_ARB);
@@ -122,6 +135,8 @@ void sceneManager::setup(){
 
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setup(0);
+    ofAddListener(sync.player.playE, this, &sceneManager::startPlaying);
+    ofAddListener(sync.recorder.recEndE, this, &sceneManager::recordingEnd);
 #endif
     
 #ifdef USE_EXTERNAL_SOUNDS
@@ -179,7 +194,7 @@ void sceneManager::setup(){
     TM.loadSounds();
 #endif
 }
-
+//-----------------------------------------------------------------------------------
 void sceneManager::startScene(int whichScene){
     scenes[currentScene]->reset();
     TM.setup( (scenes[currentScene]), 7.5);
@@ -191,10 +206,41 @@ void sceneManager::startScene(int whichScene){
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setSyncGroup(scenes[currentScene]->parameters, true);
     sync.enableMidi();
+    if (bAutoPlay) {
+        startPlaying();
+    }
 #endif
 }
+#ifdef USE_MIDI_PARAM_SYNC
+//-----------------------------------------------------------------------------------
+void sceneManager::recordingStart(){}
+//-----------------------------------------------------------------------------------
+void sceneManager::recordingEnd(){
+    cout << __PRETTY_FUNCTION__ << endl;
+    if (sync.recorder.isRecording()) {
+        sync.recorder.stop();
+    }
+    if (sync.recorder.recData.size()) {
+        scenes[currentScene]->setRecData(sync.recorder.recData);
+        sync.recorder.recData.clear();
+    }
 
+}
+//-----------------------------------------------------------------------------------
+void sceneManager::startPlaying(){
+    cout << __PRETTY_FUNCTION__ << endl;
+    if(scenes[currentScene]->hasRecData()){
+        sync.player.setData(scenes[currentScene]->getRecData());
+        sync.player.play();
+    }
+}
+//-----------------------------------------------------------------------------------
+void sceneManager::stopPlaying(){
+    sync.player.stop();
+}
+#endif
 
+//-----------------------------------------------------------------------------------
 void sceneManager::update(){
 
     TM.energyDecayRate = codeEnergyDecayRate;
@@ -260,7 +306,7 @@ void sceneManager::update(){
     
     
 }
-
+//-----------------------------------------------------------------------------------
 void sceneManager::draw(){
     codeFbo.begin();
     ofSetColor(255,255,255);
@@ -498,6 +544,8 @@ void sceneManager::draw(){
     panel->draw();
     codeControls.draw();
     
+    gui.draw();
+    
     
     // let's draw some info!
     
@@ -508,9 +556,24 @@ void sceneManager::draw(){
                        "\t\t(" + scenes[currentScene]->author  + ", " +
                        scenes[currentScene]->originalArtist + ")",
                        20, VISUALS_HEIGHT + 50);
-}
 
+    
+    string str = "Recorded events: " + ofToString(sync.recorder.getData().size())+"\n";
+    str += "Is Recording: " + (string)(sync.recorder.isRecording()?"TRUE":"FALSE")+"\n";
+    str += "Play events: " + ofToString(sync.player.data.size())+"\n";
+    str += "Is Playing: " + (string)(sync.player.bPlaying?"TRUE":"FALSE")+"\n";
+    str += "Current Scene players: " + ofToString(scenes[currentScene]->recData.size());
+    
+    ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
+    
+    
+}
+//-----------------------------------------------------------------------------------
 void sceneManager::nextScene(bool forward){
+#ifdef USE_MIDI_PARAM_SYNC
+    recordingEnd();
+#endif
+
     if (forward){
         currentScene ++;
         currentScene %= scenes.size();
@@ -520,7 +583,7 @@ void sceneManager::nextScene(bool forward){
             currentScene = scenes.size() - 1;
         }
     }
-
+    
 #ifdef TYPE_ANIMATION
     shouldDrawScene = false;
 #endif
@@ -543,15 +606,15 @@ void sceneManager::nextScene(bool forward){
     
     panel->setPosition(520+504+20, 20);
 };
-
+//-----------------------------------------------------------------------------------
 void sceneManager::advanceScene(){
     nextScene(true);
 };
-
+//-----------------------------------------------------------------------------------
 void sceneManager::regressScene(){
     nextScene(false);
 };
-
+//-----------------------------------------------------------------------------------
 void sceneManager::screenGrab() {
     string path = "screengrabs/";
     ofImage sceneImg;
@@ -564,3 +627,4 @@ void sceneManager::screenGrab() {
     codeImg.save(path+ofGetTimestampString()+"_code.png");
     
 }
+//-----------------------------------------------------------------------------------

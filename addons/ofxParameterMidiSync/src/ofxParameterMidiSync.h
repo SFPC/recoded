@@ -82,8 +82,8 @@ public:
     bool isLearning(){return bLearning;}
     bool isUnlearning(){return bUnlearning;}
     
-
-    
+    ofxMidiRecorder recorder;
+    ofxMidiPlayer player;
 protected:
     void newMidiMessage(ofxMidiMessage& eventArgs);
 
@@ -102,7 +102,7 @@ protected:
     bool bIsSetup;
     bool bParameterGroupSetup;
     ofAbstractParameter * learningParameter;
-    ofxMidiRecorder recorder;
+   
     
     
     

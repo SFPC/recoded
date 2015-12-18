@@ -22,3 +22,8 @@
 // if this is defined, we will disable all sound playback inside this app, and instead send
 // OpenSoundControl messages which can be used to trigger sounds in another program (e.g. Ableton Live)
 //#define USE_EXTERNAL_SOUNDS
+
+//this is used to enable recording/playback of midi data.
+#define USE_MIDI_RECORDING
+
+#define USE_SCENE_TRANSITIONS
