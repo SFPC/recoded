@@ -3,20 +3,27 @@
 
 void yeseulWhitneyScene::setup(){
     
-    parameters.add(spinSpeed.set("spinSpeed", 5, 1, 70));
+    parameters.add(spinSpeed.set("spinSpeed", 20, 1, 70));
     parameters.add(diffusionInterval.set("diffusionInterval", 5, 5, 10));
     parameters.add(diffusionSize.set("diffusionSize", 1.5, 1, 3));
     
-    setAuthor("Yeseul Song");
-    setOriginalArtist("John Whitney");
+    lastDiffusionTime = 0;
+    
+    integratedTime = 0;
+    lastTime = 0;
+
     loadCode("yeseulWhitneyScene/exampleCode.cpp");
     
-    lastDiffusionTime = 0;
+    setAuthor("Yeseul Song");
+    setOriginalArtist("John Whitney");
+
 }
+
 
 void yeseulWhitneyScene::update(){
     
 }
+
 
 void yeseulWhitneyScene::draw(){
     
@@ -30,17 +37,26 @@ void yeseulWhitneyScene::draw(){
     
     ofPopMatrix();
     
-    
 }
+
 
 void yeseulWhitneyScene::drawPattern(){
     
     ofSetColor(255);
     ofFill();
+     
+    float now = getElapsedTimef();
+    if (lastTime == 0) {
+        lastTime = now;
+    }
+    float dt = now - lastTime;
+    lastTime = now;
     
-    float y = getElapsedTimef();
+    integratedTime += spinSpeed * dt;
+    float k = integratedTime;
+
     for (int r=0; r<35; r+=1) {
-        ofRotate(y*spinSpeed*sin(r));
+        ofRotate(k*sin(r));
         for (int a=0; a<20; a+=1) {
             ofRotate(360/20);
             ofDrawCircle(0, r*10, 1);
@@ -54,8 +70,7 @@ void yeseulWhitneyScene::drawPattern(){
 void yeseulWhitneyScene::diffusion() {
     
     float t = getElapsedTimef();
-    cout << t <<endl;
-    cout << diffusionInterval << " " << lastDiffusionTime<< endl;
+
     if (lastDiffusionTime == 0 || diffusionInterval <= t - lastDiffusionTime) {
         diffs.push_back(circlesDiffusion(t, diffusionSize));
         cout << "add difff" << diffusionInterval << endl;
@@ -74,3 +89,10 @@ void yeseulWhitneyScene::diffusion() {
         diffs[i].draw(t);
     }
 }
+
+void yeseulWhitneyScene::reset(){
+    resetTiming();
+    lastTime = 0;
+    integratedTime = 0;
+}
+
