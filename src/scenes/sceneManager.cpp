@@ -113,7 +113,13 @@ void sceneManager::setup(){
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
-    
+    //  transitionFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB32F_ARB);
+    transitionFbo.begin();
+    ofSetColor(0,255);
+    ofDrawRectangle(0, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
+    transitionFbo.end();
+    transitionFbo.draw(0,0);
+
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setup(0);
 #endif
@@ -186,8 +192,11 @@ void sceneManager::update(){
 #ifdef TYPE_ANIMATION
     // this is copied from below...  should be abstracted out.
     float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
-    if (pctDelay > 0.99){
-        shouldDrawScene = true;
+    if (pctDelay > 0.90){
+      shouldDrawScene = true;
+      fadingIn = true;
+    } else if (pctDelay > 2.0){
+      fadingIn = false;
     }
 #endif
 
@@ -242,11 +251,8 @@ void sceneManager::update(){
 }
 
 void sceneManager::draw(){
-    
-    ofSetColor(255,255,255);
-    
     codeFbo.begin();
-    
+    ofSetColor(255,255,255);
     float pct = (ofGetElapsedTimef() - TM.setupTime) / TM.animTime;
     
     if (pct > 1) pct = 1;
@@ -265,7 +271,7 @@ void sceneManager::draw(){
         pct += 0.5;
         
     }
-    
+  
 #ifdef USE_EXTERNAL_SOUNDS
     if (pct == 1 && !didTriggerCodeFinishedAnimatingEvent) {
         oscMessage.clear();
@@ -275,7 +281,6 @@ void sceneManager::draw(){
         didTriggerCodeFinishedAnimatingEvent = true;
     }
 #endif
-
 
     ofClear(0,0,0,255);
     vector < codeLetter > letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
@@ -370,27 +375,38 @@ void sceneManager::draw(){
     // Get rid of blended sidebars
     ofSetColor(0);
     ofDrawRectangle(CODE_X_POS-1, 0, VISUALS_WIDTH+2, VISUALS_HEIGHT);
-
     ofSetColor(255);
     codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
-    
-    if (shouldDrawScene) {
-        sceneFbo.begin();
-        ofClear(0,0,0,255);
-        ofPushStyle();
-        scenes[currentScene]->draw();
-        ofPopStyle();
-        ofClearAlpha();
-        sceneFbo.end();
+      if (shouldDrawScene) {
+          sceneFbo.begin();
+          ofClear(0,0,0,255);
+          ofPushStyle();
+          scenes[currentScene]->draw();
+          ofPopStyle();
+          if(!fadingIn){
+           ofClearAlpha();
+          }
+          sceneFbo.end();
+          // Draw twice to make the background go away
+          sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+          sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+      }
+  if(fadingIn){
+    float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
+    transitionFbo.begin();
+    ofSetColor(0, ofMap(pctDelay, 0.9, 2.0, 255, 0));
+    ofFill();
+    ofDrawRectangle(0, 0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
+    transitionFbo.end();
+    transitionFbo.draw(0,0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
 
-        // Draw twice to make the background go away
-        sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-        sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-    }
-    
+    //cout << pctDelay << endl;
+  }
+
+  
 #ifdef TYPE_ANIMATION
     if (!shouldDrawScene){
-        ofSetColor(0);
+        ofSetColor(0,1);
         ofFill();
         ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         int diff = (countLetters - (int)lettersLastFrame);
@@ -438,8 +454,6 @@ void sceneManager::draw(){
                        "\t\t(" + scenes[currentScene]->author  + ", " +
                        scenes[currentScene]->originalArtist + ")",
                        20, VISUALS_HEIGHT + 50);
-
-    
 }
 
 void sceneManager::nextScene(bool forward){

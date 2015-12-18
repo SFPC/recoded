@@ -38,11 +38,12 @@ public:
     void draw();
     
     void advanceScene();
-	void regressScene();
+	  void regressScene();
     void screenGrab();
     
     void startScene(int whichScene);
-    
+  
+    ofFbo transitionFbo;
     ofFbo sceneFbo;
     ofFbo codeFbo;
     ofxPanel * panel;
@@ -61,7 +62,7 @@ public:
     
     float maxLetterX, lastLetterY;
     
-    bool didTriggerCodeFinishedAnimatingEvent;
+    bool didTriggerCodeFinishedAnimatingEvent, fadingIn;
     
     
 #ifdef USE_MIDI_PARAM_SYNC

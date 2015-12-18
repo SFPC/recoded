@@ -33,7 +33,7 @@ void mgsMaedaTimePainter::setup(){
     bNeedsRedraw = false;
     bNeedClearScreen = false;
   ofSetCircleResolution(100);
-  frame.allocate(dimensions.width, dimensions.height);
+  frame.allocate(dimensions.width, dimensions.height, GL_RGBA32F_ARB);
   frame.begin();
   ofClear(0);
   frame.end();
