@@ -339,8 +339,13 @@ void sceneManager::draw(){
     for (int i = 0; i < letters.size() * pct; i++){
         
         
-        if (letters[i].idOfChar == -1) ofSetColor(127);
-        if (letters[i].idOfChar != -1) ofSetColor(127 + ofClamp(TM.paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
+        ofSetColor(127);
+        if (letters[i].type == CHARACTER_CODE)
+            ofSetColor(127);
+        else if (letters[i].type == CHARACTER_PARAM)
+            ofSetColor(127 + ofClamp(TM.paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
+        else if (letters[i].type == CHARACTER_COMMENT)
+            ofSetColor(93, 112, 131);
         
         string s = "";
         s += (char)(letters[i].character);

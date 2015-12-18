@@ -110,6 +110,7 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
     ofParameter < bool > boolParam;
     ofParameter < float > floatParam;
     
+    bool insideComment = false;
     for (int i = 0; i < bs->code.length(); i++){
         
         // check if this int is in our list of position...
@@ -124,10 +125,22 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
         }
         
         if (!bIsParam){
+            char nextChar = 0;
+            if (i < bs->code.length()-1) {
+                nextChar = bs->code[i+1];
+            }
+            char currChar = bs->code[i];
+
+            if (currChar == '/' && nextChar == '/') {
+                insideComment = true;
+            } else if (currChar == '\n') {
+                insideComment = false;
+            }
             
             codeLetter tempLetter;
-            tempLetter.character = bs->code[i];
+            tempLetter.character = currChar;
             tempLetter.idOfChar = -1;
+            tempLetter.type = insideComment ? CHARACTER_COMMENT : CHARACTER_CODE;
             codeLetters.push_back(tempLetter);
             
             
@@ -142,6 +155,7 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
                     codeLetter tempLetter;
                     tempLetter.character = p;
                     tempLetter.idOfChar = which;
+                    tempLetter.type = CHARACTER_PARAM;
                     codeLetters.push_back(tempLetter);
                 }
                 //output += paramsToReplace[which];
@@ -159,6 +173,7 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
                     codeLetter tempLetter;
                     tempLetter.character = p;
                     tempLetter.idOfChar = which;
+                    tempLetter.type = CHARACTER_PARAM;
                     codeLetters.push_back(tempLetter);
                 }
                 i += toSwap.length-1;
