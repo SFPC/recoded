@@ -13,7 +13,9 @@
 #define CODE_X_POS 524      // via the tech staff
 
 //if this is defined, we will wait for type animation
-//#define TYPE_ANIMATION
+#define TYPE_ANIMATION
+#define FADE_DELAY_MIN 0.8
+#define FADE_DELAY_MAX 1.0
 
 #define USE_MIDI_PARAM_SYNC
 

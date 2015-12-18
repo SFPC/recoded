@@ -4,6 +4,10 @@
 #include "ofMain.h"
 #include "baseScene.h"
 
+#define CHARACTER_CODE      -1
+#define CHARACTER_PARAM     0
+#define CHARACTER_COMMENT   1
+
 //----------------------------------------
 // typography things:
 vector < int > positionsOfSubstring(string str, string sub);
@@ -17,6 +21,7 @@ typedef struct {
 typedef struct {
     char    character;
     int     idOfChar;       // -1 = regular code, 0 = param 0, etc....
+    int     type;
 } codeLetter;
 
 

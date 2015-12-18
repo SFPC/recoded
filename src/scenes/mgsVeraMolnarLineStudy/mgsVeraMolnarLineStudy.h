@@ -5,22 +5,22 @@
 
 class MolnarPainter {
  public:
-  float x, y, startx, starty, lastx, lasty, angle, speed, thickness;
+  float xOffset, yOffset, x, y, startx, starty, lastx, lasty, angle, speed, thickness;
   bool connectedLines, invertColor, useColor;
   ofColor lineColor;
-  int size, space, lineMax, lineCounter,shiftCounter,rowCounter, gridWidth, gridHeight, backgroundCounter;
+  float size, space, lineMax, lineCounter,shiftCounter,rowCounter, gridWidth, gridHeight;
   ofColor stroke;
   
   void update() {
     glLineWidth(thickness);
     if(lineCounter < lineMax){
-      int newx = space+ofRandom(startx+shiftCounter*(size+space), startx+shiftCounter*(size+space)+size);
-      int newy = space+ofRandom(starty+rowCounter*(size+space), starty+rowCounter*(size+space)+size);
+      float newx = space+ofRandom(startx+shiftCounter*(size+space), startx+shiftCounter*(size+space)+size);
+      float newy = space+ofRandom(starty+rowCounter*(size+space), starty+rowCounter*(size+space)+size);
       if(!useColor){
         if(connectedLines){
           ofSetColor(255);
         } else {
-          ofSetColor(backgroundCounter);
+          ofSetColor(255);
         }
       } else {
         ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
@@ -32,13 +32,12 @@ class MolnarPainter {
       lineCounter++;
     } else {
       lineCounter = 0;
-      if(shiftCounter < gridWidth) {
+      if(shiftCounter < floor(gridWidth)-1) {
         shiftCounter++;
         lastx = x;
         lasty = y;
-        x = startx+shiftCounter*(size+space);
-        y = starty+rowCounter*(size+space);
-        backgroundCounter = 0;
+        x = xOffset+startx+shiftCounter*(size+space);
+        y = yOffset+starty+rowCounter*(size+space);
         if(connectedLines){
           if(!useColor){
             ofSetColor(255);
@@ -48,16 +47,14 @@ class MolnarPainter {
           ofNoFill();
           ofDrawLine(lastx, lasty, x, y);
         }
-        backgroundCounter = 0;
       } else {
-        if(rowCounter < gridHeight){
+        if(rowCounter < floor(gridHeight)-1){
           shiftCounter = 0;
           rowCounter++;
           lastx = x;
           lasty = y;
-          x = startx+shiftCounter*(size+space);
-          y = starty+rowCounter*(size+space);
-          backgroundCounter = 0;
+          x = xOffset+startx+shiftCounter*(size+space);
+          y = yOffset+starty+rowCounter*(size+space);
           if(connectedLines){
             if(useColor){
               ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
@@ -99,11 +96,10 @@ public:
     void redrawF(float& i);
     void drawScene();
     void freshPaint();
+    void clearScreen(bool& i);
     
     ofFbo frame;
     ofParameter<int> numOfLines;
     ofParameter<float> squareSize, gridSpace, lineWidth;
-    ofParameter<bool> connectedLinesP, invertedColor, useColorP, animated;
-    
-    bool bNeedsRedraw, bNeedsFreshPaint, bNeedsClear;
+    ofParameter<bool> connectedLinesP, useColorP, animated, clearScreenBool;
 };

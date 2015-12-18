@@ -76,7 +76,6 @@ void sceneManager::setup(){
     scenes.push_back(new veraAnimatedScene() );
     scenes.push_back(new robbyRileyScene() );
     scenes.push_back(new robbyMenkmanScene());
-    scenes.push_back(new yeseulWhitneyScene() );
     scenes.push_back(new johnWhitneyShader01());
     scenes.push_back(new anastasisRileyScene());
     scenes.push_back(new loloWhitney());
@@ -95,6 +94,7 @@ void sceneManager::setup(){
     scenes.push_back(new alexGifPaletteDitherMenkman());
     scenes.push_back(new yeseulMenkmanInstitution());
     scenes.push_back(new yeseulCooperMessages());
+    scenes.push_back(new yeseulWhitneyScene());
     scenes.push_back(new yosukeJohnWhitneyMatrix());
     scenes.push_back(new mgsCooperSymbols());
     scenes.push_back(new mgsRileyDiamonds());
@@ -126,7 +126,13 @@ void sceneManager::setup(){
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
-    
+    //  transitionFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB32F_ARB);
+    transitionFbo.begin();
+    ofSetColor(0,255);
+    ofDrawRectangle(0, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
+    transitionFbo.end();
+    transitionFbo.draw(0,0);
+
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setup(0);
     ofAddListener(sync.player.playE, this, &sceneManager::startPlaying);
@@ -230,10 +236,13 @@ void sceneManager::stopPlaying(){
 void sceneManager::update(){
 
 #ifdef TYPE_ANIMATION
-    // this is copied from below...  should be abstracted out.
-    float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
-    if (pctDelay > 0.99){
-        shouldDrawScene = true;
+    pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
+
+    if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
+      shouldDrawScene = true;
+      fadingIn = true;
+    } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
+      fadingIn = false;
     }
 #endif
 
@@ -288,11 +297,8 @@ void sceneManager::update(){
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::draw(){
-    
-    ofSetColor(255,255,255);
-    
     codeFbo.begin();
-    
+    ofSetColor(255,255,255);
     float pct = (ofGetElapsedTimef() - TM.setupTime) / TM.animTime;
     
     if (pct > 1) pct = 1;
@@ -311,7 +317,7 @@ void sceneManager::draw(){
         pct += 0.5;
         
     }
-    
+  
 #ifdef USE_EXTERNAL_SOUNDS
     if (pct == 1 && !didTriggerCodeFinishedAnimatingEvent) {
         oscMessage.clear();
@@ -321,7 +327,6 @@ void sceneManager::draw(){
         didTriggerCodeFinishedAnimatingEvent = true;
     }
 #endif
-
 
     ofClear(0,0,0,255);
     vector < codeLetter > letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
@@ -371,8 +376,10 @@ void sceneManager::draw(){
     int maxLinesWithScroll = (VISUALS_HEIGHT-10*2) / 13;
     int y;
     
-    if (nLines <= maxLinesWithScroll) {
+    if (nLines <= maxLinesWithoutScroll) {
         y = 60 + 13;
+    } else if (nLines <= maxLinesWithScroll) {
+        y = 60 + 13 + (maxLinesWithoutScroll - nLines + 1) * 13;
     } else {
         y = 10 + 13;
     }
@@ -380,8 +387,13 @@ void sceneManager::draw(){
     for (int i = 0; i < letters.size() * pct; i++){
         
         
-        if (letters[i].idOfChar == -1) ofSetColor(127);
-        if (letters[i].idOfChar != -1) ofSetColor(127 + ofClamp(TM.paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
+        ofSetColor(127);
+        if (letters[i].type == CHARACTER_CODE)
+            ofSetColor(127);
+        else if (letters[i].type == CHARACTER_PARAM)
+            ofSetColor(127 + ofClamp(TM.paramChangedEnergy[letters[i].idOfChar], 0, 1) * 127);
+        else if (letters[i].type == CHARACTER_COMMENT)
+            ofSetColor(93, 112, 131);
         
         string s = "";
         s += (char)(letters[i].character);
@@ -416,27 +428,37 @@ void sceneManager::draw(){
     // Get rid of blended sidebars
     ofSetColor(0);
     ofDrawRectangle(CODE_X_POS-1, 0, VISUALS_WIDTH+2, VISUALS_HEIGHT);
-
     ofSetColor(255);
     codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
-    
     if (shouldDrawScene) {
         sceneFbo.begin();
         ofClear(0,0,0,255);
         ofPushStyle();
         scenes[currentScene]->draw();
         ofPopStyle();
-        ofClearAlpha();
         sceneFbo.end();
 
         // Draw twice to make the background go away
         sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+
+        if (fadingIn) {
+            float fadeOpacityRaw = ofMap(pctDelay, FADE_DELAY_MIN, FADE_DELAY_MAX, 0, PI);
+            float fadeOpacityShaped = ofMap(cos(fadeOpacityRaw), 0, 1, 0, 255);
+            ofSetColor(0, fadeOpacityShaped);
+            ofFill();
+            ofDrawRectangle(0, 0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
+        }
+    } else {
+        ofSetColor(0);
+        ofFill();
+        ofDrawRectangle(0, 0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
     }
-    
+
+  
 #ifdef TYPE_ANIMATION
     if (!shouldDrawScene){
-        ofSetColor(0);
+        ofSetColor(0,1);
         ofFill();
         ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         int diff = (countLetters - (int)lettersLastFrame);

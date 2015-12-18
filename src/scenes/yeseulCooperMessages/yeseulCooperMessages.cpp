@@ -3,6 +3,9 @@
 
 void yeseulCooperMessages::setup(){
     
+    setAuthor("Yeseul Song");
+    setOriginalArtist("Muriel Cooper");
+
     texture.load("scenes/yeseulCooperMessages/texture.png");
     
     font.load("Helvetica Neue", 50, true,true,true);
@@ -11,9 +14,10 @@ void yeseulCooperMessages::setup(){
     text1 = "MEANS";
     text2 = "MESSAGES";
     
-    parameters.add(greenTextSpeed.set("greenTextSpeed", 7, 3, 10));
-    parameters.add(redTextSpeed.set("redTextSpeed", 7, 3, 10));
-    parameters.add(purpleTextSpeed.set("purpleTextSpeed", 7, 3, 10));
+    parameters.add(greenTextSpeed.set("greenTextSpeed", 20, 15, 50));
+    parameters.add(redTextSpeed.set("redTextSpeed", 20, 15, 50));
+    parameters.add(purpleTextSpeed.set("purpleTextSpeed", 20, 15, 50));
+    parameters.add(rotation.set("rotation", 0, 0, 360));
     
     loadCode("scenes/yeseulCooperMessages/exampleCode.cpp");
     
@@ -95,7 +99,7 @@ void yeseulCooperMessages::resetPosition() {
 
 void yeseulCooperMessages::animateText(ofRectangle rec1, ofRectangle rec2) {
     
-    ofRotate(315);
+    ofRotate(315+rotation);
     ofSetColor(ofColor::fromHsb(7, 255, 100));
     ofFill();
     for (int n = 0; n < 3; n++) {

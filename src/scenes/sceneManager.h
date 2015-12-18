@@ -42,11 +42,12 @@ public:
     void draw();
     
     void advanceScene();
-	void regressScene();
+	  void regressScene();
     void screenGrab();
     
     void startScene(int whichScene);
-    
+  
+    ofFbo transitionFbo;
     ofFbo sceneFbo;
     ofFbo codeFbo;
     ofxPanel * panel;
@@ -61,11 +62,13 @@ public:
     
     int lettersLastFrame;
     long long lastPlayTime;
+
+    float pctDelay;
     bool shouldDrawScene;
     
     float maxLetterX, lastLetterY;
     
-    bool didTriggerCodeFinishedAnimatingEvent;
+    bool didTriggerCodeFinishedAnimatingEvent, fadingIn;
     
     ofxPanel gui;
     ofParameter<bool>bAutoPlay;
