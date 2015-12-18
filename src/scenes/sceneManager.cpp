@@ -110,8 +110,10 @@ void sceneManager::setup(){
     
     // Not using
     // scenes.push_back(new chrisMurielCooper());
-    
+    gui.setDefaultWidth(300);    
     gui.setup("SFPC_d4n", "SFPC_d4n_general_settings.xml");
+
+
     gui.add(bAutoPlay.set("Auto Play on scene change", true));
     
 #ifdef USE_SCENE_TRANSITIONS
@@ -120,7 +122,8 @@ void sceneManager::setup(){
 #endif
     
     gui.loadFromFile("SFPC_d4n_general_settings.xml");
-    gui.setWidthElements(300);
+//    gui.setWidthElements(300);
+//    gui.setDefaultWidth(300);
     gui.setPosition(ofGetWidth() - gui.getShape().width-20,  ofGetHeight() - gui.getShape().getHeight() - 100);
     
     
