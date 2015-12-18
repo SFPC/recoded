@@ -120,9 +120,9 @@ void sceneManager::setup(){
 #endif
     
     gui.loadFromFile("SFPC_d4n_general_settings.xml");
-    gui.setPosition(ofGetWidth() - gui.getShape().width-20, ofGetHeight() - gui.getShape().height -20);
+    gui.setWidthElements(300);
+    gui.setPosition(ofGetWidth() - gui.getShape().width-20,  ofGetHeight() - gui.getShape().getHeight() - 100);
     
-
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
@@ -208,7 +208,7 @@ void sceneManager::startScene(int whichScene){
 void sceneManager::recordingStart(){}
 //-----------------------------------------------------------------------------------
 void sceneManager::recordingEnd(){
-    cout << __PRETTY_FUNCTION__ << endl;
+   // cout << __PRETTY_FUNCTION__ << endl;
     if (sync.recorder.isRecording()) {
         sync.recorder.stop();
     }
@@ -220,10 +220,12 @@ void sceneManager::recordingEnd(){
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::startPlaying(){
-    cout << __PRETTY_FUNCTION__ << endl;
+  //  cout << __PRETTY_FUNCTION__ << endl;
     if(scenes[currentScene]->hasRecData()){
         sync.player.setData(scenes[currentScene]->getRecData());
         sync.player.play();
+    }else{
+        sync.player.clear();
     }
 }
 //-----------------------------------------------------------------------------------
