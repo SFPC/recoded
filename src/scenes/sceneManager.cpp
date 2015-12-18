@@ -110,19 +110,22 @@ void sceneManager::setup(){
     
     // Not using
     // scenes.push_back(new chrisMurielCooper());
-    
+    gui.setDefaultWidth(300);    
     gui.setup("SFPC_d4n", "SFPC_d4n_general_settings.xml");
+
+
     gui.add(bAutoPlay.set("Auto Play on scene change", true));
-    
+    gui.add(bSceneWaitForCode.set("Scene wait for code", true));
 #ifdef USE_SCENE_TRANSITIONS
     gui.add(sceneTweenDuration.set("scene tween duration", 2000, 0, 5000));
     gui.add(codeTweenDuration.set("code tween duration", 2000, 0, 5000));
 #endif
     
     gui.loadFromFile("SFPC_d4n_general_settings.xml");
-    gui.setPosition(ofGetWidth() - gui.getShape().width-20, ofGetHeight() - gui.getShape().height -20);
+//    gui.setWidthElements(300);
+//    gui.setDefaultWidth(300);
+    gui.setPosition(ofGetWidth() - gui.getShape().width-20,  ofGetHeight() - gui.getShape().getHeight() - 100);
     
-
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
@@ -216,7 +219,7 @@ void sceneManager::startScene(int whichScene){
 void sceneManager::recordingStart(){}
 //-----------------------------------------------------------------------------------
 void sceneManager::recordingEnd(){
-    cout << __PRETTY_FUNCTION__ << endl;
+   // cout << __PRETTY_FUNCTION__ << endl;
     if (sync.recorder.isRecording()) {
         sync.recorder.stop();
     }
@@ -228,10 +231,12 @@ void sceneManager::recordingEnd(){
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::startPlaying(){
-    cout << __PRETTY_FUNCTION__ << endl;
+  //  cout << __PRETTY_FUNCTION__ << endl;
     if(scenes[currentScene]->hasRecData()){
         sync.player.setData(scenes[currentScene]->getRecData());
         sync.player.play();
+    }else{
+        sync.player.clear();
     }
 }
 //-----------------------------------------------------------------------------------
@@ -248,12 +253,15 @@ void sceneManager::update(){
 
 #ifdef TYPE_ANIMATION
     pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime);
-
-    if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
-      shouldDrawScene = true;
-      fadingIn = true;
-    } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
-      fadingIn = false;
+    if (bSceneWaitForCode) {
+        if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
+          shouldDrawScene = true;
+          fadingIn = true;
+        } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
+          fadingIn = false;
+        }
+    } else {
+        shouldDrawScene = true;
     }
 #endif
 

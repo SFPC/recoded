@@ -104,11 +104,14 @@ void ofxMidiPlayer::stop(){
 }
 // -----------------------------------------------------------------------------
 void ofxMidiPlayer::setData(const vector<ofxMidiRecordingEvent>& data){
-    stop();
-    this->data.clear();
+    clear();
     this->data = data;
 }
-
+// -----------------------------------------------------------------------------
+void ofxMidiPlayer::clear(){
+    stop();
+    this->data.clear();
+}
 // -----------------------------------------------------------------------------
 void ofxMidiPlayer::newMidiMessage(ofxMidiMessage& msg) {
     if (msg.status == MIDI_CONTROL_CHANGE) {

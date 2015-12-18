@@ -76,6 +76,8 @@ public:
     
     ofTrueTypeFont font;
     
+    void reset();
+    
     ofCamera cam;
     int currentSurface, prevSurface;
     

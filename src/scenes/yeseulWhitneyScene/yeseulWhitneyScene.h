@@ -40,14 +40,16 @@ public:
     void draw();
     void drawPattern();
     void diffusion();
-    void reset(){
-        resetTiming();
-    }
+    void reset();
     
     int columnCount, rowCount;
     
     ofParameter<float> diffusionInterval, diffusionSize, spinSpeed;
     vector<circlesDiffusion> diffs;
+
     float lastDiffusionTime;
+    float integratedTime;
+    float lastTime;
+
     
 };
