@@ -31,10 +31,12 @@ public:
     void update();
     void draw();
 	
+    float scale;
+    
 	ofParameter<float> cubeARotationPercent;
 	ofParameter<float> cubeBRotationDiffPercent;
 	ofParameter<float> cubeOthersRotationDiffPercent;
-	ofParameter<float> scale;
+	ofParameter<float> scaleParam;
 	ofParameter<bool> whiteBackground;
 	ofParameter<float> rearLineOpacity;
 	ofParameter<float> spacing;
