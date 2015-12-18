@@ -4,11 +4,14 @@
 void johnWhitneyShader02::setup(){
     
     // setup pramaters
-    time.set("time", 0.18, 0, 1);
-    parameters.add(time);
+    speed.set("speed", 0.18, 0, 2.5);
+    parameters.add(speed);
     
-    thickness.set("thickness", 0.26, 0.0001, 0.4);
+    thickness.set("thickness", 0.26, 0.001, 0.6);
     parameters.add(thickness);
+    
+    integratedTime = 0;
+    lastTime = 0;
     
     shader.load("scenes/johnWhitneyShader02/shader");
     
@@ -18,10 +21,20 @@ void johnWhitneyShader02::setup(){
 }
 
 void johnWhitneyShader02::update() {
+    float now = getElapsedTimef();
+    if (lastTime == 0) {
+        lastTime = now;
+    }
+    float dt = now - lastTime;
+    lastTime = now;
+    
+    integratedTime += speed * dt;
 }
 
 void johnWhitneyShader02::draw() {
     float resolution[] = { dimensions.width, dimensions.height };
+    
+    float time = ofMap(sin(integratedTime / 2.0), -1, 1, 0, 0.55);
     
     ofFill();
     shader.begin();
