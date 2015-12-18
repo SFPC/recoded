@@ -62,6 +62,7 @@ public:
     void update(ofEventArgs& e);
     void play();
     void stop();
+    void clear();
     void setData(const vector<ofxMidiRecordingEvent>& data);
     vector<ofxMidiRecordingEvent> data;
     ofxMidiListener* listener;
