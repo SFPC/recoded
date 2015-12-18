@@ -19,6 +19,11 @@ void baseScene::loadCode( string fileName ){
         code += "\n";
     }
 
+    // Remove trailing newlines and spaces
+    code.erase(std::find_if(code.rbegin(),
+                            code.rend(),
+                            std::not1(std::ptr_fun<int, int>(std::isspace))).base(),
+               code.end());
 }
 
 void baseScene::setAuthor(string newAuthor) {

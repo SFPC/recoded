@@ -58,7 +58,7 @@ public:
     int lettersLastFrame;
     long long lastPlayTime;
     
-    float lastLetterHeight;
+    float maxLetterX, lastLetterY;
     
     bool didTriggerCodeFinishedAnimatingEvent;
     
