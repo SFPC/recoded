@@ -20,6 +20,11 @@ void johnWhitneyShader02::setup(){
     loadCode("scenes/johnWhitneyShader02/exampleCode.cpp");
 }
 
+void johnWhitneyShader02::reset() {
+    lastTime = 0;
+    integratedTime = 0;
+}
+
 void johnWhitneyShader02::update() {
     float now = getElapsedTimef();
     if (lastTime == 0) {

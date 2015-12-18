@@ -10,7 +10,8 @@ public:
     void setup();
     void update();
     void draw();
-    
+    void reset();
+
     ofShader shader;
     ofFbo fbo;
     

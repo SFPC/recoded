@@ -17,6 +17,7 @@ public:
     void setup();
     void update();
     void draw();
+    void reset();
     
     ofParameter<float> triScale, noiseScale, pStraight, animSpeed;
 

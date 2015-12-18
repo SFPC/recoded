@@ -60,6 +60,11 @@ void chrisRileyCascando::setup(){
     loadCode("scenes/chrisRileyCascando/exampleCode.cpp");
 }
 
+void chrisRileyCascando::reset() {
+    lastTime = 0;
+    integratedTime = 0;
+}
+
 void chrisRileyCascando::update(){
     float now = getElapsedTimef();
     if (lastTime == 0) {

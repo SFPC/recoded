@@ -38,6 +38,7 @@ void memoAktenScene::setup(){
 }
 
 void memoAktenScene::reset() {
+    lastTime = 0;
     progress = 0;
 }
 
