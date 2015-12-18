@@ -53,6 +53,11 @@ void Cooper3dText::setup(){
 
 }
 //--------------------------------------------------------------
+void Cooper3dText::reset(){
+    currentSurface = surfaces.size()-1;
+    nextSurface();
+}
+//--------------------------------------------------------------
 void Cooper3dText::setupSurfaces(){
     
     string text;// = "SCHOOL FOR POETIC COMPUTATION";
