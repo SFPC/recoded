@@ -115,7 +115,7 @@ void sceneManager::setup(){
 
 
     gui.add(bAutoPlay.set("Auto Play on scene change", true));
-    
+    gui.add(bSceneWaitForCode.set("Scene wait for code", true));
 #ifdef USE_SCENE_TRANSITIONS
     gui.add(sceneTweenDuration.set("scene tween duration", 2000, 0, 5000));
     gui.add(codeTweenDuration.set("code tween duration", 2000, 0, 5000));
@@ -253,12 +253,15 @@ void sceneManager::update(){
 
 #ifdef TYPE_ANIMATION
     pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
-
+    if (bSceneWaitForCode) {
     if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
       shouldDrawScene = true;
       fadingIn = true;
     } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
       fadingIn = false;
+    }
+    }else{
+        shouldDrawScene = true;
     }
 #endif
 
