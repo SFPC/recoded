@@ -18,6 +18,10 @@
 #define PORT 12345 // listen on port 12345
 #endif
 
+#ifdef USE_SCENE_TRANSITIONS
+#include "ofxTween.h"
+#endif
+
 
 // I take care of scenes.
 
@@ -63,15 +67,27 @@ public:
     
     bool didTriggerCodeFinishedAnimatingEvent;
     
+    ofxPanel gui;
+    ofParameter<bool>bAutoPlay;
     
 #ifdef USE_MIDI_PARAM_SYNC
     ofxParameterMidiSync sync;
+    void recordingStart();
+    void recordingEnd();
+    void startPlaying();
+    void stopPlaying();
 #endif
     
 #ifdef USE_EXTERNAL_SOUNDS
     ofxOscSender oscSender;
     ofxOscMessage oscMessage;
 #endif
-    
 
+#ifdef USE_SCENE_TRANSITIONS
+    ofxTween sceneTween, codeTween;
+    ofxEasingExpo easing;
+    void tweenEnd(int& i);
+    ofParameter<int> sceneTweenDuration, codeTweenDuration;
+#endif
+    
 };

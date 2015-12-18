@@ -24,8 +24,25 @@ void baseScene::loadCode( string fileName ){
                             code.rend(),
                             std::not1(std::ptr_fun<int, int>(std::isspace))).base(),
                code.end());
+    dataPath = ofFilePath::removeTrailingSlash(ofFilePath::getEnclosingDirectory(fileName));
+    if (ofFile(dataPath+"/paramsRecording.xml").exists()) {
+        loadMidi(recData, dataPath+"/paramsRecording.xml");
+    }
 }
-
+bool baseScene::hasRecData(){
+    return recData.size() != 0;
+}
+void baseScene::setRecData(const vector<ofxMidiRecordingEvent>& data){
+    recData.clear();
+    recData = data;
+    cout << "setRecData: " << recData.size() << "  " << dataPath << endl;
+    //if (!dataPath.empty()) {
+        saveMidi(recData, dataPath+"/paramsRecording.xml");
+    //}
+}
+const vector<ofxMidiRecordingEvent>& baseScene::getRecData(){
+    return recData;
+}
 void baseScene::setAuthor(string newAuthor) {
     author = newAuthor;
 }

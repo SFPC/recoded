@@ -139,7 +139,7 @@ void ofxParameterMidiSync::setup(int portNum){
     bIsSetup = true;
     this->portNum = portNum;
     enableMidi(true);
-    recorder.setup(this);
+    player.setup(this);
 }
 //-----------------------------------------------------
 void ofxParameterMidiSync::setSyncGroup( ofAbstractParameter & parameters, bool bAutoLink){
@@ -178,10 +178,12 @@ void ofxParameterMidiSync::enableMidi(bool b){
                 midiIn.addListener(this);
                 ofAddListener(syncGroup.parameterChangedE(),this,&ofxParameterMidiSync::parameterChanged);
                 midiIn.addListener(&recorder);
+                midiIn.addListener(&player);
             }else{
                 midiIn.closePort();
                 midiIn.removeListener(this);
                 midiIn.removeListener(&recorder);
+                midiIn.removeListener(&player);
                 ofRemoveListener(syncGroup.parameterChangedE(),this,&ofxParameterMidiSync::parameterChanged);
             }
             bMidiEnabled = b;
