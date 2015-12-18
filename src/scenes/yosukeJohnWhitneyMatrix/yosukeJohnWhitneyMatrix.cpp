@@ -10,7 +10,7 @@ void yosukeJohnWhitneyMatrix::setup(){
     parameters.add(numOfBall);
     radius.set("rotation-radius", 150, 1, 1000 );
     parameters.add(radius);
-    speed.set("speed", 1.0, 0.0, 10.0 );
+    speed.set("speed", 0.1, 0.0, 1.0 );
     parameters.add(speed);
     ballRadius.set("ball-radius", 4, 0, 10);
     parameters.add(ballRadius);
@@ -52,18 +52,33 @@ void yosukeJohnWhitneyMatrix::setup(){
         }
     }
 
-    
+    lastTime = 0;
+    integratedTime = 0;
+}
+
+void yosukeJohnWhitneyMatrix::reset() {
+    lastTime = 0;
+    integratedTime = 0;
 }
 
 void yosukeJohnWhitneyMatrix::update(){
-    t = ofGetElapsedTimef()  / 10.0;
+    float now = getElapsedTimef();
+    if (lastTime == 0) {
+        lastTime = now;
+    }
+    float dt = now - lastTime;
+    lastTime = now;
+    
+    integratedTime += dt * speed;
+    
+    t = integratedTime;
     for (int j=0; j<numOfGroup; j++) {
         for (int i = 0; i < numOfBall; i++) {
             angleofangle[j][i] = - (i-1)*PI/20; //the argument of sin
             if(j==0 || j==1){
-                angle[j][i] = speed * (5.0*sin((t-0.1) * PI/2.0 - PI/2.0) + 3.0*angleofangle[j][i]);
+                angle[j][i] = (5.0*sin((t-0.1) * PI/2.0 - PI/2.0) + 3.0*angleofangle[j][i]);
             } else {
-                angle[j][i] = speed * (5.0*sin((t-0.1) * PI/2.0 - PI/2.0) + 3.0*angleofangle[j][i]);
+                angle[j][i] = (5.0*sin((t-0.1) * PI/2.0 - PI/2.0) + 3.0*angleofangle[j][i]);
             }
         }
     }

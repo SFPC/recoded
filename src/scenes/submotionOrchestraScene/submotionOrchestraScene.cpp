@@ -27,6 +27,11 @@ void submotionOrchestraScene::setup(){
     loadCode("scenes/submotionOrchestraScene/exampleCode.cpp");
 }
 
+void submotionOrchestraScene::reset() {
+    lastTime = 0;
+    integratedTime = 0;
+}
+
 void submotionOrchestraScene::update(){
     float now = getElapsedTimef();
     if (lastTime == 0) {

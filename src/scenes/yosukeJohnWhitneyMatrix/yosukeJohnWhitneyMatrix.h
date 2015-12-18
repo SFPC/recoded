@@ -13,6 +13,11 @@ public:
     void setup();
     void update();
     void draw();
+    void reset();
+    
+    float integratedTime;
+    float lastTime;
+
     
     vector < ofVec3f > points;
     

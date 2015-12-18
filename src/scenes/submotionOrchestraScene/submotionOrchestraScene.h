@@ -11,6 +11,7 @@ public:
     void setup();
     void update();
     void draw();
+    void reset();
 	
 	ofSpherePrimitive sphere;
 	std::vector<ofPoint> points_src;
