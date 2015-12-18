@@ -24,10 +24,12 @@ public:
     int sign;
     ofVec3f moveVector;
     float rotationFactor;
+    bool bIsMain;
     textSurface(){
         font = NULL;
         offColor.set(130, 200);
         transition = 0;
+        bIsMain = false;
     }
     
     void setTextAndFont(string text,  ofTrueTypeFont& font, ofColor color){
@@ -45,25 +47,20 @@ public:
         fbo.end();
         tex = fbo.getTexture();
 
-//        ofFbo fbo2;
-//        fbo2.allocate(r.width, r.height);
-//        
-//        fbo2.begin();
-//        ofClear(255,0);
-//        ofSetColor(offColor);
-//        font.drawStringAsShapes(text, 0, -r.y);
-//        fbo2.end();
-//        texOff = fbo2.getTexture();
-//        
-        
     }
-    
+    void setIsMain(bool bMain = true){
+        bIsMain = bMain;
+    }
     void customDraw(){
         ofPushStyle();
-        //ofSetColor(255, 255 - transition*255);
-        //texOff.draw(0,-r.height);
-        ofSetColor(255, ofMap(transition, 0, 1, 0.5, 1)*255);
-        tex.draw(0,-r.height);
+
+        if(bIsMain){
+            ofSetColor(color.r, color.g, color.b, ofMap(transition, 0, 1, 0.5, 1)*255);
+            font->drawStringAsShapes(text, 0, r.y);
+        }else{
+            ofSetColor(255, ofMap(transition, 0, 1, 0.5, 1)*255);
+            tex.draw(0,-r.height);
+        }
         ofPopStyle();
     }
 };

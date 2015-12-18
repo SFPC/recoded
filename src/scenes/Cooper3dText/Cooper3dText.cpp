@@ -26,8 +26,8 @@ void Cooper3dText::setup(){
 //    parameters.add(distWords.set("Distance Blocks",40,  0, 4000));
     parameters.add(tweenDuration.set("Tween Duration", 3000,0,10000));
     parameters.add(pauseDuration.set("Pause Duration", 200,0,5000));
-    parameters.add(minAngle.set("min angle", 90,0, 360));
-    parameters.add(maxAngle.set("max angle", 350, 0,360));
+    parameters.add(minAngle.set("min angle", 80,0, 360));
+    parameters.add(maxAngle.set("max angle", 120, 0,360));
 
     maxAngle.addListener(this, &Cooper3dText::angleChanged);
     minAngle.addListener(this, &Cooper3dText::angleChanged);
@@ -42,6 +42,8 @@ void Cooper3dText::setup(){
 
     blend = ofBlendMode(3);
     ofAddListener(tween.end_E, this, &Cooper3dText::tweenEnded);
+    //prevSurface = 0;
+    //currentSurface = 0;
     nextSurface();
 
     setAuthor("Roy MacDonald");
@@ -82,9 +84,6 @@ void Cooper3dText::setupSurfaces(){
             ofRectangle r = font.getStringBoundingBox(txts[i],0,0);
             surfaces.back().moveVector.set(prevRect.width + distWords + r.height*((surfaces.back().axis.z != 0)?1:0), 0,0);
             surfaces.back().rotationFactor = ofRandom(0, 1);
-//            surfaces.back().rotate(ofRandom(minAngle, maxAngle)*surfaces.back().sign , surfaces.back().axis);
-//            surfaces.back().move(surfaces.back().moveVector);
-         //   cout << m << endl;
         }
     }
     rotateSurfaces();
@@ -116,15 +115,25 @@ void Cooper3dText::draw(){
   //      cout << __PRETTY_FUNCTION__ << endl;
     updateCameraTween();
     ofBackground(ofColor::black);
+ //   ofDisableDepthTest();
+    //ofEnableAlphaBlending();
     ofEnableDepthTest();
-//    ofEnableBlendMode(blend);
+   // ofEnableBlendMode(OF_BLENDMODE_MULTIPLY);
         cam.begin();
-        for (auto s: surfaces) {
-            s.draw();
+    for (int i = 0; i < surfaces.size(); i++) {
+        surfaces[i].setIsMain(false);
+        if(i != prevSurface && i != currentSurface){
+                surfaces[i].draw();
+            }
         }
-        cam.end();
-//    ofDisableBlendMode();
     ofDisableDepthTest();
+    surfaces[prevSurface].setIsMain(true);
+    surfaces[currentSurface].setIsMain(true);
+    surfaces[prevSurface].draw();
+    surfaces[currentSurface].draw();
+        cam.end();
+    //ofDisableBlendMode();
+    
 }
 //--------------------------------------------------------------
 void Cooper3dText::tweenEnded(int &i){
