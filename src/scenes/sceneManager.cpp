@@ -190,12 +190,12 @@ void sceneManager::startScene(int whichScene){
 void sceneManager::update(){
 
 #ifdef TYPE_ANIMATION
-    // this is copied from below...  should be abstracted out.
-    float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
-    if (pctDelay > 0.90){
+    pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
+
+    if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
       shouldDrawScene = true;
       fadingIn = true;
-    } else if (pctDelay > 2.0){
+    } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
       fadingIn = false;
     }
 #endif
@@ -377,31 +377,30 @@ void sceneManager::draw(){
     ofDrawRectangle(CODE_X_POS-1, 0, VISUALS_WIDTH+2, VISUALS_HEIGHT);
     ofSetColor(255);
     codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
-      if (shouldDrawScene) {
-          sceneFbo.begin();
-          ofClear(0,0,0,255);
-          ofPushStyle();
-          scenes[currentScene]->draw();
-          ofPopStyle();
-          if(!fadingIn){
-           ofClearAlpha();
-          }
-          sceneFbo.end();
-          // Draw twice to make the background go away
-          sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-          sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-      }
-  if(fadingIn){
-    float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
-    transitionFbo.begin();
-    ofSetColor(0, ofMap(pctDelay, 0.9, 2.0, 255, 0));
-    ofFill();
-    ofDrawRectangle(0, 0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
-    transitionFbo.end();
-    transitionFbo.draw(0,0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
+    if (shouldDrawScene) {
+        sceneFbo.begin();
+        ofClear(0,0,0,255);
+        ofPushStyle();
+        scenes[currentScene]->draw();
+        ofPopStyle();
+        sceneFbo.end();
 
-    //cout << pctDelay << endl;
-  }
+        // Draw twice to make the background go away
+        sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+        sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+
+        if (fadingIn) {
+            float fadeOpacityRaw = ofMap(pctDelay, FADE_DELAY_MIN, FADE_DELAY_MAX, 0, PI);
+            float fadeOpacityShaped = ofMap(cos(fadeOpacityRaw), 0, 1, 0, 255);
+            ofSetColor(0, fadeOpacityShaped);
+            ofFill();
+            ofDrawRectangle(0, 0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
+        }
+    } else {
+        ofSetColor(0);
+        ofFill();
+        ofDrawRectangle(0, 0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
+    }
 
   
 #ifdef TYPE_ANIMATION

@@ -58,6 +58,8 @@ public:
     
     int lettersLastFrame;
     long long lastPlayTime;
+
+    float pctDelay;
     bool shouldDrawScene;
     
     float maxLetterX, lastLetterY;
