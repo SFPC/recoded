@@ -42,6 +42,8 @@ void mgsVeraMolnarLineStudy::setup(){
   painter.angle = 60;
   //painter.stroke = ofColor(abs(painter.backgroundCounter-255));
 
+  bNeedsRedraw =  bNeedsFreshPaint = bNeedsClear = false;
+    
   setAuthor("Michael Simpson");
   setOriginalArtist("Vera Molnar");
 
@@ -53,10 +55,24 @@ void mgsVeraMolnarLineStudy::setup(){
   ofClear(0);
   frame.end();
   drawScene();
+    
 }
 
 void mgsVeraMolnarLineStudy::update(){
-  
+    if (bNeedsClear) {
+        frame.begin();
+        ofClear(0);
+        frame.end();
+        bNeedsClear = false;
+    }
+    if (bNeedsFreshPaint) {
+        freshPaint();
+        bNeedsFreshPaint = false;
+    }
+    if(bNeedsRedraw){
+        drawScene();
+        bNeedsRedraw = false;
+    }
 }
 
 void mgsVeraMolnarLineStudy::draw(){
@@ -67,27 +83,34 @@ void mgsVeraMolnarLineStudy::draw(){
 }
 
 void mgsVeraMolnarLineStudy::redraw(int& i){
-  frame.begin();
-  ofClear(0);
-  frame.end();
-  freshPaint();
-  drawScene();
+//  frame.begin();
+//  ofClear(0);
+//  frame.end();
+    bNeedsClear = true;
+    bNeedsRedraw = true;
+    bNeedsFreshPaint = true;
+//  freshPaint();
+//  drawScene();
 }
 
 void mgsVeraMolnarLineStudy::redrawB(bool& i){
   painter.useColor = useColorP;
   painter.connectedLines = connectedLinesP;
   if(animated){
-      drawScene();
+      bNeedsRedraw = true;
+//      drawScene();
   }
 }
 
 void mgsVeraMolnarLineStudy::redrawF(float& i){
-  frame.begin();
-  ofClear(0);
-  frame.end();
-  freshPaint();
-  drawScene();
+//  frame.begin();
+//  ofClear(0);
+//  frame.end();
+    bNeedsClear = true;
+    bNeedsRedraw = true;
+    bNeedsFreshPaint = true;
+//  freshPaint();
+//  drawScene();
 }
 
 void mgsVeraMolnarLineStudy::freshPaint(){

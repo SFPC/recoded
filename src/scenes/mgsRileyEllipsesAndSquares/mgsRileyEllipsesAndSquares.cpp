@@ -21,6 +21,8 @@ void mgsRileyEllipsesAndSquares::setup(){
   px7 = 434;
   py7 = 429;
   
+    bNeedRedraw = false;
+    
   parameters.add(unitSize.set("Unit Size", 6, 3, 50));
   unitSize.addListener(this, &mgsRileyEllipsesAndSquares::redraw);
   loadCode("scenes/mgsRileyEllipsesAndSquares/exampleCode.cpp");
@@ -35,7 +37,10 @@ void mgsRileyEllipsesAndSquares::setup(){
 }
 
 void mgsRileyEllipsesAndSquares::update(){
-    
+    if (bNeedRedraw) {
+        drawScene();
+        bNeedRedraw = false;
+    }
 }
 
 void mgsRileyEllipsesAndSquares::draw(){
@@ -43,7 +48,8 @@ void mgsRileyEllipsesAndSquares::draw(){
 }
 
 void mgsRileyEllipsesAndSquares::redraw(int& i){
-  drawScene();
+    bNeedRedraw = true;
+  //  drawScene();
 }
 
 void mgsRileyEllipsesAndSquares::drawScene(){

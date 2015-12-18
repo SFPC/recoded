@@ -27,4 +27,6 @@ public:
     float shiftCounter = 0;
     float rowCounter = 0;
     float diamondCounter = 0;
+    
+    bool bNeedRedraw, bNeedsFullRedraw, bNeedRedrawFloat;
 };

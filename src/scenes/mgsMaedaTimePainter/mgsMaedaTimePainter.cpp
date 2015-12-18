@@ -30,20 +30,23 @@ void mgsMaedaTimePainter::setup(){
   for (int i = 0; i < numberOfPainters; i++) {
     painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
   }
-
+    bNeedsRedraw = false;
+    bNeedClearScreen = false;
   ofSetCircleResolution(100);
   frame.allocate(dimensions.width, dimensions.height);
   frame.begin();
   ofClear(0);
   frame.end();
   drawScene();
+    
 }
 
 void mgsMaedaTimePainter::clearScreen(bool& i){
-  frame.begin();
-  ofClear(0,10);
-  frame.end();
-  clearScreenP.set("Clear Screen", false);
+    bNeedClearScreen = true;
+//  frame.begin();
+//  ofClear(0,10);
+//  frame.end();
+//  clearScreenP.set("Clear Screen", false);
 }
 
 void mgsMaedaTimePainter::pause(bool& i){
@@ -51,6 +54,24 @@ void mgsMaedaTimePainter::pause(bool& i){
 }
 
 void mgsMaedaTimePainter::update(){
+    if (bNeedsRedraw) {
+        frame.begin();
+        ofClear(0);
+        frame.end();
+        painters.clear();
+        for (int i = 0; i < numberOfPainters; i++) {
+            painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
+        }
+        drawScene();
+        bNeedsRedraw = false;
+    }
+    if (bNeedClearScreen) {
+      frame.begin();
+      ofClear(0,10);
+      frame.end();
+      clearScreenP.set("Clear Screen", false);
+        bNeedClearScreen = false;
+  }
   drawScene();
 }
 
@@ -70,7 +91,7 @@ void mgsMaedaTimePainter::draw(){
 }
 
 void mgsMaedaTimePainter::redraw(int& i){
-  drawScene();
+  //drawScene();
 }
 
 void mgsMaedaTimePainter::redrawBool(bool& i){
@@ -78,24 +99,25 @@ void mgsMaedaTimePainter::redrawBool(bool& i){
 }
 
 void mgsMaedaTimePainter::redrawInt(int& i){
-  ofClear(0);
-  painters.clear();
-  for (int i = 0; i < numberOfPainters; i++) {
-    painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
-  }
-  drawScene();
+  bNeedsRedraw = true;
+//  painters.clear();
+//  for (int i = 0; i < numberOfPainters; i++) {
+//    painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
+//  }
+//  drawScene();
 }
 
 void mgsMaedaTimePainter::redrawFloat(float& i){
-  frame.begin();
-  ofClear(0);
-  frame.end();
-  ellipseSize = lineWeight*12;
-  painters.clear();
-  for (int i = 0; i < numberOfPainters; i++) {
-    painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
-  }
-  drawScene();
+    bNeedsRedraw = true;
+//    frame.begin();
+//  ofClear(0);
+//  frame.end();
+    ellipseSize = lineWeight*12;
+//  painters.clear();
+//  for (int i = 0; i < numberOfPainters; i++) {
+//    painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
+//  }
+//  drawScene();
 }
 
 void mgsMaedaTimePainter::drawScene(){

@@ -84,4 +84,6 @@ public:
     ofParameter<int> baseLongevity, angleVariance;
     ofParameter<bool> fadeWhenDead, clearScreenP, animated;
     bool paused = false;
+    bool bNeedsRedraw, bNeedClearScreen;
+    
 };

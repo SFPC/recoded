@@ -41,4 +41,5 @@ class mgsCooperSymbols : public baseScene {
     ofFbo frame;
     float gh,gw;
     int alpha;
+    bool bNeedsRedraw, bNeedRedrawFullScene;
 };

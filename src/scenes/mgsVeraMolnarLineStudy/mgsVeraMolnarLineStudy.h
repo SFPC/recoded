@@ -104,4 +104,6 @@ public:
     ofParameter<int> numOfLines;
     ofParameter<float> squareSize, gridSpace, lineWidth;
     ofParameter<bool> connectedLinesP, invertedColor, useColorP, animated;
+    
+    bool bNeedsRedraw, bNeedsFreshPaint, bNeedsClear;
 };

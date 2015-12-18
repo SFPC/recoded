@@ -37,7 +37,7 @@ void mgsCooperSymbols::setup() {
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
   fadeBands = false;
-  
+    bNeedsRedraw = bNeedRedrawFullScene = false;
   frame.allocate(dimensions.width, dimensions.height);
   frame.begin();
   ofClear(0);
@@ -52,6 +52,19 @@ void mgsCooperSymbols::update(){
   } else {
     alpha = 255;
   }
+    if (bNeedRedrawFullScene || bNeedsRedraw) {
+          frame.begin();
+          ofClear(0);
+          frame.end();
+    }
+    if(bNeedsRedraw){
+        drawScene();
+        bNeedsRedraw = false;
+    }
+    if (bNeedRedrawFullScene) {
+        drawFullScene();
+        bNeedRedrawFullScene = false;
+    }
 }
 
 void mgsCooperSymbols::draw(){
@@ -64,30 +77,35 @@ void mgsCooperSymbols::draw(){
 void mgsCooperSymbols::redraw(int& i){
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
-  frame.begin();
-  ofClear(0);
-  frame.end();
-  drawFullScene();
+    bNeedRedrawFullScene = true;
+//  frame.begin();
+//  ofClear(0);
+//  frame.end();
+//  drawFullScene();
   if(animated){
-    drawScene();
+      bNeedsRedraw = true;
+      //  drawScene();
   }
 }
 
 void mgsCooperSymbols::redrawBool(bool& i){
-  frame.begin();
-  ofClear(0);
-  frame.end();
-  drawScene();
-  drawFullScene();
+//  frame.begin();
+//  ofClear(0);
+//  frame.end();
+    bNeedsRedraw = true;
+    bNeedRedrawFullScene = true;
+//    drawScene();
+//  drawFullScene();
 }
 
 void mgsCooperSymbols::redrawFloat(float& i){
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
-  frame.begin();
-  ofClear(0);
-  frame.end();
-  drawScene();
+//  frame.begin();
+//  ofClear(0);
+//  frame.end();
+//  drawScene();
+    bNeedsRedraw = true;
 }
 
 void mgsCooperSymbols::drawScene(){
