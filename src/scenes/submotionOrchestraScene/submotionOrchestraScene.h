@@ -17,6 +17,9 @@ public:
 	std::vector<ofPoint> points_dest;
 	ofEasyCam cam;
 	float k;
+    
+    float integratedTime;
+    float lastTime;
 	
 	ofParameter<float> speed;
 	ofParameter<float> size;
