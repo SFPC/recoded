@@ -10,9 +10,9 @@ void yosukeVeraSansTitre::setup(){
     parameters.add(row);
     colmn.set("number-of-colmn", 20, 1, 100);
     parameters.add(colmn);
-    spacingPercentX.set("space-x", 3.16, 0.0, 5.0);
+    spacingPercentX.set("space-x", 1.1, 0.0, 5.0);
     parameters.add(spacingPercentX);
-    spacingPercentY.set("space-y", 2.55, 0.0, 5.0);
+    spacingPercentY.set("space-y", 1.1, 0.0, 5.0);
     parameters.add(spacingPercentY);
     displacementZ.set("displacementZ", 0, 0, 5);
     parameters.add(displacementZ);

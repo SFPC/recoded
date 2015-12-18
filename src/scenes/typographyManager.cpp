@@ -107,7 +107,7 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
         paramsToReplace[i] = "";                // fill these in as we calculate them.
     }
     
-    
+    ofParameter < bool > boolParam;
     ofParameter < float > floatParam;
     
     for (int i = 0; i < bs->code.length(); i++){
@@ -176,7 +176,11 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
         //paramsToReplace[i]
         //prevStrings[i];
         if (prevStrings[i] != paramsToReplace[i]){
-            paramChangedEnergy[i] += 0.1;
+            if (bs->parameters[i].type() == boolParam.type()) {
+                paramChangedEnergy[i] = 2;
+            } else {
+                paramChangedEnergy[i] += 0.1;
+            }
             if (paramChangedEnergy[i] > 2){
                 paramChangedEnergy[i] = 2;
             }
