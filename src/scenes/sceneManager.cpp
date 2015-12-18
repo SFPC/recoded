@@ -69,7 +69,9 @@ void sceneManager::setup(){
     scenes.push_back(new johnWhitneyShader02());
     scenes.push_back(new chrisRileyCascando());
     scenes.push_back(new memoAktenScene());
-    scenes.push_back(new submotionOrchestraScene());
+#ifndef TYPE_ANIMATION
+    scenes.push_back(new submotionOrchestraScene()); // crashes with type animation
+#endif
     scenes.push_back(new RoyWhitney1());
     scenes.push_back(new veraFscene());
     scenes.push_back(new robbyMolnarScene() );
@@ -85,11 +87,15 @@ void sceneManager::setup(){
     scenes.push_back(new andyMenkmanDataBendsPng());
     scenes.push_back(new andyMenkmanDataBendsTif());
     scenes.push_back(new manfredMohrP196A());
-    scenes.push_back(new veraMolnarTrapezium());
+#ifndef TYPE_ANIMATION
+    scenes.push_back(new veraMolnarTrapezium()); // crashes with type animation
+#endif
     scenes.push_back(new loloVera2());
     scenes.push_back(new cantusFirmusRiley());
     scenes.push_back(new aaronMarcusHieroglyphB());
-    scenes.push_back(new veraMolnarLines68());
+#ifndef TYPE_ANIMATION
+    scenes.push_back(new veraMolnarLines68()); // crashes with type animation
+#endif
     scenes.push_back(new alexLissamojiWhitney());
     scenes.push_back(new yosukeVeraSansTitre());
     scenes.push_back(new alexGifPaletteDitherMenkman());
