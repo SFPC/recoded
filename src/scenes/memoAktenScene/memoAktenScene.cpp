@@ -14,7 +14,7 @@ void memoAktenScene::setup(){
   
 	// setup pramaters
 	num_points.set("num_points", 35, 5, 50);
-	parameters.add(num_points);
+	//parameters.add(num_points);
 	
 	speed.set("speed", 4.5, 0.1, 10.0);
 	parameters.add(speed);
@@ -29,10 +29,16 @@ void memoAktenScene::setup(){
 	parameters.add(line_alpha);
 	
 	refreshParticles();
+    progress = 0;
+    lastTime = 0;
 
     setAuthor("Motoi Shimizu");
     setOriginalArtist("Memo Akten");
 	loadCode("scenes/memoAktenScene/exampleCode.cpp");
+}
+
+void memoAktenScene::reset() {
+    progress = 0;
 }
 
 void memoAktenScene::update(){
@@ -41,11 +47,18 @@ void memoAktenScene::update(){
 		refreshParticles();
 	}
 
-	const float progress = getElapsedTimef() * speed;
+    if (lastTime == 0) {
+        lastTime = getElapsedTimef();
+    }
+    float now = getElapsedTimef();
+    float dt = now - lastTime;
+    lastTime = now;
+    
+    progress += dt * speed;
 	const float baseline_y = dimensions.height * 0.5;
 
 	for (int i=0; i<particles.size(); i++) {
-		const float x = dimensions.width / particles.size() * i + 30;
+		const float x = dimensions.width / particles.size() * i + 10;
 		const float y = baseline_y + animation_height * sin(progress/particles.size()*(i+1));
 		Particle & p = particles.at(i);
 		p.update(x, y, baseline_y);
