@@ -7,7 +7,7 @@ void veraFscene::setup(){
     parameters.add(frequency.set("frequency", 0.0, 0.0, 0.5));
     parameters.add(margin.set("margin", 4, 0, 10));
     parameters.add(lineWidth.set("lineWidth", 2, 0, 10));
-    parameters.add(zoom.set("zoom", 1, 0.1, 3));
+    parameters.add(zoom.set("zoom", 1, 0.66667, 3));
     lastValue = 0;
     
     setAuthor("Becca Moore");
