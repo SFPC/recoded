@@ -1,63 +1,76 @@
 
 #include "yeseulWhitneyScene.h"
 
-
 void yeseulWhitneyScene::setup(){
     
-    angle.set("angle", 0, 0, 90);
-    numberOfPattern.set("number of pattern", 1, 1, 5);
-    color.set("color", 150, 145, 255);
-    parameters.add(angle);
-    parameters.add(numberOfPattern);
-    parameters.add(color);
+    parameters.add(spinSpeed.set("spinSpeed", 5, 1, 70));
+    parameters.add(diffusionInterval.set("diffusionInterval", 5, 5, 10));
+    parameters.add(diffusionSize.set("diffusionSize", 1.5, 1, 3));
     
     setAuthor("Yeseul Song");
     setOriginalArtist("John Whitney");
-    loadCode("scenes/yeseulWhitneyScene/exampleCode.cpp");
-
+    loadCode("yeseulWhitneyScene/exampleCode.cpp");
+    
+    lastDiffusionTime = 0;
 }
 
 void yeseulWhitneyScene::update(){
     
-    angle.set(ofMap(sin(getElapsedTimef()), -1, 1, 90, 0));
-    numberOfPattern.set(ofMap(sin(getElapsedTimef()), -1, 1, 1, 6));
-    color.set(ofMap(sin(getElapsedTimef()), -1, 1, 145, 255));
-
 }
 
 void yeseulWhitneyScene::draw(){
+    
+    ofPushMatrix();
+    
+    ofTranslate(dimensions.width/2, dimensions.height/2);
+    
+    drawPattern();
+    
+    diffusion();
+    
+    ofPopMatrix();
+    
+    
+}
 
-    columnCount = 0;
-    rowCount = 0;
-    for (int i=1; i<dimensions.width; i+=dimensions.width/numberOfPattern) {
-        columnCount++;
-        for (int j=1; j<dimensions.height; j+=dimensions.height/numberOfPattern) {
-            rowCount++;
-            drawPattern(dimensions.width/(numberOfPattern+1)*rowCount, dimensions.height/(numberOfPattern+1)*columnCount);
+void yeseulWhitneyScene::drawPattern(){
+    
+    ofSetColor(255);
+    ofFill();
+    
+    float y = getElapsedTimef();
+    for (int r=0; r<35; r+=1) {
+        ofRotate(y*spinSpeed*sin(r));
+        for (int a=0; a<20; a+=1) {
+            ofRotate(360/20);
+            ofDrawCircle(0, r*10, 1);
+            
         }
-        rowCount = 0;
     }
     
 }
 
-void yeseulWhitneyScene::drawPattern(int x, int y){
-    
-    ofPushMatrix();
-    
-    ofTranslate(x, y);
-    ofRotate(angle);
 
-    ofColor c = ofColor::fromHsb(color, 255, 255);
-    ofSetColor(c);
-    ofFill();
+void yeseulWhitneyScene::diffusion() {
     
-    for (int i=0; i<21*(ceil(numberOfPattern/1.7)); i++){
-        for (int j=0; j<120/(numberOfPattern); j+=numberOfPattern){
-            ofRotate(PI/numberOfPattern*2);
-            ofDrawCircle(j*5, j*5, 5/numberOfPattern);
+    float t = getElapsedTimef();
+    cout << t <<endl;
+    cout << diffusionInterval << " " << lastDiffusionTime<< endl;
+    if (lastDiffusionTime == 0 || diffusionInterval <= t - lastDiffusionTime) {
+        diffs.push_back(circlesDiffusion(t, diffusionSize));
+        cout << "add difff" << diffusionInterval << endl;
+        lastDiffusionTime = t;
+    }
+    
+    for(int i = 0; i < diffs.size(); i++){
+        if(diffs[i].bKill){
+            cout << "kill diff: " << i << endl;
+            diffs.erase(diffs.begin() + i);
+            i--;
         }
     }
     
-    ofPopMatrix();
-    
+    for(int i = 0; i < diffs.size(); i++){
+        diffs[i].draw(t);
+    }
 }
