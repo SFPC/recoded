@@ -135,6 +135,12 @@ void sceneManager::setup(){
     //    }
     
     currentScene = 0;
+
+#ifdef TYPE_ANIMATION
+    shouldDrawScene = false;
+#else
+    shouldDrawScene = true;
+#endif
     
     panel = new ofxPanel();
     panel->setup("scene settings");
@@ -165,7 +171,8 @@ void sceneManager::startScene(int whichScene){
     TM.setup( (scenes[currentScene]), 7.5);
     lettersLastFrame = 0;
     lastPlayTime = 0;
-    lastLetterHeight = 0;
+    maxLetterX = 0;
+    lastLetterY = 0;
     didTriggerCodeFinishedAnimatingEvent = false;
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setSyncGroup(scenes[currentScene]->parameters, true);
@@ -175,19 +182,19 @@ void sceneManager::startScene(int whichScene){
 
 
 void sceneManager::update(){
-    
-    
+
 #ifdef TYPE_ANIMATION
     // this is copied from below...  should be abstracted out.
     float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
     if (pctDelay > 0.99){
+        shouldDrawScene = true;
+    }
+#endif
+
+    if (shouldDrawScene) {
         scenes[currentScene]->update();
     }
-#else
-    scenes[currentScene]->update();
-#endif
-    
-    
+
     ofParameter < float > floatParam;
 
     if (TM.paramChangedEnergy.size() > 0) {
@@ -236,17 +243,6 @@ void sceneManager::update(){
 
 void sceneManager::draw(){
     
-    
-    
-    sceneFbo.begin();
-    ofClear(0,0,0,255);
-    ofPushStyle();
-    scenes[currentScene]->draw();
-    ofPopStyle();
-    ofClearAlpha();
-    sceneFbo.end();
-    
-    
     ofSetColor(255,255,255);
     
     codeFbo.begin();
@@ -289,23 +285,52 @@ void sceneManager::draw(){
     //ofDrawBitmapString(codeReplaced, 40,40);
     
     
-    bool bShiftUp = false;
+    bool bShiftUp = false, bShiftLeft = false;
     
-    if (lastLetterHeight > (504-20)){
+    if (lastLetterY > (VISUALS_HEIGHT-20)) {
         bShiftUp = true;
-        
+    }
+
+    if (maxLetterX > (VISUALS_WIDTH-20)) {
+        bShiftLeft = true;
     }
     
-    if (bShiftUp){
-        float dx = lastLetterHeight - (504-20);
+    if (bShiftUp) {
+        float dy = lastLetterY - (VISUALS_HEIGHT-20);
         ofPushMatrix();
-        ofTranslate(0,-dx);
+        ofTranslate(0,-dy);
+    }
+
+    if (bShiftLeft) {
+        float dx = maxLetterX - (VISUALS_WIDTH-20);
+        dx = min((int)dx, 20);
+        ofPushMatrix();
+        ofTranslate(-dx,0);
+    }
+
+    int countLetters = 0;
+    int codeDefaultStartX = 40;
+    int xStart = codeDefaultStartX;
+    int x = xStart;
+    
+    // Quick cache of how many lines we're going to draw
+    int nLines = 0;
+    for (int i = 0; i < letters.size() * pct; i++){
+        if (letters[i].character == '\n')
+            nLines++;
     }
     
+    // Set line Y based on how many lines we're going to draw over the total height
+    int maxLinesWithoutScroll = (VISUALS_HEIGHT - 60*2) / 13;
+    int maxLinesWithScroll = (VISUALS_HEIGHT-10*2) / 13;
+    int y;
     
-    int countLetters = 0;
-    int x = 10;
-    int y = 10 + 13;
+    if (nLines <= maxLinesWithScroll) {
+        y = 60 + 13;
+    } else {
+        y = 10 + 13;
+    }
+
     for (int i = 0; i < letters.size() * pct; i++){
         
         
@@ -324,12 +349,17 @@ void sceneManager::draw(){
         x += 7;
         if (letters[i].character == '\n'){
             y += 13;
-            x = 10;
+            x = xStart;
         }
         
-        lastLetterHeight = y;
+        maxLetterX = max((int)maxLetterX, x);
+        lastLetterY = y;
     }
     
+    if (bShiftLeft){
+        ofPopMatrix();
+    }
+        
     if (bShiftUp){
         ofPopMatrix();
     }
@@ -337,15 +367,29 @@ void sceneManager::draw(){
     
     codeFbo.end();
     
+    // Get rid of blended sidebars
+    ofSetColor(0);
+    ofDrawRectangle(CODE_X_POS-1, 0, VISUALS_WIDTH+2, VISUALS_HEIGHT);
+
     ofSetColor(255);
     codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
     
-#ifdef TYPE_ANIMATION
-    float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
-    if (pctDelay > 0.99){
+    if (shouldDrawScene) {
+        sceneFbo.begin();
+        ofClear(0,0,0,255);
+        ofPushStyle();
+        scenes[currentScene]->draw();
+        ofPopStyle();
+        ofClearAlpha();
+        sceneFbo.end();
+
+        // Draw twice to make the background go away
+        sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-    } else {
-        
+    }
+    
+#ifdef TYPE_ANIMATION
+    if (!shouldDrawScene){
         ofSetColor(0);
         ofFill();
         ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
@@ -380,12 +424,8 @@ void sceneManager::draw(){
         lettersLastFrame = countLetters;
         
     }
-#else
-    sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
 #endif
-    
-    
-    
+
     panel->draw();
     
     
@@ -393,7 +433,11 @@ void sceneManager::draw(){
     
     ofSetColor(255);
     
-    ofDrawBitmapString("drawing scene " + ofToString(currentScene) + "\t\t(" + scenes[currentScene]->author  + ", " + scenes[currentScene]->originalArtist + ")", 20, VISUALS_HEIGHT + 50);
+    ofDrawBitmapString("drawing scene " + ofToString(currentScene) +
+                       "/" + ofToString(scenes.size()) +
+                       "\t\t(" + scenes[currentScene]->author  + ", " +
+                       scenes[currentScene]->originalArtist + ")",
+                       20, VISUALS_HEIGHT + 50);
 
     
 }
@@ -408,7 +452,11 @@ void sceneManager::nextScene(bool forward){
             currentScene = scenes.size() - 1;
         }
     }
-    
+
+#ifdef TYPE_ANIMATION
+    shouldDrawScene = false;
+#endif
+
     startScene(currentScene);
     
 #ifdef USE_EXTERNAL_SOUNDS

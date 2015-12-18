@@ -57,8 +57,9 @@ public:
     
     int lettersLastFrame;
     long long lastPlayTime;
+    bool shouldDrawScene;
     
-    float lastLetterHeight;
+    float maxLetterX, lastLetterY;
     
     bool didTriggerCodeFinishedAnimatingEvent;
     

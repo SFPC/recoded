@@ -14,6 +14,9 @@ public:
     ofShader shader;
     ofFbo fbo;
     
-    ofParameter<float> time;
+    float integratedTime;
+    float lastTime;
+    
+    ofParameter<float> speed;
     ofParameter<float> thickness;
 };

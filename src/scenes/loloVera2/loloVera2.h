@@ -67,14 +67,14 @@ public:
 
     };
     
-    void    update(float    _rfactor,int    _bang)
+    void    update(float    _rfactor,int    _bang, float redSpeed)
     {
         if(ofGetFrameNum() % _bang == 0){
             
             for(int i=1;i<q_guide.size()-1;i++)
             {
-                q_guide_d.at(i).x=ofMap(i, 0.0, q_guide.size()-1, 0,VISUALS_WIDTH)+ofRandom(-guide_step,guide_step)*_rfactor;
-                q_guide_d.at(i).y=y+ofRandom(-guide_step,guide_step)*_rfactor;
+                q_guide_d.at(i).x=ofMap(i, 0.0, q_guide.size()-1, 0,VISUALS_WIDTH)+ofRandom(-1,1)*_rfactor;
+                q_guide_d.at(i).y=y+ofRandom(-1,1)*_rfactor;
             }
             
         }
@@ -92,7 +92,7 @@ public:
         guide_angle = atan2(guide.y-q_guide.at(current_point).y, guide.x-q_guide.at(current_point).x);
         
         guide_point_dis = ofDist(guide.x, guide.y, q_guide.at(current_point).x, q_guide.at(current_point).y);
-        guide_step =(guide_point_dis/20.0);
+        guide_step =(guide_point_dis * ofMap(redSpeed, 0, 10, 0.25, 0));
         guide_counter+=guide_step;
         
         d_guide.x = guide.x+cos(guide_angle)*-guide_counter;
@@ -122,7 +122,7 @@ public:
         ofPushStyle();
         ofEnableAlphaBlending();
         
-        ofSetColor(0,100);
+        ofSetColor(255,100);
         
         for(int i=1;i<q_guide.size();i++)
         {
@@ -137,7 +137,7 @@ public:
         
         ofDrawLine(guide.x, guide.y, d_guide.x,d_guide.y);
         
-        ofSetColor(0);
+        ofSetColor(255);
         for (int i=0; i<q_guide.size(); i++) {
             ofDrawCircle(q_guide.at(i).x,q_guide.at(i).y, 2);
         }
@@ -170,6 +170,7 @@ public:
     
     ofParameter<float>      random_factor;
     ofParameter<float>      line_width;
+    ofParameter<float>      redSpeed;
 
     ofParameter<int>        u_bang;
 };

@@ -10,7 +10,7 @@
 #define CODE_WIDTH VISUALS_WIDTH
 #define CODE_HEIGHT VISUALS_HEIGHT
 
-#define CODE_X_POS 520      // via the tech staff
+#define CODE_X_POS 524      // via the tech staff
 
 //if this is defined, we will wait for type animation
 //#define TYPE_ANIMATION

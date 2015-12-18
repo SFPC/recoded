@@ -49,8 +49,12 @@ public:
 	void setup();
 	void update();
 	void draw();
+    void reset();
 	
 	void refreshParticles();
+    
+    double progress;
+    float lastTime;
 	
 	std::vector<Particle> particles;
 	ofParameter<int> num_points;

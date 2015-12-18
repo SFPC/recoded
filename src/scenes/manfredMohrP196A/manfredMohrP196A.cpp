@@ -18,7 +18,7 @@ void manfredMohrP196A::setup(){
 	cubeARotationPercent.set("cubeARotationPercent", 0., 0., 1.);
 	cubeBRotationDiffPercent.set("cubeBRotationDiffPercent", 0., 0., 1.);
 	cubeOthersRotationDiffPercent.set("cubeOthersRotationDiffPercent", 0., 0., 1.);
-	scale.set("scale", min(dimensions.width, dimensions.height)/2., 10, 1001);
+	scaleParam.set("scale", 0.8, 0, 1);
 	whiteBackground.set("whiteBackground", true);
 	rearLineOpacity.set("rearLineOpacity", 0, 0, 255);
 	//~1.75 spacing is the smallest before overlap starts occuring
@@ -26,7 +26,7 @@ void manfredMohrP196A::setup(){
 	parameters.add(cubeARotationPercent);
 	parameters.add(cubeBRotationDiffPercent);
 	parameters.add(cubeOthersRotationDiffPercent);
-	parameters.add(scale);
+	parameters.add(scaleParam);
 	parameters.add(whiteBackground);
 	parameters.add(rearLineOpacity);
 	parameters.add(spacing);
@@ -37,6 +37,8 @@ void manfredMohrP196A::setup(){
 }
 
 void manfredMohrP196A::update(){
+    scale = ofMap(sqrt(1.0-scaleParam), 1, 0, 10, 200);
+
 	numWide = ceil((float)dimensions.width / scale / spacing);
 	if (numWide % 2 == 0){
 		numWide++;

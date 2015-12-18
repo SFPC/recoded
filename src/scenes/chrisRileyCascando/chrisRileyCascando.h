@@ -19,6 +19,9 @@ public:
     void draw();
     
     ofParameter<float> triScale, noiseScale, pStraight, animSpeed;
+
+    float integratedTime;
+    float lastTime;
     
     ofPath diamondStraightBlack, diamondStraightWhite, diamondArcBlack, diamondArcWhite;
 };

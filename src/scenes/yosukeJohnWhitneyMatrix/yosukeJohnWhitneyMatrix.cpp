@@ -15,7 +15,8 @@ void yosukeJohnWhitneyMatrix::setup(){
     ballRadius.set("ball-radius", 4, 0, 10);
     parameters.add(ballRadius);
 
-
+    setAuthor("Yosuke Sakai");
+    setOriginalArtist("John Whitney");
     loadCode("scenes/yosukeJohnWhitneyMatrix/exampleCode.cpp");
     
     
