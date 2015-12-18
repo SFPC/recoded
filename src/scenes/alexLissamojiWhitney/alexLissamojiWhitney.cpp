@@ -84,7 +84,7 @@ void alexLissamojiWhitney::drawLissaous() {
         
         int emoji = (i + (int)emojiDiff) % 870;
         // TBD: use emoji or circles?
-        emojiSheet.drawSubsection(x-16, y-16, 32, 32, 32*(emoji/29), 32*(emoji%29));
+        emojiSheet.drawSubsection(x-16, y-16, 32, 32, 32*(emoji/29+1), 32*(emoji%29+1));
         //eyesImg.draw(x-iconWidth/2, y-iconHeight/2, iconWidth, iconHeight);
 
         // Alternative 2: use circles
