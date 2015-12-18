@@ -69,9 +69,7 @@ void sceneManager::setup(){
     scenes.push_back(new johnWhitneyShader02());
     scenes.push_back(new chrisRileyCascando());
     scenes.push_back(new memoAktenScene());
-#ifndef TYPE_ANIMATION
-    scenes.push_back(new submotionOrchestraScene()); // crashes with type animation
-#endif
+    scenes.push_back(new submotionOrchestraScene());
     scenes.push_back(new RoyWhitney1());
     scenes.push_back(new veraFscene());
     scenes.push_back(new robbyMolnarScene() );
@@ -87,15 +85,11 @@ void sceneManager::setup(){
     scenes.push_back(new andyMenkmanDataBendsPng());
     scenes.push_back(new andyMenkmanDataBendsTif());
     scenes.push_back(new manfredMohrP196A());
-#ifndef TYPE_ANIMATION
-    scenes.push_back(new veraMolnarTrapezium()); // crashes with type animation
-#endif
+    scenes.push_back(new veraMolnarTrapezium());
     scenes.push_back(new loloVera2());
     scenes.push_back(new cantusFirmusRiley());
     scenes.push_back(new aaronMarcusHieroglyphB());
-#ifndef TYPE_ANIMATION
-    scenes.push_back(new veraMolnarLines68()); // crashes with type animation
-#endif
+    scenes.push_back(new veraMolnarLines68());
     scenes.push_back(new alexLissamojiWhitney());
     scenes.push_back(new yosukeVeraSansTitre());
     scenes.push_back(new alexGifPaletteDitherMenkman());
@@ -141,6 +135,12 @@ void sceneManager::setup(){
     //    }
     
     currentScene = 0;
+
+#ifdef TYPE_ANIMATION
+    shouldDrawScene = false;
+#else
+    shouldDrawScene = true;
+#endif
     
     panel = new ofxPanel();
     panel->setup("scene settings");
@@ -182,19 +182,19 @@ void sceneManager::startScene(int whichScene){
 
 
 void sceneManager::update(){
-    
-    
+
 #ifdef TYPE_ANIMATION
     // this is copied from below...  should be abstracted out.
     float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
     if (pctDelay > 0.99){
+        shouldDrawScene = true;
+    }
+#endif
+
+    if (shouldDrawScene) {
         scenes[currentScene]->update();
     }
-#else
-    scenes[currentScene]->update();
-#endif
-    
-    
+
     ofParameter < float > floatParam;
 
     if (TM.paramChangedEnergy.size() > 0) {
@@ -242,17 +242,6 @@ void sceneManager::update(){
 }
 
 void sceneManager::draw(){
-    
-    
-    
-    sceneFbo.begin();
-    ofClear(0,0,0,255);
-    ofPushStyle();
-    scenes[currentScene]->draw();
-    ofPopStyle();
-    ofClearAlpha();
-    sceneFbo.end();
-    
     
     ofSetColor(255,255,255);
     
@@ -385,12 +374,22 @@ void sceneManager::draw(){
     ofSetColor(255);
     codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
     
-#ifdef TYPE_ANIMATION
-    float pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
-    if (pctDelay > 0.99){
+    if (shouldDrawScene) {
+        sceneFbo.begin();
+        ofClear(0,0,0,255);
+        ofPushStyle();
+        scenes[currentScene]->draw();
+        ofPopStyle();
+        ofClearAlpha();
+        sceneFbo.end();
+
+        // Draw twice to make the background go away
+        sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-    } else {
-        
+    }
+    
+#ifdef TYPE_ANIMATION
+    if (!shouldDrawScene){
         ofSetColor(0);
         ofFill();
         ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
@@ -425,14 +424,8 @@ void sceneManager::draw(){
         lettersLastFrame = countLetters;
         
     }
-#else
-    // Draw twice to make the background go away
-    sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-    sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
 #endif
-    
-    
-    
+
     panel->draw();
     
     
@@ -459,7 +452,11 @@ void sceneManager::nextScene(bool forward){
             currentScene = scenes.size() - 1;
         }
     }
-    
+
+#ifdef TYPE_ANIMATION
+    shouldDrawScene = false;
+#endif
+
     startScene(currentScene);
     
 #ifdef USE_EXTERNAL_SOUNDS
