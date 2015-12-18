@@ -14,7 +14,10 @@ public:
     ofShader shader;
     ofFbo fbo;
     
-    ofParameter<float> time;
+    float integratedTime;
+    float lastTime;
+    
+    ofParameter<float> speed;
     
     ofParameter<float> redScale, greenScale, blueScale;
     ofParameter<float> redOffset, greenOffset, blueOffset;

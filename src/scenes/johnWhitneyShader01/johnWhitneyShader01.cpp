@@ -5,8 +5,8 @@
 void johnWhitneyShader01::setup(){
   
 // setup pramaters
-    time.set("time", 0, 0, PI);
-    parameters.add(time);
+    speed.set("speed", 1, 0, 4);
+    parameters.add(speed);
     
     redOffset.set("pinkOffset", 0.0, 0.0, 9.0);
     parameters.add(redOffset);
@@ -24,17 +24,28 @@ void johnWhitneyShader01::setup(){
     
     shader.load("scenes/johnWhitneyShader01/shader");
 
+    integratedTime = 0;
+    lastTime = 0;
+    
     setAuthor("Chris Anderson");
     setOriginalArtist("John Whitney");
     loadCode("scenes/johnWhitneyShader01/exampleCode.cpp");
 }
 
 void johnWhitneyShader01::update() {
-    time.set(ofMap(sin(getElapsedTimef()), -1, 1, 0, PI));
+    float now = getElapsedTimef();
+    if (lastTime == 0) {
+        lastTime = now;
+    }
+    float dt = now - lastTime;
+    lastTime = now;
+    
+    integratedTime += speed * dt;
 }
 
 void johnWhitneyShader01::draw() {
     float resolution[] = { dimensions.width, dimensions.height };
+    float time = ofMap(sin(integratedTime), -1, 1, 0, PI);
 
     ofFill();
     shader.begin();
