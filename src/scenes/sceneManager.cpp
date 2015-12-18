@@ -247,7 +247,7 @@ void sceneManager::update(){
     TM.energyChangePerFrame = codeEnergyPerFrame;
 
 #ifdef TYPE_ANIMATION
-    pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime+0.5);
+    pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime);
 
     if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
       shouldDrawScene = true;
@@ -420,6 +420,7 @@ void sceneManager::draw(){
     const int lineWithoutActiveParamDim = 100;
     const int commentDim = 70;
     currentLine = 0;
+    bool nonEmptyLetter = false;
     
     for (int i = 0; i < letters.size() * pct; i++){
         
@@ -448,7 +449,10 @@ void sceneManager::draw(){
         
         if (letters[i].character != ' ' &&
             letters[i].character != '\n' &&
-            letters[i].character != '\t') countLetters++;
+            letters[i].character != '\t') {
+            countLetters++;
+            nonEmptyLetter = true;
+        }
         
         x += 7;
         if (letters[i].character == '\n'){
@@ -459,6 +463,24 @@ void sceneManager::draw(){
         
         maxLetterX = max((int)maxLetterX, x);
         lastLetterY = y;
+    }
+    
+    bool drawCursor = false;
+    if (pct < 0.1) {
+        if (int(letters.size() * pct) % 2) {
+            drawCursor = true;
+        }
+    } else if (pct > 0.1 && pct < 1) {
+        drawCursor = true;
+    } else if (pctDelay > 1 && !shouldDrawScene) {
+        x = xStart;
+        y += 13;
+        drawCursor = (int)((pctDelay - 1.0) / 0.035) % 2 == 0;
+    }
+    
+    if (nonEmptyLetter && drawCursor && (x != xStart || pctDelay > 1)) {
+        ofSetColor(140);
+        ofDrawRectangle(x, y-10, 7, 13);
     }
     
     if (bShiftLeft){
