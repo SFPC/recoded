@@ -9,7 +9,7 @@
 void chrisRileyCascando::setup(){
   
 // setup pramaters
-    triScale.set("triScale", 1, 0.1, 10);
+    triScale.set("triScale", 0.2, 0.01, 1);
     parameters.add(triScale);
     
     noiseScale.set("noiseScale", 1000, 10, 10000);
@@ -51,6 +51,9 @@ void chrisRileyCascando::setup(){
     diamondArcWhite.setFilled(true);
     diamondArcWhite.setStrokeWidth(0);
     diamondArcWhite.setFillColor(ofColor(255));
+    
+    lastTime = 0;
+    integratedTime = 0;
 
     setAuthor("Chris Anderson");
     setOriginalArtist("Bridget Riley");
@@ -58,7 +61,14 @@ void chrisRileyCascando::setup(){
 }
 
 void chrisRileyCascando::update(){
+    float now = getElapsedTimef();
+    if (lastTime == 0) {
+        lastTime = now;
+    }
+    float dt = now - lastTime;
+    lastTime = now;
     
+    integratedTime += animSpeed * dt;
 }
 
 void chrisRileyCascando::draw(){
@@ -68,12 +78,13 @@ void chrisRileyCascando::draw(){
     ofTranslate(VISUALS_WIDTH / 2.0, VISUALS_HEIGHT / 2.0);
     
     ofPushMatrix();
-    ofScale(triScale, triScale);
+    float scale = ofMap(sqrt(1.0 - triScale), 1, 0, 1.0/3.0, 4.0);
+    ofScale(scale, scale);
     
-    float startY = -TRI_SIDE_LENGTH * 2;
-    float startX = -TRI_SIDE_LENGTH * 2;
-    float endY   = VISUALS_HEIGHT + TRI_SIDE_LENGTH * 2;
-    float endX   = VISUALS_WIDTH + TRI_SIDE_LENGTH * 2;
+    float startY = -VISUALS_WIDTH * 3;
+    float startX = -VISUALS_WIDTH * 3;
+    float endY   = VISUALS_WIDTH * 4;
+    float endX   = VISUALS_WIDTH * 4;
     
     bool odd = false;
     for (int y = startY; y < endY; y += TRI_HEIGHT) {
@@ -90,9 +101,8 @@ void chrisRileyCascando::draw(){
                 ofTranslate(TRI_SIDE_LENGTH / 2.0, 0);
 
             // Add horizontal animation and loop it.
-            float time = getElapsedTimef() * animSpeed;
-            float xDelta = fmod(time, TRI_SIDE_LENGTH);
-            float r = ofNoise((x + time) * (1.0/noiseScale), y * (1.0/noiseScale));
+            float xDelta = fmod(integratedTime, TRI_SIDE_LENGTH);
+            float r = ofNoise((x + integratedTime) * (1.0/noiseScale), y * (1.0/noiseScale));
 
             if (r < pStraight) {
                 diamondStraightBlack.draw();
