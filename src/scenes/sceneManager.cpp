@@ -330,8 +330,10 @@ void sceneManager::draw(){
     int maxLinesWithScroll = (VISUALS_HEIGHT-10*2) / 13;
     int y;
     
-    if (nLines <= maxLinesWithScroll) {
+    if (nLines <= maxLinesWithoutScroll) {
         y = 60 + 13;
+    } else if (nLines <= maxLinesWithScroll) {
+        y = 60 + 13 + (maxLinesWithoutScroll - nLines + 1) * 13;
     } else {
         y = 10 + 13;
     }
