@@ -79,6 +79,7 @@
 		B04420911C18B0190049071E /* rachelScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B044208F1C18B0190049071E /* rachelScene.cpp */; };
 		B04420951C18B04D0049071E /* janVantommeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B04420931C18B04D0049071E /* janVantommeScene.cpp */; };
 		B04420991C1901D90049071E /* RileyArcsRoy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B04420971C1901D90049071E /* RileyArcsRoy.cpp */; };
+		B08FE1941C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B08FE1921C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
 		B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */; };
 		C13A36731C17906200F13242 /* aaronMarcusHieroglyphB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */; };
@@ -307,6 +308,8 @@
 		B04420941C18B04D0049071E /* janVantommeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = janVantommeScene.h; sourceTree = "<group>"; };
 		B04420971C1901D90049071E /* RileyArcsRoy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RileyArcsRoy.cpp; sourceTree = "<group>"; };
 		B04420981C1901D90049071E /* RileyArcsRoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyArcsRoy.h; sourceTree = "<group>"; };
+		B08FE1921C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "RileyRemake-Catarina_Lee__Joao_Freire.cpp"; sourceTree = "<group>"; };
+		B08FE1931C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RileyRemake-Catarina_Lee__Joao_Freire.h"; sourceTree = "<group>"; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		B87C60311EC1FE841C1ECD89 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aaronMarcusHieroglyphB.cpp; sourceTree = "<group>"; };
@@ -690,6 +693,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B08FE1911C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire */,
 				C13A36701C17906200F13242 /* aaronMarcusHieroglyphB */,
 				FA361F461C1887A400F197F3 /* alexGifPaletteDitherMenkman */,
 				FAF7DF1C1C1833C70058EFE0 /* alexLissamojiWhitney */,
@@ -999,6 +1003,15 @@
 				B04420981C1901D90049071E /* RileyArcsRoy.h */,
 			);
 			path = RileyArcsRoy;
+			sourceTree = "<group>";
+		};
+		B08FE1911C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire */ = {
+			isa = PBXGroup;
+			children = (
+				B08FE1921C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.cpp */,
+				B08FE1931C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.h */,
+			);
+			path = "RileyRemake-Catarina_Lee__Joao_Freire";
 			sourceTree = "<group>";
 		};
 		B0B03CF11C1BD19900FF0761 /* Roy */ = {
@@ -1429,6 +1442,7 @@
 				9237CB9D1C11E9BD0007A916 /* veraFscene.cpp in Sources */,
 				85B3DCA81C1E47060054975A /* yeseulMenkmanInstitution.cpp in Sources */,
 				B00CD1041C21E81400C529FA /* ofxEasingBounce.cpp in Sources */,
+				B08FE1941C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				B00CD17D1C22214E00C529FA /* ofxMidiRecorder.cpp in Sources */,
 				923871B71BF7CCC900171456 /* triangleScene.cpp in Sources */,
