@@ -357,35 +357,36 @@ void ofxParameterMidiSync::save(string path){
 //--------------------------------------------------------------
 void ofxParameterMidiSync::newMidiMessage(ofxMidiMessage& msg) {
     if (bIsSetup) {
-        if (msg.status == MIDI_CONTROL_CHANGE) {
+        ofxMidiMessage message = msg;
+        if (message.status == MIDI_CONTROL_CHANGE) {
             
             if (learningParameter!= NULL && bLearning) {
                 if (bParameterGroupSetup) {
-                    if (linkMidiToOfParameter( msg, learningParameter)){
+                    if (linkMidiToOfParameter(message, learningParameter)){
                         cout << "learned  " << endl;
                         learningParameter=NULL;
                         bLearning = false;
                     }
                 }
             }else if(bUnlearning){
-                if (synced.count(msg.control) > 0) {
-                    int dims = synced[msg.control]->dims;
+                if (synced.count(message.control) > 0) {
+                    int dims = synced[message.control]->dims;
                     if (dims == 0) dims = 1;
                     if (dims > 4) dims = 4;
                     for (int i = 0; i < dims; i++) {
-                        if (synced.count(msg.control+i)) {
-                            synced.erase(msg.control+i);
+                        if (synced.count(message.control+i)) {
+                            synced.erase(message.control+i);
                         }
                     }
                     bUnlearning  = false;
                     cout << "unlearned  " << endl;
                 }
             }else{
-                if (synced.count(msg.control)) {
-                    mapMidiInfoToParameter(*synced[msg.control].get(), msg);
+                if (synced.count(message.control)) {
+                    mapMidiInfoToParameter(*synced[message.control].get(), message);
                 }
             }
         }
-        midiMessage = msg;
+        midiMessage = message;
     }
 }
