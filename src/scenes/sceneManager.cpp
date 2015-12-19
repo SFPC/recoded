@@ -145,7 +145,7 @@ void sceneManager::setup(){
     
 #ifdef USE_EXTERNAL_SOUNDS
     // open an outgoing connection to HOST:PORT
-    oscSender.setup(HOST, PORT);
+    oscSender.setup(OSC_HOST, OSC_PORT);
 #endif
     
     // disney
@@ -159,6 +159,7 @@ void sceneManager::setup(){
     //        scenes[i]->setup();
     //    }
     
+    isTransitioning = false;
     currentScene = 0;
 
 #ifdef TYPE_ANIMATION
@@ -166,6 +167,7 @@ void sceneManager::setup(){
 #else
     shouldDrawScene = true;
 #endif
+    shouldDrawCode = true;
     
     panel = new ofxPanel();
     panel->setup("scene settings");
@@ -182,19 +184,11 @@ void sceneManager::setup(){
     
     startScene(currentScene);
 
-#ifdef USE_EXTERNAL_SOUNDS
-    ofxOscMessage m;
-    m.setAddress("/d4n/sceneStart");
-    m.addStringArg(ofToString(currentScene) + ": "
-                   + scenes[currentScene]->originalArtist
-                   + " (recoded by " + scenes[currentScene]->author + ")");
-    oscSender.sendMessage(m, false);
-#else
     loop.load("sounds/drawbar_c4_a.aif");
     loop.setLoop(true);
     loop.play();
     loop.setVolume(0);
-    
+#ifndef USE_EXTERNAL_SOUNDS
     TM.loadSounds();
 #endif
     screenRect.set(0, 0, VISUALS_WIDTH+CODE_X_POS, VISUALS_HEIGHT);
@@ -215,6 +209,15 @@ void sceneManager::startScene(int whichScene){
     if (bAutoPlay) {
         startPlaying();
     }
+#endif
+#ifdef USE_EXTERNAL_SOUNDS
+    ofxOscMessage m;
+    m.setAddress("/d4n/scene/load");
+    m.addIntArg(currentScene);
+//    m.addStringArg(ofToString(currentScene) + ": "
+//                   + scenes[currentScene]->originalArtist
+//                   + " (recoded by " + scenes[currentScene]->author + ")");
+    oscSender.sendMessage(m, false);
 #endif
 }
 #ifdef USE_MIDI_PARAM_SYNC
@@ -273,15 +276,34 @@ void sceneManager::update(){
     pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime);
     if (bSceneWaitForCode) {
         if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
-          shouldDrawScene = true;
-          fadingIn = true;
+            shouldDrawScene = true;
+            fadingIn = true;
         } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
-          fadingIn = false;
+            fadingIn = false;
         }
     } else {
         shouldDrawScene = true;
     }
 #endif
+    
+    if (isTransitioning) {
+        preTransitionPct = (ofGetElapsedTimef() - preTransitionStart) / SCENE_PRE_TRANSITION_TIME;
+        fadingOut = false;
+        introCursor = false;
+        shouldDrawScene = false;
+        shouldDrawCode = false;
+        
+        if (preTransitionPct >= 1.0) {
+            isTransitioning = false;
+            nextScene(true);
+        } else if (preTransitionPct < SCENE_PRE_TRANSITION_FADE) {
+            fadingOut = true;
+            shouldDrawScene = true;
+            shouldDrawCode = true;
+        } else if (preTransitionPct > SCENE_PRE_TRANSITION_CURSOR) {
+            introCursor = true;
+        }
+    }
 
     if (shouldDrawScene) {
         scenes[currentScene]->update();
@@ -293,7 +315,7 @@ void sceneManager::update(){
         
         for (int i = 0; i < TM.paramChangedEnergy.size(); i++) {
     
-            if (TM.paramChangedEnergy[i] > 0) {
+            if (TM.paramChangedEnergy[i] > 0.0001) {
             
                 ofParameter<float> t = scenes[currentScene]->parameters[i].cast<float>();
 
@@ -308,14 +330,16 @@ void sceneManager::update(){
 
 #ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/param/" + ofToString(i) + "/energy");
-                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+                oscMessage.setAddress("/d4n/paramEnergy");
+//                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+//                oscMessage.addIntArg(i);
                 oscMessage.addFloatArg(TM.paramChangedEnergy[i]);
                 oscSender.sendMessage(oscMessage, false);
 
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/param/" + ofToString(i) + "/value");
-                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+                oscMessage.setAddress("/d4n/paramValue");
+//                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+                oscMessage.addIntArg(i+1); // may need start at 1 for Ableton to pick up changes in first param
                 oscMessage.addFloatArg(pct);
                 oscSender.sendMessage(oscMessage, false);
 #else
@@ -358,7 +382,7 @@ void sceneManager::draw(){
 #ifdef USE_EXTERNAL_SOUNDS
     if (pct == 1 && !didTriggerCodeFinishedAnimatingEvent) {
         oscMessage.clear();
-        oscMessage.setAddress("/d4n/codeFinishedAnimating");
+        oscMessage.setAddress("/d4n/scene/start");
         oscMessage.addTriggerArg();
         oscSender.sendMessage(oscMessage, false);
         didTriggerCodeFinishedAnimatingEvent = true;
@@ -366,7 +390,9 @@ void sceneManager::draw(){
 #endif
 
     ofClear(0,0,0,255);
-    vector < codeLetter > letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
+    vector < codeLetter > letters;
+    if (shouldDrawCode)
+        letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
     
     ofSetColor(255);
     //font.drawString(codeReplaced, 40, 40);
@@ -383,21 +409,21 @@ void sceneManager::draw(){
         bShiftLeft = true;
     }
     
-    if (bShiftUp) {
+    if (bShiftUp && !introCursor) {
         float dy = lastLetterY - (VISUALS_HEIGHT-20);
         ofPushMatrix();
         ofTranslate(0,-dy);
     }
 
-    if (bShiftLeft) {
+    if (bShiftLeft && !introCursor) {
         float dx = maxLetterX - (VISUALS_WIDTH-20);
         dx = min((int)dx, 20);
         ofPushMatrix();
         ofTranslate(-dx,0);
     }
 
+    const int codeDefaultStartX = 40;
     int countLetters = 0;
-    int codeDefaultStartX = 40;
     int xStart = codeDefaultStartX;
     int x = xStart;
     
@@ -492,19 +518,29 @@ void sceneManager::draw(){
     }
     
     bool drawCursor = false;
-    if (pct < 0.1) {
-        if (int(letters.size() * pct) % 2) {
+    
+    // Decide if we're going to draw a cursor
+    if (!isTransitioning) {
+        if (pct < 0.1) {
+            drawCursor = int(letters.size() * pct) % 2 == 0;
+        } else if (pct > 0.1 && pct < 1) {
             drawCursor = true;
+        } else if (pctDelay > 1 && !shouldDrawScene) {
+            x = xStart;
+            y += 13;
+            drawCursor = (int)((pctDelay * TM.animTime) / 0.2) % 2 == 1;
         }
-    } else if (pct > 0.1 && pct < 1) {
-        drawCursor = true;
-    } else if (pctDelay > 1 && !shouldDrawScene) {
-        x = xStart;
-        y += 13;
-        drawCursor = (int)((pctDelay - 1.0) / 0.035) % 2 == 0;
+
+        if (!nonEmptyLetter) drawCursor = false;
+        if (!(x != xStart || pctDelay > 1)) drawCursor = false;
+    } else if (isTransitioning && introCursor) {
+        x = codeDefaultStartX;
+        y = 60 + 13;
+        drawCursor = (int)((preTransitionPct * SCENE_PRE_TRANSITION_TIME) / 0.2) % 2 == 0;
     }
     
-    if (nonEmptyLetter && drawCursor && (x != xStart || pctDelay > 1)) {
+    // Draw that cursor
+    if (drawCursor) {
         ofSetColor(140);
         ofDrawRectangle(x, y-10, 7, 13);
     }
@@ -516,8 +552,7 @@ void sceneManager::draw(){
     if (bShiftUp){
         ofPopMatrix();
     }
-    
-    
+
     codeFbo.end();
     
     // Get rid of blended sidebars
@@ -525,6 +560,7 @@ void sceneManager::draw(){
     ofDrawRectangle(CODE_X_POS-1, 0, VISUALS_WIDTH+2, VISUALS_HEIGHT);
     ofSetColor(255);
     codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
+
     if (shouldDrawScene) {
         sceneFbo.begin();
         ofClear(0,0,0,255);
@@ -547,7 +583,19 @@ void sceneManager::draw(){
     } else {
         ofSetColor(0);
         ofFill();
+        ofClearAlpha();
         ofDrawRectangle(0, 0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
+    }
+
+    // Draw overlay rectangles on fade out
+    if (isTransitioning && fadingOut) {
+        float fadeOpacityRaw = ofMap(preTransitionPct, 0, SCENE_PRE_TRANSITION_FADE, 0, 1);
+        ofSetColor(0, ofClamp(fadeOpacityRaw * 255, 0, 255));
+        ofFill();
+        
+        // Draw over the frames
+        ofDrawRectangle(0, 0, VISUALS_WIDTH+1, VISUALS_HEIGHT);
+        ofDrawRectangle(CODE_X_POS-1, 0, VISUALS_WIDTH+2, VISUALS_HEIGHT);
     }
 
   
@@ -558,14 +606,13 @@ void sceneManager::draw(){
         ofDrawRectangle(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         int diff = (countLetters - (int)lettersLastFrame);
         if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > ofRandom(50,87))) {
-            // cout << diff << enld;
             lastPlayTime = ofGetElapsedTimeMillis();
             
             if (ofNoise(pct*10, ofGetElapsedTimef()/10.0) > 0.5) {
 #ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/keyPressed");
-                oscMessage.addStringArg("a");
+                oscMessage.setAddress("/d4n/keystroke");
+                oscMessage.addIntArg(0);
                 oscSender.sendMessage(oscMessage, false);
 #else
                 TM.clickb.play();
@@ -574,8 +621,8 @@ void sceneManager::draw(){
             } else {
 #ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/keyPressed");
-                oscMessage.addStringArg("b");
+                oscMessage.setAddress("/d4n/keystroke");
+                oscMessage.addIntArg(1);
                 oscSender.sendMessage(oscMessage, false);
 #else
                 TM.clicka.play();
@@ -634,16 +681,21 @@ void sceneManager::nextScene(bool forward){
     
 #ifdef TYPE_ANIMATION
     shouldDrawScene = false;
+#else
+    shouldDrawScene = true
 #endif
+
+    isTransitioning = false;
+    shouldDrawCode = true;
 
     startScene(currentScene);
     
 #ifdef USE_EXTERNAL_SOUNDS
     oscMessage.clear();
-    oscMessage.setAddress("/d4n/sceneStart");
-    oscMessage.addStringArg(ofToString(currentScene) + ": "
-                   + scenes[currentScene]->originalArtist
-                   + " (recoded by " + scenes[currentScene]->author + ")");
+    oscMessage.setAddress("/d4n/scene/load");
+//    oscMessage.addStringArg(ofToString(currentScene) + ": "
+//                   + scenes[currentScene]->originalArtist
+//                   + " (recoded by " + scenes[currentScene]->author + ")");
     oscSender.sendMessage(oscMessage, false);
 #endif
     
@@ -656,7 +708,14 @@ void sceneManager::nextScene(bool forward){
 };
 //-----------------------------------------------------------------------------------
 void sceneManager::advanceScene(){
-    nextScene(true);
+    if (!isTransitioning) {
+        isTransitioning = true;
+        preTransitionStart = ofGetElapsedTimef();
+        preTransitionPct = 0;
+    } else {
+        isTransitioning = false;
+        nextScene(true);
+    }
 };
 //-----------------------------------------------------------------------------------
 void sceneManager::regressScene(){
