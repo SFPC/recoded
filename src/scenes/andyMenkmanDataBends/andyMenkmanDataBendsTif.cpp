@@ -12,8 +12,7 @@ void andyMenkmanDataBendsTif::setup(){
     parameters.add(numberOfLines);
     parameters.add(startLine);
     parameters.add(debounce);
-
- 
+    
     ofBackground(0);
     ofSetColor(255);
 
@@ -30,3 +29,4 @@ void andyMenkmanDataBendsTif::update(){
 void andyMenkmanDataBendsTif::draw(){
     bender.draw(0, 0, dimensions.getWidth(), dimensions.getHeight());
 }
+
