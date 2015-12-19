@@ -704,7 +704,10 @@ void sceneManager::draw(){
     str += "Is Recording: " + (string)(sync.recorder.isRecording()?"TRUE":"FALSE")+"\n";
     str += "Play events: " + ofToString(sync.player.data.size())+"\n";
     str += "Is Playing: " + (string)(sync.player.bPlaying?"TRUE":"FALSE")+"\n";
-    str += "Pre-recorded events: " + ofToString(scenes[currentScene]->recData.size());
+    str += "Pre-recorded events: " + ofToString(scenes[currentScene]->recData.size())+"\n";
+    str += "Current Scene Time: " + ofToString(scenes[currentScene]->getElapsedTimef())+"\n";
+    str += "Current Scene Duration: " + ofToString(scenes[currentScene]->sceneDuration)+"\n";
+    str += "Current Scene is done: " + (string)(scenes[currentScene]->isSceneDone()?"TRUE":"FALSE");
     
     ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
 }
