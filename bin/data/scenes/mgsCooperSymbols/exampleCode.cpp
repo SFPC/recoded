@@ -1,3 +1,5 @@
+// Muriel Cooper - Cover of 'A Primer Of Visual Literacy'
+
 int numberOfShapes = [[Number of Shapes]];
 
 void mgsCooperSymbols::drawFullGrid(float x, float y) {

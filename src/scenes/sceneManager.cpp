@@ -731,14 +731,14 @@ void sceneManager::computeMotion(ofFbo &fbo) {
     motion += (shapedMotion - motion) * 0.1;
     
 #ifdef USE_EXTERNAL_SOUNDS
-    oscMessage.clear();
-    oscMessage.setAddress("/d4n/motion");
-    oscMessage.addFloatArg(motion);
-    oscMessage.addFloatArg(centroid.x);
-    oscMessage.addFloatArg(centroid.y);
-    oscMessage.addFloatArg(centroid.x - lastCentroid.x);
-    oscMessage.addFloatArg(centroid.y - lastCentroid.y);
-    oscSender.sendMessage(oscMessage, false);
+//    oscMessage.clear();
+//    oscMessage.setAddress("/d4n/motion");
+//    oscMessage.addFloatArg(motion);
+//    oscMessage.addFloatArg(centroid.x);
+//    oscMessage.addFloatArg(centroid.y);
+//    oscMessage.addFloatArg(centroid.x - lastCentroid.x);
+//    oscMessage.addFloatArg(centroid.y - lastCentroid.y);
+//    oscSender.sendMessage(oscMessage, false);
 #endif
     
     currFrame.pasteInto(lastFrame, 0, 0);
