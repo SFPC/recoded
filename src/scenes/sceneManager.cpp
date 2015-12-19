@@ -310,7 +310,6 @@ void sceneManager::update(){
             oscMessage.setAddress("/d4n/scene/start");
             oscMessage.addTriggerArg();
             oscSender.sendMessage(oscMessage, false);
-            didTriggerCodeFinishedAnimatingEvent = true;
 #endif
 
         } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
