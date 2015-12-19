@@ -4,7 +4,7 @@
 #include "baseScene.h"
 #include "ofxDataBender.h"
 
-class andyMenkmanDataBendsPng : public baseScene {
+class andyMenkmanDataBendsGif : public baseScene {
     
 public:
     
@@ -16,5 +16,4 @@ public:
 
     ofParameter<int> numberOfLines;
     ofParameter<int> startLine;
-    ofParameter<int> debounce;
 };

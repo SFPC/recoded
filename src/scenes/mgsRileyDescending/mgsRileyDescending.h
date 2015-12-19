@@ -45,6 +45,7 @@ class mgsRileyDescending : public baseScene {
   void setupLinesF(float& l);
   
   void setupLinesB(bool& l);
+  void drawGrid(int& l);
   void loadLine(float x, float y, float accel, float speed, float wavePeriod, float wavePhase, float distance);
   
   ofMesh quad1;
@@ -53,7 +54,7 @@ class mgsRileyDescending : public baseScene {
   ofMesh quad4;
   vector<RileyLine> lines;
 
-  ofParameter<float>  minSpeed, maxSpeed, speedParam, wavePhaseParam, accelParam, wavePeriodParam, distanceParam;
-  ofParameter<int> lineWidth, lineHeight, lineSpacing,  rows, columns, fillColor, bgColor, minWavePeriod, maxWavePeriod, minAccel, maxAccel, minWavePhase, maxWavePhase, yOffset, xOffset;
+  ofParameter<float>  minSpeed, maxSpeed, speedParam, wavePhaseParam, accelParam, wavePeriodParam, distanceParam, yOffset, xOffset, lineWidth, lineHeight, lineSpacing, minWavePeriod, maxWavePeriod, minAccel, maxAccel, minWavePhase, maxWavePhase;
+  ofParameter<int> rows, columns, fillColor, bgColor;
   ofParameter<bool> animated;
 };

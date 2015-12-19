@@ -90,6 +90,7 @@
 		C19334561C1B716B00A19961 /* ofxDataBender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19334541C1B716B00A19961 /* ofxDataBender.cpp */; };
 		C19334591C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19334571C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp */; };
 		C193345C1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C193345A1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp */; };
+		C1C15FEE1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1C15FEC1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp */; };
 		D39F0DEF1C222065004DEAAB /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D39F0DC81C222065004DEAAB /* ofxOscBundle.cpp */; };
 		D39F0DF01C222065004DEAAB /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D39F0DCA1C222065004DEAAB /* ofxOscMessage.cpp */; };
 		D39F0DF11C222065004DEAAB /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D39F0DCC1C222065004DEAAB /* ofxOscParameterSync.cpp */; };
@@ -331,6 +332,8 @@
 		C19334581C1B7BB300A19961 /* andyMenkmanDataBendsPng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andyMenkmanDataBendsPng.h; sourceTree = "<group>"; };
 		C193345A1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = andyMenkmanDataBendsTif.cpp; sourceTree = "<group>"; };
 		C193345B1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andyMenkmanDataBendsTif.h; sourceTree = "<group>"; };
+		C1C15FEC1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = andyMenkmanDataBendsGif.cpp; sourceTree = "<group>"; };
+		C1C15FED1C25240A0033B6D0 /* andyMenkmanDataBendsGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andyMenkmanDataBendsGif.h; sourceTree = "<group>"; };
 		C1F057861BF7B0A5002155BE /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
 		C1F057871BF7B11F002155BE /* generate_scene.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_scene.sh; sourceTree = "<group>"; };
 		C70D8946940288799E82131E /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSliderGroup.h; path = ../../../addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
@@ -1087,6 +1090,8 @@
 				C19334521C1B6D7E00A19961 /* andyMenkmanDataBendsJpg.h */,
 				C19334541C1B716B00A19961 /* ofxDataBender.cpp */,
 				C19334551C1B716B00A19961 /* ofxDataBender.h */,
+				C1C15FEC1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp */,
+				C1C15FED1C25240A0033B6D0 /* andyMenkmanDataBendsGif.h */,
 			);
 			path = andyMenkmanDataBends;
 			sourceTree = "<group>";
@@ -1441,6 +1446,7 @@
 				B00CD10C1C21E81400C529FA /* ofxEasingQuint.cpp in Sources */,
 				B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */,
 				B00CD10D1C21E81400C529FA /* ofxEasingSine.cpp in Sources */,
+				C1C15FEE1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				B04420991C1901D90049071E /* RileyArcsRoy.cpp in Sources */,
