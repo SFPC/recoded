@@ -286,7 +286,7 @@ void sceneManager::update(){
         }
     } else {
         if (bAutoAdvance && !sync.recorder.isRecording()) {
-            if (scenes[currentScene]->isSceneDone()) {
+            if (!isTransitioning && scenes[currentScene]->isSceneDone()) {
                 advanceScene();
             }
         }
