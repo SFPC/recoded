@@ -93,31 +93,32 @@ void sceneManager::setup(){
     scenes.push_back(new loloVera());
     scenes.push_back(new andyMenkmanDataBendsJpg());
     scenes.push_back(new andyMenkmanDataBendsPng());
-    scenes.push_back(new andyMenkmanDataBendsTif());
     scenes.push_back(new manfredMohrP196A());
     scenes.push_back(new veraMolnarTrapezium());
     scenes.push_back(new loloVera2());
     scenes.push_back(new cantusFirmusRiley());
     scenes.push_back(new aaronMarcusHieroglyphB());
-    scenes.push_back(new veraMolnarLines68());
+    //scenes.push_back(new veraMolnarLines68());
     scenes.push_back(new alexLissamojiWhitney());
     scenes.push_back(new yosukeVeraSansTitre());
-    scenes.push_back(new alexGifPaletteDitherMenkman());
+    //scenes.push_back(new alexGifPaletteDitherMenkman());
     scenes.push_back(new yeseulMenkmanInstitution());
     scenes.push_back(new yeseulCooperMessages());
     scenes.push_back(new yeseulWhitneyScene());
     scenes.push_back(new yeseulRileyBrokencircle());
     scenes.push_back(new yosukeJohnWhitneyMatrix());
-    scenes.push_back(new mgsCooperSymbols());
-    scenes.push_back(new mgsRileyDiamonds());
+    //scenes.push_back(new mgsCooperSymbols());
+    //scenes.push_back(new mgsRileyDiamonds());
     scenes.push_back(new mgsRileyEllipsesAndSquares());
-    scenes.push_back(new mgsVeraMolnarLineStudy());
-    scenes.push_back(new mgsMaedaTimePainter());
-    scenes.push_back(new mgsRileyDescending());
+    //scenes.push_back(new mgsVeraMolnarLineStudy());
+    //scenes.push_back(new mgsMaedaTimePainter());
+    //scenes.push_back(new mgsRileyDescending());
     scenes.push_back(new olegVeraV());
     scenes.push_back(new sarahgpRileyCircle());
     scenes.push_back(new mwalczykVeraSquares());
 
+    // Too slow
+    // scenes.push_back(new andyMenkmanDataBendsTif());
     
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
@@ -130,6 +131,7 @@ void sceneManager::setup(){
     sync.smoothing.set(0);
 
     ofAddListener(sync.player.playE, this, &sceneManager::startPlaying);
+    ofAddListener(sync.recorder.recStartE, this, &sceneManager::recordingStart);
     ofAddListener(sync.recorder.recEndE, this, &sceneManager::recordingEnd);
 #endif
     
@@ -243,6 +245,7 @@ void sceneManager::startScene(int whichScene){
 #ifdef USE_MIDI_PARAM_SYNC
 //-----------------------------------------------------------------------------------
 void sceneManager::recordingStart(){
+    scenes[currentScene]->reset();
     scenes[currentScene]->resetTiming();
 }
 //-----------------------------------------------------------------------------------
@@ -354,10 +357,9 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        if (enableMidiUpdate.get()){
+        if (enableMidiUpdate.get() && scenes[currentScene]->recData.size()){
             if(scenes[currentScene]->bAnimateScene){
-                if (isMidiConnected)
-                    scenes[currentScene]->updateMidiParams();
+                scenes[currentScene]->updateMidiParams();
             }
         }
 #endif

@@ -1,2951 +1,531 @@
 <Midi>
 	<Meta>
-		<duration>19.2993</duration>
+		<duration>22.2679</duration>
 	</Meta>
 	<midiEvent>
-		<time>1797</time>
+		<time>1991</time>
 		<control>0</control>
-		<value>1</value>
-		<deltatime>1616.57</deltatime>
+		<value>60</value>
+		<deltatime>1871.19</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1809</time>
+		<time>5265</time>
 		<control>0</control>
-		<value>2</value>
-		<deltatime>12.5999</deltatime>
+		<value>59</value>
+		<deltatime>3273.84</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1817</time>
+		<time>5279</time>
 		<control>0</control>
-		<value>3</value>
-		<deltatime>7.87474</deltatime>
+		<value>58</value>
+		<deltatime>14.1596</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1821</time>
+		<time>5289</time>
 		<control>0</control>
-		<value>4</value>
-		<deltatime>4.21206</deltatime>
+		<value>57</value>
+		<deltatime>9.54611</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1825</time>
+		<time>5295</time>
 		<control>0</control>
-		<value>5</value>
-		<deltatime>3.2968</deltatime>
+		<value>56</value>
+		<deltatime>7.44677</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1829</time>
+		<time>5302</time>
 		<control>0</control>
-		<value>6</value>
-		<deltatime>4.17924</deltatime>
+		<value>55</value>
+		<deltatime>6.21138</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1833</time>
+		<time>5306</time>
 		<control>0</control>
-		<value>7</value>
-		<deltatime>3.69478</deltatime>
+		<value>54</value>
+		<deltatime>4.7769</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1836</time>
+		<time>5311</time>
 		<control>0</control>
-		<value>8</value>
-		<deltatime>3.23491</deltatime>
+		<value>53</value>
+		<deltatime>4.74745</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1840</time>
+		<time>5317</time>
 		<control>0</control>
-		<value>9</value>
-		<deltatime>3.64741</deltatime>
+		<value>52</value>
+		<deltatime>5.38401</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1843</time>
+		<time>5320</time>
 		<control>0</control>
-		<value>10</value>
-		<deltatime>3.22904</deltatime>
+		<value>51</value>
+		<deltatime>3.09781</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1846</time>
+		<time>5324</time>
 		<control>0</control>
-		<value>11</value>
-		<deltatime>3.18094</deltatime>
+		<value>50</value>
+		<deltatime>4.35835</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1849</time>
+		<time>5328</time>
 		<control>0</control>
-		<value>12</value>
-		<deltatime>3.22767</deltatime>
+		<value>49</value>
+		<deltatime>4.15484</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1852</time>
+		<time>5331</time>
 		<control>0</control>
-		<value>13</value>
-		<deltatime>2.75154</deltatime>
+		<value>48</value>
+		<deltatime>3.1858</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1855</time>
+		<time>5336</time>
 		<control>0</control>
-		<value>14</value>
-		<deltatime>3.15174</deltatime>
+		<value>47</value>
+		<deltatime>4.23588</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1858</time>
+		<time>5339</time>
 		<control>0</control>
-		<value>15</value>
-		<deltatime>3.18742</deltatime>
+		<value>46</value>
+		<deltatime>3.20555</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1861</time>
+		<time>5342</time>
 		<control>0</control>
-		<value>16</value>
-		<deltatime>2.67681</deltatime>
+		<value>45</value>
+		<deltatime>3.23198</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1864</time>
+		<time>5345</time>
 		<control>0</control>
-		<value>18</value>
-		<deltatime>3.21248</deltatime>
+		<value>44</value>
+		<deltatime>3.21897</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1867</time>
+		<time>5349</time>
 		<control>0</control>
-		<value>19</value>
-		<deltatime>3.22105</deltatime>
+		<value>43</value>
+		<deltatime>3.71685</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1870</time>
+		<time>5352</time>
+		<control>0</control>
+		<value>42</value>
+		<deltatime>2.77502</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5354</time>
+		<control>0</control>
+		<value>41</value>
+		<deltatime>2.61286</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5357</time>
+		<control>0</control>
+		<value>40</value>
+		<deltatime>2.62849</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5360</time>
+		<control>0</control>
+		<value>39</value>
+		<deltatime>2.66021</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5362</time>
+		<control>0</control>
+		<value>37</value>
+		<deltatime>2.64699</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5365</time>
+		<control>0</control>
+		<value>36</value>
+		<deltatime>2.68091</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5367</time>
+		<control>0</control>
+		<value>35</value>
+		<deltatime>2.27877</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5369</time>
+		<control>0</control>
+		<value>34</value>
+		<deltatime>2.14651</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5371</time>
+		<control>0</control>
+		<value>33</value>
+		<deltatime>2.09824</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5373</time>
+		<control>0</control>
+		<value>32</value>
+		<deltatime>1.62248</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5375</time>
+		<control>0</control>
+		<value>31</value>
+		<deltatime>2.15837</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5377</time>
+		<control>0</control>
+		<value>30</value>
+		<deltatime>2.12757</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5379</time>
+		<control>0</control>
+		<value>29</value>
+		<deltatime>1.66788</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5381</time>
+		<control>0</control>
+		<value>28</value>
+		<deltatime>1.61114</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5382</time>
+		<control>0</control>
+		<value>27</value>
+		<deltatime>1.61782</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5384</time>
+		<control>0</control>
+		<value>26</value>
+		<deltatime>1.66123</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5386</time>
+		<control>0</control>
+		<value>25</value>
+		<deltatime>2.14115</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5388</time>
+		<control>0</control>
+		<value>23</value>
+		<deltatime>1.63745</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5389</time>
+		<control>0</control>
+		<value>22</value>
+		<deltatime>1.63374</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5391</time>
+		<control>0</control>
+		<value>21</value>
+		<deltatime>1.60622</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5393</time>
 		<control>0</control>
 		<value>20</value>
-		<deltatime>2.6661</deltatime>
+		<deltatime>1.71773</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>1872</time>
-		<control>0</control>
-		<value>21</value>
-		<deltatime>2.11111</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1875</time>
-		<control>0</control>
-		<value>22</value>
-		<deltatime>3.2063</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1878</time>
-		<control>0</control>
-		<value>23</value>
-		<deltatime>2.76424</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1881</time>
-		<control>0</control>
-		<value>24</value>
-		<deltatime>2.72767</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1883</time>
-		<control>0</control>
-		<value>25</value>
-		<deltatime>2.57716</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1887</time>
-		<control>0</control>
-		<value>26</value>
-		<deltatime>3.17183</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1889</time>
-		<control>0</control>
-		<value>27</value>
-		<deltatime>2.79459</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1892</time>
-		<control>0</control>
-		<value>28</value>
-		<deltatime>2.54217</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1895</time>
-		<control>0</control>
-		<value>29</value>
-		<deltatime>2.69815</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1897</time>
-		<control>0</control>
-		<value>30</value>
-		<deltatime>2.73283</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1900</time>
-		<control>0</control>
-		<value>31</value>
-		<deltatime>3.11547</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1904</time>
-		<control>0</control>
-		<value>32</value>
-		<deltatime>3.32257</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1906</time>
-		<control>0</control>
-		<value>33</value>
-		<deltatime>2.06997</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1909</time>
-		<control>0</control>
-		<value>34</value>
-		<deltatime>2.79623</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1911</time>
-		<control>0</control>
-		<value>36</value>
-		<deltatime>2.58195</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1914</time>
-		<control>0</control>
-		<value>37</value>
-		<deltatime>2.64685</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1917</time>
-		<control>0</control>
-		<value>38</value>
-		<deltatime>2.64728</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1919</time>
-		<control>0</control>
-		<value>39</value>
-		<deltatime>2.26566</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1921</time>
-		<control>0</control>
-		<value>40</value>
-		<deltatime>2.57226</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1923</time>
-		<control>0</control>
-		<value>41</value>
-		<deltatime>2.13854</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1926</time>
-		<control>0</control>
-		<value>42</value>
-		<deltatime>2.16801</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1928</time>
-		<control>0</control>
-		<value>43</value>
-		<deltatime>2.16643</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1930</time>
-		<control>0</control>
-		<value>44</value>
-		<deltatime>2.16915</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1932</time>
-		<control>0</control>
-		<value>45</value>
-		<deltatime>2.16447</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1934</time>
-		<control>0</control>
-		<value>46</value>
-		<deltatime>2.28193</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1937</time>
-		<control>0</control>
-		<value>48</value>
-		<deltatime>2.04625</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1939</time>
-		<control>0</control>
-		<value>49</value>
-		<deltatime>2.11892</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1941</time>
-		<control>0</control>
-		<value>50</value>
-		<deltatime>2.14526</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1943</time>
-		<control>0</control>
-		<value>51</value>
-		<deltatime>2.13311</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1945</time>
-		<control>0</control>
-		<value>52</value>
-		<deltatime>1.70126</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1947</time>
-		<control>0</control>
-		<value>53</value>
-		<deltatime>2.12435</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1949</time>
-		<control>0</control>
-		<value>54</value>
-		<deltatime>2.16285</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1950</time>
-		<control>0</control>
-		<value>55</value>
-		<deltatime>1.61495</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1953</time>
-		<control>0</control>
-		<value>56</value>
-		<deltatime>2.17637</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1955</time>
-		<control>0</control>
-		<value>57</value>
-		<deltatime>2.14477</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1957</time>
-		<control>0</control>
-		<value>58</value>
-		<deltatime>2.10194</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1959</time>
-		<control>0</control>
-		<value>59</value>
-		<deltatime>1.83142</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1961</time>
-		<control>0</control>
-		<value>60</value>
-		<deltatime>2.6811</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1963</time>
-		<control>0</control>
-		<value>61</value>
-		<deltatime>2.0225</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1966</time>
-		<control>0</control>
-		<value>62</value>
-		<deltatime>2.12767</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1968</time>
-		<control>0</control>
-		<value>63</value>
-		<deltatime>2.15674</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1970</time>
-		<control>0</control>
-		<value>64</value>
-		<deltatime>2.18861</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1972</time>
-		<control>0</control>
-		<value>65</value>
-		<deltatime>2.13557</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1975</time>
-		<control>0</control>
-		<value>67</value>
-		<deltatime>2.68609</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1977</time>
-		<control>0</control>
-		<value>68</value>
-		<deltatime>2.1147</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1980</time>
-		<control>0</control>
-		<value>69</value>
-		<deltatime>2.70303</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1982</time>
-		<control>0</control>
-		<value>70</value>
-		<deltatime>2.66274</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1985</time>
-		<control>0</control>
-		<value>71</value>
-		<deltatime>2.84078</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1988</time>
-		<control>0</control>
-		<value>72</value>
-		<deltatime>2.59533</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1990</time>
-		<control>0</control>
-		<value>73</value>
-		<deltatime>2.15196</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1992</time>
-		<control>0</control>
-		<value>74</value>
-		<deltatime>2.64864</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1996</time>
-		<control>0</control>
-		<value>75</value>
-		<deltatime>3.22779</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>1998</time>
-		<control>0</control>
-		<value>76</value>
-		<deltatime>2.65814</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2001</time>
-		<control>0</control>
-		<value>77</value>
-		<deltatime>2.61518</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2004</time>
-		<control>0</control>
-		<value>78</value>
-		<deltatime>3.18308</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2007</time>
-		<control>0</control>
-		<value>80</value>
-		<deltatime>2.68567</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2010</time>
-		<control>0</control>
-		<value>81</value>
-		<deltatime>3.35379</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2013</time>
-		<control>0</control>
-		<value>82</value>
-		<deltatime>2.67728</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2015</time>
-		<control>0</control>
-		<value>83</value>
-		<deltatime>2.09071</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2018</time>
-		<control>0</control>
-		<value>84</value>
-		<deltatime>2.60584</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2020</time>
-		<control>0</control>
-		<value>85</value>
-		<deltatime>2.68492</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2023</time>
-		<control>0</control>
-		<value>86</value>
-		<deltatime>2.76617</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2026</time>
-		<control>0</control>
-		<value>87</value>
-		<deltatime>2.60073</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2029</time>
-		<control>0</control>
-		<value>88</value>
-		<deltatime>3.69894</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2033</time>
-		<control>0</control>
-		<value>89</value>
-		<deltatime>3.73066</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2035</time>
-		<control>0</control>
-		<value>90</value>
-		<deltatime>2.19893</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2038</time>
-		<control>0</control>
-		<value>91</value>
-		<deltatime>3.21848</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2041</time>
-		<control>0</control>
-		<value>92</value>
-		<deltatime>2.66892</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2045</time>
-		<control>0</control>
-		<value>93</value>
-		<deltatime>3.69792</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2048</time>
-		<control>0</control>
-		<value>94</value>
-		<deltatime>2.70435</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2051</time>
-		<control>0</control>
-		<value>95</value>
-		<deltatime>3.18324</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2053</time>
-		<control>0</control>
-		<value>96</value>
-		<deltatime>2.10808</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2056</time>
-		<control>0</control>
-		<value>98</value>
-		<deltatime>3.28057</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2059</time>
-		<control>0</control>
-		<value>99</value>
-		<deltatime>2.59472</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2062</time>
-		<control>0</control>
-		<value>100</value>
-		<deltatime>3.18653</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2065</time>
-		<control>0</control>
-		<value>101</value>
-		<deltatime>2.7975</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2067</time>
-		<control>0</control>
-		<value>102</value>
-		<deltatime>2.69173</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2069</time>
-		<control>0</control>
-		<value>103</value>
-		<deltatime>1.49742</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2072</time>
-		<control>0</control>
-		<value>104</value>
-		<deltatime>3.24643</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2074</time>
-		<control>0</control>
-		<value>105</value>
-		<deltatime>2.14102</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2077</time>
-		<control>0</control>
-		<value>106</value>
-		<deltatime>2.66631</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2080</time>
-		<control>0</control>
-		<value>107</value>
-		<deltatime>2.69186</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2083</time>
-		<control>0</control>
-		<value>108</value>
-		<deltatime>3.20755</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2086</time>
-		<control>0</control>
-		<value>109</value>
-		<deltatime>2.72776</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2089</time>
-		<control>0</control>
-		<value>110</value>
-		<deltatime>3.17749</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2091</time>
-		<control>0</control>
-		<value>111</value>
-		<deltatime>2.08864</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2093</time>
-		<control>0</control>
-		<value>113</value>
-		<deltatime>2.32198</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2096</time>
-		<control>0</control>
-		<value>114</value>
-		<deltatime>2.61494</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2099</time>
-		<control>0</control>
-		<value>115</value>
-		<deltatime>3.13102</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2102</time>
-		<control>0</control>
-		<value>116</value>
-		<deltatime>2.6941</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2104</time>
-		<control>0</control>
-		<value>117</value>
-		<deltatime>2.67371</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2107</time>
-		<control>0</control>
-		<value>118</value>
-		<deltatime>3.19463</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2111</time>
-		<control>0</control>
-		<value>119</value>
-		<deltatime>3.70002</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2113</time>
-		<control>0</control>
-		<value>120</value>
-		<deltatime>2.19143</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2116</time>
-		<control>0</control>
-		<value>121</value>
-		<deltatime>3.16864</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2120</time>
-		<control>0</control>
-		<value>122</value>
-		<deltatime>3.3995</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2123</time>
-		<control>0</control>
-		<value>123</value>
-		<deltatime>3.04574</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2126</time>
-		<control>0</control>
-		<value>124</value>
-		<deltatime>2.6545</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2131</time>
-		<control>0</control>
-		<value>125</value>
-		<deltatime>5.27783</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2141</time>
-		<control>0</control>
-		<value>126</value>
-		<deltatime>10.5122</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2154</time>
-		<control>0</control>
-		<value>127</value>
-		<deltatime>12.7235</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2858</time>
-		<control>0</control>
-		<value>126</value>
-		<deltatime>703.685</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2866</time>
-		<control>0</control>
-		<value>125</value>
-		<deltatime>8.56119</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2873</time>
-		<control>0</control>
-		<value>124</value>
-		<deltatime>6.1873</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2876</time>
-		<control>0</control>
-		<value>123</value>
-		<deltatime>3.20852</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2878</time>
-		<control>0</control>
-		<value>122</value>
-		<deltatime>2.1485</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2881</time>
-		<control>0</control>
-		<value>121</value>
-		<deltatime>3.18965</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2885</time>
-		<control>0</control>
-		<value>120</value>
-		<deltatime>3.7194</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2888</time>
-		<control>0</control>
-		<value>119</value>
-		<deltatime>2.83328</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2891</time>
-		<control>0</control>
-		<value>118</value>
-		<deltatime>3.134</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2893</time>
-		<control>0</control>
-		<value>117</value>
-		<deltatime>2.12941</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2895</time>
-		<control>0</control>
-		<value>116</value>
-		<deltatime>2.12915</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2898</time>
-		<control>0</control>
-		<value>114</value>
-		<deltatime>3.20128</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2900</time>
-		<control>0</control>
-		<value>113</value>
-		<deltatime>2.07474</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2903</time>
-		<control>0</control>
-		<value>112</value>
-		<deltatime>2.19387</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2905</time>
-		<control>0</control>
-		<value>111</value>
-		<deltatime>2.65029</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2908</time>
-		<control>0</control>
-		<value>110</value>
-		<deltatime>2.29333</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2909</time>
-		<control>0</control>
-		<value>109</value>
-		<deltatime>2.03938</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2912</time>
-		<control>0</control>
-		<value>108</value>
-		<deltatime>2.13279</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2914</time>
-		<control>0</control>
-		<value>107</value>
-		<deltatime>2.18756</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2915</time>
-		<control>0</control>
-		<value>106</value>
-		<deltatime>1.63634</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2918</time>
-		<control>0</control>
-		<value>105</value>
-		<deltatime>2.19672</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2920</time>
-		<control>0</control>
-		<value>104</value>
-		<deltatime>2.20078</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2921</time>
-		<control>0</control>
-		<value>103</value>
-		<deltatime>1.5405</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2924</time>
-		<control>0</control>
-		<value>101</value>
-		<deltatime>2.13393</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2926</time>
-		<control>0</control>
-		<value>100</value>
-		<deltatime>2.13817</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2927</time>
-		<control>0</control>
-		<value>99</value>
-		<deltatime>1.71359</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2929</time>
-		<control>0</control>
-		<value>98</value>
-		<deltatime>2.13162</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2932</time>
-		<control>0</control>
-		<value>97</value>
-		<deltatime>2.10142</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2934</time>
-		<control>0</control>
-		<value>96</value>
-		<deltatime>2.72353</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2937</time>
-		<control>0</control>
-		<value>94</value>
-		<deltatime>2.66496</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2939</time>
-		<control>0</control>
-		<value>93</value>
-		<deltatime>1.62013</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2941</time>
-		<control>0</control>
-		<value>92</value>
-		<deltatime>2.7541</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2943</time>
-		<control>0</control>
-		<value>91</value>
-		<deltatime>1.59002</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2945</time>
-		<control>0</control>
-		<value>90</value>
-		<deltatime>2.18958</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2948</time>
-		<control>0</control>
-		<value>89</value>
-		<deltatime>2.40384</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2950</time>
-		<control>0</control>
-		<value>87</value>
-		<deltatime>2.04126</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2951</time>
-		<control>0</control>
-		<value>86</value>
-		<deltatime>1.4876</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2953</time>
-		<control>0</control>
-		<value>85</value>
-		<deltatime>1.70952</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2954</time>
-		<control>0</control>
-		<value>84</value>
-		<deltatime>1.55222</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2956</time>
-		<control>0</control>
-		<value>83</value>
-		<deltatime>1.57143</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2958</time>
-		<control>0</control>
-		<value>82</value>
-		<deltatime>1.66702</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2959</time>
-		<control>0</control>
-		<value>81</value>
-		<deltatime>1.6381</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2961</time>
-		<control>0</control>
-		<value>80</value>
-		<deltatime>1.77279</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2962</time>
-		<control>0</control>
-		<value>79</value>
-		<deltatime>1.47435</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2965</time>
-		<control>0</control>
-		<value>78</value>
-		<deltatime>2.16688</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2967</time>
-		<control>0</control>
-		<value>77</value>
-		<deltatime>2.16137</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2968</time>
-		<control>0</control>
-		<value>76</value>
-		<deltatime>1.61111</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2970</time>
-		<control>0</control>
-		<value>75</value>
-		<deltatime>1.62448</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2972</time>
-		<control>0</control>
-		<value>74</value>
-		<deltatime>1.635</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2973</time>
-		<control>0</control>
-		<value>72</value>
-		<deltatime>1.70908</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2975</time>
-		<control>0</control>
-		<value>71</value>
-		<deltatime>1.58473</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2977</time>
-		<control>0</control>
-		<value>70</value>
-		<deltatime>1.74687</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2978</time>
-		<control>0</control>
-		<value>69</value>
-		<deltatime>1.52764</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2980</time>
-		<control>0</control>
-		<value>68</value>
-		<deltatime>1.66337</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2982</time>
-		<control>0</control>
-		<value>67</value>
-		<deltatime>2.10306</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2984</time>
-		<control>0</control>
-		<value>66</value>
-		<deltatime>1.66428</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2985</time>
-		<control>0</control>
-		<value>65</value>
-		<deltatime>1.65936</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2987</time>
-		<control>0</control>
-		<value>63</value>
-		<deltatime>1.63897</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2988</time>
-		<control>0</control>
-		<value>62</value>
-		<deltatime>1.54257</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2990</time>
-		<control>0</control>
-		<value>61</value>
-		<deltatime>1.72952</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2992</time>
-		<control>0</control>
-		<value>60</value>
-		<deltatime>1.58379</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2993</time>
-		<control>0</control>
-		<value>59</value>
-		<deltatime>1.5864</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2995</time>
-		<control>0</control>
-		<value>58</value>
-		<deltatime>1.66243</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2997</time>
-		<control>0</control>
-		<value>56</value>
-		<deltatime>1.58604</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2998</time>
-		<control>0</control>
-		<value>55</value>
-		<deltatime>1.65942</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>2999</time>
-		<control>0</control>
-		<value>54</value>
-		<deltatime>1.08973</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3001</time>
-		<control>0</control>
-		<value>53</value>
-		<deltatime>1.66823</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3003</time>
-		<control>0</control>
-		<value>52</value>
-		<deltatime>1.72127</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3004</time>
-		<control>0</control>
-		<value>51</value>
-		<deltatime>1.60703</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3006</time>
-		<control>0</control>
-		<value>50</value>
-		<deltatime>1.62386</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3008</time>
-		<control>0</control>
-		<value>48</value>
-		<deltatime>1.58392</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3009</time>
-		<control>0</control>
-		<value>47</value>
-		<deltatime>1.62688</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3010</time>
-		<control>0</control>
-		<value>46</value>
-		<deltatime>1.08223</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3012</time>
-		<control>0</control>
-		<value>45</value>
-		<deltatime>1.69299</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3014</time>
-		<control>0</control>
-		<value>44</value>
-		<deltatime>1.61248</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3015</time>
-		<control>0</control>
-		<value>43</value>
-		<deltatime>1.6151</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3017</time>
-		<control>0</control>
-		<value>42</value>
-		<deltatime>1.66622</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3018</time>
-		<control>0</control>
-		<value>41</value>
-		<deltatime>1.5993</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3020</time>
-		<control>0</control>
-		<value>40</value>
-		<deltatime>1.64138</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3022</time>
-		<control>0</control>
-		<value>39</value>
-		<deltatime>1.62405</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3023</time>
-		<control>0</control>
-		<value>38</value>
-		<deltatime>1.66459</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3026</time>
-		<control>0</control>
-		<value>36</value>
-		<deltatime>2.10638</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3027</time>
-		<control>0</control>
-		<value>35</value>
-		<deltatime>1.65972</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3029</time>
-		<control>0</control>
-		<value>34</value>
-		<deltatime>1.95346</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3031</time>
-		<control>0</control>
-		<value>33</value>
-		<deltatime>1.47183</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3032</time>
-		<control>0</control>
-		<value>32</value>
-		<deltatime>1.51106</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3034</time>
-		<control>0</control>
-		<value>31</value>
-		<deltatime>1.59692</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3036</time>
-		<control>0</control>
-		<value>30</value>
-		<deltatime>2.13447</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3037</time>
-		<control>0</control>
-		<value>29</value>
-		<deltatime>1.6169</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3040</time>
-		<control>0</control>
-		<value>27</value>
-		<deltatime>2.22351</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3042</time>
-		<control>0</control>
-		<value>26</value>
-		<deltatime>2.21065</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3044</time>
-		<control>0</control>
-		<value>25</value>
-		<deltatime>2.04851</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3046</time>
-		<control>0</control>
-		<value>24</value>
-		<deltatime>1.61948</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3048</time>
-		<control>0</control>
-		<value>23</value>
-		<deltatime>2.2018</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3050</time>
-		<control>0</control>
-		<value>22</value>
-		<deltatime>2.11172</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3052</time>
-		<control>0</control>
-		<value>21</value>
-		<deltatime>2.18333</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3054</time>
+		<time>5394</time>
 		<control>0</control>
 		<value>19</value>
-		<deltatime>2.13018</deltatime>
+		<deltatime>1.15423</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3057</time>
+		<time>5395</time>
 		<control>0</control>
 		<value>18</value>
-		<deltatime>2.27513</deltatime>
+		<deltatime>1.56856</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3059</time>
+		<time>5397</time>
 		<control>0</control>
 		<value>17</value>
-		<deltatime>2.10301</deltatime>
+		<deltatime>1.579</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3061</time>
+		<time>5399</time>
 		<control>0</control>
 		<value>16</value>
-		<deltatime>2.25414</deltatime>
+		<deltatime>1.65596</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3063</time>
-		<control>0</control>
-		<value>15</value>
-		<deltatime>2.04576</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3065</time>
+		<time>5400</time>
 		<control>0</control>
 		<value>14</value>
-		<deltatime>2.12077</deltatime>
+		<deltatime>1.61675</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3068</time>
+		<time>5402</time>
 		<control>0</control>
 		<value>13</value>
-		<deltatime>2.6938</deltatime>
+		<deltatime>1.62583</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3070</time>
+		<time>5404</time>
 		<control>0</control>
 		<value>12</value>
-		<deltatime>2.13899</deltatime>
+		<deltatime>1.6701</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3073</time>
+		<time>5405</time>
 		<control>0</control>
 		<value>11</value>
-		<deltatime>2.67894</deltatime>
+		<deltatime>1.68706</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3075</time>
-		<control>0</control>
-		<value>10</value>
-		<deltatime>2.21653</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3078</time>
+		<time>5407</time>
 		<control>0</control>
 		<value>9</value>
-		<deltatime>3.11872</deltatime>
+		<deltatime>1.54732</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3081</time>
+		<time>5408</time>
 		<control>0</control>
 		<value>8</value>
-		<deltatime>2.69403</deltatime>
+		<deltatime>1.6105</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3084</time>
+		<time>5410</time>
 		<control>0</control>
 		<value>7</value>
-		<deltatime>3.18309</deltatime>
+		<deltatime>1.64316</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3086</time>
+		<time>5411</time>
 		<control>0</control>
 		<value>6</value>
-		<deltatime>2.29046</deltatime>
+		<deltatime>1.1238</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3089</time>
-		<control>0</control>
-		<value>5</value>
-		<deltatime>3.10022</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3092</time>
+		<time>5413</time>
 		<control>0</control>
 		<value>4</value>
-		<deltatime>3.19908</deltatime>
+		<deltatime>1.6112</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3096</time>
+		<time>5414</time>
 		<control>0</control>
 		<value>3</value>
-		<deltatime>3.36201</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3101</time>
-		<control>0</control>
-		<value>2</value>
-		<deltatime>5.09098</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3111</time>
-		<control>0</control>
-		<value>1</value>
-		<deltatime>9.63975</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3120</time>
-		<control>0</control>
-		<value>0</value>
-		<deltatime>9.93419</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3784</time>
-		<control>0</control>
-		<value>1</value>
-		<deltatime>663.495</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3804</time>
-		<control>0</control>
-		<value>2</value>
-		<deltatime>20.5101</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3813</time>
-		<control>0</control>
-		<value>3</value>
-		<deltatime>8.88698</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3819</time>
-		<control>0</control>
-		<value>4</value>
-		<deltatime>5.27169</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3824</time>
-		<control>0</control>
-		<value>5</value>
-		<deltatime>4.91109</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3828</time>
-		<control>0</control>
-		<value>6</value>
-		<deltatime>4.21184</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3832</time>
-		<control>0</control>
-		<value>7</value>
-		<deltatime>4.18977</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3836</time>
-		<control>0</control>
-		<value>8</value>
-		<deltatime>3.73066</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3840</time>
-		<control>0</control>
-		<value>9</value>
-		<deltatime>4.34967</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3844</time>
-		<control>0</control>
-		<value>10</value>
-		<deltatime>4.08927</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3847</time>
-		<control>0</control>
-		<value>11</value>
-		<deltatime>3.18527</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3850</time>
-		<control>0</control>
-		<value>12</value>
-		<deltatime>3.21986</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3854</time>
-		<control>0</control>
-		<value>13</value>
-		<deltatime>3.82191</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3858</time>
-		<control>0</control>
-		<value>14</value>
-		<deltatime>3.6547</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3862</time>
-		<control>0</control>
-		<value>15</value>
-		<deltatime>3.82851</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3864</time>
-		<control>0</control>
-		<value>16</value>
-		<deltatime>2.03693</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3867</time>
-		<control>0</control>
-		<value>17</value>
-		<deltatime>3.17327</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3870</time>
-		<control>0</control>
-		<value>18</value>
-		<deltatime>3.22106</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3873</time>
-		<control>0</control>
-		<value>19</value>
-		<deltatime>3.17612</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3876</time>
-		<control>0</control>
-		<value>21</value>
-		<deltatime>2.6994</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3879</time>
-		<control>0</control>
-		<value>22</value>
-		<deltatime>3.26182</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3882</time>
-		<control>0</control>
-		<value>23</value>
-		<deltatime>2.62641</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3884</time>
-		<control>0</control>
-		<value>24</value>
-		<deltatime>2.14274</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3887</time>
-		<control>0</control>
-		<value>25</value>
-		<deltatime>2.67257</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3890</time>
-		<control>0</control>
-		<value>26</value>
-		<deltatime>3.19095</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3892</time>
-		<control>0</control>
-		<value>27</value>
-		<deltatime>2.19604</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3894</time>
-		<control>0</control>
-		<value>28</value>
-		<deltatime>2.13943</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3896</time>
-		<control>0</control>
-		<value>29</value>
-		<deltatime>2.11597</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3899</time>
-		<control>0</control>
-		<value>30</value>
-		<deltatime>2.17534</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3901</time>
-		<control>0</control>
-		<value>31</value>
-		<deltatime>2.68458</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3903</time>
-		<control>0</control>
-		<value>32</value>
-		<deltatime>2.1411</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3906</time>
-		<control>0</control>
-		<value>33</value>
-		<deltatime>2.19693</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3908</time>
-		<control>0</control>
-		<value>34</value>
-		<deltatime>2.25246</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3910</time>
-		<control>0</control>
-		<value>35</value>
-		<deltatime>2.04589</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3912</time>
-		<control>0</control>
-		<value>36</value>
-		<deltatime>2.65518</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3915</time>
-		<control>0</control>
-		<value>37</value>
-		<deltatime>2.15628</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3917</time>
-		<control>0</control>
-		<value>38</value>
-		<deltatime>2.1849</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3919</time>
-		<control>0</control>
-		<value>40</value>
-		<deltatime>2.14339</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3921</time>
-		<control>0</control>
-		<value>41</value>
-		<deltatime>2.10965</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3923</time>
-		<control>0</control>
-		<value>42</value>
-		<deltatime>2.28864</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3925</time>
-		<control>0</control>
-		<value>43</value>
-		<deltatime>1.51613</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3927</time>
-		<control>0</control>
-		<value>44</value>
-		<deltatime>2.16794</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3929</time>
-		<control>0</control>
-		<value>45</value>
-		<deltatime>1.60075</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3931</time>
-		<control>0</control>
-		<value>46</value>
-		<deltatime>2.31975</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3933</time>
-		<control>0</control>
-		<value>47</value>
-		<deltatime>1.58578</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3934</time>
-		<control>0</control>
-		<value>48</value>
-		<deltatime>1.64845</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3936</time>
-		<control>0</control>
-		<value>49</value>
-		<deltatime>2.12136</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3938</time>
-		<control>0</control>
-		<value>50</value>
-		<deltatime>1.56929</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3940</time>
-		<control>0</control>
-		<value>51</value>
-		<deltatime>1.62799</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3941</time>
-		<control>0</control>
-		<value>52</value>
-		<deltatime>1.60107</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3943</time>
-		<control>0</control>
-		<value>53</value>
-		<deltatime>1.76351</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3944</time>
-		<control>0</control>
-		<value>55</value>
-		<deltatime>1.53493</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3947</time>
-		<control>0</control>
-		<value>56</value>
-		<deltatime>2.18152</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3948</time>
-		<control>0</control>
-		<value>57</value>
-		<deltatime>1.55554</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3950</time>
-		<control>0</control>
-		<value>58</value>
-		<deltatime>1.67995</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3951</time>
-		<control>0</control>
-		<value>59</value>
-		<deltatime>1.61058</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3954</time>
-		<control>0</control>
-		<value>60</value>
-		<deltatime>2.16816</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3955</time>
-		<control>0</control>
-		<value>61</value>
-		<deltatime>1.66944</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3957</time>
-		<control>0</control>
-		<value>63</value>
 		<deltatime>1.62745</deltatime>
 		<status>176</status>
 		<channel>1</channel>
@@ -2953,510 +533,1420 @@
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3959</time>
+		<time>5416</time>
+		<control>0</control>
+		<value>2</value>
+		<deltatime>1.64006</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5419</time>
+		<control>0</control>
+		<value>1</value>
+		<deltatime>2.78597</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>5421</time>
+		<control>0</control>
+		<value>0</value>
+		<deltatime>2.59281</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9815</time>
+		<control>0</control>
+		<value>1</value>
+		<deltatime>4393.35</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9827</time>
+		<control>0</control>
+		<value>2</value>
+		<deltatime>12.1793</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9834</time>
+		<control>0</control>
+		<value>3</value>
+		<deltatime>6.71373</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9838</time>
+		<control>0</control>
+		<value>4</value>
+		<deltatime>4.75455</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9843</time>
+		<control>0</control>
+		<value>5</value>
+		<deltatime>4.87642</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9847</time>
+		<control>0</control>
+		<value>6</value>
+		<deltatime>3.66785</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9851</time>
+		<control>0</control>
+		<value>7</value>
+		<deltatime>4.36625</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9855</time>
+		<control>0</control>
+		<value>8</value>
+		<deltatime>3.54783</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9859</time>
+		<control>0</control>
+		<value>9</value>
+		<deltatime>4.29828</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9864</time>
+		<control>0</control>
+		<value>10</value>
+		<deltatime>4.80189</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9868</time>
+		<control>0</control>
+		<value>11</value>
+		<deltatime>3.82814</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9872</time>
+		<control>0</control>
+		<value>12</value>
+		<deltatime>4.2003</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9877</time>
+		<control>0</control>
+		<value>13</value>
+		<deltatime>4.681</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9882</time>
+		<control>0</control>
+		<value>14</value>
+		<deltatime>5.82001</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9889</time>
+		<control>0</control>
+		<value>15</value>
+		<deltatime>6.2649</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9893</time>
+		<control>0</control>
+		<value>16</value>
+		<deltatime>3.83725</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9899</time>
+		<control>0</control>
+		<value>17</value>
+		<deltatime>5.21629</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9904</time>
+		<control>0</control>
+		<value>18</value>
+		<deltatime>4.78466</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9909</time>
+		<control>0</control>
+		<value>19</value>
+		<deltatime>5.75357</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9914</time>
+		<control>0</control>
+		<value>20</value>
+		<deltatime>4.27518</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9919</time>
+		<control>0</control>
+		<value>21</value>
+		<deltatime>5.3463</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9924</time>
+		<control>0</control>
+		<value>22</value>
+		<deltatime>5.23567</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9929</time>
+		<control>0</control>
+		<value>23</value>
+		<deltatime>5.30343</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9934</time>
+		<control>0</control>
+		<value>24</value>
+		<deltatime>4.76623</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9940</time>
+		<control>0</control>
+		<value>25</value>
+		<deltatime>5.28635</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9945</time>
+		<control>0</control>
+		<value>26</value>
+		<deltatime>5.40352</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9951</time>
+		<control>0</control>
+		<value>27</value>
+		<deltatime>6.23387</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9956</time>
+		<control>0</control>
+		<value>28</value>
+		<deltatime>5.27171</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9962</time>
+		<control>0</control>
+		<value>29</value>
+		<deltatime>5.81396</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9967</time>
+		<control>0</control>
+		<value>30</value>
+		<deltatime>4.77617</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9974</time>
+		<control>0</control>
+		<value>31</value>
+		<deltatime>6.9048</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9980</time>
+		<control>0</control>
+		<value>32</value>
+		<deltatime>6.3099</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9986</time>
+		<control>0</control>
+		<value>33</value>
+		<deltatime>5.76926</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>9999</time>
+		<control>0</control>
+		<value>34</value>
+		<deltatime>12.619</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>10020</time>
+		<control>0</control>
+		<value>35</value>
+		<deltatime>21.5475</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>10040</time>
+		<control>0</control>
+		<value>36</value>
+		<deltatime>19.3862</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13210</time>
+		<control>0</control>
+		<value>37</value>
+		<deltatime>3170.86</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13227</time>
+		<control>0</control>
+		<value>38</value>
+		<deltatime>16.7834</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13237</time>
+		<control>0</control>
+		<value>39</value>
+		<deltatime>10.0292</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13249</time>
+		<control>0</control>
+		<value>40</value>
+		<deltatime>12.0643</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13260</time>
+		<control>0</control>
+		<value>41</value>
+		<deltatime>10.5409</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13267</time>
+		<control>0</control>
+		<value>43</value>
+		<deltatime>7.37673</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13277</time>
+		<control>0</control>
+		<value>44</value>
+		<deltatime>10.0481</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13284</time>
+		<control>0</control>
+		<value>45</value>
+		<deltatime>6.23657</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13292</time>
+		<control>0</control>
+		<value>46</value>
+		<deltatime>7.96926</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13298</time>
+		<control>0</control>
+		<value>47</value>
+		<deltatime>7.83136</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13304</time>
+		<control>0</control>
+		<value>48</value>
+		<deltatime>6.04626</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13309</time>
+		<control>0</control>
+		<value>49</value>
+		<deltatime>4.59941</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13314</time>
+		<control>0</control>
+		<value>50</value>
+		<deltatime>5.25251</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13319</time>
+		<control>0</control>
+		<value>51</value>
+		<deltatime>4.78803</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13323</time>
+		<control>0</control>
+		<value>52</value>
+		<deltatime>4.22624</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13328</time>
+		<control>0</control>
+		<value>53</value>
+		<deltatime>4.75907</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13332</time>
+		<control>0</control>
+		<value>54</value>
+		<deltatime>4.03047</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13336</time>
+		<control>0</control>
+		<value>55</value>
+		<deltatime>3.52405</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13339</time>
+		<control>0</control>
+		<value>56</value>
+		<deltatime>3.09404</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13342</time>
+		<control>0</control>
+		<value>57</value>
+		<deltatime>3.69868</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13346</time>
+		<control>0</control>
+		<value>58</value>
+		<deltatime>3.75564</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13350</time>
+		<control>0</control>
+		<value>59</value>
+		<deltatime>3.6932</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13352</time>
+		<control>0</control>
+		<value>60</value>
+		<deltatime>2.69341</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13357</time>
+		<control>0</control>
+		<value>61</value>
+		<deltatime>4.79366</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13361</time>
+		<control>0</control>
+		<value>62</value>
+		<deltatime>3.29362</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13364</time>
+		<control>0</control>
+		<value>63</value>
+		<deltatime>3.59677</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>13368</time>
 		<control>0</control>
 		<value>64</value>
-		<deltatime>1.58365</deltatime>
+		<deltatime>3.76626</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3960</time>
+		<time>13371</time>
 		<control>0</control>
 		<value>65</value>
-		<deltatime>1.68108</deltatime>
+		<deltatime>2.64598</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3962</time>
+		<time>13375</time>
 		<control>0</control>
 		<value>66</value>
-		<deltatime>1.67026</deltatime>
+		<deltatime>4.29844</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3964</time>
-		<control>0</control>
-		<value>67</value>
-		<deltatime>1.60932</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>3965</time>
+		<time>13378</time>
 		<control>0</control>
 		<value>68</value>
-		<deltatime>1.62161</deltatime>
+		<deltatime>3.14826</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3967</time>
+		<time>13382</time>
 		<control>0</control>
 		<value>69</value>
-		<deltatime>2.10823</deltatime>
+		<deltatime>4.21333</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3969</time>
+		<time>13387</time>
 		<control>0</control>
 		<value>70</value>
-		<deltatime>1.6029</deltatime>
+		<deltatime>4.83851</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3971</time>
+		<time>13392</time>
 		<control>0</control>
 		<value>71</value>
-		<deltatime>1.78944</deltatime>
+		<deltatime>4.73031</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3973</time>
+		<time>13428</time>
 		<control>0</control>
 		<value>72</value>
-		<deltatime>2.04113</deltatime>
+		<deltatime>36.6313</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3974</time>
+		<time>16295</time>
 		<control>0</control>
 		<value>73</value>
-		<deltatime>1.69238</deltatime>
+		<deltatime>2866.09</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3976</time>
+		<time>16312</time>
 		<control>0</control>
 		<value>74</value>
-		<deltatime>2.11085</deltatime>
+		<deltatime>17.2417</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3979</time>
+		<time>16327</time>
 		<control>0</control>
 		<value>75</value>
-		<deltatime>2.12753</deltatime>
+		<deltatime>15.2294</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3981</time>
+		<time>16341</time>
+		<control>0</control>
+		<value>76</value>
+		<deltatime>13.6438</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>16351</time>
 		<control>0</control>
 		<value>77</value>
-		<deltatime>2.15728</deltatime>
+		<deltatime>10.5224</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3983</time>
+		<time>16362</time>
 		<control>0</control>
 		<value>78</value>
-		<deltatime>2.16813</deltatime>
+		<deltatime>10.4983</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3986</time>
+		<time>16368</time>
 		<control>0</control>
 		<value>79</value>
-		<deltatime>2.76172</deltatime>
+		<deltatime>6.33169</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3988</time>
+		<time>16374</time>
 		<control>0</control>
 		<value>80</value>
-		<deltatime>2.08998</deltatime>
+		<deltatime>5.79444</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3990</time>
+		<time>16380</time>
 		<control>0</control>
 		<value>81</value>
-		<deltatime>2.66112</deltatime>
+		<deltatime>6.40123</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3993</time>
+		<time>16384</time>
 		<control>0</control>
 		<value>82</value>
-		<deltatime>2.1593</deltatime>
+		<deltatime>4.21106</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3995</time>
+		<time>16389</time>
 		<control>0</control>
 		<value>83</value>
-		<deltatime>2.15044</deltatime>
+		<deltatime>4.22399</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>3997</time>
+		<time>16393</time>
 		<control>0</control>
 		<value>84</value>
-		<deltatime>2.70965</deltatime>
+		<deltatime>4.54139</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4000</time>
+		<time>16396</time>
 		<control>0</control>
 		<value>85</value>
-		<deltatime>2.65035</deltatime>
+		<deltatime>3.06403</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4003</time>
+		<time>16399</time>
 		<control>0</control>
 		<value>86</value>
-		<deltatime>2.67495</deltatime>
+		<deltatime>2.52041</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4005</time>
+		<time>16401</time>
 		<control>0</control>
 		<value>87</value>
-		<deltatime>2.64759</deltatime>
+		<deltatime>2.6599</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4008</time>
+		<time>16405</time>
 		<control>0</control>
 		<value>88</value>
-		<deltatime>2.75928</deltatime>
+		<deltatime>3.73816</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4011</time>
+		<time>16408</time>
 		<control>0</control>
 		<value>89</value>
-		<deltatime>3.27057</deltatime>
+		<deltatime>3.22521</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4014</time>
+		<time>16411</time>
 		<control>0</control>
 		<value>90</value>
-		<deltatime>2.73264</deltatime>
+		<deltatime>2.14166</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4017</time>
+		<time>16414</time>
 		<control>0</control>
 		<value>91</value>
-		<deltatime>3.03108</deltatime>
+		<deltatime>3.7451</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4020</time>
+		<time>16416</time>
 		<control>0</control>
 		<value>92</value>
-		<deltatime>2.62834</deltatime>
+		<deltatime>2.10547</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4023</time>
+		<time>16420</time>
 		<control>0</control>
 		<value>93</value>
-		<deltatime>3.23789</deltatime>
+		<deltatime>3.74772</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4026</time>
+		<time>16423</time>
 		<control>0</control>
 		<value>94</value>
-		<deltatime>3.26691</deltatime>
+		<deltatime>2.66404</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4030</time>
-		<control>0</control>
-		<value>95</value>
-		<deltatime>3.66268</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>4032</time>
+		<time>16426</time>
 		<control>0</control>
 		<value>96</value>
-		<deltatime>1.62992</deltatime>
+		<deltatime>3.23687</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4035</time>
+		<time>16429</time>
 		<control>0</control>
 		<value>97</value>
-		<deltatime>3.71435</deltatime>
+		<deltatime>2.70209</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4039</time>
+		<time>16431</time>
 		<control>0</control>
 		<value>98</value>
-		<deltatime>3.2829</deltatime>
+		<deltatime>2.61239</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4042</time>
+		<time>16435</time>
+		<control>0</control>
+		<value>99</value>
+		<deltatime>3.28616</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>16437</time>
 		<control>0</control>
 		<value>100</value>
-		<deltatime>3.72738</deltatime>
+		<deltatime>2.61586</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4046</time>
+		<time>16440</time>
 		<control>0</control>
 		<value>101</value>
-		<deltatime>3.64548</deltatime>
+		<deltatime>3.20969</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4050</time>
+		<time>16444</time>
 		<control>0</control>
 		<value>102</value>
-		<deltatime>3.73601</deltatime>
+		<deltatime>3.29716</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4053</time>
+		<time>16447</time>
 		<control>0</control>
 		<value>103</value>
-		<deltatime>3.66748</deltatime>
+		<deltatime>3.13576</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4057</time>
+		<time>16450</time>
 		<control>0</control>
 		<value>104</value>
-		<deltatime>3.86218</deltatime>
+		<deltatime>3.14227</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4060</time>
+		<time>16453</time>
 		<control>0</control>
 		<value>105</value>
-		<deltatime>3.10031</deltatime>
+		<deltatime>3.17782</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4065</time>
+		<time>16457</time>
 		<control>0</control>
 		<value>106</value>
-		<deltatime>4.81036</deltatime>
+		<deltatime>4.28031</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4069</time>
+		<time>16461</time>
 		<control>0</control>
 		<value>107</value>
-		<deltatime>3.73357</deltatime>
+		<deltatime>3.34966</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4074</time>
+		<time>16466</time>
 		<control>0</control>
 		<value>108</value>
-		<deltatime>4.75969</deltatime>
+		<deltatime>4.66355</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4079</time>
-		<control>0</control>
-		<value>109</value>
-		<deltatime>5.26475</deltatime>
-		<status>176</status>
-		<channel>1</channel>
-		<pitch>0</pitch>
-		<velocity>0</velocity>
-	</midiEvent>
-	<midiEvent>
-		<time>4084</time>
+		<time>16470</time>
 		<control>0</control>
 		<value>110</value>
-		<deltatime>4.71057</deltatime>
+		<deltatime>4.24371</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4089</time>
+		<time>16475</time>
 		<control>0</control>
 		<value>111</value>
-		<deltatime>5.47668</deltatime>
+		<deltatime>5.26589</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4095</time>
+		<time>16480</time>
 		<control>0</control>
 		<value>112</value>
-		<deltatime>5.30888</deltatime>
+		<deltatime>5.28221</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4100</time>
+		<time>16488</time>
 		<control>0</control>
 		<value>113</value>
-		<deltatime>5.63019</deltatime>
+		<deltatime>7.87932</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4107</time>
+		<time>19343</time>
 		<control>0</control>
-		<value>114</value>
-		<deltatime>7.06657</deltatime>
+		<value>112</value>
+		<deltatime>2854.83</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4120</time>
+		<time>19358</time>
 		<control>0</control>
-		<value>115</value>
-		<deltatime>12.9195</deltatime>
+		<value>111</value>
+		<deltatime>15.2691</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>
 		<velocity>0</velocity>
 	</midiEvent>
 	<midiEvent>
-		<time>4130</time>
+		<time>19371</time>
 		<control>0</control>
-		<value>116</value>
-		<deltatime>10.0162</deltatime>
+		<value>110</value>
+		<deltatime>13.1532</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19381</time>
+		<control>0</control>
+		<value>109</value>
+		<deltatime>9.95425</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19392</time>
+		<control>0</control>
+		<value>108</value>
+		<deltatime>10.5064</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19398</time>
+		<control>0</control>
+		<value>107</value>
+		<deltatime>6.33007</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19406</time>
+		<control>0</control>
+		<value>106</value>
+		<deltatime>7.36124</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19412</time>
+		<control>0</control>
+		<value>105</value>
+		<deltatime>6.81974</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19418</time>
+		<control>0</control>
+		<value>104</value>
+		<deltatime>5.86784</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19425</time>
+		<control>0</control>
+		<value>103</value>
+		<deltatime>6.4155</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19431</time>
+		<control>0</control>
+		<value>102</value>
+		<deltatime>5.80899</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19437</time>
+		<control>0</control>
+		<value>101</value>
+		<deltatime>6.23833</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19444</time>
+		<control>0</control>
+		<value>99</value>
+		<deltatime>6.8503</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19449</time>
+		<control>0</control>
+		<value>98</value>
+		<deltatime>5.77921</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19456</time>
+		<control>0</control>
+		<value>97</value>
+		<deltatime>6.48202</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19461</time>
+		<control>0</control>
+		<value>96</value>
+		<deltatime>5.21995</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19465</time>
+		<control>0</control>
+		<value>95</value>
+		<deltatime>3.685</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19470</time>
+		<control>0</control>
+		<value>94</value>
+		<deltatime>5.3053</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19475</time>
+		<control>0</control>
+		<value>93</value>
+		<deltatime>4.71032</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19480</time>
+		<control>0</control>
+		<value>92</value>
+		<deltatime>4.82011</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19483</time>
+		<control>0</control>
+		<value>91</value>
+		<deltatime>3.73677</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19488</time>
+		<control>0</control>
+		<value>90</value>
+		<deltatime>4.77333</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19492</time>
+		<control>0</control>
+		<value>89</value>
+		<deltatime>4.19475</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19497</time>
+		<control>0</control>
+		<value>88</value>
+		<deltatime>4.80201</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19502</time>
+		<control>0</control>
+		<value>87</value>
+		<deltatime>5.25769</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19508</time>
+		<control>0</control>
+		<value>86</value>
+		<deltatime>5.93736</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19515</time>
+		<control>0</control>
+		<value>85</value>
+		<deltatime>6.24771</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19520</time>
+		<control>0</control>
+		<value>84</value>
+		<deltatime>5.83023</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19528</time>
+		<control>0</control>
+		<value>83</value>
+		<deltatime>7.89614</deltatime>
+		<status>176</status>
+		<channel>1</channel>
+		<pitch>0</pitch>
+		<velocity>0</velocity>
+	</midiEvent>
+	<midiEvent>
+		<time>19545</time>
+		<control>0</control>
+		<value>82</value>
+		<deltatime>16.2284</deltatime>
 		<status>176</status>
 		<channel>1</channel>
 		<pitch>0</pitch>

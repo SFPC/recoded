@@ -51,6 +51,10 @@ void rodrigoBelfort::setup(){
     loadCode("scenes/rodrigoBelfort/exampleCode.cpp");
 }
 
+void rodrigoBelfort::reset() {
+    lastLineTime = 0;
+}
+
 void rodrigoBelfort::update(){
     float time = getElapsedTimef();
     

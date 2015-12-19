@@ -48,8 +48,10 @@ void baseScene::enableMidi() {
     intParams.clear();
     floatParams.clear();
     
+    int n = 0;
     for (auto param : parameters) {
         if (param->type() == boolParam.type()) {
+            n++;
             ofParameter<bool> newParam;
             ofParameter<bool> &oldParam = param->cast<bool>();
             newParam.setName(oldParam.getName());
@@ -60,6 +62,7 @@ void baseScene::enableMidi() {
             midiParameters.add(boolParams.back());
             paramTypes.push_back('b');
         } else if (param->type() == intParam.type()) {
+            n++;
             ofParameter<int> newParam;
             ofParameter<int> &oldParam = param->cast<int>();
             newParam.setName(oldParam.getName());
@@ -70,6 +73,7 @@ void baseScene::enableMidi() {
             midiParameters.add(intParams.back());
             paramTypes.push_back('i');
         } else if (param->type() == floatParam.type()) {
+            n++;
             ofParameter<float> newParam;
             ofParameter<float> &oldParam = param->cast<float>();
             newParam.setName(oldParam.getName());
@@ -79,8 +83,12 @@ void baseScene::enableMidi() {
             floatParams.push_back(newParam);
             midiParameters.add(floatParams.back());
             paramTypes.push_back('f');
+        } else {
+            cout << "couldn't link param with " << param->type() << endl;
         }
     }
+    
+    cout << "linked " << n << endl;
 }
 
 void baseScene::updateMidiParams() {

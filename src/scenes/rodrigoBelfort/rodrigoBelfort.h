@@ -18,6 +18,7 @@ public:
     void setup();
     void update();
     void draw();
+    void reset();
     
     float rectSize, paddingSizeX, paddingSizeY;
     
