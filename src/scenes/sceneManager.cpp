@@ -108,6 +108,13 @@ void sceneManager::setup(){
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
     
+    
+#ifdef USE_MIDI_PARAM_SYNC
+    sync.setup(0);
+    ofAddListener(sync.player.playE, this, &sceneManager::startPlaying);
+    ofAddListener(sync.recorder.recEndE, this, &sceneManager::recordingEnd);
+#endif
+    
     // Not using
     // scenes.push_back(new chrisMurielCooper());
     gui.setDefaultWidth(300);    
@@ -121,6 +128,8 @@ void sceneManager::setup(){
     gui.add(sceneTweenDuration.set("scene tween duration", 2000, 0, 5000));
     gui.add(codeTweenDuration.set("code tween duration", 2000, 0, 5000));
 #endif
+    gui.add(sync.smoothing);
+    
     
     gui.loadFromFile("SFPC_d4n_general_settings.xml");
 //    gui.setWidthElements(300);
@@ -136,12 +145,6 @@ void sceneManager::setup(){
     ofDrawRectangle(0, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
     transitionFbo.end();
     transitionFbo.draw(0,0);
-
-#ifdef USE_MIDI_PARAM_SYNC
-    sync.setup(0);
-    ofAddListener(sync.player.playE, this, &sceneManager::startPlaying);
-    ofAddListener(sync.recorder.recEndE, this, &sceneManager::recordingEnd);
-#endif
     
 #ifdef USE_EXTERNAL_SOUNDS
     // open an outgoing connection to HOST:PORT
