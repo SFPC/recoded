@@ -25,7 +25,6 @@
 #define FADE_DELAY_MIN 1.5
 #define FADE_DELAY_MAX 1.77
 
-#define SCENE_PRE_TRANSITION_TIME   4.0
 #define SCENE_PRE_TRANSITION_FADE   0.3
 #define SCENE_PRE_TRANSITION_CURSOR 0.35
 
@@ -84,7 +83,7 @@ public:
     bool didTriggerCodeFinishedAnimatingEvent, fadingIn;
     
     ofxPanel gui;
-    ofParameter<bool>bAutoPlay, bSceneWaitForCode;
+    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut;
     
 #ifdef USE_MIDI_PARAM_SYNC
     ofxParameterMidiSync sync;
@@ -103,7 +102,7 @@ public:
     ofxTween sceneTween, codeTween;
     ofxEasingExpo easing;
     void tweenEnd(int& i);
-    ofParameter<int> sceneTweenDuration, codeTweenDuration;
+    ofParameter<float> sceneTweenDuration, codeTweenDuration;
 #endif
     
 };
