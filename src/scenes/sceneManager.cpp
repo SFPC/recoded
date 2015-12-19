@@ -228,9 +228,6 @@ void sceneManager::startScene(int whichScene){
     maxLetterX = 0;
     lastLetterY = 0;
 #ifdef USE_MIDI_PARAM_SYNC
-    for (auto param : scenes[currentScene]->midiParameters) {
-        cout << param->getName() << endl;
-    }
     sync.setSyncGroup(scenes[currentScene]->midiParameters, true);
     sync.enableMidi();
 #endif
