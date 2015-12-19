@@ -13,7 +13,7 @@ void mgsVeraMolnarLineStudy::setup(){
   parameters.add(gridSpace.set("Grid Spacing", 10.0, 1, 50));
   gridSpace.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
 
-  parameters.add(lineWidth.set("Line Width", 3.0, 0.1, 10.0));
+  parameters.add(lineWidth.set("Line Width", 1.0, 0.1, 10.0));
   lineWidth.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
   
   parameters.add(connectedLinesP.set("Connect Lines?", false));
@@ -42,11 +42,11 @@ void mgsVeraMolnarLineStudy::setup(){
 
   loadCode("scenes/mgsVeraMolnarLineStudy/exampleCode.cpp");
 
-  freshPaint();
   frame.allocate(dimensions.width, dimensions.height, GL_RGBA32F_ARB);
   frame.begin();
   ofClear(0);
   frame.end();
+  freshPaint();
   drawScene();
 }
 
@@ -68,7 +68,7 @@ void mgsVeraMolnarLineStudy::draw(){
     ofDrawRectangle(0,0, dimensions.width, dimensions.height);
   }
   frame.end();
-  frame.draw(painter.xOffset, painter.yOffset);
+  frame.draw(0, 0);
 }
 
 void mgsVeraMolnarLineStudy::clearScreen(bool& i){
@@ -86,7 +86,7 @@ void mgsVeraMolnarLineStudy::redrawB(bool& i){
 
 void mgsVeraMolnarLineStudy::redrawF(float& i){
   painter.xOffset = (dimensions.width - floor(dimensions.width/squareSize)*squareSize)/2;
-  painter.yOffset = (dimensions.width - floor(dimensions.width/squareSize)*squareSize)/2;
+  painter.yOffset = (dimensions.height - floor(dimensions.height/squareSize)*squareSize)/2;
   freshPaint();
 }
 
