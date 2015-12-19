@@ -150,6 +150,10 @@ void sceneManager::setup(){
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
+
+    lastFrame.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, OF_PIXELS_RGBA);
+    currFrame.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, OF_PIXELS_RGBA);
+
     //  transitionFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB32F_ARB);
     transitionFbo.begin();
     ofSetColor(0,255);
@@ -597,6 +601,9 @@ void sceneManager::draw(){
         scenes[currentScene]->draw();
         ofPopStyle();
         sceneFbo.end();
+        
+        // For sound and for kicks
+        computeMotion(sceneFbo);
 
         // Draw twice to make the background go away
         sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
@@ -689,9 +696,53 @@ void sceneManager::draw(){
     str += "Current Scene players: " + ofToString(scenes[currentScene]->recData.size());
     
     ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
-    
-    
 }
+
+void sceneManager::computeMotion(ofFbo &fbo) {
+    fbo.readToPixels(currFrame);
+
+    const unsigned char *currPixels = currFrame.getData();
+    const unsigned char *lastPixels = lastFrame.getData();
+    
+    long long sumX = 0, sumY = 0, sumMotion = 0, totalMotion = 1, totalThresh = 1;
+    for (int i = 0; i < VISUALS_WIDTH * VISUALS_HEIGHT * 4; i += 4) {
+        int val = (currPixels[i] + currPixels[i+1] + currPixels[i+2]) / 3;
+        int lastVal = (lastPixels[i] + lastPixels[i+1] + lastPixels[i+2]) / 3;
+
+        sumMotion += abs(val - lastVal);
+        totalMotion++;
+
+        if (val > 127) {
+            int x = (i / 4) % VISUALS_WIDTH;
+            int y = (i / 4) / VISUALS_WIDTH;
+            
+            sumX += x;
+            sumY += y;
+            totalThresh++;
+        }
+    }
+
+    lastCentroid.set(centroid);
+    centroid.set(sumX / totalThresh, sumY / totalThresh);
+    
+    float currMotion = ((float)sumMotion / totalMotion) / 255.0;
+    float shapedMotion = sqrt(currMotion);
+    motion += (shapedMotion - motion) * 0.1;
+    
+#ifdef USE_EXTERNAL_SOUNDS
+    oscMessage.clear();
+    oscMessage.setAddress("/d4n/motion");
+    oscMessage.addFloatArg(motion);
+    oscMessage.addFloatArg(centroid.x);
+    oscMessage.addFloatArg(centroid.y);
+    oscMessage.addFloatArg(centroid.x - lastCentroid.x);
+    oscMessage.addFloatArg(centroid.y - lastCentroid.y);
+    oscSender.sendMessage(oscMessage, false);
+#endif
+    
+    currFrame.pasteInto(lastFrame, 0, 0);
+}
+
 //-----------------------------------------------------------------------------------
 void sceneManager::nextScene(bool forward){
 #ifdef USE_MIDI_PARAM_SYNC

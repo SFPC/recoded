@@ -48,6 +48,11 @@ public:
 	  void regressScene();
     void screenGrab();
     
+    float motion;
+    ofPoint centroid, lastCentroid;
+    ofPixels lastFrame, currFrame;
+    void computeMotion(ofFbo &fbo);
+    
     void startScene(int whichScene);
   
     ofFbo transitionFbo;
