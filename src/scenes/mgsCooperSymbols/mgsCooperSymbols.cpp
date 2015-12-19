@@ -3,7 +3,7 @@
 
 void mgsCooperSymbols::setupParameters(){
   setAuthor("Michael Simpson");
-  setOriginalArtist("Muriel Cooper")
+  setOriginalArtist("Muriel Cooper");
   parameters.add(gridSize.set("Grid Size", 16, 1, 128));
   gridSize.addListener(this, &mgsCooperSymbols::redrawGrid);
   
