@@ -348,8 +348,10 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        if (isMidiConnected)
-            scenes[currentScene]->updateMidiParams();
+        if(scenes[currentScene]->bAnimateScene){
+            if (isMidiConnected)
+                scenes[currentScene]->updateMidiParams();
+        }
 #endif
         scenes[currentScene]->update();
     }

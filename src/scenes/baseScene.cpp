@@ -29,6 +29,7 @@ void baseScene::loadCode( string fileName ){
         loadMidi(recData, dataPath+"/paramsRecording.xml");
     }
     bHasEndSet = false;
+    bAnimateScene = true;
 }
 
 void baseScene::enableMidi() {
@@ -116,12 +117,14 @@ bool baseScene::hasRecData(){
     return recData.size() != 0;
 }
 void baseScene::setRecData(const vector<ofxMidiRecordingEvent>& data){
+    if(bAnimateScene){
     recData.clear();
     recData = data;
     cout << "setRecData: " << recData.size() << "  " << dataPath << endl;
     //if (!dataPath.empty()) {
         saveMidi(recData, dataPath+"/paramsRecording.xml");
     //}
+    }
 }
 const vector<ofxMidiRecordingEvent>& baseScene::getRecData(){
     return recData;
