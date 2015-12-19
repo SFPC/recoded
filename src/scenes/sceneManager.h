@@ -88,6 +88,7 @@ public:
     float lastAutoadvanceTime;
     
 #ifdef USE_MIDI_PARAM_SYNC
+    bool isMidiConnected;
     ofxParameterMidiSync sync;
     void recordingStart();
     void recordingEnd();

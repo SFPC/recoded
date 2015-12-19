@@ -229,7 +229,7 @@ void sceneManager::startScene(int whichScene){
     lastLetterY = 0;
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setSyncGroup(scenes[currentScene]->midiParameters, true);
-    sync.enableMidi();
+    isMidiConnected = sync.enableMidi();
 #endif
 #ifdef USE_EXTERNAL_SOUNDS
     oscMessage.clear();
@@ -348,7 +348,7 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        if (ofxMidiIn::getPortList().size() != 0)
+        if (isMidiConnected)
             scenes[currentScene]->updateMidiParams();
 #endif
         scenes[currentScene]->update();

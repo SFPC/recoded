@@ -24,7 +24,7 @@ public:
     void setup(int portNum, ofParameterGroup & parameters, bool bAutoLink);
     void setSyncGroup( ofAbstractParameter & parameters, bool bAutoLink);
     void setSyncGroup( ofParameterGroup & parameters, bool bAutoLink);
-    void enableMidi(bool b = true);
+    bool enableMidi(bool b = true);
 
     void update();
     
