@@ -1,63 +1,43 @@
-float stripW = VISUALS_WIDTH/16.0 - minWidth - minSpacing;
-float wide = (1 - [[thinWideRatio]]) * stripW;
-float thin = [[thinWideRatio]] * stripW;
-
-float h = VISUALS_HEIGHT * 0.66;
-float w2 = VISUALS_WIDTH *0.5;
-
-ofVec3f pp[2];
-pp[0].set(w2, h);
-pp[1].set(w2, h);
-
+// draw 8 lines
 for (int i = 0; i < 8; i++) {
-  ofVec3f p0[4], p1[4], c1[3], c0[3];
-  float r0[3], r1[3];
-  int i0 = i*2 -1;
-  int i1 = i*2;
-  p0[0].set(i *(minSpacing+minWidth) , h);
-  p1[0].set(i *(minSpacing+minWidth) + minWidth , h);
-
-  p0[1] = pp[0];
-  p1[1] = pp[0];
-  p0[2] = pp[1];
-  p1[2] = pp[1];
-  if(i < 4){
-    p0[1].x -= wide;
-    p1[1].x -= wide*2;
-
-    p0[2].x +=thin;
-    p1[2].x +=thin*2;
-
-  }else{
-    p0[1].x -= thin;
-    p1[1].x -= thin*2;
-
-    p0[2].x +=wide;
-    p1[2].x +=wide*2;
+  // the first 3 points are one side of the stroke,
+  // the second 3 are the other side
+  points[0].set( i * (minSpacing+minWidth) , top);
+  points[3].set( i * (minSpacing+minWidth) + minWidth , top);
+  // set line thickness for first 4 lines
+  if(i < 4) {
+    points[1].x -= (1 - [[thinWideRatio]]) * lineWidth;
+    points[4].x -= (1 - [[thinWideRatio]]) * lineWidth * 2;
+    points[2].x += [[thinWideRatio]] * lineWidth;
+    points[5].x += [[thinWideRatio]] * lineWidth * 2;
+  // set up line thickness for last 4 lines
+  } else {
+    points[1].x -= [[thinWideRatio]] * lineWidth;
+    points[4].x -= [[thinWideRatio]] * lineWidth * 2;
+    outPoints[2].x += (1 - [[thinWideRatio]]) * lineWidth;
+    backPoints[5].x += (1 - [[thinWideRatio]]) * lineWidth * 2;
   }
-
-  p0[3].set(VISUALS_WIDTH - p0[0].x, h);
-  p1[3].set(VISUALS_WIDTH - p1[0].x, h);
-
-  for (int j = 0; j< 3; j++) {
-    r0[j] = p0[j].distance(p0[j+1])/2;
-    r1[j] = p1[j].distance(p1[j+1])/2;
-
-    c0[j] = p0[j].getMiddle(p0[j+1]);
-    c1[j] = p1[j].getMiddle(p1[j+1]);
-  }
-
-  path.moveTo(p0[0]);
-  path.arc( c0[0], r0[0], r0[0], 0, 180);
-  path.arc( c0[1], r0[1], r0[1], 180, 360);
-  path.arc( c0[2], r0[2], r0[2], 0, 180);
-  path.lineTo(p1[3]);
-  path.arc( c1[2], r1[2], r1[2], 0, 180);
-  path.arc( c1[1], r1[1], r1[1], 180, 360);
-  path.arc( c1[0], r1[0], r1[0], 0, 180);
-  path.lineTo(p0[0]);
-  path.close();
-
-  pp[0] = p1[1];
-  pp[1] = p1[2];
+  points[3].set(width - points[0].x, h);
+  points[6].set(width - points[3].x, h);
+  
+  drawLine(points);
 }
+
+// draw the line!
+drawLine(points) {
+  for (int j = 0; j < 6; j++) {
+    radii[j] = points[j].distance(points[j+1])/2;
+    centers[j] = points[j].getMiddle(points[j+1]);
+  }
+  // draw one side of line
+  path.moveTo(points[0]);
+  path.arc( centers[0], radii[0], radii[0], 0, 180);
+  path.arc( centers[1], radii[1], radii[1], 180, 360);
+  path.arc( centers[2], radii[2], radii[2], 0, 180);
+  // draw other side of line
+  path.arc( centers[3], radii[3], radii[3], 0, 180);
+  path.arc( centers[4], radii[4], radii[4], 180, 360);
+  path.arc( centers[5], radii[5], radii[5], 0, 180);
+  path.lineTo(points[0]);
+}
+
