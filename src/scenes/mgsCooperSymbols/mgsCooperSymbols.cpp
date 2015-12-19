@@ -2,9 +2,7 @@
 #include "mgsCooperSymbols.h"
 
 void mgsCooperSymbols::setupParameters(){
-  setAuthor("Michael Simpson");
-  setOriginalArtist("Muriel Cooper");
-  parameters.add(gridSize.set("Grid Size", 16, 1, 128));
+  parameters.add(gridSize.set("Grid Size", 32, 1, 96));
   gridSize.addListener(this, &mgsCooperSymbols::redrawGrid);
   
   parameters.add(numberOfShapes.set("Number of Shapes", 3, 1, 3));
@@ -36,6 +34,8 @@ void mgsCooperSymbols::setupParameters(){
 }
 
 void mgsCooperSymbols::setup() {
+  setAuthor("Michael Simpson");
+  setOriginalArtist("Muriel Cooper - 'A Primer Of Visual Literacy' Book Cover");
   setupParameters();
   ofSetCircleResolution(100);
   loadCode("scenes/mgsCooperSymbols/exampleCode.cpp");
