@@ -139,7 +139,8 @@ void sceneManager::setup(){
     gui.setup("SFPC_d4n", "SFPC_d4n_general_settings.xml");
 
 
-    gui.add(drawScenePanel.set("draw scene ctrl", false));
+    gui.add(drawScenePanel.set("draw scene ctrl", true));
+    gui.add(enableMidiUpdate.set("enable midi update", true));
     gui.add(bAutoPlay.set("Auto Play on scene change", false));
     gui.add(autoadvanceDelay.set("Autoadvance", 0, 0, 60));
     gui.add(bSceneWaitForCode.set("Scene wait for code", true));
@@ -229,7 +230,7 @@ void sceneManager::startScene(int whichScene){
     lastLetterY = 0;
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setSyncGroup(scenes[currentScene]->midiParameters, true);
-    sync.enableMidi();
+    isMidiConnected = sync.enableMidi();
 #endif
 #ifdef USE_EXTERNAL_SOUNDS
     oscMessage.clear();
@@ -348,7 +349,7 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        if (ofxMidiIn::getPortList().size() != 0)
+        if (enableMidiUpdate.get())
             scenes[currentScene]->updateMidiParams();
 #endif
         scenes[currentScene]->update();
@@ -731,14 +732,14 @@ void sceneManager::computeMotion(ofFbo &fbo) {
     motion += (shapedMotion - motion) * 0.1;
     
 #ifdef USE_EXTERNAL_SOUNDS
-    oscMessage.clear();
-    oscMessage.setAddress("/d4n/motion");
-    oscMessage.addFloatArg(motion);
-    oscMessage.addFloatArg(centroid.x);
-    oscMessage.addFloatArg(centroid.y);
-    oscMessage.addFloatArg(centroid.x - lastCentroid.x);
-    oscMessage.addFloatArg(centroid.y - lastCentroid.y);
-    oscSender.sendMessage(oscMessage, false);
+//    oscMessage.clear();
+//    oscMessage.setAddress("/d4n/motion");
+//    oscMessage.addFloatArg(motion);
+//    oscMessage.addFloatArg(centroid.x);
+//    oscMessage.addFloatArg(centroid.y);
+//    oscMessage.addFloatArg(centroid.x - lastCentroid.x);
+//    oscMessage.addFloatArg(centroid.y - lastCentroid.y);
+//    oscSender.sendMessage(oscMessage, false);
 #endif
     
     currFrame.pasteInto(lastFrame, 0, 0);

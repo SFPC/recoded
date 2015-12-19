@@ -94,27 +94,32 @@ void ofxParameterMidiSync::reset(){
     learningParameter = NULL;
 }
 //-----------------------------------------------------
-void ofxParameterMidiSync::enableMidi(bool b){
+bool ofxParameterMidiSync::enableMidi(bool b){
     if (bIsSetup && bParameterGroupSetup) {
         if (b != bMidiEnabled) {
             if (b) {
                 midiIn.listPorts();
-                midiIn.openPort(portNum);
-                midiIn.ignoreTypes(true, true, false);
-                midiIn.addListener(this);
-                ofAddListener(syncGroup.parameterChangedE(),this,&ofxParameterMidiSync::parameterChanged);
-                midiIn.addListener(&recorder);
-                midiIn.addListener(&player);
+                bool opened = midiIn.openPort(portNum);
+                if (opened) {
+                    midiIn.ignoreTypes(true, true, false);
+                    midiIn.addListener(this);
+                    ofAddListener(syncGroup.parameterChangedE(),this,&ofxParameterMidiSync::parameterChanged);
+                    midiIn.addListener(&recorder);
+                    midiIn.addListener(&player);
+                }
+                return opened;
             }else{
                 midiIn.closePort();
                 midiIn.removeListener(this);
                 midiIn.removeListener(&recorder);
                 midiIn.removeListener(&player);
                 ofRemoveListener(syncGroup.parameterChangedE(),this,&ofxParameterMidiSync::parameterChanged);
+                return true;
             }
             bMidiEnabled = b;
         }
     }
+    return false;
 }
 //-----------------------------------------------------
 void ofxParameterMidiSync::learn(bool bLearn){
