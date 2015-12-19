@@ -56,6 +56,7 @@
 #include "olegVeraV.h"
 #include "sarahgpRileyCircle.h"
 #include "mwalczykVeraSquares.h"
+#include "yeseulRileyBrokencircle.h"
 //-----------------------------------------------------------------------------------
 sceneManager::~sceneManager(){
     ofRemoveListener(sync.ffwKeyPressed, this, &sceneManager::setAdvanceCurrentScene);
@@ -100,6 +101,7 @@ void sceneManager::setup(){
     scenes.push_back(new yeseulMenkmanInstitution());
     scenes.push_back(new yeseulCooperMessages());
     scenes.push_back(new yeseulWhitneyScene());
+    scenes.push_back(new yeseulRileyBrokencircle());
     scenes.push_back(new yosukeJohnWhitneyMatrix());
     scenes.push_back(new mgsCooperSymbols());
     scenes.push_back(new mgsRileyDiamonds());
@@ -110,6 +112,7 @@ void sceneManager::setup(){
     scenes.push_back(new olegVeraV());
     scenes.push_back(new sarahgpRileyCircle());
     scenes.push_back(new mwalczykVeraSquares());
+
     
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
