@@ -96,4 +96,7 @@ public:
     ofParameter<int> sceneTweenDuration, codeTweenDuration;
 #endif
     
+    ofRectangle screenRect;
+    bool bShowCursor;
+    
 };

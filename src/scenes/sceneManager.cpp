@@ -196,6 +196,8 @@ void sceneManager::setup(){
     
     TM.loadSounds();
 #endif
+    screenRect.set(0, 0, VISUALS_WIDTH+CODE_X_POS, VISUALS_HEIGHT);
+    bShowCursor = true;
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::startScene(int whichScene){
@@ -250,7 +252,18 @@ void sceneManager::update(){
 
     TM.energyDecayRate = codeEnergyDecayRate;
     TM.energyChangePerFrame = codeEnergyPerFrame;
-
+    //the following is to avoid showing the mouse curson if it is over what's being drawn to the screens,
+    //but showing it if not.
+    bool bInside =screenRect.inside(ofGetMouseX(), ofGetMouseY()) ;
+    if ( bInside && bShowCursor) {
+        ofHideCursor();
+        bShowCursor = false;
+    }else if(!bInside && !bShowCursor){
+        ofShowCursor();
+        bShowCursor = true;
+    }
+    
+    
 #ifdef TYPE_ANIMATION
     pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime);
     if (bSceneWaitForCode) {
