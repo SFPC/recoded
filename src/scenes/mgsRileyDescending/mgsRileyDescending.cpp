@@ -37,7 +37,7 @@ void addQuadToMesh(ofMesh& m, const ofVec3f& p0, const ofVec3f& p1, const ofVec3
 }
 
 void mgsRileyDescending::setup(){
-  loadCode("mgsScene/exampleCode.cpp");  
+  loadCode("scenes/mgsRileyDescending/exampleCode.cpp");
   setAuthor("Michael Simpson");
   setOriginalArtist("Bridget Riley - Study for Shuttle - 1964");
 
