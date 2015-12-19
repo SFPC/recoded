@@ -78,6 +78,7 @@ void veraAnimatedScene::draw(){
     ofNoFill();
     
     ofSetColor(255,255,255, opacity);
+    ofSetLineWidth(1);
     
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 6; j++) {

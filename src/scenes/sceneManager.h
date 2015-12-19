@@ -48,6 +48,11 @@ public:
 	  void regressScene();
     void screenGrab();
     
+    float motion;
+    ofPoint centroid, lastCentroid;
+    ofPixels lastFrame, currFrame;
+    void computeMotion(ofFbo &fbo);
+    
     void startScene(int whichScene);
   
     ofFbo transitionFbo;
@@ -78,7 +83,7 @@ public:
     
     float maxLetterX, lastLetterY;
     
-    bool didTriggerCodeFinishedAnimatingEvent, fadingIn;
+    bool fadingIn;
     
     ofxPanel gui;
     ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance;

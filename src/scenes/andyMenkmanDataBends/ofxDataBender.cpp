@@ -1,9 +1,12 @@
 
 #include "ofxDataBender.h"
 
-void ofxDataBender::setup(string imagesPath, string ext){
+void ofxDataBender::setup(string imagesPath, string ext, int debounce){
     
     fileExt = ext;
+    debounceTime = debounce;
+    debounceValue = 0;
+    
     srcPath = imagesPath+fileExt+"/menkman."+fileExt;
     dstPath = imagesPath+"tmp/menkman."+fileExt;
     
@@ -15,17 +18,32 @@ void ofxDataBender::setup(string imagesPath, string ext){
 }
 
 void ofxDataBender::update(int startLine, int numberOfLines, bool sips){
-    glitchImage(startLine, numberOfLines);
+
+    if(debounceValue >= debounceTime) {
+        glitchImage(startLine, numberOfLines);
+        
+        // for formats that require a sips conversion
+        if (sips) sipsConvert();
+        
+        dst.load(dstPath);
+        
+        debounceValue = 0;
+        
+    } else {
+        debounceValue++;
+    }
     
-    // for formats that require a sips conversion
-    if (sips) sipsConvert();
-    
-    dst.load(dstPath);
+//    cout << "debounce value " << ofToString(debounceValue);
 }
 
 void ofxDataBender::draw(int x, int y,int w, int h){
     dst.draw(x, y, w, h);
 }
+
+void ofxDataBender::setDebounce(int debounce) {
+    debounceTime = debounce;
+}
+
 
 int ofxDataBender::getLineCount(string path) {
     int count = 0;

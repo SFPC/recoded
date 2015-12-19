@@ -1,5 +1,4 @@
-// image from the artist's Flickr :)
-
+// TIFF image
 void glitchImage() {
   lineNumber = 0;
   // go through each line in the input image and

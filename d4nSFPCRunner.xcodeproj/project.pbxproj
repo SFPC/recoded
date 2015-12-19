@@ -31,6 +31,7 @@
 		71C302121C21D14900C0AC31 /* mgsMaedaTimePainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C302101C21D14900C0AC31 /* mgsMaedaTimePainter.cpp */; };
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
 		842A34731C25213A002E0CC3 /* mgsRileyDescending.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842A34711C25213A002E0CC3 /* mgsRileyDescending.cpp */; };
+		853B45281C252FAE00825EE2 /* yeseulRileyBrokencircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 853B45261C252FAE00825EE2 /* yeseulRileyBrokencircle.cpp */; };
 		856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9604B925D32EE39065747725 /* ofxBaseGui.cpp */; };
 		85B3DCA81C1E47060054975A /* yeseulMenkmanInstitution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCA61C1E47060054975A /* yeseulMenkmanInstitution.cpp */; };
 		85B3DCB11C1FE6170054975A /* yeseulCooperMessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */; };
@@ -89,6 +90,7 @@
 		C19334561C1B716B00A19961 /* ofxDataBender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19334541C1B716B00A19961 /* ofxDataBender.cpp */; };
 		C19334591C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19334571C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp */; };
 		C193345C1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C193345A1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp */; };
+		C1C15FEE1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1C15FEC1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp */; };
 		D39F0DEF1C222065004DEAAB /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D39F0DC81C222065004DEAAB /* ofxOscBundle.cpp */; };
 		D39F0DF01C222065004DEAAB /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D39F0DCA1C222065004DEAAB /* ofxOscMessage.cpp */; };
 		D39F0DF11C222065004DEAAB /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D39F0DCC1C222065004DEAAB /* ofxOscParameterSync.cpp */; };
@@ -202,6 +204,8 @@
 		832BDC407620CDBA568B713D /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlerror.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
 		842A34711C25213A002E0CC3 /* mgsRileyDescending.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgsRileyDescending.cpp; sourceTree = "<group>"; };
 		842A34721C25213A002E0CC3 /* mgsRileyDescending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgsRileyDescending.h; sourceTree = "<group>"; };
+		853B45261C252FAE00825EE2 /* yeseulRileyBrokencircle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yeseulRileyBrokencircle.cpp; sourceTree = "<group>"; };
+		853B45271C252FAE00825EE2 /* yeseulRileyBrokencircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yeseulRileyBrokencircle.h; sourceTree = "<group>"; };
 		85B3DCA61C1E47060054975A /* yeseulMenkmanInstitution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yeseulMenkmanInstitution.cpp; sourceTree = "<group>"; };
 		85B3DCA71C1E47060054975A /* yeseulMenkmanInstitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yeseulMenkmanInstitution.h; sourceTree = "<group>"; };
 		85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yeseulCooperMessages.cpp; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 		C19334581C1B7BB300A19961 /* andyMenkmanDataBendsPng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andyMenkmanDataBendsPng.h; sourceTree = "<group>"; };
 		C193345A1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = andyMenkmanDataBendsTif.cpp; sourceTree = "<group>"; };
 		C193345B1C1B7C6D00A19961 /* andyMenkmanDataBendsTif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andyMenkmanDataBendsTif.h; sourceTree = "<group>"; };
+		C1C15FEC1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = andyMenkmanDataBendsGif.cpp; sourceTree = "<group>"; };
+		C1C15FED1C25240A0033B6D0 /* andyMenkmanDataBendsGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andyMenkmanDataBendsGif.h; sourceTree = "<group>"; };
 		C1F057861BF7B0A5002155BE /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
 		C1F057871BF7B11F002155BE /* generate_scene.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_scene.sh; sourceTree = "<group>"; };
 		C70D8946940288799E82131E /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSliderGroup.h; path = ../../../addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
@@ -639,6 +645,15 @@
 			path = src/scenes/mgsRileyDescending;
 			sourceTree = SOURCE_ROOT;
 		};
+		853B45251C252FAE00825EE2 /* yeseulRileyBrokencircle */ = {
+			isa = PBXGroup;
+			children = (
+				853B45261C252FAE00825EE2 /* yeseulRileyBrokencircle.cpp */,
+				853B45271C252FAE00825EE2 /* yeseulRileyBrokencircle.h */,
+			);
+			path = yeseulRileyBrokencircle;
+			sourceTree = "<group>";
+		};
 		85B3DCA51C1E47060054975A /* yeseulMenkmanInstitution */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,6 +768,7 @@
 				85B3DCAE1C1FE6170054975A /* yeseulCooperMessages */,
 				85B3DCA51C1E47060054975A /* yeseulMenkmanInstitution */,
 				71C301C81C1783A500C0AC31 /* yeseulWhitneyScene */,
+				853B45251C252FAE00825EE2 /* yeseulRileyBrokencircle */,
 				4FD081C51C2089F0006A7604 /* yosukeJohnWhitneyMatrix */,
 				4F8F344B1C1BD89C000CF07C /* yosukeVeraSansTitre */,
 				9238719E1BF7993A00171456 /* baseScene.cpp */,
@@ -1074,6 +1090,8 @@
 				C19334521C1B6D7E00A19961 /* andyMenkmanDataBendsJpg.h */,
 				C19334541C1B716B00A19961 /* ofxDataBender.cpp */,
 				C19334551C1B716B00A19961 /* ofxDataBender.h */,
+				C1C15FEC1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp */,
+				C1C15FED1C25240A0033B6D0 /* andyMenkmanDataBendsGif.h */,
 			);
 			path = andyMenkmanDataBends;
 			sourceTree = "<group>";
@@ -1428,6 +1446,7 @@
 				B00CD10C1C21E81400C529FA /* ofxEasingQuint.cpp in Sources */,
 				B01DF7011C14F02D00B2EAB0 /* CooperBauhaus.cpp in Sources */,
 				B00CD10D1C21E81400C529FA /* ofxEasingSine.cpp in Sources */,
+				C1C15FEE1C25240A0033B6D0 /* andyMenkmanDataBendsGif.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				B04420991C1901D90049071E /* RileyArcsRoy.cpp in Sources */,
@@ -1527,6 +1546,7 @@
 				D39F0DF11C222065004DEAAB /* ofxOscParameterSync.cpp in Sources */,
 				FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */,
 				D39F0DF01C222065004DEAAB /* ofxOscMessage.cpp in Sources */,
+				853B45281C252FAE00825EE2 /* yeseulRileyBrokencircle.cpp in Sources */,
 				C19334591C1B7BB300A19961 /* andyMenkmanDataBendsPng.cpp in Sources */,
 				B00CD1071C21E81400C529FA /* ofxEasingElastic.cpp in Sources */,
 				9A6B71C41C157473000D7878 /* submotionOrchestraScene.cpp in Sources */,
