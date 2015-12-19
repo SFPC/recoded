@@ -320,6 +320,7 @@ void sceneManager::update(){
 #ifdef USE_EXTERNAL_SOUNDS
             oscMessage.clear();
             oscMessage.setAddress("/d4n/scene/start");
+            oscMessage.addIntArg(1);
             oscSender.sendMessage(oscMessage, false);
 #endif
 
