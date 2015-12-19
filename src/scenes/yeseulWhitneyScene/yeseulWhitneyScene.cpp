@@ -12,7 +12,7 @@ void yeseulWhitneyScene::setup(){
     integratedTime = 0;
     lastTime = 0;
 
-    loadCode("yeseulWhitneyScene/exampleCode.cpp");
+    loadCode("scenes/yeseulWhitneyScene/exampleCode.cpp");
     
     setAuthor("Yeseul Song");
     setOriginalArtist("John Whitney");
@@ -88,11 +88,5 @@ void yeseulWhitneyScene::diffusion() {
     for(int i = 0; i < diffs.size(); i++){
         diffs[i].draw(t);
     }
-}
-
-void yeseulWhitneyScene::reset(){
-    resetTiming();
-    lastTime = 0;
-    integratedTime = 0;
 }
 
