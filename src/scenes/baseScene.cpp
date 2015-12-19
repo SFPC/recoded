@@ -30,6 +30,77 @@ void baseScene::loadCode( string fileName ){
     }
     bHasEndSet = false;
 }
+
+void baseScene::enableMidi() {
+    ofParameter<bool>   boolParam;
+    ofParameter<int>    intParam;
+    ofParameter<float>  floatParam;
+    
+    paramTypes.clear();
+    boolParams.clear();
+    intParams.clear();
+    floatParams.clear();
+    
+    for (auto param : parameters) {
+        if (param->type() == boolParam.type()) {
+            ofParameter<bool> newParam;
+            ofParameter<bool> &oldParam = param->cast<bool>();
+            newParam.setName(oldParam.getName());
+            newParam.setMin(oldParam.getMin());
+            newParam.setMax(oldParam.getMax());
+            newParam.set(oldParam.get());
+            boolParams.push_back(newParam);
+            midiParameters.add(boolParams.back());
+            paramTypes.push_back('b');
+        } else if (param->type() == intParam.type()) {
+            ofParameter<int> newParam;
+            ofParameter<int> &oldParam = param->cast<int>();
+            newParam.setName(oldParam.getName());
+            newParam.setMin(oldParam.getMin());
+            newParam.setMax(oldParam.getMax());
+            newParam.set(oldParam.get());
+            intParams.push_back(newParam);
+            midiParameters.add(intParams.back());
+            paramTypes.push_back('i');
+        } else if (param->type() == floatParam.type()) {
+            ofParameter<float> newParam;
+            ofParameter<float> &oldParam = param->cast<float>();
+            newParam.setName(oldParam.getName());
+            newParam.setMin(oldParam.getMin());
+            newParam.setMax(oldParam.getMax());
+            newParam.set(oldParam.get());
+            floatParams.push_back(newParam);
+            midiParameters.add(floatParams.back());
+            paramTypes.push_back('f');
+        }
+    }
+}
+
+void baseScene::updateMidiParams() {
+    for (int i = 0; i < parameters.size(); ++i) {
+        char paramType = paramTypes[i];
+        
+        if (paramType == 'b') {
+            ofParameter<bool> &midiParam = midiParameters.getBool(i);
+            ofParameter<bool> &param = parameters.getBool(i);
+            param.set(midiParam);
+        } else if (paramType == 'i') {
+            ofParameter<int> &midiParam = midiParameters.getInt(i);
+            ofParameter<int> &param = parameters.getInt(i);
+            param.set(midiParam);
+        } else if (paramType == 'f') {
+            ofParameter<float> &midiParam = midiParameters.getFloat(i);
+            ofParameter<float> &param = parameters.getFloat(i);
+            
+            float diff = midiParam - param;
+            if (fabs(diff) > 0.0001)
+                param.set(param + diff * baseScene::smoothingSpeed);
+            else
+                param.set(midiParam);
+        }
+    }
+}
+
 bool baseScene::isSceneDone(){
     return (getElapsedTimef()>sceneDuration);
 }
