@@ -31,7 +31,7 @@ void veraMolnarTrapezium::setup(){
 	parameters.add(unifiedSpacing);
 	parameters.add(spacingPercentX);
 	parameters.add(spacingPercentY);
-	parameters.add(numWide);
+	//parameters.add(numWide);
 	parameters.add(cornerNoise);
 	parameters.add(centerNoise);
 	parameters.add(whiteBackground);
