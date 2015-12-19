@@ -75,6 +75,9 @@ void mgsRileyDescending::setup(){
   quad3.disableColors();
   quad4.disableColors();
   
+  xOffset = 0;
+  yOffset = 100;
+
   lines.clear(); 
 
   for (int i = 0; i < columns; i++) {
