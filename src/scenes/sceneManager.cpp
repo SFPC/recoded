@@ -341,7 +341,7 @@ void sceneManager::update(){
         
         for (int i = 0; i < TM.paramChangedEnergy.size(); i++) {
     
-            if (TM.paramChangedEnergy[i] > 0.0001) {
+            if (TM.paramChangedEnergy[i] > 0) {
             
                 ofParameter<float> t = scenes[currentScene]->parameters[i].cast<float>();
 
@@ -357,18 +357,27 @@ void sceneManager::update(){
 #ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
                 oscMessage.setAddress("/d4n/paramEnergy");
-                oscMessage.addFloatArg(TM.paramChangedEnergy[i]);
+                oscMessage.addFloatArg(TM.paramChangedEnergy[i] / 2.0);
                 oscSender.sendMessage(oscMessage, false);
 
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/param/"+ofToString(i+1)+"/value");
+                oscMessage.setAddress("/d4n/paramEnergyInverse");
+                float arg = 1 - (TM.paramChangedEnergy[i] / 2.0);
+                if (arg < 0.4) {
+                    arg = 0;
+                }
+                oscMessage.addFloatArg(arg);
+                oscSender.sendMessage(oscMessage, false);
+                
+                oscMessage.clear();
+                oscMessage.setAddress("/d4n/param/"+ofToString((i % 2) + 1)+"/value");
                 oscMessage.addFloatArg(pct);
                 oscSender.sendMessage(oscMessage, false);
 #endif
             }
         }
     } else {
-#ifndef USE_EXTERNAL_SOUNDS
+#ifdef USE_EXTERNAL_SOUNDS
         oscMessage.clear();
         oscMessage.setAddress("/d4n/paramEnergy");
         oscMessage.addFloatArg(0);
@@ -744,12 +753,6 @@ void sceneManager::nextScene(bool forward){
     shouldDrawCode = true;
 
     startScene(currentScene);
-    
-#ifdef USE_EXTERNAL_SOUNDS
-    oscMessage.clear();
-    oscMessage.setAddress("/d4n/scene/load");
-    oscSender.sendMessage(oscMessage, false);
-#endif
     
     delete panel;
     panel = new ofxPanel();
