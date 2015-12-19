@@ -75,6 +75,9 @@ void mgsRileyDescending::setup(){
   quad3.disableColors();
   quad4.disableColors();
   
+  xOffset = 0;
+  yOffset = -100;
+
   lines.clear(); 
 
   for (int i = 0; i < columns; i++) {
@@ -123,7 +126,7 @@ void mgsRileyDescending::draw() {
           addQuadToMesh(quad3,
                         ofVec3f((x * lineWidth)+xOffset, ((y * lineHeight)-lineHeight)+yOffset, 0),
                         ofVec3f(x0+xOffset, (y0-lineHeight)+yOffset, 0),
-                        ofVec3f(x1, (y1-lineHeight)+yOffset, 0),
+                        ofVec3f(x1+xOffset, (y1-lineHeight)+yOffset, 0),
                         ofVec3f((x * lineWidth)+xOffset, (((y + 1) * lineHeight)-lineHeight)+yOffset, 0));
           quad3.draw();
         }
@@ -131,18 +134,18 @@ void mgsRileyDescending::draw() {
           ofSetColor(255);
           ofFill();
           addQuadToMesh(quad2,
-                        ofVec3f(x0, y0-100, 0),
-                        ofVec3f((x + 1) * lineWidth, (y * lineHeight)-100, 0),
-                        ofVec3f((x + 1) * lineWidth, ((y + 1) * lineHeight)-100, 0),
-                        ofVec3f(x1, y1-100, 0));
+                        ofVec3f(x0+xOffset, y0+yOffset, 0),
+                        ofVec3f(((x + 1) * lineWidth)+xOffset, (y * lineHeight)+yOffset, 0),
+                        ofVec3f(((x + 1) * lineWidth)+xOffset, ((y + 1) * lineHeight)+yOffset, 0),
+                        ofVec3f(x1+xOffset, y1+yOffset, 0));
           quad2.draw();
           ofSetColor(0);
           ofFill();
           addQuadToMesh(quad4,
-                        ofVec3f(x0, y0-lineHeight-100, 0),
-                        ofVec3f((x + 1) * lineWidth, ((y * lineHeight)-lineHeight)-100, 0),
-                        ofVec3f((x + 1) * lineWidth, (((y + 1) * lineHeight)-lineHeight)-100, 0),
-                        ofVec3f(x1, (y1-lineHeight)-100, 0));
+                        ofVec3f(x0+xOffset, y0-lineHeight+yOffset, 0),
+                        ofVec3f(((x + 1) * lineWidth)+xOffset, ((y * lineHeight)-lineHeight)+yOffset, 0),
+                        ofVec3f(((x + 1) * lineWidth)+xOffset, (((y + 1) * lineHeight)-lineHeight)+yOffset, 0),
+                        ofVec3f(x1+xOffset, (y1-lineHeight)+yOffset, 0));
           quad4.draw();
         }
       }
