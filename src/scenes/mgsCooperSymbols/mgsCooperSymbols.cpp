@@ -1,44 +1,50 @@
 
 #include "mgsCooperSymbols.h"
 
-void mgsCooperSymbols::setup() {
+void mgsCooperSymbols::setupParameters(){
   parameters.add(gridSize.set("Grid Size", 16, 1, 128));
   gridSize.addListener(this, &mgsCooperSymbols::redraw);
-
+  
   parameters.add(numberOfShapes.set("Number of Shapes", 3, 1, 3));
   numberOfShapes.addListener(this, &mgsCooperSymbols::redraw);
-
-  parameters.add(red.set("Red Amount", 255, 1, 255));
-  parameters.add(green.set("Green Amount", 255, 1, 255));
-  parameters.add(blue.set("Blue Amount", 255, 1, 255));
   
+  parameters.add(red.set("Red Amount", 255, 1, 255));
   red.addListener(this, &mgsCooperSymbols::redraw);
+  
+  parameters.add(green.set("Green Amount", 255, 1, 255));
   green.addListener(this, &mgsCooperSymbols::redraw);
+  
+  parameters.add(blue.set("Blue Amount", 255, 1, 255));
   blue.addListener(this, &mgsCooperSymbols::redraw);
   
   parameters.add(thickness.set("Line Width", 0.1, 0.1, 10.0));
   thickness.addListener(this, &mgsCooperSymbols::redrawFloat);
-
+  
   parameters.add(randomStrokeP.set("Random Colored Stroke", false));
   randomStrokeP.addListener(this, &mgsCooperSymbols::redrawBool);
-
+  
   parameters.add(singleShapesP.set("Single Shapes Mode", false));
   singleShapesP.addListener(this, &mgsCooperSymbols::redrawBool);
-
+  
   parameters.add(animated.set("Animated", true));
   animated.addListener(this, &mgsCooperSymbols::redrawBool);
-
+  
   parameters.add(debug.set("Debug", false));
   debug.addListener(this, &mgsCooperSymbols::redrawBool);
+}
 
+void mgsCooperSymbols::setup() {
+  setupParameters();
   ofSetCircleResolution(100);
   loadCode("scenes/mgsCooperSymbols/exampleCode.cpp");
-
+  
+  cursorColor = ofColor(0,0,255,1);
+  clearColor = ofColor(0,0,0,255);
+  symbolColor = ofColor(255,255,255,255);
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
-  fadeBands = false;
-    bNeedsRedraw = bNeedRedrawFullScene = false;
-  frame.allocate(dimensions.width, dimensions.height);
+  bNeedsRedraw = bNeedRedrawFullScene = true;
+  frame.allocate(dimensions.width, dimensions.height, GL_RGBA32F_ARB);
   frame.begin();
   ofClear(0);
   frame.end();
@@ -47,92 +53,58 @@ void mgsCooperSymbols::setup() {
 }
 
 void mgsCooperSymbols::update(){
-  if(fadeBands){
-    alpha = sin(ofGetElapsedTimef())*100+130;
-  } else {
-    alpha = 255;
+  if (bNeedRedrawFullScene) {
+    frame.begin();
+    ofClear(0);
+    frame.end();
   }
-    if (bNeedRedrawFullScene || bNeedsRedraw) {
-          frame.begin();
-          ofClear(0);
-          frame.end();
+  if(bNeedsRedraw){
+    if(animated){
+      drawScene();
+      incrementCursor();
+    } else {
+      bNeedsRedraw = false;
     }
-    if(bNeedsRedraw){
-        drawScene();
-        bNeedsRedraw = false;
-    }
-    if (bNeedRedrawFullScene) {
-        drawFullScene();
-        bNeedRedrawFullScene = false;
-    }
+  }
+  if (bNeedRedrawFullScene) {
+    drawFullScene();
+    bNeedRedrawFullScene = false;
+  }
 }
 
 void mgsCooperSymbols::draw(){
-  if(animated){
-    drawScene();
-  }
   frame.draw(0,0);
 }
 
 void mgsCooperSymbols::redraw(int& i){
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
-    bNeedRedrawFullScene = true;
-//  frame.begin();
-//  ofClear(0);
-//  frame.end();
-//  drawFullScene();
+  bNeedRedrawFullScene = true;
   if(animated){
-      bNeedsRedraw = true;
-      //  drawScene();
+    bNeedsRedraw = true;
   }
 }
 
 void mgsCooperSymbols::redrawBool(bool& i){
-//  frame.begin();
-//  ofClear(0);
-//  frame.end();
-    bNeedsRedraw = true;
-    bNeedRedrawFullScene = true;
-//    drawScene();
-//  drawFullScene();
+  bNeedsRedraw = true;
+  bNeedRedrawFullScene = true;
 }
 
 void mgsCooperSymbols::redrawFloat(float& i){
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
-//  frame.begin();
-//  ofClear(0);
-//  frame.end();
-//  drawScene();
-    bNeedsRedraw = true;
+  bNeedsRedraw = true;
 }
 
 void mgsCooperSymbols::drawScene(){
   frame.begin();
-  glLineWidth(thickness);
-  if(randomStrokeP){
-    ofSetColor(ofRandom(red),ofRandom(green),ofRandom(blue),ofRandom(alpha));
-    ofNoFill();
-  } else {
-    ofSetColor(255);
-    ofNoFill();
-  }
   drawGrid(0,0);
-  incrementCursor();
   frame.end();
+  bNeedsRedraw = true;
 }
 
 void mgsCooperSymbols::drawFullScene(){
   frame.begin();
-  glLineWidth(thickness);
-  if(randomStrokeP){
-    ofSetColor(ofRandom(red),ofRandom(green),ofRandom(blue),ofRandom(alpha));
-    ofNoFill();
-  } else {
-    ofSetColor(255);
-    ofNoFill();
-  }
   rowCounter = 0;
   shiftCounter = 0;
   drawFullGrid(0,0);
@@ -147,192 +119,154 @@ bool mgsCooperSymbols::randomBool() {
   }
 }
 
-void mgsCooperSymbols::drawSquare(float x, float y, float s) {;
-  if (randomStrokeP) {
-    randomStroke();
-  } else {
-    ofSetColor(red,green,blue,alpha);
-    ofNoFill();
-  }
-  if (randomBool()) {
-    if (randomStrokeP) {
-      randomStroke();
-    }
-    ofDrawLine(x, y, x+s, y);
-  }
-  if (randomBool()) {
-    if (randomStrokeP) {
-      randomStroke();
-    }
-    ofDrawLine(x+s, y, x+s, y+s);
-  }
-  if (randomBool()) {
-    if (randomStrokeP) {
-      randomStroke();
-    }
-    ofDrawLine(x+s, y+s, x, y+s);
-  }
-  if (randomBool()) {
-    if (randomStrokeP) {
-      randomStroke();
-    }
-    ofDrawLine(x, y+s, x, y);
-  }
+void mgsCooperSymbols::drawSquare(float x, float y, float s) {
+  ofPushStyle();
+  ofSetColor(symbolColor);
+  ofNoFill();
+  glLineWidth(thickness);
+  if (randomStrokeP) randomStroke();
+  if (randomBool()) ofDrawLine(x, y, x+s, y);
+  if (randomStrokeP) randomStroke();
+  if (randomBool()) ofDrawLine(x+s, y, x+s, y+s);
+  if (randomStrokeP) randomStroke();
+  if (randomBool()) ofDrawLine(x+s, y+s, x, y+s);
+  if (randomStrokeP) randomStroke();
+  if (randomBool()) ofDrawLine(x, y+s, x, y);
+  if (randomStrokeP) randomStroke();
+  ofPopStyle();
 }
 
 void mgsCooperSymbols::drawTri(float x, float y, float s) {
-  if (randomStrokeP) {
-    randomStroke();
-  } else {
-    ofSetColor(red,green,blue,alpha);
-    ofNoFill();
-  }
-  if (randomBool()) {
-    if (randomStrokeP) {
-      randomStroke();
-    }
-    ofDrawLine(x+s/2, y, x+s, y+s);
-  }
-  if (randomBool()) {
-    if (randomStrokeP) {
-      randomStroke();
-    }
-    ofDrawLine(x, y+s, x+s, y+s);
-  }
-  if (randomBool()) {
-    if (randomStrokeP) {
-      randomStroke();
-    }
-    ofDrawLine(x, y+s, x+s/2, y);
-  }
+  ofPushStyle();
+  ofSetColor(symbolColor);
+  ofNoFill();
+  glLineWidth(thickness);
+  if (randomStrokeP) randomStroke();
+  if (randomBool()) ofDrawLine(x+s/2, y, x+s, y+s);
+  if (randomStrokeP) randomStroke();
+  if (randomBool()) ofDrawLine(x, y+s, x+s, y+s);
+  if (randomStrokeP) randomStroke();
+  if (randomBool()) ofDrawLine(x, y+s, x+s/2, y);
+  ofPopStyle();
 }
 
 void mgsCooperSymbols::drawCircle(float x, float y, float s) {
-  if (randomStrokeP) {
-    randomStroke();
-  } else {
-    ofSetColor(red,green,blue,alpha);
-    ofNoFill();
-  }
-  if (randomBool()) {
-    ofDrawCircle(x, y, s/1.13);
-  }
+  ofPushStyle();
+  ofSetColor(symbolColor);
+  ofNoFill();
+  glLineWidth(thickness);
+  if (randomStrokeP) randomStroke();
+  if (randomBool()) ofDrawCircle(x, y, s/1.13);
+  ofPopStyle();
 }
 
-void mgsCooperSymbols::randomFill() {
-  float r = ofRandom(red);
-  float g = ofRandom(green);
-  float b = ofRandom(blue);
-  float a = ofRandom(alpha);
-  ofSetColor(r, g, b, a);
+void mgsCooperSymbols::randomStroke() {
+  ofNoFill();
+  ofSetColor(ofRandom(red), ofRandom(green), ofRandom(blue), ofRandom(alpha));
+}
+
+void mgsCooperSymbols::clearCell(float x, float y, float w, float h){
+  ofPushStyle();
   ofFill();
+  ofSetColor(clearColor);
+  ofDrawRectangle(x,y,w,h);
+  ofPopStyle();
 }
 
- void mgsCooperSymbols::randomStroke() {
-   float r = ofRandom(red);
-   float g = ofRandom(green); 
-   float b = ofRandom(blue);
-   float a = alpha;
-   ofSetColor(r, g, b, a);
-   ofNoFill();
+void mgsCooperSymbols::debugGrid(){
+  if(debug && animated) {
+   clearCell(shiftCounter-1, rowCounter, gw+1, gh);
+  }
+}
+
+void mgsCooperSymbols::drawCursor(){
+  ofPushStyle();
+  if(gridSize >= 8){
+    if(gw <= dimensions.width){
+      ofSetColor(cursorColor);
+      ofFill();
+      glLineWidth(lineWidth);
+      if(shiftCounter == 0) {
+        ofDrawRectangle(shiftCounter,rowCounter,gw,gh);
+      } else {
+        ofDrawRectangle(shiftCounter+1,rowCounter,gw,gh);
+      }
+    }
+  }
+  ofPopStyle();
 }
 
 void mgsCooperSymbols::drawGrid(float x, float y) {
-  // y+=1;
-  if(debug){
-    ofSetColor(0,255,255,255);
-    ofNoFill();
-    if(animated){
-      ofDrawRectangle(shiftCounter,rowCounter,gw,gh);
-    }
-    ofSetColor(255,0,0,255);
-    ofFill();
-    if(animated){
-      ofDrawRectangle(shiftCounter,rowCounter,gw,gh);
-    }
-  }
-  if(animated){
-    if(gridSize >= 16){
-      if(gw <= dimensions.width){
-        ofSetColor(0,0,blue,80);
-        ofFill();
-        ofDrawRectangle(shiftCounter+gw,rowCounter,gw,gh);
-      }
-    } 
-  }
-  if(animated){
-    ofSetColor(0);
-    ofFill();
-    ofDrawRectangle(shiftCounter,rowCounter,gw,gh);
-  }
-  ofSetColor(255);
-  if(randomStrokeP){
-    randomStroke();
-  }
+  ofPushStyle();
+  clearCell(shiftCounter-1,rowCounter,gw+2,gh);
+  drawCursor();
+  ofSetColor(symbolColor);
   ofNoFill();
-  //y-=1;
+  if(randomStrokeP) randomStroke();
   if (!singleShapesP) {
     switch((int)ofRandom(1, numberOfShapes+1)) {
-    case 1:
-      drawSquare(x+shiftCounter, y+rowCounter, gw);
-      break;
-    case 2:
-      drawTri(x+shiftCounter, y+rowCounter, gw);
-      break;
-    case 3:
-      drawCircle(x+shiftCounter+gw/2, y+rowCounter+gh/2, gw/2);
-      break;
+      case 1:
+        drawSquare(x+shiftCounter, y+rowCounter, gw);
+        break;
+      case 2:
+        drawTri(x+shiftCounter, y+rowCounter, gw);
+        break;
+      case 3:
+        drawCircle(x+shiftCounter+gw/2, y+rowCounter+gh/2, gw/2);
+        break;
     }
   } else {
     switch(numberOfShapes) {
-    case 1:
-      drawSquare(x+shiftCounter, y+rowCounter, gw);
-      break;
-    case 2:
-      drawTri(x+shiftCounter, y+rowCounter, gw);
-      break;
-    case 3:
-      drawCircle(x+shiftCounter+gw/2, y+rowCounter+gw/2, gw/2);
-      break;
+      case 1:
+        drawSquare(x+shiftCounter, y+rowCounter, gw);
+        break;
+      case 2:
+        drawTri(x+shiftCounter, y+rowCounter, gw);
+        break;
+      case 3:
+        drawCircle(x+shiftCounter+gw/2, y+rowCounter+gw/2, gw/2);
+        break;
     }
   }
+  ofPopStyle();
+}
+
+void mgsCooperSymbols::clearScreen(int r, int g, int b, int a){
+  ofPushStyle();
+  ofSetColor(r,g,b,a);
+  ofFill();
+  frame.begin();
+  ofDrawRectangle(0,0,dimensions.width,dimensions.height);
+  frame.end();
+  ofPopStyle();
 }
 
 void mgsCooperSymbols::drawFullGrid(float x, float y) {
-  ofSetColor(0);
-  ofFill();
-  ofDrawRectangle(x,y,dimensions.width,dimensions.height);
-  ofSetColor(255);
-  if(randomStrokeP){
-    randomStroke();
-  }
-  ofNoFill();
   for(float x = 0; x < dimensions.width+gw; x += gw){
     for(float y = 0; y < dimensions.width+gh; y += gh){
-   
       if (!singleShapesP) {
         switch((int)ofRandom(1, numberOfShapes+1)) {
-        case 1:
-          drawSquare(x+shiftCounter, y+rowCounter, gw);
-          break;
-        case 2:
-          drawTri(x+shiftCounter, y+rowCounter, gw);
-          break;
-        case 3:
-          drawCircle(x+shiftCounter+gw/2, y+rowCounter+gh/2, gw/2);
-          break;
+          case 1:
+            drawSquare(x+shiftCounter, y+rowCounter, gw);
+            break;
+          case 2:
+            drawTri(x+shiftCounter, y+rowCounter, gw);
+            break;
+          case 3:
+            drawCircle(x+shiftCounter+gw/2, y+rowCounter+gh/2, gw/2);
+            break;
         }
       } else {
         switch(numberOfShapes) {
-        case 1:
-          drawSquare(x+shiftCounter, y+rowCounter, gw);
-          break;
-        case 2:
-          drawTri(x+shiftCounter, y+rowCounter, gw);
-          break;
-        case 3:
-          drawCircle(x+shiftCounter+gw/2, y+rowCounter+gh/2, gw/2);
-          break;
+          case 1:
+            drawSquare(x+shiftCounter, y+rowCounter, gw);
+            break;
+          case 2:
+            drawTri(x+shiftCounter, y+rowCounter, gw);
+            break;
+          case 3:
+            drawCircle(x+shiftCounter+gw/2, y+rowCounter+gh/2, gw/2);
+            break;
         }
       }
     }
@@ -341,22 +275,15 @@ void mgsCooperSymbols::drawFullGrid(float x, float y) {
 
 void mgsCooperSymbols::incrementCursor(){
   if(shiftCounter < dimensions.width-gw) {
-    if(shiftCounter>0){
       shiftCounter += gw;
-    } else {
-      shiftCounter += gw;
-    }
   } else {
     if(rowCounter < dimensions.height-gh){
       shiftCounter = 0;
-      if(rowCounter > 0){
-        rowCounter += gw;
-      } else {
-        rowCounter += gh;
-      }
+      rowCounter += gh;
     } else {
       shiftCounter = 0;
       rowCounter = 0;
     }
   }
+  bNeedsRedraw = true;
 }

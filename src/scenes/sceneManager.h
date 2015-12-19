@@ -36,7 +36,7 @@ private:
     
 public:
     
-
+    ~sceneManager();
     vector < baseScene * > scenes;
     int currentScene;
     
@@ -47,6 +47,11 @@ public:
     void advanceScene();
 	  void regressScene();
     void screenGrab();
+    
+    float motion;
+    ofPoint centroid, lastCentroid;
+    ofPixels lastFrame, currFrame;
+    void computeMotion(ofFbo &fbo);
     
     void startScene(int whichScene);
   
@@ -78,10 +83,10 @@ public:
     
     float maxLetterX, lastLetterY;
     
-    bool didTriggerCodeFinishedAnimatingEvent, fadingIn;
+    bool fadingIn;
     
     ofxPanel gui;
-    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut;
+    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance;
     ofParameter<float> autoadvanceDelay;
     float lastAutoadvanceTime;
     
@@ -107,5 +112,8 @@ public:
     
     ofRectangle screenRect;
     bool bShowCursor;
+    
+    void setAdvanceCurrentScene();
+    
     
 };

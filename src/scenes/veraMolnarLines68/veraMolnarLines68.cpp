@@ -7,14 +7,14 @@ void veraMolnarLines68::setup(){
 // setup pramaters
 //    param.set("param", 5, 0, 100);
 //    parameters.add(param);
-	weight0.set("weight0", .5, 0, 1);
-	weight45.set("weight45", .5, 0, 1);
-	weight90.set("weight90", .5, 0, 1);
-	weight135.set("weight135", .5, 0, 1);
-	weightNone.set("weightNone", .1, 0, 1);
-	numWide.set("numWide", 19, 0, 100);
-	squareSize.set("squareSize", dimensions.width/numWide, 0, 1000);
-	squareSizedSpacing.set("squareSizedSpacing", false);
+	weight0.set("weight0", .2, 0, 1);
+	weight45.set("weight45", .2, 0, 1);
+	weight90.set("weight90", .2, 0, 1);
+	weight135.set("weight135", .2, 0, 1);
+	weightNone.set("weightNone", .2, 0, 1);
+	numWide.set("numWide", 50, 0, 100);
+	squareSize.set("squareSize", 23, 14, 50);
+	squareSizedSpacing.set("squareSizedSpacing", true);
 	spacing.set("spacing", squareSize, 0, 1000);
 	tweenTimeSec.set("tweenTimeSec", 1, 0, 10);
 
@@ -25,9 +25,9 @@ void veraMolnarLines68::setup(){
 	parameters.add(weightNone);
 	parameters.add(numWide);
 	parameters.add(squareSize);
-	parameters.add(squareSizedSpacing);
-	parameters.add(spacing);
-	parameters.add(tweenTimeSec);
+	//parameters.add(squareSizedSpacing);
+	//parameters.add(spacing);
+	//parameters.add(tweenTimeSec);
 
     setAuthor("Quin Kennedy");
     setOriginalArtist("Vera Molnar");

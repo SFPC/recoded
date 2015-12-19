@@ -50,11 +50,17 @@
 #include "mgsCooperSymbols.h"
 #include "mgsRileyDiamonds.h"
 #include "mgsRileyEllipsesAndSquares.h"
+#include "mgsRileyDescending.h"
 #include "mgsVeraMolnarLineStudy.h"
 #include "mgsMaedaTimePainter.h"
 #include "olegVeraV.h"
 #include "sarahgpRileyCircle.h"
 #include "mwalczykVeraSquares.h"
+#include "yeseulRileyBrokencircle.h"
+//-----------------------------------------------------------------------------------
+sceneManager::~sceneManager(){
+    ofRemoveListener(sync.ffwKeyPressed, this, &sceneManager::setAdvanceCurrentScene);
+}
 //-----------------------------------------------------------------------------------
 void sceneManager::setup(){
     
@@ -95,18 +101,28 @@ void sceneManager::setup(){
     scenes.push_back(new yeseulMenkmanInstitution());
     scenes.push_back(new yeseulCooperMessages());
     scenes.push_back(new yeseulWhitneyScene());
+    scenes.push_back(new yeseulRileyBrokencircle());
     scenes.push_back(new yosukeJohnWhitneyMatrix());
     scenes.push_back(new mgsCooperSymbols());
     scenes.push_back(new mgsRileyDiamonds());
     scenes.push_back(new mgsRileyEllipsesAndSquares());
     scenes.push_back(new mgsVeraMolnarLineStudy());
     scenes.push_back(new mgsMaedaTimePainter());
+    scenes.push_back(new mgsRileyDescending());
     scenes.push_back(new olegVeraV());
     scenes.push_back(new sarahgpRileyCircle());
     scenes.push_back(new mwalczykVeraSquares());
+
     
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
+    
+    
+#ifdef USE_MIDI_PARAM_SYNC
+    sync.setup(0);
+    ofAddListener(sync.player.playE, this, &sceneManager::startPlaying);
+    ofAddListener(sync.recorder.recEndE, this, &sceneManager::recordingEnd);
+#endif
     
     // Not using
     // scenes.push_back(new chrisMurielCooper());
@@ -118,10 +134,13 @@ void sceneManager::setup(){
     gui.add(autoadvanceDelay.set("Autoadvance", 0, 0, 60));
     gui.add(bSceneWaitForCode.set("Scene wait for code", true));
     gui.add(bFadeOut.set("Scene fade out", true));
+    gui.add(bAutoAdvance.set("Auto Advance Scene", true));
 #ifdef USE_SCENE_TRANSITIONS
     gui.add(sceneTweenDuration.set("fadeOutTime", 4.0, 0, 10.0));
     gui.add(codeTweenDuration.set("fadeInTime", 7.5, 0, 15));
 #endif
+    gui.add(sync.smoothing);
+    
     
     gui.loadFromFile("SFPC_d4n_general_settings.xml");
 //    gui.setWidthElements(300);
@@ -131,21 +150,19 @@ void sceneManager::setup(){
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
+
+    lastFrame.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, OF_PIXELS_RGBA);
+    currFrame.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, OF_PIXELS_RGBA);
+
     //  transitionFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB32F_ARB);
     transitionFbo.begin();
     ofSetColor(0,255);
     ofDrawRectangle(0, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
     transitionFbo.end();
     transitionFbo.draw(0,0);
-
-#ifdef USE_MIDI_PARAM_SYNC
-    sync.setup(0);
-    ofAddListener(sync.player.playE, this, &sceneManager::startPlaying);
-    ofAddListener(sync.recorder.recEndE, this, &sceneManager::recordingEnd);
-#endif
     
 #ifdef USE_EXTERNAL_SOUNDS
-    // open an outgoing connection to HOST:PORT
+    // open an outgoing connection
     oscSender.setup(OSC_HOST, OSC_PORT);
 #endif
     
@@ -185,15 +202,9 @@ void sceneManager::setup(){
     
     startScene(currentScene);
 
-    loop.load("sounds/drawbar_c4_a.aif");
-    loop.setLoop(true);
-    loop.play();
-    loop.setVolume(0);
-#ifndef USE_EXTERNAL_SOUNDS
-    TM.loadSounds();
-#endif
     screenRect.set(0, 0, VISUALS_WIDTH+CODE_X_POS, VISUALS_HEIGHT);
     bShowCursor = true;
+    ofAddListener(sync.ffwKeyPressed, this, &sceneManager::setAdvanceCurrentScene);
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::startScene(int whichScene){
@@ -203,7 +214,6 @@ void sceneManager::startScene(int whichScene){
     lastPlayTime = 0;
     maxLetterX = 0;
     lastLetterY = 0;
-    didTriggerCodeFinishedAnimatingEvent = false;
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setSyncGroup(scenes[currentScene]->parameters, true);
     sync.enableMidi();
@@ -215,9 +225,6 @@ void sceneManager::startScene(int whichScene){
     ofxOscMessage m;
     m.setAddress("/d4n/scene/load");
     m.addIntArg(currentScene);
-//    m.addStringArg(ofToString(currentScene) + ": "
-//                   + scenes[currentScene]->originalArtist
-//                   + " (recoded by " + scenes[currentScene]->author + ")");
     oscSender.sendMessage(m, false);
 #endif
 }
@@ -226,7 +233,6 @@ void sceneManager::startScene(int whichScene){
 void sceneManager::recordingStart(){}
 //-----------------------------------------------------------------------------------
 void sceneManager::recordingEnd(){
-   // cout << __PRETTY_FUNCTION__ << endl;
     if (sync.recorder.isRecording()) {
         sync.recorder.stop();
     }
@@ -238,7 +244,6 @@ void sceneManager::recordingEnd(){
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::startPlaying(){
-  //  cout << __PRETTY_FUNCTION__ << endl;
     if(scenes[currentScene]->hasRecData()){
         sync.player.setData(scenes[currentScene]->getRecData());
         sync.player.play();
@@ -254,17 +259,21 @@ void sceneManager::stopPlaying(){
 
 //-----------------------------------------------------------------------------------
 void sceneManager::update(){
-    
-    if (autoadvanceDelay > 0.001) {
+
+    if (autoadvanceDelay > 0.001 && !scenes[currentScene]->isEndSet()) {
         if (lastAutoadvanceTime == 0) {
             lastAutoadvanceTime = ofGetElapsedTimef();
-        }
-        
+        }        
         if (ofGetElapsedTimef() - lastAutoadvanceTime > autoadvanceDelay) {
             advanceScene();
             lastAutoadvanceTime = ofGetElapsedTimef();
         }
     } else {
+        if (bAutoAdvance && !sync.recorder.isRecording()) {
+            if (scenes[currentScene]->isSceneDone()) {
+                advanceScene();
+            }
+        }
         lastAutoadvanceTime = 0;
     }
     
@@ -288,6 +297,13 @@ void sceneManager::update(){
         if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
             shouldDrawScene = true;
             fadingIn = true;
+#ifdef USE_EXTERNAL_SOUNDS
+            oscMessage.clear();
+            oscMessage.setAddress("/d4n/scene/start");
+            oscMessage.addTriggerArg();
+            oscSender.sendMessage(oscMessage, false);
+#endif
+
         } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
             fadingIn = false;
         }
@@ -341,33 +357,35 @@ void sceneManager::update(){
 #ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
                 oscMessage.setAddress("/d4n/paramEnergy");
-//                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
-//                oscMessage.addIntArg(i);
                 oscMessage.addFloatArg(TM.paramChangedEnergy[i]);
                 oscSender.sendMessage(oscMessage, false);
 
                 oscMessage.clear();
                 oscMessage.setAddress("/d4n/paramValue");
-//                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
                 oscMessage.addIntArg(i+1); // may need start at 1 for Ableton to pick up changes in first param
                 oscMessage.addFloatArg(pct);
                 oscSender.sendMessage(oscMessage, false);
-#else
-                loop.setVolume(TM.paramChangedEnergy[i]);
-                loop.setSpeed( ofMap(pct, 0, 1, 0.3, 1.0) );
 #endif
             }
         }
     } else {
 #ifndef USE_EXTERNAL_SOUNDS
-        loop.setVolume(0);
+        oscMessage.clear();
+        oscMessage.setAddress("/d4n/paramEnergy");
+        oscMessage.addFloatArg(0);
+        oscSender.sendMessage(oscMessage, false);
 #endif
     }
     
     
 }
 //-----------------------------------------------------------------------------------
+void sceneManager::setAdvanceCurrentScene(){
+    scenes[currentScene]->setSceneEnd();
+}
+//-----------------------------------------------------------------------------------
 void sceneManager::draw(){
+    sync.update();
     codeFbo.begin();
     ofSetColor(255,255,255);
     float pct = (ofGetElapsedTimef() - TM.setupTime) / TM.animTime;
@@ -388,16 +406,6 @@ void sceneManager::draw(){
         pct += 0.5;
         
     }
-  
-#ifdef USE_EXTERNAL_SOUNDS
-    if (pct == 1 && !didTriggerCodeFinishedAnimatingEvent) {
-        oscMessage.clear();
-        oscMessage.setAddress("/d4n/scene/start");
-        oscMessage.addTriggerArg();
-        oscSender.sendMessage(oscMessage, false);
-        didTriggerCodeFinishedAnimatingEvent = true;
-    }
-#endif
 
     ofClear(0,0,0,255);
     vector < codeLetter > letters;
@@ -578,6 +586,9 @@ void sceneManager::draw(){
         scenes[currentScene]->draw();
         ofPopStyle();
         sceneFbo.end();
+        
+        // For sound and for kicks
+        computeMotion(sceneFbo);
 
         // Draw twice to make the background go away
         sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
@@ -618,28 +629,19 @@ void sceneManager::draw(){
         if (diff > 0 && (ofGetElapsedTimeMillis()-lastPlayTime > ofRandom(50,87))) {
             lastPlayTime = ofGetElapsedTimeMillis();
             
+#ifdef USE_EXTERNAL_SOUNDS
             if (ofNoise(pct*10, ofGetElapsedTimef()/10.0) > 0.5) {
-#ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
                 oscMessage.setAddress("/d4n/keystroke");
-                oscMessage.addIntArg(0);
+                oscMessage.addIntArg(roundf(ofRandom(1,2)));
                 oscSender.sendMessage(oscMessage, false);
-#else
-                TM.clickb.play();
-                TM.clickb.setSpeed(ofRandom(0.9, 1.1));
-#endif
             } else {
-#ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
                 oscMessage.setAddress("/d4n/keystroke");
-                oscMessage.addIntArg(1);
+                oscMessage.addIntArg(roundf(ofRandom(3,4)));
                 oscSender.sendMessage(oscMessage, false);
-#else
-                TM.clicka.play();
-                TM.clicka.setSpeed(ofRandom(0.9, 1.1));
-#endif
             }
-            
+#endif
         }
         lettersLastFrame = countLetters;
         
@@ -670,9 +672,53 @@ void sceneManager::draw(){
     str += "Current Scene players: " + ofToString(scenes[currentScene]->recData.size());
     
     ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
-    
-    
 }
+
+void sceneManager::computeMotion(ofFbo &fbo) {
+    fbo.readToPixels(currFrame);
+
+    const unsigned char *currPixels = currFrame.getData();
+    const unsigned char *lastPixels = lastFrame.getData();
+    
+    long long sumX = 0, sumY = 0, sumMotion = 0, totalMotion = 1, totalThresh = 1;
+    for (int i = 0; i < VISUALS_WIDTH * VISUALS_HEIGHT * 4; i += 4) {
+        int val = (currPixels[i] + currPixels[i+1] + currPixels[i+2]) / 3;
+        int lastVal = (lastPixels[i] + lastPixels[i+1] + lastPixels[i+2]) / 3;
+
+        sumMotion += abs(val - lastVal);
+        totalMotion++;
+
+        if (val > 127) {
+            int x = (i / 4) % VISUALS_WIDTH;
+            int y = (i / 4) / VISUALS_WIDTH;
+            
+            sumX += x;
+            sumY += y;
+            totalThresh++;
+        }
+    }
+
+    lastCentroid.set(centroid);
+    centroid.set(sumX / totalThresh, sumY / totalThresh);
+    
+    float currMotion = ((float)sumMotion / totalMotion) / 255.0;
+    float shapedMotion = sqrt(currMotion);
+    motion += (shapedMotion - motion) * 0.1;
+    
+#ifdef USE_EXTERNAL_SOUNDS
+    oscMessage.clear();
+    oscMessage.setAddress("/d4n/motion");
+    oscMessage.addFloatArg(motion);
+    oscMessage.addFloatArg(centroid.x);
+    oscMessage.addFloatArg(centroid.y);
+    oscMessage.addFloatArg(centroid.x - lastCentroid.x);
+    oscMessage.addFloatArg(centroid.y - lastCentroid.y);
+    oscSender.sendMessage(oscMessage, false);
+#endif
+    
+    currFrame.pasteInto(lastFrame, 0, 0);
+}
+
 //-----------------------------------------------------------------------------------
 void sceneManager::nextScene(bool forward){
 #ifdef USE_MIDI_PARAM_SYNC
@@ -703,9 +749,6 @@ void sceneManager::nextScene(bool forward){
 #ifdef USE_EXTERNAL_SOUNDS
     oscMessage.clear();
     oscMessage.setAddress("/d4n/scene/load");
-//    oscMessage.addStringArg(ofToString(currentScene) + ": "
-//                   + scenes[currentScene]->originalArtist
-//                   + " (recoded by " + scenes[currentScene]->author + ")");
     oscSender.sendMessage(oscMessage, false);
 #endif
     

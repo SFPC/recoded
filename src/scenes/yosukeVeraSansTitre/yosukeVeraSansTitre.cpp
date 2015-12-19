@@ -7,17 +7,17 @@ void yosukeVeraSansTitre::setup(){
     displacementCoef.set("displacement-coef", 0, 0.0, 20.0);
     parameters.add(displacementCoef);
     row.set("number-of-row", 9, 1, 50);
-    parameters.add(row);
+    //parameters.add(row);
     colmn.set("number-of-colmn", 20, 1, 100);
-    parameters.add(colmn);
-    spacingPercentX.set("space-x", 1.1, 0.0, 5.0);
+    //parameters.add(colmn);
+    spacingPercentX.set("space-x", 2.43, 0.0, 5.0);
     parameters.add(spacingPercentX);
-    spacingPercentY.set("space-y", 1.1, 0.0, 5.0);
+    spacingPercentY.set("space-y", 2.43, 0.0, 5.0);
     parameters.add(spacingPercentY);
     displacementZ.set("displacementZ", 0, 0, 5);
     parameters.add(displacementZ);
     lineWidth.set("lineWidth", 1.5, 0, 4);
-    parameters.add(lineWidth);
+//    parameters.add(lineWidth);
 
     ofBackground(0);
     ofSetBackgroundAuto(false);

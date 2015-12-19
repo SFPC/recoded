@@ -4,17 +4,16 @@ MolnarPainter painter;
 int maxLineCount, currentLineCount;
 
 void mgsVeraMolnarLineStudy::setup(){
-  parameters.add(squareSize.set("Square Size", 59.0, 1, 100));
+  parameters.add(squareSize.set("Square Size", 32.0, 1, 96.0));
   squareSize.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
 
-  parameters.add(numOfLines.set("Number of Lines", 15, 1, 50));
+  parameters.add(numOfLines.set("Number of Lines", 8, 1, 50));
   numOfLines.addListener(this, &mgsVeraMolnarLineStudy::redraw);
 
   parameters.add(gridSpace.set("Grid Spacing", 10.0, 1, 50));
   gridSpace.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
-  
 
-  parameters.add(lineWidth.set("Line Width", 1.0, 0.1, 10.0));
+  parameters.add(lineWidth.set("Line Width", 3.0, 0.1, 10.0));
   lineWidth.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
   
   parameters.add(connectedLinesP.set("Connect Lines?", false));
@@ -22,7 +21,6 @@ void mgsVeraMolnarLineStudy::setup(){
   
   parameters.add(useColorP.set("Use Color", false));
   useColorP.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
-
   
   parameters.add(animated.set("Animated", true));
   animated.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
@@ -60,6 +58,11 @@ void mgsVeraMolnarLineStudy::update(){
 
 void mgsVeraMolnarLineStudy::draw(){
   frame.begin();
+  if(clearScreenBool) {
+    frame.begin();
+    ofClear(0);
+    frame.end();
+  }
   if(getFrameNum() % 2 == 0){
     ofSetColor(0,1);
     ofDrawRectangle(0,0, dimensions.width, dimensions.height);
@@ -70,25 +73,15 @@ void mgsVeraMolnarLineStudy::draw(){
 
 void mgsVeraMolnarLineStudy::clearScreen(bool& i){
   clearScreenBool = !clearScreenBool;
-  frame.begin();
-  ofClear(0);
-  frame.end();
 }
 
 void mgsVeraMolnarLineStudy::redraw(int& i){
-  frame.begin();
-  ofClear(0);
-  frame.end();
   freshPaint();
-  drawScene();
 }
 
 void mgsVeraMolnarLineStudy::redrawB(bool& i){
   painter.useColor = useColorP;
   painter.connectedLines = connectedLinesP;
-  if(animated){
-      drawScene();
-  }
 }
 
 void mgsVeraMolnarLineStudy::redrawF(float& i){
@@ -98,13 +91,14 @@ void mgsVeraMolnarLineStudy::redrawF(float& i){
 }
 
 void mgsVeraMolnarLineStudy::freshPaint(){
+  painter.thickness = lineWidth;
   painter.useColor = useColorP;
   painter.connectedLines = connectedLinesP;
   painter.thickness = lineWidth;
-  painter.x = ofRandom(painter.startx,painter.startx+squareSize);
-  painter.y = ofRandom(painter.starty,painter.starty+squareSize);
-  painter.lastx = painter.startx;
-  painter.lasty = painter.starty;
+//  painter.x = ofRandom(painter.lastx,painter.lastx+squareSize);
+//  painter.y = ofRandom(painter.lasty,painter.lasty+squareSize);
+//  painter.lastx = painter.startx;
+//  painter.lasty = painter.starty;
   painter.size = squareSize;
   painter.lineMax = numOfLines;
   painter.gridWidth = dimensions.width/(squareSize+gridSpace);
