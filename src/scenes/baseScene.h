@@ -62,6 +62,7 @@ public:
     static float smoothingSpeed;
     bool isSceneDone();
     void setSceneEnd();
+    void setSceneEnd(float time);
     bool bHasEndSet;
     bool isEndSet(){return bHasEndSet;}
     

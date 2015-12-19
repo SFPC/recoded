@@ -107,11 +107,18 @@ public:
     shared_ptr<ofxMidiNanoKontrolButtons> kontrolButtons;
 };
 
-static void saveMidi(const vector<ofxMidiRecordingEvent>& data, string path){
+static void saveMidi(const vector<ofxMidiRecordingEvent>& data, float duration, string path){
     cout << __PRETTY_FUNCTION__ << endl;
     ofXml xml;
     xml.addChild("Midi");
     xml.setTo("Midi");
+
+    ofXml meta;
+    meta.addChild("Meta");
+    meta.setTo("Meta");
+    meta.addValue("duration", duration);
+    xml.addXml(meta);
+
     for (int i =0; i < data.size(); i++) {
         ofXml x;
         x.addChild("midiEvent");
@@ -124,20 +131,23 @@ static void saveMidi(const vector<ofxMidiRecordingEvent>& data, string path){
         x.addValue("channel", data[i].message.channel);
         x.addValue("pitch", data[i].message.pitch);
         x.addValue("velocity", data[i].message.velocity);
-        //x.setToParent();
         xml.addXml(x);
     }
-   // xml.setToParent();
     if(xml.save(path)){
         cout << "save midi to  " << path << endl;
     }else{
         cout << "couldnt save xml" << endl;
     }
 }
-static void loadMidi(vector<ofxMidiRecordingEvent>& data, string path){
+static void loadMidi(vector<ofxMidiRecordingEvent>& data, float *duration, string path){
     cout << "loadMidi " << path << endl;
     ofXml xml;
     xml.load(path);
+    if(xml.exists("Meta")) {
+        xml.setTo("Meta");
+        *duration = xml.getFloatValue("duration");
+        xml.setToParent();
+    }
     if(xml.exists("midiEvent")){
         xml.setTo("midiEvent[0]");
         do {

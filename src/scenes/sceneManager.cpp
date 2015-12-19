@@ -222,6 +222,7 @@ void sceneManager::setup(){
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::startScene(int whichScene){
+    scenes[currentScene]->resetTiming();
     scenes[currentScene]->reset();
     TM.setup( (scenes[currentScene]), codeTweenDuration);
     lettersLastFrame = 0;
@@ -241,13 +242,16 @@ void sceneManager::startScene(int whichScene){
 }
 #ifdef USE_MIDI_PARAM_SYNC
 //-----------------------------------------------------------------------------------
-void sceneManager::recordingStart(){}
+void sceneManager::recordingStart(){
+    scenes[currentScene]->resetTiming();
+}
 //-----------------------------------------------------------------------------------
 void sceneManager::recordingEnd(){
     if (sync.recorder.isRecording()) {
         sync.recorder.stop();
     }
     if (sync.recorder.recData.size()) {
+        scenes[currentScene]->setSceneEnd();
         scenes[currentScene]->setRecData(sync.recorder.recData);
         sync.recorder.recData.clear();
     }
@@ -256,6 +260,7 @@ void sceneManager::recordingEnd(){
 //-----------------------------------------------------------------------------------
 void sceneManager::startPlaying(){
     if(scenes[currentScene]->hasRecData()){
+        scenes[currentScene]->resetTiming();
         sync.player.setData(scenes[currentScene]->getRecData());
         sync.player.play();
     }else{
@@ -699,7 +704,10 @@ void sceneManager::draw(){
     str += "Is Recording: " + (string)(sync.recorder.isRecording()?"TRUE":"FALSE")+"\n";
     str += "Play events: " + ofToString(sync.player.data.size())+"\n";
     str += "Is Playing: " + (string)(sync.player.bPlaying?"TRUE":"FALSE")+"\n";
-    str += "Pre-recorded events: " + ofToString(scenes[currentScene]->recData.size());
+    str += "Pre-recorded events: " + ofToString(scenes[currentScene]->recData.size())+"\n";
+    str += "Current Scene Time: " + ofToString(scenes[currentScene]->getElapsedTimef())+"\n";
+    str += "Current Scene Duration: " + ofToString(scenes[currentScene]->sceneDuration)+"\n";
+    str += "Current Scene is done: " + (string)(scenes[currentScene]->isSceneDone()?"TRUE":"FALSE");
     
     ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
 }
