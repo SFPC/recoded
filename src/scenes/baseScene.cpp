@@ -28,12 +28,14 @@ void baseScene::loadCode( string fileName ){
     if (ofFile(dataPath+"/paramsRecording.xml").exists()) {
         loadMidi(recData, dataPath+"/paramsRecording.xml");
     }
+    bHasEndSet = false;
 }
 bool baseScene::isSceneDone(){
     return (getElapsedTimef()>sceneDuration);
 }
 void baseScene::setSceneEnd(){
     sceneDuration = getElapsedTimef();
+    bHasEndSet = true;
 }
 bool baseScene::hasRecData(){
     return recData.size() != 0;

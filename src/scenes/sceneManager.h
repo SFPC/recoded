@@ -82,8 +82,8 @@ public:
     
     ofxPanel gui;
     ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance;
-//    ofParameter<float> autoadvanceDelay;
-  //  float lastAutoadvanceTime;
+    ofParameter<float> autoadvanceDelay;
+    float lastAutoadvanceTime;
     
 #ifdef USE_MIDI_PARAM_SYNC
     ofxParameterMidiSync sync;
