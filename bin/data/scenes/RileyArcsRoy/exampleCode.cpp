@@ -1,5 +1,5 @@
 // default line width
-float stripWidth = width/16.0 - minWidth - minSpacing;
+//float lineWidth = width/16.0 - minWidth - minSpacing;
 //float wide = (1 - [[thinWideRatio]]) * stripWidth;
 //float thin = [[thinWideRatio]] * stripWidth;
 
@@ -7,64 +7,48 @@ float top = height * 0.66;
 float center = width * 0.5;
 
 // cet starting points
-ofVec3f pp[2];
-pp[0].set(center, top);
-pp[1].set(center, top);
+startPoint1.set(center, top);
+startPoint2.set(center, top);
 
 // draw 8 lines
 for (int i = 0; i < 8; i++) {
-  // setup points for where arcs meet on forward stroke
-  ofVec3f p0[3];
-  // setup points for where arcs meet on back stroke
-  ofVec3f p1[3];
-  // forward stroke centers
-  ofVec3f c1[3];
-  // back stroke centers
-  ofVec3f c0[3];
-  // radius values
-  float r0[3];
-  float r1[3];
-  // ??? odd number
-  int i0 = i*2 -1;
-  // ?? even number
-  int i1 = i*2;
   
   // set begin points for forward/back strokes
-  p0[0].set(i * (minSpacing+minWidth) , top);
-  p1[0].set(i * (minSpacing+minWidth) + minWidth , top);
+  outStrokePoint1.set(i * (minSpacing+minWidth) , top);
+  backStrokePoint1.set(i * (minSpacing+minWidth) + minWidth , top);
 
   // set second and third points for forwarc/back strokes
-  p0[1] = pp[0];
-  p1[1] = pp[0];
-  p0[2] = pp[1];
-  p1[2] = pp[1];
+  outStrokePoint2 = startPoint1;
+  backStrokePoint2 = startPoint1;
+  outStrokePoint3 = startPoint2;
+  outStrokePoint3 = startPoint2;
   
   // set line thickness for first 4 lines
   if(i < 4) {
-    p0[1].x -= (1 - [[thinWideRatio]]) * stripWidth;
-    p1[1].x -= (1 - [[thinWideRatio]]) * stripWidth * 2;
+    outStrokePoint2.x -= (1 - [[thinWideRatio]]) * lineWidth;
+    backStrokePoint2.x -= (1 - [[thinWideRatio]]) * lineWidth * 2;
 
-    p0[2].x += [[thinWideRatio]] * stripWidth;
-    p1[2].x += [[thinWideRatio]] * stripWidth * 2;
+    outStrokePoint3.x += [[thinWideRatio]] * lineWidth;
+    backStrokePoint3.x += [[thinWideRatio]] * lineWidth * 2;
 
   // set up line thickness for last 4 lines
   } else {
-    p0[1].x -= [[thinWideRatio]] * stripWidth;
-    p1[1].x -= [[thinWideRatio]] * stripWidth * 2;
+    outStrokePoint2.x -= [[thinWideRatio]] * stripWidth;
+    backStrokePoint2.x -= [[thinWideRatio]] * stripWidth * 2;
 
-    p0[2].x += (1 - [[thinWideRatio]]) * stripWidth;
-    p1[2].x += (1 - [[thinWideRatio]]) * stripWidth * 2;
+    outStrokePoint3.x += (1 - [[thinWideRatio]]) * stripWidth;
+    backStrokePoint3.x += (1 - [[thinWideRatio]]) * stripWidth * 2;
   }
 
   // set third point
-  p0[3].set(width - p0[0].x, h);
-  p1[3].set(width - p1[0].x, h);
+  outStrokePoint4.set(width - outStrokePoint1.x, h);
+  outStrokePoint4.set(width - backStrokePoint1.x, h);
 
   // calculate the center points and radius
   // for each of the arcs (3 of each on the forward
   // stroke, 3 on the back)
   for (int j = 0; j< 3; j++) {
-    r0[j] = p0[j].distance(p0[j+1])/2;
+    outStrokeRadius[j] = p0[j].distance(p0[j+1])/2;
     r1[j] = p1[j].distance(p1[j+1])/2;
 
     c0[j] = p0[j].getMiddle(p0[j+1]);
