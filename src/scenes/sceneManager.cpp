@@ -351,7 +351,8 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        scenes[currentScene]->updateMidiParams();
+        if (ofxMidiIn::getPortList().size() != 0)
+            scenes[currentScene]->updateMidiParams();
 #endif
         scenes[currentScene]->update();
     }
