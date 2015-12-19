@@ -22,6 +22,12 @@
 #include "ofxTween.h"
 #endif
 
+#define FADE_DELAY_MIN 1.5
+#define FADE_DELAY_MAX 1.77
+
+#define SCENE_PRE_TRANSITION_TIME   4.0
+#define SCENE_PRE_TRANSITION_FADE   0.3
+#define SCENE_PRE_TRANSITION_CURSOR 0.35
 
 // I take care of scenes.
 
@@ -66,8 +72,12 @@ public:
     int lettersLastFrame;
     long long lastPlayTime;
 
+    bool isTransitioning, fadingOut, introCursor;
+    float preTransitionPct;
+    float preTransitionStart;
+    
     float pctDelay;
-    bool shouldDrawScene;
+    bool shouldDrawScene, shouldDrawCode;
     
     float maxLetterX, lastLetterY;
     

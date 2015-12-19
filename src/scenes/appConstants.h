@@ -14,8 +14,6 @@
 
 //if this is defined, we will wait for type animation
 #define TYPE_ANIMATION
-#define FADE_DELAY_MIN 1.2
-#define FADE_DELAY_MAX 1.5
 
 #define USE_MIDI_PARAM_SYNC
 
