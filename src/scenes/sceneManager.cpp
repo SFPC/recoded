@@ -122,11 +122,12 @@ void sceneManager::setup(){
 
 
     gui.add(bAutoPlay.set("Auto Play on scene change", true));
+    gui.add(autoadvanceDelay.set("Autoadvance", 0, 0, 60));
     gui.add(bSceneWaitForCode.set("Scene wait for code", true));
-    gui.add(bAutoAdvance.set("Auto Advance Scene", true));
+    gui.add(bFadeOut.set("Scene fade out", true));
 #ifdef USE_SCENE_TRANSITIONS
-    gui.add(sceneTweenDuration.set("scene tween duration", 2000, 0, 5000));
-    gui.add(codeTweenDuration.set("code tween duration", 2000, 0, 5000));
+    gui.add(sceneTweenDuration.set("fadeOutTime", 4.0, 0, 10.0));
+    gui.add(codeTweenDuration.set("fadeInTime", 7.5, 0, 15));
 #endif
     gui.add(sync.smoothing);
     
@@ -200,7 +201,7 @@ void sceneManager::setup(){
 //-----------------------------------------------------------------------------------
 void sceneManager::startScene(int whichScene){
     scenes[currentScene]->reset();
-    TM.setup( (scenes[currentScene]), 7.5);
+    TM.setup( (scenes[currentScene]), codeTweenDuration);
     lettersLastFrame = 0;
     lastPlayTime = 0;
     maxLetterX = 0;
@@ -256,7 +257,21 @@ void sceneManager::stopPlaying(){
 
 //-----------------------------------------------------------------------------------
 void sceneManager::update(){
-
+    
+    if (autoadvanceDelay > 0.001) {
+        if (lastAutoadvanceTime == 0) {
+            lastAutoadvanceTime = ofGetElapsedTimef();
+        }
+        
+        if (ofGetElapsedTimef() - lastAutoadvanceTime > autoadvanceDelay) {
+            advanceScene();
+            lastAutoadvanceTime = ofGetElapsedTimef();
+        }
+    } else {
+        lastAutoadvanceTime = 0;
+    }
+    
+    TM.animTime = codeTweenDuration;
     TM.energyDecayRate = codeEnergyDecayRate;
     TM.energyChangePerFrame = codeEnergyPerFrame;
     //the following is to avoid showing the mouse curson if it is over what's being drawn to the screens,
@@ -268,11 +283,6 @@ void sceneManager::update(){
     }else if(!bInside && !bShowCursor){
         ofShowCursor();
         bShowCursor = true;
-    }
-    if (bAutoAdvance) {
-        if(scenes[currentScene]->getElapsedTimef() > scenes[currentScene]->sceneDuration){
-            advanceScene();
-        }
     }
     
 #ifdef TYPE_ANIMATION
@@ -290,7 +300,7 @@ void sceneManager::update(){
 #endif
     
     if (isTransitioning) {
-        preTransitionPct = (ofGetElapsedTimef() - preTransitionStart) / SCENE_PRE_TRANSITION_TIME;
+        preTransitionPct = (ofGetElapsedTimef() - preTransitionStart) / sceneTweenDuration;
         fadingOut = false;
         introCursor = false;
         shouldDrawScene = false;
@@ -539,7 +549,7 @@ void sceneManager::draw(){
     } else if (isTransitioning && introCursor) {
         x = codeDefaultStartX;
         y = 60 + 13;
-        drawCursor = (int)((preTransitionPct * SCENE_PRE_TRANSITION_TIME) / 0.2) % 2 == 0;
+        drawCursor = (int)((preTransitionPct * sceneTweenDuration) / 0.2) % 2 == 0;
     }
     
     // Draw that cursor
@@ -711,12 +721,16 @@ void sceneManager::nextScene(bool forward){
 };
 //-----------------------------------------------------------------------------------
 void sceneManager::advanceScene(){
-    if (!isTransitioning) {
-        isTransitioning = true;
-        preTransitionStart = ofGetElapsedTimef();
-        preTransitionPct = 0;
+    if (bFadeOut) {
+        if (!isTransitioning) {
+            isTransitioning = true;
+            preTransitionStart = ofGetElapsedTimef();
+            preTransitionPct = 0;
+        } else {
+            isTransitioning = false;
+            nextScene(true);
+        }
     } else {
-        isTransitioning = false;
         nextScene(true);
     }
 };

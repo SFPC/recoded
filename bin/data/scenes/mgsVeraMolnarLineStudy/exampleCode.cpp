@@ -1,4 +1,4 @@
-// An Homage to Vera Molnar's "An Homange to Durer"
+// An homage to Vera Molnar's "Hommage a Durer"
 SquareSize = [[Square Size]]
 gridHeight = [[Grid Height]]
 gridWidth = [[Grid Width]]
