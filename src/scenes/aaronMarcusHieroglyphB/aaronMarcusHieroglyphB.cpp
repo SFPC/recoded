@@ -93,6 +93,9 @@ void aaronMarcusHieroglyphB::update(){
 			defaultSpacing;
 		//if the next glyph now fits on the line
 		// lets update indices, and create the next next glyph
+        if (line.currOffset > dimensions.width + 30)
+            line.currOffset = dimensions.width + 30;
+
 		if(line.currOffset >= nextGlyphSize){
 			line.currOffset -= nextGlyphSize;
 			line.startIndex = line.endIndex = nextGlyphIndex;
