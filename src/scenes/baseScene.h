@@ -22,11 +22,19 @@ public:
     baseScene(){};
     ~baseScene(){}
     
+    void enableMidi();
+    void updateMidiParams();
+    vector<char> paramTypes;
+    
     void loadCode( string fileName );
     void setAuthor(string author);
     void setOriginalArtist(string originalArtist);
     
     ofParameterGroup parameters;    // this is the parameters of your sketch...
+    vector<ofParameter<bool>> boolParams;
+    vector<ofParameter<int>> intParams;
+    vector<ofParameter<float>> floatParams;
+    ofParameterGroup midiParameters;
 
     string code;                // this is the code we show
     string author, originalArtist; // for scene transitions
@@ -49,10 +57,15 @@ public:
     void resetTiming();
     //----------------------------------------
 
+    bool bIsSceneDone;
     float sceneDuration = 25.0f;
+    static float smoothingSpeed;
     bool isSceneDone();
     void setSceneEnd();
+    void setSceneEnd(float time);
     bool bHasEndSet;
     bool isEndSet(){return bHasEndSet;}
+    
+    bool bAnimateScene;
     
 };

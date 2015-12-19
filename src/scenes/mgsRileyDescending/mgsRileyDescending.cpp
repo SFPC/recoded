@@ -37,35 +37,46 @@ void addQuadToMesh(ofMesh& m, const ofVec3f& p0, const ofVec3f& p1, const ofVec3
 }
 
 void mgsRileyDescending::setup(){
-  loadCode("mgsScene/exampleCode.cpp");  
+  loadCode("scenes/mgsRileyDescending/exampleCode.cpp");
+  setAuthor("Michael Simpson");
+  setOriginalArtist("Bridget Riley - Study for Shuttle - 1964");
+
   parameters.add(rows.set("Rows", 127, 1, 200));
   rows.addListener(this, &mgsRileyDescending::setupLines);
+  
   parameters.add(lineHeight.set("Row Height", 5, 1, 100));
-  lineHeight.addListener(this, &mgsRileyDescending::setupLines);
+  lineHeight.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(columns.set("Columns", 9, 1, 200));
   columns.addListener(this, &mgsRileyDescending::setupLines);
+  
   parameters.add(lineWidth.set("Column Width", 54, 1, 300));
-  lineWidth.addListener(this, &mgsRileyDescending::setupLines);
+  lineWidth.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(lineSpacing.set("Depth Amount", 14, 1, 100));
-  lineSpacing.addListener(this, &mgsRileyDescending::setupLines);
+  lineSpacing.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(wavePeriodParam.set("Number of Waves", 2, 0, 60));
   wavePeriodParam.addListener(this, &mgsRileyDescending::setupLinesF);
+  
   parameters.add(wavePhaseParam.set("Wave Phase", 180.0, 0, 360));
   wavePhaseParam.addListener(this, &mgsRileyDescending::setupLinesF);
+  
   parameters.add(distanceParam.set("Distance Between", 19.6888, 1, 100));
   distanceParam.addListener(this, &mgsRileyDescending::setupLinesF);
 
   parameters.add(speedParam.set("Speed", 1.4898, 0.0, 4.0));
   speedParam.addListener(this, &mgsRileyDescending::setupLinesF);
+
   parameters.add(accelParam.set("Acceleration", 10.0, 1, 360));
   accelParam.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(animated.set("Animated", true));
   animated.addListener(this, &mgsRileyDescending::setupLinesB);
   
+//  parameters.add(yOffset.set("Y-Offset", ));
+//  
+//  xOffset, lineWidth, lineHeight, lineSpacing, minWavePeriod, maxWavePeriod, minAccel, maxAccel, minWavePhase, maxWavePhase, <#Args &parameters...#>)
   quad1.setMode(OF_PRIMITIVE_TRIANGLES);
   quad2.setMode(OF_PRIMITIVE_TRIANGLES);
   quad3.setMode(OF_PRIMITIVE_TRIANGLES);
@@ -75,7 +86,7 @@ void mgsRileyDescending::setup(){
   quad3.disableColors();
   quad4.disableColors();
   
-  xOffset = 0;
+  xOffset = 10;
   yOffset = -100;
 
   lines.clear(); 
@@ -106,7 +117,7 @@ void mgsRileyDescending::draw() {
     quad3.clear();
     quad4.clear();
 
-    for (int y = 0; y < rows - 1; y++) {
+    for(int y = 0; y < rows - 1; y++) {
       float x0 = (x + .5) * lineWidth + lines[x].X(y);
       float y0 = lines[x].Y(y);
       float x1 = (x + .5) * lineWidth + lines[x].X(y + 1);

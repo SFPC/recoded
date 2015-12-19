@@ -7,6 +7,8 @@
 //
 
 #include "sceneManager.h"
+#include "baseScene.h"
+
 #include "exampleScene.h"
 #include "triangleScene.h"
 #include "veraAnimatedScene.h"
@@ -57,6 +59,9 @@
 #include "sarahgpRileyCircle.h"
 #include "mwalczykVeraSquares.h"
 #include "yeseulRileyBrokencircle.h"
+
+float baseScene::smoothingSpeed = 0.2;
+
 //-----------------------------------------------------------------------------------
 sceneManager::~sceneManager(){
     ofRemoveListener(sync.ffwKeyPressed, this, &sceneManager::setAdvanceCurrentScene);
@@ -120,6 +125,10 @@ void sceneManager::setup(){
     
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setup(0);
+    
+    // Disable MIDI smoothing by default
+    sync.smoothing.set(0);
+
     ofAddListener(sync.player.playE, this, &sceneManager::startPlaying);
     ofAddListener(sync.recorder.recEndE, this, &sceneManager::recordingEnd);
 #endif
@@ -130,16 +139,20 @@ void sceneManager::setup(){
     gui.setup("SFPC_d4n", "SFPC_d4n_general_settings.xml");
 
 
-    gui.add(bAutoPlay.set("Auto Play on scene change", true));
+    gui.add(drawScenePanel.set("draw scene ctrl", true));
+    gui.add(enableMidiUpdate.set("enable midi update", true));
+    gui.add(bAutoPlay.set("Auto Play on scene change", false));
     gui.add(autoadvanceDelay.set("Autoadvance", 0, 0, 60));
     gui.add(bSceneWaitForCode.set("Scene wait for code", true));
     gui.add(bFadeOut.set("Scene fade out", true));
-    gui.add(bAutoAdvance.set("Auto Advance Scene", true));
+    gui.add(bAutoAdvance.set("Auto Advance Scene", false));
 #ifdef USE_SCENE_TRANSITIONS
     gui.add(sceneTweenDuration.set("fadeOutTime", 4.0, 0, 10.0));
     gui.add(codeTweenDuration.set("fadeInTime", 7.5, 0, 15));
 #endif
+    sync.smoothing.setName("MIDI Smoothing");
     gui.add(sync.smoothing);
+    gui.add(ofSmoothing.set("OF Smoothing", 0.2, 0.01, 1));
     
     
     gui.loadFromFile("SFPC_d4n_general_settings.xml");
@@ -170,6 +183,7 @@ void sceneManager::setup(){
     for (auto scene : scenes){
         scene->dimensions.set(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         scene->setup();
+        scene->enableMidi();
     }
     
     
@@ -208,6 +222,7 @@ void sceneManager::setup(){
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::startScene(int whichScene){
+    scenes[currentScene]->resetTiming();
     scenes[currentScene]->reset();
     TM.setup( (scenes[currentScene]), codeTweenDuration);
     lettersLastFrame = 0;
@@ -215,28 +230,28 @@ void sceneManager::startScene(int whichScene){
     maxLetterX = 0;
     lastLetterY = 0;
 #ifdef USE_MIDI_PARAM_SYNC
-    sync.setSyncGroup(scenes[currentScene]->parameters, true);
-    sync.enableMidi();
-    if (bAutoPlay) {
-        startPlaying();
-    }
+    sync.setSyncGroup(scenes[currentScene]->midiParameters, true);
+    isMidiConnected = sync.enableMidi();
 #endif
 #ifdef USE_EXTERNAL_SOUNDS
-    ofxOscMessage m;
-    m.setAddress("/d4n/scene/load");
-    m.addIntArg(currentScene);
-    oscSender.sendMessage(m, false);
+    oscMessage.clear();
+    oscMessage.setAddress("/d4n/scene/load");
+    oscMessage.addIntArg(currentScene);
+    oscSender.sendMessage(oscMessage, false);
 #endif
 }
 #ifdef USE_MIDI_PARAM_SYNC
 //-----------------------------------------------------------------------------------
-void sceneManager::recordingStart(){}
+void sceneManager::recordingStart(){
+    scenes[currentScene]->resetTiming();
+}
 //-----------------------------------------------------------------------------------
 void sceneManager::recordingEnd(){
     if (sync.recorder.isRecording()) {
         sync.recorder.stop();
     }
     if (sync.recorder.recData.size()) {
+        scenes[currentScene]->setSceneEnd();
         scenes[currentScene]->setRecData(sync.recorder.recData);
         sync.recorder.recData.clear();
     }
@@ -245,6 +260,7 @@ void sceneManager::recordingEnd(){
 //-----------------------------------------------------------------------------------
 void sceneManager::startPlaying(){
     if(scenes[currentScene]->hasRecData()){
+        scenes[currentScene]->resetTiming();
         sync.player.setData(scenes[currentScene]->getRecData());
         sync.player.play();
     }else{
@@ -270,13 +286,14 @@ void sceneManager::update(){
         }
     } else {
         if (bAutoAdvance && !sync.recorder.isRecording()) {
-            if (scenes[currentScene]->isSceneDone()) {
+            if (!isTransitioning && scenes[currentScene]->isSceneDone()) {
                 advanceScene();
             }
         }
         lastAutoadvanceTime = 0;
     }
     
+    baseScene::smoothingSpeed = ofSmoothing;
     TM.animTime = codeTweenDuration;
     TM.energyDecayRate = codeEnergyDecayRate;
     TM.energyChangePerFrame = codeEnergyPerFrame;
@@ -300,12 +317,17 @@ void sceneManager::update(){
 #ifdef USE_EXTERNAL_SOUNDS
             oscMessage.clear();
             oscMessage.setAddress("/d4n/scene/start");
-            oscMessage.addTriggerArg();
+            oscMessage.addIntArg(1);
             oscSender.sendMessage(oscMessage, false);
 #endif
 
         } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
             fadingIn = false;
+#ifdef USE_MIDI_PARAM_SYNC
+            if (bAutoPlay) {
+                startPlaying();
+            }
+#endif
         }
     } else {
         shouldDrawScene = true;
@@ -332,6 +354,14 @@ void sceneManager::update(){
     }
 
     if (shouldDrawScene) {
+#ifdef USE_MIDI_PARAM_SYNC
+        if (enableMidiUpdate.get()){
+            if(scenes[currentScene]->bAnimateScene){
+                if (isMidiConnected)
+                    scenes[currentScene]->updateMidiParams();
+            }
+        }
+#endif
         scenes[currentScene]->update();
     }
 
@@ -341,7 +371,7 @@ void sceneManager::update(){
         
         for (int i = 0; i < TM.paramChangedEnergy.size(); i++) {
     
-            if (TM.paramChangedEnergy[i] > 0.0001) {
+            if (TM.paramChangedEnergy[i] > 0) {
             
                 ofParameter<float> t = scenes[currentScene]->parameters[i].cast<float>();
 
@@ -357,19 +387,27 @@ void sceneManager::update(){
 #ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
                 oscMessage.setAddress("/d4n/paramEnergy");
-                oscMessage.addFloatArg(TM.paramChangedEnergy[i]);
+                oscMessage.addFloatArg(TM.paramChangedEnergy[i] / 2.0);
                 oscSender.sendMessage(oscMessage, false);
 
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/paramValue");
-                oscMessage.addIntArg(i+1); // may need start at 1 for Ableton to pick up changes in first param
+                oscMessage.setAddress("/d4n/paramEnergyInverse");
+                float arg = 1 - (TM.paramChangedEnergy[i] / 2.0);
+                if (arg < 0.4) {
+                    arg = 0;
+                }
+                oscMessage.addFloatArg(arg);
+                oscSender.sendMessage(oscMessage, false);
+                
+                oscMessage.clear();
+                oscMessage.setAddress("/d4n/param/"+ofToString((i % 2) + 1)+"/value");
                 oscMessage.addFloatArg(pct);
                 oscSender.sendMessage(oscMessage, false);
 #endif
             }
         }
     } else {
-#ifndef USE_EXTERNAL_SOUNDS
+#ifdef USE_EXTERNAL_SOUNDS
         oscMessage.clear();
         oscMessage.setAddress("/d4n/paramEnergy");
         oscMessage.addFloatArg(0);
@@ -398,13 +436,11 @@ void sceneManager::draw(){
         pct  = powf(pct, 3.0);
         pct *= 0.5;
     } else {
-        
         pct -= 0.5;
         pct *= 2.0;
         pct  = powf(pct, 1.0/3.0);
         pct *= 0.5;
         pct += 0.5;
-        
     }
 
     ofClear(0,0,0,255);
@@ -515,7 +551,6 @@ void sceneManager::draw(){
         string s = "";
         s += (char)(letters[i].character);
         font.drawString(s , (int)x, (int)y);
-        
         
         if (letters[i].character != ' ' &&
             letters[i].character != '\n' &&
@@ -648,7 +683,8 @@ void sceneManager::draw(){
     }
 #endif
 
-    panel->draw();
+    if (drawScenePanel)
+        panel->draw();
     codeControls.draw();
     
     gui.draw();
@@ -669,7 +705,10 @@ void sceneManager::draw(){
     str += "Is Recording: " + (string)(sync.recorder.isRecording()?"TRUE":"FALSE")+"\n";
     str += "Play events: " + ofToString(sync.player.data.size())+"\n";
     str += "Is Playing: " + (string)(sync.player.bPlaying?"TRUE":"FALSE")+"\n";
-    str += "Current Scene players: " + ofToString(scenes[currentScene]->recData.size());
+    str += "Pre-recorded events: " + ofToString(scenes[currentScene]->recData.size())+"\n";
+    str += "Current Scene Time: " + ofToString(scenes[currentScene]->getElapsedTimef())+"\n";
+    str += "Current Scene Duration: " + ofToString(scenes[currentScene]->sceneDuration)+"\n";
+    str += "Current Scene is done: " + (string)(scenes[currentScene]->isSceneDone()?"TRUE":"FALSE");
     
     ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
 }
@@ -706,14 +745,14 @@ void sceneManager::computeMotion(ofFbo &fbo) {
     motion += (shapedMotion - motion) * 0.1;
     
 #ifdef USE_EXTERNAL_SOUNDS
-    oscMessage.clear();
-    oscMessage.setAddress("/d4n/motion");
-    oscMessage.addFloatArg(motion);
-    oscMessage.addFloatArg(centroid.x);
-    oscMessage.addFloatArg(centroid.y);
-    oscMessage.addFloatArg(centroid.x - lastCentroid.x);
-    oscMessage.addFloatArg(centroid.y - lastCentroid.y);
-    oscSender.sendMessage(oscMessage, false);
+//    oscMessage.clear();
+//    oscMessage.setAddress("/d4n/motion");
+//    oscMessage.addFloatArg(motion);
+//    oscMessage.addFloatArg(centroid.x);
+//    oscMessage.addFloatArg(centroid.y);
+//    oscMessage.addFloatArg(centroid.x - lastCentroid.x);
+//    oscMessage.addFloatArg(centroid.y - lastCentroid.y);
+//    oscSender.sendMessage(oscMessage, false);
 #endif
     
     currFrame.pasteInto(lastFrame, 0, 0);
@@ -745,15 +784,8 @@ void sceneManager::nextScene(bool forward){
     shouldDrawCode = true;
 
     startScene(currentScene);
-    
-#ifdef USE_EXTERNAL_SOUNDS
-    oscMessage.clear();
-    oscMessage.setAddress("/d4n/scene/load");
-    oscSender.sendMessage(oscMessage, false);
-#endif
-    
-    delete panel;
-    panel = new ofxPanel();
+
+    panel->clear();
     panel->setup("scene settings");
     panel->add(scenes[currentScene]->parameters);
     
@@ -761,6 +793,8 @@ void sceneManager::nextScene(bool forward){
 };
 //-----------------------------------------------------------------------------------
 void sceneManager::advanceScene(){
+    stopPlaying();
+
     if (bFadeOut) {
         if (!isTransitioning) {
             isTransitioning = true;
@@ -776,6 +810,7 @@ void sceneManager::advanceScene(){
 };
 //-----------------------------------------------------------------------------------
 void sceneManager::regressScene(){
+    stopPlaying();
     nextScene(false);
 };
 //-----------------------------------------------------------------------------------
@@ -792,3 +827,4 @@ void sceneManager::screenGrab() {
     
 }
 //-----------------------------------------------------------------------------------
+

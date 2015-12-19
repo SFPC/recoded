@@ -2,8 +2,8 @@
 #include "mgsCooperSymbols.h"
 
 void mgsCooperSymbols::setupParameters(){
-  parameters.add(gridSize.set("Grid Size", 16, 1, 128));
-  gridSize.addListener(this, &mgsCooperSymbols::redraw);
+  parameters.add(gridSize.set("Grid Size", 32, 1, 96));
+  gridSize.addListener(this, &mgsCooperSymbols::redrawGrid);
   
   parameters.add(numberOfShapes.set("Number of Shapes", 3, 1, 3));
   numberOfShapes.addListener(this, &mgsCooperSymbols::redraw);
@@ -34,6 +34,8 @@ void mgsCooperSymbols::setupParameters(){
 }
 
 void mgsCooperSymbols::setup() {
+  setAuthor("Michael Simpson");
+  setOriginalArtist("Muriel Cooper - 'A Primer Of Visual Literacy' Book Cover");
   setupParameters();
   ofSetCircleResolution(100);
   loadCode("scenes/mgsCooperSymbols/exampleCode.cpp");
@@ -44,7 +46,7 @@ void mgsCooperSymbols::setup() {
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
   bNeedsRedraw = bNeedRedrawFullScene = true;
-  frame.allocate(dimensions.width, dimensions.height, GL_RGBA32F_ARB);
+  frame.allocate(dimensions.width, dimensions.height);
   frame.begin();
   ofClear(0);
   frame.end();
@@ -77,8 +79,17 @@ void mgsCooperSymbols::draw(){
 }
 
 void mgsCooperSymbols::redraw(int& i){
+  symbolColor = ofColor(red, green, blue);
+  //bNeedRedrawFullScene = true;
+  if(animated){
+    bNeedsRedraw = true;
+  }
+}
+
+void mgsCooperSymbols::redrawGrid(int& i){
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
+  symbolColor = ofColor(red, green, blue);
   bNeedRedrawFullScene = true;
   if(animated){
     bNeedsRedraw = true;
@@ -87,7 +98,7 @@ void mgsCooperSymbols::redraw(int& i){
 
 void mgsCooperSymbols::redrawBool(bool& i){
   bNeedsRedraw = true;
-  bNeedRedrawFullScene = true;
+  //bNeedRedrawFullScene = true;
 }
 
 void mgsCooperSymbols::redrawFloat(float& i){
@@ -105,6 +116,7 @@ void mgsCooperSymbols::drawScene(){
 
 void mgsCooperSymbols::drawFullScene(){
   frame.begin();
+  ofClear(0);
   rowCounter = 0;
   shiftCounter = 0;
   drawFullGrid(0,0);
@@ -161,8 +173,8 @@ void mgsCooperSymbols::drawCircle(float x, float y, float s) {
 }
 
 void mgsCooperSymbols::randomStroke() {
+  ofSetColor(ofRandom(red), ofRandom(green), ofRandom(blue), 255);
   ofNoFill();
-  ofSetColor(ofRandom(red), ofRandom(green), ofRandom(blue), ofRandom(alpha));
 }
 
 void mgsCooperSymbols::clearCell(float x, float y, float w, float h){
@@ -185,7 +197,7 @@ void mgsCooperSymbols::drawCursor(){
     if(gw <= dimensions.width){
       ofSetColor(cursorColor);
       ofFill();
-      glLineWidth(lineWidth);
+      glLineWidth(thickness);
       if(shiftCounter == 0) {
         ofDrawRectangle(shiftCounter,rowCounter,gw,gh);
       } else {

@@ -45,7 +45,7 @@ public:
     void draw();
     
     void advanceScene();
-	  void regressScene();
+    void regressScene();
     void screenGrab();
     
     float motion;
@@ -64,9 +64,6 @@ public:
     ofxPanel codeControls;
     
 
-    ofSoundPlayer loop;
-    
-    
     ofTrueTypeFont font;
     
     typographyManager TM;
@@ -86,11 +83,12 @@ public:
     bool fadingIn;
     
     ofxPanel gui;
-    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance;
-    ofParameter<float> autoadvanceDelay;
+    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance, drawScenePanel, enableMidiUpdate;
+    ofParameter<float> autoadvanceDelay, ofSmoothing;
     float lastAutoadvanceTime;
     
 #ifdef USE_MIDI_PARAM_SYNC
+    bool isMidiConnected;
     ofxParameterMidiSync sync;
     void recordingStart();
     void recordingEnd();

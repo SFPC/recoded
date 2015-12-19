@@ -16,7 +16,9 @@ class MolnarPainter {
     if(lineCounter < lineMax){
       float newx = space+ofRandom(startx+shiftCounter*(size+space), startx+shiftCounter*(size+space)+size);
       float newy = space+ofRandom(starty+rowCounter*(size+space), starty+rowCounter*(size+space)+size);
-      if(!useColor){
+      if(lineCounter == 0){
+        ofSetColor(0);
+      } else if (!useColor){
         if(connectedLines){
           ofSetColor(255);
         } else {
@@ -53,6 +55,8 @@ class MolnarPainter {
           rowCounter++;
           lastx = x;
           lasty = y;
+          //x = xOffset+startx+shiftCounter*(size+space);
+          //y = yOffset+starty+rowCounter*(size+space);
           x = xOffset+startx+shiftCounter*(size+space);
           y = yOffset+starty+rowCounter*(size+space);
           if(connectedLines){
@@ -69,8 +73,8 @@ class MolnarPainter {
           rowCounter = 0;
           lastx = x;
           lasty = y;
-          x = startx;
-          y = starty;
+          x = startx+xOffset;
+          y = starty+yOffset;
           if(connectedLines){
             if(!useColor){
               ofSetColor(255);

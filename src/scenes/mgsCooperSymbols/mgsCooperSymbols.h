@@ -34,6 +34,8 @@ public:
   void redraw(int& i);
   void redrawFloat(float& i);
   void redrawBool(bool& i);
+
+  void redrawGrid(int& i);
   
   ofParameter<int> gridSize,fadeLength, numberOfShapes, red, green, blue;
   ofParameter<float> thickness, spacer, mod;
