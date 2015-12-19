@@ -222,6 +222,7 @@ void sceneManager::setup(){
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::startScene(int whichScene){
+    scenes[currentScene]->resetTiming();
     scenes[currentScene]->reset();
     TM.setup( (scenes[currentScene]), codeTweenDuration);
     lettersLastFrame = 0;
@@ -241,13 +242,16 @@ void sceneManager::startScene(int whichScene){
 }
 #ifdef USE_MIDI_PARAM_SYNC
 //-----------------------------------------------------------------------------------
-void sceneManager::recordingStart(){}
+void sceneManager::recordingStart(){
+    scenes[currentScene]->resetTiming();
+}
 //-----------------------------------------------------------------------------------
 void sceneManager::recordingEnd(){
     if (sync.recorder.isRecording()) {
         sync.recorder.stop();
     }
     if (sync.recorder.recData.size()) {
+        scenes[currentScene]->setSceneEnd();
         scenes[currentScene]->setRecData(sync.recorder.recData);
         sync.recorder.recData.clear();
     }
@@ -256,6 +260,7 @@ void sceneManager::recordingEnd(){
 //-----------------------------------------------------------------------------------
 void sceneManager::startPlaying(){
     if(scenes[currentScene]->hasRecData()){
+        scenes[currentScene]->resetTiming();
         sync.player.setData(scenes[currentScene]->getRecData());
         sync.player.play();
     }else{
