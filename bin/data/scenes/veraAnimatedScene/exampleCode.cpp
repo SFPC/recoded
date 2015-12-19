@@ -10,7 +10,7 @@ void draw() {
         rotate(random() * (1.0 - [[smoothing]]));
         translate(random() * (1.0 - [[smoothing]]),
                   random() * (1.0 - [[smoothing]]));
-
+        color(255, [[opacity]]);
         drawRect(centerX, centerY, k);
       }
     }
