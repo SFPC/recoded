@@ -10,8 +10,9 @@ drawParticles() {
 }
 
 drawDiffusion() {
-  // draw an expanding circle particles every [[diffusionInterval]] seconds
-  if ([[diffusionInterval]] <= elapsedTime - lastDiffusionTime) {
-    diffusion.push_back(circlesDiffusion(elapsedTime, [[diffusionSize]]));
+  // draw expanding circle particles every [[diffusionInterval]] seconds
+  diffusionParticleSize = [[diffusionSize]];
+  if ([[diffusionInterval]] <= totalTime - lastDiffusionTime) {
+    diffusion.draw();
   }
 }
