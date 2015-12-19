@@ -144,7 +144,7 @@ void sceneManager::setup(){
     
 #ifdef USE_EXTERNAL_SOUNDS
     // open an outgoing connection to HOST:PORT
-    oscSender.setup(HOST, PORT);
+    oscSender.setup(OSC_HOST, OSC_PORT);
 #endif
     
     // disney
@@ -183,19 +183,11 @@ void sceneManager::setup(){
     
     startScene(currentScene);
 
-#ifdef USE_EXTERNAL_SOUNDS
-    ofxOscMessage m;
-    m.setAddress("/d4n/sceneStart");
-    m.addStringArg(ofToString(currentScene) + ": "
-                   + scenes[currentScene]->originalArtist
-                   + " (recoded by " + scenes[currentScene]->author + ")");
-    oscSender.sendMessage(m, false);
-#else
     loop.load("sounds/drawbar_c4_a.aif");
     loop.setLoop(true);
     loop.play();
     loop.setVolume(0);
-    
+#ifndef USE_EXTERNAL_SOUNDS
     TM.loadSounds();
 #endif
 }
@@ -214,6 +206,15 @@ void sceneManager::startScene(int whichScene){
     if (bAutoPlay) {
         startPlaying();
     }
+#endif
+#ifdef USE_EXTERNAL_SOUNDS
+    ofxOscMessage m;
+    m.setAddress("/d4n/scene/load");
+    m.addIntArg(currentScene);
+//    m.addStringArg(ofToString(currentScene) + ": "
+//                   + scenes[currentScene]->originalArtist
+//                   + " (recoded by " + scenes[currentScene]->author + ")");
+    oscSender.sendMessage(m, false);
 #endif
 }
 #ifdef USE_MIDI_PARAM_SYNC
@@ -296,7 +297,7 @@ void sceneManager::update(){
         
         for (int i = 0; i < TM.paramChangedEnergy.size(); i++) {
     
-            if (TM.paramChangedEnergy[i] > 0) {
+            if (TM.paramChangedEnergy[i] > 0.0001) {
             
                 ofParameter<float> t = scenes[currentScene]->parameters[i].cast<float>();
 
@@ -311,14 +312,16 @@ void sceneManager::update(){
 
 #ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/param/" + ofToString(i) + "/energy");
-                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+                oscMessage.setAddress("/d4n/paramEnergy");
+//                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+//                oscMessage.addIntArg(i);
                 oscMessage.addFloatArg(TM.paramChangedEnergy[i]);
                 oscSender.sendMessage(oscMessage, false);
 
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/param/" + ofToString(i) + "/value");
-                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+                oscMessage.setAddress("/d4n/paramValue");
+//                oscMessage.addStringArg(scenes[currentScene]->parameters[i].getName());
+                oscMessage.addIntArg(i+1); // may need start at 1 for Ableton to pick up changes in first param
                 oscMessage.addFloatArg(pct);
                 oscSender.sendMessage(oscMessage, false);
 #else
@@ -361,7 +364,7 @@ void sceneManager::draw(){
 #ifdef USE_EXTERNAL_SOUNDS
     if (pct == 1 && !didTriggerCodeFinishedAnimatingEvent) {
         oscMessage.clear();
-        oscMessage.setAddress("/d4n/codeFinishedAnimating");
+        oscMessage.setAddress("/d4n/scene/start");
         oscMessage.addTriggerArg();
         oscSender.sendMessage(oscMessage, false);
         didTriggerCodeFinishedAnimatingEvent = true;
@@ -590,8 +593,8 @@ void sceneManager::draw(){
             if (ofNoise(pct*10, ofGetElapsedTimef()/10.0) > 0.5) {
 #ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/keyPressed");
-                oscMessage.addStringArg("a");
+                oscMessage.setAddress("/d4n/keystroke");
+                oscMessage.addIntArg(0);
                 oscSender.sendMessage(oscMessage, false);
 #else
                 TM.clickb.play();
@@ -600,8 +603,8 @@ void sceneManager::draw(){
             } else {
 #ifdef USE_EXTERNAL_SOUNDS
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/keyPressed");
-                oscMessage.addStringArg("b");
+                oscMessage.setAddress("/d4n/keystroke");
+                oscMessage.addIntArg(1);
                 oscSender.sendMessage(oscMessage, false);
 #else
                 TM.clicka.play();
@@ -671,10 +674,10 @@ void sceneManager::nextScene(bool forward){
     
 #ifdef USE_EXTERNAL_SOUNDS
     oscMessage.clear();
-    oscMessage.setAddress("/d4n/sceneStart");
-    oscMessage.addStringArg(ofToString(currentScene) + ": "
-                   + scenes[currentScene]->originalArtist
-                   + " (recoded by " + scenes[currentScene]->author + ")");
+    oscMessage.setAddress("/d4n/scene/load");
+//    oscMessage.addStringArg(ofToString(currentScene) + ": "
+//                   + scenes[currentScene]->originalArtist
+//                   + " (recoded by " + scenes[currentScene]->author + ")");
     oscSender.sendMessage(oscMessage, false);
 #endif
     
