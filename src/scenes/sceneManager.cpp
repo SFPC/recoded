@@ -56,6 +56,10 @@
 #include "sarahgpRileyCircle.h"
 #include "mwalczykVeraSquares.h"
 //-----------------------------------------------------------------------------------
+sceneManager::~sceneManager(){
+    ofRemoveListener(sync.ffwKeyPressed, this, &sceneManager::setAdvanceCurrentScene);
+}
+//-----------------------------------------------------------------------------------
 void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
@@ -122,9 +126,10 @@ void sceneManager::setup(){
 
 
     gui.add(bAutoPlay.set("Auto Play on scene change", true));
-    gui.add(autoadvanceDelay.set("Autoadvance", 0, 0, 60));
+//    gui.add(autoadvanceDelay.set("Autoadvance", 0, 0, 60));
     gui.add(bSceneWaitForCode.set("Scene wait for code", true));
     gui.add(bFadeOut.set("Scene fade out", true));
+    gui.add(bAutoAdvance.set("Auto Advance Scene", true));
 #ifdef USE_SCENE_TRANSITIONS
     gui.add(sceneTweenDuration.set("fadeOutTime", 4.0, 0, 10.0));
     gui.add(codeTweenDuration.set("fadeInTime", 7.5, 0, 15));
@@ -197,6 +202,7 @@ void sceneManager::setup(){
 #endif
     screenRect.set(0, 0, VISUALS_WIDTH+CODE_X_POS, VISUALS_HEIGHT);
     bShowCursor = true;
+    ofAddListener(sync.ffwKeyPressed, this, &sceneManager::setAdvanceCurrentScene);
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::startScene(int whichScene){
@@ -257,19 +263,24 @@ void sceneManager::stopPlaying(){
 
 //-----------------------------------------------------------------------------------
 void sceneManager::update(){
-    
-    if (autoadvanceDelay > 0.001) {
-        if (lastAutoadvanceTime == 0) {
-            lastAutoadvanceTime = ofGetElapsedTimef();
-        }
-        
-        if (ofGetElapsedTimef() - lastAutoadvanceTime > autoadvanceDelay) {
+
+    if (bAutoAdvance && !sync.recorder.isRecording()) {
+        if (scenes[currentScene]->isSceneDone()) {
             advanceScene();
-            lastAutoadvanceTime = ofGetElapsedTimef();
         }
-    } else {
-        lastAutoadvanceTime = 0;
     }
+//    if (autoadvanceDelay > 0.001) {
+//        if (lastAutoadvanceTime == 0) {
+//            lastAutoadvanceTime = ofGetElapsedTimef();
+//        }
+//        
+//        if (ofGetElapsedTimef() - lastAutoadvanceTime > autoadvanceDelay) {
+//            advanceScene();
+//            lastAutoadvanceTime = ofGetElapsedTimef();
+//        }
+//    } else {
+//        lastAutoadvanceTime = 0;
+//    }
     
     TM.animTime = codeTweenDuration;
     TM.energyDecayRate = codeEnergyDecayRate;
@@ -370,7 +381,12 @@ void sceneManager::update(){
     
 }
 //-----------------------------------------------------------------------------------
+void sceneManager::setAdvanceCurrentScene(){
+    scenes[currentScene]->setSceneEnd();
+}
+//-----------------------------------------------------------------------------------
 void sceneManager::draw(){
+    sync.update();
     codeFbo.begin();
     ofSetColor(255,255,255);
     float pct = (ofGetElapsedTimef() - TM.setupTime) / TM.animTime;

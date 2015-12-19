@@ -7,7 +7,7 @@
 //
 
 #include "ofxParameterMidiSync.h"
-
+#include "nanoKontrolConstants.h"
 //-----------------------------------------------------
 int isVecParam(ofAbstractParameter* param){
     int ret = 0;
@@ -39,7 +39,6 @@ ofxParameterMidiSync::ofxParameterMidiSync():bMidiEnabled(false), portNum(-1), b
 ofxParameterMidiSync::~ofxParameterMidiSync(){
     enableMidi(false);
     learningParameter = NULL;
-    ofRemoveListener(ofEvents().update, this, &ofxParameterMidiSync::update);
 }
 //-----------------------------------------------------
 void ofxParameterMidiSync::setup(int portNum, ofAbstractParameter & parameters, bool bAutoLink){
@@ -57,10 +56,13 @@ void ofxParameterMidiSync::setup(int portNum){
     enableMidi(true);
     player.setup(this);
     smoothing.set("Smoothing",0.5,0,1);
-    ofAddListener(ofEvents().update, this, &ofxParameterMidiSync::update);
+    kontrolButtons = shared_ptr<ofxMidiNanoKontrolButtons>(new ofxMidiNanoKontrolButtons);
+    kontrolButtons->setup(0);
+    player.kontrolButtons = kontrolButtons;
+    recorder.kontrolButtons = kontrolButtons;
 }
 //-----------------------------------------------------
-void ofxParameterMidiSync::update(ofEventArgs& a){
+void ofxParameterMidiSync::update(){
     for (map<int, shared_ptr<ofParameterMidiInfo> > ::iterator it = synced.begin(); it != synced.end(); ++it) {
         it->second->updateSmoothing(smoothing);
     }
@@ -275,7 +277,6 @@ void ofxParameterMidiSync::newMidiMessage(ofxMidiMessage& msg) {
     if (bIsSetup) {
         ofxMidiMessage message = msg;
         if (message.status == MIDI_CONTROL_CHANGE) {
-            
             if (learningParameter!= NULL && bLearning) {
                 if (bParameterGroupSetup) {
                     if (linkMidiToOfParameter(message, learningParameter)){
@@ -298,7 +299,15 @@ void ofxParameterMidiSync::newMidiMessage(ofxMidiMessage& msg) {
                     cout << "unlearned  " << endl;
                 }
             }else{
-                if (synced.count(message.control)) {
+                if (msg.control == NANO_KONTROL_KEY_FFW) {
+                    if (msg.value == 127) {
+                        ofNotifyEvent(ffwKeyPressed, this);
+                    }
+                }else if(msg.control == NANO_KONTROL_KEY_REW) {
+                }else if(msg.control == NANO_KONTROL_KEY_STOP) {
+                }else if(msg.control == NANO_KONTROL_KEY_PLAY) {
+                }else if(msg.control == NANO_KONTROL_KEY_REC) {
+                }else if (synced.count(message.control)) {
                     synced[message.control]->setNewValue(message.value);
                     // mapMidiInfoToParameter(*synced[message.control].get(), message);
                 }

@@ -98,7 +98,7 @@ ofParameterMidiInfo::ofParameterMidiInfo(ofAbstractParameter* p, int d, bool bCo
 }
 void ofParameterMidiInfo::updateSmoothing(float smoothFactor){
     if (bNeedSmoothing) {
-        smoothValue = smoothValue* (1 - smoothFactor) + lastValue*smoothFactor;
+        smoothValue = smoothValue* smoothFactor + lastValue*(1 - smoothFactor);
         if (fabs(lastValue - smoothValue) < 0.01 ) {
             smoothValue = lastValue;
             bNeedSmoothing = false;

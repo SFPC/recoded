@@ -13,7 +13,7 @@
 #include "ofxMidi.h"
 #include "ofxMidiRecorder.h"
 #include "ofxParameterMidiInfo.h"
-
+#include "nanoKontrolConstants.h"
 
 class ofxParameterMidiSync:  public ofxMidiListener {
 public:
@@ -26,7 +26,7 @@ public:
     void setSyncGroup( ofParameterGroup & parameters, bool bAutoLink);
     void enableMidi(bool b = true);
 
-    void update(ofEventArgs& a);
+    void update();
     
     bool linkMidiToOfParameter(int controlNum, ofAbstractParameter& param);
     bool linkMidiToOfParameter(ofxMidiMessage& msg, ofAbstractParameter& param);
@@ -47,6 +47,9 @@ public:
     ofxMidiRecorder recorder;
     ofxMidiPlayer player;
     ofParameter<float> smoothing;
+
+    ofEvent<void>ffwKeyPressed;
+    
 protected:
     void newMidiMessage(ofxMidiMessage& eventArgs);
 
@@ -66,7 +69,7 @@ protected:
     bool bParameterGroupSetup;
     ofAbstractParameter * learningParameter;
    
-
+    shared_ptr<ofxMidiNanoKontrolButtons> kontrolButtons;
     
     
 };

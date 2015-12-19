@@ -29,6 +29,12 @@ void baseScene::loadCode( string fileName ){
         loadMidi(recData, dataPath+"/paramsRecording.xml");
     }
 }
+bool baseScene::isSceneDone(){
+    return (getElapsedTimef()>sceneDuration);
+}
+void baseScene::setSceneEnd(){
+    sceneDuration = getElapsedTimef();
+}
 bool baseScene::hasRecData(){
     return recData.size() != 0;
 }

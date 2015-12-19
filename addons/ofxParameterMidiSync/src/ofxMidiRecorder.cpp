@@ -15,6 +15,7 @@ void ofxMidiRecorder::record(){
         bRecording = true;
         recordingStartTime = ofGetElapsedTimeMillis();
         ofNotifyEvent(recStartE, this);
+        kontrolButtons->setRec();
     }else{
         //ofNotifyEvent(recEndE, this);
     }
@@ -24,7 +25,7 @@ void ofxMidiRecorder::stop(){
     if (bRecording) {
         bRecording = false;
         ofNotifyEvent(recEndE, this);
-
+        kontrolButtons->setRec(false);
     }
 }
 // -----------------------------------------------------------------------------
@@ -36,8 +37,9 @@ void ofxMidiRecorder::newMidiMessage(ofxMidiMessage& msg) {
         }else if(msg.control == NANO_KONTROL_KEY_STOP) {
             stop();
         }else if(msg.control == NANO_KONTROL_KEY_PLAY) {
-//            stop();
-            //  play();
+            if (isRecording()) {
+                stop();
+            }
         }else if(msg.control == NANO_KONTROL_KEY_REC) {
             record();
         }else{
@@ -100,6 +102,7 @@ void ofxMidiPlayer::stop(){
         ofRemoveListener(ofEvents().update, this, &ofxMidiPlayer::update);
         bPlaying = false;
         ofNotifyEvent(stopE, this);
+        kontrolButtons->setPlay(false);
     }
 }
 // -----------------------------------------------------------------------------
@@ -121,6 +124,7 @@ void ofxMidiPlayer::newMidiMessage(ofxMidiMessage& msg) {
             stop();
         }else if(msg.control == NANO_KONTROL_KEY_PLAY) {
             ofNotifyEvent(playE, this);
+            kontrolButtons->setPlay();
         }else if(msg.control == NANO_KONTROL_KEY_REC) {
         }
     }
