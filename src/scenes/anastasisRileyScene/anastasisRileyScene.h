@@ -12,4 +12,5 @@ public:
     void draw();
     
     ofParameter<float> param;
+    ofParameter<int>   numberOfLines;
 };
