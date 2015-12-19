@@ -12,8 +12,8 @@
 #define RK_MNK_DEL_REFRESH 7000
 
 void robbyMenkmanScene::setup(){
-    speedParameter.set("delay", 800, 100, 1000);
-    chunkParameter.set("chunk size", 9000, 2000, 20000);
+    speedParameter.set("delay", 1000, 100, 10000);
+    chunkParameter.set("chunk size", 9000, 1000, 20000);
     parameters.add(speedParameter);
     parameters.add(chunkParameter);
 
