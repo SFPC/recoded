@@ -82,7 +82,6 @@
 		B04420991C1901D90049071E /* RileyArcsRoy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B04420971C1901D90049071E /* RileyArcsRoy.cpp */; };
 		B08FE1941C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B08FE1921C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.cpp */; };
 		B08FE1A01C2502A10037252E /* ofxParameterMidiInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B08FE19E1C2502A10037252E /* ofxParameterMidiInfo.cpp */; };
-		B08FE1A51C2520680037252E /* mgsRileyDescending.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B08FE1A31C2520680037252E /* mgsRileyDescending.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
 		B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */; };
 		C13A36731C17906200F13242 /* aaronMarcusHieroglyphB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */; };
@@ -317,8 +316,6 @@
 		B08FE1931C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RileyRemake-Catarina_Lee__Joao_Freire.h"; sourceTree = "<group>"; };
 		B08FE19E1C2502A10037252E /* ofxParameterMidiInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxParameterMidiInfo.cpp; sourceTree = "<group>"; };
 		B08FE19F1C2502A10037252E /* ofxParameterMidiInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxParameterMidiInfo.h; sourceTree = "<group>"; };
-		B08FE1A31C2520680037252E /* mgsRileyDescending.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgsRileyDescending.cpp; sourceTree = "<group>"; };
-		B08FE1A41C2520680037252E /* mgsRileyDescending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgsRileyDescending.h; sourceTree = "<group>"; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		B87C60311EC1FE841C1ECD89 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		C13A36711C17906200F13242 /* aaronMarcusHieroglyphB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aaronMarcusHieroglyphB.cpp; sourceTree = "<group>"; };
@@ -626,7 +623,6 @@
 		71C3020F1C21D14900C0AC31 /* mgsMaedaTimePainter */ = {
 			isa = PBXGroup;
 			children = (
-				842A34701C25213A002E0CC3 /* mgsRileyDescending */,
 				71C302101C21D14900C0AC31 /* mgsMaedaTimePainter.cpp */,
 				71C302111C21D14900C0AC31 /* mgsMaedaTimePainter.h */,
 			);
@@ -734,8 +730,8 @@
 				71C0913E1C16197900C76EB9 /* manfredMohrP196A */,
 				9A6B71BD1C157473000D7878 /* memoAktenScene */,
 				9224BC911C20F233003668CF /* mgsCooperSymbols */,
+				842A34701C25213A002E0CC3 /* mgsRileyDescending */,
 				71C3020F1C21D14900C0AC31 /* mgsMaedaTimePainter */,
-				B08FE1A21C2520680037252E /* mgsRileyDescending */,
 				9224BC941C20F233003668CF /* mgsRileyDiamonds */,
 				9224BC971C20F233003668CF /* mgsRileyEllipsesAndSquares */,
 				9224BC9A1C20F233003668CF /* mgsVeraMolnarLineStudy */,
@@ -1035,15 +1031,6 @@
 				B08FE1931C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire.h */,
 			);
 			path = "RileyRemake-Catarina_Lee__Joao_Freire";
-			sourceTree = "<group>";
-		};
-		B08FE1A21C2520680037252E /* mgsRileyDescending */ = {
-			isa = PBXGroup;
-			children = (
-				B08FE1A31C2520680037252E /* mgsRileyDescending.cpp */,
-				B08FE1A41C2520680037252E /* mgsRileyDescending.h */,
-			);
-			path = mgsRileyDescending;
 			sourceTree = "<group>";
 		};
 		B0B03CF11C1BD19900FF0761 /* Roy */ = {
@@ -1466,7 +1453,6 @@
 				92F512061C1EE813000AD19C /* typographyManager.cpp in Sources */,
 				B04420951C18B04D0049071E /* janVantommeScene.cpp in Sources */,
 				FAD0D42D1C1C891400C2DA1B /* quantize.c in Sources */,
-				B08FE1A51C2520680037252E /* mgsRileyDescending.cpp in Sources */,
 				B00CD1391C21E89B00C529FA /* ofxMidiMessage.cpp in Sources */,
 				923871B61BF7CCC900171456 /* exampleScene.cpp in Sources */,
 				D39F0DF31C222065004DEAAB /* ofxOscSender.cpp in Sources */,
