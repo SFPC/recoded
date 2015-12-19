@@ -40,7 +40,15 @@ public:
     void draw();
     void drawPattern();
     void diffusion();
-    void reset();
+    void reset(){
+        resetTiming();
+        lastTime = 0;
+        integratedTime = 0;
+        diffs.clear();
+        lastDiffusionTime = 0;
+    }
+    
+
     
     int columnCount, rowCount;
     
