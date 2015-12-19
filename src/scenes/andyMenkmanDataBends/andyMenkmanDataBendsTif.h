@@ -16,4 +16,5 @@ public:
 
     ofParameter<int> numberOfLines;
     ofParameter<int> startLine;
+    ofParameter<int> debounce;
 };
