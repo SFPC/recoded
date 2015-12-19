@@ -3,6 +3,8 @@
 #include "appConstants.h"
 
 void mgsRileyDiamonds::setup(){
+  setAuthor("Michael Simpson");
+  setOriginalArtist("Bridget Riley - November - 1990");
   parameters.add(grayscale.set("Grayscale", false));
   //parameters.add(sequentialShading.set("Sequential Shading", false));
   parameters.add(height.set("Diamond Height", 25.0, 1, 500));
@@ -119,10 +121,10 @@ void mgsRileyDiamonds::drawFullRiley(){
   frame.end();
 }
 
- void mgsRileyDiamonds::redraw(int& i){
+ void mgsRileyDiamonds::redraw(float& i){
    if(!animated){
        bNeedsFullRedraw = true;
-       //     frame.begin();
+//     frame.begin();
 //     ofClear(0);
 //     drawFullRiley();
 //     frame.end();
