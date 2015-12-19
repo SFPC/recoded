@@ -115,6 +115,7 @@ void sceneManager::setup(){
 
 
     gui.add(bAutoPlay.set("Auto Play on scene change", true));
+    gui.add(autoadvanceDelay.set("Autoadvance", 0, 0, 60));
     gui.add(bSceneWaitForCode.set("Scene wait for code", true));
     gui.add(bFadeOut.set("Scene fade out", true));
 #ifdef USE_SCENE_TRANSITIONS
@@ -250,6 +251,19 @@ void sceneManager::stopPlaying(){
 
 //-----------------------------------------------------------------------------------
 void sceneManager::update(){
+    
+    if (autoadvanceDelay > 0.001) {
+        if (lastAutoadvanceTime == 0) {
+            lastAutoadvanceTime = ofGetElapsedTimef();
+        }
+        
+        if (ofGetElapsedTimef() - lastAutoadvanceTime > autoadvanceDelay) {
+            advanceScene();
+            lastAutoadvanceTime = ofGetElapsedTimef();
+        }
+    } else {
+        lastAutoadvanceTime = 0;
+    }
     
     TM.animTime = codeTweenDuration;
     TM.energyDecayRate = codeEnergyDecayRate;
