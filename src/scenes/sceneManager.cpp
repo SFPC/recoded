@@ -50,6 +50,7 @@
 #include "mgsCooperSymbols.h"
 #include "mgsRileyDiamonds.h"
 #include "mgsRileyEllipsesAndSquares.h"
+#include "mgsRileyDescending.h"
 #include "mgsVeraMolnarLineStudy.h"
 #include "mgsMaedaTimePainter.h"
 #include "olegVeraV.h"
@@ -101,6 +102,7 @@ void sceneManager::setup(){
     scenes.push_back(new mgsRileyEllipsesAndSquares());
     scenes.push_back(new mgsVeraMolnarLineStudy());
     scenes.push_back(new mgsMaedaTimePainter());
+    scenes.push_back(new mgsRileyDescending());
     scenes.push_back(new olegVeraV());
     scenes.push_back(new sarahgpRileyCircle());
     scenes.push_back(new mwalczykVeraSquares());
