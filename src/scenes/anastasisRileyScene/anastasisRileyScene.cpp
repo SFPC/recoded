@@ -10,6 +10,9 @@ void anastasisRileyScene::setup(){
     param.set("frequency", 0.025, 0.0125, 0.1);
     parameters.add(param);
     ofEnableAlphaBlending();
+    
+    numberOfLines.set("numberOfLines", dimensions.height/LINE_DISTANCE, 0, dimensions.height/LINE_DISTANCE);
+    parameters.add(numberOfLines);
 
     setAuthor("Anastasis Germanidis");
     setOriginalArtist("Bridget Riley");
@@ -21,9 +24,9 @@ void anastasisRileyScene::update(){
 }
 
 void anastasisRileyScene::draw(){
+    ofEnableAlphaBlending();
     ofBackground(247, 250, 255);
-    
-    int numberOfLines = dimensions.height/LINE_DISTANCE;
+
     int peakRedLine = numberOfLines*0.6;
 
     for (int i = -1; i < numberOfLines+1; i++) {
