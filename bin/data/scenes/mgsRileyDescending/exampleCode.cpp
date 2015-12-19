@@ -1,12 +1,12 @@
 // Bridget Riley - Hidden Squares
 
 // Draw a grid of ellipses
-void drawGridOfElippses(){
+void (){
   // Loop through the width and height of the grid using
   // unitSize as the grid interval.
-  for(float x = 0; x < screenWidth; x+=unitSize) {
-    for(float y = 0; y < screenHeight; y+=unitSize) {
-      // IF x AND y are EVEN
+  for (float x = 0; x < screenWidth; x+=unitSize) {
+    for (float y = 0; y < screenHeight; y+=unitSize) {
+      // Check IF x AND y variable values are EVEN
       if (x/unitSize % 2 == 0 && y/unitSize % 2 == 0) {
         // check if current position is within our hidden object boundaries
         if ((x > [[x0]] AND x < [[x1]]) AND

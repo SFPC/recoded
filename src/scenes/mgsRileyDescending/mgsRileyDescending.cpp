@@ -38,7 +38,9 @@ void addQuadToMesh(ofMesh& m, const ofVec3f& p0, const ofVec3f& p1, const ofVec3
 
 void mgsRileyDescending::setup(){
   loadCode("mgsScene/exampleCode.cpp");  
-  
+  setAuthor("Michael Simpson");
+  setOriginalArtist("Bridget Riley - Line Study for Shuttle - 1961");
+
   parameters.add(rows.set("Rows", 127, 1, 200));
   rows.addListener(this, &mgsRileyDescending::setupLines);
   
