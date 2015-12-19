@@ -1,4 +1,4 @@
-// An Homage to Vera Molnar's "An Homage to Durer"
+// Vera Molnar - Hommage à Dürer - 1989/2004
 setSquareSize([[Square Size]]);
 setGridSize([[Grid Size]]);
 

@@ -1,4 +1,4 @@
-// Bridget Riley - Hidden Squares
+// Bridget Riley - Hidden Squares - 1961
 
 // Draw a grid of ellipses
 void drawGridOfElippses(){
