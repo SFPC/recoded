@@ -5,7 +5,7 @@ void sarahgpRileyCircle::setup(){
   
     // these three can be set dynamically
     parameters.add(numCircles.set("numCircles", 30, 0, 100));
-    parameters.add(shift.set("shift", true, false, true));
+    shift.set("shift", true, false, true);
     parameters.add(blue.set("brightness", 255, 0, 255));
     parameters.add(angle.set("angle", 0, 0, 180));
     
