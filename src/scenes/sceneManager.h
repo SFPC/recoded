@@ -86,7 +86,7 @@ public:
     bool fadingIn;
     
     ofxPanel gui;
-    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance;
+    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance, drawScenePanel;
     ofParameter<float> autoadvanceDelay, ofSmoothing;
     float lastAutoadvanceTime;
     

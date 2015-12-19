@@ -77,7 +77,8 @@ void baseScene::enableMidi() {
 }
 
 void baseScene::updateMidiParams() {
-    for (int i = 0; i < parameters.size(); ++i) {
+    int nToCheck = min((int)parameters.size(), 8);
+    for (int i = 0; i < nToCheck; ++i) {
         char paramType = paramTypes[i];
         
         if (paramType == 'b') {
@@ -91,6 +92,9 @@ void baseScene::updateMidiParams() {
         } else if (paramType == 'f') {
             ofParameter<float> &midiParam = midiParameters.getFloat(i);
             ofParameter<float> &param = parameters.getFloat(i);
+            
+            if (isnan(midiParam.get()))
+                continue;
             
             float diff = midiParam - param;
             if (fabs(diff) > 0.0001)
