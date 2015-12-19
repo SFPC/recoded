@@ -361,8 +361,7 @@ void sceneManager::update(){
                 oscSender.sendMessage(oscMessage, false);
 
                 oscMessage.clear();
-                oscMessage.setAddress("/d4n/paramValue");
-                oscMessage.addIntArg(i+1); // may need start at 1 for Ableton to pick up changes in first param
+                oscMessage.setAddress("/d4n/param/"+ofToString(i+1)+"/value");
                 oscMessage.addFloatArg(pct);
                 oscSender.sendMessage(oscMessage, false);
 #endif
