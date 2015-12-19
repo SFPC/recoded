@@ -14,8 +14,6 @@
 
 #ifdef USE_EXTERNAL_SOUNDS
 #include "ofxOsc.h"
-#define HOST "localhost"
-#define PORT 12345 // listen on port 12345
 #endif
 
 #ifdef USE_SCENE_TRANSITIONS
@@ -106,5 +104,8 @@ public:
     void tweenEnd(int& i);
     ofParameter<float> sceneTweenDuration, codeTweenDuration;
 #endif
+    
+    ofRectangle screenRect;
+    bool bShowCursor;
     
 };
