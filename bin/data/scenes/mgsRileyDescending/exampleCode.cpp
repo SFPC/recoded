@@ -1,4 +1,4 @@
-// Bridget Riley - "Study for Shuttle" - 1964
+// Bridget Riley - Study for Shuttle - 1964
 
 void drawRileyWaves(width, height){
   // Loop through the width and height of the grid using
