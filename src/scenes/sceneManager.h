@@ -45,7 +45,7 @@ public:
     void draw();
     
     void advanceScene();
-	  void regressScene();
+    void regressScene();
     void screenGrab();
     
     float motion;
@@ -64,9 +64,6 @@ public:
     ofxPanel codeControls;
     
 
-    ofSoundPlayer loop;
-    
-    
     ofTrueTypeFont font;
     
     typographyManager TM;

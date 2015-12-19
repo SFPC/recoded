@@ -234,10 +234,10 @@ void sceneManager::startScene(int whichScene){
     sync.enableMidi();
 #endif
 #ifdef USE_EXTERNAL_SOUNDS
-    ofxOscMessage m;
-    m.setAddress("/d4n/scene/load");
-    m.addIntArg(currentScene);
-    oscSender.sendMessage(m, false);
+    oscMessage.clear();
+    oscMessage.setAddress("/d4n/scene/load");
+    oscMessage.addIntArg(currentScene);
+    oscSender.sendMessage(oscMessage, false);
 #endif
 }
 #ifdef USE_MIDI_PARAM_SYNC
@@ -313,7 +313,6 @@ void sceneManager::update(){
 #ifdef USE_EXTERNAL_SOUNDS
             oscMessage.clear();
             oscMessage.setAddress("/d4n/scene/start");
-            oscMessage.addTriggerArg();
             oscSender.sendMessage(oscMessage, false);
 #endif
 
@@ -427,13 +426,11 @@ void sceneManager::draw(){
         pct  = powf(pct, 3.0);
         pct *= 0.5;
     } else {
-        
         pct -= 0.5;
         pct *= 2.0;
         pct  = powf(pct, 1.0/3.0);
         pct *= 0.5;
         pct += 0.5;
-        
     }
 
     ofClear(0,0,0,255);
@@ -544,7 +541,6 @@ void sceneManager::draw(){
         string s = "";
         s += (char)(letters[i].character);
         font.drawString(s , (int)x, (int)y);
-        
         
         if (letters[i].character != ' ' &&
             letters[i].character != '\n' &&
@@ -817,3 +813,4 @@ void sceneManager::screenGrab() {
     
 }
 //-----------------------------------------------------------------------------------
+
