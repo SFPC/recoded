@@ -1,4 +1,4 @@
-// John Maeda - "Time Paint" - 1990
+// John Maeda - Time Paint - 1990
 
 void 
 if (longevity < 500) {
