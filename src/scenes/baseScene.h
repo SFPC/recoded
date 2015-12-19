@@ -66,4 +66,6 @@ public:
     bool bHasEndSet;
     bool isEndSet(){return bHasEndSet;}
     
+    bool bAnimateScene;
+    
 };

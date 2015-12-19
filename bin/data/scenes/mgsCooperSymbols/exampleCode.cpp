@@ -1,4 +1,4 @@
-// Muriel Cooper - Cover of 'A Primer Of Visual Literacy'
+// Muriel Cooper - Cover of 'A Primer Of Visual Literacy' - 1974
 
 int numberOfShapes = [[Number of Shapes]];
 

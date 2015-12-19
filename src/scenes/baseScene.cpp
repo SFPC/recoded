@@ -26,6 +26,7 @@ void baseScene::loadCode( string fileName ){
                code.end());
     dataPath = ofFilePath::removeTrailingSlash(ofFilePath::getEnclosingDirectory(fileName));
     
+    bAnimateScene = true;
     bHasEndSet = false;
     if (ofFile(dataPath+"/paramsRecording.xml").exists()) {
         float duration;
@@ -35,7 +36,6 @@ void baseScene::loadCode( string fileName ){
             setSceneEnd(duration);
         }
     }
- 
 }
 
 void baseScene::enableMidi() {
@@ -131,10 +131,12 @@ bool baseScene::hasRecData(){
     return recData.size() != 0;
 }
 void baseScene::setRecData(const vector<ofxMidiRecordingEvent>& data){
-    recData.clear();
-    recData = data;
-    cout << "setRecData: " << recData.size() << "  " << dataPath << endl;
-    saveMidi(recData, bHasEndSet ? sceneDuration : -1, dataPath+"/paramsRecording.xml");
+    if(bAnimateScene){
+        recData.clear();
+        recData = data;
+        cout << "setRecData: " << recData.size() << "  " << dataPath << endl;
+        saveMidi(recData, bHasEndSet ? sceneDuration : -1, dataPath+"/paramsRecording.xml");
+    }
 }
 const vector<ofxMidiRecordingEvent>& baseScene::getRecData(){
     return recData;
