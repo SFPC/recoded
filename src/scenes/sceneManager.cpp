@@ -139,7 +139,8 @@ void sceneManager::setup(){
     gui.setup("SFPC_d4n", "SFPC_d4n_general_settings.xml");
 
 
-    gui.add(drawScenePanel.set("draw scene ctrl", false));
+    gui.add(drawScenePanel.set("draw scene ctrl", true));
+    gui.add(enableMidiUpdate.set("enable midi update", true));
     gui.add(bAutoPlay.set("Auto Play on scene change", false));
     gui.add(autoadvanceDelay.set("Autoadvance", 0, 0, 60));
     gui.add(bSceneWaitForCode.set("Scene wait for code", true));
@@ -348,7 +349,7 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        if (isMidiConnected)
+        if (enableMidiUpdate.get())
             scenes[currentScene]->updateMidiParams();
 #endif
         scenes[currentScene]->update();
