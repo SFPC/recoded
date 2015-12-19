@@ -78,7 +78,7 @@ public:
     
     float maxLetterX, lastLetterY;
     
-    bool didTriggerCodeFinishedAnimatingEvent, fadingIn;
+    bool fadingIn;
     
     ofxPanel gui;
     ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance;

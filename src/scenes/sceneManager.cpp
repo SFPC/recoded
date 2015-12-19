@@ -214,7 +214,6 @@ void sceneManager::startScene(int whichScene){
     lastPlayTime = 0;
     maxLetterX = 0;
     lastLetterY = 0;
-    didTriggerCodeFinishedAnimatingEvent = false;
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setSyncGroup(scenes[currentScene]->parameters, true);
     sync.enableMidi();
@@ -303,6 +302,14 @@ void sceneManager::update(){
         if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
             shouldDrawScene = true;
             fadingIn = true;
+#ifdef USE_EXTERNAL_SOUNDS
+            oscMessage.clear();
+            oscMessage.setAddress("/d4n/scene/start");
+            oscMessage.addTriggerArg();
+            oscSender.sendMessage(oscMessage, false);
+            didTriggerCodeFinishedAnimatingEvent = true;
+#endif
+
         } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
             fadingIn = false;
         }
@@ -408,16 +415,6 @@ void sceneManager::draw(){
         pct += 0.5;
         
     }
-  
-#ifdef USE_EXTERNAL_SOUNDS
-    if (pct == 1 && !didTriggerCodeFinishedAnimatingEvent) {
-        oscMessage.clear();
-        oscMessage.setAddress("/d4n/scene/start");
-        oscMessage.addTriggerArg();
-        oscSender.sendMessage(oscMessage, false);
-        didTriggerCodeFinishedAnimatingEvent = true;
-    }
-#endif
 
     ofClear(0,0,0,255);
     vector < codeLetter > letters;
