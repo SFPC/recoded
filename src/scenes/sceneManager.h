@@ -74,7 +74,7 @@ public:
     bool didTriggerCodeFinishedAnimatingEvent, fadingIn;
     
     ofxPanel gui;
-    ofParameter<bool>bAutoPlay, bSceneWaitForCode;
+    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bAutoAdvance;
     
 #ifdef USE_MIDI_PARAM_SYNC
     ofxParameterMidiSync sync;

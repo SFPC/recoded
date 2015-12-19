@@ -49,6 +49,6 @@ public:
     void resetTiming();
     //----------------------------------------
 
-    
+    float sceneDuration = 25.0f;
     
 };

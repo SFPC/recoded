@@ -116,6 +116,7 @@ void sceneManager::setup(){
 
     gui.add(bAutoPlay.set("Auto Play on scene change", true));
     gui.add(bSceneWaitForCode.set("Scene wait for code", true));
+    gui.add(bAutoAdvance.set("Auto Advance Scene", true));
 #ifdef USE_SCENE_TRANSITIONS
     gui.add(sceneTweenDuration.set("scene tween duration", 2000, 0, 5000));
     gui.add(codeTweenDuration.set("code tween duration", 2000, 0, 5000));
@@ -262,7 +263,11 @@ void sceneManager::update(){
         ofShowCursor();
         bShowCursor = true;
     }
-    
+    if (bAutoAdvance) {
+        if(scenes[currentScene]->getElapsedTimef() > scenes[currentScene]->sceneDuration){
+            advanceScene();
+        }
+    }
     
 #ifdef TYPE_ANIMATION
     pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime);
