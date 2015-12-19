@@ -16,7 +16,8 @@ float distToCameraToFit(const ofRectangle &r, const ofCamera& cam){
 
 //--------------------------------------------------------------
 void Cooper3dText::setup(){
-    
+    sceneDuration = 113;
+    bAnimateScene = false;
     
     font.load("Helvetica Neue", 50, true, true, true);
     
