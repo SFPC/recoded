@@ -1,0 +1,13 @@
+<SFPC_d4n>
+	<draw_scene_ctrl>1</draw_scene_ctrl>
+	<enable_midi_update>1</enable_midi_update>
+	<Auto_Play_on_scene_change>1</Auto_Play_on_scene_change>
+	<Autoadvance>0</Autoadvance>
+	<Scene_wait_for_code>1</Scene_wait_for_code>
+	<Scene_fade_out>1</Scene_fade_out>
+	<Auto_Advance_Scene>1</Auto_Advance_Scene>
+	<fadeOutTime>4</fadeOutTime>
+	<fadeInTime>7.5</fadeInTime>
+	<MIDI_Smoothing>0</MIDI_Smoothing>
+	<OF_Smoothing>0.2</OF_Smoothing>
+</SFPC_d4n>
