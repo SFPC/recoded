@@ -36,7 +36,7 @@ private:
     
 public:
     
-
+    ~sceneManager();
     vector < baseScene * > scenes;
     int currentScene;
     
@@ -81,7 +81,7 @@ public:
     bool didTriggerCodeFinishedAnimatingEvent, fadingIn;
     
     ofxPanel gui;
-    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut;
+    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance;
     ofParameter<float> autoadvanceDelay;
     float lastAutoadvanceTime;
     
@@ -107,5 +107,8 @@ public:
     
     ofRectangle screenRect;
     bool bShowCursor;
+    
+    void setAdvanceCurrentScene();
+    
     
 };

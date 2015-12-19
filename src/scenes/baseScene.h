@@ -50,5 +50,9 @@ public:
     //----------------------------------------
 
     float sceneDuration = 25.0f;
+    bool isSceneDone();
+    void setSceneEnd();
+    bool bHasEndSet;
+    bool isEndSet(){return bHasEndSet;}
     
 };

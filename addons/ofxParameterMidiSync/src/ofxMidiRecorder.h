@@ -8,6 +8,38 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxMidi.h"
+#include "nanoKontrolConstants.h"
+class ofxMidiNanoKontrolButtons{
+public:
+    ~ofxMidiNanoKontrolButtons(){
+        if(bIsSetup)midi.closePort();
+    }
+    ofxMidiOut midi;
+    bool bIsSetup;
+    void setup(int device){
+        bIsSetup = midi.openPort(device);
+    }
+    void setRec(bool on = true){
+        if(bIsSetup)
+            midi.sendControlChange(1, NANO_KONTROL_KEY_REC, on?127:0);
+    }
+    void setStop(bool on = true){
+        if(bIsSetup)
+            midi.sendControlChange(1, NANO_KONTROL_KEY_STOP, on?127:0);
+    }
+    void setPlay(bool on = true){
+        if(bIsSetup)
+            midi.sendControlChange(1, NANO_KONTROL_KEY_PLAY, on?127:0);
+    }
+    void setRew(bool on = true){
+        if(bIsSetup)
+            midi.sendControlChange(1, NANO_KONTROL_KEY_REW, on?127:0);
+    }
+    void setFfw(bool on = true){
+        if(bIsSetup)
+            midi.sendControlChange(1, NANO_KONTROL_KEY_FFW, on?127:0);
+    }
+};
 
 ///--------RECORDING & PLAYBACK
 class ofxMidiRecordingEvent{
@@ -53,6 +85,7 @@ public:
     bool bRecording;
     uint64_t recordingStartTime;
     ofEvent<void> recStartE, recEndE;
+    shared_ptr<ofxMidiNanoKontrolButtons> kontrolButtons;
 };
 class ofxMidiPlayer: public ofxMidiListener{
 public:
@@ -71,6 +104,7 @@ public:
     ofEvent<void> playE, stopE;
     
     void newMidiMessage(ofxMidiMessage& msg);
+    shared_ptr<ofxMidiNanoKontrolButtons> kontrolButtons;
 };
 
 static void saveMidi(const vector<ofxMidiRecordingEvent>& data, string path){

@@ -12,47 +12,8 @@
 #include "ofMain.h"
 #include "ofxMidi.h"
 #include "ofxMidiRecorder.h"
-
-
-struct ofParameterMidiInfo {
-    ofParameterMidiInfo(ofAbstractParameter* p = NULL):ofParameterMidiInfo(p, 1, false, false, 0, 0){}
-    ofParameterMidiInfo(ofAbstractParameter* p, int d, bool bCol, bool bVec, int cNum, int mdType):dims(d), bIsColor(bCol), bIsVec(bVec), controlNum(cNum),multiDimType(mdType){
-        param = p;
-    }
-    int dims;
-    int controlNum;
-    bool bIsColor;
-    bool bIsVec;
-    int multiDimType;
-    ofAbstractParameter * param;
-    void saveToXml(ofXml& xml){
-        if(param){
-            ofXml x;
-            x.addChild("ofParameterMidiInfo");
-            x.setTo("ofParameterMidiInfo");
-            x.addValue("groupHierarchyNames", joinStrings(param->getGroupHierarchyNames(), "/"));
-            x.addValue("dims", dims);
-            x.addValue("controlNum", controlNum);
-            x.addValue("bIsColor", bIsColor);
-            x.addValue("bIsVec", bIsVec);
-            x.addValue("multiDimType", multiDimType);
-            xml.addXml(x);
-        }
-    }
-    void loadFromXml(ofXml& xml){
-    }
-    string joinStrings(vector<string> s, string delim){
-        string r = "";
-        for(int i = 0; i < s.size(); i++){
-            r += s[i];
-            if (i < s.size() -1) {
-                r += delim;
-            }
-        }
-        return r;
-    }
-};
-
+#include "ofxParameterMidiInfo.h"
+#include "nanoKontrolConstants.h"
 
 class ofxParameterMidiSync:  public ofxMidiListener {
 public:
@@ -65,6 +26,7 @@ public:
     void setSyncGroup( ofParameterGroup & parameters, bool bAutoLink);
     void enableMidi(bool b = true);
 
+    void update();
     
     bool linkMidiToOfParameter(int controlNum, ofAbstractParameter& param);
     bool linkMidiToOfParameter(ofxMidiMessage& msg, ofAbstractParameter& param);
@@ -84,12 +46,16 @@ public:
     
     ofxMidiRecorder recorder;
     ofxMidiPlayer player;
+    ofParameter<float> smoothing;
+
+    ofEvent<void>ffwKeyPressed;
+    
 protected:
     void newMidiMessage(ofxMidiMessage& eventArgs);
 
     bool linkMidiToOfParameter(int controlNum, ofAbstractParameter* param);
     bool linkMidiToOfParameter(ofxMidiMessage& msg, ofAbstractParameter* param);
-    
+
     ofxMidiIn midiIn;
     ofxMidiMessage midiMessage;
 
@@ -103,7 +69,7 @@ protected:
     bool bParameterGroupSetup;
     ofAbstractParameter * learningParameter;
    
-    
+    shared_ptr<ofxMidiNanoKontrolButtons> kontrolButtons;
     
     
 };
