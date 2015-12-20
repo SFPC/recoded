@@ -10,6 +10,7 @@ public:
     void setup();
     void update();
     void draw();
+    void reset();
     
     ofParameter<float> lineWidth, lineLength, rotationSpeed, deletionChance,
         timeBtwnHoles, timeBtwnWalk, timeBtwnReset, timeBtwnRemove;

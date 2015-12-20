@@ -48,6 +48,13 @@ void chrisVeraInterruptions::setup(){
     loadCode("scenes/chrisVeraInterruptions/exampleCode.cpp");
 }
 
+void chrisVeraInterruptions::reset() {
+    lastResetTime = 0;
+    lastHoleTime = 0;
+    lastWalkTime = 0;
+    lastRemoveTime = 0;
+}
+
 void chrisVeraInterruptions::update() {
     float time = getElapsedTimef();
     
