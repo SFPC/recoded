@@ -56,6 +56,10 @@ void rodrigoBelfort::reset() {
 }
 
 void rodrigoBelfort::update(){
+    if (lastLineTime == 0) {
+        lastLineTime = getElapsedTimef();
+    }
+
     float time = getElapsedTimef();
     
     if (lastLineTime + timeBtwnLines < time) {
