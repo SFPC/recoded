@@ -630,8 +630,8 @@ void sceneManager::draw(){
         computeMotion(sceneFbo);
 
         float dimAmt = 1;
-        if (frameBrightness > 0.6) {
-            dimAmt = ofMap(frameBrightness, 0.7, 1, 1, 0.8);
+        if (frameBrightness > 0.5) {
+            dimAmt = ofMap(frameBrightness, 0.5, 1, 1, 0.5);
         }
 
         dimmedSceneFbo.begin();
