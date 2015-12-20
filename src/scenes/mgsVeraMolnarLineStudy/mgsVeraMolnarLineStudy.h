@@ -101,7 +101,8 @@ public:
     void drawScene();
     void freshPaint();
     void clearScreen(bool& i);
-    
+    void reset();
+  
     ofFbo frame;
     ofParameter<int> numOfLines;
     ofParameter<float> squareSize, gridSpace, lineWidth;

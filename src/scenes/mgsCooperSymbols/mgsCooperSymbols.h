@@ -13,6 +13,7 @@ public:
   void setup();
   void update();
   void draw();
+  void reset();
   void drawGrid(float x, float y);
   void drawFullGrid(float x, float y);
   void drawShape(int mode);

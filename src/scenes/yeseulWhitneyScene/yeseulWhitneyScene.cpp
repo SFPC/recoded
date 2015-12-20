@@ -3,9 +3,12 @@
 
 void yeseulWhitneyScene::setup(){
     
-    parameters.add(spinSpeed.set("spinSpeed", 10, 20, 70));
+    setAuthor("Yeseul Song");
+    setOriginalArtist("John Whitney");
+
+    parameters.add(spinSpeed.set("spinSpeed", 10, 10, 70));
     parameters.add(diffusionInterval.set("diffusionInterval", 5, 5, 10));
-    parameters.add(diffusionSize.set("diffusionSize", 1.3, 1, 3));
+    parameters.add(diffusionSize.set("diffusionSize", 0.7, 0.7, 2));
     
     lastDiffusionTime = 0;
     
@@ -13,9 +16,6 @@ void yeseulWhitneyScene::setup(){
     lastTime = 0;
 
     loadCode("scenes/yeseulWhitneyScene/exampleCode.cpp");
-    
-    setAuthor("Yeseul Song");
-    setOriginalArtist("John Whitney");
 
 }
 

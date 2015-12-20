@@ -1,4 +1,4 @@
-// This sketch does gif glichting as described
+// This sketch does gif glitching as described
 // in Rosa Menkmans "A Vernacular of File Formats"
 
 // Inverting the Interleave flag

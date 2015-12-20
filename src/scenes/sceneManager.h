@@ -48,7 +48,7 @@ public:
     void regressScene();
     void screenGrab();
     
-    float motion;
+    float motion, frameBrightness;
     ofPoint centroid, lastCentroid;
     ofPixels lastFrame, currFrame;
     void computeMotion(ofFbo &fbo);
@@ -57,7 +57,9 @@ public:
   
     ofFbo transitionFbo;
     ofFbo sceneFbo;
+    ofFbo dimmedSceneFbo;
     ofFbo codeFbo;
+    ofShader dimmerShader;
     ofxPanel * panel;
     
     ofParameter<float> codeEnergyDecayRate, codeEnergyPerFrame;
