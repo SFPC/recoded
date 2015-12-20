@@ -5,6 +5,10 @@ int lineColor = 0;
 int strokeColor = 0;
 int fillColor = 0;
 
+int rows=107;
+int columns=10;
+int numOfWaves=5;
+
 // vector<vector<float>> myLines;
 
 // myLines = { x, y, columns, rows, speed, accel, wavePeriod, wavePhase, distance };
@@ -41,38 +45,38 @@ void mgsRileyDescending::setup(){
   setAuthor("Michael Simpson");
   setOriginalArtist("Bridget Riley - Study for Shuttle - 1964");
 
-  parameters.add(rows.set("Rows", 127, 1, 200));
-  rows.addListener(this, &mgsRileyDescending::setupLines);
+  parameters.add(rows.set("Rows", 109, 1, 200));
+  //rows.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(lineHeight.set("Row Height", 5, 1, 100));
-  lineHeight.addListener(this, &mgsRileyDescending::setupLinesF);
+  parameters.add(lineHeight.set("Row Height", 10, 1, 100));
+  //lineHeight.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(columns.set("Columns", 9, 1, 200));
-  columns.addListener(this, &mgsRileyDescending::setupLines);
+  parameters.add(columns.set("Columns", 19, 1, 200));
+  //columns.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(lineWidth.set("Column Width", 54, 1, 300));
-  lineWidth.addListener(this, &mgsRileyDescending::setupLinesF);
+  parameters.add(lineWidth.set("Column Width", 47, 1, 300));
+  //lineWidth.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(lineSpacing.set("Depth Amount", 14, 1, 100));
-  lineSpacing.addListener(this, &mgsRileyDescending::setupLinesF);
+  parameters.add(lineSpacing.set("Depth Amount", 14.8061, 1, 100));
+  //lineSpacing.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(wavePeriodParam.set("Number of Waves", 2, 0, 60));
-  wavePeriodParam.addListener(this, &mgsRileyDescending::setupLinesF);
+  //wavePeriodParam.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(wavePhaseParam.set("Wave Phase", 180.0, 0, 360));
-  wavePhaseParam.addListener(this, &mgsRileyDescending::setupLinesF);
+  //wavePhaseParam.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(distanceParam.set("Distance Between", 19.6888, 1, 100));
-  distanceParam.addListener(this, &mgsRileyDescending::setupLinesF);
+  parameters.add(distanceParam.set("Distance Between", 15.8163, 1, 100));
+  //distanceParam.addListener(this, &mgsRileyDescending::setupLinesF);
 
-  parameters.add(speedParam.set("Speed", 1.4898, 0.0, 4.0));
-  speedParam.addListener(this, &mgsRileyDescending::setupLinesF);
+  parameters.add(speedParam.set("Speed", 4.0, 0.0, 4.0));
+  //speedParam.addListener(this, &mgsRileyDescending::setupLinesF);
 
-  parameters.add(accelParam.set("Acceleration", 10.0, 1, 360));
-  accelParam.addListener(this, &mgsRileyDescending::setupLinesF);
+  parameters.add(accelParam.set("Acceleration", 360.0, 1, 360));
+  //accelParam.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(animated.set("Animated", true));
-  animated.addListener(this, &mgsRileyDescending::setupLinesB);
+  //  animated.addListener(this, &mgsRileyDescending::setupLinesB);
   
 //  parameters.add(yOffset.set("Y-Offset", ));
 //  
@@ -86,7 +90,7 @@ void mgsRileyDescending::setup(){
   quad3.disableColors();
   quad4.disableColors();
   
-  xOffset = 10;
+  xOffset = -300;
   yOffset = -100;
 
   lines.clear(); 
@@ -105,12 +109,24 @@ void mgsRileyDescending::draw() {
   ofSetColor(fillColor);
   ofFill();
   for (int x = 0; x < columns; x++) {
-    if(animated){
+//    if(animated){
       lines[x].speed = speedParam;
+//    } else {
+//      lines[x].speed = 0;
+//    }
+    if (oldColumns == floor(columns) && oldRows == floor(rows)){
+      
     } else {
-      lines[x].speed = 0;
+      
+    oldColumns = floor(columns);
+    oldRows = floor(rows);
+    lines.clear();
+    for (int i = 0; i < columns; i++) {
+      lines.push_back(RileyLine(columns, rows, speedParam, accelParam, wavePeriodParam, distanceParam, wavePhaseParam));
     }
-    lines[x].update(lineSpacing, lineHeight, rows);
+    }
+
+    lines[x].update(lineSpacing, lineHeight, rows, distanceParam);
 
     quad1.clear();
     quad2.clear();
@@ -141,7 +157,7 @@ void mgsRileyDescending::draw() {
                         ofVec3f((x * lineWidth)+xOffset, (((y + 1) * lineHeight)-lineHeight)+yOffset, 0));
           quad3.draw();
         }
-        if ((x != columns-1 && y != rows-1)) {
+        if(x != columns-1 && y != rows-1) {
           ofSetColor(255);
           ofFill();
           addQuadToMesh(quad2,
@@ -172,13 +188,17 @@ void mgsRileyDescending::setupLinesB(bool& l) {
 }
 
 void mgsRileyDescending::setupLinesF(float& l) {
-  lines.clear();
-  for (int i = 0; i < columns; i++) {
-    lines.push_back(RileyLine(columns, rows, speedParam, accelParam, wavePeriodParam, distanceParam, wavePhaseParam));
-  }
+//  lines.clear();
+//  for (int i = 0; i < columns; i++) {
+//    lines.push_back(RileyLine(columns, rows, speedParam, accelParam, wavePeriodParam, distanceParam, wavePhaseParam));
+//  }
+  setupNewLines();
 }
 
-void mgsRileyDescending::setupLines(int& l) {
+void mgsRileyDescending::setupNewLines() {
+  if (oldColumns == floor(columns) && oldRows == floor(rows)) return;
+  oldColumns = floor(columns);
+  oldRows = floor(rows);
   lines.clear();
   for (int i = 0; i < columns; i++) {
     lines.push_back(RileyLine(columns, rows, speedParam, accelParam, wavePeriodParam, distanceParam, wavePhaseParam));

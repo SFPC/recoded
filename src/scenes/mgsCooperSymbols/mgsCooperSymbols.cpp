@@ -81,37 +81,37 @@ void mgsCooperSymbols::draw(){
 void mgsCooperSymbols::redraw(int& i){
   symbolColor = ofColor(red, green, blue);
   //bNeedRedrawFullScene = true;
-  if(animated){
-    bNeedsRedraw = true;
-  }
+//  if(animated){
+//    bNeedsRedraw = true;
+//  }
 }
 
 void mgsCooperSymbols::redrawGrid(int& i){
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
   symbolColor = ofColor(red, green, blue);
-  bNeedRedrawFullScene = true;
-  if(animated){
-    bNeedsRedraw = true;
-  }
+  //bNeedRedrawFullScene = true;
+//  if(animated){
+//    bNeedsRedraw = true;
+//  }
 }
 
 void mgsCooperSymbols::redrawBool(bool& i){
-  bNeedsRedraw = true;
+  //bNeedsRedraw = true;
   //bNeedRedrawFullScene = true;
 }
 
 void mgsCooperSymbols::redrawFloat(float& i){
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
-  bNeedsRedraw = true;
+//  bNeedsRedraw = true;
 }
 
 void mgsCooperSymbols::drawScene(){
   frame.begin();
   drawGrid(0,0);
   frame.end();
-  bNeedsRedraw = true;
+//  bNeedsRedraw = true;
 }
 
 void mgsCooperSymbols::drawFullScene(){

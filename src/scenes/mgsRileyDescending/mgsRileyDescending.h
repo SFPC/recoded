@@ -19,7 +19,8 @@ class RileyLine {
     y.resize(rowCount);
   }
 
-  void update(float lineSpacing, float lineHeight, int rowCount) {
+  void update(float lineSpacing, float lineHeight, int rowCount, float dist) {
+    distance = dist;
     accel += speed;
     for (int i = 0; i < rowCount; i++) {
       x[i] = distance * sin(ofDegToRad(wavePhase + accel + (wavePeriod * i)));
@@ -43,7 +44,7 @@ class mgsRileyDescending : public baseScene {
   void draw();
   void setupLines(int& l);
   void setupLinesF(float& l);
-  
+  void setupNewLines();
   void setupLinesB(bool& l);
   void drawGrid(int& l);
   void loadLine(float x, float y, float accel, float speed, float wavePeriod, float wavePhase, float distance);
@@ -53,8 +54,9 @@ class mgsRileyDescending : public baseScene {
   ofMesh quad3;
   ofMesh quad4;
   vector<RileyLine> lines;
-
-  ofParameter<float>  minSpeed, maxSpeed, speedParam, wavePhaseParam, accelParam, wavePeriodParam, distanceParam, yOffset, xOffset, lineWidth, lineHeight, lineSpacing, minWavePeriod, maxWavePeriod, minAccel, maxAccel, minWavePhase, maxWavePhase;
-  ofParameter<int> rows, columns, fillColor, bgColor;
+  int oldRows, oldColumns;
+  
+  ofParameter<float>  minSpeed, maxSpeed, speedParam, wavePhaseParam, accelParam, wavePeriodParam, distanceParam, yOffset, xOffset, lineWidth, lineHeight, lineSpacing, minWavePeriod, maxWavePeriod, minAccel, maxAccel, minWavePhase, maxWavePhase, rows, columns;
+  ofParameter<int>  fillColor, bgColor;
   ofParameter<bool> animated;
 };
