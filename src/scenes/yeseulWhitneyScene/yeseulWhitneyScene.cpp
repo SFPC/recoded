@@ -3,7 +3,7 @@
 
 void yeseulWhitneyScene::setup(){
     
-    parameters.add(spinSpeed.set("spinSpeed", 20, 20, 70));
+    parameters.add(spinSpeed.set("spinSpeed", 10, 20, 70));
     parameters.add(diffusionInterval.set("diffusionInterval", 5, 5, 10));
     parameters.add(diffusionSize.set("diffusionSize", 1.3, 1, 3));
     
