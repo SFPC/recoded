@@ -164,7 +164,9 @@ void sceneManager::setup(){
     
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
+    dimmedSceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
+    dimmerShader.load("scenes/dimmer");
 
     lastFrame.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, OF_PIXELS_RGBA);
     currFrame.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, OF_PIXELS_RGBA);
@@ -627,10 +629,23 @@ void sceneManager::draw(){
         // For sound and for kicks
         computeMotion(sceneFbo);
 
-        // Draw twice to make the background go away
-        sceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-        sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+        float dimAmt = 1;
+        if (frameBrightness > 0.6) {
+            dimAmt = ofMap(frameBrightness, 0.7, 1, 1, 0.8);
+        }
 
+        dimmedSceneFbo.begin();
+        dimmerShader.begin();
+        dimmerShader.setUniformTexture("texture0", sceneFbo.getTexture(), 0);
+        dimmerShader.setUniform1f("dimAmt", dimAmt);
+        ofSetColor(255);
+        ofClearAlpha();
+        ofDrawRectangle(0, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
+        dimmerShader.end();
+        dimmedSceneFbo.end();
+        dimmedSceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+        dimmedSceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+        
         if (fadingIn) {
             float fadeOpacityRaw = ofMap(pctDelay, FADE_DELAY_MIN, FADE_DELAY_MAX, 0, PI);
             float fadeOpacityShaped = ofMap(cos(fadeOpacityRaw), 0, 1, 0, 255);
@@ -721,13 +736,14 @@ void sceneManager::computeMotion(ofFbo &fbo) {
     const unsigned char *currPixels = currFrame.getData();
     const unsigned char *lastPixels = lastFrame.getData();
     
-    long long sumX = 0, sumY = 0, sumMotion = 0, totalMotion = 1, totalThresh = 1;
+    long long sumX = 0, sumY = 0, sumMotion = 0, sumBrightness = 0, totalPixels = 1, totalThresh = 1;
     for (int i = 0; i < VISUALS_WIDTH * VISUALS_HEIGHT * 4; i += 4) {
         int val = (currPixels[i] + currPixels[i+1] + currPixels[i+2]) / 3;
         int lastVal = (lastPixels[i] + lastPixels[i+1] + lastPixels[i+2]) / 3;
 
+        sumBrightness += val;
         sumMotion += abs(val - lastVal);
-        totalMotion++;
+        totalPixels++;
 
         if (val > 127) {
             int x = (i / 4) % VISUALS_WIDTH;
@@ -742,7 +758,9 @@ void sceneManager::computeMotion(ofFbo &fbo) {
     lastCentroid.set(centroid);
     centroid.set(sumX / totalThresh, sumY / totalThresh);
     
-    float currMotion = ((float)sumMotion / totalMotion) / 255.0;
+    frameBrightness = ((float)sumBrightness / totalPixels) / 255.0;
+    
+    float currMotion = ((float)sumMotion / totalPixels) / 255.0;
     float shapedMotion = sqrt(currMotion);
     motion += (shapedMotion - motion) * 0.1;
     
