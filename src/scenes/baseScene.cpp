@@ -93,6 +93,56 @@ void baseScene::enableMidi() {
     }
     
     cout << "linked " << n << endl;
+    
+    if (!recData.size()) return;
+    
+    vector<bool> paramsSet;
+    for (int i = 0; i < min((int)parameters.size(), 8); ++i) {
+        paramsSet.push_back(false);
+    }
+
+    const int mx = 127;
+    for (int i = 0; i < recData.size(); ++i) {
+        int whichParam = recData[i].getMessage().control;
+        int value = recData[i].getMessage().value;
+
+        if (paramsSet[i])
+            continue;
+
+        if(parameters[whichParam].type()==typeid(ofParameter<int>).name()){
+            ofParameter<int> &midiParam = midiParameters.getInt(whichParam);
+            ofParameter<int> &param = parameters.getInt(whichParam);
+
+            int mp = ofMap(value, 0, mx, param.getMin(), param.getMax(), true);
+            if (param.get() != mp) {
+                midiParam.set(mp);
+                param.set(mp);
+            }
+        }else if(parameters[whichParam].type()==typeid(ofParameter<float>).name()){
+            ofParameter<float> &midiParam = midiParameters.getFloat(whichParam);
+            ofParameter<float> &param = parameters.getFloat(whichParam);
+
+            float mp = ofMap(value, 0, mx, param.getMin(), param.getMax(), true);
+            
+            if (param.get() != mp) {
+                midiParam.set(mp);
+                param.set(mp);
+            }
+        }else if(parameters[whichParam].type()==typeid(ofParameter<bool>).name()){
+            ofParameter<bool> &midiParam = midiParameters.getBool(whichParam);
+            ofParameter<bool> &param = parameters.getBool(whichParam);
+
+            bool bVal = value != 0;
+            if (param.get() != bVal) {
+                midiParam.set(bVal);
+                param.set(bVal);
+            }
+        } else {
+            continue;
+        }
+        
+        paramsSet[whichParam] = true;
+    }
 }
 
 void baseScene::updateMidiParams() {
