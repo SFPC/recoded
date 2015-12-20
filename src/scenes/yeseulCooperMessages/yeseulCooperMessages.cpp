@@ -14,9 +14,9 @@ void yeseulCooperMessages::setup(){
     text1 = "MEANS";
     text2 = "MESSAGES";
     
-    parameters.add(greenTextSpeed.set("greenTextSpeed", 20, 15, 50));
-    parameters.add(redTextSpeed.set("redTextSpeed", 20, 15, 50));
-    parameters.add(purpleTextSpeed.set("purpleTextSpeed", 20, 15, 50));
+    parameters.add(greenTextSpeed.set("greenTextSpeed", 20, 5, 35));
+    parameters.add(redTextSpeed.set("redTextSpeed", 20, 5, 35));
+    parameters.add(purpleTextSpeed.set("purpleTextSpeed", 20, 5, 35));
     parameters.add(rotation.set("rotation", 0, 0, 360));
     
     loadCode("scenes/yeseulCooperMessages/exampleCode.cpp");
