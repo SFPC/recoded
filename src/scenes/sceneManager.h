@@ -20,11 +20,12 @@
 #include "ofxTween.h"
 #endif
 
-#define FADE_DELAY_MIN 1.5
-#define FADE_DELAY_MAX 1.77
+#define FADE_DELAY_MIN 1.4
+#define FADE_DELAY_MAX 1.67
 
-#define SCENE_PRE_TRANSITION_FADE   0.3
-#define SCENE_PRE_TRANSITION_CURSOR 0.35
+#define SCENE_PRE_TRANSITION_FADE   0.4
+//#define SCENE_PRE_TRANSITION_SOUND 0.32
+#define SCENE_PRE_TRANSITION_CURSOR 0.5
 
 // I take care of scenes.
 
@@ -65,6 +66,18 @@ public:
     ofParameter<float> codeEnergyDecayRate, codeEnergyPerFrame;
     ofxPanel codeControls;
     
+    //----------------------------------------
+    // sound
+    
+    ofSoundPlayer sceneChangeSound;
+    ofSoundPlayer cursorBlinkSound;
+    ofSoundPlayer animationStartSound;
+    ofSoundPlayer parameterChangeSound;
+    bool hasTriggeredCursorSound;
+    bool hasTriggeredSceneChangeSound;
+    
+    void loadSounds();
+    
 
     ofTrueTypeFont font;
     
@@ -78,14 +91,14 @@ public:
     float preTransitionStart;
     
     float pctDelay;
-    bool shouldDrawScene, shouldDrawCode;
+    bool shouldDrawScene, shouldDrawCode, shouldPlaySceneChangeSound;
     
     float maxLetterX, lastLetterY;
     
     bool fadingIn;
     
     ofxPanel gui;
-    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance, drawScenePanel, enableMidiUpdate;
+    ofParameter<bool>bAutoPlay, bSceneWaitForCode, bFadeOut, bAutoAdvance, drawScenePanel, enableMidiUpdate, enableParameterSounds;
     ofParameter<float> autoadvanceDelay, ofSmoothing;
     float lastAutoadvanceTime;
     
@@ -114,6 +127,9 @@ public:
     bool bShowCursor;
     
     void setAdvanceCurrentScene();
+    
+    void triggerCursorSound();
+    void toggleParameterSounds(bool &i);
     
     
 };
