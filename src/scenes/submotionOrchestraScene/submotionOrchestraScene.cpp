@@ -68,7 +68,7 @@ void submotionOrchestraScene::draw(){
     glFogf(GL_FOG_END, 1200);
     
     ofPushMatrix();
-    ofTranslate(0, 0, -300);
+    ofTranslate(0, 0, -500);
     
     ofPushMatrix();
 	ofRotate(10. * k, 1., 1., 1.);
