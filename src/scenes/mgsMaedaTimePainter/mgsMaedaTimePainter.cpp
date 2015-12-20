@@ -43,7 +43,7 @@ void mgsMaedaTimePainter::setup(){
 }
 
 void mgsMaedaTimePainter::clearScreen(bool& i){
-  bNeedClearScreen = true;
+  //bNeedClearScreen = true;
   //  frame.begin();
   //  ofClear(0,10);
   //  frame.end();
@@ -55,24 +55,24 @@ void mgsMaedaTimePainter::pause(bool& i){
 }
 
 void mgsMaedaTimePainter::update(){
-  if (bNeedsRedraw) {
-    frame.begin();
-    ofClear(0);
-    frame.end();
-    painters.clear();
+  //if (bNeedsRedraw) {
+//    frame.begin();
+//    ofClear(0);
+//    frame.end();
+//    painters.clear();
     for (int i = 0; i < numberOfPainters; i++) {
       painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
     }
-    drawScene();
-    bNeedsRedraw = false;
-  }
-  if (bNeedClearScreen) {
-    frame.begin();
-    ofClear(0,10);
-    frame.end();
-    clearScreenP.set("Clear Screen", false);
-    bNeedClearScreen = false;
-  }
+  //    drawScene();
+  //  bNeedsRedraw = false;
+  //}
+//  if (bNeedClearScreen) {
+//    frame.begin();
+//    ofClear(0,10);
+//    frame.end();
+//    clearScreenP.set("Clear Screen", false);
+//    bNeedClearScreen = false;
+//  }
   drawScene();
 }
 

@@ -58,11 +58,11 @@ void mgsVeraMolnarLineStudy::update(){
 
 void mgsVeraMolnarLineStudy::draw(){
   frame.begin();
-  if(clearScreenBool) {
-    frame.begin();
-    ofClear(0);
-    frame.end();
-  }
+//  if(clearScreenBool) {
+//    frame.begin();
+//    ofClear(0);
+//    frame.end();
+//  }
   if(getFrameNum() % 2 == 0){
     ofSetColor(0,1);
     ofDrawRectangle(0,0, dimensions.width, dimensions.height);
@@ -72,7 +72,7 @@ void mgsVeraMolnarLineStudy::draw(){
 }
 
 void mgsVeraMolnarLineStudy::clearScreen(bool& i){
-  clearScreenBool = !clearScreenBool;
+  //clearScreenBool = !clearScreenBool;
 }
 
 void mgsVeraMolnarLineStudy::redraw(int& i){
