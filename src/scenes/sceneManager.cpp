@@ -107,12 +107,12 @@ void sceneManager::setup(){
     scenes.push_back(new yeseulWhitneyScene());
     scenes.push_back(new yeseulRileyBrokencircle());
     scenes.push_back(new yosukeJohnWhitneyMatrix());
-    //scenes.push_back(new mgsCooperSymbols());
-    //scenes.push_back(new mgsRileyDiamonds());
+    scenes.push_back(new mgsCooperSymbols());
+    scenes.push_back(new mgsRileyDiamonds());
     scenes.push_back(new mgsRileyEllipsesAndSquares());
-    //scenes.push_back(new mgsVeraMolnarLineStudy());
-    //scenes.push_back(new mgsMaedaTimePainter());
-    //scenes.push_back(new mgsRileyDescending());
+    scenes.push_back(new mgsVeraMolnarLineStudy());
+    scenes.push_back(new mgsMaedaTimePainter());
+    scenes.push_back(new mgsRileyDescending());
     scenes.push_back(new olegVeraV());
     scenes.push_back(new sarahgpRileyCircle());
     scenes.push_back(new mwalczykVeraSquares());

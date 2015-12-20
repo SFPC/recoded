@@ -7,8 +7,8 @@ void mgsRileyDiamonds::setup(){
   setOriginalArtist("Bridget Riley - November - 1990");
   parameters.add(grayscale.set("Grayscale", false));
   //parameters.add(sequentialShading.set("Sequential Shading", false));
-  parameters.add(height.set("Diamond Height", 25.0, 1, 500));
-  parameters.add(width.set("Diamond Width", 25.0, 1, 500));
+  parameters.add(height.set("Diamond Height", 25.0, 1, 50));
+  parameters.add(width.set("Diamond Width", 25.0, 1, 50));
   parameters.add(red.set("Red Amount", 255, 0, 255));
   parameters.add(green.set("Green Amount", 255, 0, 255));
   parameters.add(blue.set("Blue Amount", 255, 0, 255));
@@ -61,6 +61,7 @@ void mgsRileyDiamonds::draw(){
 //  if(discoMode){
 //    drawFullRiley();
 //  } else if (animated) {
+
     drawRiley();
   //  }
   frame.draw(0,0);
@@ -155,6 +156,9 @@ void mgsRileyDiamonds::redrawBool(bool& i){
 
 void mgsRileyDiamonds::drawRiley(){
   frame.begin();
+
+    ofSetColor(0, 1);
+    ofDrawRectangle(0, 0, dimensions.width, dimensions.height);
   ofColor c = ofColor(ofRandom(0,red),ofRandom(0, green), ofRandom(0,blue),255);
   ofColor g = ofColor(ofRandom(0,255),255);
   if(grayscale){

@@ -41,17 +41,18 @@ void addQuadToMesh(ofMesh& m, const ofVec3f& p0, const ofVec3f& p1, const ofVec3
 }
 
 void mgsRileyDescending::setup(){
+    setAuthor("Michael Simpson");
+    setOriginalArtist("Bridget Riley - Study for Shuttle - 1964");
   loadCode("scenes/mgsRileyDescending/exampleCode.cpp");
-  setAuthor("Michael Simpson");
-  setOriginalArtist("Bridget Riley - Study for Shuttle - 1964");
+  
 
-  parameters.add(rows.set("Rows", 109, 1, 200));
+    rows.set("Rows", 109, 1, 200);
   //rows.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(lineHeight.set("Row Height", 10, 1, 100));
   //lineHeight.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(columns.set("Columns", 19, 1, 200));
+  columns.set("Columns", 19, 1, 200);
   //columns.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(lineWidth.set("Column Width", 47, 1, 300));
@@ -60,22 +61,22 @@ void mgsRileyDescending::setup(){
   parameters.add(lineSpacing.set("Depth Amount", 14.8061, 1, 100));
   //lineSpacing.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(wavePeriodParam.set("Number of Waves", 2, 0, 60));
+    wavePeriodParam.set("Number of Waves", 2, 0, 60);
   //wavePeriodParam.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(wavePhaseParam.set("Wave Phase", 180.0, 0, 360));
+    wavePhaseParam.set("Wave Phase", 180.0, 0, 360);
   //wavePhaseParam.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(distanceParam.set("Distance Between", 15.8163, 1, 100));
+    distanceParam.set("Distance Between", 15.8163, 1, 100);
   //distanceParam.addListener(this, &mgsRileyDescending::setupLinesF);
 
   parameters.add(speedParam.set("Speed", 4.0, 0.0, 4.0));
   //speedParam.addListener(this, &mgsRileyDescending::setupLinesF);
 
-  parameters.add(accelParam.set("Acceleration", 360.0, 1, 360));
+    accelParam.set("Acceleration", 360.0, 1, 360);
   //accelParam.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(animated.set("Animated", true));
+  animated.set("Animated", true);
   //  animated.addListener(this, &mgsRileyDescending::setupLinesB);
   
 //  parameters.add(yOffset.set("Y-Offset", ));

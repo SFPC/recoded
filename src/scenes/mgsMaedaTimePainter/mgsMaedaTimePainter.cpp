@@ -7,7 +7,7 @@ int ellipseSize = 3;
 int fadeCounter = 0;
 
 void mgsMaedaTimePainter::setup(){
-  parameters.add(paintSpeed.set("paintSpeed", 0.25, 2.0, 0.20));
+  parameters.add(paintSpeed.set("paintSpeed", 0.25, 2.0, 0.01));
   paintSpeed.addListener(this, &mgsMaedaTimePainter::redrawFloat);
   parameters.add(baseLongevity.set("baseLongevity", 120, 50, 500));
   baseLongevity.addListener(this, &mgsMaedaTimePainter::redrawInt);
@@ -24,9 +24,10 @@ void mgsMaedaTimePainter::setup(){
   parameters.add(clearScreenP.set("clearScreen", false));
   clearScreenP.addListener(this, &mgsMaedaTimePainter::clearScreen);
   
+    setAuthor("Michael Simpson");
+    setOriginalArtist("John Maeda - Time Paint - 1990");
   loadCode("scenes/mgsMaedaTimePainter/exampleCode.cpp");
-  setAuthor("Michael Simpson");
-  setOriginalArtist("John Maeda - Time Paint - 1990");
+    
   painters.clear();
   for (int i = 0; i < numberOfPainters; i++) {
     painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
