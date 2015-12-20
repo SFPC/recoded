@@ -14,6 +14,10 @@ void baseScene::loadCode( string fileName ){
     ofBuffer buffer = ofBufferFromFile(fileName);
     code = "";
     
+    code += "// artwork by " + originalArtist + "\n";
+    code += "// re-coded by " + author + "\n";
+    code += "\n";
+
     for (auto line : buffer.getLines()){
         code += line;
         code += "\n";
