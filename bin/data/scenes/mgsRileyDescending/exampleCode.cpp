@@ -1,6 +1,4 @@
-// Bridget Riley - Study for Shuttle - 1964
-
-void drawRileyWaves(width, height){
+void drawKinkedLines(width, height){
   // Loop through the width and height of the grid using
   // unitSize as the grid interval.
   for(int columnBreak = 0; i < numberOfColumn; columnBreak++){

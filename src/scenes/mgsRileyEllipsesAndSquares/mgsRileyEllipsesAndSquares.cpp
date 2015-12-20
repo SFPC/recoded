@@ -5,7 +5,8 @@ float px0,py0,px1,py1,px2,py2,px3,py3,px4,py4,px5,py5,px6,py6,px7,py7;
 
 void mgsRileyEllipsesAndSquares::setup(){
   setAuthor("Michael Simpson");
-  setOriginalArtist("Bridget Riley - Hidden Squares - 1990");
+  setOriginalArtist("Bridget Riley");
+  //- Hidden Squares - 1990");
   px0 = 66;
   py0 = 97;
   px1 = 260;
