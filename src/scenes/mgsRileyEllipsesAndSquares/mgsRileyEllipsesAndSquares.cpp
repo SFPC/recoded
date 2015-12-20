@@ -25,13 +25,13 @@ void mgsRileyEllipsesAndSquares::setup(){
   
     bNeedRedraw = false;
     
-  parameters.add(unitSize.set("Unit Size", 6, 3, 50));
+  parameters.add(unitSize.set("Unit Size", 6, 2, 8));
   unitSize.addListener(this, &mgsRileyEllipsesAndSquares::redraw);
   loadCode("scenes/mgsRileyEllipsesAndSquares/exampleCode.cpp");
 
   ofBackground(255);
   ofSetCircleResolution(100);
-  frame.allocate(dimensions.width, dimensions.height);
+  frame.allocate(dimensions.width, dimensions.height, GL_RGB32F_ARB);
   frame.begin();
   ofClear(0);
   frame.end();
@@ -39,10 +39,10 @@ void mgsRileyEllipsesAndSquares::setup(){
 }
 
 void mgsRileyEllipsesAndSquares::update(){
-    if (bNeedRedraw) {
+    //if (bNeedRedraw) {
         drawScene();
-        bNeedRedraw = false;
-    }
+//        bNeedRedraw = false;
+//    }
 }
 
 void mgsRileyEllipsesAndSquares::draw(){
@@ -56,7 +56,9 @@ void mgsRileyEllipsesAndSquares::redraw(int& i){
 
 void mgsRileyEllipsesAndSquares::drawScene(){
   frame.begin();
-  ofClear(0);
+    ofSetColor(0, 20);
+    ofDrawRectangle(0, 0, dimensions.width, dimensions.height);
+    ofSetColor(255);
   for (float i = 0; i < dimensions.width; i+=unitSize) {
     for (float j = 0; j < dimensions.height; j+=unitSize) {
       if ((int)(i/unitSize) % 2 == 0 && (int)(j/unitSize) % 2 == 0) {
