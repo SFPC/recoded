@@ -7,7 +7,7 @@ void ofxDataBender::setup(string imagesPath, string ext, int debounce){
     debounceTime = debounce;
     debounceValue = 0;
     
-    srcPath = imagesPath+fileExt+"/menkman."+fileExt;
+    srcPath = imagesPath+"menkman."+fileExt;
     dstPath = imagesPath+"tmp/menkman."+fileExt;
     
     lineCount = getLineCount(srcPath);
