@@ -11,8 +11,14 @@ public:
     void update();
     void draw();
     void drawShape();
-    void resetSpeedVal(int& i);
+    void resetSpeedVal();
     
+    float speedVal = 0;
+    bool bDirection = true;
+    int oldNumberOfPatterns;
+    
+    ofVec2f circle1, circle2, circle3, circle4;
+
     ofParameter<float> size, speed, rotation;
     ofParameter<int> numberOfPatterns;
 };

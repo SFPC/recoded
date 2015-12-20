@@ -4,7 +4,8 @@
 
 void mgsRileyDiamonds::setup(){
   setAuthor("Michael Simpson");
-  setOriginalArtist("Bridget Riley - November - 1990");
+  setOriginalArtist("Bridget Riley");
+  //- November - 1990");
   parameters.add(grayscale.set("Grayscale", false));
   //parameters.add(sequentialShading.set("Sequential Shading", false));
   parameters.add(height.set("Diamond Height", 25.0, 1, 50));

@@ -35,7 +35,8 @@ void mgsCooperSymbols::setupParameters(){
 
 void mgsCooperSymbols::setup() {
   setAuthor("Michael Simpson");
-  setOriginalArtist("Muriel Cooper - 'A Primer Of Visual Literacy' Book Cover");
+  setOriginalArtist("Muriel Cooper");
+  // - 'A Primer Of Visual Literacy' Book Cover - 1973
   setupParameters();
   ofSetCircleResolution(100);
   loadCode("scenes/mgsCooperSymbols/exampleCode.cpp");

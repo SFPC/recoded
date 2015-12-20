@@ -25,7 +25,8 @@ void mgsMaedaTimePainter::setup(){
   clearScreenP.addListener(this, &mgsMaedaTimePainter::clearScreen);
   
     setAuthor("Michael Simpson");
-    setOriginalArtist("John Maeda - Time Paint - 1990");
+  setOriginalArtist("John Maeda");
+  //- Time Paint - 1990");
   loadCode("scenes/mgsMaedaTimePainter/exampleCode.cpp");
     
   painters.clear();
