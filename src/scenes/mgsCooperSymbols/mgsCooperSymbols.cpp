@@ -2,8 +2,8 @@
 #include "mgsCooperSymbols.h"
 
 void mgsCooperSymbols::setupParameters(){
-  parameters.add(gridSize.set("Grid Size", 32, 1, 96));
-  gridSize.addListener(this, &mgsCooperSymbols::redrawGrid);
+  gridSize.set("Grid Size", 32, 1, 96);
+  //gridSize.addListener(this, &mgsCooperSymbols::redrawGrid);
   
   parameters.add(numberOfShapes.set("Number of Shapes", 3, 1, 3));
   numberOfShapes.addListener(this, &mgsCooperSymbols::redraw);
@@ -26,11 +26,11 @@ void mgsCooperSymbols::setupParameters(){
   parameters.add(singleShapesP.set("Single Shapes Mode", false));
   singleShapesP.addListener(this, &mgsCooperSymbols::redrawBool);
   
-  parameters.add(animated.set("Animated", true));
-  animated.addListener(this, &mgsCooperSymbols::redrawBool);
+  animated.set("Animated", true);
+  //animated.addListener(this, &mgsCooperSymbols::redrawBool);
   
-  parameters.add(debug.set("Debug", false));
-  debug.addListener(this, &mgsCooperSymbols::redrawBool);
+  debug.set("Debug", false);
+  //debug.addListener(this, &mgsCooperSymbols::redrawBool);
 }
 
 void mgsCooperSymbols::setup() {
@@ -53,6 +53,14 @@ void mgsCooperSymbols::setup() {
   frame.end();
   drawFullScene();
   drawScene();
+}
+
+void mgsCooperSymbols::reset(){
+  cursorColor = ofColor(0,0,255,1);
+  clearColor = ofColor(0,0,0,255);
+  symbolColor = ofColor(255,255,255,255);
+  //drawFullScene();
+  //drawScene();
 }
 
 void mgsCooperSymbols::update(){

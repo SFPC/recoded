@@ -5,18 +5,19 @@ void yeseulWhitneyScene::setup(){
     
     setAuthor("Yeseul Song");
     setOriginalArtist("John Whitney");
-
+    
     parameters.add(spinSpeed.set("spinSpeed", 10, 10, 70));
     parameters.add(diffusionInterval.set("diffusionInterval", 5, 5, 10));
-    parameters.add(diffusionSize.set("diffusionSize", 1.3, 1, 3));
+    parameters.add(diffusionSize.set("diffusionSize", 0.1, 0.1, 2));
     
     lastDiffusionTime = 0;
     
     integratedTime = 0;
-    lastTime = 0;
-
+    lastTimeBg = 0;
+    lastTimeFg = 0;
+    
     loadCode("scenes/yeseulWhitneyScene/exampleCode.cpp");
-
+    
 }
 
 
@@ -44,17 +45,19 @@ void yeseulWhitneyScene::drawPattern(){
     
     ofSetColor(255);
     ofFill();
-     
+    
     float now = getElapsedTimef();
-    if (lastTime == 0) {
-        lastTime = now;
+    if (lastTimeBg == 0) {
+        lastTimeBg = now;
     }
-    float dt = now - lastTime;
-    lastTime = now;
+    float dt = now - lastTimeBg;
+    if (dt < 0 || dt > 0.2)
+        dt = 0;
+    lastTimeBg = now;
     
     integratedTime += spinSpeed * dt;
     float k = integratedTime;
-
+    
     for (int r=0; r<35; r+=1) {
         ofRotate(k*sin(r));
         for (int a=0; a<20; a+=1) {
@@ -69,12 +72,19 @@ void yeseulWhitneyScene::drawPattern(){
 
 void yeseulWhitneyScene::diffusion() {
     
-    float t = getElapsedTimef();
-
-    if (lastDiffusionTime == 0 || diffusionInterval <= t - lastDiffusionTime) {
-        diffs.push_back(circlesDiffusion(t, diffusionSize));
-        cout << "add difff" << diffusionInterval << endl;
-        lastDiffusionTime = t;
+    float now = getElapsedTimef();
+    if (lastTimeFg == 0) {
+        lastTimeFg = now;
+    }
+    float dt = now - lastTimeFg;
+    if (dt < 0 || dt > 0.2)
+        dt = 0;
+    lastTimeFg = now;
+    integratedFgTime += dt;
+    
+    if (diffusionInterval <= integratedFgTime - lastDiffusionTime) {
+        diffs.push_back(circlesDiffusion(integratedFgTime, diffusionSize));
+        lastDiffusionTime = integratedFgTime;
     }
     
     for(int i = 0; i < diffs.size(); i++){
@@ -86,7 +96,7 @@ void yeseulWhitneyScene::diffusion() {
     }
     
     for(int i = 0; i < diffs.size(); i++){
-        diffs[i].draw(t);
+        diffs[i].draw(integratedFgTime);
     }
 }
 

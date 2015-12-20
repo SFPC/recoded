@@ -2,12 +2,12 @@ createPath(currentPainter);
 
 void paintTime(){
   if (longevity < 500) {
-    if (ofRandom(10) > 7) {
-      angle += ofDegToRad((int)ofRandom(-av, av));
+    if (ofRandom(2) > 1) {
+      angle += ofDegToRad((int)ofRandom(-[[angleVariance]], [[angleVariance]]));
     }
   }
-  xpos += cos(angle) / speed;
-  ypos += sin(angle) / speed;
+  xpos += cos([[angleVariance]]) / speed;
+  ypos += sin([[angleVariance]]) / speed;
   longevity--;
   ofSetColor(stroke);
   ofFill();

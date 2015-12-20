@@ -4,29 +4,29 @@ MolnarPainter painter;
 int maxLineCount, currentLineCount;
 
 void mgsVeraMolnarLineStudy::setup(){
-  parameters.add(squareSize.set("Square Size", 32.0, 1, 96.0));
-  squareSize.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
+  squareSize.set("Square Size", 49.7925, 1, 49.7925);
+  //squareSize.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
 
   parameters.add(numOfLines.set("Number of Lines", 8, 1, 50));
   numOfLines.addListener(this, &mgsVeraMolnarLineStudy::redraw);
 
-  parameters.add(gridSpace.set("Grid Spacing", 10.0, 1, 50));
-  gridSpace.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
+  gridSpace.set("Grid Spacing", 10.0, 1, 50);
+  //gridSpace.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
 
   parameters.add(lineWidth.set("Line Width", 1.0, 0.1, 10.0));
   lineWidth.addListener(this, &mgsVeraMolnarLineStudy::redrawF);
   
-  parameters.add(connectedLinesP.set("Connect Lines?", false));
-  connectedLinesP.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
+  connectedLinesP.set("Connect Lines?", false);
+//  connectedLinesP.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
   
   parameters.add(useColorP.set("Use Color", false));
   useColorP.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
   
-  parameters.add(animated.set("Animated", true));
-  animated.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
+  animated.set("Animated", true);
+//  animated.addListener(this, &mgsVeraMolnarLineStudy::redrawB);
 
-  parameters.add(clearScreenBool.set("Clear Screen", false));
-  clearScreenBool.addListener(this, &mgsVeraMolnarLineStudy::clearScreen);
+  clearScreenBool.set("Clear Screen", false);
+//  clearScreenBool.addListener(this, &mgsVeraMolnarLineStudy::clearScreen);
 
   painter.thickness = lineWidth;
   painter.useColor = false;
@@ -77,6 +77,10 @@ void mgsVeraMolnarLineStudy::clearScreen(bool& i){
 
 void mgsVeraMolnarLineStudy::redraw(int& i){
   freshPaint();
+}
+
+void mgsVeraMolnarLineStudy::reset(){
+  //  freshPaint();
 }
 
 void mgsVeraMolnarLineStudy::redrawB(bool& i){

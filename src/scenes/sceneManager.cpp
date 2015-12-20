@@ -22,9 +22,9 @@
 #include "anastasisRileyScene.h"
 #include "loloWhitney.h"
 #include "loloVera.h"
-#include "andyMenkmanDataBendsJpg.h"
-#include "andyMenkmanDataBendsPng.h"
-#include "andyMenkmanDataBendsTif.h"
+#include "andyMenkmanJpg.h"
+#include "andyMenkmanPng.h"
+#include "andyMenkmanTif.h"
 #include "CooperBauhaus.h"
 #include "memoAktenScene.h"
 #include "submotionOrchestraScene.h"
@@ -91,8 +91,8 @@ void sceneManager::setup(){
     scenes.push_back(new anastasisRileyScene());
     scenes.push_back(new loloWhitney());
     scenes.push_back(new loloVera());
-    scenes.push_back(new andyMenkmanDataBendsJpg());
-    scenes.push_back(new andyMenkmanDataBendsPng());
+    scenes.push_back(new andyMenkmanJpg());
+    scenes.push_back(new andyMenkmanPng());
     scenes.push_back(new manfredMohrP196A());
     scenes.push_back(new veraMolnarTrapezium());
     scenes.push_back(new loloVera2());
@@ -118,8 +118,8 @@ void sceneManager::setup(){
     scenes.push_back(new mwalczykVeraSquares());
 
     // Too slow
-    // scenes.push_back(new andyMenkmanDataBendsTif());
-    
+//     scenes.push_back(new andyMenkmanTif());
+  
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
     
