@@ -1,9 +1,6 @@
 
 #include "yeseulRileybrokencircle.h"
 
-float speedVal = 0;
-bool bDirection = true;
-ofVec2f circle1, circle2, circle3, circle4;
 
 void yeseulRileyBrokencircle::setup(){
     
@@ -13,14 +10,12 @@ void yeseulRileyBrokencircle::setup(){
     parameters.add(speed.set("speed", 0.7, 0, 10));
     parameters.add(rotation.set("rotation", 0, 0, 180));
     parameters.add(numberOfPatterns.set("numberOfPatterns", 1, 1, 7));
-    numberOfPatterns.addListener(this, &yeseulRileyBrokencircle::resetSpeedVal);
     
     loadCode("scenes/yeseulRileybrokencircle/exampleCode.cpp");
 }
 
 
 void yeseulRileyBrokencircle::update(){
-    
     
 }
 
@@ -37,6 +32,12 @@ void yeseulRileyBrokencircle::draw(){
     if (speedVal*numberOfPatterns>=100 || speedVal*numberOfPatterns<=0) {
         
         bDirection = !bDirection;
+    }
+    
+    if (oldNumberOfPatterns == numberOfPatterns){
+    } else {
+        oldNumberOfPatterns = numberOfPatterns;
+        resetSpeedVal();
     }
     
     for (int j=0; j<numberOfPatterns; j+=1){
@@ -56,15 +57,14 @@ void yeseulRileyBrokencircle::draw(){
         drawShape();
         
         ofPopMatrix();
+    
     }
 }
 
 
-void yeseulRileyBrokencircle::resetSpeedVal(int& i){
-    
+void yeseulRileyBrokencircle::resetSpeedVal(){
     speedVal = 0;
     bDirection = true;
-    
 }
 
 
@@ -102,3 +102,5 @@ void yeseulRileyBrokencircle::drawShape() {
         
     }
 }
+
+
