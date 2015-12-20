@@ -64,7 +64,7 @@ Desktop.ini
 .mailmap
 
 # Project-specific
-bin/data/andyMenkmanJpg/images/tmp/*
-bin/data/andyMenkmanTif/images/tmp/*
-bin/data/andyMenkmanPng/images/tmp/*
+bin/data/scenes/andyMenkmanJpg/images/tmp/*
+bin/data/scenes/andyMenkmanTif/images/tmp/*
+bin/data/scenes/andyMenkmanPng/images/tmp/*
 bin/data/screengrabs/*
