@@ -50,13 +50,13 @@ void mgsRileyDescending::setup(){
     rows.set("Rows", 109, 1, 200);
   //rows.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(lineHeight.set("Row Height", 10, 1, 100));
+  parameters.add(lineHeight.set("Row Height", 5.67717, 1, 100));
   //lineHeight.addListener(this, &mgsRileyDescending::setupLinesF);
   
   columns.set("Columns", 19, 1, 200);
   //columns.addListener(this, &mgsRileyDescending::setupLinesF);
   
-  parameters.add(lineWidth.set("Column Width", 47, 1, 300));
+  parameters.add(lineWidth.set("Column Width", 60.0, 1, 300));
   //lineWidth.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(lineSpacing.set("Depth Amount", 14.8061, 1, 100));
@@ -71,7 +71,7 @@ void mgsRileyDescending::setup(){
     distanceParam.set("Distance Between", 15.8163, 1, 100);
   //distanceParam.addListener(this, &mgsRileyDescending::setupLinesF);
 
-  parameters.add(speedParam.set("Speed", 4.0, 0.0, 4.0));
+  parameters.add(speedParam.set("Speed", 4.0, 0.0, 5.0));
   //speedParam.addListener(this, &mgsRileyDescending::setupLinesF);
 
     accelParam.set("Acceleration", 360.0, 1, 360);
