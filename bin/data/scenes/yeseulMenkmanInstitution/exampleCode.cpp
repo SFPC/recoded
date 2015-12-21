@@ -1,9 +1,3 @@
-draw() {
-  drawBackgroundPattern();
-  drawBlackSquare([[amountOfSquares]]);
-  drawBrickTile([[numberOfBricks]]);
-}
-
 drawBlackSquare() {
   for (each grid on background) {
     // draw a black square if

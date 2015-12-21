@@ -60,7 +60,7 @@
 #include "mwalczykVeraSquares.h"
 #include "yeseulRileyBrokencircle.h"
 
-float baseScene::smoothingSpeed = 0.2;
+float baseScene::smoothingSpeed = 0.02;
 
 //-----------------------------------------------------------------------------------
 sceneManager::~sceneManager(){
@@ -140,7 +140,8 @@ void sceneManager::setup(){
     gui.setDefaultWidth(300);    
     gui.setup("SFPC_d4n", "SFPC_d4n_general_settings.xml");
 
-
+    gui.add(enableParameterSounds.set("Enable parameter sounds", true));
+    enableParameterSounds.addListener(this, &sceneManager::toggleParameterSounds);
     gui.add(drawScenePanel.set("draw scene ctrl", true));
     gui.add(enableMidiUpdate.set("enable midi update", true));
     gui.add(bAutoPlay.set("Auto Play on scene change", false));
@@ -154,7 +155,7 @@ void sceneManager::setup(){
 #endif
     sync.smoothing.setName("MIDI Smoothing");
     gui.add(sync.smoothing);
-    gui.add(ofSmoothing.set("OF Smoothing", 0.2, 0.01, 1));
+    gui.add(ofSmoothing.set("OF Smoothing", 0.02, 0.01, 1));
     
     
     gui.loadFromFile("SFPC_d4n_general_settings.xml");
@@ -181,6 +182,16 @@ void sceneManager::setup(){
 #ifdef USE_EXTERNAL_SOUNDS
     // open an outgoing connection
     oscSender.setup(OSC_HOST, OSC_PORT);
+#else
+    loadSounds();
+    
+    parameterChangeSound.setLoop(true);
+    if (enableParameterSounds.get()) {
+        parameterChangeSound.play();
+    }
+    parameterChangeSound.setVolume(0);
+    
+    TM.loadSounds();
 #endif
     
     // disney
@@ -237,12 +248,15 @@ void sceneManager::startScene(int whichScene){
     sync.setSyncGroup(scenes[currentScene]->midiParameters, true);
     isMidiConnected = sync.enableMidi();
 #endif
-#ifdef USE_EXTERNAL_SOUNDS
-    oscMessage.clear();
-    oscMessage.setAddress("/d4n/scene/load");
-    oscMessage.addIntArg(currentScene);
-    oscSender.sendMessage(oscMessage, false);
-#endif
+//#ifdef USE_EXTERNAL_SOUNDS
+//    oscMessage.clear();
+//    oscMessage.setAddress("/d4n/scene/load");
+//    oscMessage.addIntArg(currentScene);
+//    oscSender.sendMessage(oscMessage, false);
+//#else
+//#endif
+    // TODO
+    
 }
 #ifdef USE_MIDI_PARAM_SYNC
 //-----------------------------------------------------------------------------------
@@ -262,6 +276,10 @@ void sceneManager::recordingEnd(){
     }
 
 }
+void sceneManager::toggleParameterSounds(bool &i){
+    parameterChangeSound.setPaused(!enableParameterSounds);
+}
+
 //-----------------------------------------------------------------------------------
 void sceneManager::startPlaying(){
     if(scenes[currentScene]->hasRecData()){
@@ -302,21 +320,22 @@ void sceneManager::update(){
     TM.animTime = codeTweenDuration;
     TM.energyDecayRate = codeEnergyDecayRate;
     TM.energyChangePerFrame = codeEnergyPerFrame;
-    //the following is to avoid showing the mouse curson if it is over what's being drawn to the screens,
+    //the following is to avoid showing the mouse cursor if it is over what's being drawn to the screens,
     //but showing it if not.
     bool bInside =screenRect.inside(ofGetMouseX(), ofGetMouseY()) ;
     if ( bInside && bShowCursor) {
         ofHideCursor();
         bShowCursor = false;
-    }else if(!bInside && !bShowCursor){
+    } else if(!bInside && !bShowCursor){
         ofShowCursor();
         bShowCursor = true;
     }
     
+    
 #ifdef TYPE_ANIMATION
     pctDelay = (ofGetElapsedTimef() - TM.setupTime) / (TM.animTime);
     if (bSceneWaitForCode) {
-        if (!shouldDrawScene && pctDelay > FADE_DELAY_MIN){
+        if (!isTransitioning && !shouldDrawScene && pctDelay > FADE_DELAY_MIN){
             shouldDrawScene = true;
             fadingIn = true;
 #ifdef USE_EXTERNAL_SOUNDS
@@ -324,6 +343,8 @@ void sceneManager::update(){
             oscMessage.setAddress("/d4n/scene/start");
             oscMessage.addIntArg(1);
             oscSender.sendMessage(oscMessage, false);
+#else
+            animationStartSound.play();
 #endif
 
         } else if (fadingIn && pctDelay > FADE_DELAY_MAX){
@@ -338,21 +359,26 @@ void sceneManager::update(){
         shouldDrawScene = true;
     }
 #endif
-    
     if (isTransitioning) {
         preTransitionPct = (ofGetElapsedTimef() - preTransitionStart) / sceneTweenDuration;
         fadingOut = false;
-        introCursor = false;
         shouldDrawScene = false;
         shouldDrawCode = false;
-        
+        shouldPlaySceneChangeSound = false;
+
         if (preTransitionPct >= 1.0) {
             isTransitioning = false;
+            introCursor = false;
             nextScene(true);
         } else if (preTransitionPct < SCENE_PRE_TRANSITION_FADE) {
             fadingOut = true;
             shouldDrawScene = true;
             shouldDrawCode = true;
+            hasTriggeredSceneChangeSound = false;
+//        } else if (preTransitionPct > SCENE_PRE_TRANSITION_SOUND) {
+//            if (!hasTriggeredSceneChangeSound) {
+//                //shouldPlaySceneChangeSound = true;
+//            }
         } else if (preTransitionPct > SCENE_PRE_TRANSITION_CURSOR) {
             introCursor = true;
         }
@@ -368,47 +394,57 @@ void sceneManager::update(){
 #endif
         scenes[currentScene]->update();
     }
-
+    
+#ifdef USE_EXTERNAL_SOUNDS
+    oscMessage.clear();
+    oscMessage.setAddress("/d4n/scene/start");
+    oscMessage.addIntArg(1);
+    oscSender.sendMessage(oscMessage, false);
+#else
+    if (shouldPlaySceneChangeSound) {
+        sceneChangeSound.play();
+        hasTriggeredSceneChangeSound = true;
+    }
+#endif
+    
     ofParameter < float > floatParam;
 
-    if (TM.paramChangedEnergy.size() > 0) {
+    float maxActivation = 0, maxPct;
+    if (shouldDrawScene && TM.paramEnergy.size() > 0) {
         
-        for (int i = 0; i < TM.paramChangedEnergy.size(); i++) {
+        for (int i = 0; i < TM.paramEnergy.size(); i++) {
     
-            if (TM.paramChangedEnergy[i] > 0) {
-            
+            if (TM.paramEnergy[i] > 0) {
                 ofParameter<float> t = scenes[currentScene]->parameters[i].cast<float>();
-
                 float minVal = t.getMin();
                 float maxVal = t.getMax();
                 float val = t;
-        
+
                 float pct  = (t - minVal) / (float)(maxVal - minVal);
-        
+
                 if (pct > 1) pct = 1;
                 if (pct < 0) pct = 0;
-
-#ifdef USE_EXTERNAL_SOUNDS
-                oscMessage.clear();
-                oscMessage.setAddress("/d4n/paramEnergy");
-                oscMessage.addFloatArg(TM.paramChangedEnergy[i] / 2.0);
-                oscSender.sendMessage(oscMessage, false);
-
-                oscMessage.clear();
-                oscMessage.setAddress("/d4n/paramEnergyInverse");
-                float arg = 1 - (TM.paramChangedEnergy[i] / 2.0);
-                if (arg < 0.4) {
-                    arg = 0;
-                }
-                oscMessage.addFloatArg(arg);
-                oscSender.sendMessage(oscMessage, false);
-                
-                oscMessage.clear();
-                oscMessage.setAddress("/d4n/param/"+ofToString((i % 2) + 1)+"/value");
-                oscMessage.addFloatArg(pct);
-                oscSender.sendMessage(oscMessage, false);
-#endif
+                if (pct > maxActivation)
+                    maxPct = pct;
+                if (TM.paramChangedEnergy[i] > maxActivation)
+                    maxActivation = TM.paramChangedEnergy[i];
             }
+        }
+        
+        float vol;
+        float maxVol = 0.5;
+        if (isTransitioning) {
+            vol = ofMap(preTransitionPct, 0, 0.2, maxVol, 0, true);
+        }
+
+        if (maxActivation > 0.1) {
+            if (!isTransitioning) {
+                vol = ofMap(maxActivation, 0.1, 1, 0, maxVol, true);
+            }
+            parameterChangeSound.setVolume(vol);
+            parameterChangeSound.setSpeed(ofMap(maxActivation, 0, 1, 0.4, 1.0));
+        } else {
+            parameterChangeSound.setVolume(0);
         }
     } else {
 #ifdef USE_EXTERNAL_SOUNDS
@@ -416,6 +452,8 @@ void sceneManager::update(){
         oscMessage.setAddress("/d4n/paramEnergy");
         oscMessage.addFloatArg(0);
         oscSender.sendMessage(oscMessage, false);
+#else
+        parameterChangeSound.setVolume(0);
 #endif
     }
     
@@ -424,6 +462,7 @@ void sceneManager::update(){
 //-----------------------------------------------------------------------------------
 void sceneManager::setAdvanceCurrentScene(){
     scenes[currentScene]->setSceneEnd();
+    parameterChangeSound.setVolume(0);
 }
 //-----------------------------------------------------------------------------------
 void sceneManager::draw(){
@@ -453,9 +492,6 @@ void sceneManager::draw(){
         letters = TM.getCodeWithParamsReplaced(scenes[currentScene]);
     
     ofSetColor(255);
-    //font.drawString(codeReplaced, 40, 40);
-    //ofDrawBitmapString(codeReplaced, 40,40);
-    
     
     bool bShiftUp = false, bShiftLeft = false;
     
@@ -574,32 +610,43 @@ void sceneManager::draw(){
         lastLetterY = y;
     }
     
-    bool drawCursor = false;
+    bool drawCursor, soundCursor = false;
     
     // Decide if we're going to draw a cursor
     if (!isTransitioning) {
         if (pct < 0.1) {
-            drawCursor = int(letters.size() * pct) % 2 == 0;
+            drawCursor = int(letters.size() * pct) % 3 == 0;
         } else if (pct > 0.1 && pct < 1) {
             drawCursor = true;
-        } else if (pctDelay > 1 && !shouldDrawScene) {
+        } else if (pctDelay > 1) {
             x = xStart;
             y += 13;
-            drawCursor = (int)((pctDelay * TM.animTime) / 0.2) % 2 == 1;
+            drawCursor = (int)((pctDelay * TM.animTime) / 0.2) % 3 == 1;
+            soundCursor = drawCursor;
         }
 
         if (!nonEmptyLetter) drawCursor = false;
         if (!(x != xStart || pctDelay > 1)) drawCursor = false;
-    } else if (isTransitioning && introCursor) {
+    }
+    if (isTransitioning && introCursor) {
         x = codeDefaultStartX;
         y = 60 + 13;
-        drawCursor = (int)((preTransitionPct * sceneTweenDuration) / 0.2) % 2 == 0;
+        soundCursor = drawCursor = (int)((preTransitionPct * sceneTweenDuration) / 0.2) % 3 == 1;
     }
     
     // Draw that cursor
-    if (drawCursor) {
+    if (drawCursor && !shouldDrawScene) {
         ofSetColor(140);
         ofDrawRectangle(x, y-10, 7, 13);
+    }
+    
+    if (soundCursor && !shouldDrawScene) {
+        if (!hasTriggeredCursorSound) {
+            triggerCursorSound();
+            hasTriggeredCursorSound = true;
+        }
+    } else {
+        hasTriggeredCursorSound = false;
     }
     
     if (bShiftLeft){
@@ -630,8 +677,8 @@ void sceneManager::draw(){
         computeMotion(sceneFbo);
 
         float dimAmt = 1;
-        if (frameBrightness > 0.6) {
-            dimAmt = ofMap(frameBrightness, 0.7, 1, 1, 0.8);
+        if (frameBrightness > 0.5) {
+            dimAmt = ofMap(frameBrightness, 0.5, 1, 1, 0.5);
         }
 
         dimmedSceneFbo.begin();
@@ -692,6 +739,15 @@ void sceneManager::draw(){
                 oscMessage.setAddress("/d4n/keystroke");
                 oscMessage.addIntArg(roundf(ofRandom(3,4)));
                 oscSender.sendMessage(oscMessage, false);
+            }
+#else
+            if (ofNoise(pct*10, ofGetElapsedTimef()/10.0) > 0.5){
+                TM.keystroke2Sound.play();
+                TM.keystroke2Sound.setSpeed(ofRandom(0.9, 1.1));
+                
+            } else {
+                TM.keystroke1Sound.play();
+                TM.keystroke1Sound.setSpeed(ofRandom(0.9, 1.1));
             }
 #endif
         }
@@ -814,7 +870,9 @@ void sceneManager::nextScene(bool forward){
 //-----------------------------------------------------------------------------------
 void sceneManager::advanceScene(){
     stopPlaying();
-
+    
+    parameterChangeSound.setVolume(0);
+    
     if (bFadeOut) {
         if (!isTransitioning) {
             isTransitioning = true;
@@ -831,6 +889,7 @@ void sceneManager::advanceScene(){
 //-----------------------------------------------------------------------------------
 void sceneManager::regressScene(){
     stopPlaying();
+    parameterChangeSound.setVolume(0);
     nextScene(false);
 };
 //-----------------------------------------------------------------------------------
@@ -847,4 +906,32 @@ void sceneManager::screenGrab() {
     
 }
 //-----------------------------------------------------------------------------------
+void sceneManager::loadSounds() {
+    string path = "sounds/";
+    sceneChangeSound.load(path+"sceneChange.aiff");
+    
+    cursorBlinkSound.load(path+"cursorBlink1.aiff");
+    cursorBlinkSound.setLoop(false);
+    cursorBlinkSound.setMultiPlay(false);
+
+
+    animationStartSound.load(path+"animationStart.aiff");
+    
+    parameterChangeSound.load(path+"parameterChange.aiff");
+    parameterChangeSound.setMultiPlay(false);
+}
+//-----------------------------------------------------------------------------------
+void sceneManager::triggerCursorSound() {
+#ifdef USE_EXTERNAL_SOUNDS
+    ofxOscMessage oscMessage;
+    oscMessage.clear();
+    oscMessage.setAddress("/d4n/cursor");
+    oscMessage.addTriggerArg();
+    oscSender.sendMessage(oscMessage, false);
+#else
+    cursorBlinkSound.play();
+#endif
+}
+
+
 

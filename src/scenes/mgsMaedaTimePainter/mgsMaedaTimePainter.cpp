@@ -7,15 +7,15 @@ int ellipseSize = 3;
 int fadeCounter = 0;
 
 void mgsMaedaTimePainter::setup(){
-  parameters.add(paintSpeed.set("paintSpeed", 0.25, 2.0, 0.01));
+  parameters.add(paintSpeed.set("paintSpeed", 0.15, 2.0, 0.01));
   paintSpeed.addListener(this, &mgsMaedaTimePainter::redrawFloat);
   parameters.add(baseLongevity.set("baseLongevity", 120, 50, 500));
   baseLongevity.addListener(this, &mgsMaedaTimePainter::redrawInt);
-  parameters.add(angleVariance.set("angleVariance", 5, 0, 300));
+  parameters.add(angleVariance.set("angleVariance", 5, 2, 10));
   angleVariance.addListener(this, &mgsMaedaTimePainter::redrawInt);
   parameters.add(animated.set("animated", true));
   animated.addListener(this, &mgsMaedaTimePainter::pause);
-  parameters.add(lineWeight.set("lineWeight", 0.25, 0.25, 50));
+  parameters.add(lineWeight.set("lineWeight", 0.10, 0.10, 5.0));
   lineWeight.addListener(this, &mgsMaedaTimePainter::redrawFloat);
   
   parameters.add(fadeWhenDead.set("fadeWhenDead", true));

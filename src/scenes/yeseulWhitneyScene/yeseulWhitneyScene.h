@@ -41,23 +41,23 @@ public:
     void drawPattern();
     void diffusion();
     void reset(){
-        resetTiming();
-        lastTime = 0;
-        integratedTime = 0;
+        lastTimeBg = 0;
+        lastTimeFg = 0;
+        //integratedTime = 0;
         diffs.clear();
         lastDiffusionTime = 0;
     }
     
-
+    
     
     int columnCount, rowCount;
     
     ofParameter<float> diffusionInterval, diffusionSize, spinSpeed;
     vector<circlesDiffusion> diffs;
-
+    
     float lastDiffusionTime;
-    float integratedTime;
-    float lastTime;
-
+    float integratedTime, integratedFgTime;
+    float lastTimeBg, lastTimeFg;
+    
     
 };

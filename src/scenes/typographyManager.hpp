@@ -25,7 +25,6 @@ typedef struct {
 } codeLetter;
 
 
-
 class typographyManager {
     
     
@@ -34,12 +33,17 @@ public:
     void setup ( baseScene * scene, float animateTime );
     void update( baseScene * scene );
     void draw();
+
+    //----------------------------------------
+    // sound
     
-    ofSoundPlayer clicka;
-    ofSoundPlayer clickb;
+    ofSoundPlayer keystroke1Sound;
+    ofSoundPlayer keystroke2Sound;
     
     void loadSounds();
     
+    //----------------------------------------
+    // timing
     
     float setupTime;
     float animTime;

@@ -16,11 +16,13 @@ vector < int > positionsOfSubstring(string str, string sub){
 
 void typographyManager::loadSounds(){
 
-    clicka.load("sounds/clicka.aiff");
-    clicka.setMultiPlay(true);
-
-    clickb.load("sounds/clickb.aiff");
-    clickb.setMultiPlay(true);
+    string path = "sounds/";
+    
+    keystroke1Sound.load(path+"keystroke1.aiff");
+    keystroke1Sound.setMultiPlay(true);
+    
+    keystroke2Sound.load(path+"keystroke2.aiff");
+    keystroke2Sound.setMultiPlay(true);
 
 }
 
@@ -203,13 +205,13 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
 
             if (bs->parameters[i].type() == boolParam.type()
                 || bs->parameters[i].type() == intParam.type()) {
-                paramChangedEnergy[i] = 2;
+                paramChangedEnergy[i] = 1;
 
                 paramEnergyTarget[i] = 1;
             } else {
                 paramChangedEnergy[i] += 0.1;
-                if (paramChangedEnergy[i] > 2){
-                    paramChangedEnergy[i] = 2;
+                if (paramChangedEnergy[i] > 1){
+                    paramChangedEnergy[i] = 1;
                 }
 
                 paramEnergyTarget[i] += energyChangePerFrame;
@@ -221,7 +223,7 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
     // vector < string > prevStrings = paramsToReplace;
 
     for (int i = 0; i < nParams; i++){
-        paramChangedEnergy[i] *= 0.98;                          // too fast?
+        paramChangedEnergy[i] *= 0.96;                          // too fast?
 
         float mappedEnergy = ofMap(paramEnergy[i], 0, paramEnergyTarget[i], 0, 0.99999f);
         if (mappedEnergy > 0.5)
