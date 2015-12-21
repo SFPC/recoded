@@ -9,5 +9,7 @@
 	<fadeOutTime>4</fadeOutTime>
 	<fadeInTime>7.5</fadeInTime>
 	<MIDI_Smoothing>0</MIDI_Smoothing>
-	<OF_Smoothing>0.2</OF_Smoothing>
+	<OF_Smoothing>0.043</OF_Smoothing>
+<SFPC_d4n/>
+<Enable_parameter_sounds>1</Enable_parameter_sounds>
 </SFPC_d4n>
