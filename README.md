@@ -1,10 +1,12 @@
-# Day For Night
+# Day for Night &mdash; re-coded
 
 ## Contributing
 
+_Although the deadline for submissions for the Day for Night festival has now passed, feel free to contribute a sketch._
+
 This project requires **openFrameworks 0.9.0**. You can [download it from the oF website](http://openframeworks.cc/download/) if you don't already have it installed.
 
-You'll also need to have your username added to the GitHub project, so have Zach add you if he hasn't already.
+You'll also need to have your username added to the GitHub project, so have Zach add you if he hasn't already. Alternatively, feel free to create your own fork and open a [pull request](https://help.github.com/articles/using-pull-requests/) to have your changes merged into the upstream repository.
 
 ### 1. Find an artist to work with
 
