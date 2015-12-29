@@ -1,5 +1,5 @@
 // This sketch does gif glitching as described
-// in Rosa Menkmans "A Vernacular of File Formats"
+// in Rosa Menkman's "A Vernacular of File Formats"
 
 // Inverting the Interleave flag
 if([[Glitch Interleave]]) {

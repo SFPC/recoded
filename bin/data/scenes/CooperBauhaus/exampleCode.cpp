@@ -1,5 +1,5 @@
 font.load("Helvetica Neue", 60);
-//------------
+
 background(251, 241, 229);
 
 Color cyan(167, 200, 250);

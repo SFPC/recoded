@@ -15,6 +15,6 @@ drawDiffusion() {
     for (int a=0; a<360; a+=10) {
       rotate(10);
       circle(0, y, [[diffusionSize]]);
-      }
-   }
+    }
+  }
 }

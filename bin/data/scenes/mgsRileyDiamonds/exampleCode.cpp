@@ -1,4 +1,4 @@
-// Bridget Riley - November - 1990
+// "November" by Bridget Riley, 1990
 
 void drawRileyDiamonds(){
   clearScreen();
