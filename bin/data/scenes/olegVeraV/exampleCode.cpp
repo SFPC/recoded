@@ -7,7 +7,7 @@ void draw() {
     setThickness([[thickness]]);
     drawV();
 
-    // Move to then next V by a certain percent
+    // Move to the next V by a certain percent
     translate([[thicknessMultiplier]]);
   }
 }

@@ -1,6 +1,6 @@
 setUnitSize([[Unit Size]]);
 
-void drawGridOfElippses(){
+void drawGridOfEllipses(){
   // Loop across screen, unitSize is our grid interval.
   for(x = 0; x < screenWidth; x+=[[Unit Size]]) {
     for(y = 0; y < screenHeight; y+=[[Unit Size]]) {

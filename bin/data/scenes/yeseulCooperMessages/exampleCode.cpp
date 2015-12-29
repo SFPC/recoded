@@ -7,7 +7,7 @@ drawText() {
 
 tensionEffect(messageXPos, meanXPos) {
   // if MEAN and MESSAGE texts
-  // are close each other,
+  // are close to each other,
   if (abs(meanTextX - messageTextX < messageText.getWidth()) {
     // decrease the speed
     greenTextSpeed+=[[greenTextSpeed]]/6;
