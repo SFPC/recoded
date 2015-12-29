@@ -98,4 +98,4 @@ Now push your branch to GitHub:
 git push origin branchName
 ```
 
-Now [go to the GitHub repo](https://github.com/ofZach/dayForNightSFPC) and submit a pull request via the GH interface.
+Now submit a pull request via the [GitHub web interface](https://github.com/ofZach/dayForNightSFPC/compare).
