@@ -10,7 +10,28 @@
 #define CODE_WIDTH VISUALS_WIDTH
 #define CODE_HEIGHT VISUALS_HEIGHT
 
-#define CODE_X_POS 524      // via the tech staff
+
+//#define DRAW_TWO_UP       // draw two side by side in a 1920x1080 window
+//#define DRAW_ONE_BIG      // draw one of these big centered in the screen
+
+
+
+// TWO UP
+#ifdef DRAW_TWO_UP
+#define CODE_X_POS 504      // TV
+#elif defined DRAW_ONE_BIG
+#define CODE_X_POS 3000     // OFFSCREEN
+#else
+#define CODE_X_POS 520  // LED
+#endif
+
+
+// ONE BIG (move offscreen) 
+// move code offscreen for now (we should fix this
+#ifdef DRAW_ONE_BIG
+#define CODE_X_POS 3000      // via the tech staff
+#endif
+
 
 // if this is defined, we will wait for type animation
 #define TYPE_ANIMATION

@@ -674,7 +674,7 @@ void sceneManager::draw(){
         sceneFbo.end();
         
         // For sound and for kicks
-        computeMotion(sceneFbo);
+        //computeMotion(sceneFbo);
 
         float dimAmt = 1;
         if (frameBrightness > 0.5) {

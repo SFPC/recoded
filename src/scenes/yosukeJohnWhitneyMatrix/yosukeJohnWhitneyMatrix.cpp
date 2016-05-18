@@ -21,8 +21,8 @@ void yosukeJohnWhitneyMatrix::setup(){
     
     
     
-    ofSetVerticalSync(true);
-    ofBackground(0,0,0);
+    //ofSetVerticalSync(true);
+    //ofBackground(0,0,0);
     ofSetCircleResolution(150);
     
     //transform the origin to the center of the screen.

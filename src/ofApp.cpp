@@ -11,12 +11,38 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     SM.update();
+    
+    cout << ofGetFrameRate() << endl;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(40);
+    
+    ofPushMatrix();
+    
+    
+    // if draw two up:
+   
+    
+#ifdef DRAW_TWO_UP
+    float h = 504 * 1920.0/(float)(504+504);
+    ofTranslate(0,(1080-h)*0.5);
+    ofScale(1920.0/(float)(504+504), 1920.0/(float)(504+504));
     SM.draw();
+#elif defined DRAW_ONE_BIG
+    float scale = 1080.0/(float)(504);
+    float w = scale * 504;
+    ofTranslate((1920-w)*0.5, 0);
+    ofScale(scale, scale);
+    SM.draw();
+#else
+    SM.draw();
+#endif
+    
+
+    
+    ofPopMatrix();
 }
 
 //--------------------------------------------------------------
