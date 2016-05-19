@@ -50,9 +50,9 @@ public:
     void regressScene();
     void screenGrab();
     
-    float motion, frameBrightness;
-    ofPoint centroid, lastCentroid;
-    ofPixels lastFrame, currFrame;
+  //    float motion, frameBrightness;
+  //    ofPoint centroid, lastCentroid;
+  //    ofPixels lastFrame, currFrame;
   //void computeMotion(ofFbo &fbo);
     
     void startScene(int whichScene);
