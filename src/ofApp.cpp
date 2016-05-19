@@ -17,7 +17,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofBackground(40);
+    ofBackground(0);
     
     ofPushMatrix();
     
