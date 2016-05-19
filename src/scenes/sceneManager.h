@@ -53,15 +53,15 @@ public:
     float motion, frameBrightness;
     ofPoint centroid, lastCentroid;
     ofPixels lastFrame, currFrame;
-    void computeMotion(ofFbo &fbo);
+  //void computeMotion(ofFbo &fbo);
     
     void startScene(int whichScene);
   
     ofFbo transitionFbo;
     ofFbo sceneFbo;
-    ofFbo dimmedSceneFbo;
+  //ofFbo dimmedSceneFbo;
     ofFbo codeFbo;
-    ofShader dimmerShader;
+  //ofShader dimmerShader;
     ofxPanel * panel;
     
     ofParameter<float> codeEnergyDecayRate, codeEnergyPerFrame;
