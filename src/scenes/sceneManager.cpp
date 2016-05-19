@@ -123,8 +123,9 @@ void sceneManager::setup(){
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
 
+#ifdef RANDOMIZE_SCENES
     ofRandomize(scenes);
-    
+#endif
     
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setup(0);
