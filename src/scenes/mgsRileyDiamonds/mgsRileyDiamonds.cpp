@@ -5,15 +5,15 @@
 void mgsRileyDiamonds::setup(){
   setAuthor("Michael Simpson");
   setOriginalArtist("Bridget Riley");
-  //- November - 1990");
-  parameters.add(grayscale.set("Grayscale", false));
+  
+  parameters.add(grayscale.set("grayscale", false));
   //parameters.add(sequentialShading.set("Sequential Shading", false));
   parameters.add(height.set("Diamond Height", 25.0, 1, 50));
   parameters.add(width.set("Diamond Width", 25.0, 1, 50));
-  parameters.add(red.set("Red Amount", 255, 0, 255));
-  parameters.add(green.set("Green Amount", 255, 0, 255));
-  parameters.add(blue.set("Blue Amount", 255, 0, 255));
-  parameters.add(alpha.set("Alpha Amount", 255, 1, 255));
+  parameters.add(red.set("Red Amount", 255, 50, 255));
+  parameters.add(green.set("Green Amount", 255, 50, 255));
+  parameters.add(blue.set("Blue Amount", 255, 50, 255));
+  parameters.add(alpha.set("Alpha Amount", 255, 0.5, 255));
   parameters.add(animated.set("Animated", true));
   parameters.add(discoMode.set("Disco Mode", false));
   width.addListener(this, &mgsRileyDiamonds::redrawFloat);
@@ -28,13 +28,12 @@ void mgsRileyDiamonds::setup(){
   //sequentialShading.addListener(this, &mgsRileyDiamonds::redrawBool);
   
   loadCode("scenes/mgsRileyDiamonds/exampleCode.cpp");
-
+  
   gh = dimensions.height/height;
   gw = dimensions.width/width;
-    
-//    bNeedRedraw = bNeedsFullRedraw = bNeedRedrawFloat = false;
-//  
-  frame.allocate(dimensions.width, dimensions.height);
+  
+  frame.allocate(dimensions.width, dimensions.height, GL_RGBA32F_ARB);
+  
   frame.begin();
   ofClear(0);
   frame.end();
@@ -43,155 +42,65 @@ void mgsRileyDiamonds::setup(){
 }
 
 void mgsRileyDiamonds::update(){
-//    if (bNeedRedraw) {
-//        drawRiley();
-//        bNeedRedraw = false;
-//    }
-//    if (bNeedsFullRedraw) {
-//      drawFullRiley();
-//        bNeedsFullRedraw = false;
-//    }
-//    if (bNeedRedrawFloat) {
-           gh = dimensions.height/height;
-           gw = dimensions.width/width;
-//        bNeedRedrawFloat = false;
-//    }
+  gh = dimensions.height/height;
+  gw = dimensions.width/width;
 }
 
 void mgsRileyDiamonds::draw(){
-//  if(discoMode){
-//    drawFullRiley();
-//  } else if (animated) {
-
-    drawRiley();
-  //  }
+  drawRiley();
   frame.draw(0,0);
 }
 
 void mgsRileyDiamonds::drawFullRiley(){
   frame.begin();
-  ofClear(0);
+  //ofClear(0);
   for(float x = 0; x < dimensions.width+gw; x += gw){
     for(float y = 0; y < dimensions.width+gh; y += gh){
       ofColor c = ofColor(ofRandom(0,red),ofRandom(0, green), ofRandom(0,blue),255);
-      ofColor g = ofColor(ofRandom(0,255),255);
 
-      if(grayscale){
-        ofSetColor(g);
-        ofFill();
-      } else {
-        ofSetColor(c);
-        ofFill();
-      }
+      ofSetColor(c);
+      ofFill();
 
+      gh = dimensions.height/height;
+      gw = dimensions.width/width;
+      
       ofBeginShape();
       ofVertex(x-gw, y+gh);
       ofVertex(x, y+gh);
       ofVertex(x+gw, y);
       ofVertex(x, y);
-      ofVertex(x-gw, y+gh);  
+      ofVertex(x-gw, y+gh);
       ofEndShape(true);
     }
   }
   frame.end();
 }
 
- void mgsRileyDiamonds::redraw(float& i){
-   if(!animated){
-     //       bNeedsFullRedraw = true;
-//     frame.begin();
-//     ofClear(0);
-//     drawFullRiley();
-//     frame.end();
-   } else {
-     gh = dimensions.height/height;
-     gw = dimensions.width/width;
-     //       bNeedRedraw = true;
-       //drawRiley();
-   }
- }
+void mgsRileyDiamonds::redraw(float& i){
+  if(!animated){
+  } else {
+    gh = dimensions.height/height;
+    gw = dimensions.width/width;
+  }
+}
 
- void mgsRileyDiamonds::redrawFloat(float& i){
-   //     bNeedRedrawFloat = true;
-     //   gh = dimensions.height/height;
-//   gw = dimensions.width/width;
-//   frame.begin();
-//   ofClear(0);
-//   for(float x = 0; x < dimensions.width+gw; x += gw){
-//     for(float y = 0; y < dimensions.width+gh; y += gh){
-//       ofColor c = ofColor(ofRandom(0,red),ofRandom(0, green), ofRandom(0,blue),255);
-//       ofColor g = ofColor(ofRandom(0,255),255);
-//
-//       if(grayscale){
-//         ofSetColor(g);
-//         ofFill();
-//       } else {
-//         ofSetColor(c);
-//         ofFill();
-//       }
-//
-//       ofBeginShape();
-//       ofVertex(x-gw, y+gh);
-//       ofVertex(x, y+gh);
-//       ofVertex(x+gw, y);
-//       ofVertex(x, y);
-//       ofVertex(x-gw, y+gh);  
-//       ofEndShape(true);
-//     }
-//   }
-//   frame.end();
-//   shiftCounter=0;
-//   rowCounter=0;
-   //drawRiley();
- }
+void mgsRileyDiamonds::redrawFloat(float& i){
+
+}
 
 void mgsRileyDiamonds::redrawBool(bool& i){
   gh = dimensions.height/height;
   gw = dimensions.width/width;
-  
-  //  if(!animated && grayscale){
-  //      bNeedsFullRedraw = true;
-//    drawFullRiley();
-//  }
 }
 
 void mgsRileyDiamonds::drawRiley(){
   frame.begin();
-
-    ofSetColor(0, 1);
-    ofDrawRectangle(0, 0, dimensions.width, dimensions.height);
-  ofColor c = ofColor(ofRandom(0,red),ofRandom(0, green), ofRandom(0,blue),255);
-  ofColor g = ofColor(ofRandom(0,255),255);
-  if(grayscale){
-    ofSetColor(g);
-    ofFill();
-  } else {
-    ofSetColor(c);
-    ofFill();
-  }
-  // Needs work...
   
-  // if(sequentialShading){
-  //   diamondCounter+=ofRandom(0.25,1);
-  //   if(diamondCounter > 255 && diamondCounter < 510){
-  //     ofSetColor(diamondCounter-255,0,0);
-  //   } else if (diamondCounter > 510 && diamondCounter < 765) {
-  //     ofSetColor(diamondCounter-510,diamondCounter-510,0);
-  //   } else if (diamondCounter > 765 && diamondCounter < 1020) {
-  //     ofSetColor(diamondCounter-765,diamondCounter-765,diamondCounter-765);
-  //   } else if (diamondCounter > 1020 && diamondCounter < 1275){
-  //     ofSetColor(255,255,255);
-  //   } else {
-  //     ofSetColor(diamondCounter);
-  //   }
-  //   ofFill();
-  // } else if(grayscale){
-  //   ofSetColor(g);
-  //   ofFill();
-  // } else {
-  //   ofSetColor(c);
-  //   ofFill();
-  // }
+  ofSetColor(0, 0.5);
+  ofDrawRectangle(0, 0, dimensions.width, dimensions.height);
+  ofColor c = ofColor(ofRandom(0,red),ofRandom(0, green), ofRandom(0,blue),255);
+  ofSetColor(c);
+  ofFill();
 
   float x = shiftCounter;
   float y = rowCounter;
@@ -201,9 +110,9 @@ void mgsRileyDiamonds::drawRiley(){
   ofVertex(x, y+gh);
   ofVertex(x+gw, y);
   ofVertex(x, y);
-  ofVertex(x-gw, y+gh);  
+  ofVertex(x-gw, y+gh);
   ofEndShape(true);
-    
+  
   if(shiftCounter <= dimensions.width) {
     shiftCounter+=gw;
   } else {

@@ -1,17 +1,20 @@
 createPath(currentPainter);
 
-void paintTime(){
+void createTimePainter(){
   if (longevity < 500) {
-    if (ofRandom(2) > 1) {
-      angle += ofDegToRad((int)ofRandom(-[[angleVariance]], [[angleVariance]]));
-    }
+    angle += ofRandom(-[[angleVariance]], [[angleVariance]]));
   }
+  
   xpos += cos([[angleVariance]]) / speed;
   ypos += sin([[angleVariance]]) / speed;
+  
   longevity--;
+  
   ofSetColor(stroke);
   ofFill();
+  
   glLineWidth(lineWidth);
+  
   path.begin();
   path.addVertex(ofPoint(xpos, ypos));
   path.end();

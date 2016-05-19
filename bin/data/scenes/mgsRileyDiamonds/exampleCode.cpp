@@ -1,5 +1,3 @@
-// "November" by Bridget Riley, 1990
-
 void drawRileyDiamonds(){
   clearScreen();
   for(float x = 0; x < dimensions.width+gw; x += gw){

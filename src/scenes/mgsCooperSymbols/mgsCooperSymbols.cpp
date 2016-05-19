@@ -2,7 +2,8 @@
 #include "mgsCooperSymbols.h"
 
 void mgsCooperSymbols::setupParameters(){
-  gridSize.set("Grid Size", 32, 1, 96);
+  parameters.add(gridSize.set("Grid Size", 9, 32, 32));
+  //gridSize.set("Grid Size", 32, 1, 96);
   //gridSize.addListener(this, &mgsCooperSymbols::redrawGrid);
   
   parameters.add(numberOfShapes.set("Number of Shapes", 3, 1, 3));
