@@ -52,7 +52,7 @@ public:
     
   //    float motion, frameBrightness;
   //    ofPoint centroid, lastCentroid;
-  //    ofPixels lastFrame, currFrame;
+      ofPixels lastFrame, currFrame;
   //void computeMotion(ofFbo &fbo);
     
     void startScene(int whichScene);
