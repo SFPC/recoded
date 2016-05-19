@@ -122,6 +122,8 @@ void sceneManager::setup(){
   
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
+
+    ofRandomize(scenes);
     
     
 #ifdef USE_MIDI_PARAM_SYNC
@@ -562,15 +564,15 @@ void sceneManager::draw(){
         y = 10 + 13;
     }
     
-    const int lineWithActiveParamDim = 30;
-    const int lineWithoutActiveParamDim = 60;
-    const int commentDim = 40;
+    const int lineWithActiveParamDim = 120;
+    const int lineWithoutActiveParamDim = 130;
+    const int commentDim = 70;
     currentLine = 0;
     bool nonEmptyLetter = false;
     
     for (int i = 0; i < letters.size() * pct; i++){
         
-        int lineBrightness = 127;
+        int lineBrightness = 165;
         if (lineHasAnimParam[currentLine] < 0) {
             lineBrightness -= maxTotalActivation * lineWithoutActiveParamDim;
         } else {
