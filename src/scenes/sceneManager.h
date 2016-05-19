@@ -44,6 +44,7 @@ public:
     void setup();
     void update();
     void draw();
+    void drawType();
     
     void advanceScene();
     void regressScene();

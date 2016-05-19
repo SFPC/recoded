@@ -167,6 +167,9 @@ void sceneManager::setup(){
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     dimmedSceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGB, 1);
+    
+    codeFbo.getTexture().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
+    
     dimmerShader.load("scenes/dimmer");
 
     lastFrame.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, OF_PIXELS_RGBA);
@@ -464,6 +467,13 @@ void sceneManager::setAdvanceCurrentScene(){
     scenes[currentScene]->setSceneEnd();
     parameterChangeSound.setVolume(0);
 }
+
+void sceneManager::drawType(){
+    ofSetColor(0);
+    ofDrawRectangle(CODE_X_POS-1, 0, VISUALS_WIDTH+2, VISUALS_HEIGHT);
+    ofSetColor(255);
+    codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
+}
 //-----------------------------------------------------------------------------------
 void sceneManager::draw(){
     sync.update();
@@ -659,11 +669,6 @@ void sceneManager::draw(){
 
     codeFbo.end();
     
-    // Get rid of blended sidebars
-    ofSetColor(0);
-    ofDrawRectangle(CODE_X_POS-1, 0, VISUALS_WIDTH+2, VISUALS_HEIGHT);
-    ofSetColor(255);
-    codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
 
     if (shouldDrawScene) {
         sceneFbo.begin();
@@ -765,25 +770,25 @@ void sceneManager::draw(){
     
     // let's draw some info!
     
-    ofSetColor(255);
-    
-    ofDrawBitmapString("drawing scene " + ofToString(currentScene) +
-                       "/" + ofToString(scenes.size()) +
-                       "\t\t(" + scenes[currentScene]->author  + ", " +
-                       scenes[currentScene]->originalArtist + ")",
-                       20, VISUALS_HEIGHT + 50);
-
-    
-    string str = "Recorded events: " + ofToString(sync.recorder.getData().size())+"\n";
-    str += "Is Recording: " + (string)(sync.recorder.isRecording()?"TRUE":"FALSE")+"\n";
-    str += "Play events: " + ofToString(sync.player.data.size())+"\n";
-    str += "Is Playing: " + (string)(sync.player.bPlaying?"TRUE":"FALSE")+"\n";
-    str += "Pre-recorded events: " + ofToString(scenes[currentScene]->recData.size())+"\n";
-    str += "Current Scene Time: " + ofToString(scenes[currentScene]->getElapsedTimef())+"\n";
-    str += "Current Scene Duration: " + ofToString(scenes[currentScene]->sceneDuration)+"\n";
-    str += "Current Scene is done: " + (string)(scenes[currentScene]->isSceneDone()?"TRUE":"FALSE");
-    
-    ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
+ofSetColor(255);
+//    
+//    ofDrawBitmapString("drawing scene " + ofToString(currentScene) +
+//                       "/" + ofToString(scenes.size()) +
+//                       "\t\t(" + scenes[currentScene]->author  + ", " +
+//                       scenes[currentScene]->originalArtist + ")",
+//                       20, VISUALS_HEIGHT + 50);
+//
+//    
+//    string str = "Recorded events: " + ofToString(sync.recorder.getData().size())+"\n";
+//    str += "Is Recording: " + (string)(sync.recorder.isRecording()?"TRUE":"FALSE")+"\n";
+//    str += "Play events: " + ofToString(sync.player.data.size())+"\n";
+//    str += "Is Playing: " + (string)(sync.player.bPlaying?"TRUE":"FALSE")+"\n";
+//    str += "Pre-recorded events: " + ofToString(scenes[currentScene]->recData.size())+"\n";
+//    str += "Current Scene Time: " + ofToString(scenes[currentScene]->getElapsedTimef())+"\n";
+//    str += "Current Scene Duration: " + ofToString(scenes[currentScene]->sceneDuration)+"\n";
+//    str += "Current Scene is done: " + (string)(scenes[currentScene]->isSceneDone()?"TRUE":"FALSE");
+//    
+//    ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
 }
 
 void sceneManager::computeMotion(ofFbo &fbo) {
