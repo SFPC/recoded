@@ -14,6 +14,7 @@
 #define DRAW_TWO_UP       // draw two side by side in a 1920x1080 window
 //#define DRAW_ONE_BIG      // draw one of these big centered in the screen
 
+//#define RANDOMIZE_SCENES    // shuffle the order of the scenes upon startup
 
 
 // TWO UP
