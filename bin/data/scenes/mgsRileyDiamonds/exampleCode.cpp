@@ -1,7 +1,8 @@
 void drawRileyDiamonds(){
   clearScreen();
   for(float x = 0; x < dimensions.width+gw; x += gw){
-      ofColor c = ofColor(ofRandom(0,255),ofRandom(0, 255), ofRandom(0,255),255);
+    for(float y = 0; y < dimensions.width+gh; y += gh){
+      ofColor c = ofColor(ofRandom(0,[[Red Amount]]),ofRandom(0, g[[Green Amount]]), ofRandom(0,[[Blue Amount]]),255);
       ofColor g = ofColor(ofRandom(0,255),255);
       
       if([[grayscale]]){
@@ -18,7 +19,6 @@ void drawRileyDiamonds(){
       ofVertex(x, y);
       ofVertex(x-gw, y+gh);
       ofEndShape(true);
-    
-    for(float y = 0; y < dimensions.width+gh; y += gh){}
+    }
   }
 }
