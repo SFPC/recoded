@@ -6,13 +6,16 @@
 void ofApp::setup(){
     SM.setup();
     
+    ofSetWindowPosition(2000, 0);
+    ofSetFullscreen(true);
+    ofHideCursor();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     SM.update();
     
-    cout << ofGetFrameRate() << endl;
+   // cout << ofGetFrameRate() << endl;
 }
 
 //--------------------------------------------------------------
@@ -75,6 +78,13 @@ void ofApp::keyPressed(int key){
     
     if (key == 's') {
         SM.screenGrab();
+    }
+    
+    if (key == 'c') {
+        ofHideCursor();
+    }
+    if (key == 'C') {
+        ofShowCursor();
     }
 }
 
