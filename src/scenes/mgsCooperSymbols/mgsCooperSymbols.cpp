@@ -2,7 +2,8 @@
 #include "mgsCooperSymbols.h"
 
 void mgsCooperSymbols::setupParameters(){
-  gridSize.set("Grid Size", 32, 1, 96);
+  parameters.add(gridSize.set("Grid Size", 9, 32, 32));
+  //gridSize.set("Grid Size", 32, 1, 96);
   //gridSize.addListener(this, &mgsCooperSymbols::redrawGrid);
   
   parameters.add(numberOfShapes.set("Number of Shapes", 3, 1, 3));
@@ -14,7 +15,7 @@ void mgsCooperSymbols::setupParameters(){
   parameters.add(green.set("Green Amount", 255, 1, 255));
   green.addListener(this, &mgsCooperSymbols::redraw);
   
-  parameters.add(blue.set("Blue Amount", 255, 1, 255));
+  parameters.add(blue.set("Blue Amount", 255, 255, 255));
   blue.addListener(this, &mgsCooperSymbols::redraw);
   
   parameters.add(thickness.set("Line Width", 0.1, 0.1, 10.0));
