@@ -18,10 +18,10 @@ void typographyManager::loadSounds(){
 
     string path = "sounds/";
     
-    keystroke1Sound.load(path+"keystroke1_b.aiff");
+    keystroke1Sound.load(path+"keystroke1.aiff");
     keystroke1Sound.setMultiPlay(true);
     
-    keystroke2Sound.load(path+"keystroke2_b.aiff");
+    keystroke2Sound.load(path+"keystroke2.aiff");
     keystroke2Sound.setMultiPlay(true);
 
 }
