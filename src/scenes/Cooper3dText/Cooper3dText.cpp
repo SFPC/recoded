@@ -16,7 +16,7 @@ float distToCameraToFit(const ofRectangle &r, const ofCamera& cam){
 
 //--------------------------------------------------------------
 void Cooper3dText::setup(){
-    setSceneEnd(113);
+    setSceneEnd(126);
     
     font.load("Helvetica Neue", 50, true, true, true);
     
@@ -141,7 +141,7 @@ void Cooper3dText::draw(){
     //ofDisableBlendMode();
     
     
-  //  ofDrawBitmapStringHighlight("curent time: " + ofToString(getElapsedTimef()), 100,100);
+//    ofDrawBitmapStringHighlight("curent time: " + ofToString(getElapsedTimef()), 100,100);
     
 }
 //--------------------------------------------------------------
