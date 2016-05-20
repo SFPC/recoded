@@ -68,3 +68,4 @@ bin/data/scenes/andyMenkmanJpg/images/tmp/*
 bin/data/scenes/andyMenkmanTif/images/tmp/*
 bin/data/scenes/andyMenkmanPng/images/tmp/*
 bin/data/screengrabs/*
+**/*.asd
