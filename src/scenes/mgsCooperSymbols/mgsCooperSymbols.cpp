@@ -15,7 +15,7 @@ void mgsCooperSymbols::setupParameters(){
   parameters.add(green.set("Green Amount", 255, 1, 255));
   green.addListener(this, &mgsCooperSymbols::redraw);
   
-  parameters.add(blue.set("Blue Amount", 255, 1, 255));
+  parameters.add(blue.set("Blue Amount", 255, 255, 255));
   blue.addListener(this, &mgsCooperSymbols::redraw);
   
   parameters.add(thickness.set("Line Width", 0.1, 0.1, 10.0));
