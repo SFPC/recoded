@@ -1,5 +1,5 @@
 setSquareSize([[Square Size]]);
-setLineWidth([[Line Width]]);
+setLineWidth(1);
 
 void drawVeraLines(){
   if(numberOfLines < [[Number of Lines]]) {

@@ -2,11 +2,11 @@ createPath(currentPainter);
 
 void createTimePainter(){
   if (longevity < 500) {
-    angle += ofRandom(-[[angleVariance]], [[angleVariance]]));
+    angle += ofRandom([[Angle Variance]], [[Angle Variance]]));
   }
   
-  xpos += cos([[angleVariance]]) / speed;
-  ypos += sin([[angleVariance]]) / speed;
+  xpos += cos([[Angle Variance]]) / speed;
+  ypos += sin([[Angle Variance]]) / speed;
   
   longevity--;
   

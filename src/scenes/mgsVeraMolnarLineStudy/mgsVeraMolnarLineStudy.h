@@ -18,15 +18,16 @@ class MolnarPainter {
       float newy = space+ofRandom(starty+rowCounter*(size+space), starty+rowCounter*(size+space)+size);
       if(lineCounter == 0){
         ofSetColor(0);
-      } else if (!useColor){
-        if(connectedLines){
-          ofSetColor(255);
-        } else {
-          ofSetColor(255);
-        }
-      } else {
-        ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
       }
+//      } else if (!useColor){
+//        if(connectedLines){
+//          ofSetColor(255);
+//        } else {
+//          ofSetColor(255);
+//        }
+//      } else {
+//        ofSetColor(ofRandom(255),ofRandom(255),ofRandom(255));
+//      }
       ofNoFill();
       ofDrawLine(x, y, newx, newy);
       x = newx;
