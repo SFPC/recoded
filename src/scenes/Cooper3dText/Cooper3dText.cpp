@@ -36,7 +36,7 @@ void Cooper3dText::setup(){
     
     ofEnableAlphaBlending();
     
-    ofRectangle v =ofGetCurrentViewport();
+ //   ofRectangle v =ofGetCurrentViewport();
     
   //  cam.setAspectRatio(v.width/v.height);
 
@@ -54,6 +54,7 @@ void Cooper3dText::setup(){
 }
 //--------------------------------------------------------------
 void Cooper3dText::reset(){
+    cam = ofCamera();
     currentSurface = surfaces.size()-1;
     nextSurface();
 }
@@ -139,6 +140,9 @@ void Cooper3dText::draw(){
         cam.end();
     //ofDisableBlendMode();
     
+    
+  //  ofDrawBitmapStringHighlight("curent time: " + ofToString(getElapsedTimef()), 100,100);
+    
 }
 //--------------------------------------------------------------
 void Cooper3dText::tweenEnded(int &i){
@@ -148,7 +152,11 @@ void Cooper3dText::tweenEnded(int &i){
 void Cooper3dText::nextSurface(bool bTween){
     if (bTween) {
         int numSpaces = ofStringTimesInString(surfaces[currentSurface].text, " ");
-        tween.setParameters(easing, ofxTween::easeInOut, 0, 1, tweenDuration, 1000+pauseDuration*numSpaces);
+        if (currentSurface == surfaces.size()-1) {
+            tween.setParameters(easing, ofxTween::easeInOut, 0, 1, tweenDuration, 1000+pauseDuration*numSpaces + 7500);
+        }else{
+            tween.setParameters(easing, ofxTween::easeInOut, 0, 1, tweenDuration, 1000+pauseDuration*numSpaces);
+        }
         tween.start();
     }
     prevSurface = currentSurface;
