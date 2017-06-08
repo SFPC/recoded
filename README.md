@@ -1,4 +1,4 @@
-# Day for Night &mdash; re-coded
+# re-coded
 
 ## Contributing
 
