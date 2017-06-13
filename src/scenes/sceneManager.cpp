@@ -28,7 +28,6 @@
 #include "CooperBauhaus.h"
 #include "memoAktenScene.h"
 #include "submotionOrchestraScene.h"
-#include "manfredMohrP196A.h"
 #include "chrisMurielCooper.h"
 #include "chrisRileyCascando.h"
 #include "veraMolnarTrapezium.h"
@@ -93,7 +92,6 @@ void sceneManager::setup(){
     scenes.push_back(new loloVera());
     scenes.push_back(new andyMenkmanJpg());
     scenes.push_back(new andyMenkmanPng());
-    scenes.push_back(new manfredMohrP196A());
     scenes.push_back(new veraMolnarTrapezium());
     scenes.push_back(new loloVera2());
     scenes.push_back(new cantusFirmusRiley());
