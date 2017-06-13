@@ -45,7 +45,7 @@
 #include "RileyArcsRoy.h"
 #include "robbyMenkmanScene.h"
 #include "yosukeVeraSansTitre.h"
-#include "alexGifPaletteDitherMenkman.h"
+// #include "alexGifPaletteDitherMenkman.h"
 #include "yeseulMenkmanInstitution.h"
 #include "yeseulCooperMessages.h"
 #include "yosukeJohnWhitneyMatrix.h"
@@ -147,11 +147,11 @@ void sceneManager::setup(){
     enableParameterSounds.addListener(this, &sceneManager::toggleParameterSounds);
     gui.add(drawScenePanel.set("draw scene ctrl", true));
     gui.add(enableMidiUpdate.set("enable midi update", true));
-    gui.add(bAutoPlay.set("Auto Play on scene change", false));
+    gui.add(bAutoPlay.set("Auto Play on scene change", true));
     gui.add(autoadvanceDelay.set("Autoadvance", 0, 0, 60));
     gui.add(bSceneWaitForCode.set("Scene wait for code", true));
     gui.add(bFadeOut.set("Scene fade out", true));
-    gui.add(bAutoAdvance.set("Auto Advance Scene", false));
+    gui.add(bAutoAdvance.set("Auto Advance Scene", true));
 #ifdef USE_SCENE_TRANSITIONS
     gui.add(sceneTweenDuration.set("fadeOutTime", 4.0, 0, 10.0));
     gui.add(codeTweenDuration.set("fadeInTime", 7.5, 0, 15));
