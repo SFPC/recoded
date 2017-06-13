@@ -36,5 +36,7 @@ class ofApp : public ofBaseApp{
     
         bool bToggleUseRecording = true;
     
+        ofPoint prevMouse;
+    
     
 };
