@@ -6,7 +6,7 @@ _Although the deadline for submissions for the Day for Night festival has now pa
 
 This project requires **openFrameworks 0.9.0**. You can [download it from the oF website](http://openframeworks.cc/download/) if you don't already have it installed.
 
-You'll also need to have your username added to the GitHub project, so have Zach add you if he hasn't already. Alternatively, feel free to create your own fork and open a [pull request](https://help.github.com/articles/using-pull-requests/) to have your changes merged into the upstream repository.
+Feel free to create your own fork and open a [pull request](https://help.github.com/articles/using-pull-requests/) to have your changes merged into the upstream (SFPC/recoded) repository.
 
 ### 1. Find an artist to work with
 
@@ -15,10 +15,10 @@ Take a look at the [project wiki](https://github.com/ofZach/dayForNightSFPC/wiki
 
 ### 2. Checkout the project from GitHub
 
-In you openFrameworks `apps` folder, create a new folder for the "Day for Night" project. Then `cd` into that folder using the terminal and checkout the project from GitHub:
+In you openFrameworks `apps` folder, create a new folder for the "recoded" project. Then `cd` into that folder using the terminal and checkout the project from GitHub:
 
 ```bash
-git clone https://github.com/ofZach/dayForNightSFPC.git
+git clone https://github.com/SFPC/recoded.git
 ```
 
 ### <del>3. Make a branch</del>
@@ -28,7 +28,7 @@ git clone https://github.com/ofZach/dayForNightSFPC.git
 Create a new branch:
 
 ```bash
-cd dayForNightSFPC
+cd recoded
 git checkout -b branchName
 ```
 
@@ -98,4 +98,4 @@ Now push your branch to GitHub:
 git push origin branchName
 ```
 
-Now submit a pull request via the [GitHub web interface](https://github.com/ofZach/dayForNightSFPC/compare).
+Now submit a pull request via the [GitHub web interface](https://github.com/SFPC/recoded/compare).
