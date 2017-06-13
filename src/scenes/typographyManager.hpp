@@ -24,10 +24,6 @@ typedef struct {
     int     type;
 } codeLetter;
 
-// Float Precision
-float truncate(float _input, int _precision);
-
-
 class typographyManager {
     
     
