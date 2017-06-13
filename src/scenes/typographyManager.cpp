@@ -1,13 +1,4 @@
 #include "typographyManager.hpp"
-#include <math.h>
-float truncate(float _input, int _precision){
-  if(_precision<0)
-    _precision = 0;
-  float offset = powf(10, _precision);
-  float result = static_cast<int>(_input * offset) / offset;
-  return result;
-}
-
 
 //-------------------------------------------------------------------------------------
 vector < int > positionsOfSubstring(string str, string sub){
