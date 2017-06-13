@@ -1,4 +1,4 @@
-void murielCooper::update() {
+void update() {
   // Move the camera and look at the middle of the screen
   camera.setPosition(ofVec3f([[cameraRotationX]], [[cameraRotationY]], [[cameraRotationZ]]));
   camera.lookAt(ofVec3f(0, 0, 0));

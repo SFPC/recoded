@@ -1,4 +1,4 @@
-void veraInterruptions::draw() {
+void draw() {
   clearBackground();
   setLineWidth([[lineWidth]]);
 
