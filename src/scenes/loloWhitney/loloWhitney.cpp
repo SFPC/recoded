@@ -39,7 +39,7 @@ void loloWhitney::setup(){
     
     shader_rip.load("scenes/loloWhitney/shaders/vhs_rip.vert", "scenes/loloWhitney/shaders/vhs_rip.frag");
     
-    setAuthor("Marcelo Armendáriz");
+    setAuthor("Marcelo Armendariz");
     setOriginalArtist("John Whitney");
     loadCode("scenes/loloWhitney/exampleCode.cpp");
 }

@@ -48,7 +48,7 @@ void loloVera::setup(){
     show_original = true;
     show_original_val = 0.0;
 
-    setAuthor("Marcelo Armendáriz");
+    setAuthor("Marcelo Armendariz");
     setOriginalArtist("Vera Molnar");
     loadCode("scenes/loloVera/exampleCode.cpp");
 }
