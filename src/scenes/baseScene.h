@@ -68,4 +68,8 @@ public:
     
     bool bAnimateScene;
     
+    bool bUpdateParamFromRecording = true;
+    
+    
+    
 };

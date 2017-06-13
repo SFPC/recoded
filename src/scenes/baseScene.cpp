@@ -153,11 +153,11 @@ void baseScene::updateMidiParams() {
         if (paramType == 'b') {
             ofParameter<bool> &midiParam = midiParameters.getBool(i);
             ofParameter<bool> &param = parameters.getBool(i);
-            param.set(midiParam);
+            if (bUpdateParamFromRecording) param.set(midiParam);
         } else if (paramType == 'i') {
             ofParameter<int> &midiParam = midiParameters.getInt(i);
             ofParameter<int> &param = parameters.getInt(i);
-            param.set(midiParam);
+            if (bUpdateParamFromRecording)param.set(midiParam);
         } else if (paramType == 'f') {
             ofParameter<float> &midiParam = midiParameters.getFloat(i);
             ofParameter<float> &param = parameters.getFloat(i);
@@ -167,9 +167,9 @@ void baseScene::updateMidiParams() {
             
             float diff = midiParam - param;
             if (fabs(diff) > 0.0001)
-                param.set(param + diff * baseScene::smoothingSpeed);
+                if (bUpdateParamFromRecording) param.set(param + diff * baseScene::smoothingSpeed);
             else
-                param.set(midiParam);
+                if (bUpdateParamFromRecording) param.set(midiParam);
         }
     }
 }

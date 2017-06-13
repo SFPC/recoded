@@ -70,6 +70,8 @@ void ofApp::draw(){
     ofPopMatrix();
 }
 
+
+
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 
@@ -94,6 +96,16 @@ void ofApp::keyPressed(int key){
     }
     if (key == 'C') {
         ofShowCursor();
+    }
+    
+    
+    
+    if (key == 'i'){
+        bToggleUseRecording = !bToggleUseRecording;
+        
+        for (int i = 0; i < SM.scenes.size(); i++){
+            SM.scenes[i]->bUpdateParamFromRecording = bToggleUseRecording;
+        }
     }
 }
 
