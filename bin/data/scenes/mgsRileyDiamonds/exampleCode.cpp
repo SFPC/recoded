@@ -1,4 +1,4 @@
-void drawRileyDiamonds(){
+void draw(){
   clearScreen();
   for(float x = 0; x < width+gw; x += gw){
     for(float y = 0; y < height+gh; y += gh){
@@ -17,11 +17,11 @@ void drawRileyDiamonds(){
         ofFill();
       }
       ofBeginShape();
-      ofVertex(x-gw, y+gh);
-      ofVertex(x, y+gh);
-      ofVertex(x+gw, y);
-      ofVertex(x, y);
-      ofVertex(x-gw, y+gh);
+      vertex(x-gw, y+gh);
+      vertex(x, y+gh);
+      vertex(x+gw, y);
+      vertex(x, y);
+      vertex(x-gw, y+gh);
       ofEndShape(true);
     }
   }
