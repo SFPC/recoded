@@ -6,7 +6,7 @@
 void ofApp::setup(){
     SM.setup();
     
-    ofSetWindowPosition(2000, 0);
+  //ofSetWindowPosition(2000, 0);
     ofSetFullscreen(true);
     ofHideCursor();
 }
@@ -30,21 +30,30 @@ void ofApp::draw(){
    
     
 #ifdef DRAW_TWO_UP
+
+//  ofLine(0,0,520,520);
+//  ofLine(520,0, 520+520,520);
+
+  SM.draw();
+  ofPushMatrix();
+  ofTranslate(520,0);
+  SM.codeFbo.draw(0, 0, 520,520);
+  ofPopMatrix();
     
-    ofPushMatrix();
-        float h = 504 * 1920.0/(float)(504+504);
-        ofTranslate(0,(1080-h)*0.5);
-        ofScale(1920.0/(float)(504+504), 1920.0/(float)(504+504));
-        SM.draw();
-    ofPopMatrix();
-    
-    ofPushMatrix();
-    
-    ofTranslate(h, 0);
-    SM.codeFbo.draw(0, 0, 504*2, 504*2);
-        //SM.drawType();
-    ofPopMatrix();
-    
+//    ofPushMatrix();
+//        float h = 504 * 1920.0/(float)(504+504);
+//        ofTranslate(0,(1080-h)*0.5);
+//        ofScale(1920.0/(float)(504+504), 1920.0/(float)(504+504));
+//        SM.draw();
+//    ofPopMatrix();
+//    
+//    ofPushMatrix();
+//    
+//    ofTranslate(h, 0);
+//    SM.codeFbo.draw(0, 0, 504*2, 504*2);
+//        //SM.drawType();
+//    ofPopMatrix();
+
 
 #elif defined DRAW_ONE_BIG
     float scale = 1080.0/(float)(504);
