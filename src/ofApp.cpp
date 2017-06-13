@@ -33,7 +33,7 @@ void ofApp::update(){
         
 
         SM.scenes[SM.currentScene]->updateInteractiveParams(diff.x, 0);
-        SM.scenes[SM.currentScene]->updateInteractiveParams(diff.y, 0);
+        SM.scenes[SM.currentScene]->updateInteractiveParams(diff.y, 1);
         
         
     }
