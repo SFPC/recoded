@@ -34,6 +34,9 @@ class ofApp : public ofBaseApp{
         void fixScreenSize();
     
     
+        bool bToggleUseRecording = true;
+    
+        ofPoint prevMouse;
     
     
 };

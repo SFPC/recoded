@@ -68,4 +68,9 @@ public:
     
     bool bAnimateScene;
     
+    bool bUpdateParamFromRecording = true;
+    void updateInteractiveParams(float valChangeAsPct, int param);
+    
+    
+    
 };

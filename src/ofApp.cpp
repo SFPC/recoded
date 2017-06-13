@@ -9,13 +9,38 @@ void ofApp::setup(){
   //ofSetWindowPosition(2000, 0);
     ofSetFullscreen(true);
     ofHideCursor();
+    
+
+    //-------------------------------------------
+    // fake interactive
+    prevMouse.set(mouseX, mouseY);
+    //-------------------------------------------
+
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     SM.update();
     
-   // cout << ofGetFrameRate() << endl;
+    
+    
+    //-------------------------------------------
+    // fake interactive
+    ofPoint currentPoint(mouseX, mouseY);
+    ofPoint diff = currentPoint - prevMouse;
+    diff /= ofPoint(ofGetWidth(), ofGetHeight());
+    if (bToggleUseRecording == false){
+        
+
+        SM.scenes[SM.currentScene]->updateInteractiveParams(diff.x, 0);
+        SM.scenes[SM.currentScene]->updateInteractiveParams(diff.y, 0);
+        
+        
+    }
+    prevMouse.set(mouseX, mouseY);
+    //-------------------------------------------
+
+
 }
 
 //--------------------------------------------------------------
@@ -64,11 +89,13 @@ void ofApp::draw(){
 #else
     SM.draw();
 #endif
-    
 
     
     ofPopMatrix();
+    
 }
+
+
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
@@ -79,11 +106,9 @@ void ofApp::keyPressed(int key){
 		SM.regressScene();
 	}
     
-    
     if (key == 'f'){
         ofToggleFullscreen();
     }
-    
     
     if (key == 's') {
         SM.screenGrab();
@@ -94,6 +119,15 @@ void ofApp::keyPressed(int key){
     }
     if (key == 'C') {
         ofShowCursor();
+    }
+    
+    
+    
+    if (key == 'i'){
+        bToggleUseRecording = !bToggleUseRecording;
+        for (int i = 0; i < SM.scenes.size(); i++){
+            SM.scenes[i]->bUpdateParamFromRecording = bToggleUseRecording;
+        }
     }
 }
 
