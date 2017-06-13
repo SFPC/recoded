@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907C5B5E104864A2D3A25745 /* ofxToggle.cpp */; };
 		26B248401BF7DA1100C11D04 /* veraAnimatedScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B2483F1BF7DA1100C11D04 /* veraAnimatedScene.cpp */; };
+		26CFA3001EF07C650030CFAD /* manfredMohrP196A.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26CFA2FE1EF07C650030CFAD /* manfredMohrP196A.cpp */; };
 		4776F87E1C17089000975A6B /* cantusFirmusRiley.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4776F87C1C17089000975A6B /* cantusFirmusRiley.cpp */; };
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
 		4F8F344E1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F344C1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp */; };
@@ -161,6 +162,8 @@
 		1C0DA2561397A7DE0246858B /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGuiGroup.h; path = ../../../addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
 		26B2483E1BF7D53700C11D04 /* veraAnimatedScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = veraAnimatedScene.h; sourceTree = "<group>"; };
 		26B2483F1BF7DA1100C11D04 /* veraAnimatedScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = veraAnimatedScene.cpp; sourceTree = "<group>"; };
+		26CFA2FE1EF07C650030CFAD /* manfredMohrP196A.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = manfredMohrP196A.cpp; sourceTree = "<group>"; };
+		26CFA2FF1EF07C650030CFAD /* manfredMohrP196A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manfredMohrP196A.h; sourceTree = "<group>"; };
 		2834D88A62CD23F3DE2C47D1 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxButton.h; path = ../../../addons/ofxGui/src/ofxButton.h; sourceTree = SOURCE_ROOT; };
 		2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxml.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
 		4776F87C1C17089000975A6B /* cantusFirmusRiley.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cantusFirmusRiley.cpp; sourceTree = "<group>"; };
@@ -437,6 +440,15 @@
 			path = veraAnimatedScene;
 			sourceTree = "<group>";
 		};
+		26CFA2FD1EF07C650030CFAD /* manfredMohrP196A */ = {
+			isa = PBXGroup;
+			children = (
+				26CFA2FE1EF07C650030CFAD /* manfredMohrP196A.cpp */,
+				26CFA2FF1EF07C650030CFAD /* manfredMohrP196A.h */,
+			);
+			path = manfredMohrP196A;
+			sourceTree = "<group>";
+		};
 		4776F87B1C17089000975A6B /* cantusFirmusRiley */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +721,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				26CFA2FD1EF07C650030CFAD /* manfredMohrP196A */,
 				C1DB5A341C272DEE000C2F7C /* ofxDataBender */,
 				B08FE1911C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire */,
 				C13A36701C17906200F13242 /* aaronMarcusHieroglyphB */,
@@ -1501,6 +1514,7 @@
 				9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
+				26CFA3001EF07C650030CFAD /* manfredMohrP196A.cpp in Sources */,
 				B00CD1371C21E89B00C529FA /* ofxMidi.cpp in Sources */,
 				4F8F344E1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp in Sources */,
 				B00CD10B1C21E81400C529FA /* ofxEasingQuart.cpp in Sources */,

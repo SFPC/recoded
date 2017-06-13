@@ -31,6 +31,7 @@
 #include "chrisMurielCooper.h"
 #include "chrisRileyCascando.h"
 #include "veraMolnarTrapezium.h"
+#include "manfredMohrP196A.h"
 #include "loloVera2.h"
 #include "cantusFirmusRiley.h"
 #include "chrisVeraInterruptions.h"
@@ -69,7 +70,7 @@ sceneManager::~sceneManager(){
 void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
-
+    
     scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());
     scenes.push_back(new rachelScene());
@@ -92,6 +93,7 @@ void sceneManager::setup(){
     scenes.push_back(new loloVera());
     scenes.push_back(new andyMenkmanJpg());
     scenes.push_back(new andyMenkmanPng());
+    scenes.push_back(new manfredMohrP196A());
     scenes.push_back(new veraMolnarTrapezium());
     scenes.push_back(new loloVera2());
     scenes.push_back(new cantusFirmusRiley());
