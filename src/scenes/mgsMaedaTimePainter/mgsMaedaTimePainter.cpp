@@ -3,11 +3,38 @@
 vector<TimePainter> painters;
 int numberOfPainters = 50;
 int currentPainter = 0;
+//<<<<<<< HEAD
+//
+//void mgsMaedaTimePainter::setup(){
+//  
+//// setup pramaters
+////    param.set("param", 5, 0, 100);
+////    parameters.add(param);
+//  parameters.add(paintSpeed.set("Paint Speed", 0.8, 0.25, 10.0));
+//  paintSpeed.addListener(this, &mgsMaedaTimePainter::redrawFloat);
+//  parameters.add(baseLongevity.set("Longevity", 325, 100, 1000));
+//  baseLongevity.addListener(this, &mgsMaedaTimePainter::redrawInt);
+//  parameters.add(size.set("Ball Size", 4, 1, 50));
+//  size.addListener(this, &mgsMaedaTimePainter::redrawInt);
+//  parameters.add(lineWeight.set("Line Weight", 2.5, 0.25, 50));
+//  lineWeight.addListener(this, &mgsMaedaTimePainter::redrawFloat);
+//  
+//  loadCode("mgsMaedaTimePainter/exampleCode.cpp");
+//  //ofBackground(0);
+//  painters.clear();
+//  for (int i = 0; i < numberOfPainters; i++) {
+//    painters.push_back(TimePainter(paintSpeed, baseLongevity, size, lineWeight));     
+//    //painter[i+2] = new myTimePainter(0.0, 0.0, 120.0, 0.80, 500, color(random(255),random(255),random(255)), 4);
+//  }
+//
+//  ofSetCircleResolution(100);
+//  frame.allocate(dimensions.width, dimensions.height);
+//=======
 int ellipseSize = 3;
 int fadeCounter = 0;
 
 void mgsMaedaTimePainter::setup(){
-  parameters.add(paintSpeed.set("paintSpeed", 0.35, 2.0, 0.01));
+  parameters.add(paintSpeed.set("paintSpeed", 0.15, 2.0, 0.01));
   paintSpeed.addListener(this, &mgsMaedaTimePainter::redrawFloat);
   parameters.add(baseLongevity.set("baseLongevity", 120, 50, 500));
   baseLongevity.addListener(this, &mgsMaedaTimePainter::redrawInt);
@@ -24,35 +51,34 @@ void mgsMaedaTimePainter::setup(){
   parameters.add(clearScreenP.set("clearScreen", false));
   clearScreenP.addListener(this, &mgsMaedaTimePainter::clearScreen);
   
-  setAuthor("Michael Simpson");
+    setAuthor("Michael Simpson");
   setOriginalArtist("John Maeda");
-  
   //- Time Paint - 1990");
-  
   loadCode("scenes/mgsMaedaTimePainter/exampleCode.cpp");
     
   painters.clear();
-  
   for (int i = 0; i < numberOfPainters; i++) {
     painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
   }
-  
   bNeedsRedraw = false;
   bNeedClearScreen = false;
   ofSetCircleResolution(100);
-  
   frame.allocate(dimensions.width, dimensions.height, GL_RGBA32F_ARB);
+  //>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
   frame.begin();
-  
   ofClear(0);
-  
   frame.end();
-  
   drawScene();
+//  //<<<<<<< HEAD
+//}
+//
+//void mgsMaedaTimePainter::update(){
+//=======
+
 }
 
 void mgsMaedaTimePainter::clearScreen(bool& i){
-  //  bNeedClearScreen = true;
+  //bNeedClearScreen = true;
   //  frame.begin();
   //  ofClear(0,10);
   //  frame.end();
@@ -65,13 +91,13 @@ void mgsMaedaTimePainter::pause(bool& i){
 
 void mgsMaedaTimePainter::update(){
   //if (bNeedsRedraw) {
-  //    frame.begin();
-  //    ofClear(0);
-  //    frame.end();
-  //    painters.clear();
-  for (int i = 0; i < numberOfPainters; i++) {
-    painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
-  }
+//    frame.begin();
+//    ofClear(0);
+//    frame.end();
+//    painters.clear();
+    for (int i = 0; i < numberOfPainters; i++) {
+      painters.push_back(TimePainter(paintSpeed, baseLongevity, ellipseSize, lineWeight));
+    }
   //    drawScene();
   //  bNeedsRedraw = false;
   //}
@@ -82,10 +108,13 @@ void mgsMaedaTimePainter::update(){
 //    clearScreenP.set("Clear Screen", false);
 //    bNeedClearScreen = false;
 //  }
+//>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
   drawScene();
 }
 
 void mgsMaedaTimePainter::draw(){
+//<<<<<<< HEAD
+//=======
   if(fadeWhenDead){
     frame.begin();
     if(fadeCounter < 100){
@@ -97,10 +126,59 @@ void mgsMaedaTimePainter::draw(){
     }
     frame.end();
   }
+//>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
   frame.draw(0,0);
 }
 
 void mgsMaedaTimePainter::redraw(int& i){
+//<<<<<<< HEAD
+//  drawScene();
+//}
+//
+//void mgsMaedaTimePainter::redrawInt(int& i){
+//  ofClear(0);
+//  painters.clear();
+//  for (int i = 0; i < numberOfPainters; i++) {
+//    painters.push_back(TimePainter(paintSpeed, baseLongevity, size, lineWeight));     
+//    //painter[i+2] = new myTimePainter(0.0, 0.0, 120.0, 0.80, 500, color(random(255),random(255),random(255)), 4);
+//  }
+//  drawScene();
+//}
+//
+//void mgsMaedaTimePainter::redrawFloat(float& i){
+//  ofClear(0);
+//  painters.clear();
+//  for (int i = 0; i < numberOfPainters; i++) {
+//    painters.push_back(TimePainter(paintSpeed, baseLongevity, size, lineWeight));     
+//    //painter[i+2] = new myTimePainter(0.0, 0.0, 120.0, 0.80, 500, color(random(255),random(255),random(255)), 4);
+//  }
+//  drawScene();
+//}
+//
+//void mgsMaedaTimePainter::drawScene(){
+//  frame.begin();
+//  //for (int i = 0; i < numberOfPainters; i++) {
+//  if (currentPainter < numberOfPainters-1) {  
+//    if(painters[currentPainter].longevity > 0){
+//      painters[currentPainter].update(currentPainter);
+//    } else {
+//      painters[currentPainter].reset();
+//      currentPainter++;
+//    }
+//  } else {
+//    painters[currentPainter].reset();
+//    currentPainter = 0;
+//  }
+//    // } else {
+//    //   painters[currentPainter].reset();
+//    //   currentPainter = 0;
+//      //ofBackground(0);
+//      //}
+////}  
+//  frame.end();
+//}
+//
+//=======
   //drawScene();
 }
 
@@ -119,7 +197,7 @@ void mgsMaedaTimePainter::redrawInt(int& i){
 
 void mgsMaedaTimePainter::redrawFloat(float& i){
   bNeedsRedraw = true;
-  //  frame.begin();
+  //    frame.begin();
   //  ofClear(0);
   //  frame.end();
   ellipseSize = lineWeight*12;
@@ -153,3 +231,4 @@ void mgsMaedaTimePainter::drawScene(){
     }
   }
 }
+//>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
