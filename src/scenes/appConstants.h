@@ -4,8 +4,8 @@
 // assume that visuals and code are the same here....
 // and also assuming our screen is square :)
 
-#define VISUALS_WIDTH 504
-#define VISUALS_HEIGHT 504
+#define VISUALS_WIDTH 520
+#define VISUALS_HEIGHT 520
 
 #define CODE_WIDTH VISUALS_WIDTH
 #define CODE_HEIGHT VISUALS_HEIGHT
@@ -19,7 +19,7 @@
 
 // TWO UP
 #ifdef DRAW_TWO_UP
-#define CODE_X_POS 504      // TV
+#define CODE_X_POS 520      // TV
 #elif defined DRAW_ONE_BIG
 #define CODE_X_POS 3000     // OFFSCREEN
 #else

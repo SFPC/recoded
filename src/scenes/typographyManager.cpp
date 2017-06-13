@@ -125,7 +125,7 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
         templatePos toSwap;
         for (auto p : paramsInOrder){
             if (p.position == i){
-                toSwap = p;
+              toSwap = p;
                 bIsParam = true;
                 //cout << toSwap.paramName << endl;
             }
