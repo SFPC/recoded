@@ -12,6 +12,9 @@
 //  parameters.add(height.set("Diamond Height", 25, 1, 500));
 //  parameters.add(width.set("Diamond Width", 25, 1, 500));
 //=======
+
+
+
 void mgsRileyDiamonds::setup(){
   setAuthor("Michael Simpson");
   setOriginalArtist("Bridget Riley");

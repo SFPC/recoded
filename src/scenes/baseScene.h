@@ -18,7 +18,21 @@ public:
     virtual void update(){}
     virtual void draw(){}
     
-    virtual void reset(){resetTiming();}          // this is for scenes that change over time....
+    
+//    ofParameterGroup parametersCopy;
+//    virtual void postSetupSetup(){
+//        parametersCopy = parameters;
+//    }
+   
+    
+    
+    void reset(){
+        resetTiming();
+//        for (int i = 0; i < parametersCopy.size(); i++){
+//            //parameters.set(parametersCopy.get(i).
+//            
+//        }
+    }          // this is for scenes that change over time....
     
     baseScene(){};
     ~baseScene(){}

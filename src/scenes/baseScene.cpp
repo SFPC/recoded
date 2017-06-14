@@ -14,7 +14,7 @@
 //int horribleKnobCounter = 0;
 void baseScene::reportKnobs(string f){
   ofxXmlSettings settings;
-  vector < int > midiKnobs;
+  //vector < int > midiKnobs;
   settings.load(f);
 
 
@@ -205,7 +205,12 @@ void baseScene::updateInteractiveParams(float valChangeAsPct, int param, float a
       float max = param.getMax();
       float diffMinMax = max - min;
       float val = param.get();
-      val += valChangeAsPct * diffMinMax;
+      
+      float amtToAdd = fabs(valChangeAsPct * diffMinMax);
+      float sign = valChangeAsPct * diffMinMax > 0 ? 1 : -1;
+      amtToAdd = MIN(1, amtToAdd) * sign;
+      
+      val += amtToAdd;
       if (val < min) val = min;
       if (val > max) val = max;
       
