@@ -1,9 +1,48 @@
 
 #include "mgsCooperSymbols.h"
 
+//<<<<<<< HEAD
+//void mgsCooperSymbols::setup() {
+//  //parameters.add(fadeLength.set("Fade Length", 10, 1, 255));
+//  parameters.add(size.set("Grid Size", 3, 1, 128));
+//  parameters.add(numberOfShapes.set("Number of Shapes", 3, 1, 3));
+//  //fadeLength.addListener(this, &mgsCooperSymbols::redraw);
+//  size.addListener(this, &mgsCooperSymbols::redraw);
+//  numberOfShapes.addListener(this, &mgsCooperSymbols::redraw);
+//  
+//  parameters.add(red.set("Red", 255, 1, 255));
+//  parameters.add(green.set("Green", 255, 1, 255));
+//  parameters.add(blue.set("Blue", 255, 1, 255));
+//  parameters.add(alpha.set("Alpha", 255, 1, 255));
+//  
+//  red.addListener(this, &mgsCooperSymbols::redraw);
+//  green.addListener(this, &mgsCooperSymbols::redraw);
+//  blue.addListener(this, &mgsCooperSymbols::redraw);
+//  alpha.addListener(this, &mgsCooperSymbols::redraw);
+//
+//  parameters.add(thickness.set("Line Thickness", 0.1, 0.1, 10.0));
+//  thickness.addListener(this, &mgsCooperSymbols::redrawFloat);
+//  
+//  //parameters.add(arcInsteadOfCircleP.set("Arc Instead Of Circle", false));
+//  //arcInsteadOfCircleP.addListener(this, &mgsCooperSymbols::redrawBool);
+//
+//  parameters.add(randomStrokeP.set("Random Stroke", true));
+//  randomStrokeP.addListener(this, &mgsCooperSymbols::redrawBool);
+//
+//  parameters.add(randomShapesP.set("Random Shape", true));
+//  randomShapesP.addListener(this, &mgsCooperSymbols::redrawBool);
+//  
+//  //parameters.add(secondGridP.set("Second Grid", false));
+//  //secondGridP.addListener(this, &mgsCooperSymbols::redrawBool);
+//  //ofEnableSmoothing();
+//
+//  ofSetCircleResolution(100);
+//  //path.setCircleResolution(100);
+//  loadCode("mgsCooperSymbols/exampleCode.cpp");
+//  
+//=======
 void mgsCooperSymbols::setupParameters(){
-  parameters.add(gridSize.set("Grid Size", 9, 32, 32));
-  //gridSize.set("Grid Size", 32, 1, 96);
+  gridSize.set("Grid Size", 32, 1, 96);
   //gridSize.addListener(this, &mgsCooperSymbols::redrawGrid);
   
   parameters.add(numberOfShapes.set("Number of Shapes", 3, 1, 3));
@@ -15,7 +54,7 @@ void mgsCooperSymbols::setupParameters(){
   parameters.add(green.set("Green Amount", 255, 1, 255));
   green.addListener(this, &mgsCooperSymbols::redraw);
   
-  parameters.add(blue.set("Blue Amount", 255, 255, 255));
+  parameters.add(blue.set("Blue Amount", 255, 1, 255));
   blue.addListener(this, &mgsCooperSymbols::redraw);
   
   parameters.add(thickness.set("Line Width", 0.1, 0.1, 10.0));
@@ -48,10 +87,18 @@ void mgsCooperSymbols::setup() {
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
   bNeedsRedraw = bNeedRedrawFullScene = true;
+  //>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
   frame.allocate(dimensions.width, dimensions.height);
   frame.begin();
   ofClear(0);
   frame.end();
+//<<<<<<< HEAD
+//  drawScene();
+//}
+//
+//void mgsCooperSymbols::update(){
+//    
+//=======
   drawFullScene();
   drawScene();
 }
@@ -82,6 +129,7 @@ void mgsCooperSymbols::update(){
     drawFullScene();
     bNeedRedrawFullScene = false;
   }
+  //>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
 }
 
 void mgsCooperSymbols::draw(){
@@ -89,6 +137,17 @@ void mgsCooperSymbols::draw(){
 }
 
 void mgsCooperSymbols::redraw(int& i){
+//<<<<<<< HEAD
+//  drawScene();
+//}
+//
+//void mgsCooperSymbols::redrawBool(bool& i){
+//  drawScene();
+//}
+//
+//void mgsCooperSymbols::redrawFloat(float& i){
+//  drawScene();
+//=======
   symbolColor = ofColor(red, green, blue);
   //bNeedRedrawFullScene = true;
 //  if(animated){
@@ -115,10 +174,38 @@ void mgsCooperSymbols::redrawFloat(float& i){
   gw = dimensions.width/gridSize;
   gh = dimensions.height/gridSize;
 //  bNeedsRedraw = true;
+//>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
 }
 
 void mgsCooperSymbols::drawScene(){
   frame.begin();
+// <<<<<<< HEAD
+//  glLineWidth(thickness);
+//  // if(fadeCount >= fadeLength) {
+//  //   ofSetColor(0, fadeLength);
+//  //   ofFill();
+//  //   ofDrawRectangle(0, 0, dimensions.width, dimensions.height);
+//  //   fadeCount = 0;
+//  // } else {
+//  //ofSetColor(0);
+//  //ofFill();
+//  //ofDrawRectangle(0, 0, dimensions.width, dimensions.height);
+//  //ofSetColor(255, 10);
+//  ofClear(0);
+//  if(!randomStrokeP){
+//    ofSetColor(red,green,blue,alpha);
+//    ofNoFill();
+//  }
+//  drawGrid(0, 0);
+//    // if (secondGridP) {
+//    //   drawGrid(20, 20);
+//    //   drawGrid(40, 20);
+//    //   drawGrid(20, 40);
+//    //   drawGrid(40, 40);        
+//    // }
+//    // fadeCount++;
+//    // }
+//=======
   drawGrid(0,0);
   frame.end();
 //  bNeedsRedraw = true;
@@ -130,6 +217,7 @@ void mgsCooperSymbols::drawFullScene(){
   rowCounter = 0;
   shiftCounter = 0;
   drawFullGrid(0,0);
+  //>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
   frame.end();
 }
 
@@ -141,6 +229,157 @@ bool mgsCooperSymbols::randomBool() {
   }
 }
 
+//<<<<<<< HEAD
+//void mgsCooperSymbols::drawSquare(int x, int y, int s) {
+//  if (randomStrokeP) {
+//    randomStroke();
+//  } else {
+//    ofSetColor(red,green,blue,alpha);
+//    ofNoFill();
+//  }
+//  if (randomBool()) {
+//    if (randomStrokeP) {
+//      randomStroke();
+//    }
+//    ofDrawLine(x, y, x+s, y);
+//  }
+//  if (randomBool()) {
+//    if (randomStrokeP) {
+//      randomStroke();
+//    }
+//    ofDrawLine(x+s, y, x+s, y+s);
+//  }
+//  if (randomBool()) {
+//    if (randomStrokeP) {
+//      randomStroke();
+//    }
+//    ofDrawLine(x+s, y+s, x, y+s);
+//  }
+//  if (randomBool()) {
+//    if (randomStrokeP) {
+//      randomStroke();
+//    }
+//    ofDrawLine(x, y+s, x, y);
+//  }
+//}
+//
+//void mgsCooperSymbols::drawTri(int x, int y, int s) {
+//  if (randomStrokeP) {
+//    randomStroke();
+//  } else {
+//    ofSetColor(red,green,blue,alpha);
+//    ofNoFill();
+//  }
+//  if (randomBool()) {
+//    if (randomStrokeP) {
+//      randomStroke();
+//    }
+//    ofDrawLine(x+s/2, y, x+s, y+s);
+//  }
+//  if (randomBool()) {
+//    if (randomStrokeP) {
+//      randomStroke();
+//    }
+//    ofDrawLine(x+s, y+s, x, y+s);
+//  }
+//  if (randomBool()) {
+//    if (randomStrokeP) {
+//      randomStroke();
+//    }
+//    ofDrawLine(x, y+s, x+s/2, y);
+//  }
+//}
+//
+//void mgsCooperSymbols::drawCircle(int x, int y, int s) {
+//  ofNoFill();
+//  if (randomBool()) {
+//    ofDrawCircle(x, y, s);
+//  }
+//}
+//
+//void mgsCooperSymbols::randomFill() {
+//  int r = (int)ofRandom(red);
+//  int g = (int)ofRandom(green);
+//  int b = (int)ofRandom(blue);
+//  int a = (int)ofRandom(alpha);
+//  ofSetColor(r, g, b, a);
+//  ofFill();
+//}
+//
+//void mgsCooperSymbols::randomStroke() {
+//  int r = ofRandom(red);
+//  int g = ofRandom(green); 
+//  int b = ofRandom(blue);
+//  int a = alpha;
+//  ofSetColor(r, g, b, a);
+//  ofNoFill();
+//}
+//
+//void mgsCooperSymbols::drawArc(int x, int y, int s) {
+//  ofSetColor(red,green,blue,alpha);
+//  ofNoFill();
+//  //path.moveTo(x,y);
+//  if (randomBool()) {
+//    curve.begin();
+//    curve.arc(ofPoint(x,y), s, s, 0, HALF_PI);
+//    curve.end();
+//  }
+//  if (randomBool()) {
+//    curve.begin();
+//    curve.arc(ofPoint(x,y), s, s, HALF_PI, PI);
+//    curve.end();
+//  }
+//  if (randomBool()) {
+//    curve.begin();
+//    curve.arc(ofPoint(x,y), s, s, PI, PI+HALF_PI);
+//    curve.end();
+//  }
+//  if (randomBool()) {
+//    curve.begin();
+//    curve.arc(ofPoint(x, y), s, s, PI+HALF_PI, TWO_PI);
+//    curve.end();
+//  }
+//  curve.draw();
+//}
+//
+//void mgsCooperSymbols::drawGrid(int x, int y) {
+//  float w = dimensions.width/size;
+//  float h = dimensions.height/size;
+//  
+//  for (float c = 0; c < dimensions.width; c+=w) {
+//    for (float r = 0; r < dimensions.height; r+=h) {
+//      if (randomShapesP) {
+//        switch((int)ofRandom(numberOfShapes)) {
+//        case 0:
+//          drawSquare(c, r, w);
+//          break;
+//        case 1:
+//          drawTri(c, r, w);
+//          break;
+//        case 2:
+//          //if (arcInsteadOfCircleP) {
+//          //drawArc(c, r, w);
+//            //} else {
+//              drawCircle(c+w/2, r+h/2, w/2);
+//            //}
+//          break;
+//        }
+//      } else {
+//        switch(numberOfShapes) {
+//        case 1:
+//          drawSquare(c, r, w);
+//          break;
+//        case 2:
+//          drawTri(c, r, w);
+//          break;
+//        case 3:
+//          //if (arcInsteadOfCircleP) {
+//          //drawArc(c, r, w);
+//            //} else {
+//            drawCircle(c+w/2, r+h/2, w/2);
+//            //}
+//          break;
+//=======
 void mgsCooperSymbols::drawSquare(float x, float y, float s) {
   ofPushStyle();
   ofSetColor(symbolColor);
@@ -289,12 +528,33 @@ void mgsCooperSymbols::drawFullGrid(float x, float y) {
           case 3:
             drawCircle(x+shiftCounter+gw/2, y+rowCounter+gh/2, gw/2);
             break;
+            //>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
         }
       }
     }
   }
 }
 
+//<<<<<<< HEAD
+//void mgsCooperSymbols::drawShape(int x, int y, int s, int mode) {
+//  switch(mode) {
+//  case 0:
+//    drawSquare(x, y, size);
+//    break;
+//  case 1:
+//    drawTri(x, y, size);
+//    break;
+//  case 2:
+//    //if (arcInsteadOfCircleP) {
+//    //drawArc(x, y, size);
+//    //} else {
+//    //drawCircle(x, y, size);
+//    drawCircle(x+s/2, x+s/2, s/2);
+//      //}
+//    break;
+//  }
+//}
+//=======
 void mgsCooperSymbols::incrementCursor(){
   if(shiftCounter < dimensions.width-gw) {
       shiftCounter += gw;
@@ -309,3 +569,4 @@ void mgsCooperSymbols::incrementCursor(){
   }
   bNeedsRedraw = true;
 }
+//>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5

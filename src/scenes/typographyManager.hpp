@@ -24,7 +24,6 @@ typedef struct {
     int     type;
 } codeLetter;
 
-
 class typographyManager {
     
     

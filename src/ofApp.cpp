@@ -33,7 +33,7 @@ void ofApp::update(){
         
 
         SM.scenes[SM.currentScene]->updateInteractiveParams(diff.x, 0);
-        SM.scenes[SM.currentScene]->updateInteractiveParams(diff.y, 0);
+        SM.scenes[SM.currentScene]->updateInteractiveParams(diff.y, 1);
         
         
     }
@@ -50,6 +50,8 @@ void ofApp::draw(){
     ofPushMatrix();
     
    
+
+   // cout << "------------------ " << SM.pctDelay << endl;
     
     // if draw two up:
    
@@ -60,6 +62,11 @@ void ofApp::draw(){
 //  ofLine(520,0, 520+520,520);
 
   SM.draw();
+    
+    if ( SM.pctDelay < FADE_DELAY_MIN){
+        SM.codeFbo.draw(0, 0, 520,520);
+    }
+ 
   ofPushMatrix();
   ofTranslate(520,0);
   SM.codeFbo.draw(0, 0, 520,520);

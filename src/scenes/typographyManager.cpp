@@ -1,7 +1,5 @@
 #include "typographyManager.hpp"
 
-
-
 //-------------------------------------------------------------------------------------
 vector < int > positionsOfSubstring(string str, string sub){
     vector <int> positions; // holds all the positions that sub occurs within str
@@ -64,10 +62,16 @@ void typographyManager::setup(baseScene * bs, float animationTime){
 
 
         if (bs->parameters[i].type() == floatParam.type()){
-            paramsToReplace[i] = ofToString(bs->parameters[i], 1);
+          //ofParameter<float>param =bs->parameters[i];
+          float ff = bs->parameters[i].cast<float>();
+          paramsToReplace[i] = ofToString(ff, 1);
         } else {
-            paramsToReplace[i] = ofToString(bs->parameters[i]);
+          float ff = bs->parameters[i].cast<float>();
+          paramsToReplace[i] = ofToString(ff, 1);
+          //paramsToReplace[i] = ofToString(bs->parameters[i], 2);
         }
+
+      //cout << std::fixed << setprecision(2) << paramsToReplace[i] << std::endl;
 
         paramChangedEnergy[i] = 0;
         paramEnergy[i] = 0;
@@ -172,9 +176,12 @@ vector < codeLetter > typographyManager::getCodeWithParamsReplaced( baseScene * 
             } else {
 
                 if (bs->parameters[which].type() == floatParam.type()){
-                    paramsToReplace[which] = ofToString(bs->parameters[which], 1);
+                  float ff = bs->parameters[which].cast<float>();
+                  paramsToReplace[which] = ofToString(ff,4);
+                  //cout << ofToString(bs->parameters[which], 2) + "\n";
                 } else {
-                    paramsToReplace[which] = ofToString(bs->parameters[which]);
+                    float ff = bs->parameters[which].cast<float>();
+                    paramsToReplace[which] = ofToString(ff,4);
                 }
                 for (auto p : paramsToReplace[which]){
                     codeLetter tempLetter;
