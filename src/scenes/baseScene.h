@@ -3,17 +3,19 @@
 
 #include "ofMain.h"
 #include "appConstants.h"
-
+#include "ofxXmlSettings.h"
 #ifdef USE_MIDI_RECORDING
 #include "ofxMidiRecorder.h"
 #endif
 
 
+void reportKnobs(string f);
 class baseScene {
     
 public:
-    
-    virtual void setup(){}
+
+
+  virtual void setup(){}
     virtual void update(){}
     virtual void draw(){}
     
@@ -29,11 +31,14 @@ public:
     void loadCode( string fileName );
     void setAuthor(string author);
     void setOriginalArtist(string originalArtist);
-    
-    ofParameterGroup parameters;    // this is the parameters of your sketch...
+
+
+  int horribleKnobCounter = 0;
+  ofParameterGroup parameters;    // this is the parameters of your sketch...
     vector<ofParameter<bool>> boolParams;
     vector<ofParameter<int>> intParams;
     vector<ofParameter<float>> floatParams;
+  map<int,int> paramMap;
     ofParameterGroup midiParameters;
 
     string code;                // this is the code we show
