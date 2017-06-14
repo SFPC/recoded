@@ -73,7 +73,7 @@ void ofApp::draw(){
 		SM.codeFbo.draw(0, 0, 520,520);
 	}
     if (SM.pctDelay > FADE_DELAY_MAX && ! SM.isTransitioning) {
-		int numParams = SM.scenes[SM.currentScene]->midiParameters.size();
+		int numParams = MIN(SM.scenes[SM.currentScene]->midiKnobs.size(),4);
 //        cout << "Number of parameters: " << numParams << endl;
 		IM.setCurrentSceneParameterCount(numParams);
 	}
@@ -112,6 +112,13 @@ void ofApp::draw(){
 
 
 	ofPopMatrix();
+    
+    string message = "interaction mode ";
+    message += (IM.bInteracting == true ? "interacting" : "playback");
+    ofDrawBitmapString(message, 100, 540);
+    for (int i = 0; i < 4; i++){
+        ofDrawBitmapString( "knob value " + ofToString(i) + " = " + ofToString(IM.prevPacket.knobValues[i] * 100), 100, 570 + 30 * i);
+    }
 
 }
 

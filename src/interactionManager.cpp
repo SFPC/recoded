@@ -78,11 +78,17 @@ void interactionManager::update()
     if (bGotPacket == true){
     float valueChangeThreshold = 0.01; // some higher threshold since eletrical values might shift...
     
+    
+    
     for (int i = 0; i < 4; i++)
     {
         vector < int > knobMappings = ((ofApp*)ofGetAppPtr())->SM.scenes[ ((ofApp*)ofGetAppPtr())->SM.currentScene ]->midiKnobs;
         
         if (i < knobMappings.size()){
+            
+            cout << "size " << knobMappings.size() << endl;
+            cout << i << " " << fabs(currPacket.knobValues[i] - prevPacket.knobValues[i]) << endl;
+            
             if (fabs(currPacket.knobValues[i] - prevPacket.knobValues[i]) > valueChangeThreshold)
             {
                 
@@ -99,7 +105,7 @@ void interactionManager::update()
                 ((ofApp*)ofGetAppPtr())->SM.scenes[ ((ofApp*)ofGetAppPtr())->SM.currentScene ]->updateInteractiveParams(change, which, currPacket.knobValues[i]);
                 // todo :
     //            if (IM.bInteracting) {
-    //                int numParams = SM.scenes[SM.currentScene]->midiParameters.size();
+    //                int numParams = MIN(SM.scenes[SM.currentScene]->midiKnobs.size(),4);
     //                
     //                for (int i=0; i<numParams; i++) {
     //                    float val = IM.prevPacket.knobValues[i];

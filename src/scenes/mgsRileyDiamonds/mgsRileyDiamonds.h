@@ -22,6 +22,8 @@ class mgsRileyDiamonds : public baseScene {
 //=======
 
 public:
+    
+    
   void setup();
   void update();
   void draw();
