@@ -1,8 +1,7 @@
-array<3dText>3dTexts;
-void setup(){
+void setup() {
   string completeText = openTextFile("MurielCooperLetter.txt");
   vector<string> splitText = splitStringByParagraph(completeText);
-  for(text in splitText){
+  for(text in splitText) {
     3dText t;
     t.setText(text);
     t.setHsbColor(random(255), random(230, 255), random(180, 255));
