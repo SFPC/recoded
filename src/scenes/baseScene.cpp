@@ -11,9 +11,12 @@
 
 
 //--------------------------------------------------------------
-int horribleKnobCounter = 0;
+//map<int, int[]> paramMap;
+//int horribleKnobCounter = 0;
+
 void reportKnobs(string f){
   ofxXmlSettings settings;
+  vector < int > midiKnobs;
   settings.load(f);
 
 
@@ -21,7 +24,7 @@ void reportKnobs(string f){
 
   int numEvents = settings.getNumTags("midiEvent");
 
-  vector < int > midiKnobs;
+  
   for (int i = 0; i < numEvents; i++){
     settings.pushTag("midiEvent", i);
 
@@ -35,11 +38,11 @@ void reportKnobs(string f){
   midiKnobs.erase( unique( midiKnobs.begin(), midiKnobs.end() ), midiKnobs.end() );
 
 
-  for (int i = 0; i < midiKnobs.size(); i++){
-    cout << "Sketch: " << horribleKnobCounter << " arduinoKnob: " << i << " : --> actualKnob: " << midiKnobs[i] << endl;
-  }
+//  for (int i = 0; i < midiKnobs.size(); i++){
+//    cout << "Sketch: " << horribleKnobCounter << " arduinoKnob: " << i << " : --> actualKnob: " << midiKnobs[i] << endl;
+//  }
 
-  horribleKnobCounter++;
+  // horribleKnobCounter++;
 }
 
 void baseScene::loadCode( string fileName ){

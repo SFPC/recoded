@@ -38,7 +38,7 @@ public:
     vector<ofParameter<bool>> boolParams;
     vector<ofParameter<int>> intParams;
     vector<ofParameter<float>> floatParams;
-  map<int,int> paramMap;
+  map<int, int[]> paramMap;
     ofParameterGroup midiParameters;
 
     string code;                // this is the code we show
@@ -75,7 +75,9 @@ public:
     
     bool bUpdateParamFromRecording = true;
     void updateInteractiveParams(float valChangeAsPct, int param);
-    
+
+    vector < int > midiKnobs;
+
     
     
 };
