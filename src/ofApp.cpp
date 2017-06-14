@@ -127,9 +127,9 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 
-	if (key == ' ') {
+	if (key == OF_KEY_RIGHT) {
 		SM.advanceScene();
-	} else if (key == '.') {
+	} else if (key == OF_KEY_LEFT) {
 		SM.regressScene();
 	}
 
@@ -150,12 +150,12 @@ void ofApp::keyPressed(int key){
 
 
 
-//	if (key == 'i') {
-//		bToggleUseRecording = !bToggleUseRecording;
-//		for (int i = 0; i < SM.scenes.size(); i++) {
-//			SM.scenes[i]->bUpdateParamFromRecording = bToggleUseRecording;
-//		}
-//	}
+	if (key == 'i') {
+		bToggleUseRecording = !bToggleUseRecording;
+		for (int i = 0; i < SM.scenes.size(); i++) {
+			SM.scenes[i]->bUpdateParamFromRecording = bToggleUseRecording;
+		}
+	}
 }
 
 //--------------------------------------------------------------

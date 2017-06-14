@@ -19,6 +19,30 @@ public:
     virtual void draw(){}
     
     
+    vector < float > origFloatValues;
+    vector < bool > origBoolValues;
+    vector < int > origIntValues;
+    
+    void postSetup(){
+        
+        for (auto & p : boolParams){
+            origBoolValues.push_back(p.get());
+        }
+        
+        for (auto & p : floatParams){
+            origFloatValues.push_back(p.get());
+        }
+        
+        for (auto & p : intParams){
+            origIntValues.push_back(p.get());
+        }
+
+        
+//        vector<ofParameter<bool>> boolParams;
+//        vector<ofParameter<int>> intParams;
+//        vector<ofParameter<float>> floatParams;
+        
+    }
 //    ofParameterGroup parametersCopy;
 //    virtual void postSetupSetup(){
 //        parametersCopy = parameters;
@@ -28,6 +52,24 @@ public:
     
     void reset(){
         resetTiming();
+        
+        for (int i = 0; i < boolParams.size(); i++){
+            boolParams[i].set(origBoolValues[i]);
+            
+            //origBoolValues.push_back(p.get());
+        }
+        
+        for (int i = 0; i < intParams.size(); i++){
+            intParams[i].set(origIntValues[i]);
+            //origBoolValues.push_back(p.get());
+        }
+        for (int i = 0; i < floatParams.size(); i++){
+            floatParams[i].set(origFloatValues[i]);
+            cout << "settings " << floatParams[i].getName() << " " << origFloatValues[i] << endl;
+            //origBoolValues.push_back(p.get());
+        }
+        
+        
 //        for (int i = 0; i < parametersCopy.size(); i++){
 //            //parameters.set(parametersCopy.get(i).
 //            

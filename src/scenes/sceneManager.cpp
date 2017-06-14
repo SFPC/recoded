@@ -216,6 +216,7 @@ void sceneManager::setup(){
         scene->dimensions.set(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         scene->setup();
         scene->enableMidi();
+        scene->postSetup();
     }
     
     
