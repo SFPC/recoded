@@ -53,21 +53,53 @@ public:
     void reset(){
         resetTiming();
         
-        for (int i = 0; i < boolParams.size(); i++){
-            boolParams[i].set(origBoolValues[i]);
-            
-            //origBoolValues.push_back(p.get());
+        
+        ofParameter<bool>   boolParam;
+        ofParameter<int>    intParam;
+        ofParameter<float>  floatParam;
+
+        
+        int boolCount = 0;
+        int intCount = 0;
+        int floatCount = 0;
+        
+        
+        for (auto param : parameters) {
+            if (param->type() == boolParam.type()) {
+                ofParameter<bool> &oldParam = param->cast<bool>();
+                oldParam.set(origBoolValues[boolCount]);
+                boolCount++;
+                
+            } else if (param->type() == intParam.type()) {
+                ofParameter<int> &oldParam = param->cast<int>();
+                
+                oldParam.set(origIntValues[intCount]);
+                intCount++;
+                
+            } else if (param->type() == floatParam.type()) {
+                ofParameter<float> &oldParam = param->cast<float>();
+                oldParam.set(origFloatValues[floatCount]);
+                floatCount++;
+            }
         }
         
-        for (int i = 0; i < intParams.size(); i++){
-            intParams[i].set(origIntValues[i]);
-            //origBoolValues.push_back(p.get());
-        }
-        for (int i = 0; i < floatParams.size(); i++){
-            floatParams[i].set(origFloatValues[i]);
-            cout << "settings " << floatParams[i].getName() << " " << origFloatValues[i] << endl;
-            //origBoolValues.push_back(p.get());
-        }
+//        for (int i = 0; i < boolParams.size(); i++){
+//            boolParams[i].set(origBoolValues[i]);
+//            cout << "settings " << boolParams[i].getName() << " " << origBoolValues[i] << endl;
+//            
+//            //origBoolValues.push_back(p.get());
+//        }
+//        
+//        for (int i = 0; i < intParams.size(); i++){
+//            intParams[i].set(origIntValues[i]);
+//            cout << "settings " << intParams[i].getName() << " " << origIntValues[i] << endl;
+//            //origBoolValues.push_back(p.get());
+//        }
+//        for (int i = 0; i < floatParams.size(); i++){
+//            floatParams[i].set(origFloatValues[i]);
+//            cout << "settings " << floatParams[i].getName() << " " << origFloatValues[i] << endl;
+//            //origBoolValues.push_back(p.get());
+//        }
         
         
 //        for (int i = 0; i < parametersCopy.size(); i++){
