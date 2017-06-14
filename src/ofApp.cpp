@@ -50,6 +50,8 @@ void ofApp::draw(){
     ofPushMatrix();
     
    
+
+   // cout << "------------------ " << SM.pctDelay << endl;
     
     // if draw two up:
    
@@ -60,6 +62,11 @@ void ofApp::draw(){
 //  ofLine(520,0, 520+520,520);
 
   SM.draw();
+    
+    if ( SM.pctDelay < 1.0){
+        SM.codeFbo.draw(0, 0, 520,520);
+    }
+ 
   ofPushMatrix();
   ofTranslate(520,0);
   SM.codeFbo.draw(0, 0, 520,520);
