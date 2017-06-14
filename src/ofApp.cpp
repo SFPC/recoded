@@ -4,83 +4,96 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    SM.setup();
-    
-  //ofSetWindowPosition(2000, 0);
-    ofSetFullscreen(true);
-    ofHideCursor();
-    
+	SM.setup();
+	IM.setup();
 
-    //-------------------------------------------
-    // fake interactive
-    prevMouse.set(mouseX, mouseY);
-    //-------------------------------------------
+	//ofSetWindowPosition(2000, 0);
+	ofSetFullscreen(true);
+	ofHideCursor();
+
+
+	//-------------------------------------------
+	// fake interactive
+	prevMouse.set(mouseX, mouseY);
+	//-------------------------------------------
+	IM.setLEDs(1,1,1,1);
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    SM.update();
-    
-    
-    
-    //-------------------------------------------
-    // fake interactive
-    ofPoint currentPoint(mouseX, mouseY);
-    ofPoint diff = currentPoint - prevMouse;
-    diff /= ofPoint(ofGetWidth(), ofGetHeight());
-    if (bToggleUseRecording == false){
-        
+	SM.update();
+	IM.update();
 
-        SM.scenes[SM.currentScene]->updateInteractiveParams(diff.x, 0);
-        SM.scenes[SM.currentScene]->updateInteractiveParams(diff.y, 1);
-        
-        
-    }
-    prevMouse.set(mouseX, mouseY);
-    //-------------------------------------------
+
+
+	//-------------------------------------------
+	// fake interactive
+//	ofPoint currentPoint(mouseX, mouseY);
+//	ofPoint diff = currentPoint - prevMouse;
+//	diff /= ofPoint(ofGetWidth(), ofGetHeight());
+//	if (bToggleUseRecording == false) {
+//
+//			SM.scenes[SM.currentScene]->updateInteractiveParams(diff.x, 0);
+//			SM.scenes[SM.currentScene]->updateInteractiveParams(diff.y, 1);
+//	}
+//	prevMouse.set(mouseX, mouseY);
+//    
+//    
+    
+    // interactivity...
+   
+    
+	//-------------------------------------------
 
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofBackground(0);
-    
-    ofPushMatrix();
-    
-   
+	ofBackground(0);
+	ofPushMatrix();
 
-   // cout << "------------------ " << SM.pctDelay << endl;
-    
-    // if draw two up:
-   
-    
+
+	// cout << "------------------ " << SM.pctDelay << endl;
+
 #ifdef DRAW_TWO_UP
 
 //  ofLine(0,0,520,520);
 //  ofLine(520,0, 520+520,520);
 
-  SM.draw();
+	SM.draw();
     
-    if ( SM.pctDelay < FADE_DELAY_MIN){
-        SM.codeFbo.draw(0, 0, 520,520);
+
+    if (SM.pctDelay < SCENE_PRE_TRANSITION_FADE || SM.isTransitioning) {
+        IM.turnOffLEDs();
     }
- 
-  ofPushMatrix();
-  ofTranslate(520,0);
-  SM.codeFbo.draw(0, 0, 520,520);
-  ofPopMatrix();
+	if (SM.pctDelay < FADE_DELAY_MIN) {
+		// typing is happening...
+		SM.codeFbo.draw(0, 0, 520,520);
+	}
+    if (SM.pctDelay > FADE_DELAY_MAX && ! SM.isTransitioning) {
+		int numParams = SM.scenes[SM.currentScene]->midiParameters.size();
+//        cout << "Number of parameters: " << numParams << endl;
+		IM.setCurrentSceneParameterCount(numParams);
+	}
     
+    
+
+	ofPushMatrix();
+	ofTranslate(520,0);
+	SM.codeFbo.draw(0, 0, 520,520);
+	ofPopMatrix();
+
 //    ofPushMatrix();
 //        float h = 504 * 1920.0/(float)(504+504);
 //        ofTranslate(0,(1080-h)*0.5);
 //        ofScale(1920.0/(float)(504+504), 1920.0/(float)(504+504));
 //        SM.draw();
 //    ofPopMatrix();
-//    
+//
 //    ofPushMatrix();
-//    
+//
 //    ofTranslate(h, 0);
 //    SM.codeFbo.draw(0, 0, 504*2, 504*2);
 //        //SM.drawType();
@@ -88,18 +101,18 @@ void ofApp::draw(){
 
 
 #elif defined DRAW_ONE_BIG
-    float scale = 1080.0/(float)(504);
-    float w = scale * 504;
-    ofTranslate((1920-w)*0.5, 0);
-    ofScale(scale, scale);
-    SM.draw();
+	float scale = 1080.0/(float)(504);
+	float w = scale * 504;
+	ofTranslate((1920-w)*0.5, 0);
+	ofScale(scale, scale);
+	SM.draw();
 #else
-    SM.draw();
+	SM.draw();
 #endif
 
-    
-    ofPopMatrix();
-    
+
+	ofPopMatrix();
+
 }
 
 
@@ -107,35 +120,35 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 
-    if (key == ' '){
-        SM.advanceScene();
-    } else if (key == '.'){
+	if (key == ' ') {
+		SM.advanceScene();
+	} else if (key == '.') {
 		SM.regressScene();
 	}
-    
-    if (key == 'f'){
-        ofToggleFullscreen();
-    }
-    
-    if (key == 's') {
-        SM.screenGrab();
-    }
-    
-    if (key == 'c') {
-        ofHideCursor();
-    }
-    if (key == 'C') {
-        ofShowCursor();
-    }
-    
-    
-    
-    if (key == 'i'){
-        bToggleUseRecording = !bToggleUseRecording;
-        for (int i = 0; i < SM.scenes.size(); i++){
-            SM.scenes[i]->bUpdateParamFromRecording = bToggleUseRecording;
-        }
-    }
+
+	if (key == 'f') {
+		ofToggleFullscreen();
+	}
+
+	if (key == 's') {
+		SM.screenGrab();
+	}
+
+	if (key == 'c') {
+		ofHideCursor();
+	}
+	if (key == 'C') {
+		ofShowCursor();
+	}
+
+
+
+//	if (key == 'i') {
+//		bToggleUseRecording = !bToggleUseRecording;
+//		for (int i = 0; i < SM.scenes.size(); i++) {
+//			SM.scenes[i]->bUpdateParamFromRecording = bToggleUseRecording;
+//		}
+//	}
 }
 
 //--------------------------------------------------------------
@@ -176,7 +189,7 @@ void ofApp::mouseExited(int x, int y){
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
 
-    
+
 }
 
 //--------------------------------------------------------------
@@ -185,6 +198,6 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){
 
 }
