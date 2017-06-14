@@ -23,7 +23,6 @@ void reportKnobs(string f){
   settings.pushTag("Midi");
 
   int numEvents = settings.getNumTags("midiEvent");
-
   
   for (int i = 0; i < numEvents; i++){
     settings.pushTag("midiEvent", i);
