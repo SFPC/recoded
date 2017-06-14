@@ -7,7 +7,7 @@ void yeseulCooperMessages::setup(){
     setOriginalArtist("Muriel Cooper");
 
     texture.load("scenes/yeseulCooperMessages/texture.png");
-    
+    texture.resize(520, 520);
     font.load("Helvetica Neue", 50, true,true,true);
     font.setLineHeight(60);
     
