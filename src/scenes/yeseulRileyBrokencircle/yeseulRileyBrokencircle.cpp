@@ -21,7 +21,7 @@ void yeseulRileyBrokencircle::update(){
 
 void yeseulRileyBrokencircle::draw(){
     
-    ofBackground(255);
+    ofBackground(0);
     
     if (bDirection) {
         speedVal+=speed/numberOfPatterns;
@@ -75,7 +75,7 @@ void yeseulRileyBrokencircle::drawShape() {
     float firstGap = 25/numberOfPatterns;
     float gap [14];
     
-    ofSetColor(0);
+    ofSetColor(255);
     ofPolyline shapes [14];
     
     gap [0] = firstGap;
