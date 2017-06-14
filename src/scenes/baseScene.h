@@ -14,8 +14,7 @@ class baseScene {
     
 public:
 
-
-  virtual void setup(){}
+    virtual void setup(){}
     virtual void update(){}
     virtual void draw(){}
     
@@ -33,17 +32,17 @@ public:
     void setOriginalArtist(string originalArtist);
 
 
-  int horribleKnobCounter = 0;
-  ofParameterGroup parameters;    // this is the parameters of your sketch...
+    int horribleKnobCounter = 0;
+    ofParameterGroup parameters;    // this is the parameters of your sketch...
     vector<ofParameter<bool>> boolParams;
     vector<ofParameter<int>> intParams;
     vector<ofParameter<float>> floatParams;
-  map<int, int[]> paramMap;
+    map<int,int> paramMap;
     ofParameterGroup midiParameters;
 
     string code;                // this is the code we show
     string author, originalArtist; // for scene transitions
-    
+
     ofRectangle dimensions;     // this is the dimensions of
                                 // the surface you are drawing into.
 #ifdef USE_MIDI_RECORDING
@@ -72,12 +71,9 @@ public:
     bool isEndSet(){return bHasEndSet;}
     
     bool bAnimateScene;
-    
+    void reportKnobs(string f);
+        
     bool bUpdateParamFromRecording = true;
-    void updateInteractiveParams(float valChangeAsPct, int param);
-
+    void updateInteractiveParams(float valChangeAsPct, int param, float abspct = 1.0);
     vector < int > midiKnobs;
-
-    
-    
 };

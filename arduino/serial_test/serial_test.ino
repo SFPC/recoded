@@ -44,10 +44,11 @@ void loop()
     previousEncoderValues[i] = currentEncoderValues[i];
     currentEncoderValues[i] = pulseIn(encoderPins[i], HIGH);
     Serial.print(currentEncoderValues[i]);
+    Serial.print(" ");
   }
-  Serial.print(" z");
+  Serial.print("z");
   Serial.println();
-  delay(20);
+  delay(5);
 }
 
 void flashLEDs()

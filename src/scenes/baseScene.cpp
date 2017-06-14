@@ -11,10 +11,8 @@
 
 
 //--------------------------------------------------------------
-//map<int, int[]> paramMap;
 //int horribleKnobCounter = 0;
-
-void reportKnobs(string f){
+void baseScene::reportKnobs(string f){
   ofxXmlSettings settings;
   vector < int > midiKnobs;
   settings.load(f);
@@ -36,12 +34,6 @@ void reportKnobs(string f){
   sort( midiKnobs.begin(), midiKnobs.end() );
   midiKnobs.erase( unique( midiKnobs.begin(), midiKnobs.end() ), midiKnobs.end() );
 
-
-//  for (int i = 0; i < midiKnobs.size(); i++){
-//    cout << "Sketch: " << horribleKnobCounter << " arduinoKnob: " << i << " : --> actualKnob: " << midiKnobs[i] << endl;
-//  }
-
-  // horribleKnobCounter++;
 }
 
 void baseScene::loadCode( string fileName ){
@@ -186,8 +178,10 @@ void baseScene::enableMidi() {
 
 
 
-void baseScene::updateInteractiveParams(float valChangeAsPct, int param){
+void baseScene::updateInteractiveParams(float valChangeAsPct, int param, float abspct){
 
+  //cout << "Param " << param << " = " << valChangeAsPct;
+    
   int nToCheck = min((int)parameters.size(), 8);
   int i = param;
   char paramType = paramTypes[i];
@@ -196,12 +190,30 @@ void baseScene::updateInteractiveParams(float valChangeAsPct, int param){
     ofParameter<bool> &param = parameters.getBool(i);
 
     // NO IDEA !!
+      if (abspct > .5){
+          param.set(true);
+      } else {
+          param.set(false);
+      }
+      
 
   } else if (paramType == 'i') {
 
-    ofParameter<int> &param = parameters.getInt(i);
+      ofParameter<int> &param = parameters.getInt(i);
 
-    // NO IDEA !!
+      float min = param.getMin();
+      float max = param.getMax();
+      float diffMinMax = max - min;
+      float val = param.get();
+      val += valChangeAsPct * diffMinMax;
+      if (val < min) val = min;
+      if (val > max) val = max;
+      
+      float diff = val - param;
+      if (fabs(diff) > 0.0001)
+          param.set(param + diff); // * baseScene::smoothingSpeed);
+      else
+          param.set(val);
 
   } else if (paramType == 'f') {
 
@@ -220,6 +232,7 @@ void baseScene::updateInteractiveParams(float valChangeAsPct, int param){
       param.set(param + diff); // * baseScene::smoothingSpeed);
     else
       param.set(val);
+      
   }
 
 
