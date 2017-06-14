@@ -63,7 +63,7 @@ void ofApp::draw(){
 
   SM.draw();
     
-    if ( SM.pctDelay < 1.0){
+    if ( SM.pctDelay < FADE_DELAY_MIN){
         SM.codeFbo.draw(0, 0, 520,520);
     }
  
