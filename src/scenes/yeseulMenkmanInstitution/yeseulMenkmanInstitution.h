@@ -18,7 +18,7 @@ public:
     ofParameter<int> amountOfSquares;
     
     int numberOfUnitsPerRow = 36;
-    float unitSize = 504/numberOfUnitsPerRow;
+    float unitSize = 550/numberOfUnitsPerRow;
     int numberOfBricksPerRow = numberOfUnitsPerRow;
     
     int randomNumber;
