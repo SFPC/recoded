@@ -2,7 +2,7 @@ createPath(currentPainter);
 
 void createTimePainter(){
   if (longevity < 500) {
-    angle += ofRandom([[Angle Variance]], [[Angle Variance]]));
+    angle += random([[Angle Variance]], [[Angle Variance]]));
   }
   
   xpos += cos([[Angle Variance]]) / speed;
@@ -10,7 +10,7 @@ void createTimePainter(){
   
   longevity--;
   
-  ofSetColor(stroke);
+  setColor(stroke);
   ofFill();
   
   glLineWidth(lineWidth);
@@ -21,6 +21,6 @@ void createTimePainter(){
   path.draw();
   
   if (longevity == 0) {
-    ofDrawEllipse(xpos, ypos, size*2, size*2);
+    ellipse(xpos, ypos, size*2, size*2);
   }
 }
