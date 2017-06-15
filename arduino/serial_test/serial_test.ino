@@ -1,7 +1,7 @@
 // Total number of channels supported by the hardware device
 const uint8_t numChannels = 4;
-const uint8_t ledPins[] = {2, 4, 7, 8};
-const uint8_t encoderPins[] = {5, 6, 9, 10};
+const uint8_t ledPins[] = {7, 2, 8, 4};
+const uint8_t encoderPins[] = {9, 5, 10, 6};
 unsigned long currentEncoderValues[] = {0, 0, 0, 0};
 unsigned long previousEncoderValues[] = {0, 0, 0, 0};
 const unsigned long encoderValueThreshold = 2048;
