@@ -14,7 +14,7 @@ void memoAktenScene::setup(){
   
 	// setup pramaters
 	num_points.set("num_points", 35, 5, 50);
-	//parameters.add(num_points);
+	parameters.add(num_points);
 	
 	speed.set("speed", 4.5, 0.1, 10.0);
 	parameters.add(speed);
