@@ -30,6 +30,9 @@ xcuserdata
 *.suo
 ipch/
 
+#VS Code
+.vscode
+
 #Eclipse
 .metadata
 local.properties
@@ -69,3 +72,6 @@ bin/data/scenes/andyMenkmanTif/images/tmp/*
 bin/data/scenes/andyMenkmanPng/images/tmp/*
 bin/data/screengrabs/*
 **/*.asd
+
+zine/d4nCovers4_InDesign
+zine/SonarBooklet_InDesign

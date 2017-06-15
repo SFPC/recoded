@@ -70,7 +70,7 @@ sceneManager::~sceneManager(){
 void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
-    
+
     scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());
     scenes.push_back(new rachelScene());
@@ -205,6 +205,7 @@ void sceneManager::setup(){
         scene->dimensions.set(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
         scene->setup();
         scene->enableMidi();
+        scene->postSetup();
     }
     
     

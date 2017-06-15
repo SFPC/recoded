@@ -32,7 +32,7 @@ void mwalczykVeraSquares::setup(){
         size -= sizeStep;
     }
     
-    mSquareColor.set(65);
+    mSquareColor.set(200);
     ofSetLineWidth(3);
     
     // Allocate and clear our FBO
@@ -76,10 +76,9 @@ void mwalczykVeraSquares::update(){
 }
 
 void mwalczykVeraSquares::draw(){
-    
     //-------------------------------------------------------------- FBO begins
     mSquareFbo.begin();
-    ofClear(ofColor::white);
+    ofClear(ofColor::black);
     
     // Draw the background texture, if it's available
 //    if (mPaperTexture.isAllocated())

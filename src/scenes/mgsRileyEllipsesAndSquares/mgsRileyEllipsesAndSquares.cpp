@@ -1,6 +1,27 @@
 #include "mgsRileyEllipsesAndSquares.h"
 
 vector<ofPoint> points;
+//<<<<<<< HEAD
+//
+//void mgsRileyEllipsesAndSquares::setup(){
+//  
+//// setup pramaters
+////    param.set("param", 5, 0, 100);
+////    parameters.add(param);
+//  parameters.add(shapeMode.set("Shape Mode", 0, 0, 5));
+//  shapeMode.addListener(this, &mgsRileyEllipsesAndSquares::redraw);
+//  parameters.add(unitSize.set("Unit Size", 6, 1, 50));
+//  unitSize.addListener(this, &mgsRileyEllipsesAndSquares::redraw);
+//  parameters.add(contrast.set("Unit Size", 6, 1, 50));
+//  contrast.addListener(this, &mgsRileyEllipsesAndSquares::redraw);
+//  loadCode("mgsRileyEllipsesAndSquares/exampleCode.cpp");
+//
+//;
+//
+// ofBackground(255);
+//  ofSetCircleResolution(100);
+//  frame.allocate(dimensions.width, dimensions.height);
+//=======
 float px0,py0,px1,py1,px2,py2,px3,py3,px4,py4,px5,py5,px6,py6,px7,py7;
 
 void mgsRileyEllipsesAndSquares::setup(){
@@ -33,6 +54,7 @@ void mgsRileyEllipsesAndSquares::setup(){
   ofBackground(255);
   ofSetCircleResolution(100);
   frame.allocate(dimensions.width, dimensions.height, GL_RGB32F_ARB);
+  //>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
   frame.begin();
   ofClear(0);
   frame.end();
@@ -40,10 +62,14 @@ void mgsRileyEllipsesAndSquares::setup(){
 }
 
 void mgsRileyEllipsesAndSquares::update(){
+  //<<<<<<< HEAD
+    
+  //=======
     //if (bNeedRedraw) {
         drawScene();
 //        bNeedRedraw = false;
 //    }
+//>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
 }
 
 void mgsRileyEllipsesAndSquares::draw(){
@@ -51,6 +77,91 @@ void mgsRileyEllipsesAndSquares::draw(){
 }
 
 void mgsRileyEllipsesAndSquares::redraw(int& i){
+//<<<<<<< HEAD
+//  drawScene();
+//}
+//// points.push_back(ofPoint(80,100));
+//// points.push_back(ofPoint(260,310));
+//
+//// points.push_back(ofPoint(320,100));
+//// points.push_back(ofPoint(430,270));
+//
+//// points.push_back(ofPoint(80,360));
+//// points.push_back(ofPoint(320,430));
+//
+//// points.push_back(ofPoint(330,320));
+//// points.push_back(ofPoint(430,4300));
+//
+//// //---
+//
+//// points.push_back(ofPoint(70,100));
+//// points.push_back(ofPoint(260,310));
+//
+//// points.push_back(ofPoint(310,100));
+//// points.push_back(ofPoint(430,270));
+//
+//// points.push_back(ofPoint(70,360));
+//// points.push_back(ofPoint(310,430));
+//
+//// points.push_back(ofPoint(320,430));
+//// points.push_back(ofPoint(320,430));
+//
+// 
+//void mgsRileyEllipsesAndSquares::drawScene(){
+//  frame.begin();
+//  ofClear(0);
+//  for (int i = 0; i < dimensions.width; i+=unitSize) {
+//    for (int j = 0; j < dimensions.height; j+=unitSize) {
+//      if (i/unitSize % 2 == 0 && j/unitSize % 2 == 0) {
+//        if ((i>=80  && i<=260 && j>=100 && j<=310)  ||
+//            (i>=320 && i<=440 && j>=100 && j<=270)  ||
+//            (i>=80  && i<=320 && j>=360 && j<=440)  ||
+//            (i>=330 && i<=440 && j>=320 && j<=440)) {
+//          switch(shapeMode){
+//          case 0:
+//            ofDrawRectangle(i, j, unitSize, unitSize);
+//            break;
+//          case 1:
+//            ofDrawEllipse(i-(1.5*unitSize), j-unitSize/2, unitSize, unitSize);
+//            break;  
+//          }
+//        } else { 
+//          switch(shapeMode){
+//          case 0:
+//            ofDrawEllipse(i+unitSize/2, j+unitSize/2, unitSize, unitSize);
+//            break;
+//          case 1:
+//            ofDrawRectangle(i+unitSize, j+unitSize, unitSize, unitSize);
+//            break;  
+//          }
+//        }
+//      } else {
+//        if (i/unitSize % 2 == 0 || j/unitSize % 2 == 0) {
+//          if ((i >= 70 && i <= 260 && j >= 100 && j <= 310) ||
+//              (i >= 310 && i <= 430 && j >= 100 && j <= 270) ||
+//              (i >= 70 && i <= 310 && j >= 360 && j <= 430) ||
+//              (i >= 320 && i <= 430 && j >= 320 && j <= 430)) {
+//            switch(shapeMode){
+//            case 0:
+//              ofDrawRectangle(i+unitSize, j, unitSize, unitSize);
+//              break;
+//            case 1:
+//              ofDrawEllipse(i+unitSize/2, j+unitSize/2, unitSize, unitSize);
+//              break;  
+//            } 
+//          } else if (j/unitSize % 2 == 0) {        
+//            switch(shapeMode){
+//            case 0:
+//              ofDrawEllipse(i+unitSize/2, j+unitSize*1.5, unitSize, unitSize);
+//              break;
+//            case 1:
+//              ofDrawRectangle(i, j, unitSize, unitSize);
+//              break;  
+//            } 
+//          }
+//        }
+//      }
+//=======
     bNeedRedraw = true;
   //  drawScene();
 }
@@ -74,6 +185,7 @@ void mgsRileyEllipsesAndSquares::drawScene(){
           ofDrawEllipse(i+unitSize/2+unitSize, j+unitSize/2+unitSize, unitSize, unitSize);
         }
       }      
+      //>>>>>>> 708c864d367c75773ca8168ac961c5e7f26d86d5
     }
   }
   frame.end();

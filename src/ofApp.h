@@ -4,6 +4,7 @@
 #include "baseScene.h"
 #include "sceneManager.h"
 #include "appConstants.h"
+#include "interactionManager.h"
 
 
 
@@ -30,6 +31,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
         sceneManager SM;
+        interactionManager IM;
     
         void fixScreenSize();
     

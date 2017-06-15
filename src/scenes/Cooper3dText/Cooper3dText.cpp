@@ -24,9 +24,9 @@ void Cooper3dText::setup(){
     distWords = 60;
 
 //    parameters.add(distWords.set("Distance Blocks",40,  0, 4000));
-    parameters.add(tweenDuration.set("Tween Duration", 3000,0,10000));
-    parameters.add(pauseDuration.set("Pause Duration", 200,0,5000));
-    parameters.add(minAngle.set("min angle", 80,0, 360));
+    parameters.add(tweenDuration.set("Tween Duration", 1000,0,4000));
+    parameters.add(pauseDuration.set("Pause Duration", 50,0,5000));
+    parameters.add(minAngle.set("min angle", 80, 0, 360));
     parameters.add(maxAngle.set("max angle", 120, 0,360));
 
     maxAngle.addListener(this, &Cooper3dText::angleChanged);

@@ -19,7 +19,7 @@ void manfredMohrP196A::setup(){
 	cubeBRotationDiffPercent.set("cubeBRotationDiffPercent", 0., 0., 1.);
 	cubeOthersRotationDiffPercent.set("cubeOthersRotationDiffPercent", 0., 0., 1.);
 	scaleParam.set("scale", 0.8, 0, 1);
-	whiteBackground.set("whiteBackground", true);
+	whiteBackground.set("whiteBackground", false);
 	rearLineOpacity.set("rearLineOpacity", 0, 0, 255);
 	//~1.75 spacing is the smallest before overlap starts occuring
 	spacing.set("spacing", 2, 1.75, 10);
