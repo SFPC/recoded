@@ -93,12 +93,12 @@ void mgsRileyDescending::setup(){
   loadCode("scenes/mgsRileyDescending/exampleCode.cpp");
   
 
-    rows.set("Rows", 109, 1, 200);
+  rows.set("Rows", 109, 1, 200);
   //rows.addListener(this, &mgsRileyDescending::setupLinesF);
   
   parameters.add(lineHeight.set("Row Height", 5.67717, 1, 100));
   //lineHeight.addListener(this, &mgsRileyDescending::setupLinesF);
-  
+
   columns.set("Columns", 19, 1, 200);
   //columns.addListener(this, &mgsRileyDescending::setupLinesF);
   
