@@ -11,7 +11,7 @@ void createTimePainter(){
   longevity--;
   
   setColor(stroke);
-  ofFill();
+  fill();
   
   glLineWidth(lineWidth);
   
