@@ -1,7 +1,7 @@
-createPath(currentPainter);
+longevity = [[longevity]]
 
 void createTimePainter(){
-  if (longevity < 500) {
+  if ([[longevity]] < 500) {
     angle += ofRandom([[Angle Variance]], [[Angle Variance]]));
   }
   
