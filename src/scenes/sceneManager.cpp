@@ -70,17 +70,6 @@ sceneManager::~sceneManager(){
 void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
-    
-    // FIXME: temporarily adding problematic scenes for interaction to head of queue...
-     scenes.push_back(new yeseulWhitneyScene());
-    scenes.push_back(new mgsRileyDiamonds());
-    scenes.push_back(new aaronMarcusHieroglyphB());
-   
-    scenes.push_back(new mgsMaedaTimePainter());
-
-
-    
-    
 
     scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());
