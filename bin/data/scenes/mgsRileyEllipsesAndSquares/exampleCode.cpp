@@ -12,12 +12,12 @@ void drawGridOfEllipses(){
             (x4 > x < x5) AND (y4 > y < y5) OR
             (x6 > x < x7) AND (y6 > y < y7)) {
         // If inside, draw rectangles
-          ofDrawRectangle(x+[[Unit Size]],y+[[Unit Size]],[[Unit Size]],[[Unit Size]]);
-          ofDrawRectangle(x, y, [[Unit Size]], [[Unit Size]]);
+          rectangle(x+[[Unit Size]],y+[[Unit Size]],[[Unit Size]],[[Unit Size]]);
+          rectangle(x, y, [[Unit Size]], [[Unit Size]]);
         } else {
           // If outside, draw ellipses
-          ofDrawEllipse(x,y,[[Unit Size]],[[Unit Size]]);
-          ofDrawEllipse(x + [[Unit Size]] / 2 + [[Unit Size]],
+          ellipse(x,y,[[Unit Size]],[[Unit Size]]);
+          ellipse(x + [[Unit Size]] / 2 + [[Unit Size]],
                         y + [[Unit Size]] / 2 + [[Unit Size]],
                         [[Unit Size]],
                         [[Unit Size]]);
