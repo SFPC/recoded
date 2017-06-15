@@ -72,7 +72,7 @@ void ofApp::draw(){
 		// typing is happening...
 		SM.codeFbo.draw(0, 0, 520,520);
 	}
-    if (SM.pctDelay > FADE_DELAY_MAX && ! SM.isTransitioning) {
+    if (SM.shouldDrawScene && !SM.isTransitioning) {
 		int numParams = MIN(SM.scenes[SM.currentScene]->midiKnobs.size(),4);
 //        cout << "Number of parameters: " << numParams << endl;
 		IM.setCurrentSceneParameterCount(numParams);
