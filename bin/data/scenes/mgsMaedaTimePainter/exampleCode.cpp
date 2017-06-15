@@ -10,8 +10,8 @@ void createTimePainter(){
   
   longevity--;
   
-  ofSetColor(stroke);
-  ofFill();
+  setColor(stroke);
+  fill();
   
   glLineWidth(lineWidth);
   
@@ -21,6 +21,6 @@ void createTimePainter(){
   path.draw();
   
   if (longevity == 0) {
-    ofDrawEllipse(xpos, ypos, size*2, size*2);
+    ellipse(xpos, ypos, size*2, size*2);
   }
 }
