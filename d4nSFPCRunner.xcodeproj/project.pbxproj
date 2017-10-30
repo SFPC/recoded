@@ -36,6 +36,7 @@
 		856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9604B925D32EE39065747725 /* ofxBaseGui.cpp */; };
 		85B3DCA81C1E47060054975A /* yeseulMenkmanInstitution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCA61C1E47060054975A /* yeseulMenkmanInstitution.cpp */; };
 		85B3DCB11C1FE6170054975A /* yeseulCooperMessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85B3DCAF1C1FE6170054975A /* yeseulCooperMessages.cpp */; };
+		92205B181FA7793C001772CD /* zachTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92205B161FA7791F001772CD /* zachTest.cpp */; };
 		9224BC9D1C20F233003668CF /* mgsCooperSymbols.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9224BC921C20F233003668CF /* mgsCooperSymbols.cpp */; };
 		9224BC9E1C20F233003668CF /* mgsRileyDiamonds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9224BC951C20F233003668CF /* mgsRileyDiamonds.cpp */; };
 		9224BC9F1C20F233003668CF /* mgsRileyEllipsesAndSquares.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9224BC981C20F233003668CF /* mgsRileyEllipsesAndSquares.cpp */; };
@@ -215,6 +216,8 @@
 		87F26B4B24CBD428AD9EEBAA /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		89449E3044D456F7DE7BEA14 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		907C5B5E104864A2D3A25745 /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxToggle.cpp; path = ../../../addons/ofxGui/src/ofxToggle.cpp; sourceTree = SOURCE_ROOT; };
+		92205B161FA7791F001772CD /* zachTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = zachTest.cpp; sourceTree = "<group>"; };
+		92205B171FA7791F001772CD /* zachTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zachTest.h; sourceTree = "<group>"; };
 		9224BC921C20F233003668CF /* mgsCooperSymbols.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgsCooperSymbols.cpp; sourceTree = "<group>"; };
 		9224BC931C20F233003668CF /* mgsCooperSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgsCooperSymbols.h; sourceTree = "<group>"; };
 		9224BC951C20F233003668CF /* mgsRileyDiamonds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgsRileyDiamonds.cpp; sourceTree = "<group>"; };
@@ -672,6 +675,15 @@
 			path = yeseulCooperMessages;
 			sourceTree = "<group>";
 		};
+		92205B151FA7791F001772CD /* zachTest */ = {
+			isa = PBXGroup;
+			children = (
+				92205B161FA7791F001772CD /* zachTest.cpp */,
+				92205B171FA7791F001772CD /* zachTest.h */,
+			);
+			path = zachTest;
+			sourceTree = "<group>";
+		};
 		9224BC911C20F233003668CF /* mgsCooperSymbols */ = {
 			isa = PBXGroup;
 			children = (
@@ -724,6 +736,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				92205B151FA7791F001772CD /* zachTest */,
 				26CFA2FD1EF07C650030CFAD /* manfredMohrP196A */,
 				C1DB5A341C272DEE000C2F7C /* ofxDataBender */,
 				B08FE1911C23B39F0037252E /* RileyRemake-Catarina_Lee__Joao_Freire */,
@@ -1568,6 +1581,7 @@
 				FAD0D42C1C1C891400C2DA1B /* gifalloc.c in Sources */,
 				FAD0D42A1C1C891400C2DA1B /* gif_font.c in Sources */,
 				7158FF821C174F8B00A6025B /* chrisVeraInterruptions.cpp in Sources */,
+				92205B181FA7793C001772CD /* zachTest.cpp in Sources */,
 				D39F0DF11C222065004DEAAB /* ofxOscParameterSync.cpp in Sources */,
 				FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */,
 				D39F0DF01C222065004DEAAB /* ofxOscMessage.cpp in Sources */,
