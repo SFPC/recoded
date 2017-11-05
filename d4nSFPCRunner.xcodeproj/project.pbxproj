@@ -107,6 +107,7 @@
 		D541137B1C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D54113791C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp */; };
 		D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E41BF7DE2D00F92C20 /* robbyMolnarScene.cpp */; };
 		D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F490E91BF7E69B00F92C20 /* robbyRileyScene.cpp */; };
+		DB146F801FAF541B0069C4E0 /* heatherMolnarScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB146F7F1FAF541B0069C4E0 /* heatherMolnarScene.cpp */; };
 		E12029031C1655E60093B1A4 /* veraMolnarTrapezium.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12029011C1655E60093B1A4 /* veraMolnarTrapezium.cpp */; };
 		E1802C931C16905000780A6F /* loloVera2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1802C911C16905000780A6F /* loloVera2.cpp */; };
 		E18350561C14CCA300EAFB96 /* loloWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E18350541C14CCA300EAFB96 /* loloWhitney.cpp */; };
@@ -379,6 +380,8 @@
 		D5F490E51BF7DE2D00F92C20 /* robbyMolnarScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = robbyMolnarScene.h; sourceTree = "<group>"; };
 		D5F490E91BF7E69B00F92C20 /* robbyRileyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = robbyRileyScene.cpp; sourceTree = "<group>"; };
 		D5F490EA1BF7E69B00F92C20 /* robbyRileyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = robbyRileyScene.h; sourceTree = "<group>"; };
+		DB146F7F1FAF541B0069C4E0 /* heatherMolnarScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = heatherMolnarScene.cpp; sourceTree = "<group>"; };
+		DB146F811FAF54290069C4E0 /* heatherMolnarScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = heatherMolnarScene.h; sourceTree = "<group>"; };
 		E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPanel.cpp; path = ../../../addons/ofxGui/src/ofxPanel.cpp; sourceTree = SOURCE_ROOT; };
 		E12029011C1655E60093B1A4 /* veraMolnarTrapezium.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = veraMolnarTrapezium.cpp; sourceTree = "<group>"; };
 		E12029021C1655E60093B1A4 /* veraMolnarTrapezium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = veraMolnarTrapezium.h; sourceTree = "<group>"; };
@@ -736,6 +739,7 @@
 		9238719D1BF7993A00171456 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DB146F7E1FAF53EE0069C4E0 /* heatherMolnarScene */,
 				92205B151FA7791F001772CD /* zachTest */,
 				26CFA2FD1EF07C650030CFAD /* manfredMohrP196A */,
 				C1DB5A341C272DEE000C2F7C /* ofxDataBender */,
@@ -1256,6 +1260,15 @@
 			path = robbyRileyScene;
 			sourceTree = "<group>";
 		};
+		DB146F7E1FAF53EE0069C4E0 /* heatherMolnarScene */ = {
+			isa = PBXGroup;
+			children = (
+				DB146F7F1FAF541B0069C4E0 /* heatherMolnarScene.cpp */,
+				DB146F811FAF54290069C4E0 /* heatherMolnarScene.h */,
+			);
+			path = heatherMolnarScene;
+			sourceTree = "<group>";
+		};
 		E12029001C1655E60093B1A4 /* veraMolnarTrapezium */ = {
 			isa = PBXGroup;
 			children = (
@@ -1567,6 +1580,7 @@
 				B00CD1331C21E89B00C529FA /* README.md in Sources */,
 				923871A61BF7993A00171456 /* sceneManager.cpp in Sources */,
 				B00CD1021C21E81400C529FA /* ofxEasing.cpp in Sources */,
+				DB146F801FAF541B0069C4E0 /* heatherMolnarScene.cpp in Sources */,
 				71C302121C21D14900C0AC31 /* mgsMaedaTimePainter.cpp in Sources */,
 				71C091461C1619FD00C76EB9 /* chrisMurielCooper.cpp in Sources */,
 				B00CD1051C21E81400C529FA /* ofxEasingCirc.cpp in Sources */,

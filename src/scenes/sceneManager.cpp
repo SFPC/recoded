@@ -60,6 +60,7 @@
 #include "mwalczykVeraSquares.h"
 #include "yeseulRileyBrokencircle.h"
 #include "zachTest.h"
+#include "heatherMolnarScene.h"
 
 float baseScene::smoothingSpeed = 0.02;
 
@@ -118,6 +119,7 @@ void sceneManager::setup(){
     scenes.push_back(new olegVeraV());
     scenes.push_back(new sarahgpRileyCircle());
     scenes.push_back(new mwalczykVeraSquares());
+    scenes.push_back(new heatherMolnarScene());
 
     // Too slow
 //     scenes.push_back(new andyMenkmanTif());
