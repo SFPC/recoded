@@ -60,6 +60,7 @@
 #include "mwalczykVeraSquares.h"
 #include "yeseulRileyBrokencircle.h"
 #include "zachTest.h"
+#include "yingTanWhitneyMatrix.h"
 
 float baseScene::smoothingSpeed = 0.02;
 
@@ -72,6 +73,7 @@ void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
 
+    scenes.push_back(new yingTanWhitneyMatrix());
     scenes.push_back(new zachTest());
     scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());
