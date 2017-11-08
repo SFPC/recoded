@@ -10,7 +10,9 @@
 		1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907C5B5E104864A2D3A25745 /* ofxToggle.cpp */; };
 		26B248401BF7DA1100C11D04 /* veraAnimatedScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B2483F1BF7DA1100C11D04 /* veraAnimatedScene.cpp */; };
 		26CFA3001EF07C650030CFAD /* manfredMohrP196A.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26CFA2FE1EF07C650030CFAD /* manfredMohrP196A.cpp */; };
+		2EC1049C1FB002C7007C4CEB /* yingTanWhitneyMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1049A1FB00125007C4CEB /* yingTanWhitneyMatrix.cpp */; };
 		2F8A61141EF0257D00AF3AE1 /* interactionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A61121EF0257D00AF3AE1 /* interactionManager.cpp */; };
+		41D14D0D1FB2900100BBD96F /* yumiNishida01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41D14D0B1FB2900100BBD96F /* yumiNishida01.cpp */; };
 		4776F87E1C17089000975A6B /* cantusFirmusRiley.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4776F87C1C17089000975A6B /* cantusFirmusRiley.cpp */; };
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
 		4F8F344E1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F344C1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp */; };
@@ -115,7 +117,9 @@
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
+		E7B4B85C1FB0CCC700B35F72 /* annMolnarRectangles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4B85A1FB0CCC700B35F72 /* annMolnarRectangles.cpp */; };
 		F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */; };
+		F6AFBD521FB0D8D900DEAA25 /* weiWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6AFBD4F1FB0D85D00DEAA25 /* weiWhitney.cpp */; };
 		FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F431C18862D00F197F3 /* veraMolnarLines68.cpp */; };
 		FA361F491C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */; };
 		FAD0D4271C1C891400C2DA1B /* dgif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD0D41D1C1C891400C2DA1B /* dgif_lib.c */; };
@@ -169,8 +173,13 @@
 		26CFA2FF1EF07C650030CFAD /* manfredMohrP196A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manfredMohrP196A.h; sourceTree = "<group>"; };
 		2834D88A62CD23F3DE2C47D1 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxButton.h; path = ../../../addons/ofxGui/src/ofxButton.h; sourceTree = SOURCE_ROOT; };
 		2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxml.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
+		2EC104991FB00125007C4CEB /* yingTanWhitneyMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yingTanWhitneyMatrix.h; sourceTree = "<group>"; };
+		2EC1049A1FB00125007C4CEB /* yingTanWhitneyMatrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = yingTanWhitneyMatrix.cpp; sourceTree = "<group>"; };
+		2EC1049B1FB00164007C4CEB /* HexagonTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HexagonTrack.h; sourceTree = "<group>"; };
 		2F8A61121EF0257D00AF3AE1 /* interactionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = interactionManager.cpp; sourceTree = "<group>"; };
 		2F8A61131EF0257D00AF3AE1 /* interactionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interactionManager.h; sourceTree = "<group>"; };
+		41D14D0B1FB2900100BBD96F /* yumiNishida01.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yumiNishida01.cpp; sourceTree = "<group>"; };
+		41D14D0C1FB2900100BBD96F /* yumiNishida01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yumiNishida01.h; sourceTree = "<group>"; };
 		4776F87C1C17089000975A6B /* cantusFirmusRiley.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cantusFirmusRiley.cpp; sourceTree = "<group>"; };
 		4776F87D1C17089000975A6B /* cantusFirmusRiley.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cantusFirmusRiley.h; sourceTree = "<group>"; };
 		4F8F344C1C1BD89C000CF07C /* yosukeVeraSansTitre.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yosukeVeraSansTitre.cpp; sourceTree = "<group>"; };
@@ -399,7 +408,11 @@
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		E7B4B85A1FB0CCC700B35F72 /* annMolnarRectangles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = annMolnarRectangles.cpp; sourceTree = "<group>"; };
+		E7B4B85B1FB0CCC700B35F72 /* annMolnarRectangles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = annMolnarRectangles.h; sourceTree = "<group>"; };
 		ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxGuiGroup.cpp; path = ../../../addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
+		F6AFBD4F1FB0D85D00DEAA25 /* weiWhitney.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = weiWhitney.cpp; sourceTree = "<group>"; };
+		F6AFBD501FB0D85D00DEAA25 /* weiWhitney.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = weiWhitney.h; sourceTree = "<group>"; };
 		FA361F431C18862D00F197F3 /* veraMolnarLines68.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = veraMolnarLines68.cpp; sourceTree = "<group>"; };
 		FA361F441C18862D00F197F3 /* veraMolnarLines68.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = veraMolnarLines68.h; sourceTree = "<group>"; };
 		FA361F471C1887A400F197F3 /* alexGifPaletteDitherMenkman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alexGifPaletteDitherMenkman.cpp; sourceTree = "<group>"; };
@@ -456,6 +469,25 @@
 				26CFA2FF1EF07C650030CFAD /* manfredMohrP196A.h */,
 			);
 			path = manfredMohrP196A;
+			sourceTree = "<group>";
+		};
+		2EC104981FB00125007C4CEB /* yingTanWhitneyMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				2EC1049B1FB00164007C4CEB /* HexagonTrack.h */,
+				2EC104991FB00125007C4CEB /* yingTanWhitneyMatrix.h */,
+				2EC1049A1FB00125007C4CEB /* yingTanWhitneyMatrix.cpp */,
+			);
+			path = yingTanWhitneyMatrix;
+			sourceTree = "<group>";
+		};
+		41D14D0A1FB2900100BBD96F /* yumiNishida01 */ = {
+			isa = PBXGroup;
+			children = (
+				41D14D0B1FB2900100BBD96F /* yumiNishida01.cpp */,
+				41D14D0C1FB2900100BBD96F /* yumiNishida01.h */,
+			);
+			path = yumiNishida01;
 			sourceTree = "<group>";
 		};
 		4776F87B1C17089000975A6B /* cantusFirmusRiley */ = {
@@ -740,6 +772,8 @@
 			isa = PBXGroup;
 			children = (
 				DB146F7E1FAF53EE0069C4E0 /* heatherMolnarScene */,
+				2EC104981FB00125007C4CEB /* yingTanWhitneyMatrix */,
+				41D14D0A1FB2900100BBD96F /* yumiNishida01 */,
 				92205B151FA7791F001772CD /* zachTest */,
 				26CFA2FD1EF07C650030CFAD /* manfredMohrP196A */,
 				C1DB5A341C272DEE000C2F7C /* ofxDataBender */,
@@ -749,6 +783,7 @@
 				FAF7DF1C1C1833C70058EFE0 /* alexLissamojiWhitney */,
 				4FEF163E1C114519000B3B4F /* anastasisRileyScene */,
 				C1DB5A381C272DFF000C2F7C /* andyMenkmanJpg */,
+				E7B4B8591FB0CCC700B35F72 /* annMolnarRectangles */,
 				C1DB5A3B1C272DFF000C2F7C /* andyMenkmanPng */,
 				C1DB5A3E1C272DFF000C2F7C /* andyMenkmanTif */,
 				4776F87B1C17089000975A6B /* cantusFirmusRiley */,
@@ -788,6 +823,7 @@
 				85B3DCAE1C1FE6170054975A /* yeseulCooperMessages */,
 				85B3DCA51C1E47060054975A /* yeseulMenkmanInstitution */,
 				71C301C81C1783A500C0AC31 /* yeseulWhitneyScene */,
+				F6AFBD4E1FB0D85D00DEAA25 /* weiWhitney */,
 				853B45251C252FAE00825EE2 /* yeseulRileyBrokencircle */,
 				4FD081C51C2089F0006A7604 /* yosukeJohnWhitneyMatrix */,
 				4F8F344B1C1BD89C000CF07C /* yosukeVeraSansTitre */,
@@ -1352,6 +1388,25 @@
 			name = openFrameworks;
 			sourceTree = "<group>";
 		};
+		E7B4B8591FB0CCC700B35F72 /* annMolnarRectangles */ = {
+			isa = PBXGroup;
+			children = (
+				E7B4B85A1FB0CCC700B35F72 /* annMolnarRectangles.cpp */,
+				E7B4B85B1FB0CCC700B35F72 /* annMolnarRectangles.h */,
+			);
+			name = annMolnarRectangles;
+			path = "../../../recoded-master/src/scenes/annMolnarRectangles";
+			sourceTree = "<group>";
+		};
+		F6AFBD4E1FB0D85D00DEAA25 /* weiWhitney */ = {
+			isa = PBXGroup;
+			children = (
+				F6AFBD4F1FB0D85D00DEAA25 /* weiWhitney.cpp */,
+				F6AFBD501FB0D85D00DEAA25 /* weiWhitney.h */,
+			);
+			path = weiWhitney;
+			sourceTree = "<group>";
+		};
 		FA361F421C18862D00F197F3 /* veraMolnarLines68 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1488,6 +1543,7 @@
 				C13A36731C17906200F13242 /* aaronMarcusHieroglyphB.cpp in Sources */,
 				B00CD10A1C21E81400C529FA /* ofxEasingQuad.cpp in Sources */,
 				B04420911C18B0190049071E /* rachelScene.cpp in Sources */,
+				41D14D0D1FB2900100BBD96F /* yumiNishida01.cpp in Sources */,
 				B01DF7B81C179A7F00B2EAB0 /* Cooper3dText.cpp in Sources */,
 				FAD0D4271C1C891400C2DA1B /* dgif_lib.c in Sources */,
 				B00CD13C1C21E89B00C529FA /* ofxParameterMidiSync.cpp in Sources */,
@@ -1519,6 +1575,7 @@
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				E18350561C14CCA300EAFB96 /* loloWhitney.cpp in Sources */,
+				2EC1049C1FB002C7007C4CEB /* yingTanWhitneyMatrix.cpp in Sources */,
 				7158FF7A1C164C0C00A6025B /* johnWhitneyShader02.cpp in Sources */,
 				92F512061C1EE813000AD19C /* typographyManager.cpp in Sources */,
 				B04420951C18B04D0049071E /* janVantommeScene.cpp in Sources */,
@@ -1541,6 +1598,7 @@
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				D39F0DEF1C222065004DEAAB /* ofxOscBundle.cpp in Sources */,
 				4776F87E1C17089000975A6B /* cantusFirmusRiley.cpp in Sources */,
+				F6AFBD521FB0D8D900DEAA25 /* weiWhitney.cpp in Sources */,
 				4FD081C81C2089F0006A7604 /* yosukeJohnWhitneyMatrix.cpp in Sources */,
 				9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
@@ -1569,6 +1627,7 @@
 				FAD0D4291C1C891400C2DA1B /* gif_err.c in Sources */,
 				FAD0D42B1C1C891400C2DA1B /* gif_hash.c in Sources */,
 				D39F0DF61C222065004DEAAB /* UdpSocket.cpp in Sources */,
+				E7B4B85C1FB0CCC700B35F72 /* annMolnarRectangles.cpp in Sources */,
 				923871B51BF7CCC900171456 /* emptyScene.cpp in Sources */,
 				B00CD1031C21E81400C529FA /* ofxEasingBack.cpp in Sources */,
 				923871A41BF7993A00171456 /* baseScene.cpp in Sources */,
