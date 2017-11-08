@@ -11,7 +11,7 @@ void heatherMolnarScene::setup(){
     offset = 10;
     minAngle = 90;
     maxMidpointAngle = 135;
-    scaledWidth = 0;
+//    scaledWidth = 0;
     
     ofBackground(255);
     ofSetColor(0);
