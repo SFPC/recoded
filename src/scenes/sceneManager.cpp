@@ -60,6 +60,7 @@
 #include "mwalczykVeraSquares.h"
 #include "yeseulRileyBrokencircle.h"
 #include "zachTest.h"
+#include "annMolnarRectangles.h"
 #include "weiWhitney.h"
 #include "yumiNishida01.h"
 
@@ -74,6 +75,7 @@ void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
 
+    scenes.push_back(new annMolnarRectangles());
     scenes.push_back(new weiWhitney());
     scenes.push_back(new yumiNishida01());
     scenes.push_back(new zachTest());

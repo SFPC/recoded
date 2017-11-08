@@ -115,6 +115,7 @@
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
+		E7B4B85C1FB0CCC700B35F72 /* annMolnarRectangles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7B4B85A1FB0CCC700B35F72 /* annMolnarRectangles.cpp */; };
 		F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */; };
 		F6AFBD521FB0D8D900DEAA25 /* weiWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6AFBD4F1FB0D85D00DEAA25 /* weiWhitney.cpp */; };
 		FA361F451C18862D00F197F3 /* veraMolnarLines68.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA361F431C18862D00F197F3 /* veraMolnarLines68.cpp */; };
@@ -400,6 +401,8 @@
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		E7B4B85A1FB0CCC700B35F72 /* annMolnarRectangles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = annMolnarRectangles.cpp; sourceTree = "<group>"; };
+		E7B4B85B1FB0CCC700B35F72 /* annMolnarRectangles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = annMolnarRectangles.h; sourceTree = "<group>"; };
 		ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxGuiGroup.cpp; path = ../../../addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
 		F6AFBD4F1FB0D85D00DEAA25 /* weiWhitney.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = weiWhitney.cpp; sourceTree = "<group>"; };
 		F6AFBD501FB0D85D00DEAA25 /* weiWhitney.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = weiWhitney.h; sourceTree = "<group>"; };
@@ -761,6 +764,7 @@
 				FAF7DF1C1C1833C70058EFE0 /* alexLissamojiWhitney */,
 				4FEF163E1C114519000B3B4F /* anastasisRileyScene */,
 				C1DB5A381C272DFF000C2F7C /* andyMenkmanJpg */,
+				E7B4B8591FB0CCC700B35F72 /* annMolnarRectangles */,
 				C1DB5A3B1C272DFF000C2F7C /* andyMenkmanPng */,
 				C1DB5A3E1C272DFF000C2F7C /* andyMenkmanTif */,
 				4776F87B1C17089000975A6B /* cantusFirmusRiley */,
@@ -1356,6 +1360,16 @@
 			name = openFrameworks;
 			sourceTree = "<group>";
 		};
+		E7B4B8591FB0CCC700B35F72 /* annMolnarRectangles */ = {
+			isa = PBXGroup;
+			children = (
+				E7B4B85A1FB0CCC700B35F72 /* annMolnarRectangles.cpp */,
+				E7B4B85B1FB0CCC700B35F72 /* annMolnarRectangles.h */,
+			);
+			name = annMolnarRectangles;
+			path = "../../../recoded-master/src/scenes/annMolnarRectangles";
+			sourceTree = "<group>";
+		};
 		F6AFBD4E1FB0D85D00DEAA25 /* weiWhitney */ = {
 			isa = PBXGroup;
 			children = (
@@ -1584,6 +1598,7 @@
 				FAD0D4291C1C891400C2DA1B /* gif_err.c in Sources */,
 				FAD0D42B1C1C891400C2DA1B /* gif_hash.c in Sources */,
 				D39F0DF61C222065004DEAAB /* UdpSocket.cpp in Sources */,
+				E7B4B85C1FB0CCC700B35F72 /* annMolnarRectangles.cpp in Sources */,
 				923871B51BF7CCC900171456 /* emptyScene.cpp in Sources */,
 				B00CD1031C21E81400C529FA /* ofxEasingBack.cpp in Sources */,
 				923871A41BF7993A00171456 /* baseScene.cpp in Sources */,
