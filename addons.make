@@ -1,4 +1,3 @@
 ofxGui
 ofxXmlSettings
-ofxOSC
-ofxMidi
+ofxOsc
