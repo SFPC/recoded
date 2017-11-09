@@ -53,13 +53,16 @@
 #include "mgsRileyDiamonds.h"
 #include "mgsRileyEllipsesAndSquares.h"
 #include "mgsRileyDescending.h"
-#include "mgsVeraMolnarLineStudy.h"
+//#include "mgsVeraMolnarLineStudy.h"
 #include "mgsMaedaTimePainter.h"
 #include "olegVeraV.h"
 #include "sarahgpRileyCircle.h"
 #include "mwalczykVeraSquares.h"
 #include "yeseulRileyBrokencircle.h"
 #include "zachTest.h"
+#include "jacobsonMolnar_01.h"
+#include "jacobsonMolnar_02.h"
+#include "jacobsonWhitney_01.h"
 
 float baseScene::smoothingSpeed = 0.02;
 
@@ -72,6 +75,9 @@ void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
 
+    scenes.push_back(new jacobsonWhitney_01());
+    scenes.push_back(new jacobsonMolnar_02());
+    scenes.push_back(new jacobsonMolnar_01());
     scenes.push_back(new zachTest());
     scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
     scenes.push_back(new RileyArcsRoy());
@@ -112,7 +118,7 @@ void sceneManager::setup(){
     scenes.push_back(new mgsCooperSymbols());
     scenes.push_back(new mgsRileyDiamonds());
     scenes.push_back(new mgsRileyEllipsesAndSquares());
-    scenes.push_back(new mgsVeraMolnarLineStudy());
+//    scenes.push_back(new mgsVeraMolnarLineStudy());
     scenes.push_back(new mgsMaedaTimePainter());
     scenes.push_back(new mgsRileyDescending());
     scenes.push_back(new olegVeraV());

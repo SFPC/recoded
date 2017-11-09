@@ -1,4 +1,8 @@
+ofxDelaunay
 ofxGui
-ofxXmlSettings
-ofxOSC
 ofxMidi
+ofxOsc
+ofxParameterMidiSync
+ofxPoissonDiskSampling
+ofxTween
+ofxXmlSettings
