@@ -6,9 +6,10 @@ void interactionManager::setup()
     lastInteractionTime = 0;
     interactionTimeout = 10;
     bInteracting = false;
-
+#ifdef USE_SERIAL
     serial.listDevices();
     serial.setup(0, 57600);
+#endif
 }
 
 void interactionManager::update()
@@ -33,6 +34,7 @@ void interactionManager::update()
     arduinoPacket currPacket;
 
     bool bGotPacket = false;
+#ifdef USE_SERIAL
     while (serial.available())
     {
         char byte = serial.readByte();
@@ -58,19 +60,17 @@ void interactionManager::update()
             {
                 if (strings[0] == "a" && strings[5] == "z")
                 {
-                    
-                    
                     bGotPacket = true;
                     for (int i = 0; i < 4; i++)
                     {
                         currPacket.knobValues[i] = ofToFloat(strings[i + 1])/4096.0;
                         ///cout << "i " << i << " " << currPacket.knobValues[i]  << endl;
-                        
                     }
                 }
             }
         }
     }
+#endif
     //cout << byte;
 
     bool bChange = false;
@@ -142,15 +142,19 @@ void interactionManager::turnOffLEDs() {
 }
 
 void interactionManager::setLEDs(int led1, int led2, int led3, int led4) {
+#ifdef USE_SERIAL
     int ledValuesByte = (led1 & 0x1) + ((led2 & 0x1) << 1) + ((led3 & 0x1) << 2) + ((led4 & 0x1) << 3); 
     serial.writeByte(ledValuesByte);
+#endif
 }
 
 void interactionManager::setCurrentSceneParameterCount(int numParams) {
+#ifdef USE_SERIAL
     int ledValuesByte = 0x0;
     for (int i=0; i<numParams; i++) {
         ledValuesByte += (0x1 << i);
     }
     serial.writeByte(ledValuesByte);
+#endif
 }
 

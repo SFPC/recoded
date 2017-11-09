@@ -47,6 +47,9 @@ It will copy the following files and create new files for your new scene:
  * `bin/data/scenes/emptyScene/` => `bin/data/scenes/sceneName/`
  * `src/scenes/emptyScene/` => `src/scenes/sceneName/`
 
+UPDATED(11.08.17)
+Now this script also adds the necesary lines to the sceneManager so you don't have to worry about doing so. You just need to edit your new scene files.
+
 Now you you can drag the new folder in the `scenes` folder into XCode. Make sure to use these settings if you drag the folder in:
 
 ![XCode Settings](https://dl.dropboxusercontent.com/u/2100102/sfpc/xcode-drag-files.png)

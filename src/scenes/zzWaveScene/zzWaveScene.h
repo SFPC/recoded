@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "baseScene.h"
 
-class zachTest : public baseScene {
+class zzWaveScene : public baseScene {
     
 public:
     
@@ -14,10 +14,7 @@ public:
     ofParameter<float> heightScale;
     ofParameter<float> movementScale;
     
-    float adders[8];
-    ofDirectory dir;
-    vector < ofImage > images;
     
-    ofEasyCam cam;
-    
+     float adders[8];
+//    ofParameter<float> param;
 };

@@ -1,6 +1,6 @@
 #pragma once
 #include "ofMain.h"
-
+#include "appConstants.h"
 // we want to send this to the arduino
 //---------------------------------------------------------------------
 enum status
@@ -42,6 +42,8 @@ class interactionManager
     bool bInteracting;
 
     arduinoPacket prevPacket;
+#ifdef USE_SERIAL
     ofSerial serial;
+#endif
     string s;
 };
