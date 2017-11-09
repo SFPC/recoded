@@ -65,7 +65,16 @@
 #include "annMolnarRectangles.h"
 #include "weiWhitney.h"
 #include "yumiNishida01.h"
+
+// these are food related scenes
+
+#include "zzWaveScene.h"
+#include "zzDonutScene.h"
+#include "zzIceCreamScene.h"
+
+
 //#include "testingScene.h"
+
 
 //SCRIPT_PLACEHOLDER_INCLUDE -- DO NOT REMOVE THIS LINE. PLACE INCLUDES ABOVE. 
 
@@ -86,8 +95,11 @@ void sceneManager::setup(){
     #ifdef MSOFT_LUNCHTIME
     
         // this is for FOOD related scenes
+        scenes.push_back(new zzWaveScene());
+        scenes.push_back(new zzDonutScene());
+        scenes.push_back(new zzIceCreamScene());
     
-        
+    
     #else
     
         scenes.push_back(new yingTanWhitneyMatrix());

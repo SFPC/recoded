@@ -49,6 +49,9 @@
 		923871B51BF7CCC900171456 /* emptyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871AD1BF7CCC900171456 /* emptyScene.cpp */; };
 		923871B61BF7CCC900171456 /* exampleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871B01BF7CCC900171456 /* exampleScene.cpp */; };
 		923871B71BF7CCC900171456 /* triangleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923871B31BF7CCC900171456 /* triangleScene.cpp */; };
+		926A25441FB4D11500BCFDC3 /* zzDonutScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 926A253C1FB4CFD500BCFDC3 /* zzDonutScene.cpp */; };
+		926A25451FB4D11500BCFDC3 /* zzIceCreamScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 926A25421FB4CFD500BCFDC3 /* zzIceCreamScene.cpp */; };
+		926A25461FB4D11500BCFDC3 /* zzWaveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 926A253F1FB4CFD500BCFDC3 /* zzWaveScene.cpp */; };
 		92F512061C1EE813000AD19C /* typographyManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92F512041C1EE813000AD19C /* typographyManager.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B71BE1C157473000D7878 /* memoAktenScene.cpp */; };
@@ -249,6 +252,12 @@
 		923871B31BF7CCC900171456 /* triangleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangleScene.cpp; sourceTree = "<group>"; };
 		923871B41BF7CCC900171456 /* triangleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangleScene.h; sourceTree = "<group>"; };
 		923871B81BF7D2C400171456 /* appConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = appConstants.h; path = scenes/appConstants.h; sourceTree = "<group>"; };
+		926A253C1FB4CFD500BCFDC3 /* zzDonutScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = zzDonutScene.cpp; sourceTree = "<group>"; };
+		926A253D1FB4CFD500BCFDC3 /* zzDonutScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zzDonutScene.h; sourceTree = "<group>"; };
+		926A253F1FB4CFD500BCFDC3 /* zzWaveScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = zzWaveScene.cpp; sourceTree = "<group>"; };
+		926A25401FB4CFD500BCFDC3 /* zzWaveScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zzWaveScene.h; sourceTree = "<group>"; };
+		926A25421FB4CFD500BCFDC3 /* zzIceCreamScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = zzIceCreamScene.cpp; sourceTree = "<group>"; };
+		926A25431FB4CFD500BCFDC3 /* zzIceCreamScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zzIceCreamScene.h; sourceTree = "<group>"; };
 		92F512041C1EE813000AD19C /* typographyManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = typographyManager.cpp; sourceTree = "<group>"; };
 		92F512051C1EE813000AD19C /* typographyManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = typographyManager.hpp; sourceTree = "<group>"; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
@@ -829,8 +838,6 @@
 				4F8F344B1C1BD89C000CF07C /* yosukeVeraSansTitre */,
 				9238719E1BF7993A00171456 /* baseScene.cpp */,
 				9238719F1BF7993A00171456 /* baseScene.h */,
-				923871A21BF7993A00171456 /* sceneManager.cpp */,
-				923871A31BF7993A00171456 /* sceneManager.h */,
 				92F512041C1EE813000AD19C /* typographyManager.cpp */,
 				92F512051C1EE813000AD19C /* typographyManager.hpp */,
 			);
@@ -863,6 +870,46 @@
 			);
 			path = triangleScene;
 			sourceTree = "<group>";
+		};
+		926A253A1FB4CFC500BCFDC3 /* zzScenes */ = {
+			isa = PBXGroup;
+			children = (
+				926A253B1FB4CFD500BCFDC3 /* zzDonutScene */,
+				926A25411FB4CFD500BCFDC3 /* zzIceCreamScene */,
+				926A253E1FB4CFD500BCFDC3 /* zzWaveScene */,
+			);
+			path = zzScenes;
+			sourceTree = SOURCE_ROOT;
+		};
+		926A253B1FB4CFD500BCFDC3 /* zzDonutScene */ = {
+			isa = PBXGroup;
+			children = (
+				926A253C1FB4CFD500BCFDC3 /* zzDonutScene.cpp */,
+				926A253D1FB4CFD500BCFDC3 /* zzDonutScene.h */,
+			);
+			name = zzDonutScene;
+			path = src/scenes/zzDonutScene;
+			sourceTree = SOURCE_ROOT;
+		};
+		926A253E1FB4CFD500BCFDC3 /* zzWaveScene */ = {
+			isa = PBXGroup;
+			children = (
+				926A253F1FB4CFD500BCFDC3 /* zzWaveScene.cpp */,
+				926A25401FB4CFD500BCFDC3 /* zzWaveScene.h */,
+			);
+			name = zzWaveScene;
+			path = src/scenes/zzWaveScene;
+			sourceTree = SOURCE_ROOT;
+		};
+		926A25411FB4CFD500BCFDC3 /* zzIceCreamScene */ = {
+			isa = PBXGroup;
+			children = (
+				926A25421FB4CFD500BCFDC3 /* zzIceCreamScene.cpp */,
+				926A25431FB4CFD500BCFDC3 /* zzIceCreamScene.h */,
+			);
+			name = zzIceCreamScene;
+			path = src/scenes/zzIceCreamScene;
+			sourceTree = SOURCE_ROOT;
 		};
 		9A6B71BD1C157473000D7878 /* memoAktenScene */ = {
 			isa = PBXGroup;
@@ -1377,9 +1424,12 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				926A253A1FB4CFC500BCFDC3 /* zzScenes */,
 				923871B81BF7D2C400171456 /* appConstants.h */,
 				9238719D1BF7993A00171456 /* scenes */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				923871A21BF7993A00171456 /* sceneManager.cpp */,
+				923871A31BF7993A00171456 /* sceneManager.h */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				2F8A61121EF0257D00AF3AE1 /* interactionManager.cpp */,
@@ -1614,9 +1664,11 @@
 				9224BC9E1C20F233003668CF /* mgsRileyDiamonds.cpp in Sources */,
 				E1802C931C16905000780A6F /* loloVera2.cpp in Sources */,
 				B00CD1061C21E81400C529FA /* ofxEasingCubic.cpp in Sources */,
+				926A25451FB4D11500BCFDC3 /* zzIceCreamScene.cpp in Sources */,
 				D39F0DF81C222065004DEAAB /* OscPrintReceivedElements.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				B00CD13B1C21E89B00C529FA /* README.md in Sources */,
+				926A25461FB4D11500BCFDC3 /* zzWaveScene.cpp in Sources */,
 				710B1D0D1C228CC000CD3C24 /* sarahgpRileyCircle.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
 				B00CD1361C21E89B00C529FA /* ofxBaseMidi.cpp in Sources */,
@@ -1634,6 +1686,7 @@
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */,
 				D39F0DFA1C222065004DEAAB /* OscTypes.cpp in Sources */,
+				926A25441FB4D11500BCFDC3 /* zzDonutScene.cpp in Sources */,
 				D541137B1C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp in Sources */,
 				B00CD1331C21E89B00C529FA /* README.md in Sources */,
 				923871A61BF7993A00171456 /* sceneManager.cpp in Sources */,
