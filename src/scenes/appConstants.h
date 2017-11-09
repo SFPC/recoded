@@ -1,6 +1,12 @@
 
 #pragma once
 
+
+
+// this is for scenes with zz
+// https://www.instagram.com/zzdesign/
+//#define MSOFT_LUNCHTIME
+
 // assume that visuals and code are the same here....
 // and also assuming our screen is square :)
 
@@ -49,3 +55,5 @@
 
 #define OSC_HOST "localhost" // send to this host
 #define OSC_PORT 12345       // send on this port
+
+//#define USE_SERIAL // Uncomment this line to use serial/talk to arduino

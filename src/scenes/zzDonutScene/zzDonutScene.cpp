@@ -1,23 +1,23 @@
 
-#include "emptyScene.h"
+#include "zzDonutScene.h"
 
-void emptyScene::setup(){
+void zzDonutScene::setup(){
   
 // setup pramaters
 // if your original code use an ofxPanel instance dont use it here, instead
 // add your parameters to the "parameters" instance as follows.
-// param was declared in emptyScene.h
+// param was declared in zzDonutScene.h
     //parameters.add(param.set("param", 5, 0, 100));
 
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("scenes/emptyScene/exampleCode.cpp");
+    loadCode("scenes/zzDonutScene/exampleCode.cpp");
 }
 
-void emptyScene::update(){
+void zzDonutScene::update(){
     
 }
 
-void emptyScene::draw(){
+void zzDonutScene::draw(){
 }
