@@ -1,10 +1,10 @@
 #!/bin/bash
 
 addAfterPlaceholder (){
-sed -i '' "s/\(\/\/$1.*$\)/$2\\`echo -e '\\n'`\1/g" $3
+#sed -i '' "s/\(\/\/$1.*$\)/$2\n&/g" $3
 }
 addBeforePlaceholder (){
-sed -i '' "s/\(\/\/$1.*$\)/\1\\`echo -e '\\n'`$2/g" $3
+#sed -i '' "s/\(\/\/$1.*$\)/&\n$2/g" $3
 }
 
 if [ $# -eq 1 ]
