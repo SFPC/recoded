@@ -11,5 +11,17 @@ public:
     void update();
     void draw();
     
+    vector < ofImage > iceCreams;
+    
+    
+    typedef struct {
+        ofPoint pt;
+        int index;
+        
+    } iceCreamPoint;
+    
+    vector < iceCreamPoint > pts;
+    
+    
 //    ofParameter<float> param;
 };
