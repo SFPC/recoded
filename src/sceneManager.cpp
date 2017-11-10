@@ -88,6 +88,7 @@
 #include "annCaseyWave.h"
 #include "diegoScene_01.h"
 #include "stacyButterflies.h"
+#include "EstherMolnarScene.h"
 
 // these are food related scenes
 
@@ -126,6 +127,7 @@ void sceneManager::setup(){
     
     #else
     // ------- 2017 fall
+	scenes.push_back(new EstherMolnarScene());
 	scenes.push_back(new stacyButterflies());
     scenes.push_back(new diegoScene_01());
     scenes.push_back(new annCaseyWave());
