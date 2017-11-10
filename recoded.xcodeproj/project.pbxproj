@@ -126,6 +126,7 @@
 		B0822B281FB55D0300007B2D /* annCaseyWave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0822B261FB55D0300007B2D /* annCaseyWave.cpp */; };
 		B0822B301FB5646A00007B2D /* diegoScene_01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0822B2E1FB5646A00007B2D /* diegoScene_01.cpp */; };
 		B0822B341FB565DC00007B2D /* stacyButterflies.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0822B321FB565DC00007B2D /* stacyButterflies.cpp */; };
+		B0822B381FB6396800007B2D /* EstherMolnarScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0822B361FB6396800007B2D /* EstherMolnarScene.cpp */; };
 		B11069825EDE2A88D94DEEC8 /* manfredMohrP196A.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DD102170F09C672840C0B05 /* manfredMohrP196A.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
 		B51874662BB53B0705173C5D /* olegVeraV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2D797A65142C6880C50BA4 /* olegVeraV.cpp */; };
@@ -432,6 +433,8 @@
 		B0822B2F1FB5646A00007B2D /* diegoScene_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = diegoScene_01.h; sourceTree = "<group>"; };
 		B0822B321FB565DC00007B2D /* stacyButterflies.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stacyButterflies.cpp; sourceTree = "<group>"; };
 		B0822B331FB565DC00007B2D /* stacyButterflies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stacyButterflies.h; sourceTree = "<group>"; };
+		B0822B361FB6396800007B2D /* EstherMolnarScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EstherMolnarScene.cpp; sourceTree = "<group>"; };
+		B0822B371FB6396800007B2D /* EstherMolnarScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstherMolnarScene.h; sourceTree = "<group>"; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		B31C608870ECEB2490A93736 /* ofxOscParameterSync.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscParameterSync.h; path = ../../../addons/ofxOsc/src/ofxOscParameterSync.h; sourceTree = SOURCE_ROOT; };
 		B34ED4A286D435D6807C4B65 /* jacobsonMolnar_01.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = jacobsonMolnar_01.cpp; path = src/scenes/jacobsonMolnar_01/jacobsonMolnar_01.cpp; sourceTree = SOURCE_ROOT; };
@@ -751,6 +754,7 @@
 				0149494EB5DCC01D5CFB4DE2 /* CooperBauhaus */,
 				C1868819252A931A515C8E7D /* emptyScene */,
 				7C571BA174F7589B7F0A0937 /* EstherKnowltonScene */,
+				B0822B351FB6396800007B2D /* EstherMolnarScene */,
 				39BAC5F6447319B74F7D342C /* exampleScene */,
 				D8D2E37594327CFC3027611B /* fernandoMuriel */,
 				6D14F44E344D63192306F245 /* fernandoWhitney */,
@@ -1514,6 +1518,16 @@
 			path = scenes/stacyButterflies;
 			sourceTree = "<group>";
 		};
+		B0822B351FB6396800007B2D /* EstherMolnarScene */ = {
+			isa = PBXGroup;
+			children = (
+				B0822B361FB6396800007B2D /* EstherMolnarScene.cpp */,
+				B0822B371FB6396800007B2D /* EstherMolnarScene.h */,
+			);
+			name = EstherMolnarScene;
+			path = scenes/EstherMolnarScene;
+			sourceTree = "<group>";
+		};
 		B17A82BBF82318DCF736401D /* jacobsonMolnar_02 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2023,6 +2037,7 @@
 				4FC1D78BBE6BA186FAFCA02D /* mgsRileyDiamonds.cpp in Sources */,
 				70A2E63FCED5572985116C0E /* mgsRileyEllipsesAndSquares.cpp in Sources */,
 				310ED8BB549B244C0DFB0FA1 /* mgsVeraMolnarLineStudy.cpp in Sources */,
+				B0822B381FB6396800007B2D /* EstherMolnarScene.cpp in Sources */,
 				B0822AE11FB5491200007B2D /* ofxRtMidiOut.cpp in Sources */,
 				203D9685D89D8A6D42285C68 /* exampleCode.cpp in Sources */,
 				08E30F8D5828117E48A7E046 /* mwalczykVeraSquares.cpp in Sources */,
