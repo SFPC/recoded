@@ -5,10 +5,10 @@ void mattKnowlton::setup(){
     
     ofBackground(0);
     
-    fbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA);
+    fbo.allocate(dimensions.width, dimensions.height, GL_RGBA);
     
     tileCount = 50;
-    gridSize = VISUALS_WIDTH/tileCount;
+    gridSize = dimensions.width/tileCount;
     numFlowers = tileCount * tileCount;
     
     setAuthor("Matthew Ortega");
@@ -38,7 +38,7 @@ void mattKnowlton::setup(){
     
     // Load and resize all of the images
     ofRectangle imgRect(0,0,imgs[0].getWidth(), imgs[0].getHeight());
-    ofRectangle visualsRect(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
+    ofRectangle visualsRect(0,0,dimensions.width, dimensions.height);
     imgRect.scaleTo(visualsRect, OF_SCALEMODE_FILL);
     
     for(int i=0; i<imgs.size(); i++){
@@ -59,7 +59,7 @@ void mattKnowlton::setup(){
     int randomStart = int(ofRandom(0, imgs.size()));
     
     loadPoints();
-    loadColors(imgs[randomStartgithub]);
+    loadColors(imgs[randomStart]);
 }
 
 void mattKnowlton::update(){
