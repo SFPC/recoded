@@ -59,7 +59,7 @@ void mattKnowlton::setup(){
     int randomStart = int(ofRandom(0, imgs.size()));
     
     loadPoints();
-    loadColors(imgs[randomStartgithub]);
+    loadColors(imgs[randomStart]);
 }
 
 void mattKnowlton::update(){

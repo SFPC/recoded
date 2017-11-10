@@ -69,7 +69,6 @@
 #include "weiWhitney.h"
 #include "yumiNishida01.h"
 
-
 #include "niklasLissajous.h"
 #include "niklasMolnar.h"
 #include "niklasMorisawa.h"
@@ -80,6 +79,9 @@
 #include "hyojinVeraMolnar.h"
 #include "hyojinJohnWhitney.h"
 #include "EstherKnowltonScene.h"
+#include "jacobsonMolnar_01.h"
+#include "jacobsonMolnar_02.h"
+#include "jacobsonWhitney_01.h"
 
 
 // these are food related scenes
@@ -89,10 +91,9 @@
 #include "zzIceCreamScene.h"
 
 
-//#include "testingScene.h"
-
-
 //SCRIPT_PLACEHOLDER_INCLUDE -- DO NOT REMOVE THIS LINE. PLACE INCLUDES ABOVE. 
+
+
 
 
 float baseScene::smoothingSpeed = 0.02;
@@ -107,8 +108,6 @@ void sceneManager::setup(){
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
 
     //SCRIPT_PLACEHOLDER_PUSH_SCENE -- DO NOT REMOVE OR MOVE THIS LINE 
-
-    
     
     #ifdef MSOFT_LUNCHTIME
     
@@ -119,18 +118,19 @@ void sceneManager::setup(){
     
     
     #else
-
-
-        scenes.push_back(new niklasLissajous());
-        scenes.push_back(new niklasMolnar());
-        scenes.push_back(new niklasMorisawa());
-        scenes.push_back(new niklasWhitneySineWave());
-        scenes.push_back(new fernandoMuriel());
-        scenes.push_back(new fernandoWhitney());
-		scenes.push_back(new fernandoWhitney2());
+    scenes.push_back(new niklasLissajous());
+    scenes.push_back(new niklasMolnar());
+    scenes.push_back(new niklasMorisawa());
+    scenes.push_back(new niklasWhitneySineWave());
+    scenes.push_back(new fernandoMuriel());
+    scenes.push_back(new fernandoWhitney());
+	scenes.push_back(new fernandoWhitney2());
+    scenes.push_back(new jacobsonWhitney_01());
+    scenes.push_back(new jacobsonMolnar_02());
+    scenes.push_back(new jacobsonMolnar_01());
 	scenes.push_back(new hyojinVeraMolnar());
 	scenes.push_back(new hyojinJohnWhitney());
-     scenes.push_back(new mattKnowlton());
+    scenes.push_back(new mattKnowlton());
 	scenes.push_back(new EstherKnowltonScene());
 	scenes.push_back(new yingTanWhitneyMatrix());
 	scenes.push_back(new annMolnarRectangles());
@@ -185,7 +185,7 @@ void sceneManager::setup(){
 	scenes.push_back(new heatherMolnarScene());
 	
     #endif
-	
+
 
     // Too slow
 //     scenes.push_back(new andyMenkmanTif());

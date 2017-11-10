@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-               BuildableName = "d4nSFPCRunner.app"
-               BlueprintName = "d4nSFPCRunner"
-               ReferencedContainer = "container:d4nSFPCRunner.xcodeproj">
+               BuildableName = "recoded.app"
+               BlueprintName = "recoded"
+               ReferencedContainer = "container:recoded.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "d4nSFPCRunner.app"
-            BlueprintName = "d4nSFPCRunner"
-            ReferencedContainer = "container:d4nSFPCRunner.xcodeproj">
+            BuildableName = "recoded.app"
+            BlueprintName = "recoded"
+            ReferencedContainer = "container:recoded.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "d4nSFPCRunner.app"
-            BlueprintName = "d4nSFPCRunner"
-            ReferencedContainer = "container:d4nSFPCRunner.xcodeproj">
+            BuildableName = "recoded.app"
+            BlueprintName = "recoded"
+            ReferencedContainer = "container:recoded.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "d4nSFPCRunner.app"
-            BlueprintName = "d4nSFPCRunner"
-            ReferencedContainer = "container:d4nSFPCRunner.xcodeproj">
+            BuildableName = "recoded.app"
+            BlueprintName = "recoded"
+            ReferencedContainer = "container:recoded.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
