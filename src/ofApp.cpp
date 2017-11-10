@@ -62,7 +62,11 @@ void ofApp::draw(){
 //  ofLine(0,0,520,520);
 //  ofLine(520,0, 520+520,520);
 
+    
+#ifndef BIG_TV
 	SM.draw();
+    
+#endif
     
 
     if (SM.pctDelay < SCENE_PRE_TRANSITION_FADE || SM.isTransitioning) {
@@ -79,25 +83,35 @@ void ofApp::draw(){
 	}
     
     
-
+#ifndef BIG_TV
 	ofPushMatrix();
 	ofTranslate(520,0);
 	SM.codeFbo.draw(0, 0, 520,520);
 	ofPopMatrix();
+     SM.drawGui();
+#endif
+    
+#ifdef BIG_TV
 
-//    ofPushMatrix();
-//        float h = 504 * 1920.0/(float)(504+504);
-//        ofTranslate(0,(1080-h)*0.5);
-//        ofScale(1920.0/(float)(504+504), 1920.0/(float)(504+504));
-//        SM.draw();
-//    ofPopMatrix();
-//
-//    ofPushMatrix();
-//
-//    ofTranslate(h, 0);
-//    SM.codeFbo.draw(0, 0, 504*2, 504*2);
-//        //SM.drawType();
-//    ofPopMatrix();
+    ofPushMatrix();
+        float h = 504 * 1920.0/(float)(504+504);
+        ofTranslate(0,(1080-h)*0.5);
+        ofScale(1920.0/(float)(504+504), 1920.0/(float)(504+504));
+        SM.draw();
+    
+    
+    ofPopMatrix();
+
+    ofPushMatrix();
+
+    ofTranslate(h, (1080-h)*0.5);
+    SM.codeFbo.draw(0, 0, 504*2, 504*2);
+        //SM.drawType();
+    ofPopMatrix();
+    
+     SM.drawGui();
+#endif
+    
 
 
 #elif defined DRAW_ONE_BIG
@@ -106,18 +120,23 @@ void ofApp::draw(){
 	ofTranslate((1920-w)*0.5, 0);
 	ofScale(scale, scale);
 	SM.draw();
+       SM.drawGui();
 #else
 	SM.draw();
+       SM.drawGui();
 #endif
 
 
 	ofPopMatrix();
     
-    string message = "interaction mode ";
-    message += (IM.bInteracting == true ? "interacting" : "playback");
-    ofDrawBitmapString(message, 100, 540);
-    for (int i = 0; i < 4; i++){
-        ofDrawBitmapString( "knob value " + ofToString(i) + " = " + ofToString(IM.prevPacket.knobValues[i] * 100), 100, 570 + 30 * i);
+    
+    if (SM.bDrawGui){
+        string message = "interaction mode ";
+        message += (IM.bInteracting == true ? "interacting" : "playback");
+        ofDrawBitmapString(message, 100, 540);
+        for (int i = 0; i < 4; i++){
+            ofDrawBitmapString( "knob value " + ofToString(i) + " = " + ofToString(IM.prevPacket.knobValues[i] * 100), 100, 570 + 30 * i);
+        }
     }
 
 }
@@ -141,12 +160,15 @@ void ofApp::keyPressed(int key){
 		SM.screenGrab();
 	}
 
-	if (key == 'c') {
+	if (key == 'h') {
 		ofHideCursor();
+        SM.bDrawGui = false;
+        
 	}
-	if (key == 'C') {
+	if (key == 'H') {
 		ofShowCursor();
-	}
+        SM.bDrawGui = true;
+    }
 
 
 

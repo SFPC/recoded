@@ -4,10 +4,10 @@ void heatherMolnarScene::setup(){
     
     // www.galeriecourcarree.com/img/galeries/vera_molnar/web/Galerie-Cour-Carree-Vera-Molnar-8.jpeg
     
-    columns = 60;
-    rows = 25;
+    columns = 30;
+    rows = 30;
     midPoint = floor(columns/2);
-    cellSize = 25;
+    cellSize = dimensions.width/columns;
     offset = 10;
     minAngle = 90;
     maxMidpointAngle = 135;

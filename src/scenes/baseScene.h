@@ -2,11 +2,11 @@
 #pragma once
 
 #include "ofMain.h"
-#include "appConstants.h"
+//#include "appConstants.h"
 #include "ofxXmlSettings.h"
-#ifdef USE_MIDI_RECORDING
+//#ifdef USE_MIDI_RECORDING
 #include "ofxMidiRecorder.h"
-#endif
+//#endif
 
 
 void reportKnobs(string f);
@@ -133,13 +133,13 @@ public:
 
     ofRectangle dimensions;     // this is the dimensions of
                                 // the surface you are drawing into.
-#ifdef USE_MIDI_RECORDING
+//#ifdef USE_MIDI_RECORDING
     vector<ofxMidiRecordingEvent> recData;
     string dataPath;
     void setRecData(const vector<ofxMidiRecordingEvent>& data);
     const vector<ofxMidiRecordingEvent>& getRecData();
     bool hasRecData();
-#endif
+//#endif
     //----------------------------------------
     // scene timing and frames.
     uint64_t startTime;
