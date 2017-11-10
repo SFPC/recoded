@@ -9,7 +9,7 @@ void EstherKnowltonScene::setup(){
 // param was declared in EstherKnowltonScene.h
     //parameters.add(param.set("param", 5, 0, 100));
 
-	img.load("N00004808.jpg");
+	img.load("scenes/EstherKnowltonScene/N00004808.jpg");
 	img.setImageType(OF_IMAGE_GRAYSCALE);
 
 	float width = ofGetWidth();
@@ -25,9 +25,6 @@ void EstherKnowltonScene::setup(){
     setOriginalArtist("Put the original Artist's name here");
 
     loadCode("scenes/EstherKnowltonScene/exampleCode.cpp");
-	
-	
-	
 	
 	
 }
