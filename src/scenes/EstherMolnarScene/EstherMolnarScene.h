@@ -10,6 +10,8 @@ public:
     void setup();
     void update();
     void draw();
-    
-//    ofParameter<float> param;
+
+	ofParameter<float> color, size, move;
+
+	ofBlendMode blendMode;
 };
