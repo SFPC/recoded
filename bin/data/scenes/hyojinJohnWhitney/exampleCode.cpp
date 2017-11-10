@@ -1,4 +1,13 @@
-// code goes here!
+    ofSetCircleResolution(8);
+    ofSetColor(100);
 
-//if you want to show a parameter's value, which highlights when it changes you need to enclose it's name in double square brackets.
-// for a parameter named myParam you shoudl put [[myParam]] in the pseudo code below.
+    time = time + ofGetLastFrameTime()*[[speed]];
+
+
+    for(int i = 0; i < [[amount]]; i++){
+        float x = ofGetWidth()/2 + 200 * cos((time+i)*[[cosine]]);
+        float y = ofGetHeight()/2 + 200 * sin((time+i)*sinVal);
+
+        breath =  ofMap(sin(ofGetElapsedTimef()*1.5), -1, 1, 8,15);
+        ofDrawCircle(x,y,cirSize*sin(i*0.05)*2.3+cirSize+breath);
+    }

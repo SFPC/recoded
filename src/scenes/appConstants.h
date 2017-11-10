@@ -63,4 +63,4 @@
 #define OSC_HOST "localhost" // send to this host
 #define OSC_PORT 12345       // send on this port
 
-#define USE_SERIAL // Uncomment this line to use serial/talk to arduino
+//#define USE_SERIAL // Uncomment this line to use serial/talk to arduino

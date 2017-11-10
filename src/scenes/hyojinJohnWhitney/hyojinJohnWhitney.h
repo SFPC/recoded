@@ -21,7 +21,4 @@ public:
     ofParameter<float> amount;
     ofParameter<float> speed;
     ofParameter<float> cosine;
-    
-    
-    
 };

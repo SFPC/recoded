@@ -16,34 +16,22 @@ void hyojinJohnWhitney::setup(){
     parameters.add(speed);
     parameters.add(cosine);
     
-    ofEnableBlendMode(OF_BLENDMODE_SCREEN);
+    
     
     setAuthor("Hyojin Yoo");
     setOriginalArtist("John Whitney");
-
+    
     loadCode("scenes/hyojinJohnWhitney/exampleCode.cpp");
 }
 
 void hyojinJohnWhitney::update(){
-
-    //    ofSetCircleResolution(8);
-//    ofSetColor(100);
-//    
-//    time = time + ofGetLastFrameTime()*speed;
-//    
-//    
-//    for(int i = 0; i < amount; i++){
-//        float x = ofGetWidth()/2 + 200 * cos((time+i)*cosine);
-//        float y = ofGetHeight()/2 + 200 * sin((time+i)*sinVal);
-//        
-//        breath =  ofMap(sin(ofGetElapsedTimef()*1.5), -1, 1, 8,15);
-//        ofDrawCircle(x,y,cirSize*sin(i*0.05)*2.3+cirSize+breath);
-//    }
+    
+   
     
 }
 
 void hyojinJohnWhitney::draw(){
-    
+    ofEnableBlendMode(OF_BLENDMODE_SCREEN);
     ofSetCircleResolution(8);
     ofSetColor(100);
     
@@ -51,10 +39,11 @@ void hyojinJohnWhitney::draw(){
     
     
     for(int i = 0; i < amount; i++){
-        float x = ofGetWidth()/2 + 200 * cos((time+i)*cosine);
-        float y = ofGetHeight()/2 + 200 * sin((time+i)*sinVal);
-
+        float x = dimensions.width/2 + 200 * cos((time+i)*cosine);
+        float y = dimensions.height/2 + 200 * sin((time+i)*sinVal);
+        
         breath =  ofMap(sin(ofGetElapsedTimef()*1.5), -1, 1, 8,15);
         ofDrawCircle(x,y,cirSize*sin(i*0.05)*2.3+cirSize+breath);
     }
+
 }
