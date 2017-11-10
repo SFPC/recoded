@@ -14,15 +14,15 @@ void EstherKnowltonScene::setup(){
 
 	float width = ofGetWidth();
 
-	parameters.add(posX1.set("posX1", -10, -20, 0));
+	parameters.add(posX1.set("posX1", -10, -25, 0));
 	parameters.add(rotation.set("rotation", 150, 0, ofGetWidth()));
 	parameters.add(alpha.set("alpha", 140, 0, 255));
 
 
 
 
-    setAuthor("Put Your Name Here");
-    setOriginalArtist("Put the original Artist's name here");
+    setAuthor("Esther Bouquet");
+    setOriginalArtist("Ken Knowlton");
 
     loadCode("scenes/EstherKnowltonScene/exampleCode.cpp");
 	
@@ -37,8 +37,8 @@ void EstherKnowltonScene::draw(){
 
 	ofSetRectMode(OF_RECTMODE_CENTER);
 	
-	for (int i = 0; i < img.getWidth(); i=i+15) { 
-		for (int j = 0; j < img.getHeight(); j=j+15) {
+	for (int i = 0; i < img.getWidth(); i=i+20) {
+		for (int j = 0; j < img.getHeight(); j=j+20) {
 
 			ofColor c = img.getColor(i, j); 
 			float bright = c.getBrightness(); 
