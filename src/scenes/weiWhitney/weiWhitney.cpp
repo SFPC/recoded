@@ -8,7 +8,10 @@ void weiWhitney::setup(){
     
     loadCode("scenes/weiWhitney/exampleCode.cpp");
 
-
+	parameters.add(speed.set("Speed", 1,0,10));
+	parameters.add(scale.set("Scale", 1,0,1));
+	parameters.add(nTips.set("Num Tips", 10, 5, 60));
+	parameters.add(radiusAdder.set("Radius Adder", 0.5,0,10));
 }
 
 //--------------------------------------------------------------
@@ -20,14 +23,10 @@ void weiWhitney::update(){
 void weiWhitney::draw(){
 	
     //use dimensions
-    dimensions.width;
-    dimensions.height;
-    float xPct = (float)(ofGetMouseX()) / (float)(dimensions.width);
-    float yPct = (float)(ofGetMouseY()) / (float)(dimensions.height);
     
-    float time = ofGetElapsedTimef();
+    float time = ofGetElapsedTimef() * speed;
     
-    int nTips = 5 + xPct * 60;
+
     //int nStarPts = nTips * 2;
     int nStarPts = nTips * ofMap(sin(time)/2, -1, 1, 1, 10);
     
@@ -35,17 +34,14 @@ void weiWhitney::draw(){
     //the shape from two verices to grow more
     //float angleChangePerPt = TWO_PI / (float)nStarPts;      //TWO_PI means solid
     float angleChangePerPt = FOUR_PI / (float)nStarPts;   //FOUR_PI meas inside hollow
-    float innerRadius = 0 + yPct*30+ofMap(sin(time), -1, 1, -30, 50);
-    float outerRadius = 0 + yPct*160+ofMap(sin(time)/2, -1, 1, -100, 300);
+    float innerRadius =  scale *30+ofMap(sin(time), -1, 1, -30, 50);
+    float outerRadius =  scale *160+ofMap(sin(time)/2, -1, 1, -100, 300);
     float origx = dimensions.width/2;
     float origy = dimensions.height/2;
 
     
     float angle = -time*ofMap(sin(time), -1, 1, 0, 1);
-    
-
-    
-    
+	
     ofSetHexColor(0xa16bca);
     ofBeginShape();
     for (int i = 0; i < nStarPts; i++){
@@ -78,8 +74,8 @@ void weiWhitney::draw(){
     //ofSetPolyMode(OF_POLY_WINDING_NONZERO);
     
     ofBeginShape();
-    float angleStep     = TWO_PI/(100.0f + sin(ofGetElapsedTimef()/5.0f) * 600);
-    float radiusAdder     = 0.5f;
+    float angleStep     = TWO_PI/(100.0f + sin(time/5.0f) * 600);
+//    float radiusAdder     = 0.5f;
     float radius         = ofMap(sin(time)*10, -1, 1, 0, 100);
     for (int i = 0; i < 200; i++){
         float anglef = (i) * angleStep;

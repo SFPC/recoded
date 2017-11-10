@@ -16,39 +16,30 @@ void diegoScene_01::setup(){
 	
 	ofSetCircleResolution(100);
     
-    posX = 200;
-    posY = 2000;
-    radius = 2;
-    
-    rot1 = 0;
-    rot2 = 0;
-    rot3 = 0.0;
+
 	
+	parameters.add(speed.set("speed", 0.1, 0, 2));
+	parameters.add(rot2Inc.set("Rotation 2 Increment", 0.2, 0, 2));
+	parameters.add(rot3Inc.set("Rotation 3 Increment", 1.5, 0, 4));
+	parameters.add(noiseScale.set("Noise Scale", 0.01,0,1));
 }
 
 void diegoScene_01::update(){
-     rot1 += 0.1;
-    rot2 += 0.2;
-    rot3 += 1.5;
-    
-    posX = cos(rot3);
-    posY = sin(rot3);
 	
 }
 
 void diegoScene_01::draw(){
 	ofPushStyle();
-    ofSetColor(ofRandom(0, 255),0,0);
+	float time = ofGetElapsedTimef() * speed;
+	float n = ofNoise(noiseScale*time);
+    ofSetColor(ofColor::fromHsb(n*255,255,255));
     ofPushMatrix();
     ofTranslate(dimensions.width/2, dimensions.height/2);
-    
-    float time = ofGetElapsedTimef();
-    float size = time;
-    
+	
     for (int i = 0; i < 2000; i++){
         ofNoFill();
-        ofRotate(size/2);
-        ofDrawCircle(i, i, 80 + sin(ofGetElapsedTimef()));
+        ofRotate(time/2);
+        ofDrawCircle(i, i, 80 + sin(time));
     }
 	ofPopMatrix();
 	ofPopStyle();

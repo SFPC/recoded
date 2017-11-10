@@ -28,6 +28,5 @@ class annCaseyWave : public baseScene {
     
     ofParameter < float > radius;
     ofParameter < float > partyMode;
-//    ofParameter < float > yPos;
-	ofParameter <ofVec2f> pos;
+	ofParameter < float > posX, posY;
 };

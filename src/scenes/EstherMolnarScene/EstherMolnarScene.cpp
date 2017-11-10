@@ -20,7 +20,7 @@ void EstherMolnarScene::setup(){
 	parameters.add(size.set("size", 115, 80, 140));
 	parameters.add(move.set("move", 250, 0, 400));
 
-	ofSetRectMode(OF_RECTMODE_CENTER);
+	
 
 	
 }
@@ -31,6 +31,8 @@ void EstherMolnarScene::update(){
 
 void EstherMolnarScene::draw(){
 	ofBackground(0);
+	ofPushStyle();
+	ofSetRectMode(OF_RECTMODE_CENTER);
 
 	ofEnableBlendMode(OF_BLENDMODE_ADD);
 
@@ -40,7 +42,7 @@ void EstherMolnarScene::draw(){
 			ofDrawRectangle(50 + i * 140 + ofRandom(-move, move) / 30, 50 + j * 140 + ofRandom(-move, move) / 30, size, size);
 		}
 	}
-
+	ofPopStyle();
 	ofDisableBlendMode();
 
 

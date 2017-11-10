@@ -11,11 +11,10 @@ public:
     void update();
     void draw();
     
-    int posX;
-    int posY;
-    int radius;
+
     float time;
     float size;
     
-    float rot1, rot2, rot3;
+    ofParameter<float> speed, rot2Inc, rot3Inc, noiseScale;
+	
 };

@@ -11,10 +11,8 @@ void annCaseyWave::setup(){
     // set parameters
     parameters.add(radius.set("radius", 150, 0, 200));
     parameters.add(partyMode.set("party mode",0,0,1));
-    parameters.add(pos.set("position",
-						   {0.0f,0.0f},
-						   {-dimensions.width, -dimensions.height},
-						   {dimensions.width, dimensions.height}));
+    parameters.add(posX.set("positionX",0,-dimensions.width, dimensions.width));
+    parameters.add(posY.set("positionY",0, -dimensions.height, dimensions.height));
     
     
     setAuthor("ann tbd");
@@ -35,7 +33,7 @@ void annCaseyWave::draw(){
     ofFill();
     color_fbo.begin();
 	ofClear(255);
-//    ofBackground(255);
+
 	
     ofSetCircleResolution(100);
     int partyStart = 0;
@@ -47,7 +45,7 @@ void annCaseyWave::draw(){
         ofSetColor( 255 - abs( 255*sin(partyMode*i * 0.1)),
                    partyStart + partyStart * sin(partyMode*i * 0.11),
                    partyStart + partyStart * sin(partyMode*i * 0.12));
-        ofDrawCircle(pos->x + i*2, pos->y + xAmp * sin(i*0.03 + time*1.4), radius);
+        ofDrawCircle(posX + i*2, posY + xAmp * sin(i*0.03 + time*1.4), radius);
         
     }
     color_fbo.end();
@@ -58,7 +56,9 @@ void annCaseyWave::draw(){
     
     img.draw((dimensions.width - img.getWidth())/2., (dimensions.height - img.getHeight())/2.);
     text_fbo.end();
-    
+	
+	
+	ofBackground(255);
     color_fbo.draw(0,0);
 	text_fbo.draw(0,0);
 	
