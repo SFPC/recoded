@@ -108,11 +108,17 @@ void sceneManager::setup(){
     
     
     #else
-    scenes.push_back(new mattKnowlton());
+    
+        // ------- 2017 fall
+        scenes.push_back(new mattKnowlton());
         scenes.push_back(new yingTanWhitneyMatrix());
         scenes.push_back(new annMolnarRectangles());
         scenes.push_back(new weiWhitney());
         scenes.push_back(new yumiNishida01());
+        scenes.push_back(new heatherMolnarScene());
+    
+        // ----- other
+    
         //scenes.push_back(new zachTest());
         scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
         scenes.push_back(new RileyArcsRoy());
@@ -159,7 +165,7 @@ void sceneManager::setup(){
         scenes.push_back(new olegVeraV());
         scenes.push_back(new sarahgpRileyCircle());
         scenes.push_back(new mwalczykVeraSquares());
-        scenes.push_back(new heatherMolnarScene());
+    
     
     #endif
     
