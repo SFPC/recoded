@@ -200,7 +200,6 @@ void sceneManager::setup(){
 	scenes.push_back(new olegVeraV());
 	scenes.push_back(new sarahgpRileyCircle());
 	scenes.push_back(new mwalczykVeraSquares());
-	scenes.push_back(new heatherMolnarScene());
 	
     #endif
 
