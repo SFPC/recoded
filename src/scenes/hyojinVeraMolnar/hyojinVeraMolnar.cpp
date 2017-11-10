@@ -3,9 +3,9 @@
 
 void hyojinVeraMolnar::setup(){
   
-    hue.set("hue", 0, 0, 255));
-    saturation.set("saturation", 255, 0, 255));
-    random.set("random", 10, 2, 15));
+    hue.set("hue", 0, 0, 255);
+    saturation.set("saturation", 255, 0, 255);
+    random.set("random", 10, 2, 15);
     parameters.add(hue);
     parameters.add(saturation);
     parameters.add(random);
