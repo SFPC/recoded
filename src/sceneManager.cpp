@@ -84,6 +84,8 @@
 #include "jacobsonWhitney_01.h"
 #include "aprilMenkman.h"
 #include "runchalMolnar.h"
+#include "weiMolnar_01.h"
+#include "annCaseyWave.h"
 // these are food related scenes
 
 #include "zzWaveScene.h"
@@ -121,6 +123,8 @@ void sceneManager::setup(){
     
     #else
     // ------- 2017 fall
+    scenes.push_back(new annCaseyWave());
+    scenes.push_back(new weiMolnar_01());
     scenes.push_back(new runchalMolnar());
     scenes.push_back(new aprilMenkman());
     scenes.push_back(new heatherMolnarScene());
