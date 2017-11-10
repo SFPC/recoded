@@ -66,6 +66,19 @@
 #include "weiWhitney.h"
 #include "yumiNishida01.h"
 
+
+#include "niklasLissajous.h"
+#include "niklasMolnar.h"
+#include "niklasMorisawa.h"
+#include "niklasWhitneySineWave.h"
+#include "fernandoMuriel.h"
+#include "fernandoWhitney.h"
+#include "fernandoWhitney2.h"
+#include "hyojinVeraMolnar.h"
+#include "hyojinJohnWhitney.h"
+#include "EstherKnowltonScene.h"
+
+
 // these are food related scenes
 
 #include "zzWaveScene.h"
@@ -101,75 +114,85 @@ void sceneManager::setup(){
     
     
     #else
-    
-        scenes.push_back(new yingTanWhitneyMatrix());
-        scenes.push_back(new annMolnarRectangles());
-        scenes.push_back(new weiWhitney());
-        scenes.push_back(new yumiNishida01());
-        scenes.push_back(new zachTest());
-        scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
-        scenes.push_back(new RileyArcsRoy());
-        scenes.push_back(new rachelScene());
-        scenes.push_back(new rodrigoBelfort());
-        scenes.push_back(new Cooper3dText());
-        scenes.push_back(new chrisVeraInterruptions());
-        scenes.push_back(new johnWhitneyShader02());
-        scenes.push_back(new chrisRileyCascando());
-        scenes.push_back(new memoAktenScene());
-        scenes.push_back(new submotionOrchestraScene());
-        scenes.push_back(new RoyWhitney1());
-        scenes.push_back(new veraFscene());
-        scenes.push_back(new robbyMolnarScene() );
-        scenes.push_back(new veraAnimatedScene() );
-        scenes.push_back(new robbyRileyScene() );
-        scenes.push_back(new robbyMenkmanScene());
-        scenes.push_back(new johnWhitneyShader01());
-        scenes.push_back(new anastasisRileyScene());
-        scenes.push_back(new loloWhitney());
-        scenes.push_back(new loloVera());
-        scenes.push_back(new andyMenkmanJpg());
-        scenes.push_back(new andyMenkmanPng());
-        scenes.push_back(new manfredMohrP196A());
-        scenes.push_back(new veraMolnarTrapezium());
-        scenes.push_back(new loloVera2());
-        scenes.push_back(new cantusFirmusRiley());
-        scenes.push_back(new aaronMarcusHieroglyphB());
-        //scenes.push_back(new veraMolnarLines68());
-        scenes.push_back(new alexLissamojiWhitney());
-        scenes.push_back(new yosukeVeraSansTitre());
-        //scenes.push_back(new alexGifPaletteDitherMenkman());
-        scenes.push_back(new yeseulMenkmanInstitution());
-        scenes.push_back(new yeseulCooperMessages());
-        scenes.push_back(new yeseulWhitneyScene());
-        scenes.push_back(new yeseulRileyBrokencircle());
-        scenes.push_back(new yosukeJohnWhitneyMatrix());
-        scenes.push_back(new mgsCooperSymbols());
-        scenes.push_back(new mgsRileyDiamonds());
-        scenes.push_back(new mgsRileyEllipsesAndSquares());
-        scenes.push_back(new mgsVeraMolnarLineStudy());
-        scenes.push_back(new mgsMaedaTimePainter());
-        scenes.push_back(new mgsRileyDescending());
-        scenes.push_back(new olegVeraV());
-        scenes.push_back(new sarahgpRileyCircle());
-        scenes.push_back(new mwalczykVeraSquares());
-        scenes.push_back(new heatherMolnarScene());
-    
+
+        scenes.push_back(new niklasLissajous());
+        scenes.push_back(new niklasMolnar());
+        scenes.push_back(new niklasMorisawa());
+        scenes.push_back(new niklasWhitneySineWave());
+        scenes.push_back(new fernandoMuriel());
+        scenes.push_back(new fernandoWhitney());
+		scenes.push_back(new fernandoWhitney2());
+	scenes.push_back(new hyojinVeraMolnar());
+	scenes.push_back(new hyojinJohnWhitney());
+	scenes.push_back(new EstherKnowltonScene());
+	scenes.push_back(new yingTanWhitneyMatrix());
+	scenes.push_back(new annMolnarRectangles());
+	scenes.push_back(new weiWhitney());
+	scenes.push_back(new yumiNishida01());
+	scenes.push_back(new zachTest());
+	scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
+	scenes.push_back(new RileyArcsRoy());
+	scenes.push_back(new rachelScene());
+	scenes.push_back(new rodrigoBelfort());
+	scenes.push_back(new Cooper3dText());
+	scenes.push_back(new chrisVeraInterruptions());
+	scenes.push_back(new johnWhitneyShader02());
+	scenes.push_back(new chrisRileyCascando());
+	scenes.push_back(new memoAktenScene());
+	scenes.push_back(new submotionOrchestraScene());
+	scenes.push_back(new RoyWhitney1());
+	scenes.push_back(new veraFscene());
+	scenes.push_back(new robbyMolnarScene() );
+	scenes.push_back(new veraAnimatedScene() );
+	scenes.push_back(new robbyRileyScene() );
+	scenes.push_back(new robbyMenkmanScene());
+	scenes.push_back(new johnWhitneyShader01());
+	scenes.push_back(new anastasisRileyScene());
+	scenes.push_back(new loloWhitney());
+	scenes.push_back(new loloVera());
+	scenes.push_back(new andyMenkmanJpg());
+	scenes.push_back(new andyMenkmanPng());
+	scenes.push_back(new manfredMohrP196A());
+	scenes.push_back(new veraMolnarTrapezium());
+	scenes.push_back(new loloVera2());
+	scenes.push_back(new cantusFirmusRiley());
+	scenes.push_back(new aaronMarcusHieroglyphB());
+	//scenes.push_back(new veraMolnarLines68());
+	scenes.push_back(new alexLissamojiWhitney());
+	scenes.push_back(new yosukeVeraSansTitre());
+	//scenes.push_back(new alexGifPaletteDitherMenkman());
+	scenes.push_back(new yeseulMenkmanInstitution());
+	scenes.push_back(new yeseulCooperMessages());
+	scenes.push_back(new yeseulWhitneyScene());
+	scenes.push_back(new yeseulRileyBrokencircle());
+	scenes.push_back(new yosukeJohnWhitneyMatrix());
+	scenes.push_back(new mgsCooperSymbols());
+	scenes.push_back(new mgsRileyDiamonds());
+	scenes.push_back(new mgsRileyEllipsesAndSquares());
+	scenes.push_back(new mgsVeraMolnarLineStudy());
+	scenes.push_back(new mgsMaedaTimePainter());
+	scenes.push_back(new mgsRileyDescending());
+	scenes.push_back(new olegVeraV());
+	scenes.push_back(new sarahgpRileyCircle());
+	scenes.push_back(new mwalczykVeraSquares());
+	scenes.push_back(new heatherMolnarScene());
+	
     #endif
-    
+	
 
     // Too slow
 //     scenes.push_back(new andyMenkmanTif());
-  
+	
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
 
 #ifdef RANDOMIZE_SCENES
     ofRandomize(scenes);
 #endif
-    
+  
 #ifdef USE_MIDI_PARAM_SYNC
     sync.setup(0);
-    
+	
     // Disable MIDI smoothing by default
     sync.smoothing.set(0);
 
