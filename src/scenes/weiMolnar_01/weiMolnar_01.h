@@ -13,4 +13,5 @@ public:
     
     ofParameter<float> xOffset;
     ofParameter<float> yOffset;
+	ofParameter<float> speed;
 };

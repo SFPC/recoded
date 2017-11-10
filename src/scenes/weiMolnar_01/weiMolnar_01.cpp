@@ -4,12 +4,9 @@
 void weiMolnar_01::setup(){
   
 // setup pramaters
-    xOffset.set("xOffset", 28, 0, 30);
-    parameters.add(xOffset);
-    yOffset.set("yOffset", 28, 0, 30);
-    parameters.add(yOffset);
-
-    loadCode("scenes/weiMolnar_01/exampleCode.cpp");
+    parameters.add(xOffset.set("Size X", 28, 0, 30));
+    parameters.add(yOffset.set("Size Y", 28, 0, 30));
+	parameters.add(speed.set("Speed", 1,0,3));
     
     setAuthor("HE Wei");
     setOriginalArtist("Vera Molnar");
@@ -46,7 +43,7 @@ void weiMolnar_01::draw(){
 
     
     int count = 10;
-    float time = ofGetElapsedTimef();
+    float time = ofGetElapsedTimef() * speed;
     ofSetColor(ofMap(sin(time*2), -1,1, 0, 255),
                ofMap(sin(time*10), -1,1, 100, 255),
                ofMap(cos(time*4), -1,1, 0, 255));
