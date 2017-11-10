@@ -7,9 +7,8 @@ void niklasMorisawa::setup(){
     setAuthor("Niklas May");
     setOriginalArtist("John Maeda");
     loadCode("scenes/niklasMorisawa/exampleCode.cpp");
-    
-    pattern.set("Mod", 2, 1, 10);
-        parameters.add(pattern);
+	
+	parameters.add(pattern.set("Mod", 2, 1, 10));
     remainder.set("Remainder", 1, 0, 1);
 //        parameters.add(remainder);
     

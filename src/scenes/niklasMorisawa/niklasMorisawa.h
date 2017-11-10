@@ -47,6 +47,7 @@ public:
     ofParameter<int> pattern;
     ofParameter<int> remainder;
 
+
 //    ofParameter<int> numElements;
     
     ofRectangle myRect;
