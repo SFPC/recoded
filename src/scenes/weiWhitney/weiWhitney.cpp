@@ -2,35 +2,7 @@
 
 //--------------------------------------------------------------
 void weiWhitney::setup(){
-    
-    ofBackground(0);
-    //ofSetFrameRate(60);
-    
-//    nCurveVertices = 7;
-//
-//    curveVertices[0].x = 326;
-//    curveVertices[0].y = 209;
-//    curveVertices[1].x = 306;
-//    curveVertices[1].y = 279;
-//    curveVertices[2].x = 265;
-//    curveVertices[2].y = 331;
-//    curveVertices[3].x = 304;
-//    curveVertices[3].y = 383;
-//    curveVertices[4].x = 374;
-//    curveVertices[4].y = 383;
-//    curveVertices[5].x = 418;
-//    curveVertices[5].y = 309;
-//    curveVertices[6].x = 345;
-//    curveVertices[6].y = 279;
-//
-//    for (int i = 0; i < nCurveVertices; i++){
-//        curveVertices[i].bOver             = false;
-//        curveVertices[i].bBeingDragged     = false;
-//        curveVertices[i].radius = 4;
-//    }
-    
-    
-    
+	
     setAuthor("HE Wei");
     setOriginalArtist("John Whitney");
     
@@ -46,61 +18,7 @@ void weiWhitney::update(){
 
 //--------------------------------------------------------------
 void weiWhitney::draw(){
-    
-//    ofFill();
-//    ofSetHexColor(0xe0be21);
-    
-    //------(a)--------------------------------------
-    //
-    //         draw a star
-    //
-    //         use poly winding odd, the default rule
-    //
-    //         info about the winding rules is here:
-    //        http://glprogramming.com/red/images/Image128.gif
-    //
-//    ofSetPolyMode(OF_POLY_WINDING_ODD);    // this is the normal mode
-//    ofBeginShape();
-//    ofVertex(200,135);
-//    ofVertex(15,135);
-//    ofVertex(165,25);
-//    ofVertex(105,200);
-//    ofVertex(50,25);
-//    ofEndShape();
-    
-    
-    //------(b)--------------------------------------
-    //
-    //         draw a star
-    //
-    //         use poly winding nonzero
-    //
-    //         info about the winding rules is here:
-    //        http://glprogramming.com/red/images/Image128.gif
-    //
-//  ofSetHexColor(0xb5de10);
-//  ofSetPolyMode(OF_POLY_WINDING_NONZERO);
-//  ofBeginShape();
-//  ofVertex(400,135);
-//  ofVertex(215,135);
-//  ofVertex(365,25);
-//  ofVertex(305,200);
-//  ofVertex(250,25);
-//  ofEndShape();
-    //-------------------------------------
-    
-    
-    
-    
-    
-    //------(c)--------------------------------------
-    //
-    //         draw a star dynamically
-    //
-    //         use the mouse position as a pct
-    //        to calc nPoints and internal point radius
-    //
-    
+	
     //use dimensions
     dimensions.width;
     dimensions.height;
@@ -149,25 +67,7 @@ void weiWhitney::draw(){
     }
     ofEndShape();
     //-------------------------------------
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //------(e)--------------------------------------
-    //
-    //         use sin cos and time to make some spirally shape
-    //
+
     ofPushMatrix();
     ofTranslate(dimensions.width/3,dimensions.height/3,0);
 
@@ -191,91 +91,5 @@ void weiWhitney::draw(){
     ofEndShape(OF_CLOSE);
     ofPopMatrix();
     //-------------------------------------
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-    
-    
-
-    
-
-    
-
-        
-
-        
-        
-  
-
-    
-    
-}
-
-//--------------------------------------------------------------
-void weiWhitney::keyPressed(int key){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::keyReleased(int key){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::mouseMoved(int x, int y ){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::mouseDragged(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::mouseReleased(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::mouseEntered(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::mouseExited(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void weiWhitney::dragEvent(ofDragInfo dragInfo){
 
 }
