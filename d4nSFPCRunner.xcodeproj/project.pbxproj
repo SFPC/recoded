@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907C5B5E104864A2D3A25745 /* ofxToggle.cpp */; };
+		24D4249E1FB3E3F3001CE687 /* mattKnowlton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24D4249D1FB3E3F2001CE687 /* mattKnowlton.cpp */; };
 		26B248401BF7DA1100C11D04 /* veraAnimatedScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26B2483F1BF7DA1100C11D04 /* veraAnimatedScene.cpp */; };
 		26CFA3001EF07C650030CFAD /* manfredMohrP196A.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26CFA2FE1EF07C650030CFAD /* manfredMohrP196A.cpp */; };
 		2EC1049C1FB002C7007C4CEB /* yingTanWhitneyMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EC1049A1FB00125007C4CEB /* yingTanWhitneyMatrix.cpp */; };
@@ -180,6 +181,8 @@
 		15F2C6477A769C03A56D1401 /* ofxSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSlider.cpp; path = ../../../addons/ofxGui/src/ofxSlider.cpp; sourceTree = SOURCE_ROOT; };
 		17E65988300FBD9AAA2CD0CA /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../../../addons/ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
 		1C0DA2561397A7DE0246858B /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGuiGroup.h; path = ../../../addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
+		24D4249C1FB3E3F2001CE687 /* mattKnowlton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mattKnowlton.h; sourceTree = "<group>"; };
+		24D4249D1FB3E3F2001CE687 /* mattKnowlton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mattKnowlton.cpp; sourceTree = "<group>"; };
 		26B2483E1BF7D53700C11D04 /* veraAnimatedScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = veraAnimatedScene.h; sourceTree = "<group>"; };
 		26B2483F1BF7DA1100C11D04 /* veraAnimatedScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = veraAnimatedScene.cpp; sourceTree = "<group>"; };
 		26CFA2FE1EF07C650030CFAD /* manfredMohrP196A.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = manfredMohrP196A.cpp; sourceTree = "<group>"; };
@@ -490,6 +493,15 @@
 				6E54289412D2D94F45A05113 /* libs */,
 			);
 			name = ofxXmlSettings;
+			sourceTree = "<group>";
+		};
+		24D4249B1FB3E3F2001CE687 /* mattKnowlton */ = {
+			isa = PBXGroup;
+			children = (
+				24D4249C1FB3E3F2001CE687 /* mattKnowlton.h */,
+				24D4249D1FB3E3F2001CE687 /* mattKnowlton.cpp */,
+			);
+			path = mattKnowlton;
 			sourceTree = "<group>";
 		};
 		26B2483C1BF7D53700C11D04 /* veraAnimatedScene */ = {
@@ -811,6 +823,7 @@
 			isa = PBXGroup;
 			children = (
 				B06C45DD1FB517A8001A6A7E /* NEW */,
+				24D4249B1FB3E3F2001CE687 /* mattKnowlton */,
 				B06C45D31FB3BACF001A6A7E /* annMolnarRectangles */,
 				DB146F7E1FAF53EE0069C4E0 /* heatherMolnarScene */,
 				2EC104981FB00125007C4CEB /* yingTanWhitneyMatrix */,
@@ -1757,6 +1770,7 @@
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				D39F0DF91C222065004DEAAB /* OscReceivedElements.cpp in Sources */,
 				26B248401BF7DA1100C11D04 /* veraAnimatedScene.cpp in Sources */,
+				24D4249E1FB3E3F3001CE687 /* mattKnowlton.cpp in Sources */,
 				B00CD1091C21E81400C529FA /* ofxEasingLinear.cpp in Sources */,
 				B06C45FE1FB51998001A6A7E /* niklasLissajous.cpp in Sources */,
 				B00CD1351C21E89B00C529FA /* ofxRtMidiOut.cpp in Sources */,

@@ -60,6 +60,9 @@
 #include "mwalczykVeraSquares.h"
 #include "yeseulRileyBrokencircle.h"
 #include "zachTest.h"
+
+#include "mattKnowlton.h"
+
 #include "heatherMolnarScene.h"
 #include "yingTanWhitneyMatrix.h"
 #include "annMolnarRectangles.h"
@@ -91,6 +94,7 @@
 
 //SCRIPT_PLACEHOLDER_INCLUDE -- DO NOT REMOVE THIS LINE. PLACE INCLUDES ABOVE. 
 
+
 float baseScene::smoothingSpeed = 0.02;
 
 //-----------------------------------------------------------------------------------
@@ -101,6 +105,7 @@ sceneManager::~sceneManager(){
 void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
+
     //SCRIPT_PLACEHOLDER_PUSH_SCENE -- DO NOT REMOVE OR MOVE THIS LINE 
 
     
@@ -115,6 +120,7 @@ void sceneManager::setup(){
     
     #else
 
+
         scenes.push_back(new niklasLissajous());
         scenes.push_back(new niklasMolnar());
         scenes.push_back(new niklasMorisawa());
@@ -124,6 +130,7 @@ void sceneManager::setup(){
 		scenes.push_back(new fernandoWhitney2());
 	scenes.push_back(new hyojinVeraMolnar());
 	scenes.push_back(new hyojinJohnWhitney());
+     scenes.push_back(new mattKnowlton());
 	scenes.push_back(new EstherKnowltonScene());
 	scenes.push_back(new yingTanWhitneyMatrix());
 	scenes.push_back(new annMolnarRectangles());
