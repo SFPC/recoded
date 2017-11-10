@@ -41,28 +41,28 @@ void yumiNishida01::update(){
     ofColor c = ofColor::fromHsb(0, 255, 255);
     c.setHue(color);
     
-    int y = VISUALS_HEIGHT*0.01 + VISUALS_HEIGHT*0.12*line_number;
+    int y = dimensions.height*0.01 + dimensions.height*0.12*line_number;
     
     lines[line_number].addVertex(ofVec3f(x+ofRandom(x_, 20), y+ofRandom(20, y_)));
     lines[line_number].addColor(c);
     
     x+=10;
     
-    if(x > VISUALS_WIDTH){
+    if(x > dimensions.width){
         x = 0;
         line_number++;
         ofMesh mesh;
         mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
         lines.push_back(mesh);
     }
-    if(y > VISUALS_HEIGHT*0.9){
+    if(y > dimensions.height*0.9){
         reset();
     }
 }
 
 void yumiNishida01::draw(){
     
-    ofBackground(255);
+    //ofBackground(255);
     ofSetLineWidth(lineWidth);
     for (int i = 0; i < lines.size(); i++) {
         lines[i].draw();

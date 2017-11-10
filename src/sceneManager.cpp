@@ -87,6 +87,8 @@ sceneManager::~sceneManager(){
 //-----------------------------------------------------------------------------------
 void sceneManager::setup(){
     
+    bDrawGui = true;
+    
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
     //SCRIPT_PLACEHOLDER_PUSH_SCENE -- DO NOT REMOVE OR MOVE THIS LINE 
 
@@ -106,7 +108,7 @@ void sceneManager::setup(){
         scenes.push_back(new annMolnarRectangles());
         scenes.push_back(new weiWhitney());
         scenes.push_back(new yumiNishida01());
-        scenes.push_back(new zachTest());
+        //scenes.push_back(new zachTest());
         scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
         scenes.push_back(new RileyArcsRoy());
         scenes.push_back(new rachelScene());
@@ -266,7 +268,7 @@ void sceneManager::setup(){
     panel = new ofxPanel();
     panel->setup("scene settings");
     panel->add(scenes[currentScene]->parameters);
-    panel->setPosition(520+504+20, 20);
+    panel->setPosition(ofGetWidth()-300, 20);
 
     codeEnergyDecayRate.set("codeDecay", 0.1, 0, 0.3);
     codeEnergyPerFrame.set("codeEnergyPerFrame", 0.15, 0, 0.4);
@@ -274,7 +276,7 @@ void sceneManager::setup(){
     codeControls.add(codeEnergyDecayRate);
     codeControls.add(codeEnergyPerFrame);
     codeControls.loadFromFile("codeSettings.xml");
-    codeControls.setPosition(520+504+20, 500);
+    codeControls.setPosition(VISUALS_WIDTH+VISUALS_WIDTH+20, 500);
     
     startScene(currentScene);
 
@@ -518,6 +520,19 @@ void sceneManager::drawType(){
     ofSetColor(255);
     codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
 }
+
+
+void sceneManager::drawGui(){
+    if (bDrawGui){
+        
+        if (drawScenePanel)
+            panel->draw();
+        codeControls.draw();
+        
+        gui.draw();
+    }
+}
+
 //-----------------------------------------------------------------------------------
 void sceneManager::draw(){
     sync.update();
@@ -807,11 +822,8 @@ void sceneManager::draw(){
     }
 #endif
 
-    if (drawScenePanel)
-        panel->draw();
-    codeControls.draw();
     
-    gui.draw();
+   
     
     
     // let's draw some info!
@@ -916,7 +928,7 @@ void sceneManager::nextScene(bool forward){
     panel->setup("scene settings");
     panel->add(scenes[currentScene]->parameters);
     
-    panel->setPosition(520+504+20, 20);
+    panel->setPosition(ofGetWidth()-300, 20);
 };
 //-----------------------------------------------------------------------------------
 void sceneManager::advanceScene(){

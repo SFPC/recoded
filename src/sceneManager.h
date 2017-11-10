@@ -132,5 +132,8 @@ public:
     void triggerCursorSound();
     void toggleParameterSounds(bool &i);
     
+    void drawGui();
+    
+    bool bDrawGui;
     
 };
