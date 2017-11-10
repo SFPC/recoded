@@ -10,6 +10,9 @@ public:
     void setup();
     void update();
     void draw();
-    
-//    ofParameter<float> param;
+	
+	ofImage img;
+
+	ofParameter<float> posX1, rotation, alpha;
+
 };
