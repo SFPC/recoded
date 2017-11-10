@@ -117,15 +117,16 @@ void sceneManager::setup(){
 
     //SCRIPT_PLACEHOLDER_PUSH_SCENE -- DO NOT REMOVE OR MOVE THIS LINE 
     
-    #ifdef MSOFT_LUNCHTIME
+    #ifdef SHOW_MSOFT_LUNCHTIME
     
     // this is for FOOD related scenes
     scenes.push_back(new zzWaveScene());
     scenes.push_back(new zzDonutScene());
     scenes.push_back(new zzIceCreamScene());
     
-    
-    #else
+    #endif
+	
+    #ifdef SHOW_SFPC_FALL_2017
     // ------- 2017 fall
 	scenes.push_back(new EstherMolnarScene());
 	scenes.push_back(new stacyButterflies());
@@ -153,7 +154,10 @@ void sceneManager::setup(){
 	scenes.push_back(new annMolnarRectangles());
 	scenes.push_back(new weiWhitney());
 	scenes.push_back(new yumiNishida01());
-    
+	
+	#endif
+	
+	#ifdef SHOW_OTHERS
     // ----- other
     
 	//scenes.push_back(new zachTest());
@@ -871,8 +875,7 @@ void sceneManager::draw(){
 
     
    
-    
-    
+	
     // let's draw some info!
     
 ofSetColor(255);
@@ -884,6 +887,9 @@ ofSetColor(255);
 //                       20, VISUALS_HEIGHT + 50);
 //
 //    
+//    #ifdef USE_MIDI_PARAM_SYNC
+//    sync.drawDebug();
+//
 //    string str = "Recorded events: " + ofToString(sync.recorder.getData().size())+"\n";
 //    str += "Is Recording: " + (string)(sync.recorder.isRecording()?"TRUE":"FALSE")+"\n";
 //    str += "Play events: " + ofToString(sync.player.data.size())+"\n";
@@ -892,8 +898,9 @@ ofSetColor(255);
 //    str += "Current Scene Time: " + ofToString(scenes[currentScene]->getElapsedTimef())+"\n";
 //    str += "Current Scene Duration: " + ofToString(scenes[currentScene]->sceneDuration)+"\n";
 //    str += "Current Scene is done: " + (string)(scenes[currentScene]->isSceneDone()?"TRUE":"FALSE");
-//    
-//    ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
+//	
+//    ofDrawBitmapString(str, 20, 100);
+//#endif
 }
 
 //void sceneManager::computeMotion(ofFbo &fbo) {

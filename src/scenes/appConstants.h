@@ -5,7 +5,15 @@
 
 // this is for scenes with zz
 // https://www.instagram.com/zzdesign/
-//#define MSOFT_LUNCHTIME
+//#define SHOW_MSOFT_LUNCHTIME
+
+
+//this shows the skketches from SFPC fall 2017 class
+#define SHOW_SFPC_FALL_2017
+
+
+//THis will show all the other sketches; the ones that are not either for microsoft lunch or by sfpc2017
+//#define SHOW_OTHERS
 
 // assume that visuals and code are the same here....
 // and also assuming our screen is square :)
@@ -56,6 +64,8 @@
 
 #define USE_SCENE_TRANSITIONS
 
+
+
 // if this is defined, we will disable all sound playback inside this app, and instead send
 // OpenSoundControl messages which can be used to trigger sounds in another program (e.g. Ableton Live)
 //#define USE_EXTERNAL_SOUNDS
@@ -63,4 +73,4 @@
 #define OSC_HOST "localhost" // send to this host
 #define OSC_PORT 12345       // send on this port
 
-//#define USE_SERIAL // Uncomment this line to use serial/talk to arduino
+#define USE_SERIAL // Uncomment this line to use serial/talk to arduino
