@@ -9,11 +9,12 @@ void diegoScene_01::setup(){
 // param was declared in diegoScene_01.h
     //parameters.add(param.set("param", 5, 0, 100));
 
-    setAuthor("Put Your Name Here");
-    setOriginalArtist("Put the original Artist's name here");
+    setAuthor("Diego Salinas");
+    setOriginalArtist("John Whitney");
 
     loadCode("scenes/diegoScene_01/exampleCode.cpp");
-ofSetCircleResolution(100);
+	
+	ofSetCircleResolution(100);
     
     posX = 200;
     posY = 2000;
@@ -49,5 +50,6 @@ void diegoScene_01::draw(){
         ofRotate(size/2);
         ofDrawCircle(i, i, 80 + sin(ofGetElapsedTimef()));
     }
+	ofPopMatrix();
 	ofPopStyle();
 }
