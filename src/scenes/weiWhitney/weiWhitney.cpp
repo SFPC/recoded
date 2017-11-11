@@ -2,16 +2,15 @@
 
 //--------------------------------------------------------------
 void weiWhitney::setup(){
+    
+    parameters.add(speed.set("Speed", 1,0,10));
+    parameters.add(scale.set("Scale", 1,0,1));
+    parameters.add(nTips.set("Num Tips", 10, 5, 60));
+    parameters.add(radiusAdder.set("Radius Adder", 0.5,0,10));
 	
     setAuthor("HE Wei");
-    setOriginalArtist("John Whitney");
-    
+    setOriginalArtist("John Whitney");    
     loadCode("scenes/weiWhitney/exampleCode.cpp");
-
-	parameters.add(speed.set("Speed", 1,0,10));
-	parameters.add(scale.set("Scale", 1,0,1));
-	parameters.add(nTips.set("Num Tips", 10, 5, 60));
-	parameters.add(radiusAdder.set("Radius Adder", 0.5,0,10));
 }
 
 //--------------------------------------------------------------

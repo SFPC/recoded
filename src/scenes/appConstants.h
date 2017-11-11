@@ -13,7 +13,7 @@
 
 
 //THis will show all the other sketches; the ones that are not either for microsoft lunch or by sfpc2017
-//#define SHOW_OTHERS
+#define SHOW_OTHERS
 
 // assume that visuals and code are the same here....
 // and also assuming our screen is square :)

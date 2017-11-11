@@ -42,12 +42,8 @@ void stacyButterflies::setup(){
 // param was declared in stacyButterflies.h
     //parameters.add(param.set("param", 5, 0, 100));
 
-    setAuthor("Put Your Name Here");
-    setOriginalArtist("Put the original Artist's name here");
-
-    loadCode("scenes/stacyButterflies/exampleCode.cpp");
 	
-	    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {
         Butterfly b;
         b.setup(dimensions.width, dimensions.height);
         //        b.color = ofColor( 127 + 127 * sin(i*35 * .010),
@@ -55,6 +51,10 @@ void stacyButterflies::setup(){
         //                           127 + 127 * sin(i*35 * .012));
         butterflies.push_back(b);
     }
+    setAuthor("Put Your Name Here");
+    setOriginalArtist("Put the original Artist's name here");
+    
+    loadCode("scenes/stacyButterflies/exampleCode.cpp");
 }
 
 void stacyButterflies::update(){

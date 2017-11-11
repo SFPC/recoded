@@ -8,10 +8,14 @@ void runchalMolnar::setup(){
 // add your parameters to the "parameters" instance as follows.
 // param was declared in runchalMolnar.h
     //parameters.add(param.set("param", 5, 0, 100));
+//    ofBackground(250);
+    parameters.add(emotion.set("emotion", 0.5,0,20));
+    parameters.add(height.set("height",10,5,30));
+    parameters.add(width.set("width",50,10,100));
+    parameters.add(length.set("length",10,1,30));
 
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
-
     loadCode("scenes/runchalMolnar/exampleCode.cpp");
 	
 	    /*TO DO
@@ -26,11 +30,7 @@ void runchalMolnar::setup(){
     
     
 
-    ofBackground(250);
-    parameters.add(emotion.set("emotion", 0.5,0,20));
-    parameters.add(height.set("height",10,5,30));
-    parameters.add(width.set("width",50,10,100));
-    parameters.add(length.set("length",10,1,30));
+
 	
 }
 

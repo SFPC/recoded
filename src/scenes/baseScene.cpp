@@ -59,17 +59,22 @@ void baseScene::loadCode( string fileName ){
 
   bAnimateScene = true;
   bHasEndSet = false;
-  ofFile xmlFile = ofFile(dataPath+"/paramsRecording.xml");
   string xmlPath = dataPath+"/paramsRecording.xml";
-  reportKnobs(xmlPath);
+  ofFile xmlFile = ofFile(xmlPath);
   if (xmlFile.exists()) {
-    float duration;
-    loadMidi(recData, &duration, dataPath+"/paramsRecording.xml");
-    //parseXmlFile("/paramsRecording.xml");
-    cout << "got " << recData.size() << " events " << duration << endl;
-    if (duration > 0) {
-      setSceneEnd(duration);
-    }
+      reportKnobs(xmlPath);
+      float duration;
+      loadMidi(recData, &duration, dataPath+"/paramsRecording.xml");
+      //parseXmlFile("/paramsRecording.xml");
+      cout << "got " << recData.size() << " events " << duration << endl;
+      if (duration > 0) {
+          setSceneEnd(duration);
+      }
+  }else{
+      midiKnobs.resize(MIN(parameters.size(),4));
+      for(int i = 0; i < midiKnobs.size(); i++){
+          midiKnobs[i] = i;
+      }
   }
 }
 

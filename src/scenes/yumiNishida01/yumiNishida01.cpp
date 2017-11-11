@@ -18,9 +18,6 @@ void yumiNishida01::setup(){
 //    parameters.add(param);
 
    
-    setAuthor("Yumi Nishida");
-    setOriginalArtist("Vera Molnar");
-    loadCode("scenes/yumiNishida01/exampleCode.cpp");
     ofSetBackgroundAuto(false);
     ofBackground(255);
     
@@ -34,6 +31,10 @@ void yumiNishida01::setup(){
     parameters.add(y_);
     parameters.add(color);
     parameters.add(lineWidth.set("line width", 1, 0, 2));
+
+    setAuthor("Yumi Nishida");
+    setOriginalArtist("Vera Molnar");
+    loadCode("scenes/yumiNishida01/exampleCode.cpp");
 }
 
 void yumiNishida01::update(){

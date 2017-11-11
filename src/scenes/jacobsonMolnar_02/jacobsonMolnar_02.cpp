@@ -7,10 +7,6 @@ void jacobsonMolnar_02::setup(){
 //    param.set("param", 5, 0, 100);
 //    parameters.add(param);
 
-    setAuthor("Matt Jacobson");
-    setOriginalArtist("Vera Molnar");
-    
-    loadCode("scenes/jacobsonMolnar_02/exampleCode.cpp");
     
     framePad = 0.95;
     countBoxes = 10;
@@ -19,6 +15,10 @@ void jacobsonMolnar_02::setup(){
     parameters.add(stepSize);
     rotationSpeed.set("rotationSpeed", 5, 3, 50);
     parameters.add(rotationSpeed);
+    setAuthor("Matt Jacobson");
+    setOriginalArtist("Vera Molnar");
+    
+    loadCode("scenes/jacobsonMolnar_02/exampleCode.cpp");
 }
 
 void jacobsonMolnar_02::update(){

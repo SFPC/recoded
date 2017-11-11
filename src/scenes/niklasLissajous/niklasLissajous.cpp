@@ -23,7 +23,6 @@ void niklasLissajous::setup(){
     
     setAuthor("Niklas May");
     setOriginalArtist("Oscilloscope");
-    loadCode("scenes/yourProjectName/exampleCode.cpp");
     loadCode("scenes/niklasLissajous/exampleCode.cpp");
 }
 

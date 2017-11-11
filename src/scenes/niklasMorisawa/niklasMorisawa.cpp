@@ -4,9 +4,6 @@
 void niklasMorisawa::setup(){
     
     
-    setAuthor("Niklas May");
-    setOriginalArtist("John Maeda");
-    loadCode("scenes/niklasMorisawa/exampleCode.cpp");
 	
 	parameters.add(pattern.set("Mod", 2, 1, 10));
     remainder.set("Remainder", 1, 0, 1);
@@ -16,6 +13,9 @@ void niklasMorisawa::setup(){
     myText.setup();
     myText.update();
     
+    setAuthor("Niklas May");
+    setOriginalArtist("John Maeda");
+    loadCode("scenes/niklasMorisawa/exampleCode.cpp");
 
 }
 

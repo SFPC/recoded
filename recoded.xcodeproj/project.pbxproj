@@ -742,7 +742,6 @@
 				67B310464DB05493D2C27A83 /* andyMenkmanPng */,
 				025872D895E1D9396A37ADB1 /* andyMenkmanTif */,
 				24185C331D9C1C9B2BEC0B2E /* annMolnarRectangles */,
-				7FE5F37869AABB8C93D219FC /* appConstants.h */,
 				B0822B191FB5578700007B2D /* aprilMenkman */,
 				10E77EFB672AD13F3F3639CB /* baseScene.cpp */,
 				3123FC43CDB08480B2226A91 /* baseScene.h */,
@@ -1763,6 +1762,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				7FE5F37869AABB8C93D219FC /* appConstants.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,

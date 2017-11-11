@@ -19,13 +19,13 @@ void hyojinVeraMolnar::setup(){
     parameters.add(saturation);
     parameters.add(random);
     
+    ofColor brightRed(157,32,62);
+    ofColor darkRed(180,200,204);
+    
     setAuthor("Hyojin Yoo");
     setOriginalArtist("Vera Molnar");
     loadCode("scenes/hyojinVeraMolnar/exampleCode.cpp");
     
-    
-    ofColor brightRed(157,32,62);
-    ofColor darkRed(180,200,204);
 }
 
 void hyojinVeraMolnar::update(){

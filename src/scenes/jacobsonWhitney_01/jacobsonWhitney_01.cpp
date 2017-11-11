@@ -7,10 +7,6 @@ void jacobsonWhitney_01::setup(){
 //    param.set("param", 5, 0, 100);
 //    parameters.add(param);
 
-    setAuthor("Matt Jacobson");
-    setOriginalArtist("John Whitney");
-    
-    loadCode("scenes/jacobsonWhitney_01/exampleCode.cpp");
     
     imageSize.set("imageSize", 25, 25, 75);
     parameters.add(imageSize);
@@ -20,6 +16,10 @@ void jacobsonWhitney_01::setup(){
     parameters.add(phaseShift);
     
     img.load("scenes/jacobsonWhitney_01/image.png");
+    setAuthor("Matt Jacobson");
+    setOriginalArtist("John Whitney");
+    
+    loadCode("scenes/jacobsonWhitney_01/exampleCode.cpp");
     
 }
 

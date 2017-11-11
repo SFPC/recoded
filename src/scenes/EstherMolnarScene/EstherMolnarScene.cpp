@@ -8,18 +8,18 @@ void EstherMolnarScene::setup(){
 // add your parameters to the "parameters" instance as follows.
 // param was declared in EstherMolnarScene.h
     //parameters.add(param.set("param", 5, 0, 100));
+    blendMode = OF_BLENDMODE_ADD;
+    
+    parameters.add(color.set("color", 25, 0, 60));
+    parameters.add(size.set("size", 115, 80, 140));
+    parameters.add(move.set("move", 250, 0, 400));
+    
+    
 
     setAuthor("Esther Bouquet");
     setOriginalArtist("Vera Molnar");
 
     loadCode("scenes/EstherMolnarScene/exampleCode.cpp");
-	
-	blendMode = OF_BLENDMODE_ADD;
-
-	parameters.add(color.set("color", 25, 0, 60));
-	parameters.add(size.set("size", 115, 80, 140));
-	parameters.add(move.set("move", 250, 0, 400));
-
 	
 
 	

@@ -3,8 +3,6 @@
 
 void yeseulCooperMessages::setup(){
     
-    setAuthor("Yeseul Song");
-    setOriginalArtist("Muriel Cooper");
 
     texture.load("scenes/yeseulCooperMessages/texture.png");
     texture.resize(520, 520);
@@ -19,6 +17,9 @@ void yeseulCooperMessages::setup(){
     parameters.add(purpleTextSpeed.set("purpleTextSpeed", 20, 5, 35));
     parameters.add(rotation.set("rotation", 0, 0, 360));
     
+
+    setAuthor("Yeseul Song");
+    setOriginalArtist("Muriel Cooper");
     loadCode("scenes/yeseulCooperMessages/exampleCode.cpp");
     
 }

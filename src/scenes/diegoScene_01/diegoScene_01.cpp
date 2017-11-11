@@ -8,20 +8,20 @@ void diegoScene_01::setup(){
 // add your parameters to the "parameters" instance as follows.
 // param was declared in diegoScene_01.h
     //parameters.add(param.set("param", 5, 0, 100));
+    
+    ofSetCircleResolution(100);
+    
+    
+    
+    parameters.add(speed.set("speed", 0.1, 0, 2));
+    parameters.add(rot2Inc.set("Rotation 2 Increment", 0.2, 0, 2));
+    parameters.add(rot3Inc.set("Rotation 3 Increment", 1.5, 0, 4));
+    parameters.add(noiseScale.set("Noise Scale", 0.01,0,1));
 
     setAuthor("Diego Salinas");
     setOriginalArtist("John Whitney");
 
     loadCode("scenes/diegoScene_01/exampleCode.cpp");
-	
-	ofSetCircleResolution(100);
-    
-
-	
-	parameters.add(speed.set("speed", 0.1, 0, 2));
-	parameters.add(rot2Inc.set("Rotation 2 Increment", 0.2, 0, 2));
-	parameters.add(rot3Inc.set("Rotation 3 Increment", 1.5, 0, 4));
-	parameters.add(noiseScale.set("Noise Scale", 0.01,0,1));
 }
 
 void diegoScene_01::update(){

@@ -11,8 +11,6 @@ void mattKnowlton::setup(){
     gridSize = dimensions.width/tileCount;
     numFlowers = tileCount * tileCount;
     
-    setAuthor("Matthew Ortega");
-    setOriginalArtist("Ken Knowlton");
     
     //some path, may be absolute or relative to bin/data
     string path = "images/mattKnowlton/";
@@ -52,14 +50,18 @@ void mattKnowlton::setup(){
     parameters.add(colorshift);
     speed.set("speed", 5, 1, 20);
     parameters.add(speed);
-
-    loadCode("scenes/mattKnowlton/exampleCode.cpp");
-    
     // Setup point grid and color grid
     int randomStart = int(ofRandom(0, imgs.size()));
     
     loadPoints();
     loadColors(imgs[randomStart]);
+
+
+    
+    setAuthor("Matthew Ortega");
+    setOriginalArtist("Ken Knowlton");
+    loadCode("scenes/mattKnowlton/exampleCode.cpp");
+    
 }
 
 void mattKnowlton::update(){

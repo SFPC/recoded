@@ -8,11 +8,6 @@ void jacobsonMolnar_01::setup(){
 //    parameters.add(param);
     
     
-    setAuthor("Matt Jacobson");
-    setOriginalArtist("Vera Molnar");
-
-    loadCode("scenes/jacobsonMolnar_01/exampleCode.cpp");
-    
     
     
     
@@ -43,6 +38,11 @@ void jacobsonMolnar_01::setup(){
     for (ofVec2f p : m_samples) triangulation.addPoint(ofPoint(p.x, p.y) - origin + center);
     
     triangulation.triangulate();
+    
+    setAuthor("Matt Jacobson");
+    setOriginalArtist("Vera Molnar");
+    
+    loadCode("scenes/jacobsonMolnar_01/exampleCode.cpp");
     
 }
 
