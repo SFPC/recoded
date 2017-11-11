@@ -10,14 +10,11 @@ void diegoScene_01::setup(){
     //parameters.add(param.set("param", 5, 0, 100));
     
     ofSetCircleResolution(100);
-    
-    
-    
-    parameters.add(speed.set("speed", 0.1, 0, 2));
-    parameters.add(rot2Inc.set("Rotation 2 Increment", 0.2, 0, 2));
-    parameters.add(rot3Inc.set("Rotation 3 Increment", 1.5, 0, 4));
+	
+	parameters.add(speed.set("Speed", 0.1, 0, 2));
+	parameters.add(rotate.set("Rotate", 0.5, 0.0001, 2));
     parameters.add(noiseScale.set("Noise Scale", 0.01,0,1));
-
+	parameters.add(oscilationScale.set("Oscilation Scale", 0, -80,80));
     setAuthor("Diego Salinas");
     setOriginalArtist("John Whitney");
 
@@ -30,7 +27,7 @@ void diegoScene_01::update(){
 
 void diegoScene_01::draw(){
 	ofPushStyle();
-	float time = ofGetElapsedTimef() * speed;
+	float time = ofGetElapsedTimef();
 	float n = ofNoise(noiseScale*time);
     ofSetColor(ofColor::fromHsb(n*255,255,255));
     ofPushMatrix();
@@ -38,8 +35,8 @@ void diegoScene_01::draw(){
 	
     for (int i = 0; i < 2000; i++){
         ofNoFill();
-        ofRotate(time/2);
-        ofDrawCircle(i, i, 80 + sin(time));
+        ofRotate(time*rotate);
+        ofDrawCircle(i, i, 80 + sin(time * speed) * oscilationScale);
     }
 	ofPopMatrix();
 	ofPopStyle();

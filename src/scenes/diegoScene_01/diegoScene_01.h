@@ -15,6 +15,6 @@ public:
     float time;
     float size;
     
-    ofParameter<float> speed, rot2Inc, rot3Inc, noiseScale;
+    ofParameter<float> speed, rotate, noiseScale, oscilationScale;
 	
 };
