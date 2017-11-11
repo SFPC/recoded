@@ -131,12 +131,22 @@ void ofApp::draw(){
     
     
     if (SM.bDrawGui){
-        string message = "interaction mode ";
-        message += (IM.bInteracting == true ? "interacting" : "playback");
-        ofDrawBitmapString(message, 100, 540);
+		stringstream ss;
+		ss << "interaction mode " << (IM.bInteracting == true ? "interacting" : "playback") << endl;
         for (int i = 0; i < 4; i++){
-            ofDrawBitmapString( "knob value " + ofToString(i) + " = " + ofToString(IM.prevPacket.knobValues[i] * 100), 100, 570 + 30 * i);
+            ss <<  "knob value " << i << " = " << IM.prevPacket.knobValues[i] * 100 << endl << endl;
         }
+		ss << endl;
+		ss << "bUpdateParamFromRecording: " << (string)(SM.scenes[SM.currentScene]->bUpdateParamFromRecording?"TRUE":"FALSE") << endl;
+		ss << "bToggleUseRecording: " << (string)(bToggleUseRecording?"TRUE":"FALSE") << endl;
+		
+		ss << "scene has rec data:  " << (string)(SM.scenes[SM.currentScene]->hasRecData()?"TRUE":"FALSE") << endl;
+		ss << "scene rec data size: " << SM.scenes[SM.currentScene]->recData.size() << endl;
+		
+		
+		
+		ofDrawBitmapStringHighlight(ss.str(), 100, 540);
+		SM.sync.drawDebug();
     }
 
 }
