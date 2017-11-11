@@ -89,7 +89,7 @@
 #include "diegoScene_01.h"
 #include "stacyButterflies.h"
 #include "EstherMolnarScene.h"
-
+#include "Guillermo_Whitney_catalogue_1.h"
 // these are food related scenes
 
 #include "zzWaveScene.h"
@@ -128,6 +128,7 @@ void sceneManager::setup(){
 	
     #ifdef SHOW_SFPC_FALL_2017
     // ------- 2017 fall
+	scenes.push_back(new Guillermo_Whitney_catalogue_1());
 	scenes.push_back(new EstherMolnarScene());
 	//scenes.push_back(new stacyButterflies());
     scenes.push_back(new diegoScene_01());
