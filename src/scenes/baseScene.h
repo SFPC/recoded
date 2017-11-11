@@ -164,4 +164,5 @@ public:
     bool bUpdateParamFromRecording = true;
     void updateInteractiveParams(float valChangeAsPct, int param, float abspct = 1.0);
     vector < int > midiKnobs;
+    float defaultDuration = 45;
 };

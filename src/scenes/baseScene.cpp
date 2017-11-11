@@ -75,6 +75,7 @@ void baseScene::loadCode( string fileName ){
       for(int i = 0; i < midiKnobs.size(); i++){
           midiKnobs[i] = i;
       }
+      setSceneEnd(defaultDuration);
   }
 }
 
