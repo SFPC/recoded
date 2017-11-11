@@ -14,8 +14,8 @@ void runchalMolnar::setup(){
     parameters.add(width.set("width",50,10,100));
     parameters.add(length.set("length",10,1,30));
 
-    setAuthor("Put Your Name Here");
-    setOriginalArtist("Put the original Artist's name here");
+    setAuthor("Amit Runchal");
+    setOriginalArtist("Vera Molnar");
     loadCode("scenes/runchalMolnar/exampleCode.cpp");
 	
 	    /*TO DO
