@@ -259,8 +259,9 @@ void ofxParameterMidiSync::drawDebug(){
     string str = "Learning: " + (string)(bLearning?"YES":"NO")+"\n";
     str += "learningParameter: " + (string)((learningParameter==NULL)?"NULL": learningParameter->getName())+"\n";
     str += "controlNum: " + ofToString(midiMessage.control) + "\n";
-    str += "lastMidiMessage: " + midiMessage.toString();// + "\n";
-    
+    str += "lastMidiMessage: " + midiMessage.toString() + "\n";
+//	str += "is Recording: " +(string)(?"YES":"NO");
+	
     ofDrawBitmapStringHighlight(str, 20, ofGetHeight() - 60);
     
 }
