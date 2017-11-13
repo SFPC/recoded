@@ -17,15 +17,15 @@
 // assume that visuals and code are the same here....
 // and also assuming our screen is square :)
 
-#define VISUALS_WIDTH 504
-#define VISUALS_HEIGHT 504
+#define VISUALS_WIDTH 720
+#define VISUALS_HEIGHT 720
 
 #define CODE_WIDTH VISUALS_WIDTH
 #define CODE_HEIGHT VISUALS_HEIGHT
 
 
 
-#define BIG_TV                  // for 1920 x 1080 TV :)
+//#define BIG_TV                  // for 1920 x 1080 TV :)
 
 
 

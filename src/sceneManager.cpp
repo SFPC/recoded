@@ -736,6 +736,7 @@ void sceneManager::draw(){
         ofPushStyle();
         scenes[currentScene]->draw();
         ofPopStyle();
+        //ofClearAlpha();
         sceneFbo.end();
         
         // For sound and for kicks

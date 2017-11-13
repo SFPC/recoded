@@ -85,8 +85,8 @@ void ofApp::draw(){
     
 #ifndef BIG_TV
 	ofPushMatrix();
-	ofTranslate(520,0);
-	SM.codeFbo.draw(0, 0, 520,520);
+	ofTranslate(720,0);
+	SM.codeFbo.draw(0, 0, 720,720);
 	ofPopMatrix();
      SM.drawGui();
 #endif
