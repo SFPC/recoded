@@ -42,6 +42,7 @@
 		4FC1D78BBE6BA186FAFCA02D /* mgsRileyDiamonds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444FE3A608EA24D76402EFB7 /* mgsRileyDiamonds.cpp */; };
 		510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF695B88BA5FAACEAA937 /* UdpSocket.cpp */; };
 		54355FC51FBA2956008333BB /* zzBurger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54355FC31FBA2956008333BB /* zzBurger.cpp */; };
+		54355FCA1FBA39CB008333BB /* zzPixelBurger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54355FC81FBA39CB008333BB /* zzPixelBurger.cpp */; };
 		5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */; };
 		5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */; };
 		5C0873A6CCF9F6001D1FD06C /* RileyRemake-Catarina_Lee__Joao_Freire.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B47A8F61018F0E5281210F2 /* RileyRemake-Catarina_Lee__Joao_Freire.cpp */; };
@@ -265,6 +266,8 @@
 		537EF4181290CC2584BD963E /* submotionOrchestraScene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = submotionOrchestraScene.h; path = src/scenes/submotionOrchestraScene/submotionOrchestraScene.h; sourceTree = SOURCE_ROOT; };
 		54355FC31FBA2956008333BB /* zzBurger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzBurger.cpp; sourceTree = "<group>"; };
 		54355FC41FBA2956008333BB /* zzBurger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzBurger.h; sourceTree = "<group>"; };
+		54355FC81FBA39CB008333BB /* zzPixelBurger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzPixelBurger.cpp; sourceTree = "<group>"; };
+		54355FC91FBA39CB008333BB /* zzPixelBurger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzPixelBurger.h; sourceTree = "<group>"; };
 		54A5AC7F8197617F244EED34 /* sarahgpRileyCircle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = sarahgpRileyCircle.h; path = src/scenes/sarahgpRileyCircle/sarahgpRileyCircle.h; sourceTree = SOURCE_ROOT; };
 		5804AA2909CEFCD7B7CF1CEF /* submotionOrchestraScene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = submotionOrchestraScene.cpp; path = src/scenes/submotionOrchestraScene/submotionOrchestraScene.cpp; sourceTree = SOURCE_ROOT; };
 		59042A0257D972BC776367EC /* cantusFirmusRiley.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cantusFirmusRiley.h; path = src/scenes/cantusFirmusRiley/cantusFirmusRiley.h; sourceTree = SOURCE_ROOT; };
@@ -923,6 +926,15 @@
 			path = zzBurger;
 			sourceTree = "<group>";
 		};
+		54355FC71FBA39CB008333BB /* zzPixelBurger */ = {
+			isa = PBXGroup;
+			children = (
+				54355FC81FBA39CB008333BB /* zzPixelBurger.cpp */,
+				54355FC91FBA39CB008333BB /* zzPixelBurger.h */,
+			);
+			path = zzPixelBurger;
+			sourceTree = "<group>";
+		};
 		5592D0691145D5A930069194 /* janVantommeScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -1156,6 +1168,7 @@
 		9259DF4D1FBA06DA00F4B42E /* zzScenes */ = {
 			isa = PBXGroup;
 			children = (
+				54355FC71FBA39CB008333BB /* zzPixelBurger */,
 				2E6C27481FBA48AC00D54DC9 /* zzSushiScene */,
 				54355FC21FBA2956008333BB /* zzBurger */,
 				9259DF4E1FBA06DA00F4B42E /* zzDonutScene */,
@@ -2052,6 +2065,7 @@
 				B0822B341FB565DC00007B2D /* stacyButterflies.cpp in Sources */,
 				B0822AEC1FB5491200007B2D /* ofxEasingBack.cpp in Sources */,
 				A243957BD21CBE64A51395D8 /* egif_lib.c in Sources */,
+				54355FCA1FBA39CB008333BB /* zzPixelBurger.cpp in Sources */,
 				B0822B301FB5646A00007B2D /* diegoScene_01.cpp in Sources */,
 				CE7F9B9A06D9232CF5683F15 /* gif_err.c in Sources */,
 				D391E4FB2414857BD467D9E8 /* gif_font.c in Sources */,
