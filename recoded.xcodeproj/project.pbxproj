@@ -40,6 +40,7 @@
 		4E2FCFB1FD28FDFE5CE0A178 /* yeseulWhitneyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81202E962ACC3B5F5D7DFBCA /* yeseulWhitneyScene.cpp */; };
 		4FC1D78BBE6BA186FAFCA02D /* mgsRileyDiamonds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444FE3A608EA24D76402EFB7 /* mgsRileyDiamonds.cpp */; };
 		510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF695B88BA5FAACEAA937 /* UdpSocket.cpp */; };
+		54355FC51FBA2956008333BB /* zzBurger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54355FC31FBA2956008333BB /* zzBurger.cpp */; };
 		5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */; };
 		5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */; };
 		5C0873A6CCF9F6001D1FD06C /* RileyRemake-Catarina_Lee__Joao_Freire.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B47A8F61018F0E5281210F2 /* RileyRemake-Catarina_Lee__Joao_Freire.cpp */; };
@@ -259,6 +260,8 @@
 		52DBCB646BCC661F67E5D744 /* robbyMolnarScene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = robbyMolnarScene.h; path = src/scenes/robbyMolnarScene/robbyMolnarScene.h; sourceTree = SOURCE_ROOT; };
 		534A192E451A1ED125256A05 /* robbyMolnarScene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = robbyMolnarScene.cpp; path = src/scenes/robbyMolnarScene/robbyMolnarScene.cpp; sourceTree = SOURCE_ROOT; };
 		537EF4181290CC2584BD963E /* submotionOrchestraScene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = submotionOrchestraScene.h; path = src/scenes/submotionOrchestraScene/submotionOrchestraScene.h; sourceTree = SOURCE_ROOT; };
+		54355FC31FBA2956008333BB /* zzBurger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzBurger.cpp; sourceTree = "<group>"; };
+		54355FC41FBA2956008333BB /* zzBurger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzBurger.h; sourceTree = "<group>"; };
 		54A5AC7F8197617F244EED34 /* sarahgpRileyCircle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = sarahgpRileyCircle.h; path = src/scenes/sarahgpRileyCircle/sarahgpRileyCircle.h; sourceTree = SOURCE_ROOT; };
 		5804AA2909CEFCD7B7CF1CEF /* submotionOrchestraScene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = submotionOrchestraScene.cpp; path = src/scenes/submotionOrchestraScene/submotionOrchestraScene.cpp; sourceTree = SOURCE_ROOT; };
 		59042A0257D972BC776367EC /* cantusFirmusRiley.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cantusFirmusRiley.h; path = src/scenes/cantusFirmusRiley/cantusFirmusRiley.h; sourceTree = SOURCE_ROOT; };
@@ -899,6 +902,15 @@
 			name = sarahgpRileyCircle;
 			sourceTree = "<group>";
 		};
+		54355FC21FBA2956008333BB /* zzBurger */ = {
+			isa = PBXGroup;
+			children = (
+				54355FC31FBA2956008333BB /* zzBurger.cpp */,
+				54355FC41FBA2956008333BB /* zzBurger.h */,
+			);
+			path = zzBurger;
+			sourceTree = "<group>";
+		};
 		5592D0691145D5A930069194 /* janVantommeScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -1132,6 +1144,7 @@
 		9259DF4D1FBA06DA00F4B42E /* zzScenes */ = {
 			isa = PBXGroup;
 			children = (
+				54355FC21FBA2956008333BB /* zzBurger */,
 				9259DF4E1FBA06DA00F4B42E /* zzDonutScene */,
 				9259DF511FBA06DA00F4B42E /* zzEyeScene */,
 				9259DF541FBA06DA00F4B42E /* zzIceCreamScene */,
@@ -2113,6 +2126,7 @@
 				9259DF5F1FBA06DA00F4B42E /* zzIceCreamScene.cpp in Sources */,
 				B0822B031FB549D000007B2D /* Delaunay.cpp in Sources */,
 				B0822AE41FB5491200007B2D /* ofxMidiIn.cpp in Sources */,
+				54355FC51FBA2956008333BB /* zzBurger.cpp in Sources */,
 				E7E44BB4F75A5A6EA8F468DC /* sarahgpRileyCircle.cpp in Sources */,
 				870DD35F9BBFB296FD863274 /* submotionOrchestraScene.cpp in Sources */,
 				7E1FA8AC2AB2DEBBC3BDB626 /* triangleScene.cpp in Sources */,
