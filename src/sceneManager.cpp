@@ -440,7 +440,7 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        if (enableMidiUpdate.get() && scenes[currentScene]->recData.size()){
+        if (enableMidiUpdate.get()){// && scenes[currentScene]->recData.size()){
             if(scenes[currentScene]->bAnimateScene){
                 scenes[currentScene]->updateMidiParams();
             }
