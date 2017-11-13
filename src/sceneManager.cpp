@@ -93,16 +93,19 @@ void sceneManager::setup(){
 
     
     
-    #ifdef MSOFT_LUNCHTIME
     
+    #ifdef SHOW_MSOFT_LUNCHTIME
+
         // this is for FOOD related scenes
-     scenes.push_back(new zzWatermelonScene());
+        scenes.push_back(new zzWatermelonScene());
         scenes.push_back(new zzWaveScene());
         scenes.push_back(new zzDonutScene());
         scenes.push_back(new zzIceCreamScene());
     
     
     #else
+    
+    
     
         scenes.push_back(new yingTanWhitneyMatrix());
         scenes.push_back(new annMolnarRectangles());
@@ -520,6 +523,17 @@ void sceneManager::drawType(){
     ofSetColor(255);
     codeFbo.draw(CODE_X_POS, 0, VISUALS_WIDTH, VISUALS_HEIGHT);
 }
+
+void sceneManager::drawGui(){
+    
+    if (drawScenePanel)
+        panel->draw();
+    codeControls.draw();
+    
+    gui.draw();
+    
+}
+
 //-----------------------------------------------------------------------------------
 void sceneManager::draw(){
     sync.update();
@@ -809,12 +823,7 @@ void sceneManager::draw(){
     }
 #endif
 
-    if (drawScenePanel)
-        panel->draw();
-    codeControls.draw();
-    
-    gui.draw();
-    
+   
     
     // let's draw some info!
     
@@ -906,7 +915,7 @@ void sceneManager::nextScene(bool forward){
 #ifdef TYPE_ANIMATION
     shouldDrawScene = false;
 #else
-    shouldDrawScene = true
+    shouldDrawScene = true;
 #endif
 
     isTransitioning = false;

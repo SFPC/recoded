@@ -12,7 +12,7 @@ void zzDonutScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("scenes/zzDonutScene/exampleCode.cpp");
+    loadCode("zzScenes/zzDonutScene/exampleCode.cpp");
 }
 
 void zzDonutScene::update(){

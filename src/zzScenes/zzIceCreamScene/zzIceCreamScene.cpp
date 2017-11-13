@@ -12,11 +12,11 @@ void zzIceCreamScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("scenes/zzIceCreamScene/exampleCode.cpp");
+    loadCode("zzScenes/zzIceCreamScene/exampleCode.cpp");
     
     
     for (int i = 0; i < 6; i++){
-        string name = "scenes/zzIceCreamScene/images/Instagram_Icecream-0" + ofToString(i+1) + ".png";
+        string name = "zzScenes/zzIceCreamScene/images/Instagram_Icecream-0" + ofToString(i+1) + ".png";
         ofImage temp;
         iceCreams.push_back(temp);
         iceCreams.back().load(name);

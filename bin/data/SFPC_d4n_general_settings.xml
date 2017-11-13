@@ -21,8 +21,8 @@
 		<Scene_wait_for_code>1</Scene_wait_for_code>
 		<Scene_fade_out>1</Scene_fade_out>
 		<Auto_Advance_Scene>1</Auto_Advance_Scene>
-		<fadeOutTime>3.93333</fadeOutTime>
-		<fadeInTime>7.25</fadeInTime>
+		<fadeOutTime>0.233333</fadeOutTime>
+		<fadeInTime>0.4</fadeInTime>
 		<MIDI_Smoothing>0</MIDI_Smoothing>
 		<OF_Smoothing>0.02</OF_Smoothing>
 	</group>

@@ -12,12 +12,12 @@ void zzWatermelonScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("scenes/zzWatermelonScene/exampleCode.cpp");
+    loadCode("zzScenes/zzWatermelonScene/exampleCode.cpp");
     
     
-    bg.load("scenes/zzWatermelonScene/images/bg.png");
+    bg.load("zzScenes/zzWatermelonScene/images/bg.png");
     for (int i = 0; i < 7; i++){
-        imgs[i].load("scenes/zzWatermelonScene/images/" + ofToString(i) + ".png");
+        imgs[i].load("zzScenes/zzWatermelonScene/images/" + ofToString(i) + ".png");
         
     }
 }
