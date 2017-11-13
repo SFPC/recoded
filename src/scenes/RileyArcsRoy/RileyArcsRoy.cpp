@@ -7,9 +7,6 @@ void RileyArcsRoy::setup(){
 //    param.set("param", 5, 0, 100);
 //    parameters.add(param);
 
-    setAuthor("Roy MacDonald");
-    setOriginalArtist("Bridget Riley");
-    loadCode("scenes/RileyArcsRoy/exampleCode.cpp");
     
     minWidth = 1;
     minSpacing = 4;
@@ -19,6 +16,9 @@ void RileyArcsRoy::setup(){
     
     initTime = TWO_PI*0.8;
     
+    setAuthor("Roy Macdonald");
+    setOriginalArtist("Bridget Riley");
+    loadCode("scenes/RileyArcsRoy/exampleCode.cpp");
     
 }
 

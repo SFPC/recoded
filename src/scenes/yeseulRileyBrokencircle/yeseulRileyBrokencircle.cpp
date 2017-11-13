@@ -4,13 +4,13 @@
 
 void yeseulRileyBrokencircle::setup(){
     
-    setAuthor("Yeseul Song");
-    setOriginalArtist("Bridget Riley");
     
     parameters.add(speed.set("speed", 0.7, 0, 10));
     parameters.add(rotation.set("rotation", 0, 0, 180));
     parameters.add(numberOfPatterns.set("numberOfPatterns", 1, 1, 7));
     
+    setAuthor("Yeseul Song");
+    setOriginalArtist("Bridget Riley");
     loadCode("scenes/yeseulRileybrokencircle/exampleCode.cpp");
 }
 
