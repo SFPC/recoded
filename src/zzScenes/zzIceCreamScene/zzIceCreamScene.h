@@ -11,17 +11,19 @@ public:
     void update();
     void draw();
     
+    
+    ofParameter < float > nPts;
+    ofParameter < float > minSize;
+    ofParameter < float > maxSize;
+    
     vector < ofImage > iceCreams;
-    
-    
+
     typedef struct {
         ofPoint pt;
         int index;
-        
     } iceCreamPoint;
     
     vector < iceCreamPoint > pts;
-    
-    
+
 //    ofParameter<float> param;
 };

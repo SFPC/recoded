@@ -13,7 +13,7 @@ public:
     
     
     ofImage bg;
-    ofImage imgs[6];
+    ofImage imgs[7];
     
 //    ofParameter<float> param;
 };

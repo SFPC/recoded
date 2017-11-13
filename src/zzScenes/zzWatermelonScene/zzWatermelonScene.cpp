@@ -16,10 +16,13 @@ void zzWatermelonScene::setup(){
     
     
     bg.load("zzScenes/zzWatermelonScene/images/bg.png");
-    for (int i = 0; i < 7; i++){
-        imgs[i].load("zzScenes/zzWatermelonScene/images/" + ofToString(i) + ".png");
-        
-    }
+    imgs[0].load("zzScenes/zzWatermelonScene/images/aa.png");
+    imgs[1].load("zzScenes/zzWatermelonScene/images/bb.png");
+    imgs[2].load("zzScenes/zzWatermelonScene/images/cc.png");
+    imgs[3].load("zzScenes/zzWatermelonScene/images/dd.png");
+    imgs[4].load("zzScenes/zzWatermelonScene/images/ee.png");
+    imgs[5].load("zzScenes/zzWatermelonScene/images/ff.png");
+    imgs[6].load("zzScenes/zzWatermelonScene/images/gg.png");
 }
 
 void zzWatermelonScene::update(){
@@ -34,9 +37,11 @@ void zzWatermelonScene::draw(){
     
     ofTranslate(dimensions.width/2, dimensions.height/2);
     for (int i = 0; i < 6; i++){
-        ofRotateZ( sin(fmod(getElapsedTimef()*i, TWO_PI)) * 300 * sin(getElapsedTimef() ));
+        ofPushMatrix();
+        ofRotateZ( getElapsedTimef() * 40 +  sin(fmod(getElapsedTimef()*(i*0.1 + 1), TWO_PI)) * 300 * ofMap(sin(getElapsedTimef() ), -0.8, 1, 0, 1, true));
         imgs[i].draw(0,0,dimensions.width, dimensions.height);
-    
+        ofPopMatrix();
+        
     }
     
     ofSetRectMode(OF_RECTMODE_CORNER);
