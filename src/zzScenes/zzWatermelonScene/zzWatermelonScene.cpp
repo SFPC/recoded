@@ -37,9 +37,11 @@ void zzWatermelonScene::draw(){
     
     ofTranslate(dimensions.width/2, dimensions.height/2);
     for (int i = 0; i < 6; i++){
-        ofRotateZ( sin(fmod(getElapsedTimef()*i, TWO_PI)) * 300 * sin(getElapsedTimef() ));
+        ofPushMatrix();
+        ofRotateZ( getElapsedTimef() * 40 +  sin(fmod(getElapsedTimef()*(i*0.1 + 1), TWO_PI)) * 300 * ofMap(sin(getElapsedTimef() ), -0.8, 1, 0, 1, true));
         imgs[i].draw(0,0,dimensions.width, dimensions.height);
-    
+        ofPopMatrix();
+        
     }
     
     ofSetRectMode(OF_RECTMODE_CORNER);

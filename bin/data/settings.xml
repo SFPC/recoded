@@ -10,4 +10,7 @@
 <Fog_min>1159.84</Fog_min>
 	<Fog_max>898.612</Fog_max>
 <Extrude>10</Extrude>
+<nPts>10</nPts>
+	<minSize>113.133</minSize>
+	<maxSize>517.49</maxSize>
 </group>
