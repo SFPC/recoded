@@ -68,12 +68,14 @@
 
 // these are food related scenes
 
+#include "zzSushiScene.h"
 #include "zzWaveScene.h"
 #include "zzDonutScene.h"
 #include "zzIceCreamScene.h"
 #include "zzWatermelonScene.h"
 #include "zzBurger.h"
 #include "zzPixelBurger.h"
+#include "zzSushiScene.h"
 
 
 //#include "testingScene.h"
@@ -99,12 +101,14 @@ void sceneManager::setup(){
     #ifdef SHOW_MSOFT_LUNCHTIME
 
         // this is for FOOD related scenes
+
         scenes.push_back(new zzWatermelonScene());
         scenes.push_back(new zzWaveScene());
         scenes.push_back(new zzDonutScene());
         scenes.push_back(new zzIceCreamScene());
         scenes.push_back(new zzBurger());
         scenes.push_back(new zzPixelBurger());
+        scenes.push_back(new zzSushiScene());
     
     
     #else
@@ -442,7 +446,7 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        if (enableMidiUpdate.get() && scenes[currentScene]->recData.size()){
+        if (enableMidiUpdate.get()){// && scenes[currentScene]->recData.size()){
             if(scenes[currentScene]->bAnimateScene){
                 scenes[currentScene]->updateMidiParams();
             }
@@ -740,6 +744,7 @@ void sceneManager::draw(){
         ofPushStyle();
         scenes[currentScene]->draw();
         ofPopStyle();
+        //ofClearAlpha();
         sceneFbo.end();
         
         // For sound and for kicks

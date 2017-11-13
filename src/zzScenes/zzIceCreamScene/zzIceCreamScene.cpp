@@ -7,8 +7,14 @@ void zzIceCreamScene::setup(){
 // if your original code use an ofxPanel instance dont use it here, instead
 // add your parameters to the "parameters" instance as follows.
 // param was declared in zzIceCreamScene.h
-    //parameters.add(param.set("param", 5, 0, 100));
+    //
 
+    
+    //ofParameter < float > nPts;
+    parameters.add(nPts.set("nPts", 10, 1, 100));
+    parameters.add(minSize.set("minSize", 200, 1, 1000));
+    parameters.add(maxSize.set("maxSize", 600, 1, 1000));
+    
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
@@ -39,11 +45,16 @@ void zzIceCreamScene::update(){
 
 void zzIceCreamScene::draw(){
     
-    if (pts.size() != ofGetMouseX()){
+    ofSetColor(ofColor::white);
+    ofFill();
+    ofRect(dimensions);
+    
+    ofSetColor(255);
+    if (pts.size() != (int)nPts){
         
         pts.clear();
         
-        int amt = ofGetMouseX();
+        int amt = (int)nPts;
         for (int i = 0; i < amt; i++){
             iceCreamPoint pt;
             pt.pt =ofPoint(dimensions.width/2, ofMap(i, 0, amt-1, 0-100, dimensions.height));
@@ -72,7 +83,10 @@ void zzIceCreamScene::draw(){
     for (int i = 0; i < pts.size(); i++){
         ofPushMatrix();
         ofTranslate(pts[i].pt + ofPoint(0,200));
-        iceCreams[pts[i].index].draw(0,0, sin(pts[i].index * 0.1 + getElapsedTimef()) * ofGetMouseY() + 200,sin(pts[i].index * 0.1 + getElapsedTimef()) * ofGetMouseY() + 200);
+        float sinwave = sin(pts[i].index * 0.1 + getElapsedTimef());
+        float w = ofMap(sinwave, -1, 1,minSize, maxSize );
+        
+        iceCreams[pts[i].index].draw(0,0,w,w);
         ofPopMatrix();
     }
     ofSetRectMode(OF_RECTMODE_CORNER);
