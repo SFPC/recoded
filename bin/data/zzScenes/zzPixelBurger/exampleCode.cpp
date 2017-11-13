@@ -1,8 +1,11 @@
-// code goes here!
 
-this is a test
-blah blah blah
-
-//if you want to show a parameter's value, which highlights when it changes you need to enclose it's name in double square brackets.
-// for a parameter named myParam you shoudl put [[myParam]] in the pseudo code below.
-
+for (int layer = 0; layer < burger.size(); layer++) {
+    layer = burger.getLayer(i);
+    float xOffset = random(layer.width);
+    float yOffset = random(layer.height);
+    
+    layer.translate(xOffset, yOffset);
+    layer.rotateZ([[chaos]] * random(-50, 50));
+    layer.rotateY([[chaos]] * random(-50, 50));
+    layer.draw();
+}
