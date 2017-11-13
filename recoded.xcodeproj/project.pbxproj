@@ -22,6 +22,7 @@
 		2CDF949125CD5802082364F3 /* mattKnowlton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A39AE0D2FA3A4C9F76FC4E61 /* mattKnowlton.cpp */; };
 		2DE293FAAF850C0ABF02DB62 /* exampleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59429ADBB14FCD19148E74FB /* exampleScene.cpp */; };
 		2E555A4FA8AD6EA2CA95AACF /* loloWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6397CED8F069F8CCB13C01F /* loloWhitney.cpp */; };
+		2E6C274B1FBA494600D54DC9 /* zzSushiScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C27491FBA48AC00D54DC9 /* zzSushiScene.cpp */; };
 		310ED8BB549B244C0DFB0FA1 /* mgsVeraMolnarLineStudy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA88C1467946DA7D2C11601B /* mgsVeraMolnarLineStudy.cpp */; };
 		3346CAA1CCDD6BC4F97B8981 /* johnWhitneyShader02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E338953A0500B375BA08DA /* johnWhitneyShader02.cpp */; };
 		34BC41BD772E4CC89AFCC3EB /* andyMenkmanPng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED7178B689EE8A428CB88C95 /* andyMenkmanPng.cpp */; };
@@ -230,6 +231,8 @@
 		2BAEA0543B2829CB46F35032 /* mgsRileyEllipsesAndSquares.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = mgsRileyEllipsesAndSquares.cpp; path = src/scenes/mgsRileyEllipsesAndSquares/mgsRileyEllipsesAndSquares.cpp; sourceTree = SOURCE_ROOT; };
 		2DB66B4D75A388D55904F54F /* fernandoWhitney2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fernandoWhitney2.h; path = src/scenes/fernandoWhitney2/fernandoWhitney2.h; sourceTree = SOURCE_ROOT; };
 		2E3CEE46463AC03FCB57EC56 /* loloVera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = loloVera.h; path = src/scenes/loloVera/loloVera.h; sourceTree = SOURCE_ROOT; };
+		2E6C27491FBA48AC00D54DC9 /* zzSushiScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = zzSushiScene.cpp; sourceTree = "<group>"; };
+		2E6C274A1FBA48AC00D54DC9 /* zzSushiScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zzSushiScene.h; sourceTree = "<group>"; };
 		2F409986A645F575A744FC98 /* EstherKnowltonScene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = EstherKnowltonScene.h; path = src/scenes/EstherKnowltonScene/EstherKnowltonScene.h; sourceTree = SOURCE_ROOT; };
 		2FD4B0329909D3527F003494 /* UdpSocket.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = UdpSocket.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/UdpSocket.h; sourceTree = SOURCE_ROOT; };
 		30DF51A42E3C442F7858B3A1 /* fernandoMuriel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fernandoMuriel.h; path = src/scenes/fernandoMuriel/fernandoMuriel.h; sourceTree = SOURCE_ROOT; };
@@ -665,6 +668,15 @@
 				AAAB39F3BB978BC678616550 /* mgsCooperSymbols.h */,
 			);
 			name = mgsCooperSymbols;
+			sourceTree = "<group>";
+		};
+		2E6C27481FBA48AC00D54DC9 /* zzSushiScene */ = {
+			isa = PBXGroup;
+			children = (
+				2E6C27491FBA48AC00D54DC9 /* zzSushiScene.cpp */,
+				2E6C274A1FBA48AC00D54DC9 /* zzSushiScene.h */,
+			);
+			path = zzSushiScene;
 			sourceTree = "<group>";
 		};
 		302EB24AEEFF00F5DF902427 /* hyojinVeraMolnar */ = {
@@ -1144,6 +1156,7 @@
 		9259DF4D1FBA06DA00F4B42E /* zzScenes */ = {
 			isa = PBXGroup;
 			children = (
+				2E6C27481FBA48AC00D54DC9 /* zzSushiScene */,
 				54355FC21FBA2956008333BB /* zzBurger */,
 				9259DF4E1FBA06DA00F4B42E /* zzDonutScene */,
 				9259DF511FBA06DA00F4B42E /* zzEyeScene */,
@@ -2057,6 +2070,7 @@
 				6F0D599D9FD124B23D0E0F8D /* baseScene.cpp in Sources */,
 				48E1E8E41E51A95B7E4D8D9D /* cantusFirmusRiley.cpp in Sources */,
 				B0822AEE1FB5491200007B2D /* ofxEasingCirc.cpp in Sources */,
+				2E6C274B1FBA494600D54DC9 /* zzSushiScene.cpp in Sources */,
 				BFF99FC5F470B5FA65641F39 /* chrisMurielCooper.cpp in Sources */,
 				3B19311B9A0680F23DDF9B97 /* chrisRileyCascando.cpp in Sources */,
 				F0B16E86020ABBE853B7EBFC /* chrisVeraInterruptions.cpp in Sources */,
