@@ -52,6 +52,7 @@
 		926A25441FB4D11500BCFDC3 /* zzDonutScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 926A253C1FB4CFD500BCFDC3 /* zzDonutScene.cpp */; };
 		926A25451FB4D11500BCFDC3 /* zzIceCreamScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 926A25421FB4CFD500BCFDC3 /* zzIceCreamScene.cpp */; };
 		926A25461FB4D11500BCFDC3 /* zzWaveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 926A253F1FB4CFD500BCFDC3 /* zzWaveScene.cpp */; };
+		926A254B1FB4EF7B00BCFDC3 /* zzWatermelonScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 926A25491FB4EF7800BCFDC3 /* zzWatermelonScene.cpp */; };
 		92F512061C1EE813000AD19C /* typographyManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92F512041C1EE813000AD19C /* typographyManager.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		9A6B71C31C157473000D7878 /* memoAktenScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B71BE1C157473000D7878 /* memoAktenScene.cpp */; };
@@ -258,6 +259,8 @@
 		926A25401FB4CFD500BCFDC3 /* zzWaveScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zzWaveScene.h; sourceTree = "<group>"; };
 		926A25421FB4CFD500BCFDC3 /* zzIceCreamScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = zzIceCreamScene.cpp; sourceTree = "<group>"; };
 		926A25431FB4CFD500BCFDC3 /* zzIceCreamScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zzIceCreamScene.h; sourceTree = "<group>"; };
+		926A25491FB4EF7800BCFDC3 /* zzWatermelonScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = zzWatermelonScene.cpp; sourceTree = "<group>"; };
+		926A254A1FB4EF7800BCFDC3 /* zzWatermelonScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zzWatermelonScene.h; sourceTree = "<group>"; };
 		92F512041C1EE813000AD19C /* typographyManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = typographyManager.cpp; sourceTree = "<group>"; };
 		92F512051C1EE813000AD19C /* typographyManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = typographyManager.hpp; sourceTree = "<group>"; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
@@ -874,6 +877,7 @@
 		926A253A1FB4CFC500BCFDC3 /* zzScenes */ = {
 			isa = PBXGroup;
 			children = (
+				926A25481FB4EF7800BCFDC3 /* zzWatermelonScene */,
 				926A253B1FB4CFD500BCFDC3 /* zzDonutScene */,
 				926A25411FB4CFD500BCFDC3 /* zzIceCreamScene */,
 				926A253E1FB4CFD500BCFDC3 /* zzWaveScene */,
@@ -909,6 +913,16 @@
 			);
 			name = zzIceCreamScene;
 			path = src/scenes/zzIceCreamScene;
+			sourceTree = SOURCE_ROOT;
+		};
+		926A25481FB4EF7800BCFDC3 /* zzWatermelonScene */ = {
+			isa = PBXGroup;
+			children = (
+				926A25491FB4EF7800BCFDC3 /* zzWatermelonScene.cpp */,
+				926A254A1FB4EF7800BCFDC3 /* zzWatermelonScene.h */,
+			);
+			name = zzWatermelonScene;
+			path = src/scenes/zzWatermelonScene;
 			sourceTree = SOURCE_ROOT;
 		};
 		9A6B71BD1C157473000D7878 /* memoAktenScene */ = {
@@ -1689,6 +1703,7 @@
 				926A25441FB4D11500BCFDC3 /* zzDonutScene.cpp in Sources */,
 				D541137B1C1A3F3B00AD4ED9 /* robbyMenkmanScene.cpp in Sources */,
 				B00CD1331C21E89B00C529FA /* README.md in Sources */,
+				926A254B1FB4EF7B00BCFDC3 /* zzWatermelonScene.cpp in Sources */,
 				923871A61BF7993A00171456 /* sceneManager.cpp in Sources */,
 				B00CD1021C21E81400C529FA /* ofxEasing.cpp in Sources */,
 				DB146F801FAF541B0069C4E0 /* heatherMolnarScene.cpp in Sources */,

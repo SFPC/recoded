@@ -71,12 +71,13 @@
 #include "zzWaveScene.h"
 #include "zzDonutScene.h"
 #include "zzIceCreamScene.h"
+#include "zzWatermelonScene.h"
 
 
 //#include "testingScene.h"
 
 
-//SCRIPT_PLACEHOLDER_INCLUDE -- DO NOT REMOVE THIS LINE. PLACE INCLUDES ABOVE. 
+//SCRIPT_PLACEHOLDER_INCLUDE -- DO NOT REMOVE THIS LINE. PLACE INCLUDES ABOVE.
 
 float baseScene::smoothingSpeed = 0.02;
 
@@ -88,13 +89,14 @@ sceneManager::~sceneManager(){
 void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
-    //SCRIPT_PLACEHOLDER_PUSH_SCENE -- DO NOT REMOVE OR MOVE THIS LINE 
+    //SCRIPT_PLACEHOLDER_PUSH_SCENE -- DO NOT REMOVE OR MOVE THIS LINE -e     scenes.push_back(new zzWatermelonScene());
 
     
     
     #ifdef MSOFT_LUNCHTIME
     
         // this is for FOOD related scenes
+     scenes.push_back(new zzWatermelonScene());
         scenes.push_back(new zzWaveScene());
         scenes.push_back(new zzDonutScene());
         scenes.push_back(new zzIceCreamScene());
