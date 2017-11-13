@@ -72,6 +72,7 @@
 #include "zzDonutScene.h"
 #include "zzIceCreamScene.h"
 #include "zzWatermelonScene.h"
+#include "zzBurger.h"
 
 
 //#include "testingScene.h"
@@ -101,6 +102,7 @@ void sceneManager::setup(){
         scenes.push_back(new zzWaveScene());
         scenes.push_back(new zzDonutScene());
         scenes.push_back(new zzIceCreamScene());
+        scenes.push_back(new zzBurger());
     
     
     #else
