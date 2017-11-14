@@ -23,7 +23,7 @@ void zzDonutScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("zzScenes/zzDonutScene/exampleCode.cpp");
+    loadCode("zzScenes/zzDonutScene/exampleCode.cpp", false);
     bg.load("zzScenes/zzDonutScene/bgs/Instagram_C_61-15.png");
 }
 

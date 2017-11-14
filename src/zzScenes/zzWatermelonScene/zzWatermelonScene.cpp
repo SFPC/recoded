@@ -12,7 +12,7 @@ void zzWatermelonScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("zzScenes/zzWatermelonScene/exampleCode.cpp");
+    loadCode("zzScenes/zzWatermelonScene/exampleCode.cpp", false);
     
     
     bg.load("zzScenes/zzWatermelonScene/images/bg.png");

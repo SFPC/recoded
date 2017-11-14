@@ -12,7 +12,7 @@ void zzPixelBurger::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("zzScenes/zzPixelBurger/exampleCode.cpp");
+    loadCode("zzScenes/zzPixelBurger/exampleCode.cpp", false);
     
     burgerColors.push_back(ofColor(255, 200, 50));
     burgerColors.push_back(ofColor(225, 200, 225));

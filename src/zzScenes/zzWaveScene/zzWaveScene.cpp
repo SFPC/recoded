@@ -21,7 +21,7 @@ void zzWaveScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("zzScenes/zzWaveScene/exampleCode.cpp");
+    loadCode("zzScenes/zzWaveScene/exampleCode.cpp", false);
     
     
     for (int i =0; i < 8; i++){

@@ -12,7 +12,7 @@ void zzCloudyScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("scenes/zzCloudyScene/exampleCode.cpp");
+    loadCode("scenes/zzCloudyScene/exampleCode.cpp", false);
 }
 
 void zzCloudyScene::update(){

@@ -12,7 +12,7 @@ void zzEggScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("scenes/zzEggScene/exampleCode.cpp");
+    loadCode("scenes/zzEggScene/exampleCode.cpp", false);
 }
 
 void zzEggScene::update(){

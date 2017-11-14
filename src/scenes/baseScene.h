@@ -115,7 +115,7 @@ public:
     void updateMidiParams();
     vector<char> paramTypes;
     
-    void loadCode( string fileName );
+    void loadCode( string fileName, bool bShowAuthorAndArtistNames = true);
     void setAuthor(string author);
     void setOriginalArtist(string originalArtist);
 
@@ -165,4 +165,5 @@ public:
     void updateInteractiveParams(float valChangeAsPct, int param, float abspct = 1.0);
     vector < int > midiKnobs;
     float defaultDuration = 45;
+	
 };
