@@ -24,6 +24,8 @@ public:
     } iceCreamPoint;
     
     vector < iceCreamPoint > pts;
+    ofImage bg;
+    
 
 //    ofParameter<float> param;
 };

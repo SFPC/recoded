@@ -21,6 +21,7 @@ void zzIceCreamScene::setup(){
     loadCode("zzScenes/zzIceCreamScene/exampleCode.cpp");
     
     
+    bg.load("zzScenes/zzIceCreamScene/Instagram_C_61-15.png");
     for (int i = 0; i < 6; i++){
         string name = "zzScenes/zzIceCreamScene/images/Instagram_Icecream-0" + ofToString(i+1) + ".png";
         ofImage temp;
@@ -45,10 +46,7 @@ void zzIceCreamScene::update(){
 
 void zzIceCreamScene::draw(){
     
-    ofSetColor(ofColor::white);
-    ofFill();
-    ofRect(dimensions);
-    
+    bg.draw(0,0);
     ofSetColor(255);
     if (pts.size() != (int)nPts){
         

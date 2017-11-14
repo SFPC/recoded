@@ -9,7 +9,7 @@ void ofApp::setup(){
 
 	//ofSetWindowPosition(2000, 0);
 	ofSetFullscreen(true);
-	ofHideCursor();
+	//ofHideCursor();
 
 
 	//-------------------------------------------
@@ -74,7 +74,7 @@ void ofApp::draw(){
     }
 	if (SM.pctDelay < FADE_DELAY_MIN) {
 		// typing is happening...
-		SM.codeFbo.draw(0, 0, 520,520);
+		//SM.codeFbo.draw(0, 0, 520,520);
 	}
     if (SM.shouldDrawScene && !SM.isTransitioning) {
 		int numParams = MIN(SM.scenes[SM.currentScene]->midiKnobs.size(),4);

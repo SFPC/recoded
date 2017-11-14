@@ -77,6 +77,8 @@
 #include "zzPixelBurger.h"
 #include "zzSushiScene.h"
 
+#include "zzBaconScene.h"
+
 
 //#include "testingScene.h"
 
@@ -102,6 +104,7 @@ void sceneManager::setup(){
 
         // this is for FOOD related scenes
 
+        scenes.push_back(new zzBaconScene());
         scenes.push_back(new zzWatermelonScene());
         scenes.push_back(new zzWaveScene());
         scenes.push_back(new zzDonutScene());
@@ -384,10 +387,10 @@ void sceneManager::update(){
     //but showing it if not.
     bool bInside =screenRect.inside(ofGetMouseX(), ofGetMouseY()) ;
     if ( bInside && bShowCursor) {
-        ofHideCursor();
+        //ofHideCursor();
         bShowCursor = false;
     } else if(!bInside && !bShowCursor){
-        ofShowCursor();
+        //ofShowCursor();
         bShowCursor = true;
     }
     

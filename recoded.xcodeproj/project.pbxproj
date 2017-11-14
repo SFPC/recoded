@@ -75,6 +75,9 @@
 		9259DF5F1FBA06DA00F4B42E /* zzIceCreamScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9259DF551FBA06DA00F4B42E /* zzIceCreamScene.cpp */; };
 		9259DF601FBA06DA00F4B42E /* zzWatermelonScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9259DF581FBA06DA00F4B42E /* zzWatermelonScene.cpp */; };
 		9259DF611FBA06DA00F4B42E /* zzWaveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9259DF5B1FBA06DA00F4B42E /* zzWaveScene.cpp */; };
+		928A7D081FBB5BDE003A2403 /* zzBaconScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D001FBB5BDE003A2403 /* zzBaconScene.cpp */; };
+		928A7D091FBB5BDE003A2403 /* zzEggScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D031FBB5BDE003A2403 /* zzEggScene.cpp */; };
+		928A7D0A1FBB5BDE003A2403 /* zzCloudyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D061FBB5BDE003A2403 /* zzCloudyScene.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		94D0F90B1F34F0CB0BEF6E94 /* mgsCooperSymbols.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F7FD17D58145A29907951 /* mgsCooperSymbols.cpp */; };
 		94E1EBB02DE5E09C21993153 /* dgif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = 7D22515AB9C73BAC9AF07B05 /* dgif_lib.c */; };
@@ -333,6 +336,12 @@
 		9259DF591FBA06DA00F4B42E /* zzWatermelonScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzWatermelonScene.h; sourceTree = "<group>"; };
 		9259DF5B1FBA06DA00F4B42E /* zzWaveScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzWaveScene.cpp; sourceTree = "<group>"; };
 		9259DF5C1FBA06DA00F4B42E /* zzWaveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzWaveScene.h; sourceTree = "<group>"; };
+		928A7D001FBB5BDE003A2403 /* zzBaconScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzBaconScene.cpp; sourceTree = "<group>"; };
+		928A7D011FBB5BDE003A2403 /* zzBaconScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzBaconScene.h; sourceTree = "<group>"; };
+		928A7D031FBB5BDE003A2403 /* zzEggScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzEggScene.cpp; sourceTree = "<group>"; };
+		928A7D041FBB5BDE003A2403 /* zzEggScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzEggScene.h; sourceTree = "<group>"; };
+		928A7D061FBB5BDE003A2403 /* zzCloudyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzCloudyScene.cpp; sourceTree = "<group>"; };
+		928A7D071FBB5BDE003A2403 /* zzCloudyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzCloudyScene.h; sourceTree = "<group>"; };
 		93CE6D5A4C7FBFAACBF65A16 /* niklasWhitneySineWave.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = niklasWhitneySineWave.cpp; path = src/scenes/niklasWhitneySineWave/niklasWhitneySineWave.cpp; sourceTree = SOURCE_ROOT; };
 		94705193E8ABD23283009175 /* RileyArcsRoy.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = RileyArcsRoy.cpp; path = src/scenes/RileyArcsRoy/RileyArcsRoy.cpp; sourceTree = SOURCE_ROOT; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
@@ -1168,6 +1177,9 @@
 		9259DF4D1FBA06DA00F4B42E /* zzScenes */ = {
 			isa = PBXGroup;
 			children = (
+				928A7CFF1FBB5BDE003A2403 /* zzBaconScene */,
+				928A7D051FBB5BDE003A2403 /* zzCloudyScene */,
+				928A7D021FBB5BDE003A2403 /* zzEggScene */,
 				54355FC71FBA39CB008333BB /* zzPixelBurger */,
 				2E6C27481FBA48AC00D54DC9 /* zzSushiScene */,
 				54355FC21FBA2956008333BB /* zzBurger */,
@@ -1223,6 +1235,33 @@
 				9259DF5C1FBA06DA00F4B42E /* zzWaveScene.h */,
 			);
 			path = zzWaveScene;
+			sourceTree = "<group>";
+		};
+		928A7CFF1FBB5BDE003A2403 /* zzBaconScene */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D001FBB5BDE003A2403 /* zzBaconScene.cpp */,
+				928A7D011FBB5BDE003A2403 /* zzBaconScene.h */,
+			);
+			path = zzBaconScene;
+			sourceTree = "<group>";
+		};
+		928A7D021FBB5BDE003A2403 /* zzEggScene */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D031FBB5BDE003A2403 /* zzEggScene.cpp */,
+				928A7D041FBB5BDE003A2403 /* zzEggScene.h */,
+			);
+			path = zzEggScene;
+			sourceTree = "<group>";
+		};
+		928A7D051FBB5BDE003A2403 /* zzCloudyScene */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D061FBB5BDE003A2403 /* zzCloudyScene.cpp */,
+				928A7D071FBB5BDE003A2403 /* zzCloudyScene.h */,
+			);
+			path = zzCloudyScene;
 			sourceTree = "<group>";
 		};
 		98927F7FDBF63A8A6918DE72 /* jacobsonMolnar_01 */ = {
@@ -2072,6 +2111,7 @@
 				B0822AE51FB5491200007B2D /* ofxMidiMessage.cpp in Sources */,
 				149FF2205EB6D2EB34272D36 /* gif_hash.c in Sources */,
 				FFBFC666B626901721B1798A /* gifalloc.c in Sources */,
+				928A7D091FBB5BDE003A2403 /* zzEggScene.cpp in Sources */,
 				F3339D42B1A22AEF847B1F85 /* quantize.c in Sources */,
 				CA2238307B2EA309451AD9C2 /* alexLissamojiWhitney.cpp in Sources */,
 				B0822AF11FB5491200007B2D /* ofxEasingExpo.cpp in Sources */,
@@ -2153,6 +2193,7 @@
 				9929ECCF147A9E5E68DDD2D6 /* RoyWhitney1.cpp in Sources */,
 				9259DF5F1FBA06DA00F4B42E /* zzIceCreamScene.cpp in Sources */,
 				B0822B031FB549D000007B2D /* Delaunay.cpp in Sources */,
+				928A7D081FBB5BDE003A2403 /* zzBaconScene.cpp in Sources */,
 				B0822AE41FB5491200007B2D /* ofxMidiIn.cpp in Sources */,
 				54355FC51FBA2956008333BB /* zzBurger.cpp in Sources */,
 				E7E44BB4F75A5A6EA8F468DC /* sarahgpRileyCircle.cpp in Sources */,
@@ -2181,6 +2222,7 @@
 				D07841EA650BBE321AC6628B /* yosukeVeraSansTitre.cpp in Sources */,
 				CAF74703F170D49B29ABB982 /* yumiNishida01.cpp in Sources */,
 				7B87948685D434C7C6CD893D /* zachTest.cpp in Sources */,
+				928A7D0A1FBB5BDE003A2403 /* zzCloudyScene.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
