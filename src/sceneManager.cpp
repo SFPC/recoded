@@ -65,7 +65,7 @@
 #include "annMolnarRectangles.h"
 #include "weiWhitney.h"
 #include "yumiNishida01.h"
-
+#include "runchalMolnar.h"
 // these are food related scenes
 
 #include "zzSushiScene.h"
@@ -117,7 +117,7 @@ void sceneManager::setup(){
     #else
     
     
-    
+		scenes.push_back(new runchalMolnar());
         scenes.push_back(new yingTanWhitneyMatrix());
         scenes.push_back(new annMolnarRectangles());
         scenes.push_back(new weiWhitney());

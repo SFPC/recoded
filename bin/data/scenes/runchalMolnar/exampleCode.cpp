@@ -11,13 +11,16 @@ void draw(){
             
             if (i % 2 == 0){
 
-                float x = xBack + i * [[length]] + Random(-[[emotion]]*10*h*0.3, [[emotion]]*10*h*0.3);
+                float x = xBack + i * [[length]] + 
+                	Random(-[[emotion]]*10*h*0.3, 
+                	[[emotion]]*10*h*0.3);
 
                 float y = -yDown + (i*0) + h * vertSpacer;
                 myLine.addVertex(x,y);
             } else {
-
-                float x = xBack + xForward + i * [[length]] + Random(-[[emotion]]*10*h*0.3, [[emotion]]*10*h*0.3); // one thing with this param is that it makes the emotional state  the piece constant — it is more a reflection  mental health than it is  an emotional response to a person which grows stronger over time
+                float x = xBack + xForward + i * [[length]] + 
+                	Random(-[[emotion]]*10*h*0.3,
+                	[[emotion]]*10*h*0.3); 
                 float y = yDown + (i*0) +  h * vertSpacer;
                 myLine.addVertex(x,y);
             }
