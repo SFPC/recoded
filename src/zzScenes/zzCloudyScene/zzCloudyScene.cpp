@@ -21,6 +21,7 @@ void zzCloudyScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
+
     loadCode("zzScenes/zzCloudyScene/exampleCode.cpp");
     
     ofDirectory dir;

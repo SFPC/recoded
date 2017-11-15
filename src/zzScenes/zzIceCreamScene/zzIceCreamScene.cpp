@@ -18,7 +18,7 @@ void zzIceCreamScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("zzScenes/zzIceCreamScene/exampleCode.cpp");
+    loadCode("zzScenes/zzIceCreamScene/exampleCode.cpp", false);
     
     
     bg.load("zzScenes/zzIceCreamScene/Instagram_C_61-15.png");

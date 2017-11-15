@@ -14,7 +14,7 @@ void zzSushiScene::setup(){
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("scenes/zzSushiScene/exampleCode.cpp");
+    loadCode("scenes/zzSushiScene/exampleCode.cpp", false);
     center.set(dimensions.getCenter());
 
 

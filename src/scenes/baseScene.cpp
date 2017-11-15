@@ -36,14 +36,14 @@ void baseScene::reportKnobs(string f){
 
 }
 
-void baseScene::loadCode( string fileName ){
+void baseScene::loadCode( string fileName, bool bShowAuthorAndArtistNames ){
   ofBuffer buffer = ofBufferFromFile(fileName);
   code = "";
-
-  code += "// artwork by " + originalArtist + "\n";
-  code += "// re-coded by " + author + "\n";
-  code += "\n";
-
+	if(bShowAuthorAndArtistNames){
+		code += "// artwork by " + originalArtist + "\n";
+		code += "// re-coded by " + author + "\n";
+		code += "\n";
+	}
   for (auto line : buffer.getLines()){
     code += line;
     code += "\n";

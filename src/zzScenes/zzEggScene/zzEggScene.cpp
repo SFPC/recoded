@@ -9,11 +9,7 @@ void zzEggScene::setup(){
 // param was declared in zzEggScene.h
     //parameters.add(param.set("param", 5, 0, 100));
 
-    setAuthor("Put Your Name Here");
-    setOriginalArtist("Put the original Artist's name here");
-
-    loadCode("zzScenes/zzEggScene/exampleCode.cpp");
-    
+   
     
     
     yolk.load("zzScenes/zzEggScene/yolk_specular.png");
@@ -36,7 +32,10 @@ void zzEggScene::setup(){
     parameters.add(move.set("move", 100.0, 0.0, 200.0));
     parameters.add(deg.set("deg", 0, 0, 0.5));
    
-
+    setAuthor("Put Your Name Here");
+    setOriginalArtist("Put the original Artist's name here");
+    loadCode("zzScenes/zzEggScene/exampleCode.cpp");
+    
 }
 
 void zzEggScene::update(){
