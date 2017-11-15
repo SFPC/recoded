@@ -126,6 +126,8 @@ sceneManager::~sceneManager(){
 //-----------------------------------------------------------------------------------
 void sceneManager::setup(){
     
+    bDrawGui = true;
+    
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
     //SCRIPT_PLACEHOLDER_PUSH_SCENE -- DO NOT REMOVE OR MOVE THIS LINE -e     scenes.push_back(new zzWatermelonScene());
     
@@ -142,14 +144,19 @@ void sceneManager::setup(){
         scenes.push_back(new zzSpreadTheLove());
         scenes.push_back(new zzPixelBurger());
         scenes.push_back(new zzSushiScene());
-        scenes.push_back(new zzCloudyScene());
-        scenes.push_back(new zzEggScene());
-        scenes.push_back(new zzWatermelonScene());
-        scenes.push_back(new zzBaconScene());
-        scenes.push_back(new zzWaveScene());
-        scenes.push_back(new zzBurger());
+        scenes.push_back(new zzCloudyScene()); //--- needs recording
+        scenes.push_back(new zzEggScene()); //--- needs recording
+        scenes.push_back(new zzWatermelonScene()); //--- needs recording
+        scenes.push_back(new zzBaconScene()); //--- needs recording
+        scenes.push_back(new zzWaveScene()); //--- needs recording
+        scenes.push_back(new zzBurger()); //--- needs recording
     
-        
+        // other stuff to mix in ...
+        scenes.push_back(new johnWhitneyShader02());
+        scenes.push_back(new mgsRileyDiamonds());
+        scenes.push_back(new johnWhitneyShader01());
+        scenes.push_back(new loloWhitney());
+        scenes.push_back(new alexLissamojiWhitney());
     
     #else
     
@@ -598,11 +605,13 @@ void sceneManager::drawType(){
 
 void sceneManager::drawGui(){
     
-    if (drawScenePanel)
-        panel->draw();
-    codeControls.draw();
-    
-    gui.draw();
+    if (bDrawGui){
+        if (drawScenePanel)
+            panel->draw();
+        codeControls.draw();
+        
+        gui.draw();
+    }
     
 }
 
