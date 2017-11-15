@@ -139,7 +139,7 @@ void sceneManager::setup(){
     
     
        // scenes.push_back(new zzIceCreamScene());
-    scenes.push_back(new jacobsonMolnar_02());
+    //scenes.push_back(new jacobsonMolnar_02());
         scenes.push_back(new zzDonutScene());
         scenes.push_back(new zzEatRepeatScene());
     scenes.push_back(new alexLissamojiWhitney());
