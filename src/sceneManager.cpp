@@ -144,10 +144,8 @@ void sceneManager::setup(){
         scenes.push_back(new zzSushiScene());
         scenes.push_back(new zzCloudyScene());
         scenes.push_back(new zzEggScene());
-    
-       // zach working on pseudo code
-        scenes.push_back(new zzBaconScene());
         scenes.push_back(new zzWatermelonScene());
+        scenes.push_back(new zzBaconScene());
         scenes.push_back(new zzWaveScene());
         scenes.push_back(new zzBurger());
     

@@ -15,5 +15,5 @@ public:
     ofImage bg;
     ofImage imgs[7];
     
-//    ofParameter<float> param;
+    ofParameter<float> lockPct;
 };

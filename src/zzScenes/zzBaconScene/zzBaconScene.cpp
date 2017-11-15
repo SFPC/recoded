@@ -15,12 +15,12 @@ void zzBaconScene::setup(){
     //animation
     startTime = ofGetElapsedTimef();
     duration = 10;
-    parameters.add(sineAmp.set("sineAmp", 15, -30, 30));
+    parameters.add(sineAmp.set("sineAmp", 0, 0, 30));
     
     setAuthor("Peter Pan");
     setOriginalArtist("Put the original Artist's name here");
     
-    loadCode("zzScenes/zzBacons/exampleCode.cpp", false);
+    loadCode("zzScenes/zzBaconScene/exampleCode.cpp", false);
 
 }
 

@@ -57,7 +57,7 @@ void zzWaveScene::draw(){
     
             float amt2 = sin(i*0.4 + ofGetElapsedTimef()) * 0.2 + 0.8;
             ofMesh m;
-         m.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
+            m.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
             for (int j = 0; j < 100; j++){
                 float pct = ofMap(j, 0, 99, 0, 1);
     
