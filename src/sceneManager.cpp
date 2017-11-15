@@ -144,12 +144,12 @@ void sceneManager::setup(){
         scenes.push_back(new zzSpreadTheLove());
         scenes.push_back(new zzPixelBurger());
         scenes.push_back(new zzSushiScene());
-        scenes.push_back(new zzCloudyScene());
-        scenes.push_back(new zzEggScene());
-        scenes.push_back(new zzWatermelonScene());
-        scenes.push_back(new zzBaconScene());
-        scenes.push_back(new zzWaveScene());
-        scenes.push_back(new zzBurger());
+        scenes.push_back(new zzCloudyScene()); //--- needs recording
+        scenes.push_back(new zzEggScene()); //--- needs recording
+        scenes.push_back(new zzWatermelonScene()); //--- needs recording
+        scenes.push_back(new zzBaconScene()); //--- needs recording
+        scenes.push_back(new zzWaveScene()); //--- needs recording
+        scenes.push_back(new zzBurger()); //--- needs recording
     
         // other stuff to mix in ...
         scenes.push_back(new johnWhitneyShader02());
