@@ -5,12 +5,9 @@
 
 
 void draw() {
-
     textWidth = getTextBoundingBox().width;
     zoom = screenWidth * [[widthScale]] / textWidth;
-
     setBackgroundColor(ColorFromHSV(mod(getElapsedTime(), 255), 200, 255));
-
     points = getTextPointsWithSpacing([[drawEvery]]);
 
     pushMatrix();
@@ -21,8 +18,4 @@ void draw() {
     }
 
     popMatrix();
-
-
-
-
 }
