@@ -554,14 +554,7 @@ void sceneManager::update(){
     
             if (TM.paramEnergy[i] > 0) {
                 ofParameter<float> t = scenes[currentScene]->parameters[i].cast<float>();
-                float minVal = t.getMin();
-                float maxVal = t.getMax();
-                float val = t;
-
-                float pct  = (t - minVal) / (float)(maxVal - minVal);
-
-                if (pct > 1) pct = 1;
-                if (pct < 0) pct = 0;
+                float pct = ofMap(t.get(), t.getMin(), t.getMax(), 0, 1, true);
                 if (pct > maxActivation)
                     maxPct = pct;
                 if (TM.paramChangedEnergy[i] > maxActivation)
