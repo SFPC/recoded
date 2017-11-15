@@ -102,7 +102,9 @@
 #include "zzSushiScene.h"
 
 #include "zzBaconScene.h"
+#include "zzEggScene.h"
 
+#include "zzCloudyScene.h"
 
 //#include "testingScene.h"
 
@@ -123,19 +125,26 @@ void sceneManager::setup(){
     
     
     
+    #ifdef SHOW_MSOFT_LUNCHTIME
+
+        // this is for FOOD related scenes
+
+    scenes.push_back(new zzCloudyScene());
     
-#ifdef SHOW_MSOFT_LUNCHTIME
     
-    // this is for FOOD related scenes
+        scenes.push_back(new zzEggScene());
+        scenes.push_back(new zzBaconScene());
+        scenes.push_back(new zzWatermelonScene());
+        scenes.push_back(new zzWaveScene());
+        scenes.push_back(new zzDonutScene());
+        scenes.push_back(new zzIceCreamScene());
+        scenes.push_back(new zzBurger());
+        scenes.push_back(new zzPixelBurger());
+        scenes.push_back(new zzSushiScene());
     
-    scenes.push_back(new zzBaconScene());
-    scenes.push_back(new zzWatermelonScene());
-    scenes.push_back(new zzWaveScene());
-    scenes.push_back(new zzDonutScene());
-    scenes.push_back(new zzIceCreamScene());
-    scenes.push_back(new zzBurger());
-    scenes.push_back(new zzPixelBurger());
-    scenes.push_back(new zzSushiScene());
+    
+    #else
+    
     
     
 #endif
@@ -498,7 +507,9 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        if (enableMidiUpdate.get()){// && scenes[currentScene]->recData.size()){
+        
+        if (enableMidiUpdate.get() && scenes[currentScene]->recData.size()){
+//        if (enableMidiUpdate.get()){// && scenes[currentScene]->recData.size()){
             if(scenes[currentScene]->bAnimateScene){
                 scenes[currentScene]->updateMidiParams();
             }
