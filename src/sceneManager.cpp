@@ -135,7 +135,7 @@ void sceneManager::setup(){
 
         // this is for FOOD related scenes
     
-        scenes.push_back(new zzIceCreamScene());
+       // scenes.push_back(new zzIceCreamScene());
         scenes.push_back(new zzDonutScene());
         scenes.push_back(new zzEatRepeatScene());
         scenes.push_back(new zzNomScene());
