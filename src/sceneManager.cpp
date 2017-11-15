@@ -137,6 +137,7 @@ void sceneManager::setup(){
 
         // this is for FOOD related scenes
     
+    
        // scenes.push_back(new zzIceCreamScene());
         scenes.push_back(new zzDonutScene());
         scenes.push_back(new zzEatRepeatScene());
@@ -152,10 +153,11 @@ void sceneManager::setup(){
         scenes.push_back(new zzBurger()); //--- needs recording
     
         // other stuff to mix in ...
+        scenes.push_back(new jacobsonMolnar_02());
         scenes.push_back(new johnWhitneyShader02());
         scenes.push_back(new mgsRileyDiamonds());
         scenes.push_back(new johnWhitneyShader01());
-        scenes.push_back(new loloWhitney());
+        //scenes.push_back(new loloWhitney());
         scenes.push_back(new alexLissamojiWhitney());
     
     #else
