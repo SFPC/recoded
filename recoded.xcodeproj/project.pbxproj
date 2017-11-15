@@ -21,6 +21,7 @@
 		2AAF4613693D9695224E47EA /* annMolnarRectangles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D790E5FFA07829E87D5854B1 /* annMolnarRectangles.cpp */; };
 		2CDF949125CD5802082364F3 /* mattKnowlton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A39AE0D2FA3A4C9F76FC4E61 /* mattKnowlton.cpp */; };
 		2DE293FAAF850C0ABF02DB62 /* exampleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59429ADBB14FCD19148E74FB /* exampleScene.cpp */; };
+		2E55175E1FBC8D0300D6B8C9 /* yingKnowlton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E55175D1FBC8CFD00D6B8C9 /* yingKnowlton.cpp */; };
 		2E555A4FA8AD6EA2CA95AACF /* loloWhitney.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6397CED8F069F8CCB13C01F /* loloWhitney.cpp */; };
 		2E6C274B1FBA494600D54DC9 /* zzSushiScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C27491FBA48AC00D54DC9 /* zzSushiScene.cpp */; };
 		310ED8BB549B244C0DFB0FA1 /* mgsVeraMolnarLineStudy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA88C1467946DA7D2C11601B /* mgsVeraMolnarLineStudy.cpp */; };
@@ -246,6 +247,8 @@
 		2BAEA0543B2829CB46F35032 /* mgsRileyEllipsesAndSquares.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = mgsRileyEllipsesAndSquares.cpp; path = src/scenes/mgsRileyEllipsesAndSquares/mgsRileyEllipsesAndSquares.cpp; sourceTree = SOURCE_ROOT; };
 		2DB66B4D75A388D55904F54F /* fernandoWhitney2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fernandoWhitney2.h; path = src/scenes/fernandoWhitney2/fernandoWhitney2.h; sourceTree = SOURCE_ROOT; };
 		2E3CEE46463AC03FCB57EC56 /* loloVera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = loloVera.h; path = src/scenes/loloVera/loloVera.h; sourceTree = SOURCE_ROOT; };
+		2E55175C1FBC8CFD00D6B8C9 /* yingKnowlton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yingKnowlton.h; sourceTree = "<group>"; };
+		2E55175D1FBC8CFD00D6B8C9 /* yingKnowlton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = yingKnowlton.cpp; sourceTree = "<group>"; };
 		2E6C27491FBA48AC00D54DC9 /* zzSushiScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = zzSushiScene.cpp; sourceTree = "<group>"; };
 		2E6C274A1FBA48AC00D54DC9 /* zzSushiScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zzSushiScene.h; sourceTree = "<group>"; };
 		2F409986A645F575A744FC98 /* EstherKnowltonScene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = EstherKnowltonScene.h; path = src/scenes/EstherKnowltonScene/EstherKnowltonScene.h; sourceTree = SOURCE_ROOT; };
@@ -713,6 +716,16 @@
 			name = mgsCooperSymbols;
 			sourceTree = "<group>";
 		};
+		2E55175B1FBC8CFD00D6B8C9 /* yingKnowlton */ = {
+			isa = PBXGroup;
+			children = (
+				2E55175C1FBC8CFD00D6B8C9 /* yingKnowlton.h */,
+				2E55175D1FBC8CFD00D6B8C9 /* yingKnowlton.cpp */,
+			);
+			name = yingKnowlton;
+			path = scenes/yingKnowlton;
+			sourceTree = "<group>";
+		};
 		2E6C27481FBA48AC00D54DC9 /* zzSushiScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +801,7 @@
 		36BF1C038F5AEC4D85473FE4 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2E55175B1FBC8CFD00D6B8C9 /* yingKnowlton */,
 				B0822B3B1FB786C900007B2D /* Guillermo_Whitney_catalogue_1 */,
 				B0822B311FB565DC00007B2D /* stacyButterflies */,
 				B0822B2D1FB5646A00007B2D /* diegoScene_01 */,
@@ -2226,6 +2240,7 @@
 				D391E4FB2414857BD467D9E8 /* gif_font.c in Sources */,
 				B0822AE51FB5491200007B2D /* ofxMidiMessage.cpp in Sources */,
 				149FF2205EB6D2EB34272D36 /* gif_hash.c in Sources */,
+				2E55175E1FBC8D0300D6B8C9 /* yingKnowlton.cpp in Sources */,
 				FFBFC666B626901721B1798A /* gifalloc.c in Sources */,
 				928A7D091FBB5BDE003A2403 /* zzEggScene.cpp in Sources */,
 				F3339D42B1A22AEF847B1F85 /* quantize.c in Sources */,
