@@ -106,6 +106,12 @@
 
 #include "zzCloudyScene.h"
 
+#include "zzEatRepeatScene.h"
+#include "zzNomScene.h"
+#include "zzSpreadTheLove.h"
+
+
+
 //#include "testingScene.h"
 
 
@@ -128,20 +134,25 @@ void sceneManager::setup(){
     #ifdef SHOW_MSOFT_LUNCHTIME
 
         // this is for FOOD related scenes
-
-    scenes.push_back(new zzCloudyScene());
     
+        scenes.push_back(new zzIceCreamScene());
+        scenes.push_back(new zzDonutScene());
+        scenes.push_back(new zzEatRepeatScene());
+        scenes.push_back(new zzNomScene());
+        scenes.push_back(new zzSpreadTheLove());
     
+    // zach working on pseudo code
+    
+        scenes.push_back(new zzCloudyScene());
         scenes.push_back(new zzEggScene());
         scenes.push_back(new zzBaconScene());
         scenes.push_back(new zzWatermelonScene());
         scenes.push_back(new zzWaveScene());
-        scenes.push_back(new zzDonutScene());
-        scenes.push_back(new zzIceCreamScene());
         scenes.push_back(new zzBurger());
         scenes.push_back(new zzPixelBurger());
         scenes.push_back(new zzSushiScene());
     
+        
     
     #else
     
@@ -800,7 +811,7 @@ void sceneManager::draw(){
         ofPushStyle();
         scenes[currentScene]->draw();
         ofPopStyle();
-        //ofClearAlpha();
+        ofClearAlpha();
         sceneFbo.end();
         
         // For sound and for kicks

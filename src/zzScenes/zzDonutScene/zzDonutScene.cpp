@@ -12,6 +12,10 @@ void zzDonutScene::setup(){
     
     //data/zzScenes/zzDonutScene
     
+    parameters.add(xSpeed.set("xSpeed", 0.02, 0, 1));
+    parameters.add(ySpeed.set("ySpeed", 0.01, 0, 1));
+    parameters.add(donutScale.set("donutScale", 0.6, 0, 6));
+    
     dir.listDir("zzScenes/zzDonutScene/Donuts");
     for (int i = 0; i < dir.size(); i++){
         cout << dir.getPath(i) << endl;
@@ -33,7 +37,8 @@ void zzDonutScene::update(){
 
 void zzDonutScene::draw(){
     
-    bg.draw(0,0);
+    ofBackground( ofColor::darkCyan);
+    //bg.draw(0,0);
     ofSetRectMode(OF_RECTMODE_CENTER);
     
     //ofEnableDepthTest();
@@ -47,13 +52,13 @@ void zzDonutScene::draw(){
     
      ofTranslate(dimensions.width*0.5, dimensions.height*0.5);
      ofScale(0.9, 0.9);
-    for (int i = 0; i < 100; i++){
+    for (int i = 0; i < 100; i+=2){
         ofPushMatrix();
-        ofTranslate(sin(i*0.1+ ofGetElapsedTimef())*300.0, sin(i*0.13+ ofGetElapsedTimef()*0.9)*300.0, sin(i*0.05+ ofGetElapsedTimef()*1.2)*300.0);
+        ofTranslate(sin(i*xSpeed+ ofGetElapsedTimef()*2.0)*300.0, sin(i*ySpeed+ ofGetElapsedTimef()*0.9)*300.0);
         
         //ofRotateX(ofGetMouseX());
-        ofRotateZ(i*0.1 + ofGetElapsedTimef()*100);
-        
+        ofRotateZ(i*0.1 + ofGetElapsedTimef()*200);
+        ofScale(donutScale, donutScale);
         images[(int)(ofGetFrameNum()*0.03 + i * 0.1)%images.size()].draw(0,0, 300,300);
         ofPopMatrix();
     }

@@ -15,7 +15,7 @@ void zzBurger::setup(){
 //    setAuthor("Put Your Name Here");
 //    setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("scenes/zzBurger/exampleCode.cpp", false);
+    loadCode("zzScenes/zzBurger/exampleCode.cpp", false);
     
     ofDirectory dir("scenes/zzBurger/images/");
     dir.allowExt("png");

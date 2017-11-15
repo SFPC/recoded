@@ -81,6 +81,8 @@ void zzIceCreamScene::draw(){
     for (int i = 0; i < pts.size(); i++){
         ofPushMatrix();
         ofTranslate(pts[i].pt + ofPoint(0,200));
+        ofTranslate(sin(pts[i].pt.y*0.01) * 100,0);
+        //ofRotateZ(sin(pts[i].pt.y*0.01 + ofGetMouseX()*0.01) * 20);
         float sinwave = sin(pts[i].index * 0.1 + getElapsedTimef());
         float w = ofMap(sinwave, -1, 1,minSize, maxSize );
         
