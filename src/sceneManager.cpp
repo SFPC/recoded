@@ -139,26 +139,30 @@ void sceneManager::setup(){
     
     
        // scenes.push_back(new zzIceCreamScene());
+    scenes.push_back(new jacobsonMolnar_02());
         scenes.push_back(new zzDonutScene());
         scenes.push_back(new zzEatRepeatScene());
-        scenes.push_back(new zzNomScene());
+    scenes.push_back(new alexLissamojiWhitney());
         scenes.push_back(new zzSpreadTheLove());
         scenes.push_back(new zzPixelBurger());
+    scenes.push_back(new mgsRileyDiamonds());
+
         scenes.push_back(new zzSushiScene());
         scenes.push_back(new zzCloudyScene()); //--- needs recording
         scenes.push_back(new zzEggScene()); //--- needs recording
+    scenes.push_back(new zzNomScene());
         scenes.push_back(new zzWatermelonScene()); //--- needs recording
         scenes.push_back(new zzBaconScene()); //--- needs recording
+    scenes.push_back(new johnWhitneyShader02());
         scenes.push_back(new zzWaveScene()); //--- needs recording
         scenes.push_back(new zzBurger()); //--- needs recording
+    scenes.push_back(new johnWhitneyShader01());
     
         // other stuff to mix in ...
-        scenes.push_back(new jacobsonMolnar_02());
-        scenes.push_back(new johnWhitneyShader02());
-        scenes.push_back(new mgsRileyDiamonds());
-        scenes.push_back(new johnWhitneyShader01());
+    
+    
         //scenes.push_back(new loloWhitney());
-        scenes.push_back(new alexLissamojiWhitney());
+    
     
     #else
     
