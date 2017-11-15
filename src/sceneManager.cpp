@@ -126,6 +126,8 @@ sceneManager::~sceneManager(){
 //-----------------------------------------------------------------------------------
 void sceneManager::setup(){
     
+    bDrawGui = true;
+    
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
     //SCRIPT_PLACEHOLDER_PUSH_SCENE -- DO NOT REMOVE OR MOVE THIS LINE -e     scenes.push_back(new zzWatermelonScene());
     
@@ -149,7 +151,12 @@ void sceneManager::setup(){
         scenes.push_back(new zzWaveScene());
         scenes.push_back(new zzBurger());
     
-        
+        // other stuff to mix in ...
+        scenes.push_back(new johnWhitneyShader02());
+        scenes.push_back(new mgsRileyDiamonds());
+        scenes.push_back(new johnWhitneyShader01());
+        scenes.push_back(new loloWhitney());
+        scenes.push_back(new alexLissamojiWhitney());
     
     #else
     
@@ -605,11 +612,13 @@ void sceneManager::drawType(){
 
 void sceneManager::drawGui(){
     
-    if (drawScenePanel)
-        panel->draw();
-    codeControls.draw();
-    
-    gui.draw();
+    if (bDrawGui){
+        if (drawScenePanel)
+            panel->draw();
+        codeControls.draw();
+        
+        gui.draw();
+    }
     
 }
 
