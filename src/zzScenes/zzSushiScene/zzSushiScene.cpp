@@ -7,14 +7,14 @@ void zzSushiScene::setup(){
 // if your original code use an ofxPanel instance dont use it here, instead
 // add your parameters to the "parameters" instance as follows.
 // param was declared in zzSushiScene.h
-    parameters.add(imageScale.set("image scale", 0.0075, 0.005, 0.02));
-    parameters.add(widthScale.set("width scale", 0.8, 0.5, 8));
-    parameters.add(drawEvery.set("spacing", 4, 2, 20));
+    parameters.add(imageScale.set("imageScale", 0.0075, 0.005, 0.02));
+    parameters.add(widthScale.set("widthScale", 0.8, 0.5, 8));
+    parameters.add(drawEvery.set("drawEvery", 4, 2, 20));
 
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
+    loadCode("zzScenes/zzSushiScene/exampleCode.cpp", false);
 
-    loadCode("scenes/zzSushiScene/exampleCode.cpp", false);
     center.set(dimensions.getCenter());
 
 
