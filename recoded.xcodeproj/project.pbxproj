@@ -78,6 +78,7 @@
 		928A7D081FBB5BDE003A2403 /* zzBaconScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D001FBB5BDE003A2403 /* zzBaconScene.cpp */; };
 		928A7D091FBB5BDE003A2403 /* zzEggScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D031FBB5BDE003A2403 /* zzEggScene.cpp */; };
 		928A7D0A1FBB5BDE003A2403 /* zzCloudyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D061FBB5BDE003A2403 /* zzCloudyScene.cpp */; };
+		928A7D0D1FBB7974003A2403 /* emoji.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D0B1FBB7974003A2403 /* emoji.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		94D0F90B1F34F0CB0BEF6E94 /* mgsCooperSymbols.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F7FD17D58145A29907951 /* mgsCooperSymbols.cpp */; };
 		94E1EBB02DE5E09C21993153 /* dgif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = 7D22515AB9C73BAC9AF07B05 /* dgif_lib.c */; };
@@ -342,6 +343,8 @@
 		928A7D041FBB5BDE003A2403 /* zzEggScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzEggScene.h; sourceTree = "<group>"; };
 		928A7D061FBB5BDE003A2403 /* zzCloudyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzCloudyScene.cpp; sourceTree = "<group>"; };
 		928A7D071FBB5BDE003A2403 /* zzCloudyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzCloudyScene.h; sourceTree = "<group>"; };
+		928A7D0B1FBB7974003A2403 /* emoji.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = emoji.cpp; sourceTree = "<group>"; };
+		928A7D0C1FBB7974003A2403 /* emoji.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = emoji.hpp; sourceTree = "<group>"; };
 		93CE6D5A4C7FBFAACBF65A16 /* niklasWhitneySineWave.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = niklasWhitneySineWave.cpp; path = src/scenes/niklasWhitneySineWave/niklasWhitneySineWave.cpp; sourceTree = SOURCE_ROOT; };
 		94705193E8ABD23283009175 /* RileyArcsRoy.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = RileyArcsRoy.cpp; path = src/scenes/RileyArcsRoy/RileyArcsRoy.cpp; sourceTree = SOURCE_ROOT; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
@@ -1258,6 +1261,8 @@
 		928A7D051FBB5BDE003A2403 /* zzCloudyScene */ = {
 			isa = PBXGroup;
 			children = (
+				928A7D0B1FBB7974003A2403 /* emoji.cpp */,
+				928A7D0C1FBB7974003A2403 /* emoji.hpp */,
 				928A7D061FBB5BDE003A2403 /* zzCloudyScene.cpp */,
 				928A7D071FBB5BDE003A2403 /* zzCloudyScene.h */,
 			);
@@ -2231,6 +2236,7 @@
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
+				928A7D0D1FBB7974003A2403 /* emoji.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
 				B0822AF21FB5491200007B2D /* ofxEasingLinear.cpp in Sources */,

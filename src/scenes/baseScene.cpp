@@ -252,17 +252,33 @@ void baseScene::updateInteractiveParams(float valChangeAsPct, int param, float a
 
 
 void baseScene::updateMidiParams() {
+    
+  cout << "here " << endl;
+    
   int nToCheck = min((int)parameters.size(), 8);
-  for (int i = 0; i < nToCheck; ++i) {
+  
+  cout << "nToCheck " << nToCheck << endl;
+    
+    for (int i = 0; i < nToCheck; ++i) {
     char paramType = paramTypes[i];
-
+     cout << "param type " << paramType << endl;
+        
     if (paramType == 'b') {
       ofParameter<bool> &midiParam = midiParameters.getBool(i);
       ofParameter<bool> &param = parameters.getBool(i);
       if (bUpdateParamFromRecording) param.set(midiParam);
     } else if (paramType == 'i') {
+        
       ofParameter<int> &midiParam = midiParameters.getInt(i);
       ofParameter<int> &param = parameters.getInt(i);
+        
+        if (true){
+            midiParam = ofClamp(midiParam, midiParameters.getInt(i).getMin(),
+                                midiParameters.getInt(i).getMax());
+        }
+        
+        cout << "midiParam " << midiParam << " - param - " <<  param << endl;
+        
       if (bUpdateParamFromRecording)param.set(midiParam);
     } else if (paramType == 'f') {
       ofParameter<float> &midiParam = midiParameters.getFloat(i);

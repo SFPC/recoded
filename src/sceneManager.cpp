@@ -78,7 +78,9 @@
 #include "zzSushiScene.h"
 
 #include "zzBaconScene.h"
+#include "zzEggScene.h"
 
+#include "zzCloudyScene.h"
 
 //#include "testingScene.h"
 
@@ -104,6 +106,10 @@ void sceneManager::setup(){
 
         // this is for FOOD related scenes
 
+    scenes.push_back(new zzCloudyScene());
+    
+    
+        scenes.push_back(new zzEggScene());
         scenes.push_back(new zzBaconScene());
         scenes.push_back(new zzWatermelonScene());
         scenes.push_back(new zzWaveScene());
@@ -117,7 +123,7 @@ void sceneManager::setup(){
     #else
     
     
-    
+        scenes.push_back(new memoAktenScene());
         scenes.push_back(new yingTanWhitneyMatrix());
         scenes.push_back(new annMolnarRectangles());
         scenes.push_back(new weiWhitney());
@@ -131,7 +137,7 @@ void sceneManager::setup(){
         scenes.push_back(new chrisVeraInterruptions());
         scenes.push_back(new johnWhitneyShader02());
         scenes.push_back(new chrisRileyCascando());
-        scenes.push_back(new memoAktenScene());
+    
         scenes.push_back(new submotionOrchestraScene());
         scenes.push_back(new RoyWhitney1());
         scenes.push_back(new veraFscene());
@@ -449,7 +455,9 @@ void sceneManager::update(){
 
     if (shouldDrawScene) {
 #ifdef USE_MIDI_PARAM_SYNC
-        if (enableMidiUpdate.get()){// && scenes[currentScene]->recData.size()){
+        
+        if (enableMidiUpdate.get() && scenes[currentScene]->recData.size()){
+//        if (enableMidiUpdate.get()){// && scenes[currentScene]->recData.size()){
             if(scenes[currentScene]->bAnimateScene){
                 scenes[currentScene]->updateMidiParams();
             }

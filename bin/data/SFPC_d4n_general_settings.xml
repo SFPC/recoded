@@ -15,7 +15,7 @@
 <group>
 		<Enable_parameter_sounds>1</Enable_parameter_sounds>
 		<draw_scene_ctrl>1</draw_scene_ctrl>
-		<enable_midi_update>0</enable_midi_update>
+		<enable_midi_update>1</enable_midi_update>
 		<Auto_Play_on_scene_change>1</Auto_Play_on_scene_change>
 		<Autoadvance>0</Autoadvance>
 		<Scene_wait_for_code>1</Scene_wait_for_code>

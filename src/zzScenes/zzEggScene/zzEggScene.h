@@ -11,5 +11,17 @@ public:
     void update();
     void draw();
     
+    
+    ofImage yolk, orig, mouth;
+    float WW, HH;
+    
+    float curTime;
+    float curSpeed;
+    
+    float deg_;
+    
+   
+    ofParameter<float>move, deg;
+    
 //    ofParameter<float> param;
 };
