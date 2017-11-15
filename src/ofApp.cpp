@@ -142,7 +142,7 @@ void ofApp::draw(){
 		
 		ss << "scene has rec data:  " << (string)(SM.scenes[SM.currentScene]->hasRecData()?"TRUE":"FALSE") << endl;
 		ss << "scene rec data size: " << SM.scenes[SM.currentScene]->recData.size() << endl;
-		
+		ss << "Elapsed time: " << SM.scenes[SM.currentScene]->getElapsedTimef() << endl;
 		
 		
 		ofDrawBitmapStringHighlight(ss.str(), 100, 540);
