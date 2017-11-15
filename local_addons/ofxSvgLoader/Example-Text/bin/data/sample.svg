@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1024px" height="768px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768" xml:space="preserve">
+<image overflow="visible" enable-background="new    " width="1024" height="1024" xlink:href="bg.png"  transform="matrix(1 0 0 1 -0.5 -128.5)">
+</image>
+<rect x="41.5" y="6.5" fill="#FFFFFF" width="461" height="616"/>
+<rect x="529.5" y="6.5" fill="#FFFFFF" width="461" height="739"/>
+<g>
+	<rect x="541.883" y="63.509" display="none" fill="none" width="426.624" height="702"/>
+	<text transform="matrix(1 0 0 1 541.8818 78.5449)" fill="#494949" font-family="'ArialMT'" font-size="21">openFrameworks tries to balance usability </text>
+	<text transform="matrix(1 0 0 1 541.8818 103.7441)" fill="#494949" font-family="'ArialMT'" font-size="21">and simplicity. The earliest versions of open</text>
+	<text transform="matrix(1 0 0 1 949.2383 103.7441)" fill="#494949" font-family="'ArialMT'" font-size="21">-</text>
+	<text transform="matrix(1 0 0 1 541.8818 128.9443)" fill="#494949" font-family="'ArialMT'" font-size="21">Frameworks used the core as a tool for </text>
+	<text transform="matrix(1 0 0 1 541.8818 154.1445)" fill="#494949" font-family="'ArialMT'" font-size="21">teaching C++ and OpenGL, but over time the </text>
+	<text transform="matrix(1 0 0 1 541.8818 179.3447)" fill="#494949" font-family="'ArialMT'" font-size="21">examples have become the best way to learn </text>
+	<text transform="matrix(1 0 0 1 541.8818 204.5449)" fill="#494949" font-family="'ArialMT'" font-size="21">while the core takes advantage of more ad</text>
+	<text transform="matrix(1 0 0 1 937.6211 204.5449)" fill="#494949" font-family="'ArialMT'" font-size="21">-</text>
+	<text transform="matrix(1 0 0 1 541.8818 229.7441)" fill="#494949" font-family="'ArialMT'" font-size="21">vanced features. In exchange, we created </text>
+	<text transform="matrix(1 0 0 1 541.8818 254.9443)" fill="#494949" font-family="'ArialMT'" font-size="21">many more examples that come with open</text>
+	<text transform="matrix(1 0 0 1 936.4004 254.9443)" fill="#494949" font-family="'ArialMT'" font-size="21">-</text>
+	<text transform="matrix(1 0 0 1 541.8818 280.1445)" fill="#494949" font-family="'ArialMT'" font-size="21">Frameworks, with the goal of trying to make </text>
+	<text transform="matrix(1 0 0 1 541.8818 305.3447)" fill="#494949" font-family="'ArialMT'" font-size="21">simple, hackable starting points for experi</text>
+	<text transform="matrix(1 0 0 1 928.2383 305.3447)" fill="#494949" font-family="'ArialMT'" font-size="21">-</text>
+	<text transform="matrix(1 0 0 1 541.8818 330.5449)" fill="#494949" font-family="'ArialMT'" font-size="21">mentation.</text>
+	<text transform="matrix(1 0 0 1 541.8818 380.9443)" fill="#494949" font-family="'ArialMT'" font-size="21">We want openFrameworks to be as simple as </text>
+	<text transform="matrix(1 0 0 1 541.8818 406.1445)" fill="#494949" font-family="'ArialMT'" font-size="21">possible, especially for folks coming from </text>
+	<text transform="matrix(1 0 0 1 541.8818 431.3438)" fill="#494949" font-family="'ArialMT'" font-size="21">other languages and environments. C++ is a </text>
+	<text transform="matrix(1 0 0 1 541.8818 456.5449)" fill="#494949" font-family="'ArialMT'" font-size="21">&quot;large&quot; language, large in the sense that you </text>
+	<text transform="matrix(1 0 0 1 541.8818 481.7441)" fill="#494949" font-family="'ArialMT'" font-size="21">can write very different types of C++ code. If </text>
+	<text transform="matrix(1 0 0 1 541.8818 506.9443)" fill="#494949" font-family="'ArialMT'" font-size="21">you go to the bookstore, you&apos;ll see hundreds </text>
+	<text transform="matrix(1 0 0 1 541.8818 532.1445)" fill="#494949" font-family="'ArialMT'" font-size="21">of C++ books. We want to create a library </text>
+	<text transform="matrix(1 0 0 1 541.8818 557.3438)" fill="#494949" font-family="'ArialMT'" font-size="21">where you don&apos;t need to be an expert, where </text>
+	<text transform="matrix(1 0 0 1 541.8818 582.5449)" fill="#494949" font-family="'ArialMT'" font-size="21">at most you might need a book or two, but </text>
+	<text transform="matrix(1 0 0 1 541.8818 607.7441)" fill="#494949" font-family="'ArialMT'" font-size="21">that the patterns, approaches and style of the </text>
+	<text transform="matrix(1 0 0 1 541.8818 632.9443)" fill="#494949" font-family="'ArialMT'" font-size="21">code is simple and intuitive. We were espe</text>
+	<text transform="matrix(1 0 0 1 938.7383 632.9443)" fill="#494949" font-family="'ArialMT'" font-size="21">-</text>
+	<text transform="matrix(1 0 0 1 541.8818 658.1445)" fill="#494949" font-family="'ArialMT'" font-size="21">cially interested in achieving a sort of parity </text>
+	<text transform="matrix(1 0 0 1 541.8818 683.3438)" fill="#494949" font-family="'ArialMT'" font-size="21">with Processing, where many of the functions </text>
+	<text transform="matrix(1 0 0 1 541.8818 708.5449)" fill="#494949" font-family="'ArialMT'" font-size="21">are similar, allowing easier movement from </text>
+	<text transform="matrix(1 0 0 1 541.8818 733.7441)" fill="#494949" font-family="'ArialMT'" font-size="21">one framework to another.</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 542 44.8848)" fill="#494949" font-family="'Arial-BoldMT'" font-size="36">SIMPLICITY</text>
+</g>
+<text transform="matrix(1 0 0 1 52 45.0869)" fill="#494949" font-family="'Verdana-Bold'" font-size="36">OPENFRAMEWORKS</text>
+<g id="logo">
+	<circle id="ofO" fill="#CD0FEF" cx="100.348" cy="692.175" r="46.848"/>
+	<rect id="ofF" x="152.247" y="645.431" fill="#CD0FEF" width="41.13" height="93.595"/>
+	<polygon fill="#CD0FEF" points="197.994,645.416 197.994,682.078 235.047,645.221 	"/>
+	<rect x="197.994" y="686.141" fill="#CD0FEF" width="24.552" height="26.651"/>
+</g>
+<rect x="57.546" y="61.845" fill="none" width="431.954" height="560.655"/>
+<g>
+	<rect x="57.546" y="67.145" fill="none" width="431.954" height="560.355"/>
+	<text transform="matrix(1 0 0 1 57.5459 83.1045)" fill="#494949" font-family="'Verdana'" font-size="21">The code is written to be massively </text>
+	<text transform="matrix(1 0 0 1 57.5459 108.3047)" fill="#494949" font-family="'Verdana'" font-size="21">cross-compatible. Right now we support </text>
+	<text transform="matrix(1 0 0 1 57.5459 133.5049)" fill="#494949" font-family="'Verdana'" font-size="21">five operating systems (Windows, OSX, </text>
+	<text transform="matrix(1 0 0 1 57.5459 158.7041)" fill="#494949" font-family="'Verdana'" font-size="21">Linux, iOS, Android) and four IDEs </text>
+	<text transform="matrix(1 0 0 1 57.5459 183.9043)" fill="#494949" font-family="'Verdana'" font-size="21">(XCode, Code::Blocks, and Visual Studio </text>
+	<text transform="matrix(1 0 0 1 57.5459 209.1045)" fill="#494949" font-family="'Verdana'" font-size="21">and Eclipse). The API is designed to be </text>
+	<text transform="matrix(1 0 0 1 57.5459 234.3047)" fill="#494949" font-family="'Verdana'" font-size="21">minimal and easy to grasp.</text>
+	<text transform="matrix(1 0 0 1 57.5459 284.7041)" fill="#CD0FEF" font-family="'Verdana'" font-size="21">openFrameworks </text>
+	<text transform="matrix(1 0 0 1 245.3979 284.7041)" fill="#494949" font-family="'Verdana'" font-size="21">is distributed under </text>
+	<text transform="matrix(1 0 0 1 57.5459 309.9043)" fill="#494949" font-family="'Verdana'" font-size="21">the MIT License. This gives everyone </text>
+	<text transform="matrix(1 0 0 1 57.5459 335.1045)" fill="#494949" font-family="'Verdana'" font-size="21">the freedoms to use openFrameworks in </text>
+	<text transform="matrix(1 0 0 1 57.5459 360.3047)" fill="#494949" font-family="'Verdana'" font-size="21">any context: commercial or non-</text>
+	<text transform="matrix(1 0 0 1 57.5459 385.5039)" fill="#494949" font-family="'Verdana'" font-size="21">commercial, public or private, open or </text>
+	<text transform="matrix(1 0 0 1 57.5459 410.7051)" fill="#494949" font-family="'Verdana'" font-size="21">closed source. While many openFrame</text>
+	<text transform="matrix(1 0 0 1 465.1387 410.7051)" fill="#494949" font-family="'Verdana'" font-size="21">-</text>
+	<text transform="matrix(1 0 0 1 57.5459 435.9043)" fill="#494949" font-family="'Verdana'" font-size="21">works users give their work back to the </text>
+	<text transform="matrix(1 0 0 1 57.5459 461.1045)" fill="#494949" font-family="'Verdana'" font-size="21">community in a similarly free way, there </text>
+	<text transform="matrix(1 0 0 1 57.5459 486.3047)" fill="#494949" font-family="'Verdana'" font-size="21">is no obligation to contribute.</text>
+	<text transform="matrix(1 0 0 1 57.5459 536.7041)" fill="#494949" font-family="'Verdana'" font-size="21">Simply put, openFrameworks is a tool </text>
+	<text transform="matrix(1 0 0 1 57.5459 561.9043)" fill="#494949" font-family="'Verdana'" font-size="21">that makes it much easier to make </text>
+	<text transform="matrix(1 0 0 1 57.5459 587.1045)" fill="#494949" font-family="'Verdana'" font-size="21">things with code. We find it super </text>
+	<text transform="matrix(1 0 0 1 57.5459 612.3047)" fill="#494949" font-family="'Verdana'" font-size="21">useful, and we hope you do too.</text>
+</g>
+</svg>

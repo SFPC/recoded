@@ -7,7 +7,7 @@ void zzPixelBurger::setup(){
 // if your original code use an ofxPanel instance dont use it here, instead
 // add your parameters to the "parameters" instance as follows.
 // param was declared in zzPixelBurger.h
-    parameters.add(chaos.set("chaos", 0.1, -1, 1));
+    parameters.add(chaos.set("chaos", 0,0, 1));
 
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");

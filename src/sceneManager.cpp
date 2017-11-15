@@ -140,6 +140,9 @@ void sceneManager::setup(){
         scenes.push_back(new zzEatRepeatScene());
         scenes.push_back(new zzNomScene());
         scenes.push_back(new zzSpreadTheLove());
+    scenes.push_back(new zzPixelBurger());
+    scenes.push_back(new zzSushiScene());
+    
     
     // zach working on pseudo code
     
@@ -149,8 +152,6 @@ void sceneManager::setup(){
         scenes.push_back(new zzWatermelonScene());
         scenes.push_back(new zzWaveScene());
         scenes.push_back(new zzBurger());
-        scenes.push_back(new zzPixelBurger());
-        scenes.push_back(new zzSushiScene());
     
         
     
