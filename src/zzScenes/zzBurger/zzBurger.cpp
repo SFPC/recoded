@@ -17,7 +17,7 @@ void zzBurger::setup(){
 
     loadCode("zzScenes/zzBurger/exampleCode.cpp", false);
     
-    ofDirectory dir("scenes/zzBurger/images/");
+    ofDirectory dir("zzScenes/zzBurger/images/");
     dir.allowExt("png");
     dir.listDir();
     for(int i = 0; i < dir.size(); i++){

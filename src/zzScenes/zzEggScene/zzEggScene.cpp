@@ -29,7 +29,7 @@ void zzEggScene::setup(){
     deg_ = 0;
     
     //Gui
-    parameters.add(move.set("move", 100.0, 0.0, 200.0));
+    parameters.add(move.set("move", 0.0, 0.0, 200.0));
     parameters.add(deg.set("deg", 0, 0, 0.5));
    
     setAuthor("Put Your Name Here");
