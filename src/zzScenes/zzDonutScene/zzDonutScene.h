@@ -18,6 +18,9 @@ public:
     ofImage bg;
     
     
+    ofParameter<float> xSpeed;
+    ofParameter<float> ySpeed;
+    ofParameter<float> donutScale;
     
 //    ofParameter<float> param;
 };

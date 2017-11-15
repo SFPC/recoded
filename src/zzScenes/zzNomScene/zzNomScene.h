@@ -21,5 +21,5 @@ public:
     vector < ofPath > paths;
     
     
-//    ofParameter<float> param;
+    ofParameter<float> wavyAmt;
 };

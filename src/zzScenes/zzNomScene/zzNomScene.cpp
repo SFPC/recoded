@@ -7,12 +7,12 @@ void zzNomScene::setup(){
 // if your original code use an ofxPanel instance dont use it here, instead
 // add your parameters to the "parameters" instance as follows.
 // param was declared in zzNomScene.h
-    //parameters.add(param.set("param", 5, 0, 100));
+    parameters.add(wavyAmt.set("wavyAmt", 0, 0, 1000));
 
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
 
-    loadCode("zzScenes/zzNomScene/exampleCode.cpp");
+    loadCode("zzScenes/zzNomScene/exampleCode.cpp", false);
     
     
     svg.load( "zzScenes/zzNomScene/nom.svg" );
@@ -40,7 +40,7 @@ void zzNomScene::draw(){
     ofEnableAlphaBlending();
     for (int h = 0; h < 7; h++) {
         ofPushMatrix();
-        ofTranslate(0, 20*h);
+        ofTranslate(0, 20*h - 3.5*20-20);
         
         for (int i = 0; i < paths.size(); i++) {
             vector < ofPolyline > lines = paths[i].getOutline();
@@ -56,7 +56,7 @@ void zzNomScene::draw(){
                     float y = lines[j][k].x + lines[j][k].y * 0.1;
                     
                     
-                    lines[j][k].y += ofSignedNoise(y*(0.001) + ofGetElapsedTimef(), h*0.2) * 200;  //= mat * lines[i][j];
+                    lines[j][k].y += ofSignedNoise(y*(0.001) + ofGetElapsedTimef(), h*0.2) * wavyAmt;  //= mat * lines[i][j];
                 }
             }
             

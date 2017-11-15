@@ -23,5 +23,11 @@ public:
     ofColor c;
     ofEasyCam cam;
     
-//    ofParameter<float> param;
+    float timeAdder;
+    float timeAdderY;
+    float timeAdderZ;
+    
+    ofParameter<float> amtRotateZ;
+    ofParameter<float> amtRotateX;
+    ofParameter<float> amtRotateY;
 };

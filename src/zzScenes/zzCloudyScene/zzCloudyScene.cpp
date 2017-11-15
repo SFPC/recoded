@@ -22,7 +22,7 @@ void zzCloudyScene::setup(){
     setOriginalArtist("Put the original Artist's name here");
 
 
-    loadCode("zzScenes/zzCloudyScene/exampleCode.cpp");
+    loadCode("zzScenes/zzCloudyScene/exampleCode.cpp", false);
     
     ofDirectory dir;
     dir.listDir("zzScenes/zzCloudyScene/images");

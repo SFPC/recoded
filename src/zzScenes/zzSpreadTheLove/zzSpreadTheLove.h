@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "baseScene.h"
+#include "ofxSvgLoader.h"
 
 class zzSpreadTheLove : public baseScene {
     
@@ -11,5 +12,16 @@ public:
     void update();
     void draw();
     
-//    ofParameter<float> param;
+    ofxSvgLoader svg;
+    
+    
+    vector < ofPath > paths;
+    
+    ofPoint midPt;
+    ofColor c;
+    ofEasyCam cam;
+    
+    
+    
+    ofParameter<float> spreadRotation;
 };

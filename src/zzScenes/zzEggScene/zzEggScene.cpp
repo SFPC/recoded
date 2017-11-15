@@ -34,7 +34,7 @@ void zzEggScene::setup(){
    
     setAuthor("Put Your Name Here");
     setOriginalArtist("Put the original Artist's name here");
-    loadCode("zzScenes/zzEggScene/exampleCode.cpp");
+    loadCode("zzScenes/zzEggScene/exampleCode.cpp", false);
     
 }
 
@@ -59,6 +59,8 @@ void zzEggScene::update(){
 
 void zzEggScene::draw(){
     
+    
+    ofBackground(ofColor::darkMagenta);
     float d = curTime * 2;
     
     //original image
