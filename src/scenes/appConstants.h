@@ -5,10 +5,10 @@
 
 // this is for scenes with zz
 // https://www.instagram.com/zzdesign/
-#define SHOW_MSOFT_LUNCHTIME
+//#define SHOW_MSOFT_LUNCHTIME
 
 //this shows the skketches from SFPC fall 2017 class
-//#define SHOW_SFPC_FALL_2017
+#define SHOW_SFPC_FALL_2017
 
 
 //THis will show all the other sketches; the ones that are not either for microsoft lunch or by sfpc2017

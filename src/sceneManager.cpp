@@ -60,12 +60,36 @@
 #include "mwalczykVeraSquares.h"
 #include "yeseulRileyBrokencircle.h"
 #include "zachTest.h"
+
+#include "mattKnowlton.h"
+
 #include "heatherMolnarScene.h"
 #include "yingTanWhitneyMatrix.h"
 #include "annMolnarRectangles.h"
 #include "weiWhitney.h"
 #include "yumiNishida01.h"
+
+#include "niklasLissajous.h"
+#include "niklasMolnar.h"
+#include "niklasMorisawa.h"
+#include "niklasWhitneySineWave.h"
+#include "fernandoMuriel.h"
+#include "fernandoWhitney.h"
+#include "fernandoWhitney2.h"
+#include "hyojinVeraMolnar.h"
+#include "hyojinJohnWhitney.h"
+#include "EstherKnowltonScene.h"
+#include "jacobsonMolnar_01.h"
+#include "jacobsonMolnar_02.h"
+#include "jacobsonWhitney_01.h"
+#include "aprilMenkman.h"
 #include "runchalMolnar.h"
+#include "weiMolnar_01.h"
+#include "annCaseyWave.h"
+#include "diegoScene_01.h"
+#include "stacyButterflies.h"
+#include "EstherMolnarScene.h"
+
 // these are food related scenes
 
 #include "zzSushiScene.h"
@@ -96,89 +120,114 @@ void sceneManager::setup(){
     
     font.load("fonts/ProggySmall.fon", 8, false ,false, false, 0, 96);
     //SCRIPT_PLACEHOLDER_PUSH_SCENE -- DO NOT REMOVE OR MOVE THIS LINE -e     scenes.push_back(new zzWatermelonScene());
+    
+    
+    
+    
+#ifdef SHOW_MSOFT_LUNCHTIME
+    
+    // this is for FOOD related scenes
+    
+    scenes.push_back(new zzBaconScene());
+    scenes.push_back(new zzWatermelonScene());
+    scenes.push_back(new zzWaveScene());
+    scenes.push_back(new zzDonutScene());
+    scenes.push_back(new zzIceCreamScene());
+    scenes.push_back(new zzBurger());
+    scenes.push_back(new zzPixelBurger());
+    scenes.push_back(new zzSushiScene());
+    
+    
+#endif
+    
+#ifdef SHOW_SFPC_FALL_2017
+   // ------- 2017 fall
+	scenes.push_back(new EstherMolnarScene());
+	scenes.push_back(new stacyButterflies());
+    scenes.push_back(new diegoScene_01());
+    scenes.push_back(new annCaseyWave());
+    scenes.push_back(new weiMolnar_01());
+    scenes.push_back(new runchalMolnar());
+    scenes.push_back(new aprilMenkman());
+    scenes.push_back(new heatherMolnarScene());
+    scenes.push_back(new niklasLissajous());
+    scenes.push_back(new niklasMolnar());
+    scenes.push_back(new niklasMorisawa());
+    scenes.push_back(new niklasWhitneySineWave());
+    scenes.push_back(new fernandoMuriel());
+    scenes.push_back(new fernandoWhitney());
+	scenes.push_back(new fernandoWhitney2());
+    scenes.push_back(new jacobsonWhitney_01());
+    scenes.push_back(new jacobsonMolnar_02());
+    scenes.push_back(new jacobsonMolnar_01());
+	scenes.push_back(new hyojinVeraMolnar());
+	scenes.push_back(new hyojinJohnWhitney());
+    scenes.push_back(new mattKnowlton());
+	scenes.push_back(new EstherKnowltonScene());
+	scenes.push_back(new yingTanWhitneyMatrix());
+	scenes.push_back(new annMolnarRectangles());
+	scenes.push_back(new weiWhitney());
+	scenes.push_back(new yumiNishida01());
+	
 
-    
-    
-    
-    #ifdef SHOW_MSOFT_LUNCHTIME
+#endif
+#ifdef SHOW_OTHERS
+    scenes.push_back(new zachTest());
+    scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
+    scenes.push_back(new RileyArcsRoy());
+    scenes.push_back(new rachelScene());
+    scenes.push_back(new rodrigoBelfort());
+    scenes.push_back(new Cooper3dText());
+    scenes.push_back(new chrisVeraInterruptions());
+    scenes.push_back(new johnWhitneyShader02());
+    scenes.push_back(new chrisRileyCascando());
+    scenes.push_back(new memoAktenScene());
+    scenes.push_back(new submotionOrchestraScene());
+    scenes.push_back(new RoyWhitney1());
+    scenes.push_back(new veraFscene());
+    scenes.push_back(new robbyMolnarScene() );
+    scenes.push_back(new veraAnimatedScene() );
+    scenes.push_back(new robbyRileyScene() );
+    scenes.push_back(new robbyMenkmanScene());
+    scenes.push_back(new johnWhitneyShader01());
+    scenes.push_back(new anastasisRileyScene());
+    scenes.push_back(new loloWhitney());
+    scenes.push_back(new loloVera());
+    scenes.push_back(new andyMenkmanJpg());
+    scenes.push_back(new andyMenkmanPng());
+    scenes.push_back(new manfredMohrP196A());
+    scenes.push_back(new veraMolnarTrapezium());
+    scenes.push_back(new loloVera2());
+    scenes.push_back(new cantusFirmusRiley());
+    scenes.push_back(new aaronMarcusHieroglyphB());
+    //scenes.push_back(new veraMolnarLines68());
+    scenes.push_back(new alexLissamojiWhitney());
+    scenes.push_back(new yosukeVeraSansTitre());
+    //scenes.push_back(new alexGifPaletteDitherMenkman());
+    scenes.push_back(new yeseulMenkmanInstitution());
+    scenes.push_back(new yeseulCooperMessages());
+    scenes.push_back(new yeseulWhitneyScene());
+    scenes.push_back(new yeseulRileyBrokencircle());
+    scenes.push_back(new yosukeJohnWhitneyMatrix());
+    scenes.push_back(new mgsCooperSymbols());
+    scenes.push_back(new mgsRileyDiamonds());
+    scenes.push_back(new mgsRileyEllipsesAndSquares());
+    scenes.push_back(new mgsVeraMolnarLineStudy());
+    scenes.push_back(new mgsMaedaTimePainter());
+    scenes.push_back(new mgsRileyDescending());
+    scenes.push_back(new olegVeraV());
+    scenes.push_back(new sarahgpRileyCircle());
+    scenes.push_back(new mwalczykVeraSquares());
 
-        // this is for FOOD related scenes
-
-        scenes.push_back(new zzBaconScene());
-        scenes.push_back(new zzWatermelonScene());
-        scenes.push_back(new zzWaveScene());
-        scenes.push_back(new zzDonutScene());
-        scenes.push_back(new zzIceCreamScene());
-        scenes.push_back(new zzBurger());
-        scenes.push_back(new zzPixelBurger());
-        scenes.push_back(new zzSushiScene());
+#endif
     
     
-    #else
-    
-    
-		scenes.push_back(new runchalMolnar());
-        scenes.push_back(new yingTanWhitneyMatrix());
-        scenes.push_back(new annMolnarRectangles());
-        scenes.push_back(new weiWhitney());
-        scenes.push_back(new yumiNishida01());
-        scenes.push_back(new zachTest());
-        scenes.push_back(new CooperBauhaus());  // this might make for a good start scene -Robby & Becca
-        scenes.push_back(new RileyArcsRoy());
-        scenes.push_back(new rachelScene());
-        scenes.push_back(new rodrigoBelfort());
-        scenes.push_back(new Cooper3dText());
-        scenes.push_back(new chrisVeraInterruptions());
-        scenes.push_back(new johnWhitneyShader02());
-        scenes.push_back(new chrisRileyCascando());
-        scenes.push_back(new memoAktenScene());
-        scenes.push_back(new submotionOrchestraScene());
-        scenes.push_back(new RoyWhitney1());
-        scenes.push_back(new veraFscene());
-        scenes.push_back(new robbyMolnarScene() );
-        scenes.push_back(new veraAnimatedScene() );
-        scenes.push_back(new robbyRileyScene() );
-        scenes.push_back(new robbyMenkmanScene());
-        scenes.push_back(new johnWhitneyShader01());
-        scenes.push_back(new anastasisRileyScene());
-        scenes.push_back(new loloWhitney());
-        scenes.push_back(new loloVera());
-        scenes.push_back(new andyMenkmanJpg());
-        scenes.push_back(new andyMenkmanPng());
-        scenes.push_back(new manfredMohrP196A());
-        scenes.push_back(new veraMolnarTrapezium());
-        scenes.push_back(new loloVera2());
-        scenes.push_back(new cantusFirmusRiley());
-        scenes.push_back(new aaronMarcusHieroglyphB());
-        //scenes.push_back(new veraMolnarLines68());
-        scenes.push_back(new alexLissamojiWhitney());
-        scenes.push_back(new yosukeVeraSansTitre());
-        //scenes.push_back(new alexGifPaletteDitherMenkman());
-        scenes.push_back(new yeseulMenkmanInstitution());
-        scenes.push_back(new yeseulCooperMessages());
-        scenes.push_back(new yeseulWhitneyScene());
-        scenes.push_back(new yeseulRileyBrokencircle());
-        scenes.push_back(new yosukeJohnWhitneyMatrix());
-        scenes.push_back(new mgsCooperSymbols());
-        scenes.push_back(new mgsRileyDiamonds());
-        scenes.push_back(new mgsRileyEllipsesAndSquares());
-        scenes.push_back(new mgsVeraMolnarLineStudy());
-        scenes.push_back(new mgsMaedaTimePainter());
-        scenes.push_back(new mgsRileyDescending());
-        scenes.push_back(new olegVeraV());
-        scenes.push_back(new sarahgpRileyCircle());
-        scenes.push_back(new mwalczykVeraSquares());
-        scenes.push_back(new heatherMolnarScene());
-    
-    #endif
-    
-
     // Too slow
-//     scenes.push_back(new andyMenkmanTif());
-  
+    //     scenes.push_back(new andyMenkmanTif());
+    
     // Duplicate with rodrigoBelfort
     // scenes.push_back(new janVantommeScene());
-
+    
 #ifdef RANDOMIZE_SCENES
     ofRandomize(scenes);
 #endif
@@ -188,7 +237,7 @@ void sceneManager::setup(){
     
     // Disable MIDI smoothing by default
     sync.smoothing.set(0);
-
+    
     ofAddListener(sync.player.playE, this, &sceneManager::startPlaying);
     ofAddListener(sync.recorder.recStartE, this, &sceneManager::recordingStart);
     ofAddListener(sync.recorder.recEndE, this, &sceneManager::recordingEnd);
@@ -196,7 +245,7 @@ void sceneManager::setup(){
     
     // Not using
     // scenes.push_back(new chrisMurielCooper());
-    gui.setDefaultWidth(300);    
+    gui.setDefaultWidth(300);
     gui.setup("SFPC_d4n", "SFPC_d4n_general_settings.xml");
 
     gui.add(enableParameterSounds.set("Enable parameter sounds", true));
@@ -365,7 +414,7 @@ void sceneManager::update(){
     if (autoadvanceDelay > 0.001 && !scenes[currentScene]->isEndSet()) {
         if (lastAutoadvanceTime == 0) {
             lastAutoadvanceTime = ofGetElapsedTimef();
-        }        
+        }
         if (ofGetElapsedTimef() - lastAutoadvanceTime > autoadvanceDelay) {
             advanceScene();
             lastAutoadvanceTime = ofGetElapsedTimef();
@@ -733,7 +782,7 @@ void sceneManager::draw(){
     if (bShiftLeft){
         ofPopMatrix();
     }
-        
+    
     if (bShiftUp){
         ofPopMatrix();
     }
@@ -770,8 +819,8 @@ void sceneManager::draw(){
 //        dimmedSceneFbo.draw(1,0,VISUALS_WIDTH, VISUALS_HEIGHT);
 //        dimmedSceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
       sceneFbo.draw(0,0,VISUALS_WIDTH, VISUALS_HEIGHT);
-      //sceneFbo.draw(0,1,VISUALS_WIDTH, VISUALS_HEIGHT);
-      
+//sceneFbo.draw(0,1,VISUALS_WIDTH, VISUALS_HEIGHT);
+
         if (fadingIn) {
             float fadeOpacityRaw = ofMap(pctDelay, FADE_DELAY_MIN, FADE_DELAY_MAX, 0, PI);
             float fadeOpacityShaped = ofMap(cos(fadeOpacityRaw), 0, 1, 0, 255);
@@ -835,29 +884,29 @@ void sceneManager::draw(){
     }
 #endif
 
-   
+
     
     // let's draw some info!
     
-ofSetColor(255);
-//    
-//    ofDrawBitmapString("drawing scene " + ofToString(currentScene) +
-//                       "/" + ofToString(scenes.size()) +
-//                       "\t\t(" + scenes[currentScene]->author  + ", " +
-//                       scenes[currentScene]->originalArtist + ")",
-//                       20, VISUALS_HEIGHT + 50);
-//
-//    
-//    string str = "Recorded events: " + ofToString(sync.recorder.getData().size())+"\n";
-//    str += "Is Recording: " + (string)(sync.recorder.isRecording()?"TRUE":"FALSE")+"\n";
-//    str += "Play events: " + ofToString(sync.player.data.size())+"\n";
-//    str += "Is Playing: " + (string)(sync.player.bPlaying?"TRUE":"FALSE")+"\n";
-//    str += "Pre-recorded events: " + ofToString(scenes[currentScene]->recData.size())+"\n";
-//    str += "Current Scene Time: " + ofToString(scenes[currentScene]->getElapsedTimef())+"\n";
-//    str += "Current Scene Duration: " + ofToString(scenes[currentScene]->sceneDuration)+"\n";
-//    str += "Current Scene is done: " + (string)(scenes[currentScene]->isSceneDone()?"TRUE":"FALSE");
-//    
-//    ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
+    ofSetColor(255);
+    //
+    //    ofDrawBitmapString("drawing scene " + ofToString(currentScene) +
+    //                       "/" + ofToString(scenes.size()) +
+    //                       "\t\t(" + scenes[currentScene]->author  + ", " +
+    //                       scenes[currentScene]->originalArtist + ")",
+    //                       20, VISUALS_HEIGHT + 50);
+    //
+    //
+    //    string str = "Recorded events: " + ofToString(sync.recorder.getData().size())+"\n";
+    //    str += "Is Recording: " + (string)(sync.recorder.isRecording()?"TRUE":"FALSE")+"\n";
+    //    str += "Play events: " + ofToString(sync.player.data.size())+"\n";
+    //    str += "Is Playing: " + (string)(sync.player.bPlaying?"TRUE":"FALSE")+"\n";
+    //    str += "Pre-recorded events: " + ofToString(scenes[currentScene]->recData.size())+"\n";
+    //    str += "Current Scene Time: " + ofToString(scenes[currentScene]->getElapsedTimef())+"\n";
+    //    str += "Current Scene Duration: " + ofToString(scenes[currentScene]->sceneDuration)+"\n";
+    //    str += "Current Scene is done: " + (string)(scenes[currentScene]->isSceneDone()?"TRUE":"FALSE");
+    //
+    //    ofDrawBitmapString(str, 20, VISUALS_HEIGHT + 100);
 }
 
 //void sceneManager::computeMotion(ofFbo &fbo) {
@@ -865,7 +914,7 @@ ofSetColor(255);
 //
 //    const unsigned char *currPixels = currFrame.getData();
 //    const unsigned char *lastPixels = lastFrame.getData();
-//    
+//
 //    long long sumX = 0, sumY = 0, sumMotion = 0, sumBrightness = 0, totalPixels = 1, totalThresh = 1;
 //    for (int i = 0; i < VISUALS_WIDTH * VISUALS_HEIGHT * 4; i += 4) {
 //        int val = (currPixels[i] + currPixels[i+1] + currPixels[i+2]) / 3;
@@ -878,7 +927,7 @@ ofSetColor(255);
 //        if (val > 127) {
 //            int x = (i / 4) % VISUALS_WIDTH;
 //            int y = (i / 4) / VISUALS_WIDTH;
-//            
+//
 //            sumX += x;
 //            sumY += y;
 //            totalThresh++;
@@ -887,13 +936,13 @@ ofSetColor(255);
 //
 //    lastCentroid.set(centroid);
 //    centroid.set(sumX / totalThresh, sumY / totalThresh);
-//    
+//
 //    frameBrightness = ((float)sumBrightness / totalPixels) / 255.0;
-//    
+//
 //    float currMotion = ((float)sumMotion / totalPixels) / 255.0;
 //    float shapedMotion = sqrt(currMotion);
 //    motion += (shapedMotion - motion) * 0.1;
-//    
+//
 //#ifdef USE_EXTERNAL_SOUNDS
 ////    oscMessage.clear();
 ////    oscMessage.setAddress("/d4n/motion");
@@ -904,7 +953,7 @@ ofSetColor(255);
 ////    oscMessage.addFloatArg(centroid.y - lastCentroid.y);
 ////    oscSender.sendMessage(oscMessage, false);
 //#endif
-//    
+//
 //    currFrame.pasteInto(lastFrame, 0, 0);
 //}
 
