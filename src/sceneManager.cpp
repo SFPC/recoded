@@ -129,9 +129,7 @@ void sceneManager::setup(){
 
         // this is for FOOD related scenes
 
-    scenes.push_back(new zzCloudyScene());
-    
-    
+        scenes.push_back(new zzCloudyScene());
         scenes.push_back(new zzEggScene());
         scenes.push_back(new zzBaconScene());
         scenes.push_back(new zzWatermelonScene());
