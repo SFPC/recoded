@@ -9,8 +9,8 @@ void zzCloudyScene::setup(){
 // param was declared in zzCloudyScene.h
     //parameters.add(param.set("param", 5, 0, 100));
 
-    parameters.add(cloud_size.set("cloud size", 200, 50, 700));
-    parameters.add(emojiSpeed.set("emoji speed", 4, 1, 10));
+    parameters.add(cloud_size.set("cloud size", 400, 400, 700));
+    parameters.add(emojiSpeed.set("emoji speed", 4, 2, 10));
     parameters.add(jiggle.set("jiggle", .05, .05, .25));
     
     time = 0;
