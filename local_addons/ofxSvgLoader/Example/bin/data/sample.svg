@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1024px" height="768px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768" xml:space="preserve">
+<image overflow="visible" width="1024" height="1024" id="bg" xlink:href="bg.png"  transform="matrix(1 0 0 1 0 -50)">
+</image>
+<g id="logo">
+	<circle id="ofO" fill="#494949" cx="302.678" cy="375.758" r="223.246"/>
+	<rect id="ofF" x="550" y="153.003" fill="#494949" width="196" height="446"/>
+	<polygon fill="#494949" points="768,152.932 768,327.643 944.57,152.003 	"/>
+	<rect x="768" y="347.003" fill="#494949" width="117" height="127"/>
+</g>
+<g id="trees">
+	<image overflow="visible" width="97" height="227" xlink:href="tree.png"  transform="matrix(0.5758 0 0 0.5758 195.7285 500.5)">
+	</image>
+	
+		<image overflow="visible" width="97" height="227" xlink:href="tree.png"  transform="matrix(0.6639 0 0 0.6639 109.1821 484.7559)">
+	</image>
+	
+		<image overflow="visible" width="97" height="227" xlink:href="tree.png"  transform="matrix(0.5758 0 0 0.5758 512.7041 500.499)">
+	</image>
+	
+		<image overflow="visible" width="97" height="227" xlink:href="tree.png"  transform="matrix(0.4248 0 0 0.4248 450.8975 516.8945)">
+	</image>
+	
+		<image overflow="visible" width="97" height="227" xlink:href="tree.png"  transform="matrix(0.5147 0 0 0.5147 399.0527 507.4307)">
+	</image>
+	
+		<image overflow="visible" width="97" height="227" xlink:href="tree.png"  transform="matrix(0.5147 0 0 0.5147 718.0762 504.6895)">
+	</image>
+	
+		<image overflow="visible" width="97" height="227" xlink:href="tree.png"  transform="matrix(0.7938 0 0 0.7938 155.2271 465.7422)">
+	</image>
+	
+		<image overflow="visible" width="97" height="227" xlink:href="tree.png"  transform="matrix(0.6451 0 0 0.6451 552.7041 490.7617)">
+	</image>
+</g>
+<g id="clouds">
+	<circle fill="#EFEFEF" stroke="#494949" stroke-width="2" stroke-miterlimit="10" cx="130.943" cy="91.057" r="26.671"/>
+	<circle fill="#EFEFEF" stroke="#494949" stroke-width="2" stroke-miterlimit="10" cx="154.614" cy="85.5" r="29.114"/>
+	<circle fill="#EFEFEF" stroke="#494949" stroke-width="2" stroke-miterlimit="10" cx="193.305" cy="87.924" r="29.69"/>
+	<circle fill="#EFEFEF" stroke="#494949" stroke-width="2" stroke-miterlimit="10" cx="211.419" cy="96.924" r="27.69"/>
+	<circle fill="#EFEFEF" stroke="#494949" stroke-width="2" stroke-miterlimit="10" cx="173.576" cy="107.614" r="32.114"/>
+	<circle fill="#EFEFEF" stroke="#494949" stroke-width="2" stroke-miterlimit="10" cx="657.933" cy="115.531" r="26.671"/>
+	<circle fill="#EFEFEF" stroke="#494949" stroke-width="2" stroke-miterlimit="10" cx="719.947" cy="109.264" r="29.343"/>
+	<circle fill="#EFEFEF" stroke="#494949" stroke-width="2" stroke-miterlimit="10" cx="691.933" cy="125.531" r="35.343"/>
+	<circle fill="#EFEFEF" stroke="#494949" stroke-width="2" stroke-miterlimit="10" cx="733.99" cy="138.607" r="29.343"/>
+</g>
+</svg>
