@@ -79,6 +79,16 @@
 		928A7D091FBB5BDE003A2403 /* zzEggScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D031FBB5BDE003A2403 /* zzEggScene.cpp */; };
 		928A7D0A1FBB5BDE003A2403 /* zzCloudyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D061FBB5BDE003A2403 /* zzCloudyScene.cpp */; };
 		928A7D0D1FBB7974003A2403 /* emoji.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D0B1FBB7974003A2403 /* emoji.cpp */; };
+		928A7D5D1FBC6E30003A2403 /* src_colors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D411FBC6E30003A2403 /* src_colors.cpp */; };
+		928A7D5E1FBC6E30003A2403 /* svgtiny.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D421FBC6E30003A2403 /* svgtiny.cpp */; };
+		928A7D5F1FBC6E30003A2403 /* svgtiny_gradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D441FBC6E30003A2403 /* svgtiny_gradient.cpp */; };
+		928A7D601FBC6E30003A2403 /* svgtiny_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D461FBC6E30003A2403 /* svgtiny_list.cpp */; };
+		928A7D611FBC6E30003A2403 /* ofxSvgBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D4A1FBC6E30003A2403 /* ofxSvgBase.cpp */; };
+		928A7D621FBC6E30003A2403 /* ofxSvgGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D4C1FBC6E30003A2403 /* ofxSvgGroup.cpp */; };
+		928A7D631FBC6E30003A2403 /* ofxSvgLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D4E1FBC6E30003A2403 /* ofxSvgLoader.cpp */; };
+		928A7D6D1FBC7113003A2403 /* zzEatRepeatScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D651FBC7113003A2403 /* zzEatRepeatScene.cpp */; };
+		928A7D6E1FBC7113003A2403 /* zzSpreadTheLove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D681FBC7113003A2403 /* zzSpreadTheLove.cpp */; };
+		928A7D6F1FBC7113003A2403 /* zzNomScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 928A7D6B1FBC7113003A2403 /* zzNomScene.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		94D0F90B1F34F0CB0BEF6E94 /* mgsCooperSymbols.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F7FD17D58145A29907951 /* mgsCooperSymbols.cpp */; };
 		94E1EBB02DE5E09C21993153 /* dgif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = 7D22515AB9C73BAC9AF07B05 /* dgif_lib.c */; };
@@ -345,6 +355,24 @@
 		928A7D071FBB5BDE003A2403 /* zzCloudyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzCloudyScene.h; sourceTree = "<group>"; };
 		928A7D0B1FBB7974003A2403 /* emoji.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = emoji.cpp; sourceTree = "<group>"; };
 		928A7D0C1FBB7974003A2403 /* emoji.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = emoji.hpp; sourceTree = "<group>"; };
+		928A7D411FBC6E30003A2403 /* src_colors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = src_colors.cpp; sourceTree = "<group>"; };
+		928A7D421FBC6E30003A2403 /* svgtiny.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = svgtiny.cpp; sourceTree = "<group>"; };
+		928A7D431FBC6E30003A2403 /* svgtiny.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = svgtiny.h; sourceTree = "<group>"; };
+		928A7D441FBC6E30003A2403 /* svgtiny_gradient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = svgtiny_gradient.cpp; sourceTree = "<group>"; };
+		928A7D451FBC6E30003A2403 /* svgtiny_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = svgtiny_internal.h; sourceTree = "<group>"; };
+		928A7D461FBC6E30003A2403 /* svgtiny_list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = svgtiny_list.cpp; sourceTree = "<group>"; };
+		928A7D4A1FBC6E30003A2403 /* ofxSvgBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSvgBase.cpp; sourceTree = "<group>"; };
+		928A7D4B1FBC6E30003A2403 /* ofxSvgBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSvgBase.h; sourceTree = "<group>"; };
+		928A7D4C1FBC6E30003A2403 /* ofxSvgGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSvgGroup.cpp; sourceTree = "<group>"; };
+		928A7D4D1FBC6E30003A2403 /* ofxSvgGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSvgGroup.h; sourceTree = "<group>"; };
+		928A7D4E1FBC6E30003A2403 /* ofxSvgLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSvgLoader.cpp; sourceTree = "<group>"; };
+		928A7D4F1FBC6E30003A2403 /* ofxSvgLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSvgLoader.h; sourceTree = "<group>"; };
+		928A7D651FBC7113003A2403 /* zzEatRepeatScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzEatRepeatScene.cpp; sourceTree = "<group>"; };
+		928A7D661FBC7113003A2403 /* zzEatRepeatScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzEatRepeatScene.h; sourceTree = "<group>"; };
+		928A7D681FBC7113003A2403 /* zzSpreadTheLove.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzSpreadTheLove.cpp; sourceTree = "<group>"; };
+		928A7D691FBC7113003A2403 /* zzSpreadTheLove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzSpreadTheLove.h; sourceTree = "<group>"; };
+		928A7D6B1FBC7113003A2403 /* zzNomScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zzNomScene.cpp; sourceTree = "<group>"; };
+		928A7D6C1FBC7113003A2403 /* zzNomScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zzNomScene.h; sourceTree = "<group>"; };
 		93CE6D5A4C7FBFAACBF65A16 /* niklasWhitneySineWave.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = niklasWhitneySineWave.cpp; path = src/scenes/niklasWhitneySineWave/niklasWhitneySineWave.cpp; sourceTree = SOURCE_ROOT; };
 		94705193E8ABD23283009175 /* RileyArcsRoy.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = RileyArcsRoy.cpp; path = src/scenes/RileyArcsRoy/RileyArcsRoy.cpp; sourceTree = SOURCE_ROOT; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
@@ -1023,6 +1051,7 @@
 		6948EE371B920CB800B5AC1A /* local_addons */ = {
 			isa = PBXGroup;
 			children = (
+				928A7D191FBC6E30003A2403 /* ofxSvgLoader */,
 				B0822B061FB54A6E00007B2D /* ofxPoissonDiskSampling */,
 				B0822AF81FB549D000007B2D /* ofxDelaunay */,
 				B0822A931FB5491200007B2D /* ofxMidi */,
@@ -1180,6 +1209,9 @@
 		9259DF4D1FBA06DA00F4B42E /* zzScenes */ = {
 			isa = PBXGroup;
 			children = (
+				928A7D641FBC7113003A2403 /* zzEatRepeatScene */,
+				928A7D6A1FBC7113003A2403 /* zzNomScene */,
+				928A7D671FBC7113003A2403 /* zzSpreadTheLove */,
 				928A7CFF1FBB5BDE003A2403 /* zzBaconScene */,
 				928A7D051FBB5BDE003A2403 /* zzCloudyScene */,
 				928A7D021FBB5BDE003A2403 /* zzEggScene */,
@@ -1267,6 +1299,85 @@
 				928A7D071FBB5BDE003A2403 /* zzCloudyScene.h */,
 			);
 			path = zzCloudyScene;
+			sourceTree = "<group>";
+		};
+		928A7D191FBC6E30003A2403 /* ofxSvgLoader */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D3E1FBC6E30003A2403 /* libs */,
+				928A7D491FBC6E30003A2403 /* src */,
+			);
+			name = ofxSvgLoader;
+			path = local_addons/ofxSvgLoader;
+			sourceTree = "<group>";
+		};
+		928A7D3E1FBC6E30003A2403 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D3F1FBC6E30003A2403 /* svgTiny */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		928A7D3F1FBC6E30003A2403 /* svgTiny */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D401FBC6E30003A2403 /* src */,
+			);
+			path = svgTiny;
+			sourceTree = "<group>";
+		};
+		928A7D401FBC6E30003A2403 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D411FBC6E30003A2403 /* src_colors.cpp */,
+				928A7D421FBC6E30003A2403 /* svgtiny.cpp */,
+				928A7D431FBC6E30003A2403 /* svgtiny.h */,
+				928A7D441FBC6E30003A2403 /* svgtiny_gradient.cpp */,
+				928A7D451FBC6E30003A2403 /* svgtiny_internal.h */,
+				928A7D461FBC6E30003A2403 /* svgtiny_list.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		928A7D491FBC6E30003A2403 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D4A1FBC6E30003A2403 /* ofxSvgBase.cpp */,
+				928A7D4B1FBC6E30003A2403 /* ofxSvgBase.h */,
+				928A7D4C1FBC6E30003A2403 /* ofxSvgGroup.cpp */,
+				928A7D4D1FBC6E30003A2403 /* ofxSvgGroup.h */,
+				928A7D4E1FBC6E30003A2403 /* ofxSvgLoader.cpp */,
+				928A7D4F1FBC6E30003A2403 /* ofxSvgLoader.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		928A7D641FBC7113003A2403 /* zzEatRepeatScene */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D651FBC7113003A2403 /* zzEatRepeatScene.cpp */,
+				928A7D661FBC7113003A2403 /* zzEatRepeatScene.h */,
+			);
+			path = zzEatRepeatScene;
+			sourceTree = "<group>";
+		};
+		928A7D671FBC7113003A2403 /* zzSpreadTheLove */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D681FBC7113003A2403 /* zzSpreadTheLove.cpp */,
+				928A7D691FBC7113003A2403 /* zzSpreadTheLove.h */,
+			);
+			path = zzSpreadTheLove;
+			sourceTree = "<group>";
+		};
+		928A7D6A1FBC7113003A2403 /* zzNomScene */ = {
+			isa = PBXGroup;
+			children = (
+				928A7D6B1FBC7113003A2403 /* zzNomScene.cpp */,
+				928A7D6C1FBC7113003A2403 /* zzNomScene.h */,
+			);
+			path = zzNomScene;
 			sourceTree = "<group>";
 		};
 		98927F7FDBF63A8A6918DE72 /* jacobsonMolnar_01 */ = {
@@ -2132,6 +2243,7 @@
 				2E6C274B1FBA494600D54DC9 /* zzSushiScene.cpp in Sources */,
 				BFF99FC5F470B5FA65641F39 /* chrisMurielCooper.cpp in Sources */,
 				3B19311B9A0680F23DDF9B97 /* chrisRileyCascando.cpp in Sources */,
+				928A7D5E1FBC6E30003A2403 /* svgtiny.cpp in Sources */,
 				F0B16E86020ABBE853B7EBFC /* chrisVeraInterruptions.cpp in Sources */,
 				E8BC19F21FA720177F341A52 /* Cooper3dText.cpp in Sources */,
 				41380A28A9973166A9CCB948 /* CooperBauhaus.cpp in Sources */,
@@ -2139,6 +2251,7 @@
 				B0822B241FB55B5500007B2D /* weiMolnar_01.cpp in Sources */,
 				4D2FDE7689030999895271E8 /* EstherKnowltonScene.cpp in Sources */,
 				B0822AE81FB5491200007B2D /* ofxMidiRecorder.cpp in Sources */,
+				928A7D601FBC6E30003A2403 /* svgtiny_list.cpp in Sources */,
 				B0822B201FB559C700007B2D /* runchalMolnar.cpp in Sources */,
 				2DE293FAAF850C0ABF02DB62 /* exampleScene.cpp in Sources */,
 				A77B3A95EDC4AE0F95E1A6BC /* fernandoMuriel.cpp in Sources */,
@@ -2170,10 +2283,12 @@
 				6201C2BF9E70AFAC3F69629A /* mgsRileyDescending.cpp in Sources */,
 				B0822AED1FB5491200007B2D /* ofxEasingBounce.cpp in Sources */,
 				4FC1D78BBE6BA186FAFCA02D /* mgsRileyDiamonds.cpp in Sources */,
+				928A7D5F1FBC6E30003A2403 /* svgtiny_gradient.cpp in Sources */,
 				70A2E63FCED5572985116C0E /* mgsRileyEllipsesAndSquares.cpp in Sources */,
 				310ED8BB549B244C0DFB0FA1 /* mgsVeraMolnarLineStudy.cpp in Sources */,
 				9259DF601FBA06DA00F4B42E /* zzWatermelonScene.cpp in Sources */,
 				B0822B381FB6396800007B2D /* EstherMolnarScene.cpp in Sources */,
+				928A7D5D1FBC6E30003A2403 /* src_colors.cpp in Sources */,
 				B0822AE11FB5491200007B2D /* ofxRtMidiOut.cpp in Sources */,
 				203D9685D89D8A6D42285C68 /* exampleCode.cpp in Sources */,
 				08E30F8D5828117E48A7E046 /* mwalczykVeraSquares.cpp in Sources */,
@@ -2181,15 +2296,18 @@
 				B0822AE21FB5491200007B2D /* ofxBaseMidi.cpp in Sources */,
 				AD159DB2DCE91BE9E3D73AF8 /* niklasMolnar.cpp in Sources */,
 				F21C08D1EF7D2CB6F2CEDFBB /* niklasMorisawa.cpp in Sources */,
+				928A7D631FBC6E30003A2403 /* ofxSvgLoader.cpp in Sources */,
 				5DEE3364A6688FB48ED3921B /* niklasWhitneySineWave.cpp in Sources */,
 				35CC617D57D0561A1F39D1C5 /* ofxDataBender.cpp in Sources */,
 				B51874662BB53B0705173C5D /* olegVeraV.cpp in Sources */,
 				B0822AE71FB5491200007B2D /* README.md in Sources */,
+				928A7D611FBC6E30003A2403 /* ofxSvgBase.cpp in Sources */,
 				F753936E1839675677ED495E /* rachelScene.cpp in Sources */,
 				B0822AEA1FB5491200007B2D /* ofxParameterMidiSync.cpp in Sources */,
 				DA5381E28EC784082D8A55C6 /* RileyArcsRoy.cpp in Sources */,
 				5C0873A6CCF9F6001D1FD06C /* RileyRemake-Catarina_Lee__Joao_Freire.cpp in Sources */,
 				B0822AF51FB5491200007B2D /* ofxEasingQuint.cpp in Sources */,
+				928A7D6D1FBC7113003A2403 /* zzEatRepeatScene.cpp in Sources */,
 				D1CA2B60E665AB3C916A66A3 /* robbyMenkmanScene.cpp in Sources */,
 				29D3F5F4AF26FBD90065CFAB /* robbyMolnarScene.cpp in Sources */,
 				1DCBEB92D78ED02BB31556A4 /* robbyRileyScene.cpp in Sources */,
@@ -2212,9 +2330,11 @@
 				B0822B051FB549D000007B2D /* ofxDelaunay.cpp in Sources */,
 				B0822AEF1FB5491200007B2D /* ofxEasingCubic.cpp in Sources */,
 				B0822AE91FB5491200007B2D /* ofxParameterMidiInfo.cpp in Sources */,
+				928A7D6F1FBC7113003A2403 /* zzNomScene.cpp in Sources */,
 				9259DF5E1FBA06DA00F4B42E /* zzEyeScene.cpp in Sources */,
 				B0822AF01FB5491200007B2D /* ofxEasingElastic.cpp in Sources */,
 				245E92652A385BF70336B232 /* veraMolnarTrapezium.cpp in Sources */,
+				928A7D6E1FBC7113003A2403 /* zzSpreadTheLove.cpp in Sources */,
 				A0EECD50540F79C73BF975D7 /* weiWhitney.cpp in Sources */,
 				B0822AE01FB5491200007B2D /* ofxRtMidiIn.cpp in Sources */,
 				44606489A6B912DD08E14E3D /* yeseulCooperMessages.cpp in Sources */,
@@ -2225,6 +2345,7 @@
 				B0822AE61FB5491200007B2D /* ofxMidiOut.cpp in Sources */,
 				410217425149C63952F8B50D /* yosukeJohnWhitneyMatrix.cpp in Sources */,
 				D07841EA650BBE321AC6628B /* yosukeVeraSansTitre.cpp in Sources */,
+				928A7D621FBC6E30003A2403 /* ofxSvgGroup.cpp in Sources */,
 				CAF74703F170D49B29ABB982 /* yumiNishida01.cpp in Sources */,
 				7B87948685D434C7C6CD893D /* zachTest.cpp in Sources */,
 				928A7D0A1FBB5BDE003A2403 /* zzCloudyScene.cpp in Sources */,

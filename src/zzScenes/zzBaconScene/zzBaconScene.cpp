@@ -20,7 +20,7 @@ void zzBaconScene::setup(){
     setAuthor("Peter Pan");
     setOriginalArtist("Put the original Artist's name here");
     
-    loadCode("scenes/zzBacons/exampleCode.cpp", false);
+    loadCode("zzScenes/zzBacons/exampleCode.cpp", false);
 
 }
 
