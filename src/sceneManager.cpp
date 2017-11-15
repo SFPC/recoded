@@ -713,9 +713,9 @@ void sceneManager::draw(){
         y = 10 + 13;
     }
     
-    const int lineWithActiveParamDim = 120;
-    const int lineWithoutActiveParamDim = 130;
-    const int commentDim = 70;
+    const int lineWithActiveParamDim = 120*0.3;
+    const int lineWithoutActiveParamDim = 130*0.3;
+    const int commentDim = 70*0.3;
     currentLine = 0;
     bool nonEmptyLetter = false;
     
