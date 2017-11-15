@@ -54,7 +54,7 @@ void zzDonutScene::draw(){
      ofScale(0.9, 0.9);
     for (int i = 0; i < 100; i+=2){
         ofPushMatrix();
-        ofTranslate(sin(i*xSpeed+ ofGetElapsedTimef()*2.0)*300.0, sin(i*ySpeed+ ofGetElapsedTimef()*0.9)*300.0);
+        ofTranslate(sin(i*xSpeed*0.4+ ofGetElapsedTimef()*2.0*0.4)*300.0, sin(i*ySpeed*0.4+ ofGetElapsedTimef()*0.9*0.4)*300.0);
         
         //ofRotateX(ofGetMouseX());
         ofRotateZ(i*0.1 + ofGetElapsedTimef()*200);
