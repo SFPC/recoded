@@ -89,6 +89,7 @@
 #include "diegoScene_01.h"
 #include "stacyButterflies.h"
 #include "EstherMolnarScene.h"
+#include "yingKnowlton.h"
 
 // these are food related scenes
 
@@ -198,6 +199,7 @@ void sceneManager::setup(){
 	scenes.push_back(new annMolnarRectangles());
 	scenes.push_back(new weiWhitney());
 	scenes.push_back(new yumiNishida01());
+    scenes.push_back(new yingKnowlton());
 	
 
 #endif
